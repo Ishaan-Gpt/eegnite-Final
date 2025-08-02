@@ -13,13 +13,19 @@
       var pathSegmentsToKeep = 1;
 
       var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // Only redirect if we're not already on the homepage
+      if (l.pathname !== '/eegnite-Final/' && l.pathname !== '/') {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      } else {
+        // If we're on the homepage, just redirect to the base URL
+        l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/eegnite-Final/');
+      }
     </script>
   </head>
   <body>

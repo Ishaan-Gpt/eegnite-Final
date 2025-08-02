@@ -1,0 +1,25 @@
+{
+  "homepage": {
+    "heroTitle": "Unlock Your Business Growth with EEGNITE",
+    "heroSubtitle": "Modern marketing, analytics, and strategy for ambitious brands.",
+    "ctaText": "Get Your Free Growth Audit"
+  },
+  "about": {
+    "title": "About EEGNITE",
+    "description": "EEGNITE is a business growth and marketing consultancy helping companies scale with data-driven strategies and creative execution."
+  },
+  "services": [
+    {
+      "title": "Growth Strategy",
+      "description": "Custom growth plans tailored to your business goals."
+    },
+    {
+      "title": "Digital Marketing",
+      "description": "SEO, paid ads, and content marketing for maximum reach."
+    },
+    {
+      "title": "Analytics & ROI",
+      "description": "Track, measure, and optimize every campaign for real results."
+    }
+  ]
+} 

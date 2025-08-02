@@ -1,0 +1,263 @@
+{
+  "hero": {
+    "titleLines": [
+      "Transform",
+      "Your Business",
+      "Growth"
+    ],
+    "subtitle": "We deliver proven marketing strategies that generate qualified leads, increase revenue, and scale your business to new heights.",
+    "ctaPrimary": {
+      "text": "Get Your Free Strategy Call",
+      "link": "/contact"
+    },
+    "ctaSecondary": {
+      "text": "Watch Success Stories",
+      "link": "/case-studies"
+    },
+    "stats": [
+      { "value": "500+", "label": "Clients Served" },
+      { "value": "340%", "label": "Avg Growth" },
+      { "value": "4.9/5", "label": "Client Rating" }
+    ]
+  },
+  "services": [
+    {
+      "id": "seo",
+      "title": "Strategic SEO",
+      "description": "Data-driven SEO strategies that put your brand in front of your ideal customers when they're actively searching.",
+      "features": [
+        "Comprehensive keyword research & analysis",
+        "Technical SEO audits & optimization",
+        "Content strategy & creation",
+        "Local SEO for regional dominance",
+        "Link building & authority development"
+      ],
+      "icon": "search",
+      "category": "technical"
+    },
+    {
+      "id": "ppc",
+      "title": "Performance PPC",
+      "description": "High-converting paid campaigns across Google, Meta, and LinkedIn that maximize ROI and drive qualified leads.",
+      "features": [
+        "Google Ads campaign management",
+        "Meta (Facebook & Instagram) advertising",
+        "LinkedIn B2B campaign optimization",
+        "Conversion tracking & attribution",
+        "Landing page optimization"
+      ],
+      "icon": "target",
+      "category": "growth"
+    },
+    {
+      "id": "email",
+      "title": "Email Marketing",
+      "description": "Automated email sequences and campaigns that nurture leads and drive customer lifetime value.",
+      "features": [
+        "Email automation workflows",
+        "List segmentation & personalization",
+        "A/B testing & optimization",
+        "Newsletter campaigns",
+        "Customer retention sequences"
+      ],
+      "icon": "mail",
+      "category": "content"
+    },
+    {
+      "id": "linkedin",
+      "title": "LinkedIn Strategy",
+      "description": "Personal branding and B2B lead generation through strategic LinkedIn content and outreach.",
+      "features": [
+        "Personal brand development",
+        "Content calendar & creation",
+        "Connection building strategies",
+        "LinkedIn advertising",
+        "Thought leadership positioning"
+      ],
+      "icon": "linkedin",
+      "category": "growth"
+    },
+    {
+      "id": "analytics",
+      "title": "Growth Analytics",
+      "description": "Comprehensive tracking and data analysis to optimize your entire marketing funnel.",
+      "features": [
+        "Conversion tracking setup",
+        "Custom dashboard creation",
+        "Monthly performance reports",
+        "Growth opportunity identification",
+        "ROI measurement & optimization"
+      ],
+      "icon": "trending-up",
+      "category": "technical"
+    },
+    {
+      "id": "content",
+      "title": "Content Strategy",
+      "description": "Compelling content that positions your brand as the go-to expert in your industry.",
+      "features": [
+        "Content strategy & planning",
+        "Blog writing & SEO optimization",
+        "Social media content creation",
+        "Video content strategy",
+        "Brand messaging & positioning"
+      ],
+      "icon": "edit-3",
+      "category": "content"
+    }
+  ],
+  "features": [
+    {
+      "title": "Rapid Implementation",
+      "description": "Fast-track your success with our agile consulting approach and proven implementation strategies."
+    },
+    {
+      "title": "Trusted Expertise",
+      "description": "Leverage decades of combined experience from industry experts across multiple business domains."
+    },
+    {
+      "title": "Growth Focused",
+      "description": "Every solution is designed to accelerate your business growth and competitive advantage."
+    },
+    {
+      "title": "Premium Quality",
+      "description": "Exceptional service quality with attention to detail that exceeds client expectations consistently."
+    },
+    {
+      "title": "24/7 Support",
+      "description": "Round-the-clock support ensuring your business operations never skip a beat during transformation."
+    },
+    {
+      "title": "Proven Results",
+      "description": "Track record of success with measurable ROI improvements and satisfied clients across industries."
+    }
+  ],
+  "process": [
+    {
+      "number": "01",
+      "title": "Discover & Analyze",
+      "description": "We dive deep into your business, market, and current performance to identify the biggest opportunities for growth."
+    },
+    {
+      "number": "02",
+      "title": "Strategize & Plan",
+      "description": "Based on our analysis, we create a custom growth roadmap with clear milestones and measurable outcomes."
+    },
+    {
+      "number": "03",
+      "title": "Execute & Optimize",
+      "description": "We implement proven strategies while continuously testing and optimizing for maximum performance."
+    },
+    {
+      "number": "04",
+      "title": "Scale & Grow",
+      "description": "As results compound, we scale successful campaigns and explore new channels to accelerate your growth."
+    }
+  ],
+  "team": {
+    "members": [
+      {
+        "id": "1",
+        "name": "Sarah Chen",
+        "role": "CEO & Growth Strategist",
+        "image": "https://images.unsplash.com/photo-1494790108755-2616b332a34f?w=400&h=400&fit=crop&crop=face",
+        "bio": "With 10+ years in digital marketing, Sarah has led growth initiatives for Fortune 500 companies, specializing in data-driven strategies that deliver measurable results.",
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      },
+      {
+        "id": "2",
+        "name": "Marcus Rodriguez",
+        "role": "Head of Performance Marketing",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+        "bio": "Marcus specializes in PPC campaigns and conversion optimization, having managed over $50M in ad spend with an average ROAS of 4.2x across various industries.",
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      },
+      {
+        "id": "3",
+        "name": "Emily Johnson",
+        "role": "Creative Director",
+        "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+        "bio": "Emily brings creative vision to life through compelling campaigns. Her work has won multiple industry awards and consistently drives engagement rates 3x above industry average.",
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      },
+      {
+        "id": "4",
+        "name": "David Kim",
+        "role": "Analytics & Insights Lead",
+        "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+        "bio": "David transforms complex data into actionable insights. His analytics frameworks have helped clients increase ROI by an average of 180% within the first year.",
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      },
+      {
+        "id": "5",
+        "name": "Lisa Thompson",
+        "role": "Content Strategy Manager",
+        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+        "bio": "Lisa crafts content strategies that resonate with target audiences. Her campaigns have generated over 100M impressions and consistently achieve 5x higher engagement than industry benchmarks.",
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      }
+    ],
+    "stats": [
+      { "value": "50+", "label": "Years Combined Experience" },
+      { "value": "200+", "label": "Successful Campaigns" },
+      { "value": "$100M+", "label": "Revenue Generated" }
+    ]
+  },
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Sarah Johnson",
+      "company": "TechFlow Solutions",
+      "role": "CEO & Founder",
+      "content": "EEGNITE didn't just improve our marketing - they transformed our entire approach to growth. Their strategic thinking and execution are unmatched.",
+      "rating": 5,
+      "results": { "metric": "Lead Generation", "improvement": "+340%" }
+    },
+    {
+      "id": "2",
+      "name": "Marcus Chen",
+      "company": "Innovate Capital",
+      "role": "Managing Partner",
+      "content": "Working with EEGNITE was a game-changer. They understand B2B marketing at a level that most agencies simply don't reach.",
+      "rating": 5,
+      "results": { "metric": "Conversion Rate", "improvement": "+180%" }
+    },
+    {
+      "id": "3",
+      "name": "Emily Rodriguez",
+      "company": "GreenTech Innovations",
+      "role": "Head of Marketing",
+      "content": "The ROI we've seen from EEGNITE's campaigns has exceeded all expectations. They're true growth partners, not just service providers.",
+      "rating": 5,
+      "results": { "metric": "Revenue Growth", "improvement": "+250%" }
+    },
+    {
+      "id": "4",
+      "name": "David Thompson",
+      "company": "Elite Consulting Group",
+      "role": "Founder",
+      "content": "EEGNITE's data-driven approach and strategic insights have been instrumental in scaling our business to new heights.",
+      "rating": 5,
+      "results": { "metric": "Organic Traffic", "improvement": "+420%" }
+    }
+  ],
+  "cta": {
+    "title": "Ready to Ignite Your Growth?",
+    "subtitle": "Join 200+ businesses that trust EEGNITE to drive their digital marketing success. Let's build something extraordinary together.",
+    "primaryCTA": { "text": "Get Your Free Strategy Call", "href": "/contact" },
+    "secondaryCTA": { "text": "View Case Studies", "href": "/case-studies" },
+    "trustIndicators": [
+      "Free 30-minute strategy session",
+      "No long-term contracts required",
+      "ROI-focused approach"
+    ]
+  },
+  "velocityScroll": {
+    "text": "EEGNITE   •   Accelerate Your Growth   •   Premium Digital Marketing   •   Data-Driven Results   •   Trusted by Bold Brands   •   EEGNITE   •   Accelerate Your Growth   •   Premium Digital Marketing   •   Data-Driven Results   •   Trusted by Bold Brands"
+  }
+} 

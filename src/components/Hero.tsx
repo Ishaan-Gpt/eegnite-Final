@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, TrendingUp, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const stats = [
   { label: 'Revenue Generated', value: '$50M+', icon: TrendingUp },
@@ -153,22 +152,33 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
             <Button 
-              asChild 
               size="lg" 
               className="neumorphism hover-glow px-8 py-4 text-lg font-inter font-semibold rounded-2xl group transition-all duration-300"
               style={{ background: 'var(--gradient-orange)' }}
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
-              <Link to="/contact" className="flex items-center space-x-3">
-                <span>Get Your Growth Plan</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <span>Get Your Growth Plan</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button asChild variant="outline" size="lg" className="glass hover-lift px-8 py-4 text-lg font-inter font-medium rounded-2xl border-2 border-foreground/20">
-              <Link to="/case-studies" className="flex items-center space-x-3">
-                <Play className="w-5 h-5" />
-                <span>View Success Stories</span>
-              </Link>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="glass hover-lift px-8 py-4 text-lg font-inter font-medium rounded-2xl border-2 border-foreground/20"
+              onClick={() => {
+                const element = document.getElementById('services');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              <Play className="w-5 h-5" />
+              <span>View Success Stories</span>
             </Button>
           </motion.div>
 

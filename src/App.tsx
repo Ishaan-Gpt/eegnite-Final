@@ -5,15 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
 import { Suspense, lazy } from "react";
 import SmoothFollower from "@/components/ui/SmoothFollower";
 
-const CaseStudies = lazy(() => import("./pages/CaseStudies"));
-const Resources = lazy(() => import("./pages/Resources"));
-const Contact = lazy(() => import("./pages/Contact"));
-const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminApp = lazy(() => import("./pages/AdminApp"));
 
 const queryClient = new QueryClient();
@@ -37,18 +31,13 @@ const App = () => (
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-lg">Loading...</div>}>
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/case-studies" element={<CaseStudies />} />
-                <Route path="/resources" element={<Resources />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="/admin" element={
                   <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-lg text-primary">Loading admin...</div>}>
                     <AdminApp />
                   </Suspense>
                 } />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
+                {/* Redirect all other routes to home */}
+                <Route path="*" element={<Index />} />
               </Routes>
             </Suspense>
           </Layout>

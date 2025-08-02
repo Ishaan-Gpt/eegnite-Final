@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 interface CTASectionProps {
   title?: string;
@@ -88,22 +87,32 @@ export function CTASection({
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button 
-              asChild 
               size="lg" 
               className="bg-gradient-orange hover:shadow-orange transition-all duration-300 group"
+              onClick={() => {
+                const element = document.getElementById(primaryCTA.href.replace('#', ''));
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
-              <Link to={primaryCTA.href} className="flex items-center space-x-2">
-                <Calendar className="w-5 h-5" />
-                <span>{primaryCTA.text}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <Calendar className="w-5 h-5" />
+              <span>{primaryCTA.text}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button asChild variant="outline" size="lg">
-              <Link to={secondaryCTA.href} className="flex items-center space-x-2">
-                <MessageCircle className="w-4 h-4" />
-                <span>{secondaryCTA.text}</span>
-              </Link>
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => {
+                const element = document.getElementById(secondaryCTA.href.replace('#', ''));
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>{secondaryCTA.text}</span>
             </Button>
           </motion.div>
 

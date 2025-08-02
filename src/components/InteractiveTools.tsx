@@ -190,13 +190,16 @@ function ROICalculator() {
               </div>
 
               <Button 
-                asChild
                 className="w-full glass hover-lift font-inter font-semibold"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
-                <Link to="/contact">
-                  Get My Custom Growth Plan
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+                Get My Custom Growth Plan
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </motion.div>
           ) : (
@@ -339,14 +342,17 @@ function MarketingAudit() {
             </div>
 
             <Button 
-              asChild
               className="w-full neumorphism hover-glow py-3 font-inter font-semibold"
               style={{ background: 'var(--gradient-orange)' }}
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
-              <Link to="/contact">
-                Get Detailed Analysis & Recommendations
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              Get Detailed Analysis & Recommendations
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </motion.div>
         )}
@@ -449,15 +455,18 @@ function LeadScoreQuiz() {
             ))}
 
                   <Button 
-                    asChild
                     disabled={Object.keys(responses).length < questions.length}
                     className="w-full neumorphism hover-glow py-3 font-inter font-semibold"
                     style={{ background: 'var(--gradient-orange)' }}
+                    onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                   >
-                    <Link to="/contact">
-                      Get My Lead Score
-                      <Target className="w-4 h-4 ml-2" />
-                    </Link>
+                    Get My Lead Score
+                    <Target className="w-4 h-4 ml-2" />
                   </Button>
           </div>
         ) : (

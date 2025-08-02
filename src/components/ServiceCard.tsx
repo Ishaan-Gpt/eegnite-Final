@@ -3,7 +3,6 @@ import { ArrowRight, Search, Target, Mail, Linkedin, TrendingUp, Edit3 } from 'l
 import { Service } from '@/data/services';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const iconMap = {
   search: Search,
@@ -85,13 +84,16 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
 
           {/* CTA */}
           <Button
-            asChild
             className="bg-gradient-orange text-primary-foreground font-satoshi font-semibold px-6 py-3 rounded-xl shadow hover:shadow-orange-glow hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/60 focus:ring-offset-2"
+            onClick={() => {
+              const element = document.getElementById('services');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
-            <Link to="/services">
-              <span>Learn More</span>
-              <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
+            <span>Learn More</span>
+            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
           </Button>
         </CardContent>
       </Card>

@@ -5,7 +5,6 @@ import { Glow } from "@/components/ui/glow";
 import { Floating3D } from "@/components/ui/floating-3d";
 import { ArrowRight, Play } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import heroMockup from "@/assets/hero-bg.jpg";
 
 export interface HeroStat {
@@ -195,38 +194,44 @@ export function EnhancedHero({
             >
               <Glow intensity="lg" color="primary">
               <Button 
-                asChild
                 size="lg" 
                 className="group relative overflow-hidden px-8 py-4 text-base font-semibold"
+                onClick={() => {
+                  const element = document.getElementById(ctaPrimary.link.replace('#', ''));
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
-                <Link to={ctaPrimary.link}>
-                  <motion.span
-                    className="relative z-10 flex items-center gap-2"
-                    whileHover={{ x: 2 }}
-                  >
-                    {ctaPrimary.text}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </motion.span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
+                <motion.span
+                  className="relative z-10 flex items-center gap-2"
+                  whileHover={{ x: 2 }}
+                >
+                  {ctaPrimary.text}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </motion.span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary to-accent"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
               </Button>
               </Glow>
               
               <Button 
-                asChild
                 variant="outline" 
                 size="lg"
                 className="group px-8 py-4 text-base font-semibold border-2 hover:border-primary/50"
+                onClick={() => {
+                  const element = document.getElementById(ctaSecondary.link.replace('#', ''));
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
               >
-                <Link to={ctaSecondary.link}>
-                  <Play className="w-4 h-4 mr-2 transition-transform group-hover:scale-110" />
-                  {ctaSecondary.text}
-                </Link>
+                <Play className="w-4 h-4 mr-2 transition-transform group-hover:scale-110" />
+                {ctaSecondary.text}
               </Button>
             </motion.div>
 

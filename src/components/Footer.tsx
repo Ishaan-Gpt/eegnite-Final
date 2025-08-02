@@ -1,23 +1,22 @@
-import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const footerLinks = {
   services: [
-    { name: 'Strategic SEO', href: '/services#seo' },
-    { name: 'Performance PPC', href: '/services#ppc' },
-    { name: 'Email Marketing', href: '/services#email' },
-    { name: 'LinkedIn Strategy', href: '/services#linkedin' },
+    { name: 'Strategic SEO', href: '#services' },
+    { name: 'Performance PPC', href: '#services' },
+    { name: 'Email Marketing', href: '#services' },
+    { name: 'LinkedIn Strategy', href: '#services' },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Case Studies', href: '#services' },
+    { name: 'Resources', href: '#services' },
+    { name: 'Contact', href: '#contact' },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
+    { name: 'Privacy Policy', href: '#contact' },
+    { name: 'Terms of Service', href: '#contact' },
+    { name: 'Cookie Policy', href: '#contact' },
   ],
 };
 
@@ -33,12 +32,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
+            <button 
+              onClick={() => {
+                const element = document.getElementById('home');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="flex items-center space-x-2 mb-4"
+            >
               <div className="text-2xl font-clash font-bold">
                 <span className="text-primary">EEG</span>
                 <span className="text-foreground">NITE</span>
               </div>
-            </Link>
+            </button>
             <p className="text-muted-foreground mb-6 font-satoshi luxury-body">
               Strategic digital marketing that drives real growth. We're not just an agency - we're your growth partner.
             </p>
@@ -65,12 +72,17 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById(link.href.replace('#', ''));
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                     className="text-muted-foreground hover:text-primary transition-colors font-satoshi"
                   >
                     {link.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -82,12 +94,17 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById(link.href.replace('#', ''));
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                     className="text-muted-foreground hover:text-primary transition-colors font-satoshi"
                   >
                     {link.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -132,13 +149,18 @@ export function Footer() {
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {footerLinks.legal.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                to={link.href}
+                onClick={() => {
+                  const element = document.getElementById(link.href.replace('#', ''));
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
                 className="text-muted-foreground hover:text-primary transition-colors font-satoshi text-sm luxury-body"
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
           </div>
         </div>

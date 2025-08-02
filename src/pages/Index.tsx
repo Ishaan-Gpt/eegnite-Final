@@ -153,29 +153,33 @@ const Index = () => {
       </Helmet>
       <div className="min-h-screen">
         {/* Enhanced Hero Section */}
-        {homepageData?.hero && homepageData?.hero.section ? (
+        <section id="home">
+          {homepageData?.hero && homepageData?.hero.section ? (
+            <EnhancedHero
+              titleLines={homepageData.hero.section.meta?.titleLines || []}
+              subtitle={homepageData.hero.section.subtitle || ""}
+              ctaPrimary={homepageData.hero.section.meta?.ctaPrimary || { text: "", link: "" }}
+              ctaSecondary={homepageData.hero.section.meta?.ctaSecondary || { text: "", link: "" }}
+              stats={homepageData.hero.elements?.map((el: any) => el.content) || []}
+            />
+          ) : (
           <EnhancedHero
-            titleLines={homepageData.hero.section.meta?.titleLines || []}
-            subtitle={homepageData.hero.section.subtitle || ""}
-            ctaPrimary={homepageData.hero.section.meta?.ctaPrimary || { text: "", link: "" }}
-            ctaSecondary={homepageData.hero.section.meta?.ctaSecondary || { text: "", link: "" }}
-            stats={homepageData.hero.elements?.map((el: any) => el.content) || []}
+              titleLines={[]}
+              subtitle={homepageData?.heroSubtitle || ""}
+              ctaPrimary={{ text: homepageData?.ctaText || "", link: "#contact" }}
+              ctaSecondary={{ text: "Watch Success Stories", link: "#services" }}
+              stats={[]}
           />
-        ) : (
-        <EnhancedHero
-            titleLines={[]}
-            subtitle={homepageData?.heroSubtitle || ""}
-            ctaPrimary={{ text: homepageData?.ctaText || "", link: "/contact" }}
-            ctaSecondary={{ text: "Watch Success Stories", link: "/case-studies" }}
-            stats={[]}
-        />
-        )}
+          )}
+        </section>
 
         {/* Services Grid Section */}
-        <ServicesGrid services={homepageData?.services?.elements?.map((el: any) => el.content) || []} />
+        <section id="services">
+          <ServicesGrid services={homepageData?.services?.elements?.map((el: any) => el.content) || []} />
+        </section>
 
         {/* Process Section */}
-        <section className="py-16 lg:py-24 bg-gradient-subtle">
+        <section id="services" className="py-16 lg:py-24 bg-gradient-subtle">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -193,24 +197,24 @@ const Index = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {(homepageData?.process?.elements?.map((el: any) => el.content) || []).map((step: any, index: number) => (
+              {processSteps.map((step: any, index: number) => (
                 <motion.div
                   key={step.number}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center relative"
+                  className="text-center relative group"
                 >
                   {/* Connecting Line */}
-                  {index < (homepageData?.process?.elements?.length || 0) - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent transform translate-x-4" />
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent transform translate-x-4 group-hover:from-primary group-hover:to-primary transition-all duration-300" />
                   )}
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-full bg-gradient-orange text-primary-foreground flex items-center justify-center font-clash font-bold text-xl mx-auto mb-4 shadow-orange">
+                    <div className="w-16 h-16 rounded-full bg-gradient-orange text-primary-foreground flex items-center justify-center font-clash font-bold text-xl mx-auto mb-4 shadow-orange group-hover:shadow-orange/50 group-hover:scale-110 transition-all duration-300">
                       {step.number}
                     </div>
-                    <h3 className="text-xl font-clash font-semibold text-foreground mb-3">
+                    <h3 className="text-xl font-clash font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground font-satoshi leading-relaxed">
@@ -220,17 +224,60 @@ const Index = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Additional Process Details */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8"
+            >
+              <div className="text-center p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-clash font-semibold text-foreground mb-2">Data-Driven Decisions</h3>
+                <p className="text-muted-foreground font-satoshi text-sm">
+                  Every strategy is backed by comprehensive analytics and real-time performance data.
+                </p>
+              </div>
+              
+              <div className="text-center p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-clash font-semibold text-foreground mb-2">Continuous Optimization</h3>
+                <p className="text-muted-foreground font-satoshi text-sm">
+                  We constantly test, measure, and refine campaigns for maximum ROI and performance.
+                </p>
+              </div>
+              
+              <div className="text-center p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-clash font-semibold text-foreground mb-2">Dedicated Support</h3>
+                <p className="text-muted-foreground font-satoshi text-sm">
+                  Your dedicated growth team is always available to answer questions and provide updates.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Features Showcase */}
-        <FeaturesShowcase features={filledFeatures} />
+        <section id="about">
+          <FeaturesShowcase features={filledFeatures} />
+        </section>
 
         {/* Team Section */}
-        <TeamSection
-          members={homepageData?.team?.elements?.filter((el: any) => el.type === 'team_member').map((el: any) => el.content) || []}
-          stats={homepageData?.team?.elements?.filter((el: any) => el.type === 'team_stat').map((el: any) => el.content) || []}
-        />
+        <section id="team">
+          <TeamSection
+            members={homepageData?.team?.elements?.filter((el: any) => el.type === 'team_member').map((el: any) => el.content) || []}
+            stats={homepageData?.team?.elements?.filter((el: any) => el.type === 'team_stat').map((el: any) => el.content) || []}
+          />
+        </section>
 
         {/* Velocity Scroll Section (EEGNITE custom) */}
         <section className="py-24 bg-gradient-to-b from-background to-muted/40 relative">
@@ -303,13 +350,15 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <CTASection
-          title={homepageData?.cta?.section?.meta?.title || ''}
-          subtitle={homepageData?.cta?.section?.meta?.subtitle || ''}
-          primaryCTA={homepageData?.cta?.section?.meta?.primaryCTA}
-          secondaryCTA={homepageData?.cta?.section?.meta?.secondaryCTA}
-          trustIndicators={homepageData?.cta?.elements?.map((el: any) => el.content.text) || []}
-        />
+        <section id="contact">
+          <CTASection
+            title={homepageData?.cta?.section?.meta?.title || ''}
+            subtitle={homepageData?.cta?.section?.meta?.subtitle || ''}
+            primaryCTA={homepageData?.cta?.section?.meta?.primaryCTA}
+            secondaryCTA={homepageData?.cta?.section?.meta?.secondaryCTA}
+            trustIndicators={homepageData?.cta?.elements?.map((el: any) => el.content.text) || []}
+          />
+        </section>
 
         {/* Newsletter Subscription (unified with Resources page) */}
         {/* Import and use the same newsletter subscription form/logic as Resources page here */}

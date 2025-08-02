@@ -1,0 +1,359 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EEGNITE Digital Marketing Agency Design System - Luxury Production Ready */
+
+@layer base {
+  :root {
+    /* EEGNITE Brand Colors */
+    --eegnite-orange: 18 100% 50%; /* #FF5800 */
+    --eegnite-orange-light: 18 100% 65%;
+    --eegnite-orange-dark: 18 90% 45%;
+    --eegnite-orange-glow: 18 100% 50%;
+    
+    --deep-charcoal: 222 15% 8%; /* Richer dark base */
+    --pure-black: 0 0% 0%;
+    --soft-white: 0 0% 99.2%; /* #FDFDFD */
+    --warm-beige: 35 50% 92%; /* #F3E6D0 */
+    
+    /* Enhanced Dark Theme */
+    --background: 222 15% 8%; /* Deep sophisticated charcoal */
+    --foreground: 0 0% 98%; /* Pure white for contrast */
+
+    --card: 222 15% 10%; /* Slightly lighter than bg */
+    --card-foreground: 0 0% 96%;
+
+    --popover: 222 15% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 18 100% 50%; /* EEGNITE Orange */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 222 15% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 222 15% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 18 95% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 15% 18%;
+    --input: 222 15% 16%;
+    --ring: 18 100% 50%;
+
+    --radius: 1rem; /* Larger radius for modern look */
+
+    /* Advanced Gradients */
+    --gradient-hero: radial-gradient(ellipse 120% 120% at 50% 20%, hsl(222 15% 12%) 0%, hsl(222 20% 6%) 40%, hsl(var(--pure-black)) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(var(--eegnite-orange)) 0%, hsl(var(--eegnite-orange-light)) 50%, hsl(24 100% 60%) 100%);
+    --gradient-orange-glow: linear-gradient(135deg, hsl(var(--eegnite-orange)) 0%, hsl(var(--eegnite-orange-light)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(222 15% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 15% 12%) 0%, hsl(222 20% 8%) 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    
+    /* Luxury Shadows & Effects */
+    --shadow-orange: 0 25px 50px -12px hsl(var(--eegnite-orange) / 0.4);
+    --shadow-orange-glow: 0 0 60px hsl(var(--eegnite-orange) / 0.3);
+    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --shadow-neumorphism: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-depth-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-depth-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --shadow-depth-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+    /* Advanced Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-glass: all 0.2s ease-in-out;
+
+    /* Blur Effects */
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 16px;
+    --blur-xl: 24px;
+  }
+
+  .light {
+    --background: 0 0% 99.2%;
+    --foreground: 0 0% 6.7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6.7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6.7%;
+    --primary: 18 100% 50%;
+    --primary-foreground: 0 0% 99.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 6.7%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 18 100% 50%;
+    --accent-foreground: 0 0% 99.2%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 18 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Ensure all interactive elements are clickable */
+  button, input, select, textarea, a, [role="button"] {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 50;
+  }
+
+  /* Fix z-index stacking for forms and interactive elements */
+  form, .form-container {
+    position: relative;
+    z-index: 40;
+  }
+
+  input, select, textarea {
+    position: relative;
+    z-index: 50;
+  }
+
+  button {
+    position: relative;
+    z-index: 60;
+  }
+
+  /* Ensure all decorative elements don't block interactions */
+  .pointer-events-none {
+    pointer-events: none !important;
+  }
+
+  /* Force interactive elements to be above decorative elements */
+  [data-interactive="true"] {
+    position: relative;
+    z-index: 100;
+    pointer-events: auto !important;
+  }
+
+  /* Typography Classes */
+  .font-inter { font-family: 'Inter', sans-serif; }
+  .font-clash { font-family: 'Clash Display', sans-serif; }
+
+  /* Glass Morphism Effects */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-strong {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Neumorphism Effects */
+  .neumorphism {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-neumorphism);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .neumorphism-inset {
+    background: hsl(var(--background));
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6), inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Advanced Hover Effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-depth-3);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-orange-glow);
+    transform: scale(1.02);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Canvas Improvements */
+  .canvas-wide {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .canvas-wide {
+      padding: 0 1rem;
+    }
+  }
+
+  /* Advanced Gradients and Animations */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background: conic-gradient(var(--tw-gradient-stops));
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+}
+
+/* Modern, sharp, and tactile site-wide enhancements with EEGNITE orange and no rounded corners */
+body {
+  background: linear-gradient(135deg, #fffaf3 0%, #ffe5c2 100%);
+}
+
+.card-glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/30 shadow-[0_4px_24px_0_rgba(255,88,0,0.10),0_1.5px_4px_0_rgba(255,88,0,0.08)] neumorphism !rounded-none;
+}
+
+.btn-premium {
+  @apply bg-gradient-to-r from-[#ff5800] via-[#ff7d33] to-[#ff9a4d] text-white shadow-[0_2px_8px_0_rgba(255,88,0,0.10)] hover:shadow-xl neumorphism !rounded-none border border-[#ff7d33] transition-all duration-200;
+}
+
+.input-lux {
+  @apply border-[#ff7d33] focus:border-[#ff5800] shadow focus:shadow-lg transition neumorphism-inset !rounded-none;
+}
+
+.divider-gradient {
+  @apply h-1 w-full bg-gradient-to-r from-transparent via-[#ff7d33] to-transparent my-8 !rounded-none;
+}
+
+/* Neumorphism utility */
+.neumorphism {
+  box-shadow: 0 4px 24px 0 rgba(255,88,0,0.10), 0 1.5px 4px 0 rgba(255,88,0,0.08), 0 1.5px 4px 0 #fff inset;
+}
+.neumorphism-inset {
+  box-shadow: 0 2px 8px 0 rgba(255,88,0,0.08) inset, 0 1.5px 4px 0 #fff inset;
+}
+
+/* Only Satoshi (global) and Clash Display (logo) are used for EEGNITE branding */
+html, body {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* EEGNITE Luxury Typography */
+h1, .luxury-h1 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 3.4rem; /* 4xl */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+h2, .luxury-h2 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 2.7rem; /* 3xl */
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+h3, .luxury-h3 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  font-size: 2.1rem; /* 2xl */
+  line-height: 1.15;
+}
+h4, .luxury-h4 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem; /* xl */
+  line-height: 1.2;
+}
+h5, .luxury-h5 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 1.35rem; /* lg */
+  line-height: 1.3;
+}
+h6, .luxury-h6 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 1.15rem; /* base */
+  line-height: 1.4;
+}
+
+body, .luxury-body {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem; /* base */
+  line-height: 1.7;
+}
+
+/* EEGNITE logo uses Clash Display only */
+.logo, .font-clash {
+  font-family: 'Clash Display', sans-serif;
+}
+
+/* Fallback for browsers that don't support SVG cursors: use a white pointer with a soft orange glow */
+html, body {
+  /* fallback: use box-shadow on a pseudo-element if needed */
+}
+
+/* Luxurious blurred shadow behind the cursor */
+html::before {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,179,71,0.07) 60%, rgba(255,179,71,0.01) 100%);
+  filter: blur(16px);
+  opacity: 0.5;
+  left: var(--cursor-x, 50vw);
+  top: var(--cursor-y, 50vh);
+  transform: translate(-50%, -50%);
+  transition: background 0.2s;
+  will-change: left, top;
+}
+
+/* Reduce glow on SmoothFollower cursor trail */
+.smooth-follower-dot {
+  box-shadow: 0 0 8px 3px rgba(255,183,71,0.25), 0 0 16px 6px rgba(255,125,51,0.10), 0 0 0 1px #fff;
+}
+.smooth-follower-border {
+  box-shadow: 0 0 16px 4px rgba(255,183,71,0.10), 0 0 0 1px #fff, 0 0 0 3px rgba(255,125,51,0.04);
+}

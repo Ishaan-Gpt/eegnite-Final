@@ -1,0 +1,181 @@
+Lead Scoring Model Builder Template
+
+Sheet 1: Lead Scoring Overview
+Lead ID,Company Name,Contact Name,Email,Phone,Score,Grade,Status,Source,Date Created,Last Activity
+
+Sheet 2: Scoring Criteria
+Criteria Category,Criteria Name,Points,Weight,Description,Data Source,Update Frequency
+
+Sheet 3: Lead Grades
+Grade,Score Range,Description,Action Required,Follow-up Timeline,Conversion Rate
+
+Sheet 4: Lead Sources
+Source Name,Average Score,Conversion Rate,Cost per Lead,Quality Rating,Notes
+
+Sheet 5: Activity Tracking
+Lead ID,Activity Type,Activity Date,Points Earned,Description,Next Follow-up
+
+Sheet 6: Conversion Tracking
+Lead ID,Conversion Date,Deal Value,Time to Convert,Source,Campaign
+
+Sheet 7: Performance Analytics
+Metric,This Month,Last Month,Change,Target,Notes
+
+Sheet 8: Scoring Rules
+Rule Name,Condition,Points,Priority,Active Status,Created Date
+
+Scoring Criteria Categories:
+
+1. Demographics (20% weight)
+- Job Title: C-Level (100), VP/Director (80), Manager (60), Individual Contributor (40)
+- Company Size: 1000+ employees (100), 500-999 (80), 100-499 (60), 50-99 (40), <50 (20)
+- Industry: Target industries (100), Related industries (60), Other (20)
+- Location: Target regions (100), Secondary regions (60), Other (20)
+
+2. Company Information (15% weight)
+- Revenue: $100M+ (100), $50M-$99M (80), $10M-$49M (60), $1M-$9M (40), <$1M (20)
+- Technology Stack: Target technologies (100), Related technologies (60), None (0)
+- Growth Stage: Scaling (100), Growing (80), Stable (60), Declining (20)
+
+3. Engagement (25% weight)
+- Website Visits: 10+ pages (100), 5-9 pages (80), 2-4 pages (60), 1 page (20)
+- Email Opens: 5+ opens (100), 3-4 opens (80), 1-2 opens (60), 0 opens (0)
+- Email Clicks: 3+ clicks (100), 1-2 clicks (80), 0 clicks (0)
+- Form Submissions: 3+ forms (100), 1-2 forms (80), 0 forms (0)
+- Demo Requests: Yes (100), No (0)
+- Content Downloads: 5+ downloads (100), 2-4 downloads (80), 1 download (60), 0 downloads (0)
+
+4. Intent Signals (20% weight)
+- Pricing Page Visits: 3+ visits (100), 1-2 visits (80), 0 visits (0)
+- Product Page Visits: 5+ visits (100), 2-4 visits (80), 1 visit (60), 0 visits (0)
+- Case Study Views: 3+ views (100), 1-2 views (80), 0 views (0)
+- Competitor Research: Yes (100), No (0)
+- Technology Research: Yes (100), No (0)
+
+5. BANT Qualification (20% weight)
+- Budget: Confirmed (100), Under discussion (60), Unknown (0)
+- Authority: Decision maker (100), Influencer (60), End user (20), Unknown (0)
+- Need: Critical (100), Important (60), Nice to have (20), Unknown (0)
+- Timeline: <30 days (100), 30-90 days (60), 90+ days (20), Unknown (0)
+
+Lead Grades:
+
+A Grade (90-100 points)
+- Hot leads ready for immediate sales contact
+- High conversion probability
+- Requires immediate follow-up within 24 hours
+- Assign to senior sales rep
+
+B Grade (70-89 points)
+- Warm leads with strong potential
+- Good conversion probability
+- Follow-up within 48 hours
+- Assign to sales rep
+
+C Grade (50-69 points)
+- Lukewarm leads needing nurturing
+- Moderate conversion probability
+- Follow-up within 1 week
+- Continue marketing nurture
+
+D Grade (30-49 points)
+- Cold leads requiring education
+- Low conversion probability
+- Follow-up within 2 weeks
+- Focus on content marketing
+
+F Grade (0-29 points)
+- Unqualified leads
+- Very low conversion probability
+- No immediate follow-up needed
+- Continue general marketing
+
+Scoring Rules Examples:
+
+Rule 1: High-Value Job Title
+Condition: Job title contains "CEO", "CTO", "VP", "Director"
+Points: +50
+Priority: High
+
+Rule 2: Target Company Size
+Condition: Company size >= 500 employees
+Points: +30
+Priority: High
+
+Rule 3: Multiple Website Visits
+Condition: Website visits >= 5 pages
+Points: +40
+Priority: Medium
+
+Rule 4: Pricing Page Interest
+Condition: Visited pricing page >= 2 times
+Points: +60
+Priority: High
+
+Rule 5: Content Engagement
+Condition: Downloaded >= 3 pieces of content
+Points: +30
+Priority: Medium
+
+Rule 6: Email Engagement
+Condition: Opened >= 3 emails in last 30 days
+Points: +20
+Priority: Medium
+
+Rule 7: Demo Request
+Condition: Requested demo
+Points: +100
+Priority: High
+
+Rule 8: BANT Qualification
+Condition: Budget confirmed AND Authority decision maker
+Points: +80
+Priority: High
+
+Implementation Steps:
+
+1. Data Collection Setup
+- Integrate CRM with marketing automation
+- Set up tracking pixels and forms
+- Configure email tracking
+- Implement website analytics
+
+2. Scoring Model Creation
+- Define scoring criteria
+- Assign point values
+- Set up automation rules
+- Test and validate model
+
+3. Lead Routing
+- Create lead assignment rules
+- Set up notification systems
+- Define follow-up processes
+- Establish SLA requirements
+
+4. Performance Monitoring
+- Track conversion rates by grade
+- Monitor scoring accuracy
+- Analyze lead quality trends
+- Optimize scoring criteria
+
+5. Continuous Improvement
+- Regular model reviews
+- A/B test scoring criteria
+- Update based on results
+- Refine lead routing
+
+Best Practices:
+
+- Start simple and iterate
+- Focus on quality over quantity
+- Regular model validation
+- Align with sales process
+- Monitor and adjust frequently
+- Use both explicit and implicit data
+- Consider industry-specific factors
+- Balance automation with human judgment
+
+This template is provided by EEGNITE Digital Marketing Agency.
+For professional lead scoring and marketing automation services, contact us at hello@eegnite.com
+
+© 2024 EEGNITE. All rights reserved. 

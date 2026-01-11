@@ -4,12 +4,24 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
+    const isProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
+
+    if (!isProduction) {
+        return {
+            rules: {
+                userAgent: '*',
+                allow: '/', // Allow crawling so Google sees 'noindex' meta tag
+                disallow: '/private/',
+            }
+        }
+    }
+
     return {
         rules: {
             userAgent: '*',
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://eegnite.com/sitemap.xml', // Assuming eegnite.com is the domain, update if different
+        sitemap: 'https://eegnite.com/sitemap.xml',
     }
 }

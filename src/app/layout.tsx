@@ -3,7 +3,17 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 
+// Default to production URL if not set
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eegnite.com';
+
+// Prevent indexing on staging/preview environments
+// We only index if:
+// 1. We are in a production environment (or environment is unknown/manual)
+// 2. AND the site URL strictly matches the main production domain
+const isEnvironmentProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
+const isMainDomain = siteUrl === 'https://eegnite.com' || siteUrl === 'https://www.eegnite.com';
+
+const shouldIndex = false; // Disabled indexing as per user request
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -17,11 +27,11 @@ export const metadata: Metadata = {
     creator: "EEGNITE",
     publisher: "EEGNITE",
     robots: {
-        index: true,
-        follow: true,
+        index: shouldIndex,
+        follow: shouldIndex,
         googleBot: {
-            index: true,
-            follow: true,
+            index: shouldIndex,
+            follow: shouldIndex,
             'max-video-preview': -1,
             'max-image-preview': 'large',
             'max-snippet': -1,
@@ -122,6 +132,17 @@ export default function RootLayout({
                     />
                 </noscript>
                 {/* End Meta Pixel Code */}
+
+                {/* Apollo Tracker */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"677a1e61a3f01001b1ebeca8"})},
+document.head.appendChild(o)}initApollo();`
+                    }}
+                />
+                {/* End Apollo Tracker */}
             </head>
             <body className="antialiased font-sans" suppressHydrationWarning>
                 {/* Google Tag Manager (noscript) */}

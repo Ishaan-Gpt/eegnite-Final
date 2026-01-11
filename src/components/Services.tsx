@@ -1,174 +1,197 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Search, Mail, MousePointerClick, ShoppingCart, ArrowRight, Activity } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+
+// --- DATA ---
 
 const services = [
     {
         id: "01",
-        title: "SEO Services",
-        description: "Transform search demand into visibility and business growth with data-backed, engineering-led SEO strategies.",
-        icon: Search,
-        image: "/assets/services/seo.png",
-        accent: "#FF6105",
-        lightAccent: "#FFF5F0",
-        features: ["Technical SEO", "On-Page Optimization", "Local SEO Growth", "Authority Building"],
+        title: "SEO SERVICES",
+        theme: "orange", // Orange background, White text
+        subCards: [
+            {
+                title: "TECHNICAL SEO",
+                items: ["Site speed optimization", "Mobile responsiveness", "XML sitemaps & robots.txt", "Schema markup", "Crawlability fixes"]
+            },
+            {
+                title: "ON-PAGE SEO",
+                items: ["Keyword research", "Content optimization", "Internal linking", "Image optimization", "URL structure"]
+            },
+            {
+                title: "OFF-PAGE SEO",
+                items: ["Backlink acquisition", "Guest posting", "Local citations", "Brand monitoring", "Competitor analysis"]
+            },
+            {
+                title: "LOCAL SEO",
+                items: ["Google Business Profile", "Local keywords", "Review management", "Local link building", "NAP consistency"]
+            }
+        ],
         link: "/services/seo"
     },
     {
         id: "02",
-        title: "Email Marketing",
-        description: "Convert and nurture leads with personalized campaigns and automated funnels that drive real ROI.",
-        icon: Mail,
-        image: "/assets/services/email.png",
-        accent: "#FF6105",
-        lightAccent: "#F9F9F9",
-        features: ["Campaign Strategy", "Design & Copy", "Automation Flows", "Analytics"],
+        title: "EMAIL MARKETING",
+        theme: "light", // White background, Black text
+        subCards: [
+            {
+                title: "STRATEGY",
+                items: ["Audience segmentation", "Campaign calendar", "A/B testing", "Email funnel design", "Automation setup"]
+            },
+            {
+                title: "DESIGN & CONTENT",
+                items: ["Responsive templates", "Compelling copy", "Visual branding", "Dynamic content", "Subject line optimization"]
+            },
+            {
+                title: "AUTOMATION",
+                items: ["Drip campaigns", "Abandoned cart recovery", "Re-engagement flows", "Behavioral triggers", "Lead scoring"]
+            },
+            {
+                title: "ANALYTICS",
+                items: ["Open & click tracking", "ROI analysis", "List health monitoring", "Deliverability optimization", "Performance reporting"]
+            }
+        ],
         link: "/services/email-marketing"
     },
     {
         id: "03",
-        title: "PPC Advertising",
-        description: "Scale rapidly with targeted paid growth across high-performance platforms like Google and Meta.",
-        icon: MousePointerClick,
-        image: "/assets/services/ppc.png",
-        accent: "#FF6105",
-        lightAccent: "#FFF5F0",
-        features: ["Platform Strategy", "Ad Creation", "Bid Management", "ROAS Optimization"],
+        title: "PPC ADVERTISING",
+        theme: "orange",
+        subCards: [
+            {
+                title: "SEARCH ADS",
+                items: ["Keyword bidding strategy", "Ad copy testing", "Quality score optimization", "Negative keyword management", "Competitor conquesting"]
+            },
+            {
+                title: "SOCIAL ADS",
+                items: ["Creative strategy", "Audience targeting", "Retargeting pools", "Pixel installation", "Influencer integration"]
+            },
+            {
+                title: "SHOPPING",
+                items: ["Feed management", "Product optimization", "Bid adjustments", "Merchant Center setup", "Visual asset optimization"]
+            },
+            {
+                title: "DISPLAY & VIDEO",
+                items: ["Banner design", "Placement targeting", "Remarketing campaigns", "Brand awareness", "YouTube ad formats"]
+            }
+        ],
         link: "/services/ppc"
     },
     {
         id: "04",
-        title: "E-Commerce",
-        description: "Scale your online storefront with custom development and performance-driven marketing architecture.",
-        icon: ShoppingCart,
-        image: "/assets/services/ecommerce.png",
-        accent: "#FF6105",
-        lightAccent: "#F9F9F9",
-        features: ["Shopify & WooCommerce", "CRO Optimization", "Growth Marketing", "Maintenance"],
+        title: "E-COMMERCE",
+        theme: "light",
+        subCards: [
+            {
+                title: "DEVELOPMENT",
+                items: ["Shopify/WooCommerce", "Custom features", "Speed optimization", "Mobile UX design", "Theme customization"]
+            },
+            {
+                title: "CRO",
+                items: ["A/B testing", "Checkout flow optimization", "Cart abandonment", "User behavior analysis", "Heatmap tracking"]
+            },
+            {
+                title: "GROWTH",
+                items: ["SEO for Ecommerce", "Paid funnel architecture", "Email retention", "Loyalty programs", "Lifetime value opt."]
+            },
+            {
+                title: "OPERATIONS",
+                items: ["Inventory sync", "Payment gateways", "Shipping integration", "Analytics setup", "CRM integration"]
+            }
+        ],
         link: "/services/ecommerce"
     }
 ];
 
-function ServiceCard({ service, index, total }: { service: typeof services[0], index: number, total: number }) {
+// --- COMPONENTS ---
+
+const ServiceCard = ({ service, index, total }: { service: typeof services[0], index: number, total: number }) => {
+    const isOrange = service.theme === "orange";
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start end", "start start", "end end", "end start"]
     });
 
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1, 0.95]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-    const yTransform = useTransform(scrollYProgress, [0, 1], [30, -30]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [1, -0.5]);
+    const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
     return (
-        <div ref={containerRef} className="min-h-[85vh] lg:h-[110vh] flex items-center justify-center relative px-4 lg:px-6 py-6 lg:py-0">
+        <div ref={containerRef} className="sticky top-0 min-h-screen py-12 flex items-center justify-center">
             <motion.div
-                style={{ scale, opacity, rotate }}
-                className="w-full max-w-7xl bg-white rounded-[28px] lg:rounded-[60px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col lg:flex-row border border-black/[0.03]"
+                style={{ scale, opacity }}
+                className={`
+                    w-full max-w-[95vw] lg:max-w-7xl rounded-[2.5rem] p-8 lg:p-16 relative overflow-hidden flex flex-col justify-between shadow-2xl border border-black/5
+                    ${isOrange ? 'bg-[#FF6105] text-white' : 'bg-white text-black'}
+                `}
             >
-                {/* Visual Section - Full Cover Glassmorphic */}
-                <div
-                    className="relative w-full lg:w-2/5 h-64 lg:h-auto overflow-hidden"
-                    style={{ backgroundColor: service.lightAccent }}
-                >
-                    <motion.div
-                        style={{ y: yTransform }}
-                        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.03] z-[5]"
-                    >
-                        <span className="text-[10rem] lg:text-[18rem] font-black leading-none italic text-[#FF6105]">
-                            {service.id}
-                        </span>
-                    </motion.div>
-
-                    {/* Glassmorphic Illustration - Full Impact Cover */}
-                    <div className="absolute inset-0 z-10">
-                        <Image
-                            src={service.image}
-                            alt={service.title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 40vw"
-                            quality={100}
-                            priority={index === 0}
-                        />
+                {/* Header Section */}
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 relative z-10">
+                    <div>
+                        <div className="flex items-center gap-4 mb-4 opacity-70">
+                            <span className="font-bold tracking-widest uppercase">0{service.id} — Service</span>
+                        </div>
+                        <h2 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-none">
+                            {service.title}
+                        </h2>
                     </div>
+                    <Link href={service.link} className={`hidden md:flex items-center gap-3 px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
+                        Start Project <ArrowRight size={20} />
+                    </Link>
                 </div>
 
-                {/* Content Section */}
-                <div className="w-full lg:w-3/5 p-6 lg:p-16 flex flex-col justify-center bg-white">
-                    <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-6">
-                        <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#FF6105]" />
-                        <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[0.3em] lg:tracking-[0.4em] text-black/30">Service</span>
-                    </div>
+                {/* Sub-Cards Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                    {service.subCards.map((card, i) => (
+                        <div
+                            key={i}
+                            className={`
+                                rounded-3xl p-8 flex flex-col h-full
+                                ${isOrange ? 'bg-white/10 backdrop-blur-md border border-white/20' : 'bg-[#FAFAFA] border border-black/5'}
+                            `}
+                        >
+                            {/* Top Accent Line */}
+                            <div className={`w-12 h-1.5 rounded-full mb-8 ${isOrange ? 'bg-white' : 'bg-[#FF6105]'}`} />
 
-                    <h2 className="text-2xl lg:text-[6rem] font-black uppercase tracking-tighter leading-[0.9] mb-4 lg:mb-10 text-black pr-2">
-                        {service.title === "E-Commerce" ? (
-                            <span className="whitespace-nowrap inline-block">E-Commerce</span>
-                        ) : (
-                            <>
-                                <span className="block">{service.title.split(' ')[0]}</span>
-                                <span className="block opacity-10 [-webkit-text-stroke:1px_black] lg:[-webkit-text-stroke:1.5px_black] text-transparent">{service.title.split(' ').slice(1).join(' ')}</span>
-                            </>
-                        )}
-                    </h2>
+                            <h3 className={`text-xl font-black uppercase tracking-tight mb-6 ${isOrange ? 'text-white' : 'text-black'}`}>
+                                {card.title}
+                            </h3>
 
-                    <p className="text-sm lg:text-2xl font-bold text-black/50 leading-tight mb-6 lg:mb-12 max-w-xl">
-                        {service.description}
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-y-2 lg:gap-y-4 mb-6 lg:mb-14 max-w-lg">
-                        {service.features.map((feat, i) => (
-                            <div key={i} className="flex items-center gap-2">
-                                <Activity size={10} className="lg:w-3 lg:h-3 text-[#FF6105]" />
-                                <span className="text-[8px] lg:text-[10px] font-black uppercase tracking-widest text-black/40">{feat}</span>
-                            </div>
-                        ))}
-                    </div>
-
-                    <Link
-                        href={service.link}
-                        className="group relative self-start"
-                    >
-                        <div className="flex items-center gap-3 lg:gap-4 px-6 lg:px-12 py-3 lg:py-6 bg-[#FF6105] text-white rounded-lg lg:rounded-2xl font-black uppercase text-[9px] lg:text-[10px] tracking-[0.3em] lg:tracking-[0.4em] transition-all duration-500 hover:shadow-[0_15px_30px_rgba(255,97,5,0.3)] hover:-translate-y-1">
-                            <span className="whitespace-nowrap">Learn More</span>
-                            <ArrowRight size={14} className="lg:w-4 lg:h-4 group-hover:translate-x-1 transition-transform" />
+                            <ul className="space-y-4">
+                                {card.items.map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 text-sm font-bold">
+                                        <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${isOrange ? 'bg-white/60' : 'bg-[#FF6105]'}`} />
+                                        <span className={`${isOrange ? 'text-white/80' : 'text-black/60'} leading-relaxed`}>
+                                            {item}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
+                    ))}
+                </div>
+
+                {/* Mobile CTA */}
+                <div className="mt-8 md:hidden">
+                    <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
+                        Start Project <ArrowRight size={20} />
                     </Link>
+                </div>
+
+                {/* Background Decoration */}
+                <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+                    <span className="text-[15rem] leading-none font-black">{service.id}</span>
                 </div>
             </motion.div>
         </div>
     );
-}
+};
 
 export default function Services() {
     return (
-        <section id="services" className="relative bg-white overflow-hidden py-8 lg:py-32">
-            <div className="max-w-7xl mx-auto px-6 mb-12 lg:mb-32 relative z-10">
-                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-12">
-                    <div className="max-w-3xl">
-                        <motion.span
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            className="text-[#FF6105] font-black uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[9px] lg:text-[10px] mb-3 lg:mb-6 block"
-                        >
-                            Expertise
-                        </motion.span>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-4xl lg:text-[8rem] font-black uppercase tracking-tighter leading-[0.85] text-black"
-                        >
-                            Specialized <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_#FF6105] lg:[-webkit-text-stroke:2px_#FF6105] opacity-50">Impact</span>
-                        </motion.h2>
-                    </div>
-                </div>
-            </div>
-
+        <section className="bg-[#111] py-20 lg:py-40" id="services">
             <div className="relative">
                 {services.map((service, index) => (
                     <ServiceCard

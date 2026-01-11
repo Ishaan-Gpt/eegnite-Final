@@ -128,42 +128,50 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                 `}
             >
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 relative z-10">
-                    <div>
-                        <div className="flex items-center gap-4 mb-4 opacity-70">
-                            <span className="font-bold tracking-widest uppercase">0{service.id} — Service</span>
+                <div className="flex flex-col mb-12 relative z-10 w-full">
+                    <div className="flex items-center justify-between w-full mb-6">
+                        <div className="flex items-center gap-4 opacity-70">
+                            <span className="font-bold tracking-[0.2em] uppercase text-sm">0{service.id} — Service</span>
                         </div>
-                        <h2 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-none">
-                            {service.title}
-                        </h2>
+                        {/* Desktop CTA */}
+                        <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
+                            View Page <ArrowRight size={14} />
+                        </Link>
                     </div>
-                    <Link href={service.link} className={`hidden md:flex items-center gap-3 px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
-                        Start Project <ArrowRight size={20} />
-                    </Link>
+
+                    <h2 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-none mb-10">
+                        {service.title}
+                    </h2>
+
+                    {/* Separator Line */}
+                    <div className={`w-full h-px ${isOrange ? 'bg-white/20' : 'bg-black/10'}`} />
                 </div>
 
                 {/* Sub-Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10 h-full">
                     {service.subCards.map((card, i) => (
                         <div
                             key={i}
                             className={`
-                                rounded-3xl p-8 flex flex-col h-full
-                                ${isOrange ? 'bg-white/10 backdrop-blur-md border border-white/20' : 'bg-[#FAFAFA] border border-black/5'}
+                                rounded-2xl p-8 flex flex-col justify-start h-full
+                                ${isOrange
+                                    ? 'bg-white/10 border border-white/10'
+                                    : 'bg-white border border-black/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.03)]'
+                                }
                             `}
                         >
                             {/* Top Accent Line */}
-                            <div className={`w-12 h-1.5 rounded-full mb-8 ${isOrange ? 'bg-white' : 'bg-[#FF6105]'}`} />
+                            <div className={`w-8 h-1 rounded-full mb-6 ${isOrange ? 'bg-white' : 'bg-[#FF6105]'}`} />
 
-                            <h3 className={`text-xl font-black uppercase tracking-tight mb-6 ${isOrange ? 'text-white' : 'text-black'}`}>
+                            <h3 className={`text-xl font-black uppercase tracking-tight mb-4 ${isOrange ? 'text-white' : 'text-[#FF6105]'}`}>
                                 {card.title}
                             </h3>
 
-                            <ul className="space-y-4">
+                            <ul className="space-y-3">
                                 {card.items.map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-3 text-sm font-bold">
-                                        <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${isOrange ? 'bg-white/60' : 'bg-[#FF6105]'}`} />
-                                        <span className={`${isOrange ? 'text-white/80' : 'text-black/60'} leading-relaxed`}>
+                                        <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${isOrange ? 'bg-white' : 'bg-[#FF6105]'}`} />
+                                        <span className={`${isOrange ? 'text-white/90' : 'text-black/60'} leading-relaxed`}>
                                             {item}
                                         </span>
                                     </li>

@@ -1,384 +1,346 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate, AnimatePresence } from "framer-motion";
+import {
+    motion,
+    useScroll,
+    useTransform,
+    useSpring,
+    useMotionValue,
+    useMotionTemplate,
+    useVelocity,
+    useAnimationFrame
+} from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import {
-    ArrowUpRight, Target, Zap, BarChart3, Crosshair, MousePointerClick,
-    Layers, Globe, Search, Instagram, TrendingUp, DollarSign, Activity,
-    Hexagon, MonitorPlay, ShoppingBag, PieChart
+    ArrowUpRight, Target, Zap, Activity, Crosshair,
+    MousePointerClick, Layers, Globe, Search, Instagram,
+    ShoppingBag, Hexagon, Terminal, Flame, TrendingUp
 } from "lucide-react";
 import Link from "next/link";
+import { wrap } from "@motionone/utils";
 
-// --- UTILS & MINI COMPONENTS ---
+// --- FX COMPONENTS ---
 
-const SectionHeader = ({ title, subtitle, className = "" }: { title: string; subtitle: string; className?: string }) => (
-    <div className={`mb-24 relative z-10 ${className}`}>
-        <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3 mb-6"
-        >
-            <div className="h-[2px] w-12 bg-[#FF6105]" />
-            <span className="block text-[#FF6105] font-mono tracking-[0.3em] text-xs uppercase font-bold">
-                {subtitle}
-            </span>
-        </motion.div>
-        <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-8xl lg:text-[7rem] font-black uppercase tracking-tighter text-white leading-[0.85]"
-        >
-            {title.split("<br/>").map((line, i) => (
-                <span key={i} className="block">{line}</span>
-            ))}
-        </motion.h2>
+// 1. NOISE OVERLAY
+const NoiseOverlay = () => (
+    <div className="fixed inset-0 z-50 pointer-events-none mix-blend-overlay opacity-[0.05]">
+        <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat opacity-20" />
     </div>
 );
 
-const GlowButton = ({ text, href }: { text: string; href: string }) => {
+// 2. PARALLAX TEXT
+function ParallaxText({ children, baseVelocity = 100 }: { children: string; baseVelocity: number }) {
+    const baseX = useMotionValue(0);
+    const { scrollY } = useScroll();
+    const scrollVelocity = useVelocity(scrollY);
+    const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
+    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
+
+    const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+
+    const directionFactor = useRef<number>(1);
+    useAnimationFrame((t, delta) => {
+        let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+        if (velocityFactor.get() < 0) { directionFactor.current = -1; }
+        else if (velocityFactor.get() > 0) { directionFactor.current = 1; }
+        moveBy += directionFactor.current * moveBy * velocityFactor.get();
+        baseX.set(baseX.get() + moveBy);
+    });
+
     return (
-        <Link href={href} className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#FF6105] rounded-full overflow-hidden">
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1]" />
-            <span className="relative z-10 font-bold uppercase tracking-widest text-black group-hover:text-white transition-colors duration-300 text-sm">
-                {text}
-            </span>
-            <ArrowUpRight className="relative z-10 w-5 h-5 text-black group-hover:text-white transition-colors duration-300" />
-            <div className="absolute inset-0 shadow-[0_0_40px_rgba(255,97,5,0.6)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        </Link>
+        <div className="overflow-hidden m-0 whitespace-nowrap flex flex-nowrap">
+            <motion.div className="flex whitespace-nowrap gap-10 text-nowrap" style={{ x }}>
+                {Array.from({ length: 4 }).map((_, i) => (
+                    <span key={i} className="block text-[15vw] font-black uppercase tracking-tighter text-transparent disabled-text-stroke leading-[0.85] opacity-30 select-none">
+                        {children}
+                    </span>
+                ))}
+            </motion.div>
+        </div>
+    );
+}
+
+// 3. GLITCH TEXT
+const GlitchText = ({ text }: { text: string }) => {
+    return (
+        <div className="relative inline-block group">
+            <span className="relative z-10">{text}</span>
+            <span className="absolute top-0 left-0 -ml-[2px] text-[#FF6105] opacity-0 group-hover:opacity-70 group-hover:animate-pulse">{text}</span>
+            <span className="absolute top-0 left-0 ml-[2px] text-white opacity-0 group-hover:opacity-70 group-hover:animate-ping">{text}</span>
+        </div>
     );
 };
+
+// 4. SPOTLIGHT CARD
+const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+    const divRef = useRef<HTMLDivElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!divRef.current) return;
+        const div = divRef.current;
+        const rect = div.getBoundingClientRect();
+        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+
+    const handleFocus = () => { setIsFocused(true); setOpacity(1); };
+    const handleBlur = () => { setIsFocused(false); setOpacity(0); };
+    const handleMouseEnter = () => { setOpacity(1); };
+    const handleMouseLeave = () => { setOpacity(0); };
+
+    return (
+        <div
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-900/50 ${className}`}
+        >
+            <div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,97,5,0.15), transparent 40%)`,
+                }}
+            />
+            <div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,97,5,0.4), transparent 40%)`,
+                }}
+            />
+            <div className="relative h-full">{children}</div>
+        </div>
+    );
+};
+
 
 // --- SECTIONS ---
 
-// 1. HERO - Cinematic & Dark
 const Hero = () => {
-    const { scrollY } = useScroll();
-    const yText = useTransform(scrollY, [0, 500], [0, 250]);
-    const opacityText = useTransform(scrollY, [0, 400], [1, 0]);
-    const scale = useTransform(scrollY, [0, 500], [1, 1.1]);
-
-    // Mouse parallax effect
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
-
-    const handleMouseMove = (e: React.MouseEvent) => {
-        const { clientX, clientY } = e;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        mouseX.set((clientX - centerX) / 30);
-        mouseY.set((clientY - centerY) / 30);
-    };
-
     return (
-        <section
-            onMouseMove={handleMouseMove}
-            className="h-screen w-full bg-[#050505] relative flex items-center justify-center overflow-hidden perspective-1000"
-        >
-            {/* Background Grid - Cyberpunk Feel */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,97,5,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,97,5,0.03)_1px,transparent_1px)] bg-[size:60px_60px] opacity-20" />
-
-            {/* Ambient Glows */}
-            <motion.div
-                style={{ x: mouseX, y: mouseY }}
-                className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#FF6105] rounded-full blur-[180px] opacity-10 mix-blend-screen"
-            />
-            <motion.div
-                style={{ x: useTransform(mouseX, x => x * -1), y: useTransform(mouseY, y => y * -1) }}
-                className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-[#FF6105] rounded-full blur-[150px] opacity-5 mix-blend-screen"
-            />
-
-            <motion.div style={{ y: yText, opacity: opacityText, scale }} className="relative z-10 text-center px-4 max-w-7xl mx-auto">
-                <div className="flex items-center justify-center gap-3 mb-8">
-                    <div className="w-2 h-2 bg-[#FF6105] rounded-full animate-pulse" />
-                    <span className="text-[#FF6105] font-mono text-sm tracking-[0.4em] uppercase font-bold">PPC Performance</span>
-                    <div className="w-2 h-2 bg-[#FF6105] rounded-full animate-pulse" />
-                </div>
-
-                <h1 className="text-[10vw] md:text-[9rem] leading-[0.8] font-black tracking-tighter text-white mb-8">
-                    PAY LESS.<br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-600">SCALE</span> <span className="text-[#FF6105] inline-block transform hover:skew-x-12 transition-transform cursor-cell">MORE.</span>
-                </h1>
-
-                <p className="max-w-xl mx-auto text-gray-400 text-lg md:text-xl font-medium leading-relaxed mb-12 border-l-2 border-[#FF6105] pl-6 text-left">
-                    We engineer ad campaigns that turn spend into exponential revenue. <span className="text-white">Scientific targeting</span> meets <span className="text-white">creative disruption</span>.
-                </p>
-
-                <GlowButton text="Launch Campaign" href="/contact" />
-            </motion.div>
-
-            {/* Decorative 3D Elements */}
-            <div className="absolute inset-0 pointer-events-none">
-                <FloatingIcon icon={Crosshair} top="20%" left="15%" delay={0} />
-                <FloatingIcon icon={Target} bottom="20%" right="15%" delay={2} />
-                <FloatingIcon icon={Zap} top="30%" right="25%" delay={4} />
+        <section className="relative min-h-screen bg-black flex flex-col justify-center overflow-hidden">
+            {/* Dynamic Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,97,5,0.1),transparent_70%)] animate-pulse" />
+            <div className="absolute top-0 w-full opacity-10">
+                <ParallaxText baseVelocity={2}>DOMINATE SCALE REVENUE</ParallaxText>
+                <ParallaxText baseVelocity={-2}>TARGET CLICK CONVERT</ParallaxText>
             </div>
-        </section>
-    );
-};
 
-const FloatingIcon = ({ icon: Icon, top, left, right, bottom, delay }: any) => (
-    <motion.div
-        initial={{ y: 0 }}
-        animate={{ y: [-20, 20, -20], rotate: [0, 10, 0] }}
-        transition={{ duration: 6, ease: "easeInOut", repeat: Infinity, delay }}
-        style={{ top, left, right, bottom }}
-        className="absolute w-20 h-20 border border-[#FF6105]/20 bg-black/40 backdrop-blur-md rounded-2xl flex items-center justify-center"
-    >
-        <Icon className="text-[#FF6105] w-8 h-8 opacity-80" />
-    </motion.div>
-);
+            <div className="max-w-7xl mx-auto px-6 relative z-10 pt-32">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col gap-0"
+                >
+                    <h1 className="text-[14vw] leading-[0.8] font-black tracking-tighter text-white uppercase mix-blend-exclusion">
+                        Hyper<span className="text-[#FF6105] opacity-90">Scale</span>
+                    </h1>
+                    <h1 className="text-[14vw] leading-[0.8] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-500 to-neutral-800 uppercase  disabled-text-stroke">
+                        PPC
+                    </h1>
+                </motion.div>
 
-// 2. INTERACTIVE PROBLEM - Flashlight Effect
-const ProblemSolution = () => {
-    return (
-        <section className="py-32 bg-[#050505] relative overflow-hidden border-y border-white/5">
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-                <div>
-                    <SectionHeader title="THE<br/>PROBLEM" subtitle="WASTED SPEND" />
-                    <p className="text-2xl text-gray-400 font-light leading-relaxed mb-12">
-                        Most brands are <span className="text-white font-bold">burning budget</span> on clicks that never convert. Poor targeting, weak creative, and algorithmic drift are silent killers.
+                <div className="mt-12 flex flex-col md:flex-row gap-12 items-start md:items-end justify-between">
+                    <p className="max-w-lg text-xl text-neutral-400 font-mono border-l-2 border-[#FF6105] pl-6">
+                        <span className="text-white font-bold">WARNING:</span> This is not "safe" marketing. We build aggressive, high-velocity ad engines that burn competitors and print revenue.
                     </p>
-                    <div className="flex flex-col gap-6">
-                        {["Low ROAS", "High CPA", "Invisible Ad Fatigue", "Bot Traffic"].map((item, i) => (
-                            <div key={i} className="flex items-center gap-4 text-red-500/80 font-mono uppercase tracking-widest">
-                                <Activity className="w-5 h-5" /> {item} -- DETECTED
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="relative h-[600px] w-full bg-[#0a0a0a] rounded-[2rem] border border-white/5 overflow-hidden group">
-                    {/* The "Torch" Effect would be complex to code fully in one shot, simulating with hover-reveal */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <h3 className="text-4xl font-black text-[#FF6105] opacity-20 group-hover:opacity-100 transition-opacity duration-500 uppercase text-center transform scale-150">
-                            PROFIT <br /> UNLOCKED
-                        </h3>
-                    </div>
-                    {/* Grid of losing numbers */}
-                    <div className="absolute inset-0 grid grid-cols-6 grid-rows-10 gap-4 p-8 opacity-30 group-hover:opacity-5 transition-opacity duration-700">
-                        {Array.from({ length: 60 }).map((_, i) => (
-                            <div key={i} className="text-xs text-red-500 font-mono flex items-center justify-center">-$40.00</div>
-                        ))}
-                    </div>
-                    {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
-                </div>
-            </div>
-        </section>
-    );
-};
-
-// 3. 3D CARDS - The Arsenal
-const Arsenal = () => {
-    const cards = [
-        { title: "Google Search", icon: Search, desc: "Capture high-intent traffic the moment they search. Engineering-grade keyword architecture." },
-        { title: "Social SCale", icon: Instagram, desc: "Meta & TikTok ads that don't just get views—they get sales. Disruptive creative strategy." },
-        { title: "Shopping", icon: ShoppingBag, desc: "Feed optimization for e-commerce dominance. Put your product front and center." },
-        { title: "Retargeting", icon: Crosshair, desc: "Bring them back. Smart sequencing to convert window shoppers into loyal buyers." }
-    ];
-
-    return (
-        <section className="py-40 bg-[#050505] px-6">
-            <div className="max-w-7xl mx-auto">
-                <SectionHeader title="THE<br/>ARSENAL" subtitle="PLATFORMS" />
-
-                <div className="grid md:grid-cols-2 gap-6">
-                    {cards.map((c, i) => (
-                        <div key={i} className="group relative bg-[#0a0a0a] border border-white/5 rounded-[2rem] p-12 overflow-hidden hover:border-[#FF6105] transition-colors duration-500">
-                            {/* Background Number */}
-                            <span className="absolute top-0 right-0 p-8 text-[10rem] font-black text-white/[0.02] leading-none select-none group-hover:text-[#FF6105]/5 transition-colors">
-                                0{i + 1}
-                            </span>
-
-                            <div className="relative z-10 h-full flex flex-col justify-between min-h-[300px]">
-                                <div>
-                                    <div className="w-16 h-16 bg-[#FF6105]/10 rounded-2xl flex items-center justify-center text-[#FF6105] mb-8 group-hover:bg-[#FF6105] group-hover:text-black transition-all duration-300">
-                                        <c.icon size={32} />
-                                    </div>
-                                    <h3 className="text-4xl font-black uppercase text-white mb-4">{c.title}</h3>
-                                    <p className="text-gray-400 font-medium text-lg leading-relaxed max-w-sm group-hover:text-gray-300 transition-colors">
-                                        {c.desc}
-                                    </p>
-                                </div>
-                                <div className="mt-8 flex items-center gap-2 text-[#FF6105] font-bold uppercase tracking-widest text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    Deploy Strategy <ArrowUpRight className="w-4 h-4" />
-                                </div>
-                            </div>
-
-                            {/* Hover Glow */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6105]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
-// 4. ROI CALCULATOR VISUALIZER
-const ROIVisualizer = () => {
-    const [spend, setSpend] = useState(5000);
-    const roas = 4.5; // 4.5x ROAS
-    const revenue = spend * roas;
-
-    return (
-        <section className="py-32 bg-black border-y border-white/10 relative overflow-hidden">
-            {/* Background Mesh */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#FF6105 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-
-            <div className="max-w-5xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl lg:text-7xl font-black uppercase tracking-tight text-white mb-6">Predict Your <span className="text-[#FF6105]">Growth</span></h2>
-                    <p className="text-gray-500 text-xl font-mono">Drag to simulate campaign scaling.</p>
-                </div>
-
-                <div className="bg-[#0f0f0f] border border-white/10 rounded-[3rem] p-12 lg:p-20 shadow-2xl">
-                    <div className="grid md:grid-cols-2 gap-20 mb-16">
-                        <div>
-                            <label className="block text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Monthly Ad Spend</label>
-                            <div className="text-5xl font-black text-white font-mono bg-black/50 p-4 rounded-xl border border-white/10">
-                                ${spend.toLocaleString()}
-                            </div>
-                        </div>
-                        <div>
-                            <label className="block text-[#FF6105] font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                                <Zap className="w-4 h-4" /> Estimated Revenue
-                            </label>
-                            <div className="text-5xl font-black text-[#FF6105] font-mono bg-[#FF6105]/10 p-4 rounded-xl border border-[#FF6105]/20">
-                                ${revenue.toLocaleString()}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="relative h-20 mb-8">
-                        {/* Slider Track */}
-                        <div className="absolute inset-0 bg-black/50 rounded-full border border-white/10" />
-                        {/* Slider Fill */}
-                        <div
-                            className="absolute inset-y-0 left-0 bg-[#FF6105] rounded-full opacity-50 transition-all duration-75"
-                            style={{ width: `${(spend / 50000) * 100}%` }}
-                        />
-                        <input
-                            type="range"
-                            min="1000"
-                            max="50000"
-                            step="1000"
-                            value={spend}
-                            onChange={(e) => setSpend(parseInt(e.target.value))}
-                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
-                        />
-                        {/* Thumb Indicator (Fake) */}
-                        <div
-                            className="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-[0_0_20px_white] pointer-events-none transition-all duration-75 z-10 flex items-center justify-center text-black font-bold"
-                            style={{ left: `calc(${(spend / 50000) * 100}% - 24px)` }}
-                        >
-                            <MonitorPlay className="w-5 h-5" />
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between text-gray-500 font-mono text-xs uppercase">
-                        <span>$1,000</span>
-                        <span>$50,000+</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
-
-// 5. PROCESS - The Sniper Approach
-const Process = () => {
-    const steps = [
-        { title: "Audit & Recon", desc: "We deep dive into your data. Competitor spy tools, keyword gaps, and missed opportunities." },
-        { title: "Strategy Build", desc: "Constructing the funnel. Landing page optimization, ad creative direction, and tracking setup." },
-        { title: "Launch & Iterate", desc: "Rapid testing phase. Killing losers, doubling down on winners. Algorithmic learning." },
-        { title: "Scale to Moon", desc: "Expanding audiences, increasing budget on high-ROAS campaigns, dominating the market." }
-    ];
-
-    return (
-        <section className="py-40 bg-black px-6">
-            <div className="max-w-7xl mx-auto">
-                <SectionHeader title="SNIPER<br/>APPROACH" subtitle="METHODOLOGY" />
-
-                <div className="grid lg:grid-cols-4 gap-8">
-                    {steps.map((step, i) => (
-                        <div key={i} className="relative pt-12 border-t border-white/20 hover:border-[#FF6105] transition-colors duration-500 group">
-                            {/* Dot */}
-                            <div className="absolute top-[-5px] left-0 w-2.5 h-2.5 bg-white rounded-full group-hover:bg-[#FF6105] group-hover:scale-150 transition-all duration-300 shadow-[0_0_10px_white] group-hover:shadow-[0_0_20px_#FF6105]" />
-
-                            <h3 className="text-7xl font-black text-white/5 absolute top-4 right-0 group-hover:text-[#FF6105]/10 transition-colors">0{i + 1}</h3>
-
-                            <h4 className="text-2xl font-black uppercase text-white mb-4 relative z-10">{step.title}</h4>
-                            <p className="text-gray-400 font-medium leading-relaxed relative z-10">{step.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
-// 7. TECH STACK ORBIT (Simplified for Code, effectively a grid)
-const TechStack = () => {
-    return (
-        <section className="py-32 bg-[#050505] border-t border-white/5">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold uppercase tracking-widest text-[#FF6105] mb-16 animate-pulse">
-                    // INTEGRATED WITH
-                </h2>
-                <div className="flex flex-wrap justify-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-                    {[Globe, Search, Hexagon, PieChart, Activity].map((Icon, i) => (
-                        <Icon key={i} size={60} className="text-white hover:text-[#FF6105] transition-colors hover:scale-110 transform duration-300" />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
-// 8. CTA - MAGNETIC
-const CTA = () => {
-    return (
-        <section className="h-[90vh] bg-black flex items-center justify-center relative overflow-hidden">
-            {/* Pulsing Core */}
-            <div className="absolute w-[600px] h-[600px] bg-[#FF6105] rounded-full blur-[200px] opacity-20 animate-pulse" />
-
-            <div className="relative z-10 text-center">
-                <h2 className="text-[12vw] leading-none font-black uppercase text-white mix-blend-overlay opacity-50 mb-10">
-                    DOMINATE
-                </h2>
-                <div className="relative inline-block group">
-                    <div className="absolute inset-0 bg-[#FF6105] blur-[60px] opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
-                    <Link
-                        href="/contact"
-                        className="relative block bg-[#FF6105] text-black text-4xl md:text-7xl font-black uppercase tracking-tighter px-20 py-10 rounded-full hover:scale-105 transition-transform duration-300"
-                    >
-                        START PROJECT
+                    <Link href="#audit" className="group flex items-center gap-4 bg-[#FF6105] text-black px-12 py-6 rounded-full font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_50px_rgba(255,97,5,0.4)] hover:shadow-[0_0_80px_rgba(255,97,5,0.6)]">
+                        Initiate Sequence <Zap className="fill-black" />
                     </Link>
                 </div>
             </div>
+
+            {/* Bottom Ticker */}
+            <div className="absolute bottom-10 w-full border-y border-[#FF6105]/20 py-2 bg-black/50 backdrop-blur-sm">
+                <div className="flex justify-around text-[#FF6105] font-mono text-xs uppercase tracking-[0.5em]">
+                    <span>System Status: Optimal</span>
+                    <span>High ROAS Detected</span>
+                    <span>Competitor Analysis: Vulnerable</span>
+                </div>
+            </div>
         </section>
     );
 };
 
+const ProblemGlitch = () => {
+    return (
+        <section className="py-40 bg-black relative border-t border-white/10 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20">
+                <div className="relative">
+                    <div className="absolute -inset-4 bg-[#FF6105] opacity-20 blur-2xl animate-pulse rounded-full" />
+                    <h2 className="relative text-6xl md:text-9xl font-black uppercase text-white leading-[0.85] tracking-tighter mb-12">
+                        Budget <br />
+                        <span className="text-transparent bg-clip-text bg-[linear-gradient(90deg,white,transparent)] decoration-wavy decoration-red-500 underline line-through decoration-4">Incinerator</span>
+                    </h2>
+                    <p className="text-2xl text-neutral-400 font-light leading-relaxed">
+                        90% of ad spend is wasted on <span className="text-red-500 font-bold">bot traffic</span>, <span className="text-red-500 font-bold">weak creative</span>, and <span className="text-red-500 font-bold">algorithmic drift</span>.
+                        Your current campaigns are bleeding.
+                    </p>
+                </div>
+                <div className="space-y-4 font-mono text-red-500/80 uppercase tracking-widest text-sm">
+                    {Array.from({ length: 8 }).map((_, i) => (
+                        <div key={i} className="flex justify-between border-b border-red-900/30 pb-4">
+                            <span>Error_Code_0{i}: High CPA</span>
+                            <span>[CRITICAL]</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            {/* Massive Overlay Text */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03]">
+                <span className="text-[30vw] font-black uppercase text-red-500">STOP</span>
+            </div>
+        </section>
+    );
+};
+
+const ServicesGrid = () => {
+    const services = [
+        { t: "Google", i: Search, d: "High-intent capture systems." },
+        { t: "Social", i: Instagram, d: "Disruptive scroll-stopping creative." },
+        { t: "Shopping", i: ShoppingBag, d: "Feed optimization engineering." },
+        { t: "Display", i: Layers, d: "Omnipresent retargeting nets." },
+    ];
+
+    return (
+        <section className="py-32 bg-black px-6">
+            <div className="max-w-7xl mx-auto mb-20">
+                <h2 className="text-5xl md:text-8xl font-black uppercase text-white tracking-tighter">The <span className="text-[#FF6105]">Arsenal</span></h2>
+            </div>
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {services.map((s, i) => (
+                    <SpotlightCard key={i} className="h-[400px] group">
+                        <div className="p-10 h-full flex flex-col justify-between relative z-10">
+                            <div className="w-16 h-16 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center group-hover:bg-[#FF6105] group-hover:text-black transition-colors duration-300 text-white">
+                                <s.i size={32} />
+                            </div>
+                            <div>
+                                <h3 className="text-3xl font-black uppercase text-white mb-4">{s.t}</h3>
+                                <p className="text-neutral-500 font-medium">{s.d}</p>
+                            </div>
+                            <div className="absolute top-6 right-6 font-mono text-xs text-[#FF6105] opacity-50">
+                                SYS_0{i + 1}
+                            </div>
+                        </div>
+                    </SpotlightCard>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+const ROICalculator = () => {
+    const [val, setVal] = useState(50);
+    return (
+        <section className="py-40 bg-[#050505] relative border-t border-white/5">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,97,5,0.05),transparent_60%)]" />
+            <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+                <div className="mb-16">
+                    <span className="inline-block px-4 py-1 rounded-full border border-[#FF6105] text-[#FF6105] font-mono text-xs mb-6 uppercase tracking-widest bg-[#FF6105]/10">
+                        Simulation Mode
+                    </span>
+                    <h2 className="text-5xl md:text-7xl font-black uppercase text-white tracking-tighter mb-4">
+                        Predict <span className="text-[#FF6105]">Profit</span>
+                    </h2>
+                </div>
+
+                <div className="bg-neutral-900/50 backdrop-blur-xl border border-white/10 rounded-[3rem] p-12 md:p-20 shadow-2xl">
+                    <div className="flex justify-between items-end mb-12">
+                        <div className="text-left">
+                            <div className="text-neutral-500 font-mono text-sm uppercase tracking-widest mb-2">Monthly Spend</div>
+                            <div className="text-5xl font-black text-white font-mono">${(val * 1000).toLocaleString()}</div>
+                        </div>
+                        <div className="text-right">
+                            <div className="text-[#FF6105] font-mono text-sm uppercase tracking-widest mb-2">Est. Revenue (4.2x)</div>
+                            <div className="text-5xl font-black text-[#FF6105] font-mono drop-shadow-[0_0_15px_rgba(255,97,5,0.5)]">
+                                ${(val * 1000 * 4.2).toLocaleString()}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="relative h-16 w-full">
+                        <input
+                            type="range" min="1" max="100" value={val} onChange={(e) => setVal(parseInt(e.target.value))}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
+                        />
+                        <div className="absolute top-1/2 left-0 w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                            <div className="h-full bg-[#FF6105] shadow-[0_0_20px_#FF6105]" style={{ width: `${val}%` }} />
+                        </div>
+                        <div
+                            className="absolute top-1/2 -ml-4 w-8 h-8 bg-white rounded-full shadow-[0_0_20px_white] pointer-events-none -translate-y-1/2 z-10"
+                            style={{ left: `${val}%` }}
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const ProcessSteps = () => {
+    const steps = [
+        { t: "Deep Recon", d: "Spying on competitors." },
+        { t: "Strategy Build", d: "Engineering the funnel." },
+        { t: "Launch & Kill", d: "Cutting losers fast." },
+        { t: "Hyper Scale", d: "Doubling down on profit." },
+    ];
+    return (
+        <section className="py-32 bg-black px-6 border-y border-white/5">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    {steps.map((s, i) => (
+                        <div key={i} className="p-10 hover:bg-[#FF6105] hover:text-black transition-colors duration-500 group cursor-crosshair">
+                            <div className="text-xs font-mono opacity-50 mb-6 group-hover:text-black">PHASE_0{i + 1}</div>
+                            <h3 className="text-4xl font-black uppercase mb-4 text-white group-hover:text-black">{s.t}</h3>
+                            <p className="text-neutral-500 font-medium group-hover:text-black/70">{s.d}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const CTA = () => (
+    <section className="h-screen bg-[#050505] flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+            <ParallaxText baseVelocity={5}>READY TO SCALE? READY TO SCALE?</ParallaxText>
+        </div>
+        <div className="relative z-10 text-center">
+            <Link href="/contact" className="relative group inline-block">
+                <div className="absolute inset-0 bg-[#FF6105] blur-[100px] opacity-40 group-hover:opacity-100 transition-opacity duration-700" />
+                <span className="relative z-10 block text-[8vw] font-black uppercase text-white mix-blend-difference group-hover:scale-110 transition-transform duration-500">
+                    DOMINATE
+                </span>
+                <span className="block text-[#FF6105] font-mono tracking-[1em] text-sm mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    CLICK TO ENGAGE
+                </span>
+            </Link>
+        </div>
+    </section>
+);
 
 export default function PPCPage() {
     return (
         <SmoothScrolling>
-            <div className="bg-[#050505] min-h-screen text-white selection:bg-[#FF6105] selection:text-white">
+            <div className="bg-black min-h-screen text-white selection:bg-[#FF6105] selection:text-black font-sans">
+                <NoiseOverlay />
                 <Navbar />
                 <Hero />
-                <ProblemSolution />
-                <Arsenal />
-                <ROIVisualizer />
-                <Process />
-                <TechStack />
+                <ProblemGlitch />
+                <ServicesGrid />
+                <ROICalculator />
+                <ProcessSteps />
                 <CTA />
                 <Footer />
             </div>

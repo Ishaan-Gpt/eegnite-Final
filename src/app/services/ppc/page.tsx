@@ -20,7 +20,12 @@ import {
     ShoppingBag, Hexagon, Terminal, Flame, TrendingUp
 } from "lucide-react";
 import Link from "next/link";
-import { wrap } from "@motionone/utils";
+
+// Utility for wrapping numbers (formerly from @motionone/utils)
+const wrap = (min: number, max: number, v: number) => {
+    const rangeSize = max - min;
+    return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
 
 // --- FX COMPONENTS ---
 

@@ -199,7 +199,18 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
 
 export default function Services() {
     return (
-        <section className="bg-[#111] py-20 lg:py-40" id="services">
+        <section className="bg-white py-20 lg:py-40" id="services">
+            <div className="max-w-7xl mx-auto px-6 mb-24 lg:mb-32 text-center">
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-6xl lg:text-[8rem] font-black uppercase tracking-tighter leading-none text-black"
+                >
+                    Our <span className="text-[#FF6105]">Services</span>
+                </motion.h2>
+            </div>
+
             <div className="relative">
                 {services.map((service, index) => (
                     <ServiceCard

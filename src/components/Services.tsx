@@ -1,8 +1,8 @@
 "use client";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 // --- DATA ---
 
@@ -107,6 +107,75 @@ const services = [
 
 // --- COMPONENTS ---
 
+const MobileServiceItem = ({ service }: { service: typeof services[0] }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const isOrange = service.theme === "orange";
+
+    return (
+        <div className="border-b border-black/10 last:border-none">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className={`w-full text-left py-6 px-4 flex items-center justify-between transition-colors ${isOpen && isOrange ? 'bg-[#FF6105] text-white' : ''} ${isOpen && !isOrange ? 'bg-black/5' : ''}`}
+            >
+                <div className="flex flex-col">
+                    <span className={`text-xs font-bold tracking-[0.2em] mb-2 ${isOpen && isOrange ? 'text-white/70' : 'text-black/40'}`}>
+                        0{service.id} — SERVICE
+                    </span>
+                    <h3 className={`text-2xl font-black uppercase tracking-tighter ${isOpen && isOrange ? 'text-white' : 'text-black'}`}>
+                        {service.title}
+                    </h3>
+                </div>
+                <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    <ChevronDown className={`${isOpen && isOrange ? 'text-white' : 'text-black'}`} />
+                </motion.div>
+            </button>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                    >
+                        <div className={`p-4 pb-8 grid gap-6 ${isOrange ? 'bg-orange-50' : 'bg-gray-50'}`}>
+                            {service.subCards.map((card, idx) => (
+                                <div key={idx} className="bg-white p-6 rounded-xl border border-black/5 shadow-sm">
+                                    <h4 className="text-[#FF6105] font-black uppercase tracking-tight mb-3 text-lg">
+                                        {card.title}
+                                    </h4>
+                                    <ul className="space-y-2">
+                                        {card.items.map((item, i) => (
+                                            <li key={i} className="flex items-start gap-2 text-sm text-black/70 font-medium">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-1.5 shrink-0" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+
+                            {/* Service Link - Only for SEO */}
+                            {service.link === "/services/seo" && (
+                                <Link
+                                    href={service.link}
+                                    className="flex items-center justify-center w-full gap-2 py-3 bg-[#FF6105] text-white rounded-lg font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
+                                >
+                                    View Service <ArrowRight size={16} />
+                                </Link>
+                            )}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
+
 const ServiceCard = ({ service, index, total }: { service: typeof services[0], index: number, total: number }) => {
     const isOrange = service.theme === "orange";
     const containerRef = useRef<HTMLDivElement>(null);
@@ -133,10 +202,12 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div className="flex items-center gap-4 opacity-70">
                             <span className="font-bold tracking-[0.2em] uppercase text-sm">0{service.id} — Service</span>
                         </div>
-                        {/* Desktop CTA */}
-                        <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
-                            View Page <ArrowRight size={14} />
-                        </Link>
+                        {/* Desktop CTA - Only show for SEO page */}
+                        {service.link === "/services/seo" && (
+                            <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
+                                View Page <ArrowRight size={14} />
+                            </Link>
+                        )}
                     </div>
 
                     <h2 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-none mb-10">
@@ -181,12 +252,14 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                     ))}
                 </div>
 
-                {/* Mobile CTA */}
-                <div className="mt-8 md:hidden">
-                    <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
-                        Start Project <ArrowRight size={20} />
-                    </Link>
-                </div>
+                {/* Mobile CTA - Only show for SEO page */}
+                {service.link === "/services/seo" && (
+                    <div className="mt-8 md:hidden">
+                        <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
+                            Start Project <ArrowRight size={20} />
+                        </Link>
+                    </div>
+                )}
 
                 {/* Background Decoration */}
                 <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
@@ -200,7 +273,7 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
 export default function Services() {
     return (
         <section className="bg-white py-20 lg:py-40" id="services">
-            <div className="max-w-7xl mx-auto px-6 mb-24 lg:mb-32 text-center">
+            <div className="max-w-7xl mx-auto px-6 mb-12 lg:mb-32 text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +284,8 @@ export default function Services() {
                 </motion.h2>
             </div>
 
-            <div className="relative">
+            {/* Desktop View: Sticky Cards */}
+            <div className="relative hidden lg:block">
                 {services.map((service, index) => (
                     <ServiceCard
                         key={service.id}
@@ -220,6 +294,15 @@ export default function Services() {
                         total={services.length}
                     />
                 ))}
+            </div>
+
+            {/* Mobile View: Accordion List */}
+            <div className="block lg:hidden px-4">
+                <div className="rounded-2xl border border-black/10 overflow-hidden">
+                    {services.map((service) => (
+                        <MobileServiceItem key={service.id} service={service} />
+                    ))}
+                </div>
             </div>
         </section>
     );

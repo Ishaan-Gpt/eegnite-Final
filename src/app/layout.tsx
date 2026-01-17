@@ -13,7 +13,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eegnite.com';
 const isEnvironmentProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
 const isMainDomain = siteUrl === 'https://eegnite.com' || siteUrl === 'https://www.eegnite.com';
 
-const shouldIndex = false; // Disabled indexing as per user request
+const shouldIndex = isEnvironmentProduction && isMainDomain; // Enable indexing for production
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),

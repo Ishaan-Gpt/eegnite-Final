@@ -1,0 +1,718 @@
+"use client";
+
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import {
+    MapPin,
+    BarChart3,
+    Zap,
+    ArrowRight,
+    TrendingUp,
+    LayoutDashboard,
+    Cpu,
+} from "lucide-react";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import SmoothScrolling from "@/components/SmoothScrolling";
+import Footer from "@/components/Footer";
+import { Compare } from "@/components/ui/compare";
+
+// --- ANIMATION VARIANTS ---
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+};
+
+// --- CUSTOM HERO GRAPH COMPONENT ---
+// --- CUSTOM HERO GRAPH COMPONENT ---
+// --- CUSTOM HERO GRAPH COMPONENT ---
+// --- CUSTOM HERO GRAPH COMPONENT ---
+const HeroGraph = () => {
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [isHovering, setIsHovering] = useState(false);
+    const graphRef = useRef<HTMLDivElement>(null);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!graphRef.current) return;
+        const rect = graphRef.current.getBoundingClientRect();
+        setMousePos({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+        });
+        setIsHovering(true);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!graphRef.current) return;
+        const rect = graphRef.current.getBoundingClientRect();
+        const touch = e.touches[0];
+        setMousePos({
+            x: touch.clientX - rect.left,
+            y: touch.clientY - rect.top
+        });
+        setIsHovering(true);
+    };
+
+    return (
+        <div className="w-full h-[400px] md:h-[500px] bg-white rounded-3xl border border-black/5 shadow-xl p-6 md:p-10 relative overflow-hidden flex flex-col">
+            {/* Header / Tabs */}
+            <div className="flex flex-wrap gap-4 md:gap-8 mb-8 border-b border-black/5 pb-6 justify-between items-end">
+                <div className="flex gap-8">
+                    <div className="flex flex-col">
+                        <span className="text-black/40 text-xs font-semibold uppercase tracking-wider mb-1">Impact</span>
+                        <span className="text-2xl md:text-3xl font-bold text-[#FF6105]">+142%</span>
+                    </div>
+                    <div className="flex flex-col">
+                        <span className="text-black/40 text-xs font-semibold uppercase tracking-wider mb-1">ROI</span>
+                        <span className="text-2xl md:text-3xl font-bold text-black">12.5x</span>
+                    </div>
+                </div>
+
+                {/* Legend */}
+                <div className="flex gap-4 text-xs font-bold uppercase tracking-wider">
+                    <div className="flex items-center gap-2">
+                        <div className="w-3 h-1 bg-gray-300 rounded-full" />
+                        <span className="text-black/40">6 Months Ago</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <div className="w-3 h-1 bg-[#FF6105] rounded-full" />
+                        <span className="text-[#FF6105]">Current</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* The Graph Area */}
+            <div
+                ref={graphRef}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={() => setIsHovering(false)}
+                onTouchStart={handleTouchMove}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={() => setIsHovering(false)}
+                className="relative flex-grow w-full cursor-crosshair touch-none"
+            >
+                {/* Grid Lines */}
+                <div className="absolute inset-0 flex flex-col justify-between text-xs text-black/20 font-mono pointer-events-none">
+                    {[100, 75, 50, 25, 0].map((v, i) => (
+                        <div key={i} className="w-full border-t border-black/5 flex items-center h-0 relative">
+                            <span className="absolute -left-0 -top-2">{v}</span>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Animated Line Path */}
+                <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1200 400">
+                    <defs>
+                        <linearGradient id="gradientArea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#FF6105" stopOpacity="0.1" />
+                            <stop offset="100%" stopColor="#FF6105" stopOpacity="0" />
+                        </linearGradient>
+                    </defs>
+
+                    {/* "Before" Line (Gray, Flat/Erratic) */}
+                    <motion.path
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        d="M0,300 L150,310 L300,290 L450,250 L600,280 L750,260 L900,240 L1200,220"
+                        fill="none"
+                        stroke="#e5e5e5"
+                        strokeWidth="2"
+                        strokeDasharray="5,5"
+                        vectorEffect="non-scaling-stroke"
+                    />
+
+                    {/* "Current" Line (Orange, Steep Zigzag) */}
+                    <motion.path
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 2, ease: "easeInOut" }}
+                        d="M0,350 L100,280 L200,320 L300,200 L400,240 L600,100 L800,120 L1000,50 L1200,20"
+                        fill="none"
+                        stroke="#FF6105"
+                        strokeWidth="3"
+                        vectorEffect="non-scaling-stroke"
+                    />
+                    <motion.path
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1 }}
+                        d="M0,350 L100,280 L200,320 L300,200 L400,240 L600,100 L800,120 L1000,50 L1200,20 L1200,400 L0,400 Z"
+                        fill="url(#gradientArea)"
+                        vectorEffect="non-scaling-stroke"
+                    />
+                </svg>
+
+                {/* Interactive Scan Line */}
+                {isHovering && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="absolute top-0 bottom-0 w-[1px] bg-black/10 pointer-events-none flex flex-col justify-end pb-12 items-center"
+                        style={{ left: mousePos.x }}
+                    >
+                        <div className="bg-black text-white text-[10px] py-1 px-2 rounded mb-2 whitespace-nowrap">
+                            Vol: {Math.max(0, Math.floor((400 - mousePos.y) * 120))}
+                        </div>
+                        <div className="w-3 h-3 bg-[#FF6105] rounded-full ring-4 ring-white shadow-lg" />
+                    </motion.div>
+                )}
+
+                {/* Floating Interactive Points (Original) - Simplified/Hidden for cleanliness or restored if user wants exactly from git. 
+                    Git version uses (!isHovering) check. I will keep it.
+                */}
+                {!isHovering && (
+                    <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 2, type: "spring" }}
+                        className="absolute top-[20%] right-[10%] w-4 h-4 bg-white border-2 border-[#FF6105] rounded-full shadow-lg z-10"
+                    >
+                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#FF6105] text-white text-[10px] py-1 px-3 rounded-lg whitespace-nowrap shadow-xl">
+                            <span className="font-bold">Now</span>
+                        </div>
+                    </motion.div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+const CodeWindow = () => (
+    <div className="bg-white border border-black/5 p-4 md:p-6 rounded-3xl h-full w-full relative group shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col overflow-hidden">
+        <div className="flex items-center justify-between mb-4 md:mb-6">
+            <div className="flex gap-1.5 md:gap-2">
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#FF5F56]" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#FFBD2E]" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27C93F]" />
+            </div>
+            <div className="px-2 md:px-3 py-1 bg-[#FFF5F0] rounded-full text-[8px] md:text-[10px] font-bold text-[#FF6105] uppercase tracking-wider">
+                Analysis.tsx
+            </div>
+        </div>
+        <div className="flex-grow relative font-mono text-[10px] md:text-xs text-black/50 space-y-2 md:space-y-3">
+            <div className="flex items-center gap-2">
+                <span className="text-[#FF6105] opacity-50">1</span>
+                <span className="text-purple-600">const</span> <span className="text-blue-600">analyze</span> = <span className="text-black">()</span> <span className="text-purple-600">=&gt;</span> <span className="text-black">{`{`}</span>
+            </div>
+            <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="flex items-center gap-2 pl-4">
+                <span className="text-[#FF6105] opacity-50">2</span>
+                <span className="text-black/60">// Identifying gaps...</span>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="flex items-center gap-2 pl-4">
+                <span className="text-[#FF6105] opacity-50">3</span>
+                <span className="text-blue-600">return</span> <span className="text-green-600">"Opportunity Found"</span>
+            </motion.div>
+            <div className="flex items-center gap-2">
+                <span className="text-[#FF6105] opacity-50">4</span>
+                <span className="text-black">{`}`}</span>
+            </div>
+        </div>
+        {/* Scanning Line overlay */}
+        <motion.div
+            animate={{ top: ["0%", "100%"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            className="absolute left-0 right-0 h-[1px] bg-[#FF6105]/30 pointer-events-none backdrop-blur-[1px]"
+        />
+    </div>
+);
+
+const RevenueCard = () => (
+    <div className="bg-[#FFF5F0] p-6 md:p-8 rounded-3xl h-full w-full relative overflow-hidden group hover:border-[#FF6105]/20 border border-transparent transition-all">
+        <div className="relative z-10 flex justify-between items-start">
+            <div className="p-2 md:p-3 bg-white rounded-xl shadow-sm text-[#FF6105]">
+                <TrendingUp size={20} className="md:w-6 md:h-6" />
+            </div>
+            <div className="text-right">
+                <div className="text-2xl md:text-4xl font-bold text-[#FF6105]">+142%</div>
+                <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-black/60 mt-1">Growth</div>
+            </div>
+        </div>
+
+        {/* Animated Bars */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 flex items-end justify-between px-6 md:px-8 pb-0 gap-2 md:gap-3">
+            {[30, 45, 40, 60, 55, 75, 90].map((h, i) => (
+                <motion.div
+                    key={i}
+                    initial={{ height: 0 }}
+                    whileInView={{ height: `${h}%` }}
+                    transition={{ duration: 0.8, delay: i * 0.1 }}
+                    className="w-full bg-white rounded-t-sm md:rounded-t-md opacity-50 group-hover:opacity-100 group-hover:bg-[#FF6105] transition-all duration-500"
+                />
+            ))}
+        </div>
+    </div>
+);
+
+const LocalMapCard = () => (
+    <div className="bg-white border border-black/5 p-2 rounded-3xl h-full w-full shadow-sm hover:shadow-xl transition-all duration-500 relative overflow-hidden group">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffffff_0%,transparent_100%)]" />
+        {/* Abstract Map Pattern */}
+        <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
+
+        <div className="relative z-10 h-full flex flex-col justify-between p-4 md:p-6">
+            <div className="flex justify-between items-start">
+                <div className="p-2 md:p-3 bg-[#FF6105] text-white rounded-xl shadow-lg">
+                    <MapPin size={20} className="md:w-6 md:h-6" />
+                </div>
+                <div className="bg-white px-2 md:px-3 py-1 rounded-full text-[8px] md:text-[10px] font-bold border border-black/10 uppercase tracking-wide">
+                    Local SEO
+                </div>
+            </div>
+
+            {/* Simulated Pins */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+                <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute top-[40%] left-[60%] w-3 h-3 bg-[#FF6105] rounded-full shadow-xl"
+                >
+                    <div className="absolute top-0 left-0 w-full h-full bg-[#FF6105] animate-ping rounded-full opacity-50" />
+                </motion.div>
+                <div className="absolute top-[40%] left-[60%] -translate-y-8 -translate-x-1/2 bg-white px-2 md:px-3 py-1 rounded-lg text-[10px] md:text-xs font-bold shadow-lg whitespace-nowrap">
+                    #1 Rank
+                </div>
+            </div>
+
+            <div>
+                <h4 className="text-lg md:text-xl font-bold text-black">Local Dominance</h4>
+                <p className="text-black/50 text-[10px] md:text-xs mt-1">Appear when nearby customers are ready to act.</p>
+            </div>
+        </div>
+    </div>
+);
+
+const HierarchicalBento = () => {
+    return (
+        <section className="min-h-screen py-16 md:py-32 px-4 md:px-6 bg-white border-t border-black/5">
+            <div className="max-w-[1400px] w-full mx-auto">
+                <div className="mb-12 md:mb-24 text-center">
+                    <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold uppercase tracking-tight mb-4 md:mb-6 text-black">
+                        Full Service <br className="md:hidden" /> <span className="text-[#FF6105]">SEO Solution</span>
+                    </h2>
+                    <p className="text-black/50 text-sm md:text-xl font-normal max-w-2xl mx-auto">
+                        Creating long-term visibility, brand authority, and consistent inbound demand.
+                    </p>
+                </div>
+
+                <div className="flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-[350px_350px] gap-4 md:gap-6">
+                    {/* 1. Engineering - Top Left Large */}
+                    <div className="lg:col-span-2 lg:row-span-1 h-[400px] lg:h-auto">
+                        <div className="h-full p-5 md:p-8 bg-[#F9F9F9] rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group hover:bg-white border border-transparent hover:border-black/5 transition-colors duration-500">
+                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 h-full">
+                                <div className="flex flex-col justify-center relative z-10">
+                                    <div className="flex justify-between items-start lg:block">
+                                        <Cpu size={32} className="text-[#FF6105] mb-4 lg:mb-6" />
+                                        <div className="lg:hidden flex gap-2 mb-4">
+                                            <span className="w-2 h-2 rounded-full bg-green-500" />
+                                            <span className="text-[10px] font-mono text-black/40">Optimized</span>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl md:text-2xl font-bold uppercase mb-2 text-black">Technical SEO</h3>
+                                    <p className="text-black/50 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-3 lg:line-clamp-none">A strong SEO strategy starts with a technically sound website. We optimize crawlability, site structure, and page speed.</p>
+                                    <div className="hidden lg:flex gap-2">
+                                        <span className="w-2 h-2 rounded-full bg-green-500" />
+                                        <span className="text-xs font-mono text-black/40">Status: Optimized</span>
+                                    </div>
+                                </div>
+                                <div className="h-full pb-0 lg:pt-4 flex-grow relative">
+                                    <div className="absolute inset-0 top-auto h-[180px] lg:h-full lg:static w-full">
+                                        <CodeWindow />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 2. Revenue - Top Right */}
+                    <div className="lg:col-span-2 lg:row-span-1 h-[350px] lg:h-auto">
+                        <RevenueCard />
+                    </div>
+
+                    {/* 3. Local - Bottom Left */}
+                    <div className="lg:col-span-1 lg:row-span-1 h-[350px] lg:h-auto">
+                        <LocalMapCard />
+                    </div>
+
+                    {/* 4. Content Velocity - Bottom Middle Large */}
+                    <div className="lg:col-span-2 lg:row-span-1 h-[350px] lg:h-auto bg-white border border-black/5 rounded-[2.5rem] p-6 md:p-8 relative overflow-hidden group hover:shadow-2xl transition-all">
+                        <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                            <Zap size={200} className="text-[#FF6105]" />
+                        </div>
+                        <div className="relative z-10 flex flex-col justify-between h-full">
+                            <div className="w-12 h-12 bg-[#FF6105] text-white rounded-xl flex items-center justify-center mb-4">
+                                <Zap size={24} />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl md:text-3xl font-bold uppercase text-black">Content <span className="text-[#FF6105]">Strategy</span></h3>
+                                <p className="text-black/50 text-sm md:text-lg max-w-md mt-2 line-clamp-3 lg:line-clamp-none">Content built with purpose. We create helpful, keyword-informed content that speaks directly to search intent and relevance.</p>
+                            </div>
+                            <div className="mt-6 flex items-center gap-4">
+                                <div className="bg-[#FFF5F0] px-4 py-2 rounded-full text-[#FF6105] text-xs font-bold uppercase">40+ Articles/Mo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 5. Transparency - Bottom Right */}
+                    <div className="lg:col-span-1 lg:row-span-1 h-[350px] lg:h-auto bg-[#FF6105] rounded-[2.5rem] p-6 md:p-8 text-white flex flex-col justify-between group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-white blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity" />
+
+                        <LayoutDashboard size={32} className="text-white" />
+                        <div>
+                            <h3 className="text-lg md:text-xl font-bold uppercase mb-1 text-white">Live <br /><span className="text-black/50">Dashboards</span></h3>
+                            <p className="text-white/80 text-xs">Analytics & Conversion Tracking</p>
+                        </div>
+                        <div className="w-full bg-black/10 h-1 mt-4 rounded-full overflow-hidden">
+                            <motion.div
+                                animate={{ width: ["0%", "100%"] }}
+                                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                                className="h-full bg-white" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+// --- INDUSTRIES COMPONENT REFINED ---
+
+const IndustriesList = () => {
+    const industries = [
+        { title: "Healthcare & Clinics", id: "01", icon: <Zap /> },
+        { title: "SaaS & Technology", id: "02", icon: <Cpu /> },
+        { title: "E-Commerce Retail", id: "03", icon: <TrendingUp /> },
+        { title: "Legal & Professional", id: "04", icon: <LayoutDashboard /> },
+        { title: "Real Estate", id: "05", icon: <MapPin /> },
+        { title: "Financial Services", id: "06", icon: <BarChart3 /> }
+    ];
+
+    return (
+        <section className="min-h-screen py-16 md:py-32 px-4 md:px-6 bg-white flex items-center">
+            <div className="max-w-[1400px] mx-auto w-full">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-24">
+                    <h2 className="text-4xl lg:text-8xl font-bold uppercase tracking-tighter text-black w-full text-left md:text-left mb-4 md:mb-0">
+                        Industries <br className="md:hidden" /> <span className="text-[#FF6105]">We Power</span>
+                    </h2>
+                    <p className="text-black/40 text-xs md:text-sm font-bold uppercase tracking-widest mb-2 md:mb-4 max-w-xl text-left md:text-right w-full md:w-auto">
+                        EEGNITE works with businesses across India, as well as clients in Western Asia and Europe.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {industries.map((item, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-[#FAFAFA] border border-transparent hover:border-[#FF6105] p-6 md:p-10 min-h-[240px] md:min-h-[280px] flex flex-col justify-between rounded-[2rem] group hover:bg-[#FF6105] transition-all duration-500 cursor-pointer relative overflow-hidden shadow-sm hover:shadow-2xl"
+                        >
+                            {/* Texture Overlay */}
+                            <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] transition-all" />
+
+                            <div className="absolute right-0 top-0 p-8 opacity-10 group-hover:opacity-20 group-hover:text-white transition-all scale-150 transform origin-top-right rotate-12">
+                                {item.icon}
+                            </div>
+
+                            <div className="flex justify-between items-start z-10">
+                                <span className="text-sm font-mono text-[#FF6105] group-hover:text-white transition-colors border border-[#FF6105]/20 group-hover:border-white/20 px-3 py-1 rounded-full">/{item.id}</span>
+                                <div className="bg-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 text-[#FF6105] shadow-lg">
+                                    <ArrowRight size={18} />
+                                </div>
+                            </div>
+
+                            <div className="z-10 relative">
+                                <h3 className="text-2xl md:text-3xl font-bold text-black group-hover:text-white mb-2 md:mb-3 leading-tight transition-colors">
+                                    {item.title}
+                                </h3>
+                                <div className="h-[1px] w-12 bg-[#FF6105] group-hover:bg-white mb-2 md:mb-3 transition-colors" />
+                                <p className="text-black/40 text-xs md:text-sm group-hover:text-white/80 transition-colors font-medium">
+                                    Specialized strategies driving sector growth.
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+// --- COMPARISON SECTION (Second Section) ---
+const SeoComparisonSection = () => {
+    return (
+        <section className="min-h-screen py-16 md:py-24 px-4 md:px-6 bg-white relative overflow-hidden flex items-center justify-center">
+            <div className="max-w-[1400px] w-full mx-auto">
+                <div className="text-center mb-10 md:mb-16">
+                    <h2 className="text-4xl lg:text-8xl font-bold uppercase tracking-tighter mb-6 text-black">
+                        Why <span className="text-[#FF6105]">EEGNITE?</span>
+                    </h2>
+                    <p className="text-black/60 text-xl font-normal max-w-3xl mx-auto">
+                        Local business owners and marketers in Kolkata choose EEGNITE for one simple reason: measurable and sustainable results.
+                    </p>
+                </div>
+
+                <div className="w-full max-w-6xl mx-auto h-[550px] md:h-[600px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-black/10">
+                    <Compare
+                        slideMode="drag"
+                        firstContent={
+                            <div className="w-full h-full bg-white flex flex-col items-center justify-start pt-6 md:justify-center p-3 md:p-12 text-center relative overflow-hidden">
+                                <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+
+                                <h3 className="text-xl md:text-5xl lg:text-7xl font-bold text-[#FF6105] mb-3 md:mb-8 relative z-10 uppercase tracking-tighter">EEGNITE Solution</h3>
+
+                                <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-8 max-w-4xl relative z-10 w-full flex-grow md:flex-grow-0">
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-[#FFF5F0] border border-[#FF6105]/20 hover:scale-105 transition-transform flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-[#FF6105] mb-0.5 md:mb-2">Local Expertise</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">Genuine local search demand.</p>
+                                    </div>
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-[#FF6105] text-white hover:scale-105 transition-transform flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-white mb-0.5 md:mb-2">Engineering-Led</h4>
+                                        <p className="text-white/90 text-[9px] md:text-base leading-tight">Maximum search clarity.</p>
+                                    </div>
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-white border border-black/10 shadow-lg hover:scale-105 transition-transform flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-black mb-0.5 md:mb-2">Transparent ROI</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">Clear growth impact.</p>
+                                    </div>
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-white border-2 border-[#FF6105] text-black hover:scale-105 transition-transform flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-[#FF6105] mb-0.5 md:mb-2">Growth Partner</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">Long-term scalability.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        secondContent={
+                            <div className="w-full h-full bg-[#f0f0f0] flex flex-col items-center justify-start pt-6 md:justify-center p-3 md:p-12 text-center relative grayscale">
+                                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+
+                                <h3 className="text-xl md:text-5xl lg:text-7xl font-bold text-black/20 mb-3 md:mb-8 relative z-10 uppercase tracking-tighter">Traditional Agency</h3>
+
+                                <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-8 max-w-4xl relative z-10 w-full flex-grow md:flex-grow-0 opacity-50">
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-white border border-black/5 flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-black mb-0.5 md:mb-2">Rankings Only</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">Vanity metrics only.</p>
+                                    </div>
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-white border border-black/5 flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-black mb-0.5 md:mb-2">Basic Audits</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">Generic PDF reports.</p>
+                                    </div>
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-white border border-black/5 flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-black mb-0.5 md:mb-2">Opaque Work</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">"Trust us" attitude.</p>
+                                    </div>
+                                    <div className="p-3 md:p-8 rounded-xl md:rounded-3xl bg-white border border-black/5 flex flex-col justify-center">
+                                        <h4 className="text-xs md:text-2xl font-bold text-black mb-0.5 md:mb-2">Slow Movement</h4>
+                                        <p className="text-black/60 text-[9px] md:text-base leading-tight">Weeks for edits.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    />
+                </div>
+            </div>
+        </section>
+    );
+}
+
+// --- REFINED CTA SECTION (Ready to Dominate) ---
+const DominateCTA = () => null;
+
+// --- PROTOCOL TIMELINE COMPONENT ---
+const ProtocolTimeline = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const steps = [
+        { t: "Focus on Core Business", d: "SEO demands time, tools, and constant attention. We handle the complexity so you can focus on growth, sales, and operations." },
+        { t: "Avoid Costly Mistakes", d: "Search algorithms change fast. A trusted partner helps you avoid trial-and-error decisions that slow growth." },
+        { t: "Measurable Growth", d: "Every action is tracked. You see how traffic, leads, and conversions improve, not just rankings on a report." },
+        { t: "Long-Term Visibility", d: "Strategies built for stability in competitive markets, from local Indian searches to broader national reach." }
+    ];
+
+    return (
+        <section ref={containerRef} className="bg-white relative py-16 md:py-24">
+            {/* Header */}
+            <div className="max-w-[1400px] mx-auto px-4 md:px-6 mb-12 md:mb-24">
+                <h2 className="text-4xl md:text-5xl lg:text-9xl font-bold uppercase tracking-tighter text-black text-center">
+                    Why SEO <span className="text-[#FF6105]">Partner?</span>
+                </h2>
+            </div>
+
+            <div className="relative max-w-7xl mx-auto px-6">
+                {/* 
+                   THE TRACK
+                   Continuous line running from top step to bottom step 
+                   - Mobile: Aligned to left-8 (32px) to center with w-16 (64px) nodes
+                   - Desktop: Aligned to left-1/2
+                */}
+                <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[4px] bg-[#FF6105]/5 -translate-x-1/2 rounded-full overflow-hidden">
+                    {/* THE BEAM: Fills based on scroll progress */}
+                    <motion.div
+                        style={{ height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
+                        className="w-full bg-[#FF6105] rounded-full origin-top"
+                    />
+                </div>
+
+                {steps.map((s, i) => {
+                    return (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0.2 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ margin: "-20% 0px -20% 0px" }}
+                            className="py-16 md:min-h-screen flex items-center justify-center relative md:py-20"
+                        >
+                            {/*
+                               Grid Layout:
+                               - Mobile: Flex column-ish or Grid with padding left
+                               - We use padding-left on mobile to push content right of the timeline
+                            */}
+                            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full relative pl-20 md:pl-0">
+
+                                {/* Text Content */}
+                                <div className={`order-2 md:order-1 ${i % 2 === 1 ? 'md:col-start-2 md:pl-24' : 'md:text-right md:pr-24'}`}>
+                                    <h3 className="text-2xl md:text-4xl lg:text-7xl font-bold uppercase text-black leading-[0.9] mb-3 md:mb-6">
+                                        {s.t}
+                                    </h3>
+                                    <p className="text-base md:text-xl lg:text-3xl text-black/60 font-normal leading-relaxed">
+                                        {s.d}
+                                    </p>
+                                </div>
+
+                                {/* Center Node Graphic */}
+                                <div className="absolute left-8 md:left-1/2 top-0 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 flex flex-col items-center justify-center mt-8 md:mt-0 h-full md:h-auto pointer-events-none md:pointer-events-auto">
+                                    <motion.div
+                                        initial={{ scale: 1, backgroundColor: "#ffffff", borderColor: "#FF6105" }}
+                                        whileInView={{ scale: 1.2, backgroundColor: "#FF6105", borderColor: "#ffffff" }}
+                                        viewport={{ margin: "-45% 0px -45% 0px" }}
+                                        transition={{ duration: 0.5 }}
+                                        className="w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center text-xl md:text-3xl font-bold border-[6px] shadow-xl relative z-10"
+                                    >
+                                        <span className="text-black group-hover:text-white transition-colors">0{i + 1}</span>
+                                    </motion.div>
+                                </div>
+
+                                {/* Empty side for layout balance */}
+                                <div className={`hidden md:block order-1 md:order-2 ${i % 2 === 1 ? 'md:col-start-1' : ''}`} />
+                            </div>
+                        </motion.div>
+                    );
+                })}
+            </div>
+        </section>
+    )
+}
+
+
+export default function ServiceSeo() {
+    return (
+        <main className="bg-white min-h-screen text-black font-sans selection:bg-[#FF6105] selection:text-white">
+            <div className="relative z-10">
+                <Navbar />
+
+                {/* GRAPHICAL HERO */}
+                <section className="relative min-h-[100dvh] flex flex-col justify-center pt-24 pb-12 lg:pt-24 px-4 md:px-6 overflow-hidden bg-white">
+                    <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        <div>
+                            {/* Tag Removed as requested */}
+
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter leading-[0.9] mb-4 md:mb-10 text-black mt-4 lg:mt-0"
+                            >
+                                Best SEO <br /> Services <br />
+                                <span className="text-[#FF6105]">Rank Higher.</span>
+                            </motion.h1>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="text-base md:text-xl text-black/50 font-normal leading-relaxed max-w-xl mb-8 md:mb-12"
+                            >
+                                At EEGNITE, we’re not just another SEO company in Kolkata; we operate as a growth partner focused on outcomes only. Our SEO services turn search demand into consistent visibility, qualified traffic, and measurable business growth.
+                            </motion.p>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.3 }}
+                                className="flex flex-wrap gap-3 mb-8 md:mb-10 text-[10px] md:text-xs font-bold uppercase tracking-wider text-black/40"
+                            >
+                                <span>#1 SEO Agency Kolkata</span>
+                                <span className="w-1 h-1 rounded-full bg-[#FF6105]" />
+                                <span>Engineering-Led</span>
+                                <span className="w-1 h-1 rounded-full bg-[#FF6105]" />
+                                <span>ROI Focused</span>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.4 }}
+                                className="w-full sm:w-auto"
+                            >
+                                <Link href="/contact" className="inline-flex w-full sm:w-auto justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg">
+                                    Start Analysis
+                                </Link>
+                            </motion.div>
+                        </div>
+
+                        {/* GRAPH VISUALIZATION */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, delay: 0.3 }}
+                        >
+                            <HeroGraph />
+                        </motion.div>
+                    </div>
+                </section>
+
+                <SeoComparisonSection />
+                <HierarchicalBento />
+                <IndustriesList />
+                <ProtocolTimeline />
+
+                {/* FAQs */}
+                <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold uppercase tracking-tight text-center mb-8 md:mb-16 text-black">Common <span className="text-[#FF6105]">Questions</span></h2>
+                        <div className="space-y-3 md:space-y-4">
+                            {faqs.map((faq, idx) => (
+                                <details key={idx} className="group bg-[#F9F9F9] p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:bg-white border boundary-transparent hover:border-black/5 hover:shadow-xl transition-all cursor-pointer">
+                                    <summary className="font-bold text-base md:text-lg lg:text-xl uppercase tracking-tight flex justify-between items-center list-none text-black">
+                                        {/* Questions Text Limiter? No just flex */}
+                                        <span className="max-w-[90%]">{faq.q}</span>
+                                        <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#FF6105] group-open:bg-[#FF6105] group-open:text-white transition-all"><ArrowRight className="group-open:rotate-90 transition-transform" size={20} /></span>
+                                    </summary>
+                                    <div className="overflow-hidden">
+                                        <p className="mt-4 md:mt-6 text-black/60 leading-relaxed font-medium text-sm md:text-lg max-w-2xl">
+                                            {faq.a}
+                                        </p>
+                                    </div>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <Footer />
+        </main>
+    );
+}
+
+const faqs = [
+    { q: "How does SEO work?", a: "SEO works by helping search engines understand your website and match it with what users are searching for. It involves improving site structure, content relevance, and technical performance, along with building credibility through off-page signals. When done consistently, SEO improves visibility, attracts the right audience, and increases organic traffic over time." },
+    { q: "What are the different types of SEO Services?", a: "SEO services typically include on-page SEO, technical SEO, and off-page SEO. On-page SEO focuses on optimizing content and website elements, technical SEO improves site performance and crawlability, and off-page SEO builds authority through links and brand mentions." },
+    { q: "How do I analyze which type of SEO I need?", a: "The right type of SEO depends on your business goals, target audience, and current website performance. Local SEO suits businesses serving specific locations, eCommerce SEO supports online product sales, and enterprise SEO works best for large websites. A professional SEO audit helps identify gaps." },
+    { q: "Can you perform an SEO audit on my website?", a: "Yes. We conduct detailed SEO audits that review your website's technical setup, content quality, on-page elements, and search performance. The audit highlights keywords gaps, new opportunities, and clear next steps, helping you understand what's holding your site back." },
+    { q: "How long will it take to see better rankings on Google?", a: "SEO is a gradual process, not an instant result. Most websites start seeing improvements within 3 to 6 months, depending on keyword competition, industry, and current website health. Highly competitive keywords or new websites may take longer, while local searches can show results sooner." },
+    { q: "What is Ecommerce SEO?", a: "Ecommerce SEO focuses on optimizing online stores to improve product visibility in search results. It includes optimizing product pages, categories, site structure, page speed, and content so customers can easily find your products. When done right, ecommerce SEO helps attract high-intent shoppers." },
+    { q: "How can local SEO services help businesses?", a: "Local SEO helps businesses get discovered by customers searching nearby. It improves visibility on Google Map pack and local search results, attracts high-intent local traffic, and increases chances of calls, visits, and enquiries. It turns online searches into nearby customers." },
+    { q: "How much does an SEO Service Cost?", a: "SEO costs vary based on your business goals, competition, website size, and the scope of work required. Pricing can range from basic monthly packages to customized strategies for competitive markets. A reliable SEO service provider usually offers flexible plans focused on long-term value and measurable growth." }
+];

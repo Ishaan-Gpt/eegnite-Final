@@ -54,13 +54,13 @@ export default function VelocityScroll() {
                 <motion.div className="flex flex-col items-center justify-center text-center">
                     <motion.h2
                         style={{ opacity: beSeenOpacity, y: beSeenY }}
-                        className="text-[clamp(4rem,18vw,14rem)] font-black tracking-tighter text-[#FF6105] leading-none uppercase"
+                        className="text-[clamp(3rem,15vw,14rem)] font-black tracking-tighter text-[#FF6105] leading-none uppercase"
                     >
                         Be Seen.
                     </motion.h2>
                     <motion.h2
                         style={{ opacity: beChosenOpacity, y: beChosenY }}
-                        className="text-[clamp(4rem,18vw,14rem)] font-black tracking-tighter text-black leading-none uppercase -mt-4 md:-mt-8"
+                        className="text-[clamp(3rem,15vw,14rem)] font-black tracking-tighter text-black leading-none uppercase -mt-2 md:-mt-8"
                     >
                         Be Chosen.
                     </motion.h2>

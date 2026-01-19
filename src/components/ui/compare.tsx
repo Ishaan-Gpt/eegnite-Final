@@ -49,7 +49,7 @@ export const Compare = ({
         });
     };
 
-    const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    const handleMouseDown = useCallback((e: React.MouseEvent | React.TouchEvent) => {
         if (slideMode === "hover") return;
         setIsDragging(true);
     }, [slideMode]);
@@ -58,10 +58,16 @@ export const Compare = ({
         setIsDragging(false);
     }, []);
 
-    const handleDrag = useCallback((e: MouseEvent) => {
+    const handleDrag = useCallback((e: MouseEvent | TouchEvent) => {
         if (!isDragging || !sliderRef.current) return;
         const rect = sliderRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
+        let clientX: number;
+        if ('touches' in e) {
+            clientX = e.touches[0].clientX;
+        } else {
+            clientX = e.clientX;
+        }
+        const x = clientX - rect.left;
         const percent = (x / rect.width) * 100;
         setSliderXPercent(Math.max(0, Math.min(100, percent)));
     }, [isDragging]);
@@ -69,9 +75,13 @@ export const Compare = ({
     useEffect(() => {
         window.addEventListener("mousemove", handleDrag);
         window.addEventListener("mouseup", handleMouseUp);
+        window.addEventListener("touchmove", handleDrag);
+        window.addEventListener("touchend", handleMouseUp);
         return () => {
             window.removeEventListener("mousemove", handleDrag);
             window.removeEventListener("mouseup", handleMouseUp);
+            window.removeEventListener("touchmove", handleDrag);
+            window.removeEventListener("touchend", handleMouseUp);
         }
     }, [handleDrag, handleMouseUp]);
 
@@ -132,6 +142,7 @@ export const Compare = ({
             >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl pointer-events-auto cursor-col-resize hover:scale-110 transition-transform"
                     onMouseDown={handleMouseDown}
+                    onTouchStart={handleMouseDown}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black rotate-90"><path d="m8 9 4-4 4 4" /><path d="m8 15 4 4 4-4" /></svg>
                 </div>

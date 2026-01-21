@@ -45,7 +45,7 @@ const BentoGridItem = ({ className, post, large = false }: { className?: string,
                 className
             )}
         >
-            {/* Image Container - Flexible height on mobile, fixed percentage on desktop if needed, or better use flex ratio */}
+            {/* Image Container */}
             <div className={cn(
                 "relative w-full overflow-hidden shrink-0",
                 large ? "h-[250px] md:h-[60%]" : "h-[200px] md:h-[50%]"
@@ -58,32 +58,32 @@ const BentoGridItem = ({ className, post, large = false }: { className?: string,
                 />
             </div>
 
-            {/* Content - Flex grow to fill remaining space */}
+            {/* Content */}
             <div className="p-6 md:p-8 flex flex-col justify-between bg-white relative flex-grow">
                 {/* Orange Shader Effect */}
                 <div className="absolute -top-10 -right-10 w-20 h-20 bg-[#FF6105]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <div>
-                    <div className="flex items-center gap-3 text-xs font-bold text-[#6B5545] uppercase tracking-wider mb-3">
+                    <div className="flex items-center gap-3 text-xs font-bold text-black/50 uppercase tracking-wider mb-4">
                         <span className="text-[#FF6105]">{post.category}</span>
                         <span>•</span>
                         <span>{post.readTime}</span>
                     </div>
 
                     <h3 className={cn(
-                        "font-bold uppercase leading-[0.9] tracking-tight mb-3 text-[#2A1810] group-hover:text-[#FF6105] transition-colors",
+                        "font-bold uppercase leading-[0.9] tracking-tight mb-4 text-black group-hover:text-[#FF6105] transition-colors",
                         large ? "text-2xl md:text-4xl" : "text-lg md:text-2xl"
                     )}>
                         {post.title}
                     </h3>
 
-                    <p className="text-[#6B5545] text-sm leading-relaxed font-normal line-clamp-3 md:line-clamp-2 hidden md:block">
+                    <p className="text-black/60 text-sm leading-relaxed font-normal line-clamp-3 md:line-clamp-2 hidden md:block">
                         {post.excerpt}
                     </p>
                 </div>
 
-                <div className="mt-6 flex items-center gap-2 text-[#FF6105] text-xs font-bold uppercase tracking-widest opacity-80 md:opacity-60 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
-                    Read Story <ArrowRight size={14} />
+                <div className="mt-8 flex items-center gap-4 text-[#FF6105] text-xs font-bold uppercase tracking-widest opacity-80 md:opacity-60 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                    Read More <ArrowRight size={16} />
                 </div>
             </div>
         </Link>
@@ -126,11 +126,11 @@ export default function BlogPage() {
                             </span>
                         </div>
 
-                        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-[0.95] text-[#2A1810]">
+                        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-[0.95] text-black">
                             {featuredPost.title}
                         </h1>
 
-                        <p className="text-base md:text-xl text-[#6B5545] max-w-2xl font-normal leading-relaxed">
+                        <p className="text-base md:text-xl text-black/70 max-w-2xl font-normal leading-relaxed">
                             {featuredPost.excerpt}
                         </p>
 
@@ -144,7 +144,7 @@ export default function BlogPage() {
                             <span className="px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-[#FFF5F0] text-[#FF6105] text-[10px] md:text-xs font-bold uppercase tracking-widest border border-[#FF6105]/20">
                                 SEO
                             </span>
-                            <span className="text-xs md:text-sm font-bold text-[#6B5545] uppercase tracking-wider">
+                            <span className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-wider">
                                 {featuredPost.readTime}
                             </span>
                         </div>
@@ -156,8 +156,8 @@ export default function BlogPage() {
             <section className="py-16 md:py-32 px-4 md:px-12 bg-white relative">
                 <div className="max-w-7xl mx-auto mb-10 md:mb-16 flex items-end justify-between">
                     <div>
-                        <span className="text-[#6B5545] font-bold uppercase tracking-widest text-xs mb-2 block">New & Noteworthy</span>
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none text-[#2A1810]">
+                        <span className="text-black/50 font-bold uppercase tracking-widest text-xs mb-2 block">New & Noteworthy</span>
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none text-black">
                             Latest <span className="text-[#FF6105]">Updates</span>
                         </h2>
                     </div>

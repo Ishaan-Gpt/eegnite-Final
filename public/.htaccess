@@ -82,27 +82,28 @@
 </IfModule>
 
 # ===================================
-# URL REWRITING (SPA Support)
+# URL REWRITING (Next.js Static Export Support)
 # ===================================
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
     
-    # Force HTTPS (uncomment after SSL is working)
+    # Force HTTPS
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
-    # Remove trailing slash (except for directories)
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [R=301,L]
-    
-    # Handle React Router / Next.js client-side routing
-    # If the requested file doesn't exist, serve index.html
+    # Force trailing slash for directories and clean URLs
+    # If it's not a file and doesn't have a trailing slash, add one
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.html [L]
+    RewriteCond %{REQUEST_URI} !index\.html$
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteRule ^(.*)$ $1/ [L,R=301]
+
+    # Handle Next.js static files (e.g., /services/seo/ -> /services/seo/index.html)
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_FILENAME}index.html -f
+    RewriteRule ^(.*)/$ $1/index.html [L]
 </IfModule>
 
 # ===================================
@@ -113,20 +114,29 @@ ErrorDocument 404 /404.html
 ErrorDocument 500 /404.html
 
 # ===================================
-# BLOCK SENSITIVE FILES
+# BLOCK SENSITIVE & INTERNAL FILES
 # ===================================
 
+# Block hidden files
 <FilesMatch "^\.">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
+# Block sensitive extensions
 <FilesMatch "\.(env|log|sql|bak|config)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
-# Block access to source maps in production (optional)
+# Block Next.js RSC data files (index.txt) to prevent "broken" page views
+<FilesMatch "\.txt$">
+    # Allow robots.txt and any other specific txt files if needed
+    RewriteCond %{REQUEST_URI} !^/robots\.txt$
+    RewriteRule ^ - [F,L]
+</FilesMatch>
+
+# Block access to source maps
 <FilesMatch "\.map$">
     Order allow,deny
     Deny from all

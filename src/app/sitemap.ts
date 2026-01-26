@@ -7,10 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const isProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
     if (!isProduction) return [];
 
-    const baseUrl = 'https://eegnite.com' // Replace with your actual domain
+    const baseUrl = 'https://eegnite.com'
 
-    // You can add more dynamic routes here if needed
-    return [
+    const routes = [
         {
             url: baseUrl,
             lastModified: new Date(),
@@ -18,17 +17,72 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
-            url: `${baseUrl}/privacy`,
+            url: `${baseUrl}/services/seo/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/services/ppc/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/services/ecommerce/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/services/email-marketing/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/services/data-analysis/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blog/`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blog/local-seo-strategies-2026-google-maps/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/top-10-seo-agencies-kolkata-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/contact/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: `${baseUrl}/terms`,
+            url: `${baseUrl}/privacy/`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
+            changeFrequency: 'yearly',
+            priority: 0.3,
         },
-        // Add other relevant pages like /services, /about, /contact if they exist as separate routes
+        {
+            url: `${baseUrl}/terms/`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.3,
+        },
     ]
+
+    return routes as MetadataRoute.Sitemap;
 }

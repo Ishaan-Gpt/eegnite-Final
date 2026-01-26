@@ -16,6 +16,8 @@ import {
     FileText,
     Settings,
     Sparkles,
+    Activity,
+    Link2,
 } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -293,6 +295,19 @@ const LocalMapCard = () => (
     </div>
 );
 
+const PulseCard = () => (
+    <div className="bg-[#FFF5F0] p-6 md:p-8 rounded-3xl h-full w-full relative overflow-hidden group hover:border-[#FF6105]/20 border border-transparent transition-all flex flex-col justify-center items-center">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#FF6105 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
+        <div className="relative z-10 p-6 bg-white rounded-full shadow-lg mb-6">
+            <Activity size={32} className="text-[#FF6105]" />
+        </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#FF6105]/20 rounded-full animate-ping" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#FF6105]/10 rounded-full animate-ping delay-150" />
+
+        <h3 className="text-xl font-bold uppercase text-black relative z-10 mt-4">Scalable Care</h3>
+    </div>
+);
+
 const HierarchicalBento = () => {
     return (
         <section className="min-h-screen py-16 md:py-32 px-4 md:px-6 bg-white border-t border-black/5">
@@ -309,13 +324,13 @@ const HierarchicalBento = () => {
                 </div>
 
                 <div className="flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-[350px_350px] gap-4 md:gap-6">
-                    {/* 1. Engineering - Top Left Large */}
+                    {/* 1. Healthcare - Top Left Large */}
                     <div className="lg:col-span-2 lg:row-span-1 h-[400px] lg:h-auto">
                         <div className="h-full p-5 md:p-8 bg-[#F9F9F9] rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group hover:bg-white border border-transparent hover:border-black/5 transition-colors duration-500">
                             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 h-full">
                                 <div className="flex flex-col justify-center relative z-10">
                                     <div className="flex justify-between items-start lg:block">
-                                        <Cpu size={32} className="text-[#FF6105] mb-4 lg:mb-6" />
+                                        <Activity size={32} className="text-[#FF6105] mb-4 lg:mb-6" />
                                         <div className="lg:hidden flex gap-2 mb-4">
                                             <span className="w-2 h-2 rounded-full bg-green-500" />
                                             <span className="text-[10px] font-mono text-black/40">Optimized</span>
@@ -330,7 +345,7 @@ const HierarchicalBento = () => {
                                 </div>
                                 <div className="h-full pb-0 lg:pt-4 flex-grow relative">
                                     <div className="absolute inset-0 top-auto h-[180px] lg:h-full lg:static w-full">
-                                        <CodeWindow />
+                                        <PulseCard />
                                     </div>
                                 </div>
                             </div>
@@ -347,21 +362,27 @@ const HierarchicalBento = () => {
                         <LocalMapCard />
                     </div>
 
-                    {/* 4. Content Velocity - Bottom Middle Large */}
+                    {/* 4. AI & SaaS - Bottom Middle Large */}
                     <div className="lg:col-span-2 lg:row-span-1 h-[350px] lg:h-auto bg-white border border-black/5 rounded-[2.5rem] p-6 md:p-8 relative overflow-hidden group hover:shadow-2xl transition-all">
                         <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                            <Zap size={200} className="text-[#FF6105]" />
+                            <Cpu size={200} className="text-[#FF6105]" />
                         </div>
-                        <div className="relative z-10 flex flex-col justify-between h-full">
-                            <div className="w-12 h-12 bg-[#FF6105] text-white rounded-xl flex items-center justify-center mb-4">
-                                <Zap size={24} />
+
+                        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 h-full">
+                            <div className="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <div className="w-12 h-12 bg-[#FF6105] text-white rounded-xl flex items-center justify-center mb-4">
+                                        <Cpu size={24} />
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-bold uppercase text-black">AI & SaaS <span className="text-[#FF6105]">Firms</span></h3>
+                                    <p className="text-black/50 text-sm md:text-lg max-w-md mt-2 line-clamp-3 lg:line-clamp-none">AI and SaaS firms requiring technical SEO and content moats</p>
+                                </div>
+                                <div className="mt-6 flex items-center gap-4">
+                                    <div className="bg-[#FFF5F0] px-4 py-2 rounded-full text-[#FF6105] text-xs font-bold uppercase">Tech-Focused SEO</div>
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="text-2xl md:text-3xl font-bold uppercase text-black">AI & SaaS <span className="text-[#FF6105]">Firms</span></h3>
-                                <p className="text-black/50 text-sm md:text-lg max-w-md mt-2 line-clamp-3 lg:line-clamp-none">AI and SaaS firms requiring technical SEO and content moats</p>
-                            </div>
-                            <div className="mt-6 flex items-center gap-4">
-                                <div className="bg-[#FFF5F0] px-4 py-2 rounded-full text-[#FF6105] text-xs font-bold uppercase">Tech-Focused SEO</div>
+                            <div className="h-full pb-0 lg:pt-4 flex-grow relative min-h-[200px]">
+                                <CodeWindow />
                             </div>
                         </div>
                     </div>
@@ -462,21 +483,7 @@ const FullServiceSEO = () => {
                 {/* Feature Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, idx) => (
-                        <SpotlightCard key={idx} className="h-full">
-                            <div className="relative z-10 flex flex-col h-full bg-white/50 backdrop-blur-sm p-8">
-                                <div className="w-14 h-14 bg-[#FFF5F0] rounded-2xl flex items-center justify-center text-[#FF6105] mb-6 group-hover:scale-110 group-hover:bg-[#FF6105] group-hover:text-white transition-all duration-300 shadow-sm">
-                                    <service.icon size={26} strokeWidth={1.5} />
-                                </div>
-
-                                <h3 className="text-xl font-bold uppercase text-black mb-4 group-hover:text-[#FF6105] transition-colors">
-                                    {service.title}
-                                </h3>
-
-                                <p className="text-sm text-black/60 leading-relaxed">
-                                    {service.description}
-                                </p>
-                            </div>
-                        </SpotlightCard>
+                        <FlipCard key={idx} service={service} />
                     ))}
                 </div>
 
@@ -492,52 +499,87 @@ const FullServiceSEO = () => {
     );
 }
 
-// --- SPOTLIGHT CARD COMPONENT ---
-const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-    const divRef = useRef<HTMLDivElement>(null);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [opacity, setOpacity] = useState(0);
+// --- FLIP CARD COMPONENT ---
+interface ServiceItem {
+    title: string;
+    icon: any;
+    description: string;
+}
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!divRef.current) return;
-        const rect = divRef.current.getBoundingClientRect();
-        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+const FlipCard = ({ service }: { service: ServiceItem }) => {
+    const [isFlipped, setIsFlipped] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Initial check for mobile (simplified, can be improved with hooks)
+    useState(() => {
+        if (typeof window !== 'undefined') {
+            setIsMobile(window.innerWidth < 768);
+        }
+    });
+
+    const handleInteractionStart = () => {
+        if (!isMobile) setIsFlipped(true); // Desktop Hover
+    };
+
+    const handleInteractionEnd = () => {
+        if (!isMobile) setIsFlipped(false); // Desktop Hover End
+    };
+
+    const handleClick = () => {
+        if (isMobile) setIsFlipped(!isFlipped); // Mobile Click toggle
     };
 
     return (
-        <motion.div
-            ref={divRef}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => setOpacity(1)}
-            onMouseLeave={() => setOpacity(0)}
-            className={`relative overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group ${className}`}
+        <div
+            className="h-[350px] md:h-[400px] w-full perspective-1000 cursor-pointer"
+            onMouseEnter={handleInteractionStart}
+            onMouseLeave={handleInteractionEnd}
+            onClick={handleClick}
         >
-            {/* Spotlight Effect */}
-            <div
-                className="pointer-events-none absolute -inset-px transition duration-300 opacity-0 group-hover:opacity-100"
-                style={{
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255, 97, 5, 0.08), transparent 40%)`,
-                }}
-            />
-            {/* Border Highlight Effect */}
-            <div
-                className="pointer-events-none absolute -inset-px transition duration-300 opacity-0 group-hover:opacity-100"
-                style={{
-                    background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255, 97, 5, 0.3), transparent 40%)`,
-                    maskImage: "linear-gradient(black, black) content-box, linear-gradient(black, black)",
-                    maskComposite: "exclude",
-                    WebkitMaskComposite: "xor",
-                    padding: "1px",
-                }}
-            />
+            <motion.div
+                className="relative w-full h-full transition-all duration-700 preserve-3d"
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                style={{ transformStyle: "preserve-3d" }}
+            >
+                {/* FRONT */}
+                <div
+                    className="absolute inset-0 w-full h-full bg-white rounded-[2rem] border border-black/5 shadow-sm p-8 flex flex-col items-center justify-center text-center backface-hidden"
+                    style={{ backfaceVisibility: "hidden" }}
+                >
+                    <div className="w-20 h-20 bg-[#FFF5F0] rounded-2xl flex items-center justify-center text-[#FF6105] mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                        <service.icon size={40} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-2xl font-bold uppercase text-black">
+                        {service.title}
+                    </h3>
+                    <div className="mt-8">
+                        <span className="text-xs font-bold text-[#FF6105] uppercase tracking-widest bg-[#FFF5F0] px-4 py-2 rounded-full">
+                            View Details
+                        </span>
+                    </div>
+                </div>
 
-            {children}
-        </motion.div>
+                {/* BACK */}
+                <div
+                    className="absolute inset-0 w-full h-full bg-[#FF6105] rounded-[2rem] shadow-xl p-8 flex flex-col items-center justify-center text-center backface-hidden"
+                    style={{
+                        backfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)"
+                    }}
+                >
+                    <service.icon size={32} strokeWidth={1.5} className="text-white mb-6 opacity-80" />
+                    <p className="text-white text-sm md:text-base font-medium leading-relaxed">
+                        {service.description}
+                    </p>
+                </div>
+            </motion.div>
+        </div>
     );
+}
+
+// --- LEGACY SPOTLIGHT CARD (Preserved if used elsewhere, or just placeholder) ---
+const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+    return <div className={className}>{children}</div>;
 }
 // --- COMPARISON SECTION (Second Section) ---
 const SeoComparisonSection = () => {
@@ -691,10 +733,11 @@ const ProtocolTimeline = () => {
     });
 
     const steps = [
-        { t: "Focus on Core Business", d: "SEO demands time, tools, and constant attention. We handle the complexity so you can focus on growth, sales, and operations." },
-        { t: "Avoid Costly Mistakes", d: "Search algorithms change fast. A trusted partner helps you avoid trial-and-error decisions that slow growth." },
-        { t: "Measurable Growth", d: "Every action is tracked. You see how traffic, leads, and conversions improve, not just rankings on a report." },
-        { t: "Long-Term Visibility", d: "Strategies built for stability in competitive markets, from local Indian searches to broader national reach." }
+        { t: "Experience", d: "Years of hands-on SEO experience, with the same obsession for learning, testing, and improving." },
+        { t: "Consistency", d: "A documented workflow with internal checks, so delivery never depends on one person. Work stays consistent, even when things get busy." },
+        { t: "Transparency", d: "A simple performance dashboard with the metrics that matter. Weekly visibility tracking, monthly growth insights, and clear next steps." },
+        { t: "ROI Protection", d: "We price for outcomes, not shortcuts. Strategy, execution, and measurement are built to protect ROI and support long-term growth." },
+        { t: "Shared Knowledge", d: "We share insights. Your team understands what we do, why it matters, and how it moves the needle." },
     ];
 
     return (
@@ -702,8 +745,8 @@ const ProtocolTimeline = () => {
             {/* Header */}
             <div className="max-w-[1400px] mx-auto px-4 md:px-6 mb-12 md:mb-24">
                 <div className="text-center">
-                    <h2 className="text-3xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter text-black">
-                        How EEGNITE Becomes a <br /><span className="text-[#FF6105]">Strong Partner</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter text-black">
+                        How EEGNITE Becomes a <br /><span className="text-[#FF6105]">Strong SEO Partner</span> For Your Business
                     </h2>
                 </div>
             </div>
@@ -769,6 +812,21 @@ const ProtocolTimeline = () => {
                     );
                 })}
             </div>
+
+            {/* CTA */}
+            <div className="bg-[#FFF5F0] rounded-3xl p-8 md:p-12 mx-4 md:mx-auto max-w-4xl text-center mt-20 md:mt-32 border border-[#FF6105]/10 shadow-lg relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF6105]/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+                <div className="relative z-10">
+                    <h3 className="text-2xl md:text-4xl font-bold uppercase text-black mb-4">Talk to Us</h3>
+                    <p className="text-black/60 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+                        Get a free SEO analysis from our experts and see where your next growth wins are hiding
+                    </p>
+                    <Link href="/contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                        Get Your Free Analysis
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </div>
+            </div>
         </section>
     )
 }
@@ -777,17 +835,13 @@ const ProtocolTimeline = () => {
 // --- TOOLS SECTION ---
 const ToolsSection = () => {
     const tools = [
-        { src: '/icons/semrush.png', alt: 'SEMrush' },
-        { src: '/icons/google.png', alt: 'Google' },
-        { src: '/icons/google-analytics.png', alt: 'Google Analytics' },
-        { src: '/icons/google-ads.png', alt: 'Google Ads' },
-        { src: '/icons/gtm.png', alt: 'Google Tag Manager' },
-        { src: '/icons/wordpress.png', alt: 'WordPress' },
-        { src: '/icons/hubspot.png', alt: 'HubSpot' },
-        { src: '/icons/klaviyo.png', alt: 'Klaviyo' },
-        { src: '/icons/linkedin.png', alt: 'LinkedIn' },
-        { src: '/icons/powerbi.png', alt: 'Power BI' },
-        { src: '/icons/woocommerce.png', alt: 'WooCommerce' },
+        { name: 'Google Analytics', src: '/icons/google-analytics.png', fallback: BarChart3 },
+        { name: 'Google Search Console', src: '/icons/google.png', fallback: Search },
+        { name: 'SemRush', src: '/icons/semrush.png', fallback: Activity },
+        { name: 'Ahref', src: '/icons/ahrefs.png', fallback: Link2 },
+        { name: 'SE ranking', src: null, fallback: TrendingUp },
+        { name: 'Keyword Planner', src: '/icons/google-ads.png', fallback: Search },
+        { name: 'Google Tag Manager', src: '/icons/gtm.png', fallback: Settings },
     ];
 
     return (
@@ -798,19 +852,32 @@ const ToolsSection = () => {
                 </h2>
             </div>
 
-            <div className="relative flex overflow-hidden group py-10">
+            <div className="relative flex overflow-hidden group py-10 selection-none pointer-events-none md:pointer-events-auto">
                 <div className="flex animate-loop-scroll hover:paused gap-12 md:gap-24 pr-12 md:pr-24">
-                    {[...tools, ...tools].map((tool, i) => (
-                        <div key={i} className="flex-shrink-0 w-20 h-20 md:w-32 md:h-32 relative hover:scale-110 transition-transform duration-300">
-                            {/* Using standard img tag as simple overlay, or Next Image if preferred. Using img for simplicity given paths */}
-                            <img src={tool.src} alt={tool.alt} className="w-full h-full object-contain" />
+                    {[...tools, ...tools].map((tool, index) => (
+                        <div key={index} className="flex flex-col items-center gap-3 w-28 md:w-32 flex-shrink-0 group/item">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 group-hover/item:scale-110 transition-transform duration-300 border border-black/5">
+                                {tool.src ? (
+                                    <img src={tool.src} alt={tool.name} className="w-full h-full object-contain" />
+                                ) : (
+                                    <tool.fallback className="w-8 h-8 text-[#FF6105]" />
+                                )}
+                            </div>
+                            <span className="text-[10px] md:text-xs font-bold text-black group-hover/item:text-[#FF6105] uppercase tracking-wider text-center whitespace-nowrap transition-colors">{tool.name}</span>
                         </div>
                     ))}
                 </div>
                 <div className="flex animate-loop-scroll hover:paused gap-12 md:gap-24 pr-12 md:pr-24" aria-hidden="true">
-                    {[...tools, ...tools].map((tool, i) => (
-                        <div key={i} className="flex-shrink-0 w-20 h-20 md:w-32 md:h-32 relative hover:scale-110 transition-transform duration-300">
-                            <img src={tool.src} alt={tool.alt} className="w-full h-full object-contain" />
+                    {[...tools, ...tools].map((tool, index) => (
+                        <div key={index} className="flex flex-col items-center gap-3 w-28 md:w-32 flex-shrink-0 group/item">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 group-hover/item:scale-110 transition-transform duration-300 border border-black/5">
+                                {tool.src ? (
+                                    <img src={tool.src} alt={tool.name} className="w-full h-full object-contain" />
+                                ) : (
+                                    <tool.fallback className="w-8 h-8 text-[#FF6105]" />
+                                )}
+                            </div>
+                            <span className="text-[10px] md:text-xs font-bold text-black group-hover/item:text-[#FF6105] uppercase tracking-wider text-center whitespace-nowrap transition-colors">{tool.name}</span>
                         </div>
                     ))}
                 </div>
@@ -818,7 +885,7 @@ const ToolsSection = () => {
             <style jsx>{`
                 @keyframes loop-scroll {
                     from { transform: translateX(0); }
-                    to { transform: translateX(-50%); }
+                    to { transform: translateX(-100%); }
                 }
                 .animate-loop-scroll {
                     animation: loop-scroll 40s linear infinite;
@@ -829,7 +896,7 @@ const ToolsSection = () => {
             `}</style>
         </section>
     );
-};
+}
 
 // --- WHY CHOOSE SECTION (Refined Horizontal Scroll) ---
 // --- WHY CHOOSE SECTION (Refined Horizontal Scroll) ---

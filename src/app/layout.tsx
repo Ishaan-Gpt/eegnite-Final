@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
+import Chatbot from "@/components/Chatbot";
 
 // Default to production URL if not set
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eegnite.com';
@@ -156,7 +157,8 @@ document.head.appendChild(o)}initApollo();`
                 </noscript>
                 {/* End Google Tag Manager (noscript) */}
                 {children}
+                <Chatbot />
             </body>
-        </html >
+        </html>
     );
 }

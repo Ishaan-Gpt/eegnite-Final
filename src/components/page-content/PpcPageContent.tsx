@@ -293,10 +293,10 @@ const FullServicePPC = () => {
                 </div>
 
                 <div className="text-center mt-16 md:mt-24">
-                    <a href="tel:+916289753474" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
-                        Schedule the Call Now
+                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                        Request a Free Quote
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>
@@ -569,7 +569,7 @@ const PpcProcessFloating = () => {
                 {/* Restored CTA logic */}
                 <div className="absolute bottom-8 md:bottom-12 left-0 w-full z-20 flex justify-center">
                     <a href="tel:+916289753474" className="bg-black text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
-                        Schedule the Call Now
+                        Schedule a Call
                     </a>
                 </div>
             </div>
@@ -886,9 +886,9 @@ export default function ServicePpc() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <a href="tel:+916289753474" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
-                                Schedule the Call Now
-                            </a>
+                            <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
+                                Start Your Project
+                            </Link>
                         </motion.div>
                     </div>
                 </section>
@@ -907,7 +907,7 @@ export default function ServicePpc() {
 
                 <section className="py-20 bg-white flex justify-center border-t border-black/5">
                     <a href="tel:+916289753474" className="bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
-                        Schedule the Call Now
+                        Schedule a Call
                     </a>
                 </section>
 

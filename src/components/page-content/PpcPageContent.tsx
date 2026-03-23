@@ -106,7 +106,7 @@ const IntroSection = () => {
             <div className="max-w-[1400px] mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
                     {/* Left: Content */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -122,7 +122,7 @@ const IntroSection = () => {
                     </motion.div>
 
                     {/* Right: Title */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -130,7 +130,7 @@ const IntroSection = () => {
                         className="order-1 lg:order-2 lg:text-right"
                     >
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter text-black leading-none">
-                            PPC Services <br className="hidden lg:block" /> 
+                            PPC Services <br className="hidden lg:block" />
                             <span className="text-[#FF6105]">Company For</span> <br className="hidden lg:block" />
                             Sustainable <br className="hidden lg:block" />
                             Growth
@@ -197,7 +197,7 @@ const PartnerSection = () => {
                     </div>
 
                     <div className="lg:w-1/2 space-y-8 md:space-y-12">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -259,7 +259,7 @@ const FullServicePPC = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter text-black leading-[0.9] mb-8">
-                                Supercharge <br /> 
+                                Supercharge <br />
                                 Your <span className="text-[#FF6105]">Business</span> <br />
                                 with Data-Driven <br />
                                 Campaigns
@@ -278,7 +278,7 @@ const FullServicePPC = () => {
                             In today’s competitive marketplace, standing out requires more than just a presence, it demands smart and strategic PPC advertising campaigns that not only increase visibility but also drive meaningful business results. EEGNITE acts as a performance focused PPC management company delivers tailored PPC campaign management strategies for your business goals. Our approach goes beyond simply targeting keywords; we focus on understanding your audience’s needs and behavior, crafting campaigns that engage and convert.
                         </p>
                         <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
-                            With our data-driven approach, EEGNITE’s PPC experts take the time to thoroughly analyze consumer behavior and apply actionable insights to optimize every aspect of your PPC marketing services. This allows us to build highly targeted campaigns that reach the right audience at the right time, driving stronger engagement and higher conversions. 
+                            With our data-driven approach, EEGNITE’s PPC experts take the time to thoroughly analyze consumer behavior and apply actionable insights to optimize every aspect of your PPC marketing services. This allows us to build highly targeted campaigns that reach the right audience at the right time, driving stronger engagement and higher conversions.
                         </p>
                         <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
                             Whether your objective is lead generation or improve brand visibility, our ongoing performance refinement helps you achieve measurable results while maximizing return on ad spend (ROAS). As a notable PPC company in India, we focus not only on short-term performance but also on building a scalable foundation for long-term business growth. Our tailored approach ensures that your marketing budget is strategically allocated for the best results.
@@ -499,7 +499,7 @@ const PpcProcessFloating = () => {
                     }
                 } else {
                     const children = Array.from(containerRef.current.children) as HTMLElement[];
-                    const targetCard = children[4]; 
+                    const targetCard = children[4];
                     if (targetCard) {
                         const targetOffset = targetCard.offsetLeft;
                         const targetWidth = targetCard.offsetWidth;
@@ -540,9 +540,9 @@ const PpcProcessFloating = () => {
                     </div>
                 </div>
 
-                <motion.div 
+                <motion.div
                     ref={containerRef}
-                    style={{ x }} 
+                    style={{ x }}
                     className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10 pt-16"
                 >
                     <div className="absolute left-0 right-0 top-1/2 h-2 bg-black/5 w-[200%] -translate-y-1/2 pointer-events-none rounded-full" />
@@ -650,15 +650,12 @@ const ToolsSection = () => {
 
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
                 <div>
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-4">
                         Tools & Platforms <br /><span className="text-[#FF6105]">Powering Our PPC Campaigns</span>
                     </h2>
                 </div>
-                <Link href="/#contact" className="bg-[#FF6105] text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg">
-                    Talk To a PPC Expert
-                </Link>
             </div>
 
             <div className="relative flex overflow-hidden group py-10 selection-none pointer-events-none md:pointer-events-auto">
@@ -741,9 +738,9 @@ const WhyChooseSection = () => {
                 </div>
 
                 <div className="flex items-center h-full w-full pt-16">
-                    <motion.div 
+                    <motion.div
                         ref={containerRef}
-                        style={{ x }} 
+                        style={{ x }}
                         className="flex gap-4 md:gap-12 pl-[5vw] md:pl-[10vw] items-center"
                     >
                         {reasons.map((reason, i) => (
@@ -900,16 +897,17 @@ export default function ServicePpc() {
                 <FullServicePPC />
                 <PpcProcessFloating />
                 <ProtocolTimeline />
-                <ToolsSection />
-                <WhyChooseSection />
-                <ValuesSection />
-                <Testimonials />
 
                 <section className="py-20 bg-white flex justify-center border-t border-black/5">
                     <a href="tel:+916289753474" className="bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
                         Schedule a Call
                     </a>
                 </section>
+
+                <ToolsSection />
+                <WhyChooseSection />
+                <ValuesSection />
+                <Testimonials />
 
                 {/* FAQs */}
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">

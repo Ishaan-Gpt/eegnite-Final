@@ -627,10 +627,10 @@ const ProtocolTimeline = () => {
                 <div className="relative z-10">
                     <h3 className="text-2xl md:text-4xl font-bold uppercase text-black mb-4">Schedule A Call Now</h3>
                     <p className="text-black/60 text-base md:text-lg mb-8 max-w-2xl mx-auto">Get a free PPC audit from our experts and see where your next growth wins are hiding.</p>
-                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                    <a href="tel:+916289753474" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
                         Schedule A Call Now
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>
@@ -897,12 +897,6 @@ export default function ServicePpc() {
                 <FullServicePPC />
                 <PpcProcessFloating />
                 <ProtocolTimeline />
-
-                <section className="py-20 bg-white flex justify-center border-t border-black/5">
-                    <a href="tel:+916289753474" className="bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
-                        Schedule a Call
-                    </a>
-                </section>
 
                 <ToolsSection />
                 <WhyChooseSection />

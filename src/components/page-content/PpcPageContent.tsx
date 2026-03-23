@@ -293,10 +293,10 @@ const FullServicePPC = () => {
                 </div>
 
                 <div className="text-center mt-16 md:mt-24">
-                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
-                        Request a Free Quote
+                    <a href="tel:+916289753474" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                        Schedule the Call Now
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>
@@ -568,9 +568,9 @@ const PpcProcessFloating = () => {
 
                 {/* Restored CTA logic */}
                 <div className="absolute bottom-8 md:bottom-12 left-0 w-full z-20 flex justify-center">
-                    <Link href="/#contact" className="bg-black text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
-                        Discuss Your PPC Strategy
-                    </Link>
+                    <a href="tel:+916289753474" className="bg-black text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
+                        Schedule the Call Now
+                    </a>
                 </div>
             </div>
         </section>
@@ -818,9 +818,9 @@ const PpcCTA = () => {
                             “A successful PPC campaign depends on a landing page that is designed to convert. At EEGNITE, we design and optimize PPC landing pages that align perfectly with your ads, messaging, and audience intent.”
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link href="/#contact" className="px-10 py-5 bg-white text-black text-lg font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl uppercase tracking-widest text-sm">
-                                Book a Free PPC Call <ArrowRight />
-                            </Link>
+                            <a href="tel:+916289753474" className="px-10 py-5 bg-white text-black text-lg font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl uppercase tracking-widest text-sm">
+                                Schedule the Call Now <ArrowRight />
+                            </a>
                             <Link href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl uppercase tracking-widest text-sm">
                                 Request a Quote
                             </Link>
@@ -886,9 +886,9 @@ export default function ServicePpc() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
-                                Start Your Project
-                            </Link>
+                            <a href="tel:+916289753474" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
+                                Schedule the Call Now
+                            </a>
                         </motion.div>
                     </div>
                 </section>
@@ -906,9 +906,9 @@ export default function ServicePpc() {
                 <Testimonials />
 
                 <section className="py-20 bg-white flex justify-center border-t border-black/5">
-                    <Link href="/#contact" className="bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
-                        Discuss Your PPC Strategy
-                    </Link>
+                    <a href="tel:+916289753474" className="bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#FF6105] transition-colors shadow-xl">
+                        Schedule the Call Now
+                    </a>
                 </section>
 
                 {/* FAQs */}

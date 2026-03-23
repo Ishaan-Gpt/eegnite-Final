@@ -19,8 +19,8 @@ const shouldIndex = isEnvironmentProduction && isMainDomain; // Enable indexing 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
-        default: "Digital Marketing Agency in India | Value-driven Solution | EEGNITE",
-        template: "%s | EEGNITE"
+        default: "Digital Marketing Agency in India | Value-driven Solution",
+        template: "%s"
     },
     description: "EEGNITE is a senior-led digital marketing agency in India helping brands grow through data-driven SEO, web design, social media, and content strategies. Let's connect now.",
     keywords: ["Digital Marketing Agency", "SEO India", "Web Design", "Social Media Marketing", "Content Strategy", "Growth Engine", "Digital Marketing India", "EEGNITE"],

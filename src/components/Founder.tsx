@@ -35,15 +35,16 @@ export default function Founder() {
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[80%] rounded-full bg-gradient-to-t from-[#FF6105]/20 via-[#FF6105]/10 to-transparent blur-3xl" />
 
                         {/* Founder image - standalone */}
-                        <motion.img
-                            src="/anish-founder.png"
-                            alt="Anish Kumar - Founder of EEGNITE"
-                            loading="lazy"
-                            className="relative z-10 w-auto h-[500px] lg:h-[600px] object-contain drop-shadow-2xl"
-                            style={{ transform: 'scaleX(-1)' }}
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ duration: 0.5 }}
-                        />
+                        <div className="relative z-10" style={{ transform: 'scaleX(-1)' }}>
+                            <motion.img
+                                src="/anish-founder.png"
+                                alt="Anish Kumar - Founder of EEGNITE"
+                                loading="lazy"
+                                className="w-auto h-[500px] lg:h-[600px] object-contain drop-shadow-2xl"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ duration: 0.5 }}
+                            />
+                        </div>
 
                         {/* Name badge */}
                         <motion.div
@@ -68,7 +69,7 @@ export default function Founder() {
                         transition={{ duration: 1, delay: 0.3 }}
                         className="order-1 lg:order-2 space-y-8"
                     >
-                        <p className="text-[clamp(1.5rem,3vw,2.2rem)] leading-[1.4] tracking-tight text-black">
+                        <p className="text-lg text-black/60 leading-relaxed">
                             Anish is the{" "}
                             <span className="text-[#FF6105] font-semibold">heart and soul</span>{" "}
                             behind EEGNITE. He built this agency to help businesses not just

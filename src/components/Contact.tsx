@@ -2,7 +2,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, Calendar, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
-import { submitContactForm } from "@/lib/firebaseService";
 
 const budgetOptions = [
     { value: "", label: "Select your budget" },
@@ -35,8 +34,8 @@ const howFoundUsOptions = [
 ];
 
 export default function Contact() {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(sectionRef, { once: true, margin: "-15%" });
+    const sectionRef = useRef<HTMLElement>(null);
+    const isInView = useInView(sectionRef as any, { once: true, margin: "-15%" });
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
@@ -56,12 +55,29 @@ export default function Contact() {
         setIsSubmitting(true);
         setSubmitError(null);
 
-        try {
-            const result = await submitContactForm(formData);
+        const formDataToSend = new FormData();
+        formDataToSend.append("access_key", "5e0730e4-dcbb-4989-beeb-70ae7049c769");
+        formDataToSend.append("name", formData.name);
+        formDataToSend.append("company", formData.company);
+        formDataToSend.append("email", formData.email);
+        formDataToSend.append("phone", formData.phone);
+        formDataToSend.append("budget", formData.budget);
+        formDataToSend.append("website", formData.website);
+        formDataToSend.append("howDidYouFind", formData.howDidYouFind);
+        formDataToSend.append("interests", formData.interests.join(", "));
+        formDataToSend.append("subject", `New Lead from ${formData.name}`);
+        formDataToSend.append("from_name", "EEGNITE Website");
 
-            if (result.success) {
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formDataToSend
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
                 setFormSubmitted(true);
-                // Reset form
                 setFormData({
                     name: "",
                     company: "",
@@ -74,7 +90,7 @@ export default function Contact() {
                 });
                 setTimeout(() => setFormSubmitted(false), 5000);
             } else {
-                setSubmitError(result.error || "Failed to submit form. Please try again.");
+                setSubmitError(data.message || "Failed to submit form. Please try again.");
             }
         } catch (error) {
             setSubmitError("An unexpected error occurred. Please try again.");
@@ -148,26 +164,28 @@ export default function Contact() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                     <label className="block text-xs font-semibold uppercase tracking-wider text-black/50 mb-2">
-                                        Your Name
+                                        Your Name <span className="text-[#FF6105]">*</span>
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
+                                        required
                                         className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-[#FF6105] focus:ring-2 focus:ring-[#FF6105]/20 outline-none transition-all bg-white"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-xs font-semibold uppercase tracking-wider text-black/50 mb-2">
-                                        Company
+                                        Company <span className="text-[#FF6105]">*</span>
                                     </label>
                                     <input
                                         type="text"
                                         name="company"
                                         value={formData.company}
                                         onChange={handleChange}
+                                        required
                                         className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-[#FF6105] focus:ring-2 focus:ring-[#FF6105]/20 outline-none transition-all bg-white"
                                         placeholder="Your Company"
                                     />
@@ -192,17 +210,13 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <label className="block text-xs font-semibold uppercase tracking-wider text-black/50 mb-2">
-                                        Phone Number <span className="text-[#FF6105]">*</span>
+                                        Phone Number
                                     </label>
                                     <input
                                         type="tel"
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        required
-                                        minLength={7}
-                                        pattern="[\d\s\+\-\(\)]{7,}"
-                                        title="Please enter a valid phone number (at least 7 digits)"
                                         className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-[#FF6105] focus:ring-2 focus:ring-[#FF6105]/20 outline-none transition-all bg-white"
                                         placeholder="+91 98765 43210"
                                     />

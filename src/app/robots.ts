@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/private/', '/blog-staging/'],
+            disallow: ['/private/', '/blog-staging/', '/2024/07/', '/elementor-hf/footer/'],
         },
         sitemap: 'https://eegnite.com/sitemap.xml',
     }

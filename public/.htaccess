@@ -22,7 +22,7 @@
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
     
     # Content Security Policy (adjust if you have external scripts)
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://firebase.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com https://www.facebook.com; frame-src 'self' https://calendly.com;"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://www.google-analytics.com https://assets.apollo.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://firebase.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com https://www.facebook.com https://assets.apollo.io; frame-src 'self' https://calendly.com;"
     
     # Strict Transport Security (HTTPS only) - uncomment after SSL is working
     Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
@@ -98,6 +98,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !index\.html$
     RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteCond %{REQUEST_URI} !\.(js|css|png|jpg|jpeg|gif|ico|svg|webp|json|txt|map)$
     RewriteRule ^(.*)$ $1/ [L,R=301]
 
     # Handle Next.js static files (e.g., /services/seo/ -> /services/seo/index.html)

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import {
     MapPin,
@@ -32,382 +32,118 @@ const fadeInUp = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
 };
 
-// --- CUSTOM HERO GRAPH COMPONENT ---
-// --- CUSTOM HERO GRAPH COMPONENT ---
-// --- CUSTOM HERO GRAPH COMPONENT ---
-// --- CUSTOM HERO GRAPH COMPONENT ---
-const HeroGraph = () => {
+
+
+
+
+
+
+// --- PREMIUM TEXTURE COMPONENT ---
+// Modern Interactive Grid Texture with low opacity fade for premium look
+const PremiumTexture = ({ className = "" }: { className?: string }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
-    const graphRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const handleMouseMove = (e: React.MouseEvent) => {
-        if (!graphRef.current) return;
-        const rect = graphRef.current.getBoundingClientRect();
-        setMousePos({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        });
-        setIsHovering(true);
-    };
-
-    const handleTouchMove = (e: React.TouchEvent) => {
-        if (!graphRef.current) return;
-        const rect = graphRef.current.getBoundingClientRect();
-        const touch = e.touches[0];
-        setMousePos({
-            x: touch.clientX - rect.left,
-            y: touch.clientY - rect.top
-        });
-        setIsHovering(true);
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     };
 
     return (
-        <div className="w-full h-[400px] md:h-[500px] bg-white rounded-3xl border border-black/5 shadow-xl p-6 md:p-10 relative overflow-hidden flex flex-col">
-            {/* Header / Tabs */}
-            <div className="flex flex-wrap gap-4 md:gap-8 mb-8 border-b border-black/5 pb-6 justify-between items-end">
-                <div className="flex gap-8">
-                    <div className="flex flex-col">
-                        <span className="text-black/40 text-xs font-semibold uppercase tracking-wider mb-1">Impact</span>
-                        <span className="text-2xl md:text-3xl font-bold text-[#FF6105]">+142%</span>
-                    </div>
-                    <div className="flex flex-col">
-                        <span className="text-black/40 text-xs font-semibold uppercase tracking-wider mb-1">ROI</span>
-                        <span className="text-2xl md:text-3xl font-bold text-black">12.5x</span>
-                    </div>
-                </div>
-
-                {/* Legend */}
-                <div className="flex gap-4 text-xs font-bold uppercase tracking-wider">
-                    <div className="flex items-center gap-2">
-                        <div className="w-3 h-1 bg-gray-300 rounded-full" />
-                        <span className="text-black/40">6 Months Ago</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <div className="w-3 h-1 bg-[#FF6105] rounded-full" />
-                        <span className="text-[#FF6105]">Current</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* The Graph Area */}
+        <div
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            className={`absolute inset-0 overflow-hidden ${className}`}
+        >
+            {/* Modern Grid Lines - Low Opacity */}
             <div
-                ref={graphRef}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={() => setIsHovering(false)}
-                onTouchStart={handleTouchMove}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={() => setIsHovering(false)}
-                className="relative flex-grow w-full cursor-crosshair touch-none"
-            >
-                {/* Grid Lines */}
-                <div className="absolute inset-0 flex flex-col justify-between text-xs text-black/20 font-mono pointer-events-none">
-                    {[100, 75, 50, 25, 0].map((v, i) => (
-                        <div key={i} className="w-full border-t border-black/5 flex items-center h-0 relative">
-                            <span className="absolute -left-0 -top-2">{v}</span>
-                        </div>
-                    ))}
-                </div>
+                className="absolute inset-0 opacity-[0.04]"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #000 1px, transparent 1px),
+                        linear-gradient(to bottom, #000 1px, transparent 1px)
+                    `,
+                    backgroundSize: '40px 40px'
+                }}
+            />
 
-                {/* Animated Line Path */}
-                <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1200 400">
-                    <defs>
-                        <linearGradient id="gradientArea" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#FF6105" stopOpacity="0.1" />
-                            <stop offset="100%" stopColor="#FF6105" stopOpacity="0" />
-                        </linearGradient>
-                    </defs>
+            {/* Radial Fade from edges - makes grid more premium */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white opacity-60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white opacity-60 pointer-events-none" />
 
-                    {/* "Before" Line (Gray, Flat/Erratic) */}
-                    <motion.path
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 1 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                        d="M0,300 L150,310 L300,290 L450,250 L600,280 L750,260 L900,240 L1200,220"
-                        fill="none"
-                        stroke="#e5e5e5"
-                        strokeWidth="2"
-                        strokeDasharray="5,5"
-                        vectorEffect="non-scaling-stroke"
-                    />
+            {/* Moving Grid Highlight - Interactive glow on grid */}
+            <motion.div
+                className="absolute w-[300px] h-[300px] rounded-full pointer-events-none"
+                animate={{
+                    x: mousePos.x - 150,
+                    y: mousePos.y - 150,
+                    opacity: isHovering ? 1 : 0,
+                }}
+                transition={{ type: "tween", ease: "backOut", duration: 0.4 }}
+                style={{
+                    background: 'radial-gradient(circle, rgba(255,97,5,0.06) 0%, transparent 70%)',
+                }}
+            />
 
-                    {/* "Current" Line (Orange, Steep Zigzag) */}
-                    <motion.path
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
-                        d="M0,350 L100,280 L200,320 L300,200 L400,240 L600,100 L800,120 L1000,50 L1200,20"
-                        fill="none"
-                        stroke="#FF6105"
-                        strokeWidth="3"
-                        vectorEffect="non-scaling-stroke"
-                    />
-                    <motion.path
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 1 }}
-                        d="M0,350 L100,280 L200,320 L300,200 L400,240 L600,100 L800,120 L1000,50 L1200,20 L1200,400 L0,400 Z"
-                        fill="url(#gradientArea)"
-                        vectorEffect="non-scaling-stroke"
-                    />
-                </svg>
-
-                {/* Interactive Scan Line */}
-                {isHovering && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="absolute top-0 bottom-0 w-[1px] bg-black/10 pointer-events-none flex flex-col justify-end pb-12 items-center"
-                        style={{ left: mousePos.x }}
-                    >
-                        <div className="bg-black text-white text-[10px] py-1 px-2 rounded mb-2 whitespace-nowrap">
-                            Vol: {Math.max(0, Math.floor((400 - mousePos.y) * 120))}
-                        </div>
-                        <div className="w-3 h-3 bg-[#FF6105] rounded-full ring-4 ring-white shadow-lg" />
-                    </motion.div>
-                )}
-
-                {/* Floating Interactive Points (Original) - Simplified/Hidden for cleanliness or restored if user wants exactly from git. 
-                    Git version uses (!isHovering) check. I will keep it.
-                */}
-                {!isHovering && (
-                    <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 2, type: "spring" }}
-                        className="absolute top-[20%] right-[10%] w-4 h-4 bg-white border-2 border-[#FF6105] rounded-full shadow-lg z-10"
-                    >
-                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#FF6105] text-white text-[10px] py-1 px-3 rounded-lg whitespace-nowrap shadow-xl">
-                            <span className="font-bold">Now</span>
-                        </div>
-                    </motion.div>
-                )}
-            </div>
+            {/* Subtle animated corner accents */}
+            <motion.div
+                className="absolute top-0 left-0 w-20 h-20 border-t border-l border-[#FF6105]/10"
+                animate={{ opacity: isHovering ? 0.4 : 0.15 }}
+                transition={{ duration: 0.3 }}
+            />
+            <motion.div
+                className="absolute bottom-0 right-0 w-20 h-20 border-b border-r border-[#FF6105]/10"
+                animate={{ opacity: isHovering ? 0.4 : 0.15 }}
+                transition={{ duration: 0.3 }}
+            />
         </div>
     );
-};
+}
 
-const CodeWindow = () => (
-    <div className="bg-white border border-black/5 p-4 md:p-6 rounded-3xl h-full w-full relative group shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col overflow-hidden">
-        <div className="flex items-center justify-between mb-4 md:mb-6">
-            <div className="flex gap-1.5 md:gap-2">
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#FF5F56]" />
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#FFBD2E]" />
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27C93F]" />
-            </div>
-            <div className="px-2 md:px-3 py-1 bg-[#FFF5F0] rounded-full text-[8px] md:text-[10px] font-bold text-[#FF6105] uppercase tracking-wider">
-                Analysis.tsx
-            </div>
-        </div>
-        <div className="flex-grow relative font-mono text-[10px] md:text-xs text-black/50 space-y-2 md:space-y-3">
-            <div className="flex items-center gap-2">
-                <span className="text-[#FF6105] opacity-50">1</span>
-                <span className="text-purple-600">const</span> <span className="text-blue-600">analyze</span> = <span className="text-black">()</span> <span className="text-purple-600">=&gt;</span> <span className="text-black">{`{`}</span>
-            </div>
-            <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="flex items-center gap-2 pl-4">
-                <span className="text-[#FF6105] opacity-50">2</span>
-                <span className="text-black/60">// Identifying gaps...</span>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="flex items-center gap-2 pl-4">
-                <span className="text-[#FF6105] opacity-50">3</span>
-                <span className="text-blue-600">return</span> <span className="text-green-600">"Opportunity Found"</span>
-            </motion.div>
-            <div className="flex items-center gap-2">
-                <span className="text-[#FF6105] opacity-50">4</span>
-                <span className="text-black">{`}`}</span>
-            </div>
-        </div>
-        {/* Scanning Line overlay */}
-        <motion.div
-            animate={{ top: ["0%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="absolute left-0 right-0 h-[1px] bg-[#FF6105]/30 pointer-events-none backdrop-blur-[1px]"
-        />
-    </div>
-);
 
-const RevenueCard = () => (
-    <div className="bg-[#FFF5F0] p-6 md:p-8 rounded-3xl h-full w-full relative overflow-hidden group hover:border-[#FF6105]/20 border border-transparent transition-all">
-        <div className="relative z-10 flex justify-between items-start">
-            <div>
-                <div className="p-2 md:p-3 bg-white rounded-xl shadow-sm text-[#FF6105] mb-4">
-                    <TrendingUp size={20} className="md:w-6 md:h-6" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold uppercase text-black mb-2">Shopify & Digital Retail</h3>
-                <p className="text-black/50 text-xs md:text-sm leading-relaxed max-w-xs">Shopify and digital retail brands seeking scalable growth</p>
-            </div>
-            <div className="text-right">
-                <div className="text-2xl md:text-4xl font-bold text-[#FF6105]">+142%</div>
-                <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-black/60 mt-1">Growth</div>
-            </div>
-        </div>
 
-        {/* Animated Bars */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 flex items-end justify-between px-6 md:px-8 pb-0 gap-2 md:gap-3">
-            {[30, 45, 40, 60, 55, 75, 90].map((h, i) => (
-                <motion.div
-                    key={i}
-                    initial={{ height: 0 }}
-                    whileInView={{ height: `${h}%` }}
-                    transition={{ duration: 0.8, delay: i * 0.1 }}
-                    className="w-full bg-white rounded-t-sm md:rounded-t-md opacity-50 group-hover:opacity-100 group-hover:bg-[#FF6105] transition-all duration-500"
-                />
-            ))}
-        </div>
-    </div>
-);
+const IndustriesSection = () => {
+    const industries = [
+        { title: "Healthcare & Home Services", desc: "Local clinics & home service firms." },
+        { title: "Shopify & Retail", desc: "Scalable e-commerce growth strategies." },
+        { title: "B2B & Logistics", desc: "Local search intent and authority." },
+        { title: "AI & SaaS Firms", desc: "Technical SEO for software companies." },
+        { title: "Professional Services", desc: "Authority building & expert profiling." },
+        { title: "Industrial & Manufacturing", desc: "Global supply chain visibility." }
+    ];
 
-const LocalMapCard = () => (
-    <div className="bg-white border border-black/5 p-2 rounded-3xl h-full w-full shadow-sm hover:shadow-xl transition-all duration-500 relative overflow-hidden group">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffffff_0%,transparent_100%)]" />
-        {/* Abstract Map Pattern */}
-        <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
-
-        <div className="relative z-10 h-full flex flex-col justify-between p-4 md:p-6">
-            <div className="flex justify-between items-start">
-                <div className="p-2 md:p-3 bg-[#FF6105] text-white rounded-xl shadow-lg">
-                    <MapPin size={20} className="md:w-6 md:h-6" />
-                </div>
-                <div className="bg-white px-2 md:px-3 py-1 rounded-full text-[8px] md:text-[10px] font-bold border border-black/10 uppercase tracking-wide">
-                    Local SEO
-                </div>
-            </div>
-
-            {/* Simulated Pins */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
-                <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute top-[40%] left-[60%] w-3 h-3 bg-[#FF6105] rounded-full shadow-xl"
-                >
-                    <div className="absolute top-0 left-0 w-full h-full bg-[#FF6105] animate-ping rounded-full opacity-50" />
-                </motion.div>
-                <div className="absolute top-[40%] left-[60%] -translate-y-8 -translate-x-1/2 bg-white px-2 md:px-3 py-1 rounded-lg text-[10px] md:text-xs font-bold shadow-lg whitespace-nowrap">
-                    #1 Rank
-                </div>
-            </div>
-
-            <div>
-                <h4 className="text-lg md:text-xl font-bold text-black">B2B, Logistics & Packaging</h4>
-                <p className="text-black/50 text-[10px] md:text-xs mt-1">B2B, logistics, and packaging companies</p>
-            </div>
-        </div>
-    </div>
-);
-
-const PulseCard = () => (
-    <div className="bg-[#FFF5F0] p-6 md:p-8 rounded-3xl h-full w-full relative overflow-hidden group hover:border-[#FF6105]/20 border border-transparent transition-all flex flex-col justify-center items-center">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#FF6105 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
-        <div className="relative z-10 p-6 bg-white rounded-full shadow-lg mb-6">
-            <Activity size={32} className="text-[#FF6105]" />
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#FF6105]/20 rounded-full animate-ping" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#FF6105]/10 rounded-full animate-ping delay-150" />
-
-        <h3 className="text-xl font-bold uppercase text-black relative z-10 mt-4">Scalable Care</h3>
-    </div>
-);
-
-const HierarchicalBento = () => {
     return (
-        <section className="min-h-screen py-16 md:py-32 px-4 md:px-6 bg-white border-t border-black/5">
-            <div className="max-w-[1400px] w-full mx-auto">
-                <div className="mb-12 md:mb-24">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                        <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold uppercase tracking-tight text-black">
-                            Industries <br className="md:hidden" /> <span className="text-[#FF6105]">We Power</span>
+        <section className="py-16 md:py-24 bg-white border-y border-black/5">
+            <div className="max-w-[1400px] mx-auto px-6">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
+                    <div className="max-w-xl">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black mb-4">
+                            Industries <br /><span className="text-[#FF6105]">We Power</span>
                         </h2>
-                        <p className="text-black/50 text-sm md:text-base font-normal max-w-md leading-relaxed">
-                            EEGNITE works with businesses across India, as well as clients in Western Asia and Europe. Regardless of your niche or market, we design strategies that strengthen visibility and build authority.
+                        <p className="text-black/50 text-base md:text-xl leading-relaxed">
+                            EEGNITE designs strategies that strengthen visibility and build authority across these core sectors.
                         </p>
                     </div>
-                </div>
 
-                <div className="flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-[350px_350px] gap-4 md:gap-6">
-                    {/* 1. Healthcare - Top Left Large */}
-                    <div className="lg:col-span-2 lg:row-span-1 h-[400px] lg:h-auto">
-                        <div className="h-full p-5 md:p-8 bg-[#F9F9F9] rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group hover:bg-white border border-transparent hover:border-black/5 transition-colors duration-500">
-                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 h-full">
-                                <div className="flex flex-col justify-center relative z-10">
-                                    <div className="flex justify-between items-start lg:block">
-                                        <Activity size={32} className="text-[#FF6105] mb-4 lg:mb-6" />
-                                        <div className="lg:hidden flex gap-2 mb-4">
-                                            <span className="w-2 h-2 rounded-full bg-green-500" />
-                                            <span className="text-[10px] font-mono text-black/40">Optimized</span>
-                                        </div>
-                                    </div>
-                                    <h3 className="text-xl md:text-2xl font-bold uppercase mb-2 text-black">Healthcare & Home Services</h3>
-                                    <p className="text-black/50 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-3 lg:line-clamp-none">Local clinics, healthcare providers and home service businesses</p>
-                                    <div className="hidden lg:flex gap-2">
-                                        <span className="w-2 h-2 rounded-full bg-green-500" />
-                                        <span className="text-xs font-mono text-black/40">Status: Optimized</span>
-                                    </div>
-                                </div>
-                                <div className="h-full pb-0 lg:pt-4 flex-grow relative">
-                                    <div className="absolute inset-0 top-auto h-[180px] lg:h-full lg:static w-full">
-                                        <PulseCard />
-                                    </div>
-                                </div>
+                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 w-full border-l md:border-l-0 md:pl-0 pl-6 border-black/5">
+                        {industries.map((item, idx) => (
+                            <div key={idx} className="group cursor-default">
+                                <h3 className="text-lg md:text-xl font-bold uppercase text-black mb-1 transition-colors group-hover:text-[#FF6105]">
+                                    {item.title}
+                                </h3>
+                                <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* 2. Revenue - Top Right */}
-                    <div className="lg:col-span-2 lg:row-span-1 h-[350px] lg:h-auto">
-                        <RevenueCard />
-                    </div>
-
-                    {/* 3. Local - Bottom Left */}
-                    <div className="lg:col-span-1 lg:row-span-1 h-[350px] lg:h-auto">
-                        <LocalMapCard />
-                    </div>
-
-                    {/* 4. AI & SaaS - Bottom Middle Large */}
-                    <div className="lg:col-span-2 lg:row-span-1 h-[350px] lg:h-auto bg-white border border-black/5 rounded-[2.5rem] p-6 md:p-8 relative overflow-hidden group hover:shadow-2xl transition-all">
-                        <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                            <Cpu size={200} className="text-[#FF6105]" />
-                        </div>
-
-                        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 h-full">
-                            <div className="relative z-10 flex flex-col justify-between h-full">
-                                <div>
-                                    <div className="w-12 h-12 bg-[#FF6105] text-white rounded-xl flex items-center justify-center mb-4">
-                                        <Cpu size={24} />
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold uppercase text-black">AI & SaaS <span className="text-[#FF6105]">Firms</span></h3>
-                                    <p className="text-black/50 text-sm md:text-lg max-w-md mt-2 line-clamp-3 lg:line-clamp-none">AI and SaaS firms requiring technical SEO and content moats</p>
-                                </div>
-                                <div className="mt-6 flex items-center gap-4">
-                                    <div className="bg-[#FFF5F0] px-4 py-2 rounded-full text-[#FF6105] text-xs font-bold uppercase">Tech-Focused SEO</div>
-                                </div>
-                            </div>
-                            <div className="h-full pb-0 lg:pt-4 flex-grow relative min-h-[200px]">
-                                <CodeWindow />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* 5. Transparency - Bottom Right */}
-                    <div className="lg:col-span-1 lg:row-span-1 h-[350px] lg:h-auto bg-[#FF6105] rounded-[2.5rem] p-6 md:p-8 text-white flex flex-col justify-between group relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-white blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity" />
-
-                        <LayoutDashboard size={32} className="text-white" />
-                        <div>
-                            <h3 className="text-lg md:text-xl font-bold uppercase mb-1 text-white">Professional <br /><span className="text-black/50">Services</span></h3>
-                            <p className="text-white/80 text-xs">Professional service providers building long-term online authority</p>
-                        </div>
-                        <div className="w-full bg-black/10 h-1 mt-4 rounded-full overflow-hidden">
-                            <motion.div
-                                animate={{ width: ["0%", "100%"] }}
-                                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                                className="h-full bg-white" />
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 // --- FULL SERVICE SEO SOLUTION (Interactive Spotlight Design) ---
 
@@ -459,8 +195,8 @@ const FullServiceSEO = () => {
         <section className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#FF6105]/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#FF6105]/5 rounded-full blur-[120px]" />
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#FF6105]/5 rounded-full blur-[80px] md:blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#FF6105]/5 rounded-full blur-[80px] md:blur-[120px]" />
             </div>
 
             <div className="mx-auto w-full max-w-[1400px] relative z-10">
@@ -470,12 +206,12 @@ const FullServiceSEO = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="mx-auto max-w-3xl text-center mb-16 md:mb-24"
+                    className="max-w-3xl mb-12 md:mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tight text-black mb-6">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-6">
                         Full Service SEO <span className="text-[#FF6105]">Solution</span>
                     </h2>
-                    <p className="text-black/50 text-base md:text-lg font-normal leading-relaxed">
+                    <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
                         Our SEO services are built to do more than improve rankings. We focus on creating long-term visibility, brand authority, and consistent inbound demand through strategies.
                     </p>
                 </motion.div>
@@ -489,10 +225,10 @@ const FullServiceSEO = () => {
 
                 {/* CTA */}
                 <div className="text-center mt-16 md:mt-24">
-                    <Link href="/contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                    <a href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
                         Request a Proposal
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>
@@ -509,6 +245,7 @@ interface ServiceItem {
 const FlipCard = ({ service }: { service: ServiceItem }) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     // Initial check for mobile (simplified, can be improved with hooks)
     useState(() => {
@@ -518,11 +255,17 @@ const FlipCard = ({ service }: { service: ServiceItem }) => {
     });
 
     const handleInteractionStart = () => {
-        if (!isMobile) setIsFlipped(true); // Desktop Hover
+        if (!isMobile) {
+            setIsFlipped(true);
+            setIsHovered(true);
+        }
     };
 
     const handleInteractionEnd = () => {
-        if (!isMobile) setIsFlipped(false); // Desktop Hover End
+        if (!isMobile) {
+            setIsFlipped(false);
+            setIsHovered(false);
+        }
     };
 
     const handleClick = () => {
@@ -531,11 +274,44 @@ const FlipCard = ({ service }: { service: ServiceItem }) => {
 
     return (
         <div
-            className="h-[350px] md:h-[400px] w-full perspective-1000 cursor-pointer"
+            className="h-[350px] md:h-[400px] w-full perspective-1000 cursor-pointer group relative"
             onMouseEnter={handleInteractionStart}
             onMouseLeave={handleInteractionEnd}
             onClick={handleClick}
         >
+            {/* Animated Border Container */}
+            <div className="absolute -inset-[2px] rounded-[2.1rem] bg-gradient-to-r from-transparent via-transparent to-transparent overflow-hidden">
+                {/* Rotating Gradient Border */}
+                <motion.div
+                    className="absolute inset-0"
+                    animate={{
+                        background: isHovered
+                            ? [
+                                'conic-gradient(from 0deg at 50% 50%, #FF6105 0deg, transparent 60deg, transparent 300deg, #FF6105 360deg)',
+                                'conic-gradient(from 360deg at 50% 50%, #FF6105 0deg, transparent 60deg, transparent 300deg, #FF6105 360deg)'
+                            ]
+                            : 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 360deg)'
+                    }}
+                    transition={{
+                        duration: 2,
+                        repeat: isHovered ? Infinity : 0,
+                        ease: "linear"
+                    }}
+                />
+
+                {/* Glow Effect */}
+                <motion.div
+                    className="absolute inset-0 blur-md"
+                    animate={{
+                        background: isHovered
+                            ? 'conic-gradient(from 0deg at 50% 50%, #FF6105 0deg, transparent 90deg, transparent 270deg, #FF6105 360deg)'
+                            : 'transparent',
+                        opacity: isHovered ? 0.5 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                />
+            </div>
+
             <motion.div
                 className="relative w-full h-full transition-all duration-700 preserve-3d"
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -543,17 +319,26 @@ const FlipCard = ({ service }: { service: ServiceItem }) => {
             >
                 {/* FRONT */}
                 <div
-                    className="absolute inset-0 w-full h-full bg-white rounded-[2rem] border border-black/5 shadow-sm p-8 flex flex-col items-center justify-center text-center backface-hidden"
+                    className="absolute inset-0 w-full h-full bg-white rounded-[2rem] border border-black/5 shadow-sm p-8 flex flex-col items-center justify-center text-center backface-hidden group-hover:shadow-xl transition-shadow duration-300"
                     style={{ backfaceVisibility: "hidden" }}
                 >
-                    <div className="w-20 h-20 bg-[#FFF5F0] rounded-2xl flex items-center justify-center text-[#FF6105] mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                    {/* Subtle grid pattern */}
+                    <div
+                        className="absolute inset-0 opacity-[0.02] rounded-[2rem]"
+                        style={{
+                            backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)',
+                            backgroundSize: '30px 30px'
+                        }}
+                    />
+
+                    <div className="w-20 h-20 bg-[#FFF5F0] rounded-2xl flex items-center justify-center text-[#FF6105] mb-8 shadow-sm group-hover:scale-110 transition-transform relative z-10">
                         <service.icon size={40} strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-2xl font-bold uppercase text-black">
+                    <h3 className="text-2xl font-bold uppercase text-black relative z-10">
                         {service.title}
                     </h3>
-                    <div className="mt-8">
-                        <span className="text-xs font-bold text-[#FF6105] uppercase tracking-widest bg-[#FFF5F0] px-4 py-2 rounded-full">
+                    <div className="mt-8 relative z-10">
+                        <span className="text-xs font-bold text-[#FF6105] uppercase tracking-widest bg-[#FFF5F0] px-4 py-2 rounded-full group-hover:bg-[#FF6105] group-hover:text-white transition-colors duration-300">
                             View Details
                         </span>
                     </div>
@@ -587,7 +372,7 @@ const SeoComparisonSection = () => {
         <section className="py-16 md:py-24 px-4 md:px-6 bg-white relative overflow-hidden flex items-center justify-center">
             <div className="max-w-[1400px] w-full mx-auto">
                 <div className="text-center mb-10 md:mb-16">
-                    <h2 className="text-4xl lg:text-8xl font-bold uppercase tracking-tighter mb-6 text-black">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter mb-6 text-black">
                         Why <span className="text-[#FF6105]">EEGNITE?</span>
                     </h2>
                     <p className="text-black/60 text-base md:text-xl font-normal max-w-4xl mx-auto leading-relaxed">
@@ -653,11 +438,48 @@ const SeoComparisonSection = () => {
 // --- SEO PROCESS (Visual Flowchart) ---
 const SeoProcessFloating = () => {
     const targetRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollRange, setScrollRange] = useState(0);
+
     const { scrollYProgress } = useScroll({
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+    useEffect(() => {
+        const calculateRange = () => {
+            if (containerRef.current) {
+                const totalWidth = containerRef.current.scrollWidth;
+                const windowWidth = window.innerWidth;
+                const isMobile = windowWidth < 768;
+
+                if (isMobile) {
+                    const lastCard = containerRef.current.lastElementChild as HTMLElement;
+                    if (lastCard) {
+                        const lastCardOffset = lastCard.offsetLeft;
+                        const lastCardWidth = lastCard.offsetWidth;
+                        setScrollRange(lastCardOffset + (lastCardWidth / 2) - (windowWidth / 2));
+                    }
+                } else {
+                    const children = Array.from(containerRef.current.children) as HTMLElement[];
+                    const targetCard = children[5]; 
+                    if (targetCard) {
+                        const targetOffset = targetCard.offsetLeft;
+                        const targetWidth = targetCard.offsetWidth;
+                        setScrollRange(targetOffset + (targetWidth / 2) - (windowWidth / 2));
+                    } else {
+                        const totalWidth = containerRef.current.scrollWidth;
+                        setScrollRange(totalWidth - windowWidth);
+                    }
+                }
+            }
+        };
+
+        calculateRange();
+        window.addEventListener('resize', calculateRange);
+        return () => window.removeEventListener('resize', calculateRange);
+    }, []);
+
+    const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
     const steps = [
         { id: "01", title: "Keyword Discovery", desc: "Identifying high-intent search terms.", icon: Search },
@@ -669,19 +491,25 @@ const SeoProcessFloating = () => {
     ];
 
     return (
-        <section ref={targetRef} className="relative h-[300vh] bg-white text-black">
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <section ref={targetRef} className="relative h-[200vh] md:h-[250vh] bg-white text-black">
+            <div className="sticky top-0 flex h-[85vh] md:h-screen items-center overflow-hidden">
                 {/* Background Grid */}
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
 
-                {/* Header Overlay */}
-                <div className="absolute top-10 left-6 md:left-20 z-20">
-                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
-                        Our SEO <span className="text-[#FF6105]">Process</span>
-                    </h2>
+                {/* Header Overlay - Standardized Alignment */}
+                <div className="absolute top-24 left-0 w-full z-20">
+                    <div className="max-w-[1400px] mx-auto px-6">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
+                            Our SEO <span className="text-[#FF6105]">Process</span>
+                        </h2>
+                    </div>
                 </div>
 
-                <motion.div style={{ x }} className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10">
+                <motion.div 
+                    ref={containerRef}
+                    style={{ x }} 
+                    className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10 pt-16"
+                >
                     {/* Connecting Line */}
                     <div className="absolute left-0 right-0 top-1/2 h-2 bg-black/5 w-[200%] -translate-y-1/2 pointer-events-none rounded-full" />
 
@@ -713,8 +541,7 @@ const SeoProcessFloating = () => {
                         );
                     })}
 
-                    {/* Extra padding at the end */}
-                    <div className="min-w-[50vw]" />
+                    {/* Extra padding at the end removed */}
                 </motion.div>
             </div>
         </section>
@@ -726,9 +553,9 @@ const DominateCTA = () => null;
 
 // --- PROTOCOL TIMELINE COMPONENT ---
 const ProtocolTimeline = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const targetRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
-        target: containerRef,
+        target: targetRef,
         offset: ["start start", "end end"]
     });
 
@@ -741,12 +568,12 @@ const ProtocolTimeline = () => {
     ];
 
     return (
-        <section ref={containerRef} className="bg-white relative py-16 md:py-24">
+        <section ref={targetRef} className="bg-white relative py-16 md:py-24">
             {/* Header */}
-            <div className="max-w-[1400px] mx-auto px-4 md:px-6 mb-12 md:mb-24">
-                <div className="text-center">
-                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter text-black">
-                        How EEGNITE Becomes a <br /><span className="text-[#FF6105]">Strong SEO Partner</span> For Your Business
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
+                <div className="text-left">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%]">
+                        How EEGNITE Becomes a <span className="text-[#FF6105]">Strong SEO Partner</span> For Your Business
                     </h2>
                 </div>
             </div>
@@ -773,16 +600,9 @@ const ProtocolTimeline = () => {
                             initial={{ opacity: 0.2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ margin: "-20% 0px -20% 0px" }}
-                            className="py-16 md:min-h-[50vh] flex items-center justify-center relative md:py-20"
+                            className="py-12 md:min-h-[50vh] flex items-center justify-center relative md:py-16"
                         >
-                            {/*
-                               Grid Layout:
-                               - Mobile: Flex column-ish or Grid with padding left
-                               - We use padding-left on mobile to push content right of the timeline
-                            */}
                             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full relative pl-20 md:pl-0">
-
-                                {/* Text Content */}
                                 <div className={`order-2 md:order-1 ${i % 2 === 1 ? 'md:col-start-2 md:pl-24' : 'md:text-right md:pr-24'}`}>
                                     <h3 className="text-2xl md:text-4xl font-bold uppercase text-black leading-tight mb-3 md:mb-4">
                                         {s.t}
@@ -792,7 +612,6 @@ const ProtocolTimeline = () => {
                                     </p>
                                 </div>
 
-                                {/* Center Node Graphic */}
                                 <div className="absolute left-8 md:left-1/2 top-0 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 flex flex-col items-center justify-center mt-8 md:mt-0 h-full md:h-auto pointer-events-none md:pointer-events-auto">
                                     <motion.div
                                         initial={{ scale: 1, backgroundColor: "#ffffff", borderColor: "#FF6105" }}
@@ -805,7 +624,6 @@ const ProtocolTimeline = () => {
                                     </motion.div>
                                 </div>
 
-                                {/* Empty side for layout balance */}
                                 <div className={`hidden md:block order-1 md:order-2 ${i % 2 === 1 ? 'md:col-start-1' : ''}`} />
                             </div>
                         </motion.div>
@@ -821,10 +639,10 @@ const ProtocolTimeline = () => {
                     <p className="text-black/60 text-base md:text-lg mb-8 max-w-2xl mx-auto">
                         Get a free SEO analysis from our experts and see where your next growth wins are hiding
                     </p>
-                    <Link href="/contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                    <a href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
                         Get Your Free Analysis
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>
@@ -846,38 +664,42 @@ const ToolsSection = () => {
 
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden">
-            <div className="container mx-auto px-6 mb-12 md:mb-16 text-center">
-                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black">
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
                     Tools We <span className="text-[#FF6105]">Use</span>
                 </h2>
             </div>
 
             <div className="relative flex overflow-hidden group py-10 selection-none pointer-events-none md:pointer-events-auto">
-                <div className="flex animate-loop-scroll hover:paused gap-12 md:gap-24 pr-12 md:pr-24">
+                {/* Left Fade */}
+                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 lg:w-60 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+
+                {/* Right Fade */}
+                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 lg:w-60 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+
+                <div className="flex animate-loop-scroll hover:paused gap-12 md:gap-20 pr-12 md:pr-20">
                     {[...tools, ...tools].map((tool, index) => (
-                        <div key={index} className="flex flex-col items-center gap-3 w-28 md:w-32 flex-shrink-0 group/item">
-                            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 group-hover/item:scale-110 transition-transform duration-300 border border-black/5">
+                        <div key={index} className="flex flex-col items-center justify-center flex-shrink-0 group/item">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 group-hover/item:scale-110 transition-transform duration-300 border border-black/5 hover:border-[#FF6105]/20 hover:shadow-lg">
                                 {tool.src ? (
                                     <img src={tool.src} alt={tool.name} className="w-full h-full object-contain" />
                                 ) : (
                                     <tool.fallback className="w-8 h-8 text-[#FF6105]" />
                                 )}
                             </div>
-                            <span className="text-[10px] md:text-xs font-bold text-black group-hover/item:text-[#FF6105] uppercase tracking-wider text-center whitespace-nowrap transition-colors">{tool.name}</span>
                         </div>
                     ))}
                 </div>
-                <div className="flex animate-loop-scroll hover:paused gap-12 md:gap-24 pr-12 md:pr-24" aria-hidden="true">
+                <div className="flex animate-loop-scroll hover:paused gap-12 md:gap-20 pr-12 md:pr-20" aria-hidden="true">
                     {[...tools, ...tools].map((tool, index) => (
-                        <div key={index} className="flex flex-col items-center gap-3 w-28 md:w-32 flex-shrink-0 group/item">
-                            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 group-hover/item:scale-110 transition-transform duration-300 border border-black/5">
+                        <div key={index} className="flex flex-col items-center justify-center flex-shrink-0 group/item">
+                            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 group-hover/item:scale-110 transition-transform duration-300 border border-black/5 hover:border-[#FF6105]/20 hover:shadow-lg">
                                 {tool.src ? (
                                     <img src={tool.src} alt={tool.name} className="w-full h-full object-contain" />
                                 ) : (
                                     <tool.fallback className="w-8 h-8 text-[#FF6105]" />
                                 )}
                             </div>
-                            <span className="text-[10px] md:text-xs font-bold text-black group-hover/item:text-[#FF6105] uppercase tracking-wider text-center whitespace-nowrap transition-colors">{tool.name}</span>
                         </div>
                     ))}
                 </div>
@@ -902,8 +724,31 @@ const ToolsSection = () => {
 // --- WHY CHOOSE SECTION (Refined Horizontal Scroll) ---
 const WhyChooseSection = () => {
     const targetRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollRange, setScrollRange] = useState(0);
+
     const { scrollYProgress } = useScroll({ target: targetRef });
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
+    useEffect(() => {
+        const calculateRange = () => {
+            if (containerRef.current) {
+                const totalWidth = containerRef.current.scrollWidth;
+                const windowWidth = window.innerWidth;
+                const lastCard = containerRef.current.lastElementChild as HTMLElement;
+                if (lastCard) {
+                    setScrollRange(lastCard.offsetLeft);
+                } else {
+                    setScrollRange(totalWidth - windowWidth);
+                }
+            }
+        };
+
+        calculateRange();
+        window.addEventListener('resize', calculateRange);
+        return () => window.removeEventListener('resize', calculateRange);
+    }, []);
+
+    const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
     const reasons = [
         {
@@ -929,20 +774,26 @@ const WhyChooseSection = () => {
     ];
 
     return (
-        <section ref={targetRef} className="relative h-[300vh] bg-white text-black">
-            <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden py-12">
-                <div className="container mx-auto px-4 md:px-20 mb-12 md:mb-20">
-                    <h2 className="text-4xl md:text-7xl font-semibold uppercase tracking-tighter leading-none">
-                        Why <span className="text-[#FF6105]">India</span> Chooses Us
-                    </h2>
+        <section ref={targetRef} className="relative h-[150vh] md:h-[300vh] bg-white text-black">
+            <div className="sticky top-0 flex flex-col justify-center h-[75vh] md:h-screen overflow-hidden">
+                <div className="absolute top-24 md:top-32 left-0 w-full z-20">
+                    <div className="max-w-[1400px] mx-auto px-6">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none">
+                            Why <span className="text-[#FF6105]">India</span> Chooses Us
+                        </h2>
+                    </div>
                 </div>
 
-                <div className="flex items-center h-full w-full">
-                    <motion.div style={{ x }} className="flex gap-4 md:gap-12 pl-[5vw] md:pl-[5vw] items-center">
+                <div className="flex items-center h-full w-full pt-16">
+                    <motion.div 
+                        ref={containerRef}
+                        style={{ x }} 
+                        className="flex gap-4 md:gap-12 pl-[5vw] md:pl-[10vw] items-center"
+                    >
                         {reasons.map((reason, i) => (
                             <div key={i} className="min-w-[85vw] md:min-w-[600px] flex flex-col justify-center p-6 md:p-12 border-l border-black/10 h-[50vh] md:h-[55vh] bg-white hover:bg-gray-50 transition-colors">
                                 <span className="text-5xl md:text-8xl font-medium text-black/5 mb-4 md:mb-8">{reason.id}</span>
-                                <h3 className="text-2xl md:text-5xl font-medium mb-4 md:mb-6 uppercase tracking-tight">{reason.title}</h3>
+                                <h3 className="text-2xl md:text-4xl font-medium mb-4 md:mb-6 uppercase tracking-tight">{reason.title}</h3>
                                 <p className="text-base md:text-xl text-black/60 leading-relaxed max-w-xl">{reason.desc}</p>
                             </div>
                         ))}
@@ -972,10 +823,10 @@ const ValuesSection = () => {
     ];
 
     return (
-        <section className="bg-white text-black py-20 md:py-32 px-4 md:px-20 relative overflow-hidden">
+        <section className="bg-white text-black py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 <div className="mb-12 md:mb-24">
-                    <h2 className="text-4xl md:text-8xl font-semibold uppercase tracking-tighter leading-none mb-8 md:mb-12">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12">
                         Powered By <span className="text-[#FF6105]">Values</span>
                     </h2>
                 </div>
@@ -985,10 +836,10 @@ const ValuesSection = () => {
                         <div key={i} className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-24 border-t border-black/10 pt-8 md:pt-12 transition-all hover:border-[#FF6105] duration-500">
                             <span className="text-xl md:text-2xl font-mono text-[#FF6105]">0{i + 1}</span>
                             <div className="flex-1">
-                                <h3 className="text-3xl md:text-7xl font-medium uppercase tracking-tight mb-4 md:mb-6 group-hover:text-[#FF6105] transition-colors duration-300">{v.title}</h3>
+                                <h3 className="text-3xl md:text-6xl font-medium uppercase tracking-tight mb-4 md:mb-6 group-hover:text-[#FF6105] transition-colors duration-300">{v.title}</h3>
                             </div>
                             <div className="flex-1">
-                                <p className="text-lg md:text-2xl text-black/60 leading-relaxed group-hover:text-black transition-colors duration-300">
+                                <p className="text-base md:text-xl text-black/60 leading-relaxed group-hover:text-black transition-colors duration-300">
                                     {v.desc}
                                 </p>
                             </div>
@@ -1002,50 +853,91 @@ const ValuesSection = () => {
 
 // --- METRICS SECTION (Split Interactive) ---
 // --- METRICS SECTION (Split Interactive) ---
-const MetricsSection = () => {
-    return (
-        <section className="min-h-screen bg-white flex items-center justify-center py-20 md:py-24 relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-                <div className="relative z-10">
-                    <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter text-black leading-none mb-8 md:mb-12">
-                        Real <span className="text-[#FF6105]">Metrics</span><br />Real Growth
-                    </h2>
-                    <p className="text-lg md:text-xl text-black/60 max-w-lg leading-relaxed mb-8 md:mb-12">
-                        We don't settle for "green lights" on a tool. We focus on the metrics that actually drive revenue: Traffic, Leads, and Market Share.
-                    </p>
+// --- CIRCULAR PROGRESS COMPONENT ---
+const CircularProgress = ({ value, label }: { value: number; label: string }) => {
+    const [progress, setProgress] = useState(0);
+    const radius = 60;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (progress / 100) * circumference;
 
-                    <div className="flex gap-4">
-                        <div className="h-24 md:h-32 w-1 bg-[#FF6105]" />
-                        <div className="flex flex-col justify-between py-2">
-                            <span className="text-base md:text-lg font-bold">Data Driven</span>
-                            <span className="text-base md:text-lg font-bold">Transparent</span>
-                            <span className="text-base md:text-lg font-bold">Scalable</span>
-                        </div>
-                    </div>
+    return (
+        <div className="flex flex-col items-center group cursor-default">
+            <div className="relative w-48 h-48 flex items-center justify-center mb-6">
+                {/* Background Track */}
+                <svg className="absolute w-full h-full -rotate-90">
+                    <circle
+                        cx="96"
+                        cy="96"
+                        r={radius}
+                        stroke="currentColor"
+                        strokeWidth="10"
+                        fill="transparent"
+                        className="text-[#F9F9F9]"
+                    />
+                    {/* Animated Progress Circle */}
+                    <motion.circle
+                        cx="96"
+                        cy="96"
+                        r={radius}
+                        stroke="url(#gradient-progress)"
+                        strokeWidth="10"
+                        fill="transparent"
+                        strokeDasharray={circumference}
+                        initial={{ strokeDashoffset: circumference }}
+                        whileInView={{ strokeDashoffset: offset }}
+                        onViewportEnter={() => setProgress(value)}
+                        viewport={{ once: false }}
+                        transition={{ duration: 2, ease: "easeOut" }}
+                        strokeLinecap="round"
+                    />
+                    <defs>
+                        <linearGradient id="gradient-progress" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#FF6105" />
+                            <stop offset="100%" stopColor="#FF8F50" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                {/* Center Value */}
+                <div className="flex flex-col items-center justify-center bg-white rounded-full w-[100px] h-[100px] shadow-lg border border-black/5">
+                    <motion.span
+                        className="text-3xl font-black text-black"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                    >
+                        {value}%
+                    </motion.span>
+                </div>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold uppercase tracking-tight text-center group-hover:text-[#FF6105] transition-colors duration-300">
+                {label}
+            </h3>
+        </div>
+    );
+};
+
+const MetricsSection = () => {
+    const stats = [
+        { label: "SEO & Marketing", value: 75 },
+        { label: "Keywords Results", value: 43 },
+        { label: "Google Analytics", value: 66 },
+        { label: "Off Page SEO", value: 15 }
+    ];
+
+    return (
+        <section className="hidden py-24 bg-white border-y border-black/5">
+            <div className="max-w-[1400px] mx-auto px-6">
+                <div className="mb-12 md:mb-16 text-left">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-6">
+                        Real <span className="text-[#FF6105]">Metrics,</span> Real Growth.
+                    </h2>
+                    <p className="text-black/50 text-base md:text-xl font-medium max-w-2xl uppercase tracking-widest">
+                        Get Scalable Marketing Campaigns
+                    </p>
                 </div>
 
-                <div className="w-full space-y-8 md:space-y-12">
-                    {[
-                        { label: "SEO & Marketing", val: "75%" },
-                        { label: "Keyword Results", val: "50%" },
-                        { label: "Google Analytics", val: "65%" },
-                        { label: "Off-Page SEO", val: "30%" }
-                    ].map((m, i) => (
-                        <div key={i} className="group cursor-pointer">
-                            <div className="flex justify-between items-end mb-2 md:mb-4">
-                                <span className="text-xl md:text-3xl font-bold uppercase">{m.label}</span>
-                                <span className="text-xl md:text-2xl font-mono text-[#FF6105] opacity-0 group-hover:opacity-100 transition-opacity">{m.val}</span>
-                            </div>
-                            <div className="h-3 md:h-4 w-full bg-[#f0f0f0] rounded-full overflow-hidden">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: m.val }}
-                                    viewport={{ once: false }}
-                                    transition={{ duration: 1.5, ease: "circOut" }}
-                                    className="h-full bg-black group-hover:bg-[#FF6105] transition-colors duration-300"
-                                />
-                            </div>
-                        </div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 items-start justify-center">
+                    {stats.map((stat, idx) => (
+                        <CircularProgress key={idx} value={stat.value} label={stat.label} />
                     ))}
                 </div>
             </div>
@@ -1069,7 +961,7 @@ const GrowthCTA = () => {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     {/* Left: Headline */}
                     <div>
-                        <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter leading-[0.9] mb-6">
+                        <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mb-6">
                             Start Growing<br />With EEGNITE<br />Today
                         </h2>
                         <div className="h-2 w-24 bg-white rounded-full mt-8" />
@@ -1081,16 +973,19 @@ const GrowthCTA = () => {
                             A Result-focused SEO Services Agency
                         </h3>
 
-                        <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+                        <p className="text-white/90 text-base md:text-xl leading-relaxed mb-10 max-w-xl">
                             Your customers are already searching for what you offer. Let EEGNITE, a trusted India-based SEO company, ensure they find you first.
                             <br /><br />
                             From technical optimization to content strategy and local visibility, we help businesses across India, the Middle East, and other European regions to grow faster, smarter, and stronger.
                         </p>
 
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link href="/contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                            <a href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
                                 Book a Free SEO Discovery Call <ArrowRight />
-                            </Link>
+                            </a>
+                            <a href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg md:text-xl font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                                Request a Quote
+                            </a>
                             <span className="text-sm uppercase tracking-widest font-medium opacity-80">
                                 Turn rankings into revenue
                             </span>
@@ -1107,61 +1002,93 @@ const GrowthCTA = () => {
 };
 
 
+// --- HERO OVAL HOLDER COMPONENT ---
+const EllipticalHolder = ({ src, animateScale = false }: { src: string; animateScale?: boolean }) => (
+    <span className="inline-flex items-center justify-center align-baseline mx-1 md:mx-3 w-[45px] h-[24px] md:w-[120px] md:h-[60px] rounded-full overflow-hidden border border-[#FF6105]/10 shadow-sm relative group bg-gray-50 translate-y-[1px] md:translate-y-[8px]">
+        <motion.img
+            src={src}
+            alt="SEO animation"
+            className="w-full h-full object-cover grayscale-0 opacity-100 transition-all duration-700 hover:scale-110"
+            animate={animateScale ? { scale: [1, 1.08, 1] } : { x: [-3, 3, -3] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#FF6105]/5 to-transparent pointer-events-none" />
+    </span>
+)
+
 export default function ServiceSeo() {
     return (
         <main className="bg-white min-h-screen text-black font-sans selection:bg-[#FF6105] selection:text-white">
             <div className="relative z-10">
                 <Navbar />
 
-                {/* GRAPHICAL HERO */}
-                <section className="relative min-h-[100dvh] flex flex-col justify-center pt-24 pb-12 lg:pt-24 px-4 md:px-6 overflow-hidden bg-white">
-                    <div className="max-w-[1400px] mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                        <div>
-                            {/* Tag Removed as requested */}
+                {/* HERO SECTION */}
+                <section className="relative h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 px-4 md:px-6 overflow-hidden bg-white">
+                    {/* Orange Grid Web & Centered Glow Background */}
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden"
+                        style={{ maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}>
+                        {/* Grid Layer */}
+                        <div
+                            className="absolute inset-0 opacity-[0.1]"
+                            style={{
+                                backgroundImage: `
+                                    linear-gradient(to right, #FF6105 1px, transparent 1px),
+                                    linear-gradient(to bottom, #FF6105 1px, transparent 1px)
+                                `,
+                                backgroundSize: '45px 45px'
+                            }}
+                        />
 
-                            <motion.h1
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8 }}
-                                className="text-3xl md:text-4xl lg:text-6xl font-bold uppercase tracking-tighter leading-[0.95] mb-4 md:mb-10 text-black mt-4 lg:mt-0"
-                            >
-                                Best SEO Services From the Leading SEO Agency - <span className="text-[#FF6105]">Rank Higher. Grow Faster.</span>
-                            </motion.h1>
+                        {/* FOCUSED CENTERED GLOW (Smooth Fading) */}
+                        <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-gradient-to-t from-[#FF6105]/15 to-transparent rounded-full blur-[80px] md:blur-[120px]" />
+                    </div>
 
-                            <motion.p
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="text-base md:text-lg text-black/50 font-normal leading-relaxed max-w-xl mb-8 md:mb-12"
-                            >
-                                At EEGNITE, we're not just another SEO company in Kolkata; we operate as a growth partner focused on outcomes only. Our SEO services are designed to turn search demand into consistent visibility, qualified traffic, and measurable business growth. As one of the best SEO agencies, EEGNITE builds sustainable strategies for e-commerce brands, B2B firms, and local businesses that want long-term traction, not short-lived rankings. Every decision we make is rooted in performance, clarity, and scalability.
-                            </motion.p>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.3 }}
-                                className="w-full sm:w-auto"
-                            >
-                                <Link href="/contact" className="inline-flex w-full sm:w-auto justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg">
-                                    Start Your Project
-                                </Link>
-                            </motion.div>
-                        </div>
-
-                        {/* GRAPH VISUALIZATION */}
+                    <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1, delay: 0.3 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <HeroGraph />
+                            <h1 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1] md:leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
+                                Best SEO Services From <br className="hidden md:block" /> THE Leading SEO Agency
+                            </h1>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="mb-8 md:mb-12"
+                        >
+                            <h2 className="text-xl md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
+                                Rank Higher. Grow Faster.
+                            </h2>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                        >
+                            <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-10 px-4">
+                                At EEGNITE, we're not just another SEO company in Kolkata; we operate as a growth partner focused on outcomes only. Our SEO services are designed to turn search demand into consistent visibility, qualified traffic, and measurable business growth.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            <a href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
+                                Start Your Project
+                            </a>
                         </motion.div>
                     </div>
                 </section>
 
                 <SeoComparisonSection />
-                <HierarchicalBento />
+                <IndustriesSection />
                 <FullServiceSEO />
                 <SeoProcessFloating />
                 <ProtocolTimeline />
@@ -1174,7 +1101,7 @@ export default function ServiceSeo() {
                 {/* FAQs */}
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl lg:text-7xl font-bold uppercase tracking-tight text-center mb-8 md:mb-16 text-black">Common <span className="text-[#FF6105]">Questions</span></h2>
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left mb-8 md:mb-16 text-black">Common <span className="text-[#FF6105]">Questions</span></h2>
                         <div className="space-y-3 md:space-y-4">
                             {faqs.map((faq, idx) => (
                                 <details key={idx} className="group bg-[#F9F9F9] p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] hover:bg-white border boundary-transparent hover:border-black/5 hover:shadow-xl transition-all cursor-pointer">

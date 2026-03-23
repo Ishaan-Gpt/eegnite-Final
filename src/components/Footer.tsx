@@ -41,7 +41,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="relative z-10 w-full overflow-hidden pt-16 pb-0 bg-white">
+        <footer className="relative z-10 w-full overflow-hidden pt-16 pb-12 bg-white">
             {/* Background Glow Effects */}
             <div className="pointer-events-none absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 select-none">
                 <div className="absolute -top-32 left-1/4 h-72 w-72 rounded-full bg-[#FF6105]/10 blur-[100px]" />
@@ -66,7 +66,7 @@ export default function Footer() {
                             </h2>
                         </div>
                         <motion.a
-                            href="#contact"
+                            href="/#contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="group flex items-center gap-3 bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#FF6105]/30 hover:shadow-xl hover:shadow-[#FF6105]/40 transition-shadow"
@@ -82,8 +82,8 @@ export default function Footer() {
                         <div className="lg:col-span-2 space-y-6">
                             <div className="flex items-center gap-3">
                                 <img src="/eegnite-logo.png" alt="EEGNITE" className="h-10 w-auto" loading="lazy" />
-                                <span className="text-xl font-bold text-[#FF6105] uppercase tracking-wider">
-                                    EEGNITE<sup className="text-[8px] ml-0.5">™</sup>
+                                <span className="text-xl font-bold text-[#FF6105] uppercase tracking-wider items-start flex">
+                                    EEGNITE<sup className="text-[10px] ml-0.5 leading-none mt-1">™</sup>
                                 </span>
                             </div>
                             <p className="text-sm text-black/60 leading-relaxed max-w-sm">
@@ -123,13 +123,26 @@ export default function Footer() {
                         <div className="space-y-4">
                             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Services</span>
                             <ul className="space-y-3">
-                                {["SEO", "Email Marketing", "PPC Advertising", "E-Commerce"].map(item => (
-                                    <li key={item}>
-                                        <a href="#services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                            {item}
-                                        </a>
-                                    </li>
-                                ))}
+                                <li>
+                                    <a href="/services/seo" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        SEO
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/#services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Email Marketing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/services/ppc" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        PPC Advertising
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/#services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        E-Commerce
+                                    </a>
+                                </li>
                             </ul>
                         </div>
 
@@ -208,10 +221,10 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 px-4 text-xs text-black/40">
-                    <span>© 2025 EEGNITE. All rights reserved.</span>
+                    <span>© 2026 EEGNITE. All rights reserved.</span>
                     <div className="flex gap-6">
-                        <a href="/privacy" className="hover:text-[#FF6105] transition-colors">Privacy Policy</a>
-                        <a href="/terms" className="hover:text-[#FF6105] transition-colors">Terms of Service</a>
+                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6105] transition-colors">Privacy Policy</a>
+                        <a href="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6105] transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>

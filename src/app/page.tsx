@@ -108,6 +108,8 @@ export default function Home() {
 
     const onLoadComplete = useCallback(() => setLoading(false), []);
 
+    const lenisRef = useRef<any>(null);
+
     useEffect(() => {
         setMounted(true);
 
@@ -116,6 +118,7 @@ export default function Home() {
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
         });
+        lenisRef.current = lenis;
 
         const raf = (time: number) => {
             lenis.raf(time);
@@ -129,6 +132,35 @@ export default function Home() {
 
         return () => lenis.destroy();
     }, []);
+
+    // Handle hash scrolling after loader completes
+    useEffect(() => {
+        if (!loading && typeof window !== 'undefined' && window.location.hash) {
+            const hash = window.location.hash;
+            
+            const performScroll = () => {
+                const element = document.querySelector(hash);
+                if (element && lenisRef.current) {
+                    // Slight delay to ensure layout is settled
+                    setTimeout(() => {
+                        lenisRef.current.scrollTo(hash, {
+                            offset: -80,
+                            duration: 2.5,
+                            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                            immediate: false
+                        });
+                    }, 800);
+                }
+            };
+
+            // First attempt
+            performScroll();
+
+            // Fallback for slower devices/lazy loads
+            const timer = setTimeout(performScroll, 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [loading]);
 
     if (!mounted) return null;
 

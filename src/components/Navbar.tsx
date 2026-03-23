@@ -17,6 +17,7 @@ export default function Navbar() {
         { name: 'About', href: '/#about' },
         { name: 'Services', href: '/#services' },
         { name: 'Results', href: '/#results' },
+        { name: 'Blog', href: '/blog' },
         { name: 'Contact', href: '/#contact' }
     ];
 
@@ -96,7 +97,7 @@ export default function Navbar() {
                             exit={{ x: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             className="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl"
-                            onClick={(e) => e.stopPropagation()}
+                            onClick={(e: React.MouseEvent) => e.stopPropagation()}
                         >
                             <div className="pt-20 px-6">
                                 <div className="space-y-1">

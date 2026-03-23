@@ -10,18 +10,38 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 // --- CORPORATE DATA ---
-const featuredPost = {
-    id: 1,
-    title: "Top 10 SEO Agencies in Kolkata You Can Trust in 2026",
-    excerpt: "In the ever-evolving world of digital marketing, choosing the right SEO agency is crucial. We've compiled a list of the top Kolkata-based agencies known for proven expertise.",
-    category: "Industry Intelligence",
-    readTime: "10 min read",
-    date: "Jan 17, 2026",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600",
-    slug: "top-10-seo-agencies-kolkata-2026",
-};
 
-const latestPosts = [
+const allPostsData = [
+    {
+        id: 4,
+        title: "How to Choose the Right SEO Agency for Your Business in India",
+        excerpt: "India has over 900 million internet users, and more than 70 percent of buying journeys now begin with a search engine. If your business is not visible in search, you are missing active demand.",
+        category: "Agency Selection",
+        readTime: "7 min read",
+        date: "Feb 20, 2026",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600",
+        slug: "how-to-choose-the-right-seo-agency-in-india-2026",
+    },
+    {
+        id: 3,
+        title: "How to Get Your Content Cited in AI Search Results in 2026",
+        excerpt: "In 2026, people aren’t scrolling search results. They’re asking AI tools for answers. And those systems don’t care where you rank. They care whether your content is clear and trustworthy enough to repeat.",
+        category: "AI Search",
+        readTime: "5 min read",
+        date: "Feb 13, 2026",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1600",
+        slug: "how-to-get-content-cited-in-ai-search-results-2026",
+    },
+    {
+        id: 1,
+        title: "Top 10 SEO Agencies in Kolkata You Can Trust in 2026",
+        excerpt: "In the ever-evolving world of digital marketing, choosing the right SEO agency is crucial. We've compiled a list of the top Kolkata-based agencies known for proven expertise.",
+        category: "Industry Intelligence",
+        readTime: "10 min read",
+        date: "Jan 17, 2026",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600",
+        slug: "top-10-seo-agencies-kolkata-2026",
+    },
     {
         id: 2,
         title: "7 Proven Local SEO Strategies to Rank Higher in 2026",
@@ -33,6 +53,11 @@ const latestPosts = [
         slug: "local-seo-strategies-2026-google-maps",
     },
 ];
+
+// Automatically make the newest post the Hero featured post
+const featuredPost = allPostsData[0];
+// The rest flow down into the normal cards
+const latestPosts = allPostsData.slice(1);
 
 // --- COMPONENTS ---
 
@@ -76,10 +101,6 @@ const BentoGridItem = ({ className, post, large = false }: { className?: string,
                     )}>
                         {post.title}
                     </h3>
-
-                    <p className="text-black/60 text-sm leading-relaxed font-normal line-clamp-3 md:line-clamp-2 hidden md:block">
-                        {post.excerpt}
-                    </p>
                 </div>
 
                 <div className="mt-8 flex items-center gap-4 text-[#FF6105] text-xs font-bold uppercase tracking-widest opacity-80 md:opacity-60 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
@@ -163,9 +184,16 @@ export default function BlogPage() {
                     </div>
                 </div>
 
-                {/* Grid simplified to just show what we have */}
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-[450px] md:auto-rows-[600px]">
-                    <BentoGridItem post={latestPosts[0]} className="md:col-span-2 lg:col-span-2 shadow-xl" large />
+                {/* Normal Cards Grid */}
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {latestPosts.map((post) => (
+                        <BentoGridItem
+                            key={post.id}
+                            post={post}
+                            className="shadow-xl min-h-[400px]"
+                            large={false}
+                        />
+                    ))}
                 </div>
             </section>
 

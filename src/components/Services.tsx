@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, useSpring } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
@@ -53,7 +53,7 @@ const services = [
                 items: ["Open & click tracking", "ROI analysis", "List health monitoring", "Deliverability optimization", "Performance reporting"]
             }
         ],
-        link: "/services/email-marketing"
+        link: "/#contact"
     },
     {
         id: "03",
@@ -101,7 +101,7 @@ const services = [
                 items: ["Inventory sync", "Payment gateways", "Shipping integration", "Analytics setup", "CRM integration"]
             }
         ],
-        link: "/services/ecommerce"
+        link: "/#contact"
     }
 ];
 
@@ -159,8 +159,8 @@ const MobileServiceItem = ({ service }: { service: typeof services[0] }) => {
                                 </div>
                             ))}
 
-                            {/* Service Link - Only for SEO */}
-                            {service.link === "/services/seo" && (
+                            {/* Service Link - For SEO and PPC */}
+                            {service.link.startsWith("/services/") && (
                                 <Link
                                     href={service.link}
                                     className="flex items-center justify-center w-full gap-2 py-3 bg-[#FF6105] text-white rounded-lg font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
@@ -184,8 +184,11 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
         offset: ["start end", "start start", "end end", "end start"]
     });
 
-    const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+    const rawScale = useTransform(scrollYProgress, [0, 0.4], [0.95, 1]);
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+
+    const scale = useSpring(rawScale, { stiffness: 100, damping: 30, restDelta: 0.001 });
+    const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
     return (
         <div ref={containerRef} className="sticky top-0 min-h-screen py-12 flex items-center justify-center">
@@ -202,8 +205,7 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div className="flex items-center gap-4 opacity-70">
                             <span className="font-bold tracking-[0.2em] uppercase text-sm">0{service.id} — Service</span>
                         </div>
-                        {/* Desktop CTA - Only show for SEO page */}
-                        {service.link === "/services/seo" && (
+                        {service.link.startsWith("/services/") && (
                             <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
                                 View Page <ArrowRight size={14} />
                             </Link>
@@ -224,12 +226,12 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div
                             key={i}
                             className={`
-                                rounded-2xl p-8 flex flex-col justify-start h-full
-                                ${isOrange
+                                    rounded-2xl p-8 flex flex-col justify-start h-full
+                                    ${isOrange
                                     ? 'bg-white/10 border border-white/10'
                                     : 'bg-white border border-black/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.03)]'
                                 }
-                            `}
+                                `}
                         >
                             {/* Top Accent Line */}
                             <div className={`w-8 h-1 rounded-full mb-6 ${isOrange ? 'bg-white' : 'bg-[#FF6105]'}`} />
@@ -252,11 +254,11 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                     ))}
                 </div>
 
-                {/* Mobile CTA - Only show for SEO page */}
-                {service.link === "/services/seo" && (
+                {/* Mobile CTA - Show for SEO and PPC page */}
+                {service.link.startsWith("/services/") && (
                     <div className="mt-8 md:hidden">
                         <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
-                            Start Project <ArrowRight size={20} />
+                            View Service <ArrowRight size={20} />
                         </Link>
                     </div>
                 )}

@@ -23,30 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/services/ppc/`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/services/ecommerce/`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/services/email-marketing/`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/services/data-analysis/`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
             url: `${baseUrl}/blog/`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
@@ -60,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/blog/top-10-seo-agencies-kolkata-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/how-to-get-content-cited-in-ai-search-results-2026/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,

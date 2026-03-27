@@ -249,9 +249,9 @@ const FullServicePPC = () => {
             </div>
 
             <div className="mx-auto w-full max-w-[1400px] relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 mb-16 md:mb-24 items-start">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 mb-16 md:mb-24 lg:items-center items-start">
                     {/* Unique Animated Headline Section */}
-                    <div className="lg:sticky lg:top-32 w-full lg:w-1/2">
+                    <div className="w-full lg:w-1/2">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -275,13 +275,13 @@ const FullServicePPC = () => {
                         className="w-full lg:w-1/2 space-y-8"
                     >
                         <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
-                            In today’s competitive marketplace, standing out requires more than just a presence, it demands smart and strategic PPC advertising campaigns that not only increase visibility but also drive meaningful business results. EEGNITE acts as a performance focused PPC management company delivers tailored PPC campaign management strategies for your business goals. Our approach goes beyond simply targeting keywords; we focus on understanding your audience’s needs and behavior, crafting campaigns that engage and convert.
+                            Cutting through competition takes more than just running PPC ads. EEGNITE's PPC campaign management focuses on understanding audience intent, not just keywords, to build campaigns that drive visibility, engagement, and real business results. As a performance-focused partner, we create strategies aligned with your growth goals.
                         </p>
                         <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
-                            With our data-driven approach, EEGNITE’s PPC experts take the time to thoroughly analyze consumer behavior and apply actionable insights to optimize every aspect of your PPC marketing services. This allows us to build highly targeted campaigns that reach the right audience at the right time, driving stronger engagement and higher conversions.
+                            With a data-driven approach, our PPC experts take the time to thoroughly analyze consumer behavior and apply actionable insights to optimize every aspect of your PPC campaign. This allows us to build highly targeted campaigns that reach the right audience at the right time, driving stronger engagement and higher conversions.
                         </p>
                         <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
-                            Whether your objective is lead generation or improve brand visibility, our ongoing performance refinement helps you achieve measurable results while maximizing return on ad spend (ROAS). As a notable PPC company in India, we focus not only on short-term performance but also on building a scalable foundation for long-term business growth. Our tailored approach ensures that your marketing budget is strategically allocated for the best results.
+                            Whether your goal is lead generation or making a brand visible, our continuous optimization ensures measurable results and improves return on ad spend (ROAS). As a notable PPC company in Kolkata, we focus on both immediate performance and long-term scalability, ensuring your budget is allocated efficiently for sustainable business growth.
                         </p>
                     </motion.div>
                 </div>
@@ -532,7 +532,7 @@ const PpcProcessFloating = () => {
             <div className="sticky top-0 flex h-[85vh] md:h-screen items-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
 
-                <div className="absolute top-12 md:top-24 left-0 w-full z-20">
+                <div className="absolute top-24 md:top-32 left-0 w-full z-20">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
                             Our PPC <span className="text-[#FF6105]">Strategy</span>
@@ -593,9 +593,15 @@ const ProtocolTimeline = () => {
         <section ref={targetRef} className="bg-white relative py-16 md:py-24">
             <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
                 <div className="text-left">
-                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%]">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%] mb-8">
                         EEGNITE’s Approach to <span className="text-[#FF6105]">Effective PPC Management</span>
                     </h2>
+                    <p className="text-black/50 text-base md:text-xl leading-relaxed mb-6 max-w-4xl">
+                        EEGNITE operates as a performance-first PPC management agency focused on turning ad spend into measurable business growth. Our approach combines data analysis, audience insights, and continuous optimization to improve campaign efficiency at every stage.
+                    </p>
+                    <p className="text-black/50 text-base md:text-xl leading-relaxed max-w-4xl">
+                        As a trusted PPC management company, we create targeted strategies that attract high-intent traffic and drive more conversions. Our experts consistently refine targeting, creatives, and bidding to enhance performance, ensuring campaigns remain scalable, efficient, and aligned with long-term business success.
+                    </p>
                 </div>
             </div>
 

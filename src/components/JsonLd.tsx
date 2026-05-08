@@ -7,8 +7,8 @@ export function OrganizationJsonLd() {
         '@type': 'Organization',
         name: 'EEGNITE',
         description: 'Senior-led digital marketing agency in India helping brands grow through data-driven SEO, web design, social media, and content strategies.',
-        url: 'https://eegnite.com',
-        logo: 'https://eegnite.com/eegnite-logo.png',
+        url: 'https://www.eegnite.com',
+        logo: 'https://www.eegnite.com/eegnite-logo.png',
         sameAs: [
             // Add your social media URLs here
             // 'https://www.linkedin.com/company/eegnite',
@@ -69,7 +69,7 @@ export function WebsiteJsonLd() {
         },
         potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://eegnite.com/?s={search_term_string}',
+            target: 'https://www.eegnite.com/?s={search_term_string}',
             'query-input': 'required name=search_term_string',
         },
     };
@@ -88,9 +88,9 @@ export function LocalBusinessJsonLd() {
         '@type': 'ProfessionalService',
         name: 'EEGNITE - Digital Marketing Agency',
         description: 'Senior-led digital marketing agency helping brands grow through data-driven strategies.',
-        url: 'https://eegnite.com',
-        logo: 'https://eegnite.com/eegnite-logo.png',
-        image: 'https://eegnite.com/eegnite-logo.png',
+        url: 'https://www.eegnite.com',
+        logo: 'https://www.eegnite.com/eegnite-logo.png',
+        image: 'https://www.eegnite.com/eegnite-logo.png',
         priceRange: '$$',
         address: {
             '@type': 'PostalAddress',

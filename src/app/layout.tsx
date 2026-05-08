@@ -3,18 +3,19 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 import Chatbot from "@/components/Chatbot";
+import JsLoaded from "@/components/JsLoaded";
 
 // Default to production URL if not set
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eegnite.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.eegnite.com';
 
 // Prevent indexing on staging/preview environments
 // We only index if:
 // 1. We are in a production environment (or environment is unknown/manual)
 // 2. AND the site URL strictly matches the main production domain
 const isEnvironmentProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
-const isMainDomain = siteUrl === 'https://eegnite.com' || siteUrl === 'https://www.eegnite.com';
+const isMainDomain = siteUrl === 'https://www.eegnite.com';
 
-const shouldIndex = false; // Disable indexing for staging branch
+const shouldIndex = true; // Enable indexing for production branch
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -156,6 +157,7 @@ document.head.appendChild(o)}initApollo();`
                     ></iframe>
                 </noscript>
                 {/* End Google Tag Manager (noscript) */}
+                <JsLoaded />
                 {children}
                 <Chatbot />
             </body>

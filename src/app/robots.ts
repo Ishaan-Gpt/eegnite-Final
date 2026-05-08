@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/private/', '/blog-staging/', '/2024/07/', '/elementor-hf/footer/'],
         },
-        sitemap: 'https://eegnite.com/sitemap.xml',
+        sitemap: 'https://www.eegnite.com/sitemap.xml',
     }
 }

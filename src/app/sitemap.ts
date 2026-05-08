@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const isProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
     if (!isProduction) return [];
 
-    const baseUrl = 'https://eegnite.com'
+    const baseUrl = 'https://www.eegnite.com'
 
     const routes = [
         {
@@ -42,6 +42,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/blog/how-to-get-content-cited-in-ai-search-results-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/how-to-choose-the-right-seo-agency-in-india-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/ppc-agency-india-maximize-roi/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,

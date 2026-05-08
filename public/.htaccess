@@ -89,9 +89,11 @@
     RewriteEngine On
     RewriteBase /
     
-    # Force HTTPS
+    # Force WWW and HTTPS
+    # This catches both non-www traffic and insecure HTTP traffic
+    RewriteCond %{HTTP_HOST} ^eegnite\.com [NC,OR]
     RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^(.*)$ https://www.eegnite.com%{REQUEST_URI} [L,R=301]
     
     # Force trailing slash for directories and clean URLs
     # If it's not a file and doesn't have a trailing slash, add one

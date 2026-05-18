@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import SeoPageContent from "@/components/page-content/SeoPageContent";
 
 export const metadata: Metadata = {
-    title: "Best SEO Services in Kolkata | ROI-Driven Growth Partner",
-    description: "EEGNITE provides engineering-led SEO services in Kolkata. We turn search demand into measurable revenue with technical SEO, content strategy, and local dominance.",
+    title: "Growth-Focused SEO Agency | EEGNITE",
+    description: "Grow your organic visibility with EEGNITE’s SEO services. Technical SEO, content optimization, keyword strategy, and authority building designed to increase rankings, traffic, leads, and long-term revenue growth.",
     alternates: {
         canonical: 'https://www.eegnite.com/services/seo',
     },

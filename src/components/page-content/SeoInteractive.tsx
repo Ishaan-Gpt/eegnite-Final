@@ -101,12 +101,12 @@ export function SeoComparisonSection() {
                     </p>
                 </div>
 
-                <div className="w-full max-w-6xl mx-auto h-[1000px] md:h-[800px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-black/10">
+                <div className="w-full max-w-6xl mx-auto h-[620px] sm:h-[680px] md:h-[800px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-black/10">
                     <Compare
                         className="h-full"
                         slideMode="drag"
                         firstContent={
-                            <div className="w-full h-full bg-white flex flex-col items-center justify-start pt-20 p-4 md:p-12 text-center relative overflow-hidden">
+                            <div className="w-full h-full bg-white flex flex-col items-center justify-start pt-10 md:pt-20 p-4 md:p-12 text-center relative overflow-hidden">
                                 <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
                                 <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-[#FF6105] mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">EEGNITE SEO SOLUTION</h3>
                                 <div className="flex flex-col gap-4 md:gap-6 max-w-4xl relative z-10 w-full">
@@ -126,7 +126,7 @@ export function SeoComparisonSection() {
                             </div>
                         }
                         secondContent={
-                            <div className="w-full h-full bg-[#FAFAFA] flex flex-col items-center justify-start pt-20 p-4 md:p-12 text-center relative grayscale">
+                            <div className="w-full h-full bg-[#FAFAFA] flex flex-col items-center justify-start pt-10 md:pt-20 p-4 md:p-12 text-center relative grayscale">
                                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
                                 <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-black/20 mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">TRADITIONAL SEO AGENCY</h3>
                                 <div className="flex flex-col gap-4 md:gap-6 max-w-4xl relative z-10 w-full opacity-60">

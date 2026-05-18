@@ -188,7 +188,6 @@ export default function ServicePpc() {
                 <Navbar />
                 <PpcHero />
                 <IntroSection />
-                <PpcComparisonSection />
                 <IndustriesSection />
                 <PartnerSection />
                 <FullServicePPC />

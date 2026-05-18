@@ -195,15 +195,14 @@ export function PartnerSection() {
 // --- FULL SERVICE PPC ---
 export function FullServicePPC() {
     const services = [
-        { title: "Paid Search Management", icon: Search, description: "Our PPC experts manage high-intent search campaigns across Google Ads and Bing Ads, focusing on keywords that signal strong purchase or lead intent. Through continuous optimization of bids, ad copy, and targeting, we drive qualified traffic while improving cost efficiency and return on ad spend." },
-        { title: "Display Ads", icon: MonitorPlay, description: "Display ads are a powerful way to build visibility and stay top-of-mind with potential customers. We create visually engaging display creatives and place them strategically across relevant websites, apps, and videos to support brand awareness and assist conversions." },
-        { title: "Shopping Ads", icon: ShoppingBag, description: "Shopping ads offer a visually rich format to showcase your products directly within search results. At EEGNITE, we take a data-driven approach to Google Shopping campaign management, optimizing product feeds, bidding strategies, and performance metrics to improve visibility, control costs, and drive profitable sales." },
-        { title: "YouTube Ads", icon: MonitorPlay, description: "With video content playing a major role in digital marketing, YouTube Ads provide an effective way to reach and engage audiences at scale. EEGNITE Ads team create high-quality YouTube video ads that capture attention and drive results, whether for brand awareness or conversions." },
-        { title: "Remarketing", icon: Repeat, description: "Remarketing allows you to reconnect with users who have already interacted with your website or ads but have not converted yet. By serving relevant ads based on previous behavior, we help you re-engage high-intent audiences and increase conversion opportunities across search, display, and social platforms." },
-        { title: "Paid Social", icon: Share2, description: "Our PPC team manages paid social campaigns across platforms such as Facebook, Instagram, and LinkedIn to help you reach the right audience with precision. Using detailed targeting and performance tracking, we optimize campaigns for engagement, lead generation, and conversions. From carousel ads to dynamic product promotions, we design social ad creatives that support measurable results." },
-        { title: "PPC Landing Page Creation", icon: LayoutDashboard, description: "A successful PPC campaign depends on a landing page that is designed to convert. At EEGNITE, we design and optimize PPC landing pages that align perfectly with your ads, messaging, and audience intent. By focusing on clarity, speed, and user experience, we help turn ad clicks into qualified leads." },
-        { title: "Conversion Rate Optimization", icon: PieChart, description: "Driving traffic is only part of the process. Our conversion rate optimization approach focuses on turning visitors into customers by improving user experience, refining messaging, and removing friction from the buyer journey. This ensures your PPC traffic delivers better engagement, higher conversions, and stronger ROI." },
-        { title: "PPC Campaign Review & Audit", icon: Activity, description: "One of the biggest advantages of PPC advertising is complete transparency. Our PPC campaign audit takes a deep look into your existing campaigns to evaluate performance, spending efficiency, and conversion potential. By identifying gaps and opportunities, we help you refine your strategy and make smarter decisions that lead to better results." },
+        { title: "GOOGLE SEARCH ADS", icon: Search, description: "Your buyers are searching right now. We make sure your brand appears first. Keyword research, ad copy, bidding strategy, and Quality Score optimisation — all focused on the lowest possible cost per conversion." },
+        { title: "META ADS", icon: Share2, description: "Full-funnel Meta campaigns built to sell. Cold prospecting, warm retargeting, and conversion campaigns — with creative testing, audience segmentation, and pixel attribution built in from day one." },
+        { title: "GOOGLE DISPLAY AND YOUTUBE ADS", icon: MonitorPlay, description: "Awareness at scale, cost-efficiently. Visually compelling Display and YouTube campaigns that build brand recognition and retarget high-intent visitors at the moment they are most receptive." },
+        { title: "LINKEDIN ADS", icon: MousePointerClick, description: "Decision-makers scroll LinkedIn daily. Sponsored content, lead gen forms, and message ad sequences that put your brand in front of CFOs, CEOs, and procurement heads ready to act." },
+        { title: "RETARGETING CAMPAIGNS", icon: Repeat, description: "Most visitors do not convert the first time. Smart retargeting sequences across Google, Meta, and LinkedIn re-engage warm audiences with the right message and bring them back to buy." },
+        { title: "SHOPPING AND E-COMMERCE ADS", icon: ShoppingBag, description: "Google Shopping and Meta catalogue campaigns that put your products in front of buyers at the exact moment they are ready to purchase. Built for e-commerce brands that want to scale revenue fast." },
+        { title: "CONVERSION RATE OPTIMISATION (CRO)", icon: PieChart, description: "Traffic is only half the equation. We fix the landing page and ad-to-page alignment friction points that cost you conversions. More leads from the same spend, without increasing budget." },
+        { title: "PPC ANALYTICS AND ATTRIBUTION", icon: BarChart3, description: "Full measurement infrastructure: pixel setup, conversion events, UTM tracking, and custom dashboards — so you always know which campaigns, channels, and creatives are generating your revenue." }
     ];
 
     return (
@@ -214,25 +213,22 @@ export function FullServicePPC() {
             </div>
 
             <div className="mx-auto w-full max-w-[1400px] relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 mb-16 md:mb-24 lg:items-center items-start">
-                    <div className="w-full lg:w-1/2">
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-                            <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter text-black leading-[0.9] mb-8">
-                                Supercharge <br />
-                                Your <span className="text-[#FF6105]">Business</span> <br />
-                                with Data-Driven <br />
-                                Campaigns
-                            </h2>
-                        </motion.div>
-                    </div>
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="w-full lg:w-1/2 space-y-8">
-                        <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">Cutting through competition takes more than just running PPC ads. EEGNITE's PPC campaign management focuses on understanding audience intent, not just keywords, to build campaigns that drive visibility, engagement, and real business results. As a performance-focused partner, we create strategies aligned with your growth goals.</p>
-                        <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">With a data-driven approach, our PPC experts take the time to thoroughly analyze consumer behavior and apply actionable insights to optimize every aspect of your PPC campaign. This allows us to build highly targeted campaigns that reach the right audience at the right time, driving stronger engagement and higher conversions.</p>
-                        <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">Whether your goal is lead generation or making a brand visible, our continuous optimization ensures measurable results and improves return on ad spend (ROAS). As a notable PPC company in Kolkata, we focus on both immediate performance and long-term scalability, ensuring your budget is allocated efficiently for sustainable business growth.</p>
-                    </motion.div>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-3xl mb-12 md:mb-16 md:mx-auto md:text-center"
+                >
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-6">
+                        RESULTS-DRIVEN PPC ADVERTISING. <span className="text-[#FF6105]">FOCUSED ON REVENUE GROWTH</span>
+                    </h2>
+                    <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
+                        Our PPC services are built to do one thing: deliver measurable returns on your ad spend. We build campaigns that attract buyers, convert them, and scale what works across every channel that matters.
+                    </p>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, idx) => <FlipCard key={idx} service={service} />)}
                 </div>
 

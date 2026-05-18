@@ -156,6 +156,16 @@ export default function FAQ() {
                         Contact Us
                     </a>
                 </motion.div>
+
+                {/* Search Engine Optimization (SEO) Crawler Fallback */}
+                <div className="sr-only" aria-hidden="false">
+                    {faqs.map((faq, idx) => (
+                        <article key={idx}>
+                            <h3>{faq.question}</h3>
+                            <p>{faq.answer}</p>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     );

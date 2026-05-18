@@ -77,6 +77,16 @@ export default function Testimonials() {
                 >
                     <AnimatedTestimonials testimonials={testimonials} autoplay />
                 </motion.div>
+
+                {/* Search Engine Optimization (SEO) Crawler Fallback */}
+                <div className="sr-only" aria-hidden="false">
+                    {testimonials.map((testimonial, idx) => (
+                        <article key={idx}>
+                            <h3>{testimonial.name} - {testimonial.designation}</h3>
+                            <blockquote>{testimonial.quote}</blockquote>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     );

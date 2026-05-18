@@ -47,8 +47,8 @@ export function SeoHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-[1.65rem] xs:text-[1.75rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
-                        SEO SERVICES THAT <br className="hidden md:block" /> DRIVE REAL GROWTH
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto px-4 whitespace-nowrap md:whitespace-normal">
+                        SEO SERVICES THAT <br /> DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
 
@@ -56,9 +56,9 @@ export function SeoHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mb-8 md:mb-12"
+                    className="mb-4 md:mb-12"
                 >
-                    <h2 className="text-xl md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
+                    <h2 className="text-lg md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
                         RANK HIGHER. GROW FASTER.
                     </h2>
                 </motion.div>
@@ -68,7 +68,7 @@ export function SeoHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-10 px-4">
+                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-6 md:mb-10 px-4">
                         At EEGNITE, <span className="text-[#FF6105] font-semibold">SEO is not a tactic.</span> It is the foundation of long-term digital growth. We build search strategies that move your brand up the rankings, bring in the traffic that converts, and <span className="text-[#FF6105] font-semibold">keep your business visible</span> long after the campaign month ends.
                     </p>
                 </motion.div>

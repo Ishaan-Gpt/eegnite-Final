@@ -19,12 +19,12 @@ import {
 
 function IndustriesSection() {
     const industries = [
-        { title: "Healthcare & Home Services", desc: "Local clinics & home service firms." },
-        { title: "Shopify & Retail", desc: "Scalable e-commerce growth strategies." },
-        { title: "B2B & Logistics", desc: "Local search intent and authority." },
-        { title: "AI & SaaS Firms", desc: "PPC & Performance marketing for software companies." },
-        { title: "Professional Services", desc: "Authority building & expert profiling." },
-        { title: "Industrial & Manufacturing", desc: "Global supply chain visibility." },
+        { title: "E-commerce", desc: "Conversion-focused ads that increase sales fast." },
+        { title: "B2B and Lead Gen", desc: "Targeted campaigns that fill your pipeline." },
+        { title: "Medical and Healthcare", desc: "Trust-first ads that drive patient bookings." },
+        { title: "Retail Business", desc: "Local campaigns that increase store visits." },
+        { title: "Manufacturing and Logistics", desc: "B2B ads that generate qualified enquiries." },
+        { title: "Professional Services", desc: "High-converting ads for premium clients." },
     ];
 
     return (
@@ -33,10 +33,10 @@ function IndustriesSection() {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
                     <div className="max-w-xl">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black mb-4">
-                            Industries <br /><span className="text-[#FF6105]">We Power</span>
+                            MARKETS WE LEAD. <br /><span className="text-[#FF6105]">INDUSTRIES WE SCALE</span>
                         </h2>
                         <p className="text-black/50 text-base md:text-xl leading-relaxed">
-                            EEGNITE designs PPC strategies that strengthen visibility and drive conversions across these core sectors.
+                            EEGNITE designs PPC advertising strategies that strengthen visibility and authority across these core sectors.
                         </p>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 w-full border-l md:border-l-0 md:pl-0 pl-6 border-black/5">

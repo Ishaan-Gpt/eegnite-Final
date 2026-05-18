@@ -140,17 +140,14 @@ function PpcCTA() {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     <div>
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mb-6">
-                            Start Growing<br />With EEGNITE<br />Today
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-[1.0] mb-6">
+                            START GROWING YOUR<br />BUSINESS WITH PPC<br />CAMPAIGNS BY<br />EEGNITE TODAY
                         </h2>
                         <div className="h-2 w-24 bg-white rounded-full mt-8" />
                     </div>
                     <div className="flex flex-col justify-center h-full">
-                        <h3 className="text-xl md:text-3xl font-medium mb-8 opacity-95 leading-tight">
-                            A Result-focused PPC Services Agency
-                        </h3>
                         <p className="text-white/90 text-base md:text-xl leading-relaxed mb-10 max-w-xl">
-                            "A successful PPC campaign depends on a landing page that is designed to convert. At EEGNITE, we design and optimize PPC landing pages that align perfectly with your ads, messaging, and audience intent."
+                            Your competitors are spending on ads right now. The question is whether they are spending smart. At EEGNITE, every campaign is built around your revenue goal and every rupee is accounted for. From Google Ads and Meta campaigns to LinkedIn and retargeting, we build PPC systems that turn your ad spend into growth you can see.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
                             <a href="tel:+916289753474" className="px-10 py-5 bg-white text-black text-lg font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl uppercase tracking-widest text-sm">
@@ -171,12 +168,38 @@ function PpcCTA() {
 }
 
 const ppcFaqs = [
-    { q: "What can I expect from EEGNITE's PPC advertising services?", a: "When you choose EEGNITE's PPC services, you can expect a strategic, performance-focused approach built around your business goals. Our PPC experts plan and manage full-funnel campaigns that balance visibility, traffic quality, and conversions. From keyword research and ad creation to bidding, tracking, and optimization, every decision is backed by data. We always focus on turning ad spend into measurable growth, not just clicks, while keeping reporting transparent and easy to understand." },
-    { q: "How much does it cost to run a PPC campaign with EEGNITE?", a: "The cost of PPC management at EEGNITE depends on factors such as your business goals, industry competition, target platforms, and monthly ad spend. We don't follow one-size-fits-all pricing. Instead, we create a tailored PPC plan that aligns with your budget and growth objectives. After understanding your requirements, our team recommends a transparent pricing structure designed to deliver the best possible returns." },
-    { q: "How long does it take to see results from a PPC Ad campaign?", a: "PPC is one of the fastest digital marketing channels to generate visibility and traffic. With EEGNITE, you may start seeing early performance signals within the first few weeks of ad launch. However, meaningful and consistent results typically develop over 6 to 12 weeks as we analyze data, refine targeting, test ad variations, and optimize bids. This optimization phase ensures long-term efficiency, stronger conversions, and sustainable campaign performance." },
-    { q: "Do people really click on PPC ads?", a: "Yes, PPC ads attract genuine clicks when they are well-targeted and relevant. Search ads appear precisely when users are actively looking for a product or service, which means the intent to act is already high. With strong ad copy, clear messaging, and proper targeting, PPC helps you reach ready-to-convert users and drive immediate, measurable business results." },
-    { q: "Which is better: SEO or PPC?", a: "SEO and PPC serve different purposes and work best when used together. SEO is ideal for building long-term visibility, trust, and consistent organic traffic over time. PPC, on the other hand, delivers faster results by placing your business in front of high-intent users immediately. The right choice depends on your goals, timeline, and budget. At EEGNITE, we help businesses balance both strategies to drive short-term wins while building sustainable growth." },
-    { q: "Where do PPC ads appear?", a: "PPC ads can appear across a wide range of digital platforms based on campaign goals and audience targeting. Common placements include search engine results pages, display networks, video platforms, and social media channels such as Facebook, Instagram, and LinkedIn. Ads may also appear on relevant third-party websites and mobile apps. The placements are selected strategically to reach the right audience, improve visibility, and drive meaningful engagement and conversions." },
+    {
+        q: "What Is PPC Advertising And How Does It Work?",
+        a: "PPC (Pay-Per-Click) advertising is a digital marketing model where you pay each time someone clicks your ad. You set a budget, define your audience, and your ad appears when someone searches for your product or scrolls their social feed. At EEGNITE, every PPC campaign is built around a specific business outcome - leads, sales, or bookings — not just clicks."
+    },
+    {
+        q: "How Much Does PPC Advertising Cost?",
+        a: "PPC costs depend on your industry, competition, and chosen platform. For Google Ads, most small to mid-sized businesses see results starting at 5digits INR ad spend per month in ad spend. Meta Ads can start lower. LinkedIn Ads require higher minimum spend due to platform CPCs. At EEGNITE, we recommend a budget based on your revenue goal and the realistic cost per acquisition in your market."
+    },
+    {
+        q: "How Long Before I See Results From PPC Campaigns?",
+        a: "Google Search Ads can deliver leads within 24 to 48 hours of going live. Meta campaigns typically need 7 to 14 days for the algorithm's learning phase before performance stabilises. LinkedIn Ads show consistent lead quality after 2 to 4 weeks. EEGNITE sets clear expectations for each channel before campaigns launch. No guesswork. No surprises."
+    },
+    {
+        q: "What Is ROAS And How Does EEGNITE Optimise For It?",
+        a: "ROAS stands for Return on Ad Spend. A ROAS of 4x means you generate INR 4 in revenue for every INR 1 spent on ads. EEGNITE optimises ROAS through weekly creative A/B testing, audience refinement, landing page alignment, bidding strategy adjustments, and budget reallocation from underperforming to top-performing campaigns."
+    },
+    {
+        q: "What Platforms Does EEGNITE Manage PPC Campaigns On?",
+        a: "EEGNITE manages PPC campaigns across Google Search, Google Display, YouTube, Meta (Facebook and Instagram), LinkedIn, and cross-channel retargeting. Channel selection is based on your audience, goals, and budget. We recommend the platforms where your buyers actually are, not the platforms that are easiest to manage."
+    },
+    {
+        q: "How Does EEGNITE Track And Report Campaign Performance?",
+        a: "We build full measurement infrastructure before campaigns launch: pixel setup, conversion event tracking, UTM parameters, and custom dashboards. Weekly performance updates. Monthly reports covering cost per lead, ROAS, conversions, and budget allocation. You always know exactly what your investment is delivering."
+    },
+    {
+        q: "Can EEGNITE Run PPC Ads For Businesses Outside India?",
+        a: "Yes. EEGNITE manages paid advertising campaigns for clients across India, the United States, Europe, and the Middle East. We adapt bidding strategies, ad copy, and audience targeting to each market's competitive landscape and buyer behaviour. Global campaigns get the same accountability we bring to every local campaign."
+    },
+    {
+        q: "Does EEGNITE Handle Ad Creative As Well As Campaign Management?",
+        a: "Yes. EEGNITE provides full-service PPC management including ad creative — copy, static visuals, and video ad briefs. Creative and campaign strategy are managed together, which means your messaging, visuals, and targeting are fully aligned. This consistency improves Quality Scores on Google, lowers CPCs, and improves conversion rates across every platform."
+    }
 ];
 
 export default function ServicePpc() {
@@ -198,7 +221,7 @@ export default function ServicePpc() {
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left mb-8 md:mb-16 text-black">
-                            Common <span className="text-[#FF6105]">Questions</span>
+                            YOUR QUESTIONS. <span className="text-[#FF6105]">STRAIGHT ANSWERS.</span>
                         </h2>
                         <div className="space-y-3 md:space-y-4">
                             {ppcFaqs.map((faq, idx) => (

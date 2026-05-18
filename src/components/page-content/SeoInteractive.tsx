@@ -249,7 +249,7 @@ export function FullServiceSEO() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-3xl mb-12 md:mb-16"
+                    className="max-w-3xl mb-12 md:mb-16 md:mx-auto md:text-center"
                 >
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-6">
                         RESULTS-DRIVEN SEO. <span className="text-[#FF6105]">FOCUSED ON ORGANIC GROWTH</span>
@@ -323,7 +323,7 @@ export function SeoProcessFloating() {
         <section ref={targetRef} className="relative h-[200vh] md:h-[250vh] bg-white text-black">
             <div className="sticky top-0 flex h-[85vh] md:h-screen items-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
-                <div className="absolute top-24 left-0 w-full z-20">
+                <div className="absolute top-24 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
                             OUR GROWTH BASED <span className="text-[#FF6105]">SEO PROCESS</span>
@@ -373,8 +373,8 @@ export function ProtocolTimeline() {
 
     return (
         <section ref={targetRef} className="bg-white relative py-16 md:py-24">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
-                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%]">
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
+                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%] md:mx-auto">
                     HOW EEGNITE BECOMES A <span className="text-[#FF6105]">STRONG SEO PARTNER</span> FOR YOUR BUSINESS
                 </h2>
             </div>
@@ -465,7 +465,7 @@ export function WhyChooseSection() {
     return (
         <section ref={targetRef} className="relative h-[150vh] md:h-[300vh] bg-white text-black">
             <div className="sticky top-0 flex flex-col justify-center h-[75vh] md:h-screen overflow-hidden">
-                <div className="absolute top-24 md:top-32 left-0 w-full z-20">
+                <div className="absolute top-24 md:top-32 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none">
                             Why <span className="text-[#FF6105]">India</span> Chooses Us

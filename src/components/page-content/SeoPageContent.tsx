@@ -64,7 +64,7 @@ function ToolsSection() {
 
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
                 <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
                     Tools We <span className="text-[#FF6105]">Use</span>
                 </h2>
@@ -104,7 +104,7 @@ function ValuesSection() {
     return (
         <section className="bg-white text-black py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
-                <div className="mb-12 md:mb-24">
+                <div className="mb-12 md:mb-24 text-left md:text-center">
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12">
                         POWERED BY <span className="text-[#FF6105]">VALUES</span>
                     </h2>
@@ -195,7 +195,7 @@ export default function ServiceSeo() {
 
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left mb-8 md:mb-16 text-black">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left md:text-center mb-8 md:mb-16 text-black">
                             YOUR QUESTIONS. <span className="text-[#FF6105]">STRAIGHT ANSWERS.</span>
                         </h2>
                         <div className="space-y-3 md:space-y-4">

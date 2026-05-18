@@ -99,7 +99,6 @@ export const Compare = ({
         >
             <AnimatePresence>
                 <div
-                    key="left-side"
                     className="h-full w-full absolute top-0 left-0 z-20 pointer-events-none"
                     style={{
                         clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
@@ -119,7 +118,7 @@ export const Compare = ({
                     </div>
                 </div>
 
-                <div key="right-side" className="h-full w-full absolute top-0 left-0 z-10">
+                <div className="h-full w-full absolute top-0 left-0 z-10">
                     {/* RIGHT SIDE CONTENT (Visible underneath on right) */}
                     <div className="relative w-full h-full bg-white text-black">
                         {secondContent || (

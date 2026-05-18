@@ -41,14 +41,14 @@ export function SeoHero() {
                 <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-gradient-to-t from-[#FF6105]/15 to-transparent rounded-full blur-[80px] md:blur-[120px]" />
             </div>
 
-            <div className="max-w-6xl mx-auto w-full text-left md:text-center relative z-10 flex flex-col items-start md:items-center">
+            <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1] md:leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto">
-                        SEO SERVICES THAT DRIVE REAL GROWTH
+                    <h1 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1] md:leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
+                        SEO SERVICES THAT <span className="text-[#FF6105]">DRIVE REAL GROWTH</span>
                     </h1>
                 </motion.div>
 
@@ -58,7 +58,7 @@ export function SeoHero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-8 md:mb-12"
                 >
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
+                    <h2 className="text-xl md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
                         RANK HIGHER. GROW FASTER.
                     </h2>
                 </motion.div>
@@ -68,8 +68,8 @@ export function SeoHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    <p className="text-sm md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-left md:text-center">
-                        At EEGNITE, SEO is not a tactic. It is the foundation of long-term digital growth. We build search strategies that move your brand up the rankings, bring in the traffic that converts, and keep your business visible long after the campaign month ends
+                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-10 px-4">
+                        At EEGNITE, <span className="text-[#FF6105] font-semibold">SEO is not a tactic.</span> It is the foundation of long-term digital growth. We build search strategies that move your brand up the rankings, bring in the traffic that converts, and <span className="text-[#FF6105] font-semibold">keep your business visible</span> long after the campaign month ends.
                     </p>
                 </motion.div>
 
@@ -96,8 +96,8 @@ export function SeoComparisonSection() {
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter mb-6 text-black">
                         WHY <span className="text-[#FF6105]">EEGNITE?</span>
                     </h2>
-                    <p className="text-black/60 text-base md:text-xl font-normal max-w-4xl mx-auto leading-relaxed text-left md:text-center">
-                        Most SEO agencies promise rankings and deliver reports. At EEGNITE, every SEO engagement starts with your business goal. Not keyword volume. Not domain authority targets. We build search strategies around what you actually need: qualified traffic, real leads, and revenue you can attribute to organic search.
+                    <p className="text-black/60 text-base md:text-xl font-normal max-w-4xl md:mx-auto leading-relaxed">
+                        Most SEO agencies promise rankings and deliver reports. At EEGNITE, every SEO engagement <span className="text-[#FF6105] font-semibold">starts with your business goal</span>. Not keyword volume. Not domain authority targets. We build search strategies around what you actually need: <span className="text-[#FF6105] font-semibold">qualified traffic, real leads, and revenue</span> you can attribute to organic search.
                     </p>
                 </div>
 
@@ -108,19 +108,19 @@ export function SeoComparisonSection() {
                         firstContent={
                             <div className="w-full h-full bg-white flex flex-col items-center justify-start pt-20 p-4 md:p-12 text-center relative overflow-hidden">
                                 <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-[#FF6105] mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">EEGNITE SEO Solution</h3>
+                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-[#FF6105] mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">EEGNITE Solution</h3>
                                 <div className="flex flex-col gap-4 md:gap-6 max-w-4xl relative z-10 w-full">
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-[#FFF5F0] border border-[#FF6105]/20 text-left hover:scale-[1.02] transition-transform">
-                                        <h4 className="text-sm md:text-xl font-bold text-[#FF6105] mb-2">Your Market. Your Audience. Your Search Demand.</h4>
-                                        <p className="text-black/70 text-xs md:text-sm leading-relaxed">We understand the business landscape from local to global. We align your website with genuine search demand, connecting online visibility with real-world customer intent across every market we serve.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-[#FF6105] mb-2">Strategic Local Insight</h4>
+                                        <p className="text-black/70 text-xs md:text-sm leading-relaxed">Our team understands the local business landscape, from established local enterprises to fast-growing digital brands. We use this regional insight to align your website with genuine local search demand, ensuring your business appears where it matters most. As a trusted SEO company in Kolkata, India EEGNITE connects online visibility with real-world customer intent.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-[#FF6105] text-white text-left hover:scale-[1.02] transition-transform shadow-lg">
-                                        <h4 className="text-sm md:text-xl font-bold text-white mb-2">Built On Technical Depth, Not Surface Fixes.</h4>
-                                        <p className="text-white/90 text-xs md:text-sm leading-relaxed">EEGNITE approaches technical SEO from an engineering mindset. Site structure, crawlability, and performance - audited at every layer so search engines can clearly understand, evaluate, and reward your digital presence.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-white mb-2">Engineering-Led SEO Execution</h4>
+                                        <p className="text-white/90 text-xs md:text-sm leading-relaxed">EEGNITE approaches technical SEO from an engineering mindset. Our technical SEO services focus on site structure, crawlability, and performance, backed by analytics and continuous refinement. We audit every layer of your website to help search engines clearly understand, evaluate, and reward your digital presence.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/10 shadow-sm text-left hover:scale-[1.02] transition-transform">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Your Rankings. Your Traffic. Your Revenue.</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Clarity is central to how we work. Reporting frameworks give you a clear view of traffic growth, keyword movement, and business impact. Every action driven by transparency, accountability, and ROI.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Transparent and ROI-Focused Partnership</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Clarity is central to how we work. Our reporting frameworks give you a clear view of traffic growth, keyword movement, and business impact without hidden metrics. Every action we take is driven by transparency, accountability, and ROI, ensuring SEO remains a growth investment, not a guessing game.</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,19 +128,19 @@ export function SeoComparisonSection() {
                         secondContent={
                             <div className="w-full h-full bg-[#FAFAFA] flex flex-col items-center justify-start pt-20 p-4 md:p-12 text-center relative grayscale">
                                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-black/20 mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">Traditional SEO Agency</h3>
+                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-black/20 mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">Traditional Agency</h3>
                                 <div className="flex flex-col gap-4 md:gap-6 max-w-4xl relative z-10 w-full opacity-60">
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/5 text-left">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">One-Size-Fits-All Strategy. Your Market Ignored.</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Most agencies apply the same SEO playbook to every client, chasing global vanity volume rather than high-intent traffic. Visitors who never convert. Reports that look busy. Growth nowhere.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Generic Global Templates</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Most agencies apply a 'one-size-fits-all' strategy, ignoring the nuances of the local market. They chase global vanity volume rather than high-intent traffic, resulting in visitors who don't convert to customers.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/5 text-left">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Green Lights. Zero Depth. Rankings Untouched.</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Automated audit tools generate generic reports. Surface tags fixed. Deep technical architecture ignored. Your site stays invisible to modern search crawlers despite the all-clear.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Surface-Level Checklists</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Relying on automated tools to generate generic audit reports. They fix surface tags but ignore the deep technical architecture, rendering the site invisible to modern search crawlers despite 'green lights'.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/5 text-left">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Black-Box Reporting. Jargon-Filled Slides Hiding The Absence Of Results.</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Confusing monthly reports packed with metrics designed to obscure the lack of real business growth. You never really know what is being done — or whether it is working.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Black-Box Reporting</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Confusing monthly reports filled with jargon and 'vanity metrics' like impressions, designed to hide the lack of real business revenue. You never really know what they are doing.</p>
                                     </div>
                                 </div>
                             </div>
@@ -226,14 +226,14 @@ function FlipCard({ service }: { service: ServiceItem }) {
 // --- FULL SERVICE SEO ---
 export function FullServiceSEO() {
     const services = [
-        { title: "TECHNICAL SEO", icon: Cpu, description: "We audit and fix the technical foundations that determine whether search engines can crawl, index, and rank your site. Site speed, Core Web Vitals, crawl budget, structured data, and schema - every layer examined and resolved." },
-        { title: "ON-PAGE OPTIMISATION", icon: LayoutDashboard, description: "Every page optimised for the queries your buyers actually use. Title tags, meta descriptions, heading hierarchy, internal linking, and content alignment - fine-tuned to signal relevance and earn rankings that stick." },
-        { title: "KEYWORD RESEARCH", icon: BarChart3, description: "We identify the high-intent keywords your audience uses at every stage of the buying journey. Keyword discovery, clustering, difficulty assessment, and page mapping — so your content targets the searches that convert." },
-        { title: "LINK BUILDING AND DIGITAL PR", icon: TrendingUp, description: "Authority backlinks from relevant, trusted sources that tell Google your brand deserves to rank. Outreach-led, editorial link acquisition — no shortcuts, no spam, no risk to your domain." },
-        { title: "LOCAL SEO", icon: Search, description: "Dominate your city. We optimise your Google Business Profile, build local citations, and target geo-specific keywords so your business appears first when nearby customers are searching for what you offer." },
-        { title: "CONTENT STRATEGY", icon: Zap, description: "Content that ranks and converts. We develop topic clusters, blog strategies, and landing page content built around real search demand — designed to attract qualified traffic and build topical authority over time." },
-        { title: "ANALYTICS AND CONVERSION TRACKING", icon: PieChart, description: "We connect your SEO performance to business outcomes. Google Search Console, GA4, and custom dashboards tracking keyword rankings, organic traffic, leads from search, and revenue attributed to SEO." },
-        { title: "SHOPIFY AND E-COMMERCE SEO", icon: ShoppingBag, description: "Product pages, category hierarchies, and site architecture optimised for search engines and buyers simultaneously. Scalable e-commerce SEO that drives organic product discovery and revenue without relying entirely on paid ads." },
+        { title: "Keyword Research", icon: BarChart3, description: "Keyword research begins with understanding how your audience searches online. We identify relevant, high-intent keywords based on search demand, competition, and user behavior. By aligning your content with what potential customers are actively looking for, we improve search visibility and attract traffic that is more likely to convert into real business opportunities." },
+        { title: "Technical SEO", icon: Cpu, description: "A strong SEO strategy starts with a technically sound website. We audit and optimize every core layer of your site, from crawlability, site structure, and page speed to advanced schema markup implementation. Faster load times, structured data, and mobile-first design ensure clean crawlability and stronger organic reach." },
+        { title: "Local SEO", icon: Search, description: "Local SEO is about being visible when nearby customers are ready to act. EEGNITE optimizes your Google Business Profile, strengthens local listings, and builds location-focused pages that match how people search in your area. By combining regional insight with precise keyword targeting, we help your business appear prominently in local search results and attract more customers who are actively looking for your services." },
+        { title: "On-Page Optimization", icon: LayoutDashboard, description: "On-page optimization focuses on improving every internal element of your website to support stronger search performance. This includes optimizing content quality, page structure, loading speed, and user experience across key pages. Our SEO experts optimize your website's on-page factors so search engines can easily understand your content and be more engaging for users, helping your site attract the right traffic and rank higher." },
+        { title: "Content Strategy", icon: Zap, description: "At EEGNITE, content is built with purpose, not guesswork. We create helpful, keyword-informed content that speaks directly to your audience while supporting your SEO goals. From blogs and landing pages to product and service content, everything is planned around search intent, relevance, and conversion, helping your brand stay useful, visible, and trusted at every stage of the customer journey." },
+        { title: "Link Building & Digital PR", icon: TrendingUp, description: "EEGNITE strengthens your website's authority through ethical link-building techniques. As an experienced SEO service provider based in Kolkata, India, EEGNITE focuses on earning genuine backlinks from relevant and trusted websites that build trust with search engines. Through thoughtful outreach and digital PR, we help your business gain recognition where it matters. We support your steady ranking growth and long-term search visibility without following risky tactics." },
+        { title: "Analytics & Conversion Tracking", icon: BarChart3, description: "At EEGNITE, data guides every SEO decision we make. We track keyword performance, user behavior, and conversion paths to understand what's driving real results. By connecting SEO activity with measurable business outcomes, we help you clearly see how organic traffic turns into leads, sales, and long-term growth rather than just simple metrics." },
+        { title: "Shopify & E-Commerce SEO", icon: TrendingUp, description: "If you're running a Shopify or WooCommerce store, EEGNITE's SEO strategies help you to scale your business. We connect SEO to revenue by implementing GA4 and Klaviyo tracking to tie organic traffic directly to customer acquisition and lifetime value." },
     ];
 
     return (
@@ -249,13 +249,13 @@ export function FullServiceSEO() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-3xl mb-12 md:mb-16 text-left md:text-center md:mx-auto"
+                    className="max-w-3xl mb-12 md:mb-16"
                 >
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-6">
-                        RESULTS-DRIVEN SEO. <br className="hidden md:block" /> FOCUSED ON <span className="text-[#FF6105]">ORGANIC GROWTH</span>
+                        Full Service SEO <span className="text-[#FF6105]">Solution</span>
                     </h2>
-                    <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed text-left md:text-center">
-                        Our SEO services are built to do more than improve rankings. We focus on creating long-term visibility, brand authority, and consistent inbound demand through strategies that compound in value over time.
+                    <p className="text-black/50 text-base md:text-xl font-normal leading-relaxed">
+                        Our SEO services are built to do more than improve rankings. We focus on creating long-term visibility, brand authority, and consistent inbound demand through strategies.
                     </p>
                 </motion.div>
 
@@ -311,12 +311,12 @@ export function SeoProcessFloating() {
     const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
     const steps = [
-        { id: "01", title: "KEYWORD DISCOVERY", desc: "Identifying high-intent search terms your buyers use.", icon: Search },
-        { id: "02", title: "KEYWORD ANALYSIS", desc: "Clustering and difficulty assessment completed.", icon: PieChart },
-        { id: "03", title: "ORBIT MAPPING", desc: "Strategic roadmap and priority pages defined.", icon: Map },
-        { id: "04", title: "PAGE MAPPING", desc: "Keywords aligned to existing and new URLs.", icon: FileText },
-        { id: "05", title: "EXECUTION", desc: "Technical fixes, content, and link building launched.", icon: Settings },
-        { id: "06", title: "TRACK AND REPORT", desc: "Rankings, traffic, and revenue reviewed monthly.", icon: Sparkles },
+        { id: "01", title: "Keyword Discovery", desc: "Identifying high-intent search terms.", icon: Search },
+        { id: "02", title: "Keyword Analysis", desc: " clustering & difficulty assessment.", icon: PieChart },
+        { id: "03", title: "Orbit Mapping", desc: "Creating the strategic roadmap.", icon: Map },
+        { id: "04", title: "Page Mapping", desc: "Aligning keywords to URLs.", icon: FileText },
+        { id: "05", title: "Structural Audit", desc: "Technical & Local foundation.", icon: Settings },
+        { id: "06", title: "Content & Signals", desc: "Creation, Distribution & Links.", icon: Sparkles },
     ];
 
     return (
@@ -324,9 +324,9 @@ export function SeoProcessFloating() {
             <div className="sticky top-0 flex h-[85vh] md:h-screen items-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
                 <div className="absolute top-24 left-0 w-full z-20">
-                    <div className="max-w-[1400px] mx-auto px-6 text-left md:text-center">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black text-left md:text-center">
-                            OUR GROWTH BASED <span className="text-[#FF6105]">SEO PROCESS</span>
+                    <div className="max-w-[1400px] mx-auto px-6">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
+                            Our SEO <span className="text-[#FF6105]">Process</span>
                         </h2>
                     </div>
                 </div>
@@ -364,18 +364,18 @@ export function ProtocolTimeline() {
     const { scrollYProgress } = useScroll({ target: targetRef, offset: ["start start", "end end"] });
 
     const steps = [
-        { t: "Search Experience", d: "Years of ranking websites across competitive industries. Constant testing, adapting, and scaling what actually works." },
-        { t: "Ranking Consistency", d: "Structured SEO execution with technical checks, content workflows, and optimization systems that keep growth steady." },
-        { t: "SEO Transparency", d: "Keyword tracking, traffic insights, technical reports, and clear action plans. No hidden work. No vague updates." },
-        { t: "Traffic ROI Protection", d: "Every optimization is focused on visibility, qualified traffic, and long-term organic growth that protects your investment." },
-        { t: "Shared SEO Knowledge", d: "We explain the strategy, ranking movements, and optimization process so your team understands the growth journey." },
+        { t: "Experience", d: "Years of hands-on SEO experience, with the same obsession for learning, testing, and improving." },
+        { t: "Consistency", d: "A documented workflow with internal checks, so delivery never depends on one person. Work stays consistent, even when things get busy." },
+        { t: "Transparency", d: "A simple performance dashboard with the metrics that matter. Weekly visibility tracking, monthly growth insights, and clear next steps." },
+        { t: "ROI Protection", d: "We price for outcomes, not shortcuts. Strategy, execution, and measurement are built to protect ROI and support long-term growth." },
+        { t: "Shared Knowledge", d: "We share insights. Your team understands what we do, why it matters, and how it moves the needle." },
     ];
 
     return (
         <section ref={targetRef} className="bg-white relative py-16 md:py-24">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
-                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] text-left md:text-center max-w-[1200px] mx-auto">
-                    HOW EEGNITE BECOMES A <span className="text-[#FF6105]">STRONG SEO PARTNER</span> FOR YOUR BUSINESS
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%]">
+                    How EEGNITE Becomes a <span className="text-[#FF6105]">Strong SEO Partner</span> For Your Business
                 </h2>
             </div>
 

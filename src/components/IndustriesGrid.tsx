@@ -1,7 +1,7 @@
 "use client";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { ShoppingBag, Target, HeartPulse, Store, Factory, Briefcase } from "lucide-react";
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { ShoppingBag, Target, HeartPulse, Store, Factory, Briefcase, ChevronDown } from "lucide-react";
 
 const industriesData = [
     {
@@ -39,27 +39,14 @@ const industriesData = [
 export default function IndustriesGrid() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
+    const toggleAccordion = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
     };
 
-    const cardVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
+    const ActiveIcon = industriesData[activeIndex].icon;
 
     return (
         <section
@@ -74,46 +61,120 @@ export default function IndustriesGrid() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1 }}
-                    className="text-left md:text-center mb-16"
+                    className="text-left lg:text-center mb-16"
                 >
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF6105] mb-4 inline-flex items-center gap-3">
-                        <span className="w-8 h-[2px] bg-[#FF6105] hidden md:inline-block" />
+                        <span className="w-8 h-[2px] bg-[#FF6105] hidden lg:inline-block" />
                         Industries We Grow
                         <span className="w-8 h-[2px] bg-[#FF6105]" />
                     </span>
                     <h2 className="text-[clamp(1.8rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] text-black uppercase mt-4">
-                        We've Grown Businesses <span className="text-[#FF6105]">Like Yours.</span> <br className="hidden md:block" />
+                        We've Grown Businesses <span className="text-[#FF6105]">Like Yours.</span> <br className="hidden lg:block" />
                         We'll Grow Yours Too
                     </h2>
                 </motion.div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    {industriesData.map((ind, i) => (
-                        <motion.div
-                            key={i}
-                            variants={cardVariants}
-                            whileHover={{ y: -8 }}
-                            className="bg-white/80 border border-black/5 rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#FF6105]/20 flex flex-col justify-between"
-                        >
-                            <div>
-                                <div className="w-12 h-12 rounded-2xl bg-[#FF6105]/10 flex items-center justify-center text-[#FF6105] mb-6">
-                                    <ind.icon size={22} />
-                                </div>
-                                <h3 className="text-xl font-bold text-black uppercase tracking-tight mb-4">
-                                    {ind.title}
-                                </h3>
-                                <p className="text-sm text-black/60 leading-relaxed font-medium">
-                                    {ind.description}
-                                </p>
+                <div className="block lg:hidden space-y-4">
+                    {industriesData.map((ind, i) => {
+                        const Icon = ind.icon;
+                        const isOpen = openIndex === i;
+
+                        return (
+                            <div
+                                key={i}
+                                className="border border-black/5 rounded-2xl bg-white overflow-hidden transition-all duration-300 hover:border-[#FF6105]/20 shadow-sm"
+                            >
+                                <button
+                                    onClick={() => toggleAccordion(i)}
+                                    className="w-full text-left py-5 px-6 flex items-center justify-between transition-colors bg-white hover:bg-gray-50/50"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${isOpen ? 'bg-[#FF6105] text-white' : 'bg-[#FF6105]/10 text-[#FF6105]'}`}>
+                                            <Icon size={18} />
+                                        </div>
+                                        <h3 className="text-lg font-bold text-black uppercase tracking-tight">
+                                            {ind.title}
+                                        </h3>
+                                    </div>
+                                    <motion.div
+                                        animate={{ rotate: isOpen ? 180 : 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <ChevronDown size={18} className="text-black/40" />
+                                    </motion.div>
+                                </button>
+
+                                <AnimatePresence initial={false}>
+                                    {isOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        >
+                                            <div className="px-6 pb-6 pt-2 border-t border-black/5 bg-gray-50/20">
+                                                <p className="text-sm text-black/60 leading-relaxed font-medium">
+                                                    {ind.description}
+                                                </p>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                        );
+                    })}
+                </div>
+
+                <div className="hidden lg:grid grid-cols-12 gap-16 items-center min-h-[450px]">
+                    <div className="col-span-5 flex flex-col gap-2">
+                        {industriesData.map((ind, i) => {
+                            const isActive = activeIndex === i;
+
+                            return (
+                                <button
+                                    key={i}
+                                    onMouseEnter={() => setActiveIndex(i)}
+                                    className={`text-left py-4 px-6 rounded-2xl transition-all duration-300 w-full relative flex items-center justify-between ${
+                                        isActive 
+                                            ? 'bg-gradient-to-r from-gray-50 to-transparent border-l-4 border-[#FF6105] text-black font-extrabold translate-x-2' 
+                                            : 'border-l-4 border-transparent text-black/35 hover:text-black/60 hover:translate-x-1'
+                                    }`}
+                                >
+                                    <span className="text-xl xl:text-2xl uppercase tracking-tight">
+                                        {ind.title}
+                                    </span>
+                                </button>
+                            );
+                        })}
+                    </div>
+
+                    <div className="col-span-7">
+                        <div className="bg-white border border-black/5 rounded-3xl p-12 shadow-xl relative overflow-hidden min-h-[380px] flex flex-col justify-center">
+                            <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-gradient-to-br from-[#FF6105]/10 to-transparent blur-3xl pointer-events-none select-none" />
+                            
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeIndex}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="flex flex-col h-full"
+                                >
+                                    <div className="w-16 h-16 rounded-2xl bg-[#FF6105]/10 flex items-center justify-center text-[#FF6105] mb-8 shadow-sm">
+                                        <ActiveIcon size={28} />
+                                    </div>
+                                    <h3 className="text-3xl font-black text-black uppercase tracking-tight mb-6">
+                                        {industriesData[activeIndex].title}
+                                    </h3>
+                                    <p className="text-lg text-black/60 leading-relaxed font-medium tracking-wide max-w-xl">
+                                        {industriesData[activeIndex].description}
+                                    </p>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

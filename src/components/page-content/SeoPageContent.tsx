@@ -96,9 +96,9 @@ function ToolsSection() {
 
 function ValuesSection() {
     const values = [
-        { title: "Integrity", desc: "We believe in brutal honesty. If a strategy isn't working, we tell you. If an SEO goal is unrealistic, we correct it. You'll always receive candid recommendations." },
-        { title: "Teamwork", desc: "EEGNITE is not a freelancer; we are a dedicated engineering team. Senior strategists, technical leads, and content creators work in unison on your project." },
-        { title: "Excellence", desc: "Good enough is not enough. We aim for uncompromised quality in every audit, every line of code, and every piece of content. We set the standard." },
+        { title: "INTEGRITY", desc: "We tell you what works, what does not, and what your brand truly needs. Transparent communication and honest strategies are at the core of every decision we make." },
+        { title: "TEAMWORK", desc: "Strategists, designers, creators, and specialists working as one dedicated team for your brand. Every campaign is built through collaboration, consistency, and shared goals." },
+        { title: "EXCELLENCE", desc: "Average is never the target. Every strategy, campaign, and deliverable is crafted to create impact, drive results, and set a higher standard for your brand." },
     ];
 
     return (
@@ -106,7 +106,7 @@ function ValuesSection() {
             <div className="max-w-[1400px] mx-auto">
                 <div className="mb-12 md:mb-24">
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12">
-                        Powered By <span className="text-[#FF6105]">Values</span>
+                        POWERED BY <span className="text-[#FF6105]">VALUES</span>
                     </h2>
                 </div>
                 <div className="space-y-16 md:space-y-32">

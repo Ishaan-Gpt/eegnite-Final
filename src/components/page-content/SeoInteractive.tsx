@@ -311,12 +311,12 @@ export function SeoProcessFloating() {
     const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
     const steps = [
-        { id: "01", title: "Keyword Discovery", desc: "Identifying high-intent search terms.", icon: Search },
-        { id: "02", title: "Keyword Analysis", desc: " clustering & difficulty assessment.", icon: PieChart },
-        { id: "03", title: "Orbit Mapping", desc: "Creating the strategic roadmap.", icon: Map },
-        { id: "04", title: "Page Mapping", desc: "Aligning keywords to URLs.", icon: FileText },
-        { id: "05", title: "Structural Audit", desc: "Technical & Local foundation.", icon: Settings },
-        { id: "06", title: "Content & Signals", desc: "Creation, Distribution & Links.", icon: Sparkles },
+        { id: "01", title: "KEYWORD DISCOVERY", desc: "Identifying high-intent search terms your buyers use.", icon: Search },
+        { id: "02", title: "KEYWORD ANALYSIS", desc: "Clustering and difficulty assessment completed.", icon: PieChart },
+        { id: "03", title: "ORBIT MAPPING", desc: "Strategic roadmap and priority pages defined.", icon: Map },
+        { id: "04", title: "PAGE MAPPING", desc: "Keywords aligned to existing and new URLs.", icon: FileText },
+        { id: "05", title: "EXECUTION", desc: "Technical fixes, content, and link building launched.", icon: Settings },
+        { id: "06", title: "TRACK AND REPORT", desc: "Rankings, traffic, and revenue reviewed monthly.", icon: BarChart3 },
     ];
 
     return (
@@ -326,7 +326,7 @@ export function SeoProcessFloating() {
                 <div className="absolute top-24 left-0 w-full z-20">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
-                            Our SEO <span className="text-[#FF6105]">Process</span>
+                            OUR GROWTH BASED <span className="text-[#FF6105]">SEO PROCESS</span>
                         </h2>
                     </div>
                 </div>
@@ -364,18 +364,18 @@ export function ProtocolTimeline() {
     const { scrollYProgress } = useScroll({ target: targetRef, offset: ["start start", "end end"] });
 
     const steps = [
-        { t: "Experience", d: "Years of hands-on SEO experience, with the same obsession for learning, testing, and improving." },
-        { t: "Consistency", d: "A documented workflow with internal checks, so delivery never depends on one person. Work stays consistent, even when things get busy." },
-        { t: "Transparency", d: "A simple performance dashboard with the metrics that matter. Weekly visibility tracking, monthly growth insights, and clear next steps." },
-        { t: "ROI Protection", d: "We price for outcomes, not shortcuts. Strategy, execution, and measurement are built to protect ROI and support long-term growth." },
-        { t: "Shared Knowledge", d: "We share insights. Your team understands what we do, why it matters, and how it moves the needle." },
+        { t: "Search Experience", d: "Years of ranking websites across competitive industries. Constant testing, adapting, and scaling what actually works." },
+        { t: "Ranking Consistency", d: "Structured SEO execution with technical checks, content workflows, and optimization systems that keep growth steady." },
+        { t: "SEO Transparency", d: "Keyword tracking, traffic insights, technical reports, and clear action plans. No hidden work. No vague updates." },
+        { t: "Traffic ROI Protection", d: "Every optimization is focused on visibility, qualified traffic, and long-term organic growth that protects your investment." },
+        { t: "Shared SEO Knowledge", d: "We explain the strategy, ranking movements, and optimization process so your team understands the growth journey." },
     ];
 
     return (
         <section ref={targetRef} className="bg-white relative py-16 md:py-24">
             <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
                 <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%]">
-                    How EEGNITE Becomes a <span className="text-[#FF6105]">Strong SEO Partner</span> For Your Business
+                    HOW EEGNITE BECOMES A <span className="text-[#FF6105]">STRONG SEO PARTNER</span> FOR YOUR BUSINESS
                 </h2>
             </div>
 

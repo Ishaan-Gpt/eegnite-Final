@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import Results from "@/components/Results";
 import Founder from "@/components/Founder";
 import FAQ from "@/components/FAQ";
+import GrowthCTA from "@/components/GrowthCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import HomeClient from "@/components/HomeClient";
@@ -36,6 +37,7 @@ export default function Home() {
             <Results />
             <Founder />
             <FAQ />
+            <GrowthCTA />
             <Contact />
             <Footer />
         </main>

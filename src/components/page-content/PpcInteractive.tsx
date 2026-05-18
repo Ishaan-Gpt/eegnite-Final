@@ -340,12 +340,10 @@ export function ProtocolTimeline() {
 
     return (
         <section ref={targetRef} className="bg-white relative py-16 md:py-24">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
-                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%] mb-8">
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
+                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%] md:mx-auto">
                     HOW EEGNITE BECOMES A <span className="text-[#FF6105]">STRONG PPC ADVERTISING PARTNER FOR YOUR BUSINESS</span>
                 </h2>
-                <p className="text-black/50 text-base md:text-xl leading-relaxed mb-6 max-w-4xl">EEGNITE operates as a performance-first PPC management agency focused on turning ad spend into measurable business growth. Our approach combines data analysis, audience insights, and continuous optimization to improve campaign efficiency at every stage.</p>
-                <p className="text-black/50 text-base md:text-xl leading-relaxed max-w-4xl">As a trusted PPC management company, we create targeted strategies that attract high-intent traffic and drive more conversions. Our experts consistently refine targeting, creatives, and bidding to enhance performance, ensuring campaigns remain scalable, efficient, and aligned with long-term business success.</p>
             </div>
 
             <div className="relative max-w-7xl mx-auto px-6">

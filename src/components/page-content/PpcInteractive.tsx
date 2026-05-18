@@ -462,19 +462,19 @@ export function PpcComparisonSection() {
                         firstContent={
                             <div className="w-full h-full bg-white flex flex-col items-center justify-start pt-12 md:pt-20 p-4 md:p-12 text-center relative overflow-hidden">
                                 <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-[#FF6105] mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">EEGNITE Solution</h3>
+                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-[#FF6105] mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">EEGNITE PPC SOLUTION</h3>
                                 <div className="flex flex-col gap-4 md:gap-6 max-w-4xl relative z-10 w-full">
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-[#FFF5F0] border border-[#FF6105]/20 text-left hover:scale-[1.02] transition-transform">
-                                        <h4 className="text-sm md:text-xl font-bold text-[#FF6105] mb-2">Intent-Driven Audience Targeting</h4>
-                                        <p className="text-black/70 text-xs md:text-sm leading-relaxed">We focus on users actively searching for your solutions, ensuring every click has a higher potential for conversion across all paid channels.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-[#FF6105] mb-2">Built Around Your Business Goal. Not Around Your Budget.</h4>
+                                        <p className="text-black/70 text-xs md:text-sm leading-relaxed">Every campaign starts with your revenue objective. Channel selection, audience targeting, and creative are chosen to hit that number. Not to fill a reporting slide.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-[#FF6105] text-white text-left hover:scale-[1.02] transition-transform shadow-lg">
-                                        <h4 className="text-sm md:text-xl font-bold text-white mb-2">Continuous Performance Optimization</h4>
-                                        <p className="text-white/90 text-xs md:text-sm leading-relaxed">Our PPC experts adjust bids, budgets, and placements in real-time to maintain maximum efficiency and ensure your ad budget delivers stronger returns.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-white mb-2">Real Accountability. Real Numbers.</h4>
+                                        <p className="text-white/90 text-xs md:text-sm leading-relaxed">We report the metrics that connect your spend to your growth. Cost per acquisition, return on ad spend, and pipeline impact. Transparent. Every single month.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/10 shadow-sm text-left hover:scale-[1.02] transition-transform">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Full Transparency & ROI Tracking</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">We connect ad spend directly to revenue, providing clear visibility into which campaigns are truly driving growth without hidden vanity metrics.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">We Cut What Loses. We Scale What Wins.</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Weekly performance reviews, A/B testing, and fast budget reallocation. Underperforming spend does not run at EEGNITE. It gets fixed or it gets cut.</p>
                                     </div>
                                 </div>
                             </div>
@@ -482,19 +482,19 @@ export function PpcComparisonSection() {
                         secondContent={
                             <div className="w-full h-full bg-[#FAFAFA] flex flex-col items-center justify-start pt-12 md:pt-20 p-4 md:p-12 text-center relative grayscale">
                                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-black/20 mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">Traditional Agency</h3>
+                                <h3 className="text-2xl md:text-5xl lg:text-7xl font-bold text-black/20 mb-6 md:mb-10 relative z-10 uppercase tracking-tighter leading-none pb-2">TRADITIONAL PPC AGENCY</h3>
                                 <div className="flex flex-col gap-4 md:gap-6 max-w-4xl relative z-10 w-full opacity-60">
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/5 text-left">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Broad Keyword Spreading</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Targeting keywords that are too broad, leading to high spend on clicks that don't convert into real business outcomes.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Budgets Allocated. Returns Unknown.</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Campaigns launched to platforms without a clear funnel or attribution model. Money spent. Clicks tracked. Revenue nowhere. Agencies report CTR and call it performance.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/5 text-left">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Inconsistent Monitoring</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Manual adjustments made only once a month, missing out on real-time optimization and cost-saving opportunities.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Vanity KPIs. Impressions Celebrated While The Pipeline Stays Empty.</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Clicks and impressions reported as wins while leads and revenue stay flat. The dashboard looks healthy. Your business does not grow.</p>
                                     </div>
                                     <div className="p-4 md:p-6 rounded-2xl md:rounded-3xl bg-white border border-black/5 text-left">
-                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Lack of Transparent ROI</h4>
-                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Focusing on impressions and clicks rather than real revenue attribution, making it difficult to measure true campaign value.</p>
+                                        <h4 className="text-sm md:text-xl font-bold text-black mb-2">Campaigns Live. Optimisation Dead.</h4>
+                                        <p className="text-black/60 text-xs md:text-sm leading-relaxed">Campaigns launched and left. No weekly review, no creative testing, no budget reallocation. Diminishing returns run unchecked until the contract ends.</p>
                                     </div>
                                 </div>
                             </div>

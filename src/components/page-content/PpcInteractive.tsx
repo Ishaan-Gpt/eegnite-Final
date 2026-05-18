@@ -92,27 +92,27 @@ export function PpcHero() {
                 <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-gradient-to-t from-[#FF6105]/15 to-transparent rounded-full blur-[80px] md:blur-[120px]" />
             </div>
 
-            <div className="max-w-6xl mx-auto w-full text-left md:text-center relative z-10 flex flex-col items-start md:items-center">
+            <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-full">
-                    <h1 className="text-[7.5vw] xs:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] md:mx-auto">
+                    <h1 className="text-[7.5vw] xs:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto text-center">
                         PPC ADVERTISING SERVICES <br className="hidden md:block" /> THAT DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-4 md:mb-12 w-full">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-4 md:mb-12 w-full text-center">
                     <h2 className="text-lg md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
                         SPEND SMART. SCALE FAST. WIN BIG.
                     </h2>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="w-full">
-                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl md:mx-auto mb-6 md:mb-10 px-1">
+                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-6 md:mb-10 px-1 text-center">
                         At EEGNITE, every penny you spend on PPC is accountable. We do not run ads and hope for the best. We build performance-first paid advertising campaigns that target the right audience, with the right message, at the right moment. From Google Ads and Meta campaigns to LinkedIn and display - every campaign tied to a measurable outcome.
                     </p>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
+                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
                         Start Your Project
                     </Link>
                 </motion.div>

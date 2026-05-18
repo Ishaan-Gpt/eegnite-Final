@@ -78,7 +78,7 @@ export function SeoHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <a href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
+                    <a href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
                         Start Your Project
                     </a>
                 </motion.div>

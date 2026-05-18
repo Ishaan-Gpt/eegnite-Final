@@ -13,15 +13,25 @@ export default function Founder() {
         >
             <div className="max-w-6xl mx-auto relative z-10 w-full">
                 {/* Heading */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1 }}
-                    className="text-[clamp(2.5rem,8vw,5rem)] font-bold tracking-tight leading-[1] text-black mb-16 uppercase"
-                >
-                    THE VISION{" "}
-                    <span className="text-[#FF6105]">BEHIND EEGNITE</span>
-                </motion.h2>
+                <div className="mb-12 text-left lg:text-center w-full">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1 }}
+                        className="text-[clamp(1.8rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] text-black uppercase mb-4"
+                    >
+                        THE VISION{" "}
+                        <span className="text-[#FF6105]">BEHIND EEGNITE</span>
+                    </motion.h2>
+                    <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        className="text-lg md:text-xl font-bold text-[#FF6105] uppercase tracking-wider"
+                    >
+                        Anish Kumar — Founder & CEO
+                    </motion.h3>
+                </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     {/* Image/Visual - Standalone with gradient */}
@@ -67,28 +77,22 @@ export default function Founder() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="order-1 lg:order-2 space-y-8"
+                        className="order-1 lg:order-2 space-y-6"
                     >
-                        <p className="text-lg text-black/60 leading-relaxed">
-                            Anish is the{" "}
-                            <span className="text-[#FF6105] font-semibold">heart and soul</span>{" "}
-                            behind EEGNITE. He built this agency to help businesses not just
-                            rank higher but truly{" "}
-                            <span className="text-[#FF6105] font-semibold">connect</span>{" "}
-                            with their audience.
+                        <p className="text-base md:text-lg text-black/70 leading-relaxed">
+                            I didn’t build EEGNITE to chase numbers. It was <span className="text-[#FF6105] font-semibold">built to create impact</span>.
                         </p>
 
-                        <p className="text-lg text-black/60 leading-relaxed">
-                            Driven by passion and the belief that every brand has a unique story,
-                            Anish and his team focus on creating stories and strategies that inspire{" "}
-                            <span className="font-semibold text-[#FF6105]">trust</span> and{" "}
-                            <span className="font-semibold text-[#FF6105]">growth</span>.
+                        <p className="text-base md:text-lg text-black/70 leading-relaxed">
+                            Every brand has a story. Our job? Make sure the world hears it. We don't obsess over vanity metrics or empty traffic. We obsess over what actually moves your business - <span className="text-[#FF6105] font-semibold">connection, trust, and growth that lasts</span>. Because when your brand wins, we win.
                         </p>
 
-                        <p className="text-lg text-black/60 leading-relaxed">
-                            For Anish, it's not just about success, it's about making a{" "}
-                            <span className="font-semibold text-black">real impact</span>,
-                            one brand at a time.
+                        <p className="text-base md:text-lg text-black/70 leading-relaxed">
+                            That's not a tagline. That's <span className="text-[#FF6105] font-semibold">how we work</span>.
+                        </p>
+
+                        <p className="text-base md:text-lg text-black/70 leading-relaxed font-semibold">
+                            For us, success has always been simple. It's the difference EEGNITE makes - <span className="text-[#FF6105] font-semibold">one brand, one result, one win at a time</span>.
                         </p>
                     </motion.div>
                 </div>

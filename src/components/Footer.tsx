@@ -61,8 +61,10 @@ export default function Footer() {
                     {/* CTA Row */}
                     <div className="flex flex-col lg:flex-row justify-between items-start gap-10 pb-10 border-b border-black/5">
                         <div className="max-w-xl">
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight leading-[1.1]">
-                                Let's Build <span className="text-[#FF6105]">The Future</span> Together.
+                            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-black tracking-tight leading-[1.1]">
+                                Performance First. <br className="hidden md:block" />
+                                Growth Always. <br className="hidden md:block" />
+                                <span className="text-[#FF6105]">Partnership Forever.</span>
                             </h2>
                         </div>
                         <motion.a
@@ -87,7 +89,7 @@ export default function Footer() {
                                 </span>
                             </div>
                             <p className="text-sm text-black/60 leading-relaxed max-w-sm">
-                                Bridging the gap between complex digital data and human-centric design. We help businesses achieve measurable growth through strategic marketing.
+                                At EEGNITE, we don't think like a vendor. We think like a growth partner. Every decision we make is filtered through one question: “Does this move the needle for our client?"
                             </p>
                             <div className="flex gap-3">
                                 {socialLinks.map((social, i) => (

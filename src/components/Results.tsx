@@ -77,13 +77,20 @@ export default function Results() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1 }}
-                    className="mb-12 md:mb-24 text-center"
+                    className="mb-12 md:mb-24 text-left md:text-center"
                 >
-                    <h2 className="text-3xl md:text-[clamp(2.5rem,10vw,7rem)] font-bold tracking-tight text-black leading-[1] md:leading-[0.95] uppercase">
-                        REAL RESULTS,
-                        <br />
-                        <span className="text-[#FF6105]">REAL GROWTH</span>
+                    <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
+                        Numbers Don't Lie. <br />
+                        <span className="text-[#FF6105]">Ours Tell a Great Story.</span>
                     </h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ delay: 0.2 }}
+                        className="mt-6 max-w-2xl md:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide leading-relaxed"
+                    >
+                        We believe in proof over promises. Our case studies break down exactly how EEGNITE helped real businesses achieve measurable growth - the strategy we used, the challenges we tackled, and the results we delivered.
+                    </motion.p>
                 </motion.div>
 
                 {/* Case Studies Grid */}

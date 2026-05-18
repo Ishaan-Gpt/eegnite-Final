@@ -164,22 +164,25 @@ const FloatingIconsHero = React.forwardRef<
             </div>
 
             {/* Container for the foreground content */}
-            <div className="relative z-10 text-center px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#2A1810] uppercase">
-                    {title.split('.').map((word, i) => {
-                        const trimmed = word.trim();
-                        if (!trimmed) return null;
-                        // Middle word is orange (Design)
-                        if (i === 1) {
-                            return <span key={i} className="text-[#FF6105]">{trimmed}. </span>;
-                        }
-                        return <span key={i}>{trimmed}. </span>;
-                    })}
+            <div className="relative z-10 text-left lg:text-center px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#2A1810] uppercase">
+                    {/* Mobile: 4 lines left-aligned */}
+                    <span className="block md:hidden text-[1.65rem] leading-[1.2]">
+                        your business doesn't <br />
+                        <span className="text-[#FF6105]">just need traffic</span> <br />
+                        your business <br />
+                        <span className="text-[#FF6105]">needs growth</span>
+                    </span>
+                    {/* Desktop: Centered 2 lines */}
+                    <span className="hidden md:block">
+                        Your Business Doesn't Just Need Traffic. <br />
+                        <span className="text-[#FF6105]">Your Business Needs Growth.</span>
+                    </span>
                 </h1>
-                <p className="mt-6 max-w-xl mx-auto text-lg text-[#6B5545] leading-relaxed">
+                <p className="mt-6 max-w-2xl lg:mx-auto text-[0.8rem] md:text-base text-[#6B5545] leading-relaxed whitespace-pre-line">
                     {subtitle}
                 </p>
-                <div className="mt-10 flex items-center justify-center gap-4">
+                <div className="mt-10 flex items-center justify-start lg:justify-center gap-4">
                     <Button asChild size="lg" className="px-10 py-6 text-sm font-semibold tracking-wider uppercase bg-[#FF6105] text-white hover:bg-[#e55800] shadow-xl shadow-[#FF6105]/20 rounded-full">
                         <a href={ctaHref}>{ctaText}</a>
                     </Button>

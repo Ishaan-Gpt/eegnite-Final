@@ -129,13 +129,13 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1 }}
-                    className="text-center mb-16"
+                    className="text-left lg:text-center mb-16"
                 >
                     <h2 className="text-[clamp(2.5rem,8vw,5rem)] font-bold tracking-tight text-black leading-[1] uppercase">
                         LET'S{" "}
                         <span className="text-[#FF6105]">CONNECT</span>
                     </h2>
-                    <p className="mt-6 text-lg text-black/60 max-w-2xl mx-auto">
+                    <p className="mt-6 text-lg text-black/60 max-w-2xl lg:mx-auto">
                         Ready to ignite your brand's digital presence? Get in touch with us today.
                     </p>
                 </motion.div>

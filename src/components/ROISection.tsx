@@ -185,14 +185,12 @@ export default function ROISection() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-black text-black uppercase tracking-tight leading-[0.95] lg:flex-1"
+                        className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-black uppercase tracking-tight leading-[1.1] lg:flex-1"
                     >
-                        <span>ROI-Focused</span>
-                        <br />
-                        <span className="text-[#FF6105]">Agency</span>
+                        We Don't Report Numbers. <br />
+                        <span className="text-[#FF6105]">We Deliver Them.</span>
                     </motion.h2>
 
-                    {/* Right side - Description aligned right */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -200,7 +198,7 @@ export default function ROISection() {
                         className="lg:flex-1 lg:text-right"
                     >
                         <p className="text-base md:text-lg text-black/60 leading-relaxed">
-                            We prioritize delivering value to our clients. From Organic Search to Paid Media and Business Intelligence, our teams are driven by data and proven results to ensure your brand's success.
+                            At EEGNITE, we obsess over your ROI because that's the only metric that actually matters. Measurable traffic. Qualified leads. Revenue growth. Scalable systems that keep performing long after the campaign goes live. That's not a promise - that's our process.
                         </p>
                     </motion.div>
                 </div>

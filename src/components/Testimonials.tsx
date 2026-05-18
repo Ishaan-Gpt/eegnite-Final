@@ -49,16 +49,24 @@ export default function Testimonials() {
         >
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">
                 {/* Header */}
-                <div className="mb-8 text-center">
+                <div className="mb-12 lg:mb-16 text-left lg:text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ delay: 0.2 }}
-                        className="text-[clamp(2.5rem,7vw,5rem)] font-bold text-black leading-[1] uppercase tracking-tight"
+                        className="text-[clamp(1.8rem,5vw,3.5rem)] font-bold text-black leading-[1.1] uppercase tracking-tight"
                     >
-                        VOICE OF{" "}
-                        <span className="text-[#FF6105]">EXCELLENCE</span>
+                        They Trusted Us. <br />
+                        <span className="text-[#FF6105]">What Followed Speaks.</span>
                     </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ delay: 0.3 }}
+                        className="mt-6 max-w-2xl lg:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide leading-relaxed"
+                    >
+                        From startups to established enterprises, the businesses that partnered with EEGNITE saw real results - not just better reports. Here's what they have to say about working with a digital marketing agency that actually delivers.
+                    </motion.p>
                 </div>
 
                 {/* Animated Testimonials */}

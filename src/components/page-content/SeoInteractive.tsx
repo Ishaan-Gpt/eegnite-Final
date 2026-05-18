@@ -101,7 +101,7 @@ export function SeoComparisonSection() {
                     </p>
                 </div>
 
-                <div className="w-full max-w-6xl mx-auto h-[620px] sm:h-[680px] md:h-[800px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-black/10">
+                <div className="w-full max-w-6xl mx-auto h-[680px] md:h-[800px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-black/10">
                     <Compare
                         className="h-full"
                         slideMode="drag"

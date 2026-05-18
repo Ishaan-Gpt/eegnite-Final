@@ -149,7 +149,7 @@ export default function IndustriesGrid() {
                     </div>
 
                     <div className="col-span-7">
-                        <div className="bg-white border border-black/5 rounded-3xl p-12 shadow-xl relative overflow-hidden min-h-[380px] flex flex-col justify-center">
+                        <div className="bg-white border border-black/5 rounded-3xl p-12 shadow-xl relative overflow-hidden min-h-[300px] flex flex-col justify-center">
                             <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-gradient-to-br from-[#FF6105]/10 to-transparent blur-3xl pointer-events-none select-none" />
                             
                             <AnimatePresence mode="wait">
@@ -159,15 +159,9 @@ export default function IndustriesGrid() {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    className="flex flex-col h-full"
+                                    className="flex flex-col justify-center h-full"
                                 >
-                                    <div className="w-16 h-16 rounded-2xl bg-[#FF6105]/10 flex items-center justify-center text-[#FF6105] mb-8 shadow-sm">
-                                        <ActiveIcon size={28} />
-                                    </div>
-                                    <h3 className="text-3xl font-black text-black uppercase tracking-tight mb-6">
-                                        {industriesData[activeIndex].title}
-                                    </h3>
-                                    <p className="text-lg text-black/60 leading-relaxed font-medium tracking-wide max-w-xl">
+                                    <p className="text-xl md:text-2xl text-black/70 leading-relaxed font-medium tracking-wide max-w-xl">
                                         {industriesData[activeIndex].description}
                                     </p>
                                 </motion.div>

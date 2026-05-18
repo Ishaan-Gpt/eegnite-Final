@@ -66,8 +66,8 @@ function ToolsSection() {
 
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
-                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-4">
+            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
+                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-4 md:mx-auto">
                     Tools & Platforms <br /><span className="text-[#FF6105]">Powering Our PPC Campaigns</span>
                 </h2>
             </div>
@@ -220,7 +220,7 @@ export default function ServicePpc() {
 
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left mb-8 md:mb-16 text-black">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left md:text-center mb-8 md:mb-16 text-black">
                             YOUR QUESTIONS. <span className="text-[#FF6105]">STRAIGHT ANSWERS.</span>
                         </h2>
                         <div className="space-y-3 md:space-y-4">

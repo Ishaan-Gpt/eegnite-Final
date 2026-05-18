@@ -92,21 +92,21 @@ export function PpcHero() {
                 <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-gradient-to-t from-[#FF6105]/15 to-transparent rounded-full blur-[80px] md:blur-[120px]" />
             </div>
 
-            <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto px-4 whitespace-nowrap md:whitespace-normal">
-                        PPC ADVERTISING SERVICES <br /> THAT DRIVE REAL GROWTH
+            <div className="max-w-6xl mx-auto w-full text-left md:text-center relative z-10 flex flex-col items-start md:items-center">
+                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-full">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] md:mx-auto">
+                        PPC ADVERTISING SERVICES <br className="hidden md:block" /> THAT DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-4 md:mb-12">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-4 md:mb-12 w-full">
                     <h2 className="text-lg md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
                         SPEND SMART. SCALE FAST. WIN BIG.
                     </h2>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
-                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-6 md:mb-10 px-4">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="w-full">
+                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl md:mx-auto mb-6 md:mb-10">
                         At EEGNITE, every penny you spend on PPC is accountable. We do not run ads and hope for the best. We build performance-first paid advertising campaigns that target the right audience, with the right message, at the right moment. From Google Ads and Meta campaigns to LinkedIn and display - every campaign tied to a measurable outcome.
                     </p>
                 </motion.div>
@@ -218,7 +218,7 @@ export function FullServicePPC() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-3xl mb-12 md:mb-16 md:mx-auto md:text-center"
+                    className="max-w-3xl mb-12 md:mb-16 text-left md:text-center md:mx-auto"
                 >
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-6">
                         RESULTS-DRIVEN PPC ADVERTISING. <span className="text-[#FF6105]">FOCUSED ON REVENUE GROWTH</span>
@@ -285,8 +285,8 @@ export function PpcProcessFloating() {
         <section ref={targetRef} className="relative h-[200vh] md:h-[250vh] bg-white text-black">
             <div className="sticky top-0 flex h-[85vh] md:h-screen items-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
-                <div className="absolute top-16 md:top-24 left-0 w-full z-20 text-center">
-                    <div className="max-w-4xl mx-auto px-6">
+                <div className="absolute top-16 md:top-24 left-0 w-full z-20 text-left md:text-center">
+                    <div className="max-w-4xl md:mx-auto px-6">
                         <h2 className="text-[5.5vw] sm:text-3xl md:text-6xl font-bold uppercase tracking-tight text-black leading-tight">
                             <span className="block whitespace-nowrap">OUR PERFORMANCE-FOCUSED</span>
                             <span className="block text-[#FF6105] whitespace-nowrap">PPC ADVERTISING PROCESS</span>
@@ -414,9 +414,9 @@ export function WhyChooseSection() {
     return (
         <section ref={targetRef} className="relative h-[150vh] md:h-[300vh] bg-white text-black">
             <div className="sticky top-0 flex flex-col justify-center h-[75vh] md:h-screen overflow-hidden">
-                <div className="absolute top-28 md:top-32 left-0 w-full z-20">
+                <div className="absolute top-28 md:top-32 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none whitespace-nowrap">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none md:mx-auto">
                             Why <span className="text-[#FF6105]">India</span> Chooses Us
                         </h2>
                     </div>

@@ -4,6 +4,7 @@ import About from "@/components/About";
 import VelocityScroll from "@/components/VelocityScroll";
 import Services from "@/components/Services";
 import ROISection from "@/components/ROISection";
+import IndustriesGrid from "@/components/IndustriesGrid";
 import GlobalReach from "@/components/GlobalReach";
 import Testimonials from "@/components/Testimonials";
 import Results from "@/components/Results";
@@ -32,6 +33,7 @@ export default function Home() {
             <VelocityScroll />
             <Services />
             <ROISection />
+            <IndustriesGrid />
             <GlobalReach />
             <Testimonials />
             <Results />

@@ -426,7 +426,7 @@ export function WhyChooseSection() {
                         </h2>
                     </div>
                 </div>
-                <div className="flex items-center h-full w-full pt-16">
+                <div className="flex items-center h-full w-full pt-32 md:pt-16">
                     <motion.div ref={containerRef} style={{ x }} className="flex gap-4 md:gap-12 pl-[5vw] md:pl-[10vw] items-center">
                         {reasons.map((reason, i) => (
                             <div key={i} className="min-w-[85vw] md:min-w-[600px] flex flex-col justify-center p-6 md:p-12 border-l border-black/10 h-[50vh] md:h-[55vh] bg-white hover:bg-gray-50 transition-colors">

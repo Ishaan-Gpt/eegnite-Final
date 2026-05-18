@@ -47,8 +47,8 @@ export function SeoHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1] md:leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
-                        SEO SERVICES THAT <br /> DRIVE REAL GROWTH
+                    <h1 className="text-[1.65rem] xs:text-[1.75rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
+                        SEO SERVICES THAT <br className="hidden md:block" /> DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
 
@@ -58,7 +58,7 @@ export function SeoHero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-8 md:mb-12"
                 >
-                    <h2 className="text-sm md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
+                    <h2 className="text-xl md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
                         RANK HIGHER. GROW FASTER.
                     </h2>
                 </motion.div>

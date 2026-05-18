@@ -6,9 +6,7 @@ import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import {
     PpcHero,
-    IntroSection,
     PpcComparisonSection,
-    PartnerSection,
     FullServicePPC,
     PpcProcessFloating,
     ProtocolTimeline,

@@ -48,7 +48,7 @@ export function SeoHero() {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1] md:leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
-                        SEO SERVICES THAT <span className="text-[#FF6105]">DRIVE REAL GROWTH</span>
+                        SEO SERVICES THAT <br /> DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
 

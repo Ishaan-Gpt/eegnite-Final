@@ -96,17 +96,17 @@ function ToolsSection() {
 
 function ValuesSection() {
     const values = [
-        { title: "Integrity", desc: "We believe in brutal honesty. If a strategy isn't working, we tell you. If an SEO goal is unrealistic, we correct it. You'll always receive candid recommendations." },
-        { title: "Teamwork", desc: "EEGNITE is not a freelancer; we are a dedicated engineering team. Senior strategists, technical leads, and content creators work in unison on your project." },
-        { title: "Excellence", desc: "Good enough is not enough. We aim for uncompromised quality in every audit, every line of code, and every piece of content. We set the standard." },
+        { title: "INTEGRITY", desc: "We tell you what works, what does not, and what your brand truly needs. Transparent communication and honest strategies are at the core of every decision we make." },
+        { title: "TEAMWORK", desc: "Strategists, designers, creators, and specialists working as one dedicated team for your brand. Every campaign is built through collaboration, consistency, and shared goals." },
+        { title: "EXCELLENCE", desc: "Average is never the target. Every strategy, campaign, and deliverable is crafted to create impact, drive results, and set a higher standard for your brand." },
     ];
 
     return (
         <section className="bg-white text-black py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
-                <div className="mb-12 md:mb-24">
-                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12">
-                        Powered By <span className="text-[#FF6105]">Values</span>
+                <div className="mb-12 md:mb-24 text-left md:text-center">
+                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12 text-left md:text-center">
+                        POWERED BY <span className="text-[#FF6105]">VALUES</span>
                     </h2>
                 </div>
                 <div className="space-y-16 md:space-y-32">
@@ -139,18 +139,13 @@ function GrowthCTA() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     <div>
                         <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mb-6">
-                            Start Growing<br />With EEGNITE<br />Today
+                            START GROWING<br />YOUR ORGANIC<br />SEARCH PRESENCE<br />WITH EEGNITE
                         </h2>
                         <div className="h-2 w-24 bg-white rounded-full mt-8" />
                     </div>
                     <div className="flex flex-col justify-center h-full">
-                        <h3 className="text-xl md:text-3xl font-medium mb-8 opacity-95 leading-tight">
-                            A Result-focused SEO Services Agency
-                        </h3>
                         <p className="text-white/90 text-base md:text-xl leading-relaxed mb-10 max-w-xl">
-                            Your customers are already searching for what you offer. Let EEGNITE, a trusted India-based SEO company, ensure they find you first.
-                            <br /><br />
-                            From technical optimization to content strategy and local visibility, we help businesses across India, the Middle East, and other European regions to grow faster, smarter, and stronger.
+                            Your buyers are searching for what you offer right now. The question is whether your brand appears when they do. Let EEGNITE build the SEO strategy that puts you there and keeps you there. Technical precision, content authority, and link building — all managed as one integrated programme that compounds in value over time.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
                             <a href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
@@ -172,14 +167,14 @@ function GrowthCTA() {
 }
 
 const faqs = [
-    { q: "How does SEO work?", a: "SEO works by helping search engines understand your website and match it with what users are searching for. It involves improving site structure, content relevance, and technical performance, along with building credibility through off-page signals. When done consistently, SEO improves visibility, attracts the right audience, and increases organic traffic over time." },
-    { q: "What are the different types of SEO Services?", a: "SEO services typically include on-page SEO, technical SEO, and off-page SEO. On-page SEO focuses on optimizing content and website elements, technical SEO improves site performance and crawlability, and off-page SEO builds authority through links and brand mentions." },
-    { q: "How do I analyze which type of SEO I need?", a: "The right type of SEO depends on your business goals, target audience, and current website performance. Local SEO suits businesses serving specific locations, eCommerce SEO supports online product sales, and enterprise SEO works best for large websites. A professional SEO audit helps identify gaps." },
-    { q: "Can you perform an SEO audit on my website?", a: "Yes. We conduct detailed SEO audits that review your website's technical setup, content quality, on-page elements, and search performance. The audit highlights keywords gaps, new opportunities, and clear next steps, helping you understand what's holding your site back." },
-    { q: "How long will it take to see better rankings on Google?", a: "SEO is a gradual process, not an instant result. Most websites start seeing improvements within 3 to 6 months, depending on keyword competition, industry, and current website health. Highly competitive keywords or new websites may take longer, while local searches can show results sooner." },
-    { q: "What is Ecommerce SEO?", a: "Ecommerce SEO focuses on optimizing online stores to improve product visibility in search results. It includes optimizing product pages, categories, site structure, page speed, and content so customers can easily find your products. When done right, ecommerce SEO helps attract high-intent shoppers." },
-    { q: "How can local SEO services help businesses?", a: "Local SEO helps businesses get discovered by customers searching nearby. It improves visibility on Google Map pack and local search results, attracts high-intent local traffic, and increases chances of calls, visits, and enquiries. It turns online searches into nearby customers." },
-    { q: "How much does an SEO Service Cost?", a: "SEO costs vary based on your business goals, competition, website size, and the scope of work required. Pricing can range from basic monthly packages to customized strategies for competitive markets. A reliable SEO service provider usually offers flexible plans focused on long-term value and measurable growth." },
+    { q: "How Does SEO Work?", a: "SEO works by helping search engines understand your website and match it with what users are searching for. It involves improving site structure, content relevance, and technical performance, along with building credibility through off-page signals. When done consistently, SEO improves visibility, attracts the right audience, and increases organic traffic over time." },
+    { q: "How Long Does SEO Take To Show Results?", a: "SEO is a gradual process, not an instant result. Most websites start seeing improvements within 3 to 6 months, depending on keyword competition, industry, and current website health. Highly competitive keywords or new websites may take longer, while local searches can show results sooner." },
+    { q: "What Are The Different Types Of SEO Services?", a: "SEO services typically include on-page SEO, technical SEO, and off-page SEO. On-page SEO focuses on optimizing content and website elements, technical SEO improves site performance and crawlability, and off-page SEO builds authority through links and brand mentions." },
+    { q: "How Much Does SEO Cost?", a: "SEO costs vary based on your business goals, competition, website size, and the scope of work required. For most businesses, our comprehensive monthly retention starts from $1,500. This covers complete campaign ownership — including strategy, technical audits, content creation, and active link acquisition." },
+    { q: "What Is Local SEO And How Does It Help My Business?", a: "Local SEO helps businesses get discovered by customers searching nearby. It improves visibility on Google Map pack and local search results, attracts high-intent local traffic, and increases chances of calls, visits, and enquiries. It turns online searches into nearby customers." },
+    { q: "Can You Perform An SEO Audit On My Website?", a: "Yes. We conduct detailed SEO audits that review your website's technical setup, content quality, on-page elements, and search performance. The audit highlights keywords gaps, new opportunities, and clear next steps, helping you understand what's holding your site back." },
+    { q: "How Does EEGNITE Measure SEO Performance?", a: "At EEGNITE, data guides every SEO decision we make. We track keyword performance, user behavior, and conversion paths to understand what's driving real results. By connecting SEO activity with measurable business outcomes, we help you clearly see how organic traffic turns into leads, sales, and long-term growth rather than just simple metrics." },
+    { q: "Do You Offer SEO Services For Businesses Outside India?", a: "Yes. While we are based in Kolkata, we service clients across India, the Middle East, and other European regions to grow faster, smarter, and stronger." },
 ];
 
 export default function ServiceSeo() {
@@ -200,8 +195,8 @@ export default function ServiceSeo() {
 
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left mb-8 md:mb-16 text-black">
-                            Common <span className="text-[#FF6105]">Questions</span>
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left md:text-center mb-8 md:mb-16 text-black">
+                            YOUR QUESTIONS. <span className="text-[#FF6105]">STRAIGHT ANSWERS.</span>
                         </h2>
                         <div className="space-y-3 md:space-y-4">
                             {faqs.map((faq, idx) => (

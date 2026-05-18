@@ -285,16 +285,16 @@ export function PpcProcessFloating() {
         <section ref={targetRef} className="relative h-[200vh] md:h-[250vh] bg-white text-black">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
-                <div className="absolute top-20 md:top-24 left-0 w-full z-20 text-left md:text-center">
+                <div className="absolute top-16 md:top-24 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-4xl md:mx-auto px-6">
-                        <h2 className="text-[5.5vw] sm:text-3xl md:text-6xl font-bold uppercase tracking-tight text-black leading-tight">
-                            <span className="block whitespace-nowrap">OUR PERFORMANCE-FOCUSED</span>
-                            <span className="block text-[#FF6105] whitespace-nowrap">PPC ADVERTISING PROCESS</span>
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black leading-tight">
+                            <span className="block whitespace-normal md:whitespace-nowrap">OUR PERFORMANCE-FOCUSED</span>
+                            <span className="block text-[#FF6105] whitespace-normal md:whitespace-nowrap">PPC ADVERTISING PROCESS</span>
                         </h2>
                     </div>
                 </div>
 
-                <motion.div ref={containerRef} style={{ x }} className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10 pt-28 md:pt-36">
+                <motion.div ref={containerRef} style={{ x }} className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10 pt-20 md:pt-36">
                     <div className="absolute left-0 right-0 top-1/2 h-2 bg-black/5 w-[200%] -translate-y-1/2 pointer-events-none rounded-full" />
                     {steps.map((step, i) => {
                         const isTop = i % 2 === 0;

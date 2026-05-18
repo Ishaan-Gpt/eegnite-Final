@@ -260,7 +260,7 @@ export function PpcProcessFloating() {
                 if (lastCard) setScrollRange(lastCard.offsetLeft + (lastCard.offsetWidth / 2) - (windowWidth / 2));
             } else {
                 const children = Array.from(containerRef.current.children) as HTMLElement[];
-                const targetCard = children[4];
+                const targetCard = children[5];
                 if (targetCard) setScrollRange(targetCard.offsetLeft + (targetCard.offsetWidth / 2) - (windowWidth / 2));
                 else setScrollRange(containerRef.current.scrollWidth - windowWidth);
             }
@@ -273,11 +273,12 @@ export function PpcProcessFloating() {
     const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
     const steps = [
-        { id: "01", title: "Strategic Keyword Research", desc: "Identifying high-intent search terms tailored for lead growth.", icon: Search },
-        { id: "02", title: "Conversion-Focused Ad Copy", desc: "Clustering & ad group intent assessment.", icon: FileText },
-        { id: "03", title: "Campaign Roadmap", desc: "Creating the strategic roadmap for ad spend.", icon: Map },
-        { id: "04", title: "Performance Setup", desc: "Tracking, attribution & foundation.", icon: Settings },
-        { id: "05", title: "Optimization Cycle", desc: "Bid management, A/B testing & scaling.", icon: Activity },
+        { id: "01", title: "GOAL SETTING", desc: "Define revenue targets, KPIs, and budget allocation.", icon: BarChart3 },
+        { id: "02", title: "CHANNEL SELECTION", desc: "Right platform matched to your audience and goal.", icon: Map },
+        { id: "03", title: "CAMPAIGN BUILD", desc: "Ad structure, copy, creatives, and tracking set up.", icon: FileText },
+        { id: "04", title: "LAUNCH", desc: "Campaigns live. Full tracking active from day one.", icon: Activity },
+        { id: "05", title: "WEEKLY OPTIMISATION", desc: "Test, adjust, cut waste, and scale what wins.", icon: Settings },
+        { id: "06", title: "REPORT AND SCALE", desc: "Monthly results. Budget reallocated to top performers.", icon: TrendingUp },
     ];
 
     return (
@@ -287,7 +288,7 @@ export function PpcProcessFloating() {
                 <div className="absolute top-24 md:top-32 left-0 w-full z-20">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
-                            Our PPC <span className="text-[#FF6105]">Strategy</span>
+                            OUR PERFORMANCE-FOCUSED <span className="text-[#FF6105]">PPC ADVERTISING PROCESS</span>
                         </h2>
                     </div>
                 </div>
@@ -329,19 +330,18 @@ export function ProtocolTimeline() {
     const { scrollYProgress } = useScroll({ target: targetRef as any, offset: ["start start", "end end"] });
 
     const steps = [
-        { t: "Brand Visibility Improvement", d: "Our PPC strategies are designed to place your brand exactly where your audience is searching and scrolling. By combining intent-driven search ads with targeted social campaigns, we help your business gain stronger visibility across search engines and social platforms. This consistent exposure builds brand awareness, strengthens recall, and keeps your services top-of-mind for potential customers." },
-        { t: "Increase Website Traffic", d: "Our PPC campaigns are carefully structured to attract users who are actively searching for your products or services. By focusing on intent-based targeting and refined audience signals, we bring high-quality traffic to your website that is more likely to engage, enquire, and convert." },
-        { t: "Maximized ROI", d: "EEGNITE's PPC strategies focus on turning clicks into real business outcomes. By continuously refining targeting, messaging, and bidding decisions, we help convert leads into customers while ensuring your ad budget delivers stronger returns and long-term value." },
-        { t: "Lower Cost, Better Efficiency", d: "Our PPC team focuses on bidding smarter, not harder. By targeting the most relevant keywords and improving ad score, we help reduce unnecessary spend while increasing efficiency, ensuring you get more value from every click." },
-        { t: "Clear Performance Reporting", d: "We believe in complete clarity when it comes to your ad spend. Our PPC reports provide clear insights into performance, results, and opportunities, so you always know how your campaigns are performing and where your investment is delivering value." },
-        { t: "A/B Testing for Better Results", d: "We consistently test and refine every element of your PPC campaigns, from ad copy and visuals to CTAs and landing pages. By analyzing real performance data, we identify what resonates most with your audience and tune campaigns to improve click-through rates, conversions, and overall campaign effectiveness." },
+        { t: "Campaign Experience", d: "Years of managing paid campaigns across industries with a constant focus on testing, scaling, and lowering acquisition costs." },
+        { t: "Ad Performance Consistency", d: "Structured campaign management, audience refinement, and budget monitoring that keeps campaigns performing efficiently." },
+        { t: "PPC Transparency", d: "Clear reporting on ad spend, conversions, CPC, ROAS, and next-step strategy so you always know where the budget goes." },
+        { t: "Budget ROI Protection", d: "Every campaign is optimized to reduce wasted spend and maximize conversion-focused returns from your ad investment." },
+        { t: "Shared Advertising Knowledge", d: "We share campaign insights, audience learnings, and performance data so your team understands what drives conversions." },
     ];
 
     return (
         <section ref={targetRef} className="bg-white relative py-16 md:py-24">
             <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16">
                 <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black leading-[1.1] max-w-[95%] mb-8">
-                    EEGNITE's Approach to <span className="text-[#FF6105]">Effective PPC Management</span>
+                    HOW EEGNITE BECOMES A <span className="text-[#FF6105]">STRONG PPC ADVERTISING PARTNER FOR YOUR BUSINESS</span>
                 </h2>
                 <p className="text-black/50 text-base md:text-xl leading-relaxed mb-6 max-w-4xl">EEGNITE operates as a performance-first PPC management agency focused on turning ad spend into measurable business growth. Our approach combines data analysis, audience insights, and continuous optimization to improve campaign efficiency at every stage.</p>
                 <p className="text-black/50 text-base md:text-xl leading-relaxed max-w-4xl">As a trusted PPC management company, we create targeted strategies that attract high-intent traffic and drive more conversions. Our experts consistently refine targeting, creatives, and bidding to enhance performance, ensuring campaigns remain scalable, efficient, and aligned with long-term business success.</p>

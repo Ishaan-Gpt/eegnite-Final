@@ -86,7 +86,7 @@ function FlipCard({ service }: { service: { title: string; icon: any; descriptio
 // --- HERO ---
 export function PpcHero() {
     return (
-        <section className="relative h-screen flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden bg-white">
+        <section className="relative h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 px-4 md:px-6 overflow-hidden bg-white">
             <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}>
                 <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: `linear-gradient(to right, #FF6105 1px, transparent 1px), linear-gradient(to bottom, #FF6105 1px, transparent 1px)`, backgroundSize: '45px 45px' }} />
                 <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-gradient-to-t from-[#FF6105]/15 to-transparent rounded-full blur-[80px] md:blur-[120px]" />
@@ -94,16 +94,20 @@ export function PpcHero() {
 
             <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <h1 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1] md:leading-[1.1] mb-6 text-black max-w-[1200px] mx-auto px-4">
-                        Smart PPC Management <br className="hidden md:block" />
-                        Services That Drive <br className="hidden md:block" />
-                        <span className="text-[#FF6105]">Sales and Maximize ROI</span>
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto px-4 whitespace-nowrap md:whitespace-normal">
+                        PPC ADVERTISING SERVICES <br /> THAT DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
 
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-4 md:mb-12">
+                    <h2 className="text-lg md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight">
+                        SPEND SMART. SCALE FAST. WIN BIG.
+                    </h2>
+                </motion.div>
+
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
-                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-10 px-4">
-                        EEGNITE specializes in delivering ROI-driven PPC management services that are customized to meet your unique business objectives. We plan, execute, and optimize paid ad campaigns across platforms like Google Ads, Bing Ads and social media, ensuring your ads reach the right audience at the right time. As a top-tier PPC management company, based in Kolkata, we've honed a proven approach that drives genuine results, boosting visibility, increasing traffic, and maximizing return on investment, through transparent, goal-aligned execution.
+                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl mx-auto mb-6 md:mb-10 px-4">
+                        At EEGNITE, every penny you spend on PPC is accountable. We do not run ads and hope for the best. We build performance-first paid advertising campaigns that target the right audience, with the right message, at the right moment. From Google Ads and Meta campaigns to LinkedIn and display - every campaign tied to a measurable outcome.
                     </p>
                 </motion.div>
 
@@ -443,12 +447,12 @@ export function PpcComparisonSection() {
     return (
         <section className="py-16 md:py-24 px-4 md:px-6 bg-white relative overflow-hidden flex items-center justify-center">
             <div className="max-w-[1400px] w-full mx-auto">
-                <div className="text-center mb-10 md:mb-16">
+                <div className="text-left md:text-center mb-10 md:mb-16">
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter mb-6 text-black">
-                        Why <span className="text-[#FF6105]">EEGNITE?</span>
+                        WHY <span className="text-[#FF6105]">EEGNITE?</span>
                     </h2>
-                    <p className="text-black/60 text-base md:text-xl font-normal max-w-4xl mx-auto leading-relaxed">
-                        Performance-first PPC management focused on turning ad spend into measurable business growth. We combine data analysis, audience insights, and continuous optimization to improve campaign efficiency at every stage.
+                    <p className="text-black/60 text-base md:text-xl font-normal max-w-4xl md:mx-auto leading-relaxed">
+                        Most businesses run ads. Few run ads that actually return. The difference is not the platform budget. It is the strategy, the targeting, and the continuous optimisation behind every campaign. Businesses across India, the US, Europe, and the Middle East choose EEGNITE because we treat your ad spend like our own. We spend where it works. We stop where it does not.
                     </p>
                 </div>
                 <div className="w-full max-w-6xl mx-auto h-[600px] md:h-[800px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-black/10">

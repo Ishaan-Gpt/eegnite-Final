@@ -287,9 +287,9 @@ export function PpcProcessFloating() {
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
                 <div className="absolute top-16 md:top-24 left-0 w-full z-20 text-center">
                     <div className="max-w-4xl mx-auto px-6">
-                        <h2 className="text-xl sm:text-3xl md:text-6xl font-bold uppercase tracking-tight text-black leading-tight">
-                            <span className="block">OUR PERFORMANCE-FOCUSED</span>
-                            <span className="block text-[#FF6105]">PPC ADVERTISING PROCESS</span>
+                        <h2 className="text-[5.5vw] sm:text-3xl md:text-6xl font-bold uppercase tracking-tight text-black leading-tight">
+                            <span className="block whitespace-nowrap">OUR PERFORMANCE-FOCUSED</span>
+                            <span className="block text-[#FF6105] whitespace-nowrap">PPC ADVERTISING PROCESS</span>
                         </h2>
                     </div>
                 </div>

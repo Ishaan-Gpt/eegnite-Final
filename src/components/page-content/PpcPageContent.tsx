@@ -32,7 +32,7 @@ function IndustriesSection() {
             <div className="max-w-[1400px] mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
                     <div className="max-w-xl">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter text-black mb-4">
+                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4 leading-tight">
                             MARKETS WE LEAD. <br /><span className="text-[#FF6105]">INDUSTRIES WE SCALE</span>
                         </h2>
                         <p className="text-black/50 text-base md:text-xl leading-relaxed">

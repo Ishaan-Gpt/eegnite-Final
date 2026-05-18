@@ -467,12 +467,12 @@ export function WhyChooseSection() {
             <div className="sticky top-0 flex flex-col justify-center h-[75vh] md:h-screen overflow-hidden">
                 <div className="absolute top-24 md:top-32 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none whitespace-nowrap text-left md:text-center">
                             Why <span className="text-[#FF6105]">India</span> Chooses Us
                         </h2>
                     </div>
                 </div>
-                <div className="flex items-center h-full w-full pt-16">
+                <div className="flex items-center h-full w-full pt-32 md:pt-16">
                     <motion.div ref={containerRef} style={{ x }} className="flex gap-4 md:gap-12 pl-[5vw] md:pl-[10vw] items-center">
                         {reasons.map((reason, i) => (
                             <div key={i} className="min-w-[85vw] md:min-w-[600px] flex flex-col justify-center p-6 md:p-12 border-l border-black/10 h-[50vh] md:h-[55vh] bg-white hover:bg-gray-50 transition-colors">

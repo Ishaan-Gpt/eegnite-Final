@@ -86,7 +86,7 @@ function FlipCard({ service }: { service: { title: string; icon: any; descriptio
 // --- HERO ---
 export function PpcHero() {
     return (
-        <section className="relative h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 px-4 md:px-6 overflow-hidden bg-white">
+        <section className="relative h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 px-6 sm:px-12 md:px-8 overflow-hidden bg-white">
             <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}>
                 <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: `linear-gradient(to right, #FF6105 1px, transparent 1px), linear-gradient(to bottom, #FF6105 1px, transparent 1px)`, backgroundSize: '45px 45px' }} />
                 <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-gradient-to-t from-[#FF6105]/15 to-transparent rounded-full blur-[80px] md:blur-[120px]" />
@@ -94,7 +94,7 @@ export function PpcHero() {
 
             <div className="max-w-6xl mx-auto w-full text-left md:text-center relative z-10 flex flex-col items-start md:items-center">
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-full">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] md:mx-auto">
+                    <h1 className="text-[7.5vw] xs:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] md:mx-auto">
                         PPC ADVERTISING SERVICES <br className="hidden md:block" /> THAT DRIVE REAL GROWTH
                     </h1>
                 </motion.div>
@@ -106,7 +106,7 @@ export function PpcHero() {
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="w-full">
-                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl md:mx-auto mb-6 md:mb-10">
+                    <p className="text-xs md:text-base lg:text-lg text-black/60 font-normal leading-relaxed max-w-3xl md:mx-auto mb-6 md:mb-10 px-1">
                         At EEGNITE, every penny you spend on PPC is accountable. We do not run ads and hope for the best. We build performance-first paid advertising campaigns that target the right audience, with the right message, at the right moment. From Google Ads and Meta campaigns to LinkedIn and display - every campaign tied to a measurable outcome.
                     </p>
                 </motion.div>
@@ -283,9 +283,9 @@ export function PpcProcessFloating() {
 
     return (
         <section ref={targetRef} className="relative h-[200vh] md:h-[250vh] bg-white text-black">
-            <div className="sticky top-0 flex h-[85vh] md:h-screen items-center overflow-hidden">
+            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#00000020_1px,transparent_1px),linear-gradient(to_bottom,#00000020_1px,transparent_1px)] bg-[size:32px_32px]" />
-                <div className="absolute top-16 md:top-24 left-0 w-full z-20 text-left md:text-center">
+                <div className="absolute top-20 md:top-24 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-4xl md:mx-auto px-6">
                         <h2 className="text-[5.5vw] sm:text-3xl md:text-6xl font-bold uppercase tracking-tight text-black leading-tight">
                             <span className="block whitespace-nowrap">OUR PERFORMANCE-FOCUSED</span>
@@ -294,16 +294,16 @@ export function PpcProcessFloating() {
                     </div>
                 </div>
 
-                <motion.div ref={containerRef} style={{ x }} className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10 pt-36 md:pt-48">
+                <motion.div ref={containerRef} style={{ x }} className="flex gap-8 md:gap-20 pl-8 md:pl-40 items-center relative z-10 pt-28 md:pt-36">
                     <div className="absolute left-0 right-0 top-1/2 h-2 bg-black/5 w-[200%] -translate-y-1/2 pointer-events-none rounded-full" />
                     {steps.map((step, i) => {
                         const isTop = i % 2 === 0;
                         return (
-                            <div key={i} className={`relative min-w-[300px] md:min-w-[400px] flex flex-col items-center ${isTop ? 'mb-20 md:mb-40' : 'mt-20 md:mt-40'}`}>
-                                <div className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#FF6105] z-10 ${isTop ? 'bottom-[-2.5rem] md:bottom-[-5rem]' : 'top-[-2.5rem] md:top-[-5rem]'}`}>
+                            <div key={i} className={`relative min-w-[300px] md:min-w-[400px] flex flex-col items-center ${isTop ? 'mb-12 md:mb-28' : 'mt-12 md:mt-28'}`}>
+                                <div className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#FF6105] z-10 ${isTop ? 'bottom-[-1.5rem] md:bottom-[-3.5rem]' : 'top-[-1.5rem] md:top-[-3.5rem]'}`}>
                                     <div className="absolute inset-0 bg-[#FF6105] animate-ping opacity-50 rounded-full" />
                                 </div>
-                                <div className={`absolute left-1/2 -translate-x-1/2 w-[2px] h-[2.5rem] md:h-[5rem] bg-black/10 ${isTop ? 'bottom-[-2.5rem] md:bottom-[-5rem]' : 'top-[-2.5rem] md:top-[-5rem]'}`} />
+                                <div className={`absolute left-1/2 -translate-x-1/2 w-[2px] h-[1.5rem] md:h-[3.5rem] bg-black/10 ${isTop ? 'bottom-[-1.5rem] md:bottom-[-3.5rem]' : 'top-[-1.5rem] md:top-[-3.5rem]'}`} />
                                 <div className="w-full bg-white border border-black/10 p-8 rounded-[2rem] hover:border-[#FF6105] hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-4 opacity-5 font-bold text-6xl group-hover:opacity-10 transition-opacity select-none text-black">{step.id}</div>
                                     <div className="w-12 h-12 bg-[#FFF5F0] rounded-xl flex items-center justify-center text-[#FF6105] mb-6 group-hover:scale-110 transition-transform"><step.icon size={24} /></div>

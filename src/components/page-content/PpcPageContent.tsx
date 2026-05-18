@@ -187,6 +187,7 @@ export default function ServicePpc() {
             <div className="relative z-10">
                 <Navbar />
                 <PpcHero />
+                <PpcComparisonSection />
                 <IndustriesSection />
                 <FullServicePPC />
                 <PpcProcessFloating />

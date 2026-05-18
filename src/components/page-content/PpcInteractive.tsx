@@ -419,9 +419,9 @@ export function WhyChooseSection() {
     return (
         <section ref={targetRef} className="relative h-[150vh] md:h-[300vh] bg-white text-black">
             <div className="sticky top-0 flex flex-col justify-center h-[75vh] md:h-screen overflow-hidden">
-                <div className="absolute top-28 md:top-32 left-0 w-full z-20 text-left md:text-center">
+                <div className="absolute top-24 md:top-32 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none md:mx-auto">
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none whitespace-nowrap text-left md:text-center">
                             Why <span className="text-[#FF6105]">India</span> Chooses Us
                         </h2>
                     </div>

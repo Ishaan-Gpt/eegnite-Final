@@ -2,8 +2,9 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import Link from "next/link";
 
-const faqs = [
+export const HOME_FAQS = [
     {
         question: "What Does A Digital Marketing Agency Do?",
         answer: "A digital marketing agency like EEGNITE handles everything your brand needs to grow online - from SEO and PPC advertising to social media, content, email marketing, and web development. We build integrated strategies that attract the right audience, convert them into customers, and help you scale sustainably over time.",
@@ -35,6 +36,8 @@ const faqs = [
         category: "ROI"
     }
 ];
+
+const faqs = HOME_FAQS;
 
 export default function FAQ() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -149,12 +152,12 @@ export default function FAQ() {
                     className="text-center mt-12"
                 >
                     <p className="text-black/50 mb-4">Still have questions?</p>
-                    <a
-                        href="#contact"
+                    <Link
+                        href="/#contact"
                         className="inline-flex items-center gap-2 bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-[#e55800] transition-colors shadow-lg shadow-[#FF6105]/20"
                     >
                         Contact Us
-                    </a>
+                    </Link>
                 </motion.div>
 
                 {/* Search Engine Optimization (SEO) Crawler Fallback */}

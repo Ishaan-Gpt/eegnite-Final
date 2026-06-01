@@ -3,18 +3,20 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, Calendar, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 
-const budgetOptions = [
-    { value: "", label: "Select your budget" },
-    { value: "less-than-500", label: "Less than $500" },
-    { value: "500-1000", label: "$500 - $1,000" },
-    { value: "1000-2000", label: "$1,000 - $2,000" },
-    { value: "2000-5000", label: "$2,000 - $5,000" },
-    { value: "5000-plus", label: "$5,000+" },
+const countryCodes = [
+    { code: "+91", country: "IN" },
+    { code: "+1", country: "US" },
+    { code: "+44", country: "UK" },
+    { code: "+971", country: "UAE" },
+    { code: "+61", country: "AU" },
+    { code: "+65", country: "SG" },
+    { code: "+49", country: "DE" },
+    { code: "+966", country: "SA" }
 ];
 
 const areasOfInterest = [
     "Web Design",
-    "Web Development",
+    "Web-Dev",
     "SEO",
     "Google Ads",
     "Meta Ads",
@@ -39,6 +41,7 @@ export default function Contact() {
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const [countryCode, setCountryCode] = useState("+91");
     const [formData, setFormData] = useState({
         name: "",
         company: "",
@@ -50,17 +53,41 @@ export default function Contact() {
         interests: [] as string[]
     });
 
+    const handleCountryCodeChange = (val: string) => {
+        setCountryCode(val);
+        // Reset budget selection to prevent currency mismatch
+        setFormData(prev => ({ ...prev, budget: "" }));
+    };
+
+    const budgetOptions = countryCode === "+91"
+        ? [
+            { value: "", label: "Select your budget" },
+            { value: "less-than-40k", label: "Less than ₹40,000" },
+            { value: "40k-80k", label: "₹40,000 - ₹80,000" },
+            { value: "80k-150k", label: "₹80,000 - ₹1,50,000" },
+            { value: "150k-400k", label: "₹1,50,000 - ₹4,00,000" },
+            { value: "400k-plus", label: "₹4,00,000+" },
+          ]
+        : [
+            { value: "", label: "Select your budget" },
+            { value: "less-than-500", label: "Less than $500" },
+            { value: "500-1000", label: "$500 - $1,000" },
+            { value: "1000-2000", label: "$1,000 - $2,000" },
+            { value: "2000-5000", label: "$2,000 - $5,000" },
+            { value: "5000-plus", label: "$5,000+" },
+          ];
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitError(null);
 
         const formDataToSend = new FormData();
-        formDataToSend.append("access_key", "5e0730e4-dcbb-4989-beeb-70ae7049c769");
+        formDataToSend.append("access_key", "5a458151-846f-4fa5-9f19-3ad9660aea8b");
         formDataToSend.append("name", formData.name);
         formDataToSend.append("company", formData.company);
         formDataToSend.append("email", formData.email);
-        formDataToSend.append("phone", formData.phone);
+        formDataToSend.append("phone", `${countryCode} ${formData.phone}`);
         formDataToSend.append("budget", formData.budget);
         formDataToSend.append("website", formData.website);
         formDataToSend.append("howDidYouFind", formData.howDidYouFind);
@@ -212,14 +239,35 @@ export default function Contact() {
                                     <label className="block text-xs font-semibold uppercase tracking-wider text-black/50 mb-2">
                                         Phone Number
                                     </label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl border border-black/10 focus:border-[#FF6105] focus:ring-2 focus:ring-[#FF6105]/20 outline-none transition-all bg-white"
-                                        placeholder="+91 98765 43210"
-                                    />
+                                    <div className="flex gap-2 w-full">
+                                        <select
+                                            name="countryCode"
+                                            value={countryCode}
+                                            onChange={(e) => handleCountryCodeChange(e.target.value)}
+                                            className="px-3 py-3 rounded-xl border border-black/10 focus:border-[#FF6105] focus:ring-2 focus:ring-[#FF6105]/20 outline-none bg-white text-sm font-semibold cursor-pointer shrink-0 w-24 sm:w-28 appearance-none"
+                                            style={{
+                                                backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>")`,
+                                                backgroundRepeat: "no-repeat",
+                                                backgroundPosition: "right 8px center",
+                                                backgroundSize: "16px 16px",
+                                                paddingRight: "28px"
+                                            }}
+                                        >
+                                            {countryCodes.map(c => (
+                                                <option key={c.code} value={c.code}>
+                                                    {c.code} ({c.country})
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            className="flex-1 min-w-0 px-4 py-3 rounded-xl border border-black/10 focus:border-[#FF6105] focus:ring-2 focus:ring-[#FF6105]/20 outline-none transition-all bg-white"
+                                            placeholder="98765 43210"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 

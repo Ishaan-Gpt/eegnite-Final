@@ -46,7 +46,7 @@ const latestPosts = [
         id: 4,
         title: "Precision PPC: Maximizing Ad Spend",
         excerpt: "Broad targeting is a budget leak. We advocate for hyper-segmented campaigns based on user intent and lifecycle stage. Learn how to implement SKAGs effectively.",
-        category: "Performance Marketing",
+        category: "PPC Advertising",
         readTime: "5 min read",
         date: "Oct 18, 2025",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",

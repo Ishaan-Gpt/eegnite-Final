@@ -11,7 +11,7 @@ const allPostsData = [
         id: 5,
         title: "How a Results-Driven PPC Agency in India Maximizes Your ROI",
         excerpt: "Most businesses don't lose money on ads because they didn't spend enough. They lose because the execution is bad. Learn how a real PPC agency in India stops budget waste and delivers consistent ROI.",
-        category: "Performance Marketing",
+        category: "PPC Advertising",
         readTime: "8 min read",
         date: "May 1, 2026",
         image: "/ppc-blog.jpg",

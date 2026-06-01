@@ -94,6 +94,9 @@ export function PpcHero() {
 
             <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-full">
+                    <p className="text-[8px] xs:text-[9px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 whitespace-normal md:whitespace-nowrap block max-w-[80%] md:max-w-fit mx-auto text-center">
+                        Google Ads Delivers an Average ROI of 200% — $2 Back For Every $1 Spent
+                    </p>
                     <h1 className="text-[7.5vw] xs:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto text-center">
                         PPC ADVERTISING SERVICES <br className="hidden md:block" /> THAT DRIVE REAL GROWTH
                     </h1>
@@ -220,6 +223,9 @@ export function FullServicePPC() {
                     transition={{ duration: 0.8 }}
                     className="max-w-3xl mb-12 md:mb-16 text-left md:text-center md:mx-auto"
                 >
+                    <p className="text-[8px] xs:text-[9px] sm:text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 whitespace-normal md:whitespace-nowrap block max-w-[80%] md:max-w-fit md:mx-auto text-left md:text-center">
+                        Companies That A/B Test Their Ad Creative See 20-30% Improvement In CTR
+                    </p>
                     <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-6">
                         RESULTS-DRIVEN PPC ADVERTISING. <span className="text-[#FF6105]">FOCUSED ON REVENUE GROWTH</span>
                     </h2>
@@ -393,9 +399,11 @@ export function WhyChooseSection() {
     const targetRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [scrollRange, setScrollRange] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const { scrollYProgress } = useScroll({ target: targetRef as any });
 
     useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
         const calculateRange = () => {
             if (!containerRef.current) return;
             const lastCard = containerRef.current.lastElementChild as HTMLElement;
@@ -410,19 +418,42 @@ export function WhyChooseSection() {
     const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
     const reasons = [
-        { id: "01", title: "Focus on Scaling Revenue", desc: "We specialize in crafting tailored PPC campaigns that ensure maximum visibility and ROI, fueling sustainable growth that scales with your business." },
-        { id: "02", title: "Avoid Click Waste", desc: "We bid smarter, not harder. By targeting the most relevant keywords and improving ad scores, we help reduce unnecessary spend while increasing efficiency." },
-        { id: "03", title: "Real-time Decision Making", desc: "Our data-driven approach analyze consumer behavior in real-time to optimize every aspect of your PPC performance for smarter decisions." },
-        { id: "04", title: "Local to Global Reach", desc: "Whether focusing on a niche local area or a multi-channel global approach, we deliver solutions that Fuel real growth wherever you operate." },
+        { id: "01", title: "Focus on Scaling Revenue", desc: "We build tailored PPC campaigns designed to maximize visibility, drive qualified traffic, and generate measurable growth that scales with your business goals." },
+        { id: "02", title: "Avoid Click Waste", desc: "We bid smarter, not harder. Through precise targeting, keyword optimization, and performance-focused strategies, we reduce wasted spend while improving campaign efficiency." },
+        { id: "03", title: "Real-Time Decision Making", desc: "Our data-driven approach analyzes user behavior and campaign performance in real time, allowing faster optimizations and smarter marketing decisions." },
+        { id: "04", title: "Growth Without Boundaries", desc: "From local campaigns to multi-channel global strategies, we create PPC solutions built to expand your reach, strengthen your brand presence, and drive sustainable business growth." },
     ];
+
+    if (isMobile) {
+        return (
+            <section className="bg-white text-black py-16 px-6">
+                <div className="max-w-[1400px] mx-auto">
+                    <div className="text-left mb-10">
+                        <h2 className="text-3xl font-bold uppercase tracking-tighter leading-[1.1] mb-8 text-black">
+                            Why <span className="text-[#FF6105]">Businesses</span> Choose Us
+                        </h2>
+                    </div>
+                    <div className="flex flex-col gap-6">
+                        {reasons.map((reason, i) => (
+                            <div key={i} className="flex flex-col p-6 border-l-2 border-[#FF6105] bg-white rounded-r-2xl border-y border-r border-black/5 hover:bg-gray-50 transition-colors shadow-sm">
+                                <span className="text-4xl font-medium text-black/5 mb-3">{reason.id}</span>
+                                <h3 className="text-xl font-bold mb-3 uppercase tracking-tight text-black">{reason.title}</h3>
+                                <p className="text-sm text-black/60 leading-relaxed">{reason.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section ref={targetRef} className="relative h-[150vh] md:h-[300vh] bg-white text-black">
             <div className="sticky top-0 flex flex-col justify-center h-[75vh] md:h-screen overflow-hidden">
                 <div className="absolute top-24 md:top-32 left-0 w-full z-20 text-left md:text-center">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none whitespace-nowrap text-left md:text-center">
-                            Why <span className="text-[#FF6105]">India</span> Chooses Us
+                        <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none md:whitespace-nowrap text-left md:text-center">
+                            Why <span className="text-[#FF6105]">Businesses</span> Choose Us
                         </h2>
                     </div>
                 </div>

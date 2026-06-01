@@ -15,8 +15,8 @@ export default function About() {
     const p1Line2 = "with one obsession -";
     const p1Highlight = "“YOUR GROWTH”";
 
-    const p2Line1 = "From search optimization and paid advertising to web development";
-    const p2Line2 = "and performance marketing, we engineer strategies that move the needle -";
+    const p2Line1 = "From search optimization and paid advertising to web development,";
+    const p2Line2 = "we engineer strategies that move the needle -";
     const p2Highlight = "measurably, consistently, relentlessly.";
 
     const p3Line1 = "Because being seen isn't enough.";

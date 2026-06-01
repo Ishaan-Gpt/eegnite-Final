@@ -15,7 +15,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.eegnite.com';
 const isEnvironmentProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
 const isMainDomain = siteUrl === 'https://www.eegnite.com';
 
-const shouldIndex = false;
+const shouldIndex = true;
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),

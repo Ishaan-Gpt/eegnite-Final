@@ -40,7 +40,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     },
     "maximizing-roi-ppc": {
         title: "Precision PPC: Maximizing Ad Spend",
-        category: "Performance Marketing",
+        category: "PPC Advertising",
         date: "Oct 18, 2025",
         author: "EEGNITE Team",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,17 +11,18 @@ import {
     ProtocolTimeline,
     WhyChooseSection,
 } from "@/components/page-content/SeoInteractive";
+import { ToolsSection } from "@/components/shared/ToolsSection";
 
 // --- STATIC SECTIONS (no client APIs needed) ---
 
 function IndustriesSection() {
     const industries = [
-        { title: "E-commerce", desc: "SEO strategies that drive product visibility and sales." },
-        { title: "B2B and Lead Gen", desc: "Search visibility that attracts qualified leads." },
-        { title: "Medical and Healthcare", desc: "Trust-focused SEO that increases appointments." },
-        { title: "Retail Business", desc: "Local SEO that boosts footfall and sales." },
-        { title: "Manufacturing and Logistics", desc: "Industry SEO that generates enquiries." },
-        { title: "Professional Services", desc: "Authority-driven SEO that attracts ideal clients." },
+        { title: "E-commerce", desc: "SEO strategies that drive product visibility and sales.", href: "/industries/e-commerce" },
+        { title: "B2B and Lead Gen", desc: "Search visibility that attracts qualified leads.", href: "/industries/b2b-lead-generation" },
+        { title: "Medical and Healthcare", desc: "Trust-focused SEO that increases appointments.", href: "/industries/medical-healthcare" },
+        { title: "Retail Business", desc: "Local SEO that boosts footfall and sales.", href: "/industries/retail-business" },
+        { title: "Manufacturing and Logistics", desc: "Industry SEO that generates enquiries.", href: "/industries/manufacturing-logistics" },
+        { title: "Professional Services", desc: "Authority-driven SEO that attracts ideal clients.", href: "/industries/professional-services" },
     ];
 
     return (
@@ -37,12 +39,13 @@ function IndustriesSection() {
                     </div>
                     <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 w-full border-l md:border-l-0 md:pl-0 pl-6 border-black/5">
                         {industries.map((item, idx) => (
-                            <div key={idx} className="group cursor-default">
-                                <h3 className="text-lg md:text-xl font-bold uppercase text-black mb-1 transition-colors group-hover:text-[#FF6105]">
+                            <Link key={idx} href={item.href} className="group block">
+                                <h3 className="text-lg md:text-xl font-bold uppercase text-black mb-1 transition-colors group-hover:text-[#FF6105] inline-flex items-center gap-1.5">
                                     {item.title}
+                                    <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-[#FF6105]" />
                                 </h3>
                                 <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -51,48 +54,7 @@ function IndustriesSection() {
     );
 }
 
-function ToolsSection() {
-    const tools = [
-        { name: "Google Analytics", src: "/icons/google-analytics.png" },
-        { name: "Google Search Console", src: "/icons/google.png" },
-        { name: "SemRush", src: "/icons/semrush.png" },
-        { name: "Ahref", src: "/icons/ahrefs.png" },
-        { name: "SE Ranking", src: null },
-        { name: "Keyword Planner", src: "/icons/google-ads.png" },
-        { name: "Google Tag Manager", src: "/icons/gtm.png" },
-    ];
 
-    return (
-        <section className="py-20 md:py-32 bg-white overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
-                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
-                    Tools We <span className="text-[#FF6105]">Use</span>
-                </h2>
-            </div>
-
-            <div className="relative flex overflow-hidden group py-10 select-none">
-                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 lg:w-60 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 lg:w-60 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-                {[0, 1].map((copy) => (
-                    <div key={copy} className="flex animate-loop-scroll gap-12 md:gap-20 pr-12 md:pr-20" aria-hidden={copy === 1}>
-                        {[...tools, ...tools].map((tool, index) => (
-                            <div key={index} className="flex flex-col items-center justify-center flex-shrink-0">
-                                <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 border border-black/5 hover:border-[#FF6105]/20 hover:shadow-lg transition-all">
-                                    {tool.src ? (
-                                        <img src={tool.src} alt={tool.name} className="w-full h-full object-contain" />
-                                    ) : (
-                                        <span className="text-xs font-bold text-[#FF6105] text-center leading-tight">{tool.name}</span>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-}
 
 function ValuesSection() {
     const values = [
@@ -148,12 +110,12 @@ function GrowthCTA() {
                             Your buyers are searching for what you offer right now. The question is whether your brand appears when they do. Let EEGNITE build the SEO strategy that puts you there and keeps you there. Technical precision, content authority, and link building — all managed as one integrated programme that compounds in value over time.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <a href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                            <Link href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
                                 Book a Free SEO Discovery Call <ArrowRight />
-                            </a>
-                            <a href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg md:text-xl font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                            </Link>
+                            <Link href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg md:text-xl font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl">
                                 Request a Quote
-                            </a>
+                            </Link>
                             <span className="text-sm uppercase tracking-widest font-medium opacity-80">Turn rankings into revenue</span>
                         </div>
                     </div>
@@ -166,16 +128,18 @@ function GrowthCTA() {
     );
 }
 
-const faqs = [
+export const SEO_FAQS = [
     { q: "How Does Seo Work?", a: "SEO (Search Engine Optimisation) is the process of improving your website so it appears higher in search engine results when people search for products or services you offer. It works across three areas: technical SEO (site structure and speed), on-page SEO (content and keyword alignment), and off-page SEO (backlinks and authority). EEGNITE addresses all three as one integrated programme." },
     { q: "How Long Does Seo Take To Show Results?", a: "Most businesses start seeing meaningful movement in rankings and organic traffic within 3 to 6 months of consistent SEO work. The timeline depends on your industry, competition level, current website health, and the gap between where you are and where you want to rank. EEGNITE sets realistic milestone expectations from day one and reports on progress every month." },
     { q: "What Are The Different Types Of Seo Services?", a: "SEO covers several disciplines: technical SEO (crawlability, speed, structured data), on-page SEO (content, keywords, meta tags), off-page SEO (link building, digital PR), local SEO (Google Business Profile, local citations), e-commerce SEO (product and category page optimisation), and content SEO (topic clusters, blog strategy). EEGNITE builds programmes that address all relevant areas for your specific business goals." },
-    { q: "How Much Does Seo Cost?", a: "SEO investment varies based on the scope of work, your industry's competitiveness, and your growth targets. For most small to mid-sized businesses, a results-focused SEO retainer starts from [Need-costing-data] per month. For competitive industries or aggressive growth targets, investment is higher. EEGNITE proposes scope and pricing after understanding your goals — not from a generic price list." },
+    { q: "How Much Does Seo Cost?", a: "SEO investment varies based on the scope of work, your industry's competitiveness, and your growth targets. For most small to mid-sized businesses, a results-focused SEO retainer starts from $250 per month. For competitive industries or aggressive growth targets, investment is higher. EEGNITE proposes scope and pricing after understanding your goals — not from a generic price list." },
     { q: "What Is Local Seo And How Does It Help My Business?", a: "Local SEO is the process of optimising your online presence to appear in search results when people in your area search for businesses like yours. It covers Google Business Profile optimisation, local citation building, location-specific landing pages, and geo-targeted keyword strategies. For any business that serves local customers — clinics, restaurants, retailers, service providers — local SEO is one of the highest-ROI investments available." },
     { q: "Can You Perform An Seo Audit On My Website?", a: "Yes. An SEO audit is the first step in every EEGNITE SEO engagement. We review your site's technical health, on-page optimisation, content quality, backlink profile, keyword rankings, and competitor positioning. The audit identifies what is holding your rankings back and what the fastest path to improvement looks like. We share full audit findings before proposing any ongoing work." },
     { q: "How Does EEGNITE Measure Seo Performance?", a: "We track keyword ranking movement, organic traffic growth, leads attributed to organic search, bounce rate improvements, and revenue from SEO. Using Google Search Console, GA4, and custom reporting dashboards, we report on the metrics that connect your SEO investment to your business outcomes. Monthly reports include progress against targets and clear next steps." },
     { q: "Do You Offer Seo Services For Businesses Outside India?", a: "Yes. EEGNITE provides SEO services for clients across India, the United States, Europe, and the Middle East. We build market-specific keyword strategies, content plans, and link building programmes that reflect the search behaviour and competitive landscape of each region. Whether you are targeting buyers in Kolkata, London, Dubai, or Chicago, our SEO strategies are built to rank in your specific market." },
 ];
+
+const faqs = SEO_FAQS;
 
 export default function ServiceSeo() {
     return (

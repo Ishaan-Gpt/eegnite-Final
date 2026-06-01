@@ -1,6 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Share2, Globe, MonitorPlay, Settings, BarChart3, Search, Activity } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
@@ -12,17 +11,18 @@ import {
     ProtocolTimeline,
     WhyChooseSection,
 } from "@/components/page-content/PpcInteractive";
+import { ToolsSection } from "@/components/shared/ToolsSection";
 
 // --- STATIC SECTIONS ---
 
 function IndustriesSection() {
     const industries = [
-        { title: "E-commerce", desc: "Conversion-focused ads that increase sales fast." },
-        { title: "B2B and Lead Gen", desc: "Targeted campaigns that fill your pipeline." },
-        { title: "Medical and Healthcare", desc: "Trust-first ads that drive patient bookings." },
-        { title: "Retail Business", desc: "Local campaigns that increase store visits." },
-        { title: "Manufacturing and Logistics", desc: "B2B ads that generate qualified enquiries." },
-        { title: "Professional Services", desc: "High-converting ads for premium clients." },
+        { title: "E-commerce", desc: "Conversion-focused ads that increase sales fast.", href: "/industries/e-commerce" },
+        { title: "B2B and Lead Gen", desc: "Targeted campaigns that fill your pipeline.", href: "/industries/b2b-lead-generation" },
+        { title: "Medical and Healthcare", desc: "Trust-first ads that drive patient bookings.", href: "/industries/medical-healthcare" },
+        { title: "Retail Business", desc: "Local campaigns that increase store visits.", href: "/industries/retail-business" },
+        { title: "Manufacturing and Logistics", desc: "B2B ads that generate qualified enquiries.", href: "/industries/manufacturing-logistics" },
+        { title: "Professional Services", desc: "High-converting ads for premium clients.", href: "/industries/professional-services" },
     ];
 
     return (
@@ -39,12 +39,13 @@ function IndustriesSection() {
                     </div>
                     <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 w-full border-l md:border-l-0 md:pl-0 pl-6 border-black/5">
                         {industries.map((item, idx) => (
-                            <div key={idx} className="group cursor-default">
-                                <h3 className="text-lg md:text-xl font-bold uppercase text-black mb-1 transition-colors group-hover:text-[#FF6105]">
+                            <Link key={idx} href={item.href} className="group block">
+                                <h3 className="text-lg md:text-xl font-bold uppercase text-black mb-1 transition-colors group-hover:text-[#FF6105] inline-flex items-center gap-1.5">
                                     {item.title}
+                                    <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-[#FF6105]" />
                                 </h3>
                                 <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -53,48 +54,7 @@ function IndustriesSection() {
     );
 }
 
-function ToolsSection() {
-    const tools = [
-        { name: "Google Ads", src: "/icons/google-ads.png", Icon: Search },
-        { name: "Google Analytics", src: "/icons/google-analytics.png", Icon: BarChart3 },
-        { name: "Meta Ads", src: null, Icon: Share2 },
-        { name: "Google Tag Manager", src: "/icons/gtm.png", Icon: Settings },
-        { name: "Bing Ads", src: null, Icon: Globe },
-        { name: "SemRush", src: "/icons/semrush.png", Icon: Activity },
-        { name: "YouTube Studio", src: null, Icon: MonitorPlay },
-    ];
 
-    return (
-        <section className="py-20 md:py-32 bg-white overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
-                <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black mb-4 md:mx-auto">
-                    Tools & Platforms <br /><span className="text-[#FF6105]">Powering Our PPC Campaigns</span>
-                </h2>
-            </div>
-
-            <div className="relative flex overflow-hidden group py-10 select-none">
-                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 lg:w-60 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 lg:w-60 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-                {[0, 1].map((copy) => (
-                    <div key={copy} className="flex animate-loop-scroll gap-12 md:gap-20 pr-12 md:pr-20" aria-hidden={copy === 1}>
-                        {[...tools, ...tools].map((tool, index) => (
-                            <div key={index} className="flex flex-col items-center justify-center flex-shrink-0">
-                                <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F9F9F9] rounded-2xl flex items-center justify-center p-3 border border-black/5 hover:border-[#FF6105]/20 hover:shadow-lg transition-all">
-                                    {tool.src ? (
-                                        <img src={tool.src} alt={tool.name} className="w-full h-full object-contain" />
-                                    ) : (
-                                        <tool.Icon className="w-8 h-8 text-[#FF6105]" />
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-}
 
 function ValuesSection() {
     const values = [
@@ -167,7 +127,7 @@ function PpcCTA() {
     );
 }
 
-const ppcFaqs = [
+export const PPC_FAQS = [
     {
         q: "What Is PPC Advertising And How Does It Work?",
         a: "PPC (Pay-Per-Click) advertising is a digital marketing model where you pay each time someone clicks your ad. You set a budget, define your audience, and your ad appears when someone searches for your product or scrolls their social feed. At EEGNITE, every PPC campaign is built around a specific business outcome - leads, sales, or bookings — not just clicks."
@@ -201,6 +161,8 @@ const ppcFaqs = [
         a: "Yes. EEGNITE provides full-service PPC management including ad creative — copy, static visuals, and video ad briefs. Creative and campaign strategy are managed together, which means your messaging, visuals, and targeting are fully aligned. This consistency improves Quality Scores on Google, lowers CPCs, and improves conversion rates across every platform."
     }
 ];
+
+const ppcFaqs = PPC_FAQS;
 
 export default function ServicePpc() {
     return (

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { UnifiedSchemaJsonLd } from "@/components/JsonLd";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
@@ -817,7 +818,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         title: "How a Results-Driven PPC Agency in India Maximizes Your ROI",
         metaTitle: "How a PPC Agency in India Maximizes ROI Effectively",
         metaDescription: "Tired of wasted ad spend? Learn how the best PPC agencies in India improve your ROI with smarter targeting and campaigns that deliver genuine sales.",
-        category: "Performance Marketing",
+        category: "PPC Advertising",
         date: "May 1, 2026",
         author: "EEGNITE Team",
         image: "/ppc-blog.jpg",
@@ -957,7 +958,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">None of these is an advanced problem. But they compound fast. Fixing even two or three of these can immediately improve performance. Ignoring them guarantees wasted spending. This is where strong ppc ad management makes a visible difference. It removes these leaks before scaling anything. Because ROI is not just about what you do right. It's about what you stop doing wrong.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Conclusion: ROI Comes From Execution, Not Ads Alone</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">PPC is not complicated, but getting consistent ROI from it is. The difference is not in the platform. It's in how campaigns are structured, how intent is mapped, how tracking is set up, and how consistently things are tested and improved. Without this, you're not really doing performance marketing. You're just spending and hoping something works.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">PPC is not complicated, but getting consistent ROI from it is. The difference is not in the platform. It's in how campaigns are structured, how intent is mapped, how tracking is set up, and how consistently things are tested and improved. Without this, you're not really doing results-driven marketing. You're just spending and hoping something works.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">That's where strong ppc ad management makes the difference. When every part of the system is aligned, from keyword to ad to landing page to data, results become predictable. Conversion rates improve, cost per acquisition drops, and scaling stops feeling like a gamble.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If your campaigns are spending but not growing, something is off. And it usually takes an experienced eye to spot it. If you want a clear, honest breakdown of what's holding your ROI back, reach out to EEGNITE at <a href="tel:+916289753474" class="text-[#FF6105] hover:underline font-bold">+91 6289 753 474</a>. You'll get straight answers, not surface-level advice.</p>
         `
@@ -986,9 +987,41 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: post.metaTitle || `${post.title}`,
         description: post.metaDescription || `Read ${post.title} on EEGNITE's blog.`,
         alternates: {
-            canonical: `https://www.eegnite.com/blog/${slug}`,
+            canonical: `https://www.eegnite.com/blog/${slug}/`,
         },
+        openGraph: {
+            title: post.metaTitle || `${post.title}`,
+            description: post.metaDescription || `Read ${post.title} on EEGNITE's blog.`,
+            url: `https://www.eegnite.com/blog/${slug}/`,
+            type: "article",
+            images: [
+                {
+                    url: post.image,
+                    alt: post.title
+                }
+            ]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.metaTitle || `${post.title}`,
+            description: post.metaDescription || `Read ${post.title} on EEGNITE's blog.`,
+            images: [post.image]
+        }
     };
+}
+
+function parseDateToIso(dateStr: string): string {
+    try {
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return new Date().toISOString().replace(/\.\d+Z$/, "+05:30");
+        const pad = (n: number) => n.toString().padStart(2, '0');
+        const year = d.getFullYear();
+        const month = pad(d.getMonth() + 1);
+        const day = pad(d.getDate());
+        return `${year}-${month}-${day}T10:00:00+05:30`;
+    } catch {
+        return "2026-01-17T10:00:00+05:30";
+    }
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
@@ -1003,8 +1036,23 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         content: `<p>The requested article could not be found.</p>`
     };
 
+    const isoDate = parseDateToIso(post.date);
+
     return (
         <main className="min-h-screen bg-white text-black font-sans selection:bg-[#FF6105] selection:text-white">
+            <UnifiedSchemaJsonLd
+                pageUrl={`https://www.eegnite.com/blog/${slug}/`}
+                pageTitle={post.metaTitle || post.title}
+                pageDescription={post.metaDescription || `Read ${post.title} on EEGNITE's blog.`}
+                pageType="blog"
+                datePublished={isoDate}
+                featuredImageUrl={post.image}
+                breadcrumbs={[
+                    { position: 1, name: "Home", url: "https://www.eegnite.com/" },
+                    { position: 2, name: "Blog", url: "https://www.eegnite.com/blog/" },
+                    { position: 3, name: post.title, url: `https://www.eegnite.com/blog/${slug}/` }
+                ]}
+            />
             <Navbar />
 
             <article className="pt-32 pb-24 md:pt-48 md:pb-32">

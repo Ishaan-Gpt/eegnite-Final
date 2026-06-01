@@ -80,7 +80,7 @@ export default function Founder() {
                         className="order-1 lg:order-2 space-y-6"
                     >
                         <p className="text-base md:text-lg text-black/70 leading-relaxed">
-                            I didn’t build EEGNITE to chase numbers. It was <span className="text-[#FF6105] font-semibold">built to create impact</span>.
+                            &ldquo;I didn’t build EEGNITE to chase numbers. It was <span className="text-[#FF6105] font-semibold">built to create impact</span>.
                         </p>
 
                         <p className="text-base md:text-lg text-black/70 leading-relaxed">
@@ -92,7 +92,7 @@ export default function Founder() {
                         </p>
 
                         <p className="text-base md:text-lg text-black/70 leading-relaxed font-semibold">
-                            For us, success has always been simple. It's the difference EEGNITE makes - <span className="text-[#FF6105] font-semibold">one brand, one result, one win at a time</span>.
+                            For us, success has always been simple. It's the difference EEGNITE makes - <span className="text-[#FF6105] font-semibold">one brand, one result, one win at a time</span>.&rdquo;
                         </p>
                     </motion.div>
                 </div>

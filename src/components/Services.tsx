@@ -55,7 +55,7 @@ const services = [
                 items: ["Consistent presence that builds trust and drives action."]
             }
         ],
-        link: "/#contact"
+        link: "/services/social-media-marketing"
     },
     {
         id: "03",
@@ -105,7 +105,7 @@ const services = [
                 items: ["Every pixel placed with purpose. Every layout tested to convert."]
             }
         ],
-        link: "/#contact"
+        link: "/services/web-development"
     },
     {
         id: "05",
@@ -130,32 +130,7 @@ const services = [
                 items: ["Move prospects through the funnel with the right message at the right time."]
             }
         ],
-        link: "/#contact"
-    },
-    {
-        id: "06",
-        title: "Performance Marketing",
-        description: "Performance marketing isn't a service. It's our mindset. Every campaign we run at EEGNITE is tied to a measurable outcome- leads, revenue, and real, scalable growth.",
-        theme: "light",
-        subCards: [
-            {
-                title: "ROI Tracking",
-                items: ["No guesswork. Only data. Only results."]
-            },
-            {
-                title: "Funnel Optimization",
-                items: ["Plug the leaks. Scale what works."]
-            },
-            {
-                title: "A/B Testing",
-                items: ["Test everything. Assume nothing."]
-            },
-            {
-                title: "Data Analytics",
-                items: ["Insights that sharpen strategy and accelerate decisions."]
-            }
-        ],
-        link: "/#contact"
+        link: "/services/email-marketing"
     }
 ];
 

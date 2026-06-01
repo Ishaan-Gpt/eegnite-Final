@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Instagram, Linkedin, Youtube, Phone, Mail, Send, ArrowUpRight, Loader2, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/hover-text-effect";
@@ -67,19 +68,20 @@ export default function Footer() {
                                 <span className="text-[#FF6105]">Partnership Forever.</span>
                             </h2>
                         </div>
-                        <motion.a
-                            href="/#contact"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group flex items-center gap-3 bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#FF6105]/30 hover:shadow-xl hover:shadow-[#FF6105]/40 transition-shadow"
-                        >
-                            Start a Project
-                            <ArrowUpRight className="group-hover:rotate-45 transition-transform" size={18} />
-                        </motion.a>
+                        <Link href="/#contact" passHref legacyBehavior>
+                            <motion.a
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="group flex items-center gap-3 bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#FF6105]/30 hover:shadow-xl hover:shadow-[#FF6105]/40 transition-shadow"
+                            >
+                                Start a Project
+                                <ArrowUpRight className="group-hover:rotate-45 transition-transform" size={18} />
+                            </motion.a>
+                        </Link>
                     </div>
 
                     {/* Main Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
                         {/* Brand */}
                         <div className="lg:col-span-2 space-y-6">
                             <div className="flex items-center gap-3">
@@ -111,11 +113,11 @@ export default function Footer() {
                         <div className="space-y-4">
                             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Navigation</span>
                             <ul className="space-y-3">
-                                {["About", "Services", "Results", "Contact"].map(item => (
+                                {["About", "Services", "Industries", "Results", "Contact"].map(item => (
                                     <li key={item}>
-                                        <a href={`#${item.toLowerCase()}`} className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        <Link href={item === "Services" ? "/services" : item === "Industries" ? "/industries" : `/#${item.toLowerCase()}`} className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
                                             {item}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -126,24 +128,66 @@ export default function Footer() {
                             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Services</span>
                             <ul className="space-y-3">
                                 <li>
-                                    <a href="/services/seo" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                    <Link href="/services/seo" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
                                         SEO
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="/#services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                    <Link href="/services/email-marketing" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
                                         Email Marketing
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="/services/ppc" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                    <Link href="/services/ppc" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
                                         PPC Advertising
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="/#services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        E-Commerce
-                                    </a>
+                                    <Link href="/services/web-development" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Web Development
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/services/social-media-marketing" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Social Media Marketing
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Industries */}
+                        <div className="space-y-4">
+                            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Industries</span>
+                            <ul className="space-y-3">
+                                <li>
+                                    <Link href="/industries/e-commerce" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        E-commerce
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/industries/b2b-lead-generation" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        B2B & Lead Gen
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/industries/medical-healthcare" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Medical & Healthcare
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/industries/retail-business" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Retail Business
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/industries/manufacturing-logistics" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Manufacturing & Logistics
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/industries/professional-services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Professional Services
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

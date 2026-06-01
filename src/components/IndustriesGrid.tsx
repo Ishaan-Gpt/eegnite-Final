@@ -1,37 +1,44 @@
 "use client";
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Target, HeartPulse, Store, Factory, Briefcase, ChevronDown } from "lucide-react";
+import { ShoppingBag, Target, HeartPulse, Store, Factory, Briefcase, ChevronDown, ArrowRight } from "lucide-react";
 
 const industriesData = [
     {
         title: "E-commerce",
         icon: ShoppingBag,
+        href: "/industries/e-commerce",
         description: "Struggling to convert visitors into buyers? We build data-driven campaigns that drive the right traffic, optimize product pages, and turn browsers into repeat customers - maximizing your revenue per click."
     },
     {
         title: "B2B & Lead Generation",
         icon: Target,
+        href: "/industries/b2b-lead-generation",
         description: "In B2B, every lead counts. We deploy targeted search, paid, and content strategies to fill your pipeline with decision-makers who are actually ready to buy - not just browse."
     },
     {
         title: "Medical & Healthcare",
         icon: HeartPulse,
+        href: "/industries/medical-healthcare",
         description: "Patients search before they book. We ensure your practice is visible, trusted, and chosen - with compliant digital marketing that builds credibility and drives appointment bookings consistently."
     },
     {
         title: "Retail Business",
         icon: Store,
+        href: "/industries/retail-business",
         description: "Online or offline, retail needs visibility. We create multi-channel campaigns that drive in-store footfall and online sales - combining paid ads, social content, and SEO to put your products in front of people ready to purchase."
     },
     {
         title: "Manufacturing & Logistics",
         icon: Factory,
+        href: "/industries/manufacturing-logistics",
         description: "Industrial doesn't mean invisible. We help manufacturers and logistics brands generate qualified B2B leads with targeted digital strategies that speak the language of your buyers and decision-makers."
     },
     {
         title: "Professional Services",
         icon: Briefcase,
+        href: "/industries/professional-services",
         description: "For attorneys, consultants, financial advisors, and agencies - reputation is everything. Our marketing for attorneys and financial marketing services are crafted to build authority, attract ideal clients, and turn your expertise into measurable business growth."
     }
 ];
@@ -80,10 +87,7 @@ export default function IndustriesGrid() {
                         const isOpen = openIndex === i;
 
                         return (
-                            <div
-                                key={i}
-                                className="border border-black/5 rounded-2xl bg-white overflow-hidden transition-all duration-300 hover:border-[#FF6105]/20 shadow-sm"
-                            >
+                            <div key={i} className="border border-black/5 rounded-2xl bg-white overflow-hidden transition-all duration-300 hover:border-[#FF6105]/20 shadow-sm">
                                 <button
                                     onClick={() => toggleAccordion(i)}
                                     className="w-full text-left py-5 px-6 flex items-center justify-between transition-colors bg-white hover:bg-gray-50/50"
@@ -113,9 +117,14 @@ export default function IndustriesGrid() {
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                         >
                                             <div className="px-6 pb-6 pt-2 border-t border-black/5 bg-gray-50/20">
-                                                <p className="text-sm text-black/60 leading-relaxed font-medium">
+                                                <p className="text-sm text-black/60 leading-relaxed font-medium mb-4">
                                                     {ind.description}
                                                 </p>
+                                                {ind.href && (
+                                                    <Link href={ind.href} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FF6105] hover:gap-3 transition-all">
+                                                        Explore Industry <ArrowRight size={12} />
+                                                    </Link>
+                                                )}
                                             </div>
                                         </motion.div>
                                     )}
@@ -123,14 +132,14 @@ export default function IndustriesGrid() {
                             </div>
                         );
                     })}
+
                 </div>
 
                 <div className="hidden lg:grid grid-cols-12 gap-16 items-center min-h-[450px]">
                     <div className="col-span-5 flex flex-col gap-2">
                         {industriesData.map((ind, i) => {
                             const isActive = activeIndex === i;
-
-                            return (
+                            const button = (
                                 <button
                                     key={i}
                                     onMouseEnter={() => setActiveIndex(i)}
@@ -143,8 +152,17 @@ export default function IndustriesGrid() {
                                     <span className="text-xl xl:text-2xl uppercase tracking-tight">
                                         {ind.title}
                                     </span>
+                                    {ind.href && isActive && (
+                                        <div
+                                            className="flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-[#FF6105] bg-[#FF6105]/10 px-3 py-1 rounded-full hover:bg-[#FF6105] hover:text-white transition-colors"
+                                        >
+                                            View <ArrowRight size={10} />
+                                        </div>
+                                    )}
                                 </button>
                             );
+
+                            return ind.href ? <Link key={i} href={ind.href}>{button}</Link> : button;
                         })}
                     </div>
 

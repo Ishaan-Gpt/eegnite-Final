@@ -7,7 +7,8 @@ export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
-            disallow: '/',
-        }
+            allow: '/',
+        },
+        sitemap: 'https://www.eegnite.com/sitemap.xml',
     }
 }

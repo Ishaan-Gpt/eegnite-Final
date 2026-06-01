@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Interface for the props of each individual icon.
 interface IconProps {
@@ -184,7 +185,7 @@ const FloatingIconsHero = React.forwardRef<
                 </p>
                 <div className="mt-10 flex items-center justify-start lg:justify-center gap-4">
                     <Button asChild size="lg" className="px-10 py-6 text-sm font-semibold tracking-wider uppercase bg-[#FF6105] text-white hover:bg-[#e55800] shadow-xl shadow-[#FF6105]/20 rounded-full">
-                        <a href={ctaHref}>{ctaText}</a>
+                        <Link href={ctaHref}>{ctaText}</Link>
                     </Button>
                 </div>
             </div>

@@ -1,0 +1,134 @@
+"use client";
+import { useEffect, useState, useRef, useCallback } from "react";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+
+gsap.registerPlugin(ScrollTrigger);
+
+function TravelingLine() {
+    const { scrollYProgress } = useScroll();
+    const smoothY = useSpring(scrollYProgress, { stiffness: 80, damping: 25 });
+    const y = useTransform(smoothY, [0, 1], ['5vh', '95vh']);
+
+    return (
+        <>
+            <div className="traveling-line" />
+            <motion.div style={{ top: y }} className="traveling-dot" />
+        </>
+    );
+}
+
+function Loader({ onComplete }: { onComplete: () => void }) {
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setProgress(p => {
+                if (p >= 100) {
+                    clearInterval(timer);
+                    setTimeout(onComplete, 500);
+                    return 100;
+                }
+                return p + Math.random() * 15 + 5;
+            });
+        }, 50);
+        return () => clearInterval(timer);
+    }, [onComplete]);
+
+    return (
+        <motion.div
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#FF6105]"
+        >
+            <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-6xl md:text-8xl font-bold text-white tracking-tight mb-12"
+            >
+                EEGNITE
+            </motion.h1>
+
+            <div className="w-40 h-[2px] bg-white/30 rounded-full overflow-hidden">
+                <motion.div
+                    className="h-full bg-white"
+                    style={{ width: `${Math.min(progress, 100)}%` }}
+                />
+            </div>
+        </motion.div>
+    );
+}
+
+export default function HomeClient() {
+    const [mounted, setMounted] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const onLoadComplete = useCallback(() => setLoading(false), []);
+    const lenisRef = useRef<any>(null);
+
+    useEffect(() => {
+        setMounted(true);
+        document.documentElement.classList.add('js-loaded');
+
+        // Skip loader when arriving via a hash link from another page
+        if (window.location.hash) {
+            setLoading(false);
+        }
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+        });
+        lenisRef.current = lenis;
+
+        const raf = (time: number) => {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((t) => lenis.raf(t * 1000));
+        gsap.ticker.lagSmoothing(0);
+
+        return () => lenis.destroy();
+    }, []);
+
+    useEffect(() => {
+        if (!loading && typeof window !== 'undefined' && window.location.hash) {
+            const hash = window.location.hash;
+
+            const performScroll = () => {
+                const element = document.querySelector(hash);
+                if (element && lenisRef.current) {
+                    setTimeout(() => {
+                        lenisRef.current.scrollTo(hash, {
+                            offset: -80,
+                            duration: 2.5,
+                            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                            immediate: false
+                        });
+                    }, 800);
+                }
+            };
+
+            performScroll();
+            const timer = setTimeout(performScroll, 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [loading]);
+
+    return (
+        <>
+            {mounted && (
+                <AnimatePresence mode="wait">
+                    {loading && <Loader key="loader" onComplete={onLoadComplete} />}
+                </AnimatePresence>
+            )}
+            <TravelingLine />
+        </>
+    );
+}

@@ -3,6 +3,7 @@
 import { ChevronRight, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 interface HeroProps {
     eyebrow?: string
@@ -46,23 +47,24 @@ export function HeroSection({
 
             {/* Eyebrow */}
             {eyebrow && (
-                <motion.a
-                    href="#about"
-                    className="group inline-block"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.2 }}
-                >
-                    <span
-                        className="text-sm text-black/60 font-medium mx-auto px-5 py-2 
+                <Link href="/#about" passHref legacyBehavior>
+                    <motion.a
+                        className="group inline-block"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.2 }}
+                    >
+                        <span
+                            className="text-sm text-black/60 font-medium mx-auto px-5 py-2 
             bg-gradient-to-tr from-[#FF6105]/5 via-[#FF6105]/10 to-transparent  
             border-[2px] border-[#FF6105]/20
             rounded-full w-fit tracking-wide uppercase flex items-center justify-center"
-                    >
-                        {eyebrow}
-                        <ChevronRight className="inline w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1 text-[#FF6105]" />
-                    </span>
-                </motion.a>
+                        >
+                            {eyebrow}
+                            <ChevronRight className="inline w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1 text-[#FF6105]" />
+                        </span>
+                    </motion.a>
+                </Link>
             )}
 
             {/* Title */}
@@ -105,10 +107,10 @@ export function HeroSection({
                         size="lg"
                         className="z-20 font-semibold tracking-tight text-center rounded-full shadow-xl shadow-[#FF6105]/30 group"
                     >
-                        <a href={ctaHref} className="flex items-center gap-3">
+                        <Link href={ctaHref.startsWith('#') ? `/${ctaHref}` : ctaHref} className="flex items-center gap-3">
                             {ctaLabel}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
                     </Button>
                 </motion.div>
             )}

@@ -1,0 +1,154 @@
+═══════════════════════════════════════════════════════════════
+  STAGING DEPLOYMENT CHECKLIST
+  Upload eegnite-staging-noindex.zip to Hostinger
+═══════════════════════════════════════════════════════════════
+
+PRE-DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Read DEPLOYMENT_GUIDE_STAGING.md
+□ Confirm this is for STAGING environment only
+□ Have Hostinger login credentials ready
+□ Know your staging domain/subdomain name
+□ Backup any existing files on the server (if applicable)
+
+UPLOAD PROCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Login to Hostinger control panel
+□ Navigate to File Manager
+□ Go to staging domain's public_html folder
+□ Clear the directory (backup first if needed)
+□ Upload eegnite-staging-noindex.zip
+□ Extract the ZIP file
+□ Verify extraction completed successfully
+□ Delete the ZIP file
+□ Confirm .htaccess is present (enable "Show Hidden Files")
+
+VERIFICATION (CRITICAL!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Basic Tests:
+□ Website loads: https://your-staging-domain.com
+□ Homepage displays correctly
+□ Navigation works
+□ Images load properly
+□ No broken links on main pages
+
+Anti-Indexing Verification:
+□ Visit: https://your-staging-domain.com/robots.txt
+  ✓ Should show: "STAGING ENVIRONMENT - DO NOT INDEX"
+  ✓ Should contain: "Disallow: /" for all user agents
+
+□ Visit: https://your-staging-domain.com/STAGING_INFO.html
+  ✓ Should show yellow warning box
+  ✓ Should confirm staging configuration
+
+□ View source of any page (Ctrl+U or right-click > View Source)
+  ✓ Search for: <meta name="robots"
+  ✓ Should find: content="noindex, nofollow"
+
+□ Check HTTP headers (use browser DevTools):
+  1. Press F12 (open DevTools)
+  2. Go to Network tab
+  3. Refresh the page
+  4. Click on the main document request
+  5. Check Response Headers
+  ✓ Should find: X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+
+FILE STRUCTURE CHECK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Verify these files/folders exist in public_html:
+□ index.html (homepage)
+□ 404.html (error page)
+□ robots.txt (staging version)
+□ .htaccess (routing + security + no-index headers)
+□ _next/ folder (contains CSS, JS, images)
+□ STAGING_README.md
+□ STAGING_INFO.html
+□ All page folders (about/, services/, contact/, etc.)
+
+FUNCTIONALITY TESTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Test homepage navigation
+□ Test all main menu links
+□ Test footer links
+□ Test contact forms (if applicable)
+□ Test mobile responsiveness
+□ Test on different browsers (Chrome, Firefox, Safari)
+□ Check 404 page: visit a non-existent URL
+□ Test deep links (e.g., /services/seo/)
+
+OPTIONAL SECURITY ENHANCEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Add HTTP Basic Authentication (Hostinger > Directory Privacy)
+□ Use a non-obvious staging subdomain
+□ Monitor access logs for unexpected traffic
+□ Consider IP whitelisting (if you have a static IP)
+
+POST-DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Share staging link with team/client
+□ Conduct thorough UAT (User Acceptance Testing)
+□ Document any bugs or issues found
+□ Test all interactive features
+□ Verify all content is correct
+□ Check analytics (if enabled for staging)
+
+BEFORE MOVING TO PRODUCTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ All testing complete and approved
+□ All bugs fixed
+□ Content reviewed and approved
+□ Read PRODUCTION_VS_STAGING.md
+□ Build NEW production package (don't reuse staging!)
+□ Update robots.txt to allow indexing
+□ Remove X-Robots-Tag from .htaccess
+□ Deploy to production domain
+□ Submit sitemap to Google Search Console
+
+TROUBLESHOOTING REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: 404 errors on pages
+Solution: Check .htaccess is uploaded and has correct permissions (644)
+
+Problem: Images not loading
+Solution: Verify _next/ folder uploaded completely
+
+Problem: .htaccess not working
+Solution: Rename to htaccess.txt, upload, rename back to .htaccess
+
+Problem: Styling issues
+Solution: Clear browser cache, check CSS files in _next/static/css/
+
+Problem: robots.txt still shows old content
+Solution: Delete old robots.txt, re-upload new one, clear browser cache
+
+═══════════════════════════════════════════════════════════════
+
+✅ CHECKLIST COMPLETE?
+
+If all items are checked and verified:
+  🎉 Your staging environment is ready!
+  ✅ Search engines will NOT index this site
+  🔒 Protected by 3 layers of anti-indexing
+  🚀 Safe to share for testing and review
+
+═══════════════════════════════════════════════════════════════
+
+Package: eegnite-staging-noindex.zip
+Size: ~6.5 MB
+Location: c:\Users\ISHAAN\New folder (2)\
+
+Documentation:
+- DEPLOYMENT_GUIDE_STAGING.md (detailed guide)
+- PRODUCTION_VS_STAGING.md (comparison)
+- STAGING_PACKAGE_SUMMARY.txt (quick reference)
+
+═══════════════════════════════════════════════════════════════

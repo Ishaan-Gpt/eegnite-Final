@@ -11,13 +11,16 @@ export default function About() {
     const textRef = useRef<HTMLDivElement>(null);
     const pinRef = useRef<HTMLDivElement>(null);
 
-    const line1 = "EEGNITE is a digital marketing agency built for brands";
-    const line2 = "that want more than visibility, they want";
-    const highlight1 = "growth.";
+    const p1Line1 = "EEGNITE is a full-service digital marketing company";
+    const p1Line2 = "with one obsession -";
+    const p1Highlight = "“YOUR GROWTH”";
 
-    const line3 = "We merge creativity with analytics to craft campaigns";
-    const line4 = "that convert clicks into";
-    const highlight2 = "lasting impact.";
+    const p2Line1 = "From search optimization and paid advertising to web development,";
+    const p2Line2 = "we engineer strategies that move the needle -";
+    const p2Highlight = "measurably, consistently, relentlessly.";
+
+    const p3Line1 = "Because being seen isn't enough.";
+    const p3Highlight = "You need to be chosen.";
 
     useEffect(() => {
         if (!sectionRef.current || !textRef.current || !pinRef.current) return;
@@ -87,31 +90,42 @@ export default function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="text-[clamp(2.5rem,8vw,6rem)] font-bold leading-[1] tracking-tight text-black mb-16 uppercase"
+                        className="text-[clamp(1.65rem,4.8vw,3.5rem)] font-bold leading-[1.1] tracking-tight text-black mb-16 uppercase"
                     >
-                        YOUR DIGITAL MARKETING{" "}
-                        <span className="text-[#FF6105]">AGENCY</span>
+                        WE DON'T JUST MARKET <br className="block md:hidden" /> ONLINE.{" "}
+                        <span className="text-[#FF6105]">
+                            WE HELP BUSINESSES <br className="block md:hidden" /> TO SCALE ONLINE.
+                        </span>
                     </motion.h2>
 
-                    {/* Line-by-line reveal text */}
-                    <div ref={textRef} className="space-y-4">
-                        {/* Paragraph 1 */}
-                        <div className="text-[clamp(1.5rem,3.5vw,2.5rem)] leading-[1.3] tracking-tight">
+                    <div ref={textRef} className="space-y-8 mt-12">
+                        <div className="text-[clamp(1.2rem,2.8vw,1.8rem)] leading-[1.4] tracking-tight text-black/90">
                             <span className="line block text-black" style={{ opacity: 0.1 }}>
-                                {line1}
+                                {p1Line1}
                             </span>
                             <span className="line block text-black" style={{ opacity: 0.1 }}>
-                                {line2} <span className="text-[#FF6105] font-semibold">{highlight1}</span>
+                                {p1Line2} <span className="text-[#FF6105] font-semibold">{p1Highlight}</span>
                             </span>
                         </div>
 
-                        {/* Paragraph 2 */}
-                        <div className="text-[clamp(1.5rem,3.5vw,2.5rem)] leading-[1.3] tracking-tight mt-8">
+                        <div className="text-[clamp(1.2rem,2.8vw,1.8rem)] leading-[1.4] tracking-tight mt-8 text-black/90">
                             <span className="line block text-black" style={{ opacity: 0.1 }}>
-                                {line3}
+                                {p2Line1}
                             </span>
                             <span className="line block text-black" style={{ opacity: 0.1 }}>
-                                {line4} <span className="text-[#FF6105] font-semibold">{highlight2}</span>
+                                {p2Line2}
+                            </span>
+                            <span className="line block text-black" style={{ opacity: 0.1 }}>
+                                <span className="text-[#FF6105] font-semibold">{p2Highlight}</span>
+                            </span>
+                        </div>
+
+                        <div className="text-[clamp(1.2rem,2.8vw,1.8rem)] leading-[1.4] tracking-tight mt-8 text-black/90">
+                            <span className="line block text-black" style={{ opacity: 0.1 }}>
+                                {p3Line1}
+                            </span>
+                            <span className="line block text-black" style={{ opacity: 0.1 }}>
+                                <span className="text-[#FF6105] font-semibold">{p3Highlight}</span>
                             </span>
                         </div>
                     </div>

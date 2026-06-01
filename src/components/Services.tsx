@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, useSpring } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
@@ -9,99 +9,128 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 const services = [
     {
         id: "01",
-        title: "SEO SERVICES",
-        theme: "orange", // Orange background, White text
+        title: "Search Engine Optimization (SEO)",
+        description: "Rank higher. Drive traffic. Own your niche. Our search optimization agency approach combines technical precision with content authority to put your brand where it belongs- at the top.",
+        theme: "orange",
         subCards: [
             {
-                title: "TECHNICAL SEO",
-                items: ["Site speed optimization", "Mobile responsiveness", "XML sitemaps & robots.txt", "Schema markup", "Crawlability fixes"]
+                title: "Technical SEO",
+                items: ["Speed, crawlability, and structure - we fix what holds you back."]
             },
             {
-                title: "ON-PAGE SEO",
-                items: ["Keyword research", "Content optimization", "Internal linking", "Image optimization", "URL structure"]
+                title: "On-Page Optimization",
+                items: ["Copy, headings, metadata - every element fine-tuned to rank."]
             },
             {
-                title: "OFF-PAGE SEO",
-                items: ["Backlink acquisition", "Guest posting", "Local citations", "Brand monitoring", "Competitor analysis"]
+                title: "Keyword Research",
+                items: ["Target the terms your buyers actually search."]
             },
             {
-                title: "LOCAL SEO",
-                items: ["Google Business Profile", "Local keywords", "Review management", "Local link building", "NAP consistency"]
+                title: "Link Building",
+                items: ["Authority backlinks that Google trusts."]
             }
         ],
         link: "/services/seo"
     },
     {
         id: "02",
-        title: "EMAIL MARKETING",
-        theme: "light", // White background, Black text
+        title: "Social Media Marketing",
+        description: "Your audience lives online. We make sure your brand lives there too- loudly, consistently, and with purpose. As a social marketing agency that goes beyond vanity metrics, we build communities that convert.",
+        theme: "light",
         subCards: [
             {
-                title: "STRATEGY",
-                items: ["Audience segmentation", "Campaign calendar", "A/B testing", "Email funnel design", "Automation setup"]
+                title: "Content Strategy",
+                items: ["Stories that stop the scroll and spark engagement."]
             },
             {
-                title: "DESIGN & CONTENT",
-                items: ["Responsive templates", "Compelling copy", "Visual branding", "Dynamic content", "Subject line optimization"]
+                title: "Paid Social Ads",
+                items: ["Precision-targeted campaigns on Meta, LinkedIn, and beyond."]
             },
             {
-                title: "AUTOMATION",
-                items: ["Drip campaigns", "Abandoned cart recovery", "Re-engagement flows", "Behavioral triggers", "Lead scoring"]
+                title: "Influencer Collaborations",
+                items: ["Real voices. Real reach. Real ROI."]
             },
             {
-                title: "ANALYTICS",
-                items: ["Open & click tracking", "ROI analysis", "List health monitoring", "Deliverability optimization", "Performance reporting"]
+                title: "Social Media Management",
+                items: ["Consistent presence that builds trust and drives action."]
             }
         ],
-        link: "/services/email-marketing"
+        link: "/services/social-media-marketing"
     },
     {
         id: "03",
-        title: "PPC ADVERTISING",
+        title: "PPC Advertising",
+        description: "Every rupee, every dollar - accountable. As a data-led PPC advertising agency, we build campaigns that don't just spend budgets; they earn returns.",
         theme: "orange",
         subCards: [
             {
-                title: "SEARCH ADS",
-                items: ["Keyword bidding strategy", "Ad copy testing", "Quality score optimization", "Negative keyword management", "Competitor conquesting"]
+                title: "Google Ads",
+                items: ["Search, Shopping, and Display - we run it all with precision."]
             },
             {
-                title: "SOCIAL ADS",
-                items: ["Creative strategy", "Audience targeting", "Retargeting pools", "Pixel installation", "Influencer integration"]
+                title: "Meta Ads",
+                items: ["Facebook and Instagram campaigns engineered for conversion."]
             },
             {
-                title: "SHOPPING",
-                items: ["Feed management", "Product optimization", "Bid adjustments", "Merchant Center setup", "Visual asset optimization"]
+                title: "Conversion Tracking",
+                items: ["Know exactly what's working and what's winning."]
             },
             {
-                title: "DISPLAY & VIDEO",
-                items: ["Banner design", "Placement targeting", "Remarketing campaigns", "Brand awareness", "YouTube ad formats"]
+                title: "Retargeting Campaigns",
+                items: ["Bring back lost visitors. Close the loop. Recover revenue."]
             }
         ],
         link: "/services/ppc"
     },
     {
         id: "04",
-        title: "E-COMMERCE",
+        title: "Web Design & Development",
+        description: "Your website is your best salesperson. We design it like one. As a web development company that prioritizes conversion, we build sites that are fast, beautiful, and built to perform.",
         theme: "light",
         subCards: [
             {
-                title: "DEVELOPMENT",
-                items: ["Shopify/WooCommerce", "Custom features", "Speed optimization", "Mobile UX design", "Theme customization"]
+                title: "UI/UX Design",
+                items: ["Intuitive, visually compelling interfaces that delight users."]
             },
             {
-                title: "CRO",
-                items: ["A/B testing", "Checkout flow optimization", "Cart abandonment", "User behavior analysis", "Heatmap tracking"]
+                title: "E-commerce Development",
+                items: ["Online stores built to sell - not just display."]
             },
             {
-                title: "GROWTH",
-                items: ["SEO for Ecommerce", "Paid funnel architecture", "Email retention", "Loyalty programs", "Lifetime value opt."]
+                title: "Landing Pages",
+                items: ["High-converting pages designed around your goals."]
             },
             {
-                title: "OPERATIONS",
-                items: ["Inventory sync", "Payment gateways", "Shipping integration", "Analytics setup", "CRM integration"]
+                title: "CRO-Focused Design",
+                items: ["Every pixel placed with purpose. Every layout tested to convert."]
             }
         ],
-        link: "/services/ecommerce"
+        link: "/services/web-development"
+    },
+    {
+        id: "05",
+        title: "Email Marketing",
+        description: "The highest ROI channel in digital marketing - when done right. We build email systems that nurture, convert, and retain. Automatically.",
+        theme: "orange",
+        subCards: [
+            {
+                title: "Automation Flows",
+                items: ["Sequences that sell while you sleep."]
+            },
+            {
+                title: "Campaign Strategy",
+                items: ["From welcome series to re-engagement strategic and smart."]
+            },
+            {
+                title: "CRM Integration",
+                items: ["Your email ecosystem synced with your sales pipeline."]
+            },
+            {
+                title: "Lead Nurturing",
+                items: ["Move prospects through the funnel with the right message at the right time."]
+            }
+        ],
+        link: "/services/email-marketing"
     }
 ];
 
@@ -143,6 +172,9 @@ const MobileServiceItem = ({ service }: { service: typeof services[0] }) => {
                         className="overflow-hidden"
                     >
                         <div className={`p-4 pb-8 grid gap-6 ${isOrange ? 'bg-orange-50' : 'bg-gray-50'}`}>
+                            <p className="text-sm font-medium leading-relaxed mb-2 px-2 text-black/60">
+                                {service.description}
+                            </p>
                             {service.subCards.map((card, idx) => (
                                 <div key={idx} className="bg-white p-6 rounded-xl border border-black/5 shadow-sm">
                                     <h4 className="text-[#FF6105] font-black uppercase tracking-tight mb-3 text-lg">
@@ -159,8 +191,7 @@ const MobileServiceItem = ({ service }: { service: typeof services[0] }) => {
                                 </div>
                             ))}
 
-                            {/* Service Link - Only for SEO */}
-                            {service.link === "/services/seo" && (
+                            {service.link.startsWith("/services/") && (
                                 <Link
                                     href={service.link}
                                     className="flex items-center justify-center w-full gap-2 py-3 bg-[#FF6105] text-white rounded-lg font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
@@ -184,8 +215,11 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
         offset: ["start end", "start start", "end end", "end start"]
     });
 
-    const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+    const rawScale = useTransform(scrollYProgress, [0, 0.4], [0.95, 1]);
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+
+    const scale = useSpring(rawScale, { stiffness: 100, damping: 30, restDelta: 0.001 });
+    const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
     return (
         <div ref={containerRef} className="sticky top-0 min-h-screen py-12 flex items-center justify-center">
@@ -202,19 +236,21 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div className="flex items-center gap-4 opacity-70">
                             <span className="font-bold tracking-[0.2em] uppercase text-sm">0{service.id} — Service</span>
                         </div>
-                        {/* Desktop CTA - Only show for SEO page */}
-                        {service.link === "/services/seo" && (
+                        {service.link.startsWith("/services/") && (
                             <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
                                 View Page <ArrowRight size={14} />
                             </Link>
                         )}
                     </div>
 
-                    <h2 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-none mb-10">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
                         {service.title}
                     </h2>
 
-                    {/* Separator Line */}
+                    <p className={`text-base lg:text-lg mb-8 max-w-3xl leading-relaxed font-medium ${isOrange ? 'text-white/80' : 'text-black/60'}`}>
+                        {service.description}
+                    </p>
+
                     <div className={`w-full h-px ${isOrange ? 'bg-white/20' : 'bg-black/10'}`} />
                 </div>
 
@@ -224,12 +260,12 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div
                             key={i}
                             className={`
-                                rounded-2xl p-8 flex flex-col justify-start h-full
-                                ${isOrange
+                                    rounded-2xl p-8 flex flex-col justify-start h-full
+                                    ${isOrange
                                     ? 'bg-white/10 border border-white/10'
                                     : 'bg-white border border-black/[0.05] shadow-[0_10px_30px_rgba(0,0,0,0.03)]'
                                 }
-                            `}
+                                `}
                         >
                             {/* Top Accent Line */}
                             <div className={`w-8 h-1 rounded-full mb-6 ${isOrange ? 'bg-white' : 'bg-[#FF6105]'}`} />
@@ -252,11 +288,10 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                     ))}
                 </div>
 
-                {/* Mobile CTA - Only show for SEO page */}
-                {service.link === "/services/seo" && (
+                {service.link.startsWith("/services/") && (
                     <div className="mt-8 md:hidden">
                         <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
-                            Start Project <ArrowRight size={20} />
+                            View Service <ArrowRight size={20} />
                         </Link>
                     </div>
                 )}
@@ -273,15 +308,25 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
 export default function Services() {
     return (
         <section className="bg-white py-20 lg:py-40" id="services">
-            <div className="max-w-7xl mx-auto px-6 mb-12 lg:mb-32 text-center">
+            <div className="max-w-7xl mx-auto px-6 mb-8 lg:mb-16 text-left lg:text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-6xl lg:text-[8rem] font-black uppercase tracking-tighter leading-none text-black"
+                    className="text-4xl lg:text-[4.5rem] font-bold uppercase tracking-tighter leading-none text-black"
                 >
-                    Our <span className="text-[#FF6105]">Services</span>
+                    Everything Your Brand <br className="hidden lg:block" /> Needs.{" "}
+                    <span className="text-[#FF6105]">Under One Roof</span>
                 </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="mt-6 max-w-xl lg:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide"
+                >
+                    From search to social, ads to analytics - we are the only digital marketing agency you'll ever need.
+                </motion.p>
             </div>
 
             {/* Desktop View: Sticky Cards */}

@@ -31,8 +31,9 @@ export default function FloatingIconsHeroDemo() {
     return (
         <div className="relative overflow-hidden noise">
             <FloatingIconsHero
-                title="Strategy. Design. Results."
-                subtitle="At EEGNITE, we don't believe in quick fixes, we believe in complete transformation. We turn ideas into growth engines with smart strategy, high-performing design, and measurable impact."
+                title="Your Business Doesn't Just Need Traffic. Your Business Needs Growth."
+                subtitle={`EEGNITE is a performance-driven digital marketing agency built for businesses that refuse to settle. We turn clicks into customers, brands into authorities, and strategies into revenue. Whether you need SEO that dominates rankings, PPC that converts, or a website that actually sells , we do it all.
+No Fluff. No Excuses. Just Results.`}
                 ctaText="Talk to Our Experts"
                 ctaHref="#contact"
                 icons={demoIcons}

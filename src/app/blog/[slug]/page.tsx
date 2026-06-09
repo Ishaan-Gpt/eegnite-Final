@@ -9,6 +9,155 @@ import { Button } from "@/components/ui/button";
 
 // --- MOCK DATA ---
 const allPosts: Record<string, { title: string; content: string; image: string; category: string; date: string; author: string; metaTitle?: string; metaDescription?: string }> = {
+    "why-your-business-struggles-with-online-visibility": {
+        title: "Why Businesses Struggle to Generate Consistent Online Visibility Across Channels",
+        metaTitle: "Why Your Business Struggles With Online Visibility",
+        metaDescription: "Discover eight common reasons businesses struggle to maintain online visibility and what you can do to build a stronger digital presence.",
+        category: "Digital Strategy",
+        date: "Jun 8, 2026",
+        author: "EEGNITE Team",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+        content: `
+            <p class="mb-6 text-lg leading-relaxed text-black font-normal">Many businesses invest heavily in digital marketing but still struggle to stay visible online.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">You might be publishing content, optimizing your website for SEO, posting on social media, running paid campaigns, and sending email newsletters. Yet despite all that activity, visibility often feels inconsistent.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">One month, your business appears everywhere. The next month, engagement slows, traffic drops, and leads become harder to generate.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">If this sounds familiar, you're not alone. The challenge is that online visibility has changed dramatically over the last few years. Your customers are no longer discovering businesses through a single channel. They move between search engines, social media platforms, review websites, AI tools, industry publications, and referrals before making a decision.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Let's explore eight reasons why maintaining consistent visibility has become so difficult and what businesses need to understand moving forward.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Present Across Multiple Channels, But They Aren't Connected</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses believe they're running a strong multi-channel marketing strategy because they have a presence on several platforms. They may have a website, SEO campaigns, social media accounts, email marketing, and paid advertising. The problem is that these channels often operate independently. Your social media content may communicate one message while your website promotes something different. Your email campaigns may focus on entirely different priorities. From a customer's perspective, these disconnected experiences create confusion.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">True online visibility isn't just about appearing on multiple platforms. It's about creating a consistent experience wherever someone encounters your brand. The more connected your channels are, the easier it becomes for customers to recognize and remember your business.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Brand Message Changes Depending on Where People Find You</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Consistency plays a bigger role in visibility than many businesses realize. Research shows that most consumers expect a consistent brand experience across every channel they use. However, very few believe businesses actually deliver that experience. Imagine discovering a company through LinkedIn where they position themselves as industry experts. Then you visit their website and find generic messaging. Later, you receive promotional emails that focus entirely on discounts. Each touchpoint feels different.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Over time, inconsistent messaging weakens brand recognition and makes it harder for potential customers to understand what your business truly stands for. The strongest brands communicate a clear value proposition no matter where customers find them.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Customers Are Using More Channels Than Ever Before</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Customer journeys have become significantly more complex. According to recent research, the average B2B buyer now interacts with approximately ten different channels throughout the purchasing process. Just a decade ago, buyers typically used around five. Before choosing a service provider, you might search on Google, visit a website, read online reviews, browse LinkedIn, watch videos, ask colleagues for recommendations, and compare competitors. Your customers are doing the same thing. This means visibility can no longer depend on one channel alone. Businesses that focus exclusively on SEO, social media, or advertising often struggle because customers are researching across multiple touchpoints before making decisions.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Optimizing for Search Engines Instead of Buyers</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses become heavily focused on rankings, keywords, and search performance. While SEO remains important, visibility is about more than ranking on Google. Today's buyers are looking for answers, expertise, and trust. A website might rank well for relevant keywords but still fail to build authority with visitors. Instead of asking: "How do we rank for this keyword?" It can be more valuable to ask: "Does this content genuinely help our audience solve a problem?" Businesses that consistently create useful, educational content often develop stronger visibility because people begin viewing them as trusted resources rather than just another company competing for clicks.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">AI Is Changing How People Discover Businesses</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">The way people search for information is evolving. Increasingly, buyers are turning to AI-powered tools to help them research products, services, and solutions. Instead of browsing multiple websites, they may simply ask AI platforms like ChatGPT, Gemini, or Perplexity for summarized recommendations based on information available across the web. This creates a new challenge. Businesses that rely solely on traditional SEO may struggle to remain visible if they aren't building broader authority online. Content quality, expertise, brand mentions, reviews, and industry credibility are becoming increasingly important factors in digital discoverability.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Buyers Are Researching in Places You Can't Track</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest visibility challenges today is that many customer interactions happen outside traditional analytics platforms. A potential customer might discover your business through a Reddit community, a WhatsApp group, a Discord channel, a referral from a colleague, or an industry forum. These conversations influence buying decisions, but they rarely appear in marketing reports. This is often referred to as \"dark social.\" Businesses sometimes assume they're invisible because they can't see these interactions. In reality, customers may be discussing, recommending, and researching your brand in places that aren't easily measurable. That's why reputation and brand awareness have become increasingly important components of online visibility.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Teams Are Working Hard, But Not Together</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Have you ever noticed how different departments sometimes pursue completely different goals? Marketing focuses on traffic, sales focuses on leads, content teams focus on publishing, and customer service focuses on support. While each team may perform well individually, the customer experiences only one brand. When teams aren't aligned, messaging becomes fragmented and visibility suffers. Recent studies show that many businesses use multiple marketing channels, but only a small percentage successfully coordinate messaging and customer data across those channels. The result is often a disconnected customer experience. Businesses that align their teams around a common message typically create stronger visibility because every interaction reinforces the same brand identity.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Looking to Build Reach But Not Building Trust</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Visibility isn't just about being seen. It's about being remembered and trusted. Many businesses focus heavily on impressions, clicks, and reach while overlooking the importance of credibility. Think about your own buying decisions: Would you choose a company you've never heard of or one you've seen featured in industry publications, mentioned by experts, and recommended by customers? Most people naturally trust the second option. This is where activities such as digital PR, thought leadership, customer reviews, and industry recognition become valuable. These trust signals help strengthen visibility because they give potential customers confidence in your business before they even visit your website. The businesses that consistently stay visible are often the ones that invest in both awareness and credibility.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why Visibility Requires More Than Marketing Activity</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses assume that increasing marketing activity will automatically increase visibility. Unfortunately, that's not always true. Publishing more content, launching more campaigns, or posting more frequently won't necessarily solve visibility problems if your channels aren't connected, your messaging isn't consistent, or your brand lacks authority. True visibility comes from creating a cohesive presence that customers can recognize and trust across multiple touchpoints. The goal isn't simply to appear more often. The goal is to become easier to discover, understand, and remember.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Final Words</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Generating consistent online visibility has become more challenging because customer behavior has changed. People no longer rely on a single channel when researching businesses. They move between search engines, social media platforms, AI tools, review websites, industry communities, and personal recommendations throughout their journey. Businesses that struggle with visibility often face disconnected marketing efforts, inconsistent messaging, fragmented customer experiences, or a lack of brand authority. By focusing on consistency, trust, customer experience, and cross-channel alignment, businesses can create a stronger digital presence that remains visible wherever potential customers choose to engage.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Building visibility across multiple channels requires more than isolated marketing activities. EEGNITE helps businesses identify visibility gaps through SEO, content strategy, digital PR, conversion optimization, and performance-focused digital marketing. By creating a more connected and consistent online presence, businesses can improve discoverability, strengthen brand authority, and support long-term growth.</p>
+        `
+    },
+    "8-reasons-why-your-website-traffic-isnt-generating-leads": {
+        title: "8 Hidden Reasons Your Website Gets Traffic But No Enquiries",
+        metaTitle: "8 Reasons Why Your Website Traffic Isn't Generating Leads",
+        metaDescription: "Getting website visitors but no enquiries? Discover seven hidden conversion issues that may be preventing potential customers from contacting you.",
+        category: "Conversion Optimization",
+        date: "Jun 9, 2026",
+        author: "EEGNITE Team",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1600",
+        content: `
+            <p class="mb-6 text-lg leading-relaxed text-black font-normal">Website traffic is often treated as a success metric.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">You invest in SEO, run advertising campaigns, publish content, and finally start seeing visitors arrive on your website. Analytics look promising. Sessions are increasing. Pages are being viewed.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Yet your inbox remains quiet.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">If you're wondering why your website gets traffic but no enquiries, you're not alone. This is one of the most common challenges businesses face online. The reality is that attracting visitors and converting them into leads are two very different things.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A website can generate substantial traffic yet fail to produce meaningful business results.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Let's explore seven hidden reasons this happens and what you can do about it.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">1. Your Visitors Don't Immediately Understand What You Do</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">First impressions happen quickly online. When someone lands on your website, they should be able to understand within seconds: what your business offers, who is it designed for, and why should they care. Many websites focus on clever headlines or generic statements that sound impressive but don't actually communicate value.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For example, a headline like \"Innovative Solutions for Modern Businesses\" sounds professional but doesn't tell visitors what the company actually does. Compare that to:</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold text-[#FF6105]">\"Performance Marketing and SEO Services That Help Businesses Generate More Qualified Leads.\"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The second example instantly provides clarity. If visitors are confused about your offering, they are unlikely to stay long enough to enquire. Ask Yourself, “Could a first-time visitor explain your business after spending ten seconds on your homepage?” If not, your messaging may need improvement.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">2. You're Attracting the Wrong Type of Traffic</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">More traffic isn't always better. A common misconception is that higher traffic automatically leads to more sales or enquiries. In reality, the quality of traffic matters far more than the quantity. Imagine a company that sells enterprise software attracting thousands of visitors searching for free tools. Traffic numbers may look excellent, but those visitors were never likely to become customers.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This issue often occurs when:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Keywords don't match customer intent</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Content targets overly broad topics</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Advertising campaigns focus on clicks instead of conversions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Audience targeting is too general</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">The goal should be attracting visitors who are actively searching for the products, services, or solutions you provide. Qualified traffic typically converts at a much higher rate than large volumes of untargeted visitors.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">3. Your Website Doesn't Build Trust</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Before contacting a business, most people look for signals that indicate credibility. Think about your own behaviour. Would you submit your contact information to a company that provides little information about itself, has no reviews, and lacks evidence of previous success? Probably not. Visitors often need reassurance before they are comfortable reaching out.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Some effective trust signals include:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Client testimonials and case studies</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Google reviews</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Industry certifications, awards, and recognitions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Team information and portfolio examples</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">Trust isn't built through claims alone. It is built through evidence. If your website lacks proof that you can deliver results, visitors may leave even if they are interested in your services.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">4. Your Calls-to-Action Are Weak or Difficult to Find</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses unintentionally make it difficult for potential customers to take action. Visitors may be interested in learning more, but they shouldn't have to hunt for a contact form or search multiple pages to find your phone number. Strong calls to action help guide users to the next step. Examples include: Request a Consultation, Speak With Our Team, Contact Us Today. Your calls to action should be visible, relevant, and placed naturally throughout the user journey. If visitors don't know what to do next, many will simply leave.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">5. Your Website Experience Creates Friction</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every extra obstacle reduces the likelihood of conversion. Sometimes businesses unintentionally create friction through: complicated navigation, excessively long forms, too many required fields, confusing layouts, and poor mobile experiences. Imagine a user ready to enquire but confronted with a contact form requiring fifteen separate fields. Many people will abandon the process before completing it. The easier it is for visitors to contact you, the more likely they are to do so. A simple user experience often outperforms a complex one.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">6. Your Website Loads Too Slowly</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Website speed plays a significant role in both user experience and conversion rates. Modern users expect websites to load quickly. Delays can lead to frustration and abandonment. Common causes of slow websites include: large image files, excessive scripts, poor hosting infrastructure, unoptimized code, and too many third-party plugins.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Slow websites don't just impact visitors. They can also affect search engine performance over time. If you're investing resources to bring users to your website, a slow-loading experience can undermine those efforts before visitors even engage with your content. Regular speed testing should be part of every website maintenance strategy.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">7. You're Not Measuring User Behaviour</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses monitor traffic but fail to understand what visitors actually do after arriving. Traffic data alone doesn't reveal why people aren't converting. To improve enquiry rates, you need visibility into user behaviour. Questions worth investigating include: Which pages receive the most traffic? Where do users leave the website? Which forms are abandoned? How far do visitors scroll? Which calls-to-action generate engagement?</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Understanding these patterns can uncover hidden conversion barriers. This is where user experience analysis and conversion-focused audits can be valuable. Businesses that regularly evaluate visitor behaviour often discover opportunities to improve lead generation without necessarily increasing traffic.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">8. Your Brand Isn't Well Known or Trusted Yet</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Sometimes the issue isn't your website at all. A visitor may be interested in your services, but before making an enquiry, they want to learn more about the business behind the website. Many people will search for your company name, read reviews, browse social media profiles, or look for evidence that others have worked with and trust your business. If they find very little information, they may decide not to take the next step. This is where brand awareness and credibility become important. Businesses that are regularly seen across multiple channels often have an advantage because potential customers are already familiar with their name before visiting the website.</p>
+            
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">The Role of Digital PR</h3>
+            <p class="mb-6 text-lg leading-relaxed text-black">Digital PR can help strengthen credibility by increasing your presence across reputable online platforms. This may include: industry publications, news features, expert commentary, thought leadership content, awards and recognitions. These external trust signals help reinforce your credibility and give potential customers more confidence in your business. Even if your website is well-designed and attracts qualified traffic, a lack of brand recognition can still prevent visitors from making enquiries.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why More Traffic Isn't Always the Answer</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">When enquiries decline, many businesses immediately focus on generating additional traffic. However, if your website isn't converting existing visitors, adding more traffic may simply increase the number of missed opportunities. A website that converts 5% of visitors will often outperform a website that attracts twice as much traffic but converts only 1%. Before investing more in traffic generation, it's worth examining what happens after visitors arrive. Improving conversions is frequently one of the fastest ways to improve overall marketing performance.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Final Words</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Getting website traffic but no enquiries can be frustrating, especially when you've invested time and resources into attracting visitors. In many cases, the issue isn't traffic volume. It's what visitors experience once they arrive. Clear messaging, strong trust signals, effective calls-to-action, fast performance, and a seamless user experience all contribute to better conversion rates. By identifying and addressing these hidden barriers, businesses can turn more website visitors into genuine opportunities and valuable customer conversations.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">If your website is generating traffic but struggling to produce enquiries, EEGNITE can help uncover the underlying causes. Through website audits, conversion rate optimisation, user experience analysis, SEO services, and performance-focused digital strategies, businesses can gain a clearer understanding of visitor behaviour and identify practical opportunities to improve lead generation and online performance.</p>
+        `
+    },
     "top-10-seo-agencies-kolkata-2026": {
         title: "Top 10 SEO Agencies in Kolkata You Can Trust in 2026",
         metaTitle: "Top 10 SEO Agencies in Kolkata For 2026",

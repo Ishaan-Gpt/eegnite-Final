@@ -8,6 +8,26 @@ import { cn } from "@/lib/utils";
 
 const allPostsData = [
     {
+        id: 7,
+        title: "Why Businesses Struggle to Generate Consistent Online Visibility Across Channels",
+        excerpt: "Discover eight common reasons businesses struggle to maintain online visibility and what you can do to build a stronger digital presence.",
+        category: "Digital Strategy",
+        readTime: "8 min read",
+        date: "Jun 8, 2026",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+        slug: "why-your-business-struggles-with-online-visibility",
+    },
+    {
+        id: 6,
+        title: "8 Hidden Reasons Your Website Gets Traffic But No Enquiries",
+        excerpt: "Getting website visitors but no enquiries? Discover seven hidden conversion issues that may be preventing potential customers from contacting you.",
+        category: "Conversion Optimization",
+        readTime: "7 min read",
+        date: "Jun 9, 2026",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1600",
+        slug: "8-reasons-why-your-website-traffic-isnt-generating-leads",
+    },
+    {
         id: 5,
         title: "How a Results-Driven PPC Agency in India Maximizes Your ROI",
         excerpt: "Most businesses don't lose money on ads because they didn't spend enough. They lose because the execution is bad. Learn how a real PPC agency in India stops budget waste and delivers consistent ROI.",

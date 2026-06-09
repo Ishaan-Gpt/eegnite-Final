@@ -2,6 +2,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+import TrustRatingsBanner from "@/components/TrustRatingsBanner";
 
 // EEGNITE's actual testimonials
 const testimonials = [
@@ -69,6 +73,16 @@ export default function Testimonials() {
                     </motion.p>
                 </div>
 
+                {/* Trust & Ratings Banner */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.35 }}
+                    className="mb-16"
+                >
+                    <TrustRatingsBanner />
+                </motion.div>
+
                 {/* Animated Testimonials */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -76,6 +90,22 @@ export default function Testimonials() {
                     transition={{ delay: 0.4 }}
                 >
                     <AnimatedTestimonials testimonials={testimonials} autoplay />
+                </motion.div>
+
+                {/* See All Testimonials Link */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.45 }}
+                    className="flex justify-center -mt-8 mb-4"
+                >
+                    <Link
+                        href="/testimonials"
+                        className="inline-flex items-center gap-2 bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#e55800] transition-colors shadow-lg shadow-[#FF6105]/20 hover:shadow-[#FF6105]/35 duration-300"
+                    >
+                        See All Testimonials
+                        <ArrowRight size={14} />
+                    </Link>
                 </motion.div>
 
                 {/* Search Engine Optimization (SEO) Crawler Fallback */}

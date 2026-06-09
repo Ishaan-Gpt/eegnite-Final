@@ -83,10 +83,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/testimonials/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/blog/`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blog/8-reasons-why-your-website-traffic-isnt-generating-leads/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/why-your-business-struggles-with-online-visibility/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
         },
         {
             url: `${baseUrl}/blog/local-seo-strategies-2026-google-maps/`,

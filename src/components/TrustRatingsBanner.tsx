@@ -7,9 +7,11 @@ export default function TrustRatingsBanner() {
         {
             name: "LinkedIn",
             logo: (
-                <svg className="w-8 h-8 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
+                <img 
+                    src="/icons/linkedin.png" 
+                    alt="LinkedIn" 
+                    className="w-7 h-7 object-contain" 
+                />
             ),
             stars: 5,
             href: "https://www.linkedin.com/services/page/680aab33391bb15b42/",
@@ -18,11 +20,11 @@ export default function TrustRatingsBanner() {
         {
             name: "Trustpilot",
             logo: (
-                <svg className="w-8 h-8 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                    {/* Circle with a star inside to match reference image */}
-                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none" />
-                    <path d="M12 6.5l1.62 3.28 3.62.53-2.62 2.55.62 3.6-3.24-1.7-3.24 1.7.62-3.6-2.62-2.55 3.62-.53z" />
-                </svg>
+                <img 
+                    src="/icons/trustpilot.png" 
+                    alt="Trustpilot" 
+                    className="w-7 h-7 object-contain" 
+                />
             ),
             stars: 5,
             href: "https://www.trustpilot.com/review/eegnite.com",
@@ -31,11 +33,11 @@ export default function TrustRatingsBanner() {
         {
             name: "GBP",
             logo: (
-                <svg className="w-8 h-8 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                    {/* Storefront icon with 'G' to match reference image */}
-                    <path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4L3 12v2c0 .55.45 1 1 1h1v5h8v-5h3v5h3v-5h1c.55 0 1-.45 1-1zm-9 4H9v-3h3v3zm6-7H6V9h12v2z" />
-                    <text x="12" y="14" fill="white" fontSize="6" fontWeight="bold" textAnchor="middle">G</text>
-                </svg>
+                <img 
+                    src="/icons/gmb.webp" 
+                    alt="Google Business Profile" 
+                    className="w-7 h-7 object-contain" 
+                />
             ),
             stars: 5,
             href: "https://search.google.com/local/reviews?placeid=ChIJ_yA5Hj5x-0ARt4Eg33jURBU",
@@ -62,7 +64,7 @@ export default function TrustRatingsBanner() {
                     style={{ 
                         backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`, 
                         backgroundSize: '40px 40px' 
-                    }} 
+                     }} 
                 />
                 <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/10 blur-2xl" />
 
@@ -94,7 +96,7 @@ export default function TrustRatingsBanner() {
                                 className="group flex flex-col items-center justify-center p-2 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/5 w-full text-center"
                             >
                                 <motion.div 
-                                    className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white shadow-inner group-hover:bg-white/20 transition-colors duration-300"
+                                    className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md group-hover:bg-white/90 transition-colors duration-300"
                                     whileHover={{ rotate: [0, -5, 5, 0] }}
                                     transition={{ duration: 0.4 }}
                                 >

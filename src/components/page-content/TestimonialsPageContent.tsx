@@ -105,13 +105,6 @@ function TestimonialsHero() {
                         <Calendar size={14} />
                         Book a Strategy Call
                     </Link>
-                    <Link
-                        href="/#results"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/10 text-black hover:bg-black/5 hover:border-black/20 px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300"
-                    >
-                        View Case Studies
-                        <ArrowRight size={14} />
-                    </Link>
                 </motion.div>
             </div>
         </section>
@@ -124,101 +117,81 @@ const testimonials = [
         name: "Hafedh Bucheery",
         designation: "Founder",
         company: "Deepmark Branding Agency",
-        tag: "SEO",
+        tags: ["SEO"],
         text: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
-        src: "",
-        sourceUrl: "https://www.linkedin.com/services/page/680aab33391bb15b42/",
-        sourceName: "LinkedIn"
+        src: ""
     },
     {
         name: "Himanshu Singh",
-        designation: "Head of Credit Risk & Underwriting",
-        company: "Xendit",
-        tag: "Web Design",
+        designation: "Founder",
+        company: "Eshaarya",
+        tags: ["Web Design"],
         text: "Working with Anish on one of my projects has genuinely been one of the better vendor decisions I’ve made for our project. They handled SEO and content creation for us, covering everything from keyword-optimized product listings to broader content strategy. The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
-        src: "",
-        sourceUrl: "https://www.linkedin.com/services/page/680aab33391bb15b42/",
-        sourceName: "LinkedIn"
+        src: ""
     },
     {
         name: "Andre P.",
         designation: "Director of Digital Operations & Systems",
         company: "PetStore.Direct",
-        tag: "SEO",
+        tags: ["SEO"],
         text: "Anish is a highly reliable project manager with a strong analytical mindset. He consistently brings structure to complex projects, ensuring timelines, data, and stakeholders stay aligned. His ability to translate data into actionable insights makes a real impact on decision-making. Beyond his technical skills, Anish is proactive, detail-oriented, and easy to collaborate with someone you can trust to drive projects forward efficiently",
-        src: "/andre.jpg",
-        sourceUrl: "https://www.linkedin.com/services/page/680aab33391bb15b42/",
-        sourceName: "LinkedIn"
+        src: "/andre.jpg"
     },
     {
         name: "Dario Vettese",
         designation: "Managing Director",
         company: "bluefrog pharma GmbH / PetYu",
-        tag: "Web Design",
+        tags: ["Web Design"],
         text: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
-        src: "",
-        sourceUrl: "https://www.linkedin.com/services/page/680aab33391bb15b42/",
-        sourceName: "LinkedIn"
+        src: ""
     },
     {
         name: "Rokas Bartasius",
         designation: "Founder & CEO",
         company: "Varolab",
-        tag: "SEO",
+        tags: ["SEO"],
         text: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
-        src: "/rokas.jpg",
-        sourceUrl: "https://www.linkedin.com/services/page/680aab33391bb15b42/",
-        sourceName: "LinkedIn"
+        src: "/rokas.jpg"
     },
     {
         name: "Rushil Jain",
-        designation: "[Designation]",
-        company: "[Company]",
-        tag: "SEO",
+        designation: "",
+        company: "",
+        tags: ["SEO"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: "",
-        sourceUrl: "https://www.trustpilot.com/review/eegnite.com",
-        sourceName: "Trustpilot"
+        src: ""
     },
     {
         name: "Rebeka Jasilionytė",
-        designation: "[Designation]",
-        company: "[Company]",
-        tag: "Digital Marketing",
+        designation: "",
+        company: "",
+        tags: ["Digital Marketing"],
         text: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
-        src: "/rebeka.jpg",
-        sourceUrl: "https://search.google.com/local/reviews?placeid=ChIJ_yA5Hj5x-0ARt4Eg33jURBU",
-        sourceName: "Google Business"
+        src: "/rebeka.jpg"
     },
     {
         name: "Rejeev Ranjan",
-        designation: "[Designation]",
-        company: "[Company]",
-        tag: "Digital Marketing",
+        designation: "",
+        company: "",
+        tags: ["Digital Marketing"],
         text: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
-        src: "/rajeev.png",
-        sourceUrl: "https://search.google.com/local/reviews?placeid=ChIJ_yA5Hj5x-0ARt4Eg33jURBU",
-        sourceName: "Google Business"
+        src: "/rajeev.png"
     },
     {
         name: "ROY Event Planner",
         designation: "Organization",
         company: "ROY Event Planner",
-        tag: "Web Design",
+        tags: ["Web Design"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: "",
-        sourceUrl: "https://search.google.com/local/reviews?placeid=ChIJ_yA5Hj5x-0ARt4Eg33jURBU",
-        sourceName: "Google Business"
+        src: ""
     },
     {
         name: "Nudrat Khan",
-        designation: "[Designation]",
-        company: "[Company]",
-        tag: "Web Design",
+        designation: "",
+        company: "",
+        tags: ["Web Design"],
         text: "Hey Eegnite Team and Anish. Just wanted to say huge thanks for the amazing website design! It's sleek, user-friendly, and exactly what we needed. Your team's professionalism and attention to detail really shine through. Highly recommend!",
-        src: "",
-        sourceUrl: "https://search.google.com/local/reviews?placeid=ChIJ_yA5Hj5x-0ARt4Eg33jURBU",
-        sourceName: "Google Business"
+        src: ""
     }
 ];
 
@@ -227,11 +200,9 @@ interface TestimonialCardProps {
     name: string;
     designation: string;
     company: string;
-    tag: string;
+    tags: string[];
     text: string;
     src: string;
-    sourceUrl: string;
-    sourceName: string;
     index: number;
 }
 
@@ -239,19 +210,16 @@ function TestimonialShowcaseCard({
     name,
     designation,
     company,
-    tag,
+    tags,
     text,
     src,
-    sourceUrl,
-    sourceName,
     index
 }: TestimonialCardProps) {
-    const cardRef = useRef(null);
+    const cardRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(cardRef, { once: true, margin: "-5%" });
 
-    // Clean designation and company values to ignore placeholders
-    const cleanDesignation = designation && !designation.includes("[") && designation.trim() !== "";
-    const cleanCompany = company && !company.includes("[") && company.trim() !== "";
+    const cleanDesignation = designation && designation.trim() !== "";
+    const cleanCompany = company && company.trim() !== "";
 
     return (
         <motion.div
@@ -259,72 +227,70 @@ function TestimonialShowcaseCard({
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
-            className="relative bg-white border border-black/5 rounded-[2rem] p-8 pt-16 shadow-sm hover:shadow-2xl hover:border-[#FF6105]/20 transition-all duration-500 flex flex-col justify-between min-h-[380px] h-full overflow-visible mt-10"
+            className="flex flex-col h-full mt-10 group"
         >
-            {/* Top overlap profile picture */}
-            <div className="absolute -top-10 left-8 w-20 h-20 rounded-full border-4 border-white object-cover shadow-md bg-[#FFF5F0] overflow-hidden flex items-center justify-center">
-                {src ? (
-                    <img 
-                        src={src} 
-                        alt={name} 
-                        className="w-full h-full object-cover" 
-                        loading="lazy"
-                    />
-                ) : (
-                    <div className="w-full h-full bg-gradient-to-tr from-[#FF6105] to-[#ff8c4a] flex items-center justify-center text-white text-2xl font-black">
-                        {name.charAt(0)}
-                    </div>
-                )}
-            </div>
-
-            {/* Content Container */}
-            <div className="flex-1 flex flex-col justify-between">
-                <div>
-                    {/* Stars */}
-                    <div className="flex gap-0.5 text-[#FF6105] mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} size={16} fill="currentColor" stroke="none" />
-                        ))}
-                    </div>
-
-                    {/* Review Quote */}
-                    <p className="text-black/75 text-sm md:text-base leading-relaxed mb-6 font-medium font-sans">
-                        “{text}”
-                    </p>
+            {/* Main Card Body */}
+            <div className="relative bg-white border border-black/5 border-b-0 rounded-t-[2rem] p-8 pt-16 shadow-sm group-hover:shadow-xl group-hover:border-[#FF6105]/20 transition-all duration-500 flex flex-col justify-between flex-grow min-h-[300px] overflow-visible bg-gradient-to-b from-white to-[#FFFEF8]">
+                {/* Top overlap profile picture */}
+                <div className="absolute -top-10 left-8 w-20 h-20 rounded-full border-4 border-white object-cover shadow-md bg-[#FFF5F0] overflow-hidden flex items-center justify-center">
+                    {src ? (
+                        <img 
+                            src={src} 
+                            alt={name} 
+                            className="w-full h-full object-cover" 
+                            loading="lazy"
+                        />
+                    ) : (
+                        <div className="w-full h-full bg-gradient-to-tr from-[#FF6105] to-[#ff8c4a] flex items-center justify-center text-white text-2xl font-black">
+                            {name.charAt(0)}
+                        </div>
+                    )}
                 </div>
 
-                {/* Client Profile Details */}
-                <div className="border-t border-black/5 pt-4 flex flex-col gap-2">
+                {/* Content Container */}
+                <div className="flex-1 flex flex-col justify-between">
                     <div>
+                        {/* Stars */}
+                        <div className="flex gap-0.5 text-[#FF6105] mb-4">
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} size={16} fill="currentColor" stroke="none" />
+                            ))}
+                        </div>
+
+                        {/* Review Quote */}
+                        <p className="text-black/75 text-sm md:text-base leading-relaxed mb-6 font-medium font-sans">
+                            “{text}”
+                        </p>
+                    </div>
+
+                    {/* Client Profile Details */}
+                    <div className="border-t border-black/5 pt-4">
                         <h4 className="text-base font-extrabold text-black uppercase tracking-tight leading-tight">
                             {name}
                         </h4>
                         {(cleanDesignation || cleanCompany) && (
                             <p className="text-black/55 text-xs font-semibold uppercase tracking-wider mt-0.5">
-                                {cleanDesignation && cleanDesignation}
+                                {cleanDesignation && designation}
                                 {cleanDesignation && cleanCompany && " , "}
-                                {cleanCompany && cleanCompany}
+                                {cleanCompany && company}
                             </p>
                         )}
                     </div>
-
-                    {/* Source link with standard follow config */}
-                    <a
-                        href={sourceUrl}
-                        target="_blank"
-                        rel="noopener"
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#FF6105] hover:text-[#e55800] transition-colors mt-1 self-start"
-                        aria-label={`Read this review on ${sourceName}`}
-                    >
-                        Source - {sourceName} <ExternalLink size={10} />
-                    </a>
                 </div>
             </div>
 
-            {/* Tag pill aligned in bottom-right corner */}
-            <span className="absolute bottom-6 right-6 px-3.5 py-1 bg-[#FFF5F0] text-[#FF6105] rounded-full text-[10px] font-black uppercase tracking-widest border border-[#FF6105]/10">
-                {tag}
-            </span>
+            {/* Services Attachment Panel */}
+            <div className="bg-[#FFF5F0]/80 group-hover:bg-[#FFF5F0] border border-black/5 border-t-0 rounded-b-[2rem] px-8 py-4 flex flex-wrap items-center gap-2 group-hover:border-[#FF6105]/20 transition-all duration-500">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-black/45 mr-1">Services Taken:</span>
+                {tags.map((t) => (
+                    <span 
+                        key={t} 
+                        className="px-2.5 py-0.5 bg-white text-[#FF6105] rounded-full text-[9px] font-black uppercase tracking-wider border border-[#FF6105]/10 shadow-sm"
+                    >
+                        {t}
+                    </span>
+                ))}
+            </div>
         </motion.div>
     );
 }
@@ -336,7 +302,7 @@ function TestimonialsSection() {
 
     const filteredTestimonials = activeFilter === "All"
         ? testimonials
-        : testimonials.filter(t => t.tag === activeFilter);
+        : testimonials.filter(t => t.tags.includes(activeFilter));
 
     return (
         <section className="py-16 px-6 sm:px-12 bg-white relative overflow-hidden">
@@ -407,11 +373,9 @@ function TestimonialsSection() {
                                     name={t.name}
                                     designation={t.designation}
                                     company={t.company}
-                                    tag={t.tag}
+                                    tags={t.tags}
                                     text={t.text}
                                     src={t.src}
-                                    sourceUrl={t.sourceUrl}
-                                    sourceName={t.sourceName}
                                 />
                             </motion.div>
                         ))}

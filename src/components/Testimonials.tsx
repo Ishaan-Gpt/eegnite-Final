@@ -13,42 +13,49 @@ const testimonials = [
         quote: "Anish is a highly reliable project manager with a strong analytical mindset. He consistently brings structure to complex projects, ensuring timelines, data, and stakeholders stay aligned. His ability to translate data into actionable insights makes a real impact on decision-making. Beyond his technical skills, Anish is proactive, detail-oriented, and easy to collaborate with someone you can trust to drive projects forward efficiently",
         name: "Andre P.",
         designation: "Director of Digital Operations & Systems, PetStore.Direct",
+        location: "USA",
         src: "/andre.jpg"
     },
     {
         quote: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
         name: "Hafedh Bucheery",
         designation: "Founder, Deepmark Branding Agency",
-        src: ""
+        location: "Bahrain",
+        src: "/assets/Hafedh.jpg.jpeg"
     },
     {
         quote: "Working with Anish on one of my projects has genuinely been one of the better vendor decisions I’ve made for our project. They handled SEO and content creation for us, covering everything from keyword-optimized product listings to broader content strategy. The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
         name: "Himanshu Singh",
         designation: "Founder, Eshaarya",
-        src: ""
+        location: "USA",
+        src: "/assets/Himanshu.jpg.jpeg"
     },
     {
         quote: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
         name: "Dario Vettese",
-        designation: "Managing Director, bluefrog pharma GmbH / PetYu",
-        src: ""
+        designation: "Managing Director, bluefrog pharma / PetYu",
+        location: "Germany",
+        src: "/assets/Dario.jpg.jpeg"
     },
     {
         quote: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
         name: "Rokas Bartasius",
         designation: "Founder & CEO, Varolab",
+        location: "Lithuania",
         src: "/rokas.jpg"
     },
     {
         quote: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
         name: "Rebeka Jasilionytė",
-        designation: "Digital Marketing Partner",
+        designation: "Marketing Product Manager, Varolab",
+        location: "Lithuania",
         src: "/rebeka.jpg"
     },
     {
         quote: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
-        name: "Rejeev Ranjan",
-        designation: "Digital Marketing Partner",
+        name: "Rajeev Ranjan",
+        designation: "Founder, Wildwood Exports",
+        location: "India",
         src: "/rajeev.png"
     }
 ];

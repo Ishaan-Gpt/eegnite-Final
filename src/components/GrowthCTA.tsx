@@ -3,7 +3,13 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 
-export default function GrowthCTA() {
+interface GrowthCTAProps {
+    badgeText?: string;
+    title?: React.ReactNode;
+    description?: React.ReactNode;
+}
+
+export default function GrowthCTA({ badgeText, title, description }: GrowthCTAProps = {}) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-15%" });
 
@@ -24,17 +30,23 @@ export default function GrowthCTA() {
                 >
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF6105] mb-6 inline-flex items-center gap-3">
                         <span className="w-8 h-[2px] bg-[#FF6105] hidden md:inline-block" />
-                        Stop guessing. Start growing.
+                        {badgeText || "Stop guessing. Start growing."}
                         <span className="w-8 h-[2px] bg-[#FF6105]" />
                     </span>
 
-                    <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
-                        Ready to Scale? <br />
-                        <span className="text-[#FF6105]">Let's Build Your Growth Plan.</span>
-                    </h2>
+                    {title || (
+                        <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
+                            Ready to Scale? <br />
+                            <span className="text-[#FF6105]">Let's Build Your Growth Plan.</span>
+                        </h2>
+                    )}
 
                     <p className="mt-8 max-w-2xl md:mx-auto text-sm md:text-lg text-black/60 font-medium tracking-wide leading-relaxed">
-                        Book a <span className="text-[#FF6105] font-semibold">free strategy call</span> with EEGNITE and walk away with clarity on exactly what's holding your business back - and what it will take to break through. <span className="text-[#FF6105] font-semibold">No pitch. No pressure.</span> Just a straight conversation about your goals and how we can help you hit them.
+                        {description || (
+                            <>
+                                Book a <span className="text-[#FF6105] font-semibold">free strategy call</span> with EEGNITE and walk away with clarity on exactly what's holding your business back - and what it will take to break through. <span className="text-[#FF6105] font-semibold">No pitch. No pressure.</span> Just a straight conversation about your goals and how we can help you hit them.
+                            </>
+                        )}
                     </p>
 
                     <div className="mt-12 flex flex-col sm:flex-row items-center justify-start md:justify-center gap-4">

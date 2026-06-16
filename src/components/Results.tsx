@@ -15,7 +15,7 @@ const caseStudies = [
             { icon: Target, label: "ROAS", value: "20x" },
             { icon: ShoppingCart, label: "Total Purchases", value: "1,500" }
         ],
-        image: "./result-meta.jpg",
+        image: "/result-meta.jpg",
         color: "#FF6105"
     },
     {
@@ -28,7 +28,7 @@ const caseStudies = [
             { icon: DollarSign, label: "Total Revenue", value: "$2.0M" },
             { icon: Eye, label: "Open Rate", value: "50%" }
         ],
-        image: "./result-email.jpg",
+        image: "/result-email.jpg",
         color: "#FF8040"
     },
     {
@@ -42,12 +42,17 @@ const caseStudies = [
             { icon: TrendingUp, label: "Position", value: "Rank 1" }
         ],
         description: "Ranked the website for more than 36 keywords on Rank 1",
-        image: "./result-seo.jpg",
+        image: "/result-seo.jpg",
         color: "#FFB080"
     }
 ];
 
-export default function Results() {
+interface ResultsProps {
+    title?: React.ReactNode;
+    subtitle?: string;
+}
+
+export default function Results({ title, subtitle }: ResultsProps = {}) {
     const containerRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(containerRef, { once: true, margin: "-15%" });
     const { scrollYProgress } = useScroll({
@@ -79,17 +84,19 @@ export default function Results() {
                     transition={{ duration: 1 }}
                     className="mb-12 md:mb-24 text-left md:text-center"
                 >
-                    <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
-                        Numbers Don't Lie. <br />
-                        <span className="text-[#FF6105]">Ours Tell a Great Story.</span>
-                    </h2>
+                    {title || (
+                        <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
+                            Numbers Don't Lie. <br />
+                            <span className="text-[#FF6105]">Ours Tell a Great Story.</span>
+                        </h2>
+                    )}
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ delay: 0.2 }}
                         className="mt-6 max-w-2xl md:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide leading-relaxed"
                     >
-                        We believe in proof over promises. Our case studies break down exactly how EEGNITE helped real businesses achieve measurable growth - the strategy we used, the challenges we tackled, and the results we delivered.
+                        {subtitle || "We believe in proof over promises. Our case studies break down exactly how EEGNITE helped real businesses achieve measurable growth - the strategy we used, the challenges we tackled, and the results we delivered."}
                     </motion.p>
                 </motion.div>
 

@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 interface ClientLogoSliderProps {
     className?: string;
     innerOnly?: boolean;
+    heading?: React.ReactNode;
 }
 
-export function ClientLogoSlider({ className = "", innerOnly = false }: ClientLogoSliderProps) {
+export function ClientLogoSlider({ className = "", innerOnly = false, heading }: ClientLogoSliderProps) {
     const clientLogos = [
         { name: "Al Jiwan Jewelry", src: "/logos/al-jiwan-jewelry-logo.png" },
         { name: "Aquagear Australia", src: "/logos/aquagear-australia-logo.png" },
@@ -27,33 +28,39 @@ export function ClientLogoSlider({ className = "", innerOnly = false }: ClientLo
     ];
 
     const content = (
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-12 w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-12 w-full overflow-hidden">
             {/* Left 50% - H3 Heading */}
             <div className="w-full lg:w-1/2 flex items-center">
-                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] font-extrabold uppercase tracking-tight text-black leading-[1.15] text-left">
-                    Driving Digital Growth <br />
-                    for Brands <span className="text-[#FF6105]">Across the Globe</span>
+                <h3 className="text-xl xs:text-2xl sm:text-2xl md:text-[1.65rem] lg:text-[1.75rem] font-extrabold uppercase tracking-tight text-black leading-[1.15] text-left">
+                    {heading ? (
+                        heading
+                    ) : (
+                        <>
+                            Driving Digital Growth <br />
+                            for Brands <span className="text-[#FF6105]">Across the Globe</span>
+                        </>
+                    )}
                 </h3>
             </div>
-
+ 
             {/* Right 50% - Logo Slider */}
-            <div className="w-full lg:w-1/2 flex items-center relative overflow-hidden group select-none py-6 min-h-[140px]">
+            <div className="w-full lg:w-1/2 flex items-center relative overflow-hidden group select-none py-6 min-h-[100px] lg:min-h-[140px] min-w-0 max-w-full">
                 {/* Gradient Overlays using the custom theme white color #FFFEF8 */}
                 <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-                {/* Infinite scroll marquee */}
-                <div className="flex w-full overflow-hidden">
+ 
+                {/* Infinite scroll marquee wrapper */}
+                <div className="flex w-full overflow-hidden min-w-0 max-w-full">
                     {[0, 1].map((copy) => (
                         <div
                             key={copy}
-                            className="flex animate-loop-scroll gap-4 md:gap-6 pr-4 md:pr-6"
+                            className="flex animate-loop-scroll gap-4 md:gap-6 pr-4 md:pr-6 flex-shrink-0"
                             aria-hidden={copy === 1}
                         >
                             {clientLogos.map((logo, index) => (
                                 <div
                                     key={`${copy}-${index}`}
-                                    className="flex items-center justify-center flex-shrink-0 w-48 h-20 sm:w-64 sm:h-26 md:w-80 md:h-32"
+                                    className="flex items-center justify-center flex-shrink-0 w-32 h-14 sm:w-48 sm:h-20 md:w-64 md:h-26 lg:w-80 lg:h-32"
                                     title={logo.name}
                                 >
                                     <img
@@ -69,14 +76,14 @@ export function ClientLogoSlider({ className = "", innerOnly = false }: ClientLo
             </div>
         </div>
     );
-
+ 
     if (innerOnly) {
-        return <div className={`w-full ${className}`}>{content}</div>;
+        return <div className={`w-full overflow-hidden max-w-full ${className}`}>{content}</div>;
     }
-
+ 
     return (
-        <section className={`w-full py-16 md:py-24 bg-white overflow-hidden border-b border-black/5 ${className}`}>
-            <div className="max-w-[1400px] mx-auto px-6 sm:px-12">
+        <section className={`w-full py-8 md:py-12 bg-white overflow-hidden border-b border-black/5 ${className}`}>
+            <div className="max-w-[1400px] mx-auto px-6 sm:px-12 w-full overflow-hidden max-w-full">
                 {content}
             </div>
         </section>

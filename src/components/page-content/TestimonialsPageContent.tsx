@@ -117,22 +117,25 @@ const testimonials = [
         name: "Hafedh Bucheery",
         designation: "Founder",
         company: "Deepmark Branding Agency",
+        location: "Bahrain",
         tags: ["SEO"],
         text: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
-        src: ""
+        src: "/assets/Hafedh.jpg.jpeg"
     },
     {
         name: "Himanshu Singh",
         designation: "Founder",
         company: "Eshaarya",
+        location: "USA",
         tags: ["Web Design"],
         text: "Working with Anish on one of my projects has genuinely been one of the better vendor decisions I’ve made for our project. They handled SEO and content creation for us, covering everything from keyword-optimized product listings to broader content strategy. The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
-        src: ""
+        src: "/assets/Himanshu.jpg.jpeg"
     },
     {
         name: "Andre P.",
         designation: "Director of Digital Operations & Systems",
         company: "PetStore.Direct",
+        location: "USA",
         tags: ["SEO"],
         text: "Anish is a highly reliable project manager with a strong analytical mindset. He consistently brings structure to complex projects, ensuring timelines, data, and stakeholders stay aligned. His ability to translate data into actionable insights makes a real impact on decision-making. Beyond his technical skills, Anish is proactive, detail-oriented, and easy to collaborate with someone you can trust to drive projects forward efficiently",
         src: "/andre.jpg"
@@ -141,57 +144,64 @@ const testimonials = [
         name: "Dario Vettese",
         designation: "Managing Director",
         company: "bluefrog pharma GmbH / PetYu",
+        location: "Germany",
         tags: ["Web Design"],
         text: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
-        src: ""
+        src: "/assets/Dario.jpg.jpeg"
     },
     {
         name: "Rokas Bartasius",
         designation: "Founder & CEO",
         company: "Varolab",
+        location: "Lithuania",
         tags: ["SEO"],
         text: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
         src: "/rokas.jpg"
     },
     {
-        name: "Rushil Jain",
-        designation: "",
-        company: "",
+        name: "Shankar Rathi",
+        designation: "CEO",
+        company: "IMAAGE",
+        location: "India",
         tags: ["SEO"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: ""
+        src: "/assets/shankar-rathi.png"
     },
     {
         name: "Rebeka Jasilionytė",
-        designation: "",
-        company: "",
+        designation: "Marketing Product Manager",
+        company: "Varolab",
+        location: "Lithuania",
         tags: ["Digital Marketing"],
         text: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
         src: "/rebeka.jpg"
     },
     {
-        name: "Rejeev Ranjan",
-        designation: "",
-        company: "",
+        name: "Rajeev Ranjan",
+        designation: "Founder",
+        company: "Wildwood Exports",
+        location: "India",
         tags: ["Digital Marketing"],
         text: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
         src: "/rajeev.png"
     },
     {
-        name: "ROY Event Planner",
-        designation: "Organization",
-        company: "ROY Event Planner",
+        name: "Sankalp Kedia",
+        designation: "Director",
+        company: "Supreme Infratech",
+        location: "India",
         tags: ["Web Design"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
         src: ""
     },
     {
         name: "Nudrat Khan",
-        designation: "",
-        company: "",
+        designation: "Director",
+        company: "Supreme Infratech",
+        location: "India",
         tags: ["Web Design"],
         text: "Hey Eegnite Team and Anish. Just wanted to say huge thanks for the amazing website design! It's sleek, user-friendly, and exactly what we needed. Your team's professionalism and attention to detail really shine through. Highly recommend!",
-        src: ""
+        src: "/assets/Nudrat (1).jpeg"
     }
 ];
 
@@ -200,6 +210,7 @@ interface TestimonialCardProps {
     name: string;
     designation: string;
     company: string;
+    location?: string;
     tags: string[];
     text: string;
     src: string;
@@ -210,6 +221,7 @@ function TestimonialShowcaseCard({
     name,
     designation,
     company,
+    location,
     tags,
     text,
     src,
@@ -265,16 +277,25 @@ function TestimonialShowcaseCard({
 
                     {/* Client Profile Details */}
                     <div className="border-t border-black/5 pt-4">
-                        <h4 className="text-base font-extrabold text-black uppercase tracking-tight leading-tight">
-                            {name}
-                        </h4>
-                        {(cleanDesignation || cleanCompany) && (
-                            <p className="text-black/55 text-xs font-semibold uppercase tracking-wider mt-0.5">
-                                {cleanDesignation && designation}
-                                {cleanDesignation && cleanCompany && " , "}
-                                {cleanCompany && company}
-                            </p>
-                        )}
+                        <div className="flex justify-between items-start">
+                            <div>
+                                <h4 className="text-base font-extrabold text-black uppercase tracking-tight leading-tight">
+                                    {name}
+                                </h4>
+                                {(cleanDesignation || cleanCompany) && (
+                                    <p className="text-black/55 text-xs font-semibold uppercase tracking-wider mt-0.5">
+                                        {cleanDesignation && designation}
+                                        {cleanDesignation && cleanCompany && " , "}
+                                        {cleanCompany && company}
+                                    </p>
+                                )}
+                            </div>
+                            {location && (
+                                <span className="text-black/40 text-[10px] font-bold uppercase tracking-wider bg-black/5 px-2.5 py-1 rounded-md mt-0.5">
+                                    {location}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -373,6 +394,7 @@ function TestimonialsSection() {
                                     name={t.name}
                                     designation={t.designation}
                                     company={t.company}
+                                    location={t.location}
                                     tags={t.tags}
                                     text={t.text}
                                     src={t.src}

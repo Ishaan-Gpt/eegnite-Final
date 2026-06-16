@@ -305,7 +305,18 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
     );
 };
 
-export default function Services() {
+interface ServicesProps {
+    title?: React.ReactNode;
+    subtitle?: string;
+    customDescriptions?: Record<string, string>;
+}
+
+export default function Services({ title, subtitle, customDescriptions }: ServicesProps = {}) {
+    const modifiedServices = services.map(s => ({
+        ...s,
+        description: customDescriptions?.[s.id] || s.description
+    }));
+
     return (
         <section className="bg-white py-20 lg:py-40" id="services">
             <div className="max-w-7xl mx-auto px-6 mb-8 lg:mb-16 text-left lg:text-center">
@@ -315,8 +326,12 @@ export default function Services() {
                     viewport={{ once: true }}
                     className="text-4xl lg:text-[4.5rem] font-bold uppercase tracking-tighter leading-none text-black"
                 >
-                    Everything Your Brand <br className="hidden lg:block" /> Needs.{" "}
-                    <span className="text-[#FF6105]">Under One Roof</span>
+                    {title || (
+                        <>
+                            Everything Your Brand <br className="hidden lg:block" /> Needs.{" "}
+                            <span className="text-[#FF6105]">Under One Roof</span>
+                        </>
+                    )}
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -325,18 +340,18 @@ export default function Services() {
                     transition={{ delay: 0.1 }}
                     className="mt-6 max-w-xl lg:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide"
                 >
-                    From search to social, ads to analytics - we are the only digital marketing agency you'll ever need.
+                    {subtitle || "From search to social, ads to analytics - we are the only digital marketing agency you'll ever need."}
                 </motion.p>
             </div>
 
             {/* Desktop View: Sticky Cards */}
             <div className="relative hidden lg:block">
-                {services.map((service, index) => (
+                {modifiedServices.map((service, index) => (
                     <ServiceCard
                         key={service.id}
                         service={service}
                         index={index}
-                        total={services.length}
+                        total={modifiedServices.length}
                     />
                 ))}
             </div>
@@ -344,7 +359,7 @@ export default function Services() {
             {/* Mobile View: Accordion List */}
             <div className="block lg:hidden px-4">
                 <div className="rounded-2xl border border-black/10 overflow-hidden">
-                    {services.map((service) => (
+                    {modifiedServices.map((service) => (
                         <MobileServiceItem key={service.id} service={service} />
                     ))}
                 </div>

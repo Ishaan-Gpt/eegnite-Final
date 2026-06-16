@@ -37,12 +37,16 @@ export const HOME_FAQS = [
     }
 ];
 
-const faqs = HOME_FAQS;
+interface FAQProps {
+    faqList?: { question: string; answer: string; category: string }[];
+}
 
-export default function FAQ() {
+export default function FAQ({ faqList }: FAQProps = {}) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    const faqs = faqList || HOME_FAQS;
 
     const toggleFaq = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);

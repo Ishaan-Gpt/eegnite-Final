@@ -47,13 +47,13 @@ export function ClientLogoSlider({ className = "", innerOnly = false }: ClientLo
                     {[0, 1].map((copy) => (
                         <div
                             key={copy}
-                            className="flex animate-loop-scroll gap-6 md:gap-8 pr-6 md:pr-8"
+                            className="flex animate-loop-scroll gap-4 md:gap-6 pr-4 md:pr-6"
                             aria-hidden={copy === 1}
                         >
                             {clientLogos.map((logo, index) => (
                                 <div
                                     key={`${copy}-${index}`}
-                                    className="flex items-center justify-center flex-shrink-0 w-36 h-16 sm:w-48 sm:h-22 md:w-60 md:h-26"
+                                    className="flex items-center justify-center flex-shrink-0 w-48 h-20 sm:w-64 sm:h-26 md:w-80 md:h-32"
                                     title={logo.name}
                                 >
                                     <img

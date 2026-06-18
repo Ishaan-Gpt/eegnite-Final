@@ -17,20 +17,6 @@ const testimonials = [
         src: "/andre.jpg"
     },
     {
-        quote: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
-        name: "Hafedh Bucheery",
-        designation: "Founder, Deepmark",
-        location: "Bahrain",
-        src: "/assets/Hafedh.jpg.jpeg"
-    },
-    {
-        quote: "Working with Anish on one of my projects has genuinely been one of the better vendor decisions I’ve made for our project. They handled SEO and content creation for us, covering everything from keyword-optimized product listings to broader content strategy. The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
-        name: "Himanshu Singh",
-        designation: "Founder, Eshaarya",
-        location: "USA",
-        src: "/assets/Himanshu.jpg.jpeg"
-    },
-    {
         quote: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
         name: "Dario Vettese",
         designation: "Managing Director, PetYu.de",

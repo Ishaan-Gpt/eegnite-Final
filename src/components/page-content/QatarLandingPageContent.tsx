@@ -177,7 +177,7 @@ const qatarFaqs = [
 
 const ctaTitle = (
     <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
-        READY TO SCALE YOUR BUSINESS <br />
+        READY TO SCALE YOUR BUSINESS <br className="hidden md:block" />
         <span className="text-[#FF6105]">IN QATAR?</span>
     </h2>
 );
@@ -187,7 +187,7 @@ export default function QatarLandingPageContent() {
         <main className="min-h-screen bg-white">
             <HomeClient />
             
-            <Navbar />
+            <Navbar basePath="/qatar" />
             
             <div className="relative overflow-hidden noise">
                 <FloatingIconsHero
@@ -210,7 +210,8 @@ export default function QatarLandingPageContent() {
                 heading={
                     <>
                         Brands That Choose Growth <br />
-                        <span className="text-[#FF6105]">Brands That Choose EEGNITE.</span>
+                        Brands That Choose <br className="block md:hidden" />
+                        <span className="text-[#FF6105]">EEGNITE.</span>
                     </>
                 }
             />

@@ -93,7 +93,11 @@ const industriesList = [
     }
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+    basePath?: string;
+}
+
+export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeMenu, setActiveMenu] = useState<'services' | 'industries' | null>(null);
@@ -136,12 +140,30 @@ export default function Navbar() {
         setMobileIndustriesOpen(false);
     }, [pathname]);
 
+    const basePath = propBasePath !== undefined ? propBasePath : (
+        pathname && pathname.startsWith('/kolkata')
+            ? '/kolkata'
+            : pathname && pathname.startsWith('/bahrain')
+            ? '/bahrain'
+            : pathname && pathname.startsWith('/qatar')
+            ? '/qatar'
+            : ''
+    );
+
     const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         setMobileMenuOpen(false);
-        if (!href.startsWith('/#')) return;
-        if (pathname === '/') {
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+        
+        const targetPath = href.substring(0, hashIndex);
+        const targetHash = href.substring(hashIndex);
+        
+        const normPath = targetPath.replace(/\/$/, '');
+        const normCurrent = pathname ? pathname.replace(/\/$/, '') : '';
+        
+        if (normPath === normCurrent || (normPath === '' && normCurrent === '')) {
             e.preventDefault();
-            const el = document.getElementById(href.slice(2));
+            const el = document.getElementById(targetHash.slice(1));
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
@@ -150,15 +172,24 @@ export default function Navbar() {
         setActiveMenu(prev => prev === menu ? null : menu);
     };
 
-    const links = [
-        { name: 'About', href: '/#about' },
-        { name: 'Services', href: '/services' },
-        { name: 'Industries', href: '/industries' },
-        { name: 'Case Studies', href: '/#results' },
-        { name: 'Testimonials', href: '/testimonials' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Contact', href: '/#contact' }
-    ];
+    const links = basePath
+        ? [
+            { name: 'Services', href: '/services' },
+            { name: 'Industries', href: '/industries' },
+            { name: 'Case Studies', href: `${basePath}/#results` },
+            { name: 'Testimonials', href: `${basePath}/#testimonials` },
+            { name: 'Blog', href: '/blog' },
+            { name: 'Contact', href: `${basePath}/#contact` }
+          ]
+        : [
+            { name: 'About', href: '/#about' },
+            { name: 'Services', href: '/services' },
+            { name: 'Industries', href: '/industries' },
+            { name: 'Case Studies', href: '/#results' },
+            { name: 'Testimonials', href: '/testimonials' },
+            { name: 'Blog', href: '/blog' },
+            { name: 'Contact', href: '/#contact' }
+          ];
 
     return (
         <>
@@ -169,7 +200,7 @@ export default function Navbar() {
                     : 'bg-white/70 backdrop-blur-sm border border-white/30'
                     }`}
             >
-                <Link href="/" className="flex items-center gap-2">
+                <Link href={basePath || "/"} className="flex items-center gap-2">
                     <img src="/eegnite-logo.png" alt="EEGNITE" className="h-7 lg:h-8 w-auto" loading="lazy" />
                     <span className={`text-sm lg:text-base font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? 'text-black/60' : 'text-black/80'
                         }`}>
@@ -238,7 +269,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Desktop CTA */}
-                <Link href="/#contact" onClick={(e) => handleHashClick(e, '/#contact')} className={`hidden lg:block text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full font-bold transition-all duration-300 ${scrolled
+                <Link href={basePath ? `${basePath}/#contact` : "/#contact"} onClick={(e) => handleHashClick(e, basePath ? `${basePath}/#contact` : "/#contact")} className={`hidden lg:block text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full font-bold transition-all duration-300 ${scrolled
                     ? 'bg-[#FF6105]/80 hover:bg-[#FF6105]'
                     : 'bg-[#FF6105] hover:bg-[#e55800]'
                     }`}>
@@ -397,8 +428,8 @@ export default function Navbar() {
                                     })}
                                 </div>
                                 <Link
-                                    href="/#contact"
-                                    onClick={(e) => handleHashClick(e, '/#contact')}
+                                    href={basePath ? `${basePath}/#contact` : "/#contact"}
+                                    onClick={(e) => handleHashClick(e, basePath ? `${basePath}/#contact` : "/#contact")}
                                     className="mt-8 block w-full text-center bg-[#FF6105] text-white py-3.5 rounded-full font-bold text-sm uppercase tracking-widest shadow-md hover:bg-[#e55800] transition-colors"
                                 >
                                     Get Started

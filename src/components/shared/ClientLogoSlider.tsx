@@ -31,7 +31,7 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading }:
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-12 w-full overflow-hidden">
             {/* Left 50% - H3 Heading */}
             <div className="w-full lg:w-1/2 flex items-center">
-                <h3 className="text-xl xs:text-2xl sm:text-2xl md:text-[1.65rem] lg:text-[1.75rem] font-extrabold uppercase tracking-tight text-black leading-[1.15] text-left">
+                <h3 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase text-left">
                     {heading ? (
                         heading
                     ) : (
@@ -44,7 +44,7 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading }:
             </div>
  
             {/* Right 50% - Logo Slider */}
-            <div className="w-full lg:w-1/2 flex items-center relative overflow-hidden group select-none py-6 min-h-[100px] lg:min-h-[140px] min-w-0 max-w-full">
+            <div className="w-full lg:w-1/2 flex items-center relative overflow-hidden group select-none py-6 min-h-[180px] lg:min-h-[260px] min-w-0 max-w-full">
                 {/* Gradient Overlays using the custom theme white color #FFFEF8 */}
                 <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
@@ -54,13 +54,13 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading }:
                     {[0, 1].map((copy) => (
                         <div
                             key={copy}
-                            className="flex animate-loop-scroll gap-4 md:gap-6 pr-4 md:pr-6 flex-shrink-0"
+                            className="flex animate-loop-scroll gap-2 md:gap-3 pr-2 md:pr-3 flex-shrink-0"
                             aria-hidden={copy === 1}
                         >
                             {clientLogos.map((logo, index) => (
                                 <div
                                     key={`${copy}-${index}`}
-                                    className="flex items-center justify-center flex-shrink-0 w-32 h-14 sm:w-48 sm:h-20 md:w-64 md:h-26 lg:w-80 lg:h-32"
+                                    className="flex items-center justify-center flex-shrink-0 w-96 h-40 sm:w-[384px] sm:h-[160px] md:w-[480px] md:h-[200px] lg:w-[600px] lg:h-[240px]"
                                     title={logo.name}
                                 >
                                     <img

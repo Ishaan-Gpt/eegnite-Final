@@ -177,77 +177,77 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">By choosing a trusted SEO agency, you gain access to experienced professionals who stay updated with the latest SEO industry trends, ensuring your business is always in line with best practices.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Top 10 SEO Agencies in Kolkata You Can Trust in 2026</h2>
-            <p class="mb-8 text-lg leading-relaxed text-black">Here are the top 10 SEO agencies in Kolkata that have consistently delivered tangible results for their clients, helping businesses achieve their digital marketing goals:</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Here are the top 10 SEO agencies in Kolkata that have consistently delivered tangible results for their clients, helping businesses achieve their digital marketing goals:</p>
 
             <div class="mb-12 p-8 bg-gray-50 rounded-3xl border border-black/5">
                 <h3 class="text-2xl font-bold mb-4 text-[#FF6105] uppercase tracking-tight">1. EEGNITE</h3>
-                <p class="mb-4 text-lg leading-relaxed text-black">EEGNITE stands out as one of Kolkata’s top SEO agencies, recognized for its innovative and results-driven SEO solutions. Specializing in keyword research and strategy making, on-page optimization, technical SEO, content refinement, and link-building activity, EEGNITE crafts customized strategies that deliver long-lasting results for businesses of all sizes. Their SEO experts are dedicated to increasing organic traffic and improving keyword rankings, with a focus on achieving sustainable growth.</p>
-                <p class="mb-4 text-lg leading-relaxed text-black">With a strong track record of success, EEGNITE has become a trusted name in the SEO and digital marketing industry, helping clients achieve significant improvements in online visibility and performance. From optimizing website structures to targeting high-impact keywords, their SEO strategies cover every critical aspect of digital marketing, ensuring comprehensive growth for all businesses.</p>
-                <p class="text-lg leading-relaxed text-black">EEGNITE ensures that your SEO campaigns are always driven by the latest trends and best practices. <a href="/#contact" class="text-[#FF6105] hover:underline font-bold">Connect with them</a> today to see why they are regarded as one of the best SEO agencies in Kolkata nowadays.</p>
+                <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE stands out as one of Kolkata’s top SEO agencies, recognized for its innovative and results-driven SEO solutions. Specializing in keyword research and strategy making, on-page optimization, technical SEO, content refinement, and link-building activity, EEGNITE crafts customized strategies that deliver long-lasting results for businesses of all sizes. Their SEO experts are dedicated to increasing organic traffic and improving keyword rankings, with a focus on achieving sustainable growth.</p>
+                <p class="mb-6 text-lg leading-relaxed text-black">With a strong track record of success, EEGNITE has become a trusted name in the SEO and digital marketing industry, helping clients achieve significant improvements in online visibility and performance. From optimizing website structures to targeting high-impact keywords, their SEO strategies cover every critical aspect of digital marketing, ensuring comprehensive growth for all businesses.</p>
+                <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE ensures that your SEO campaigns are always driven by the latest trends and best practices. <a href="/#contact" class="text-[#FF6105] hover:underline font-bold">Connect with them</a> today to see why they are regarded as one of the best SEO agencies in Kolkata nowadays.</p>
             </div>
 
             <div class="space-y-8 mb-16">
                  <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">02.</span>
+                    <span class="text-black font-bold text-xl">02.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">Kreative Machinez</h4>
-                        <p class="text-black">Known for delivering structured SEO strategies that help businesses enhance search visibility and build a consistent online presence.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">Kreative Machinez</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Known for delivering structured SEO strategies that help businesses enhance search visibility and build a consistent online presence.</p>
                     </div>
                 </div>
                  <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">03.</span>
+                    <span class="text-black font-bold text-xl">03.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">Indus Net Technologies</h4>
-                        <p class="text-black">Offers SEO services focused on improving website performance, user experience, and search visibility across both local and international markets.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">Indus Net Technologies</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Offers SEO services focused on improving website performance, user experience, and search visibility across both local and international markets.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">04.</span>
+                    <span class="text-black font-bold text-xl">04.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">SEO Control</h4>
-                        <p class="text-black">Emphasizes local-focused SEO strategies designed to help businesses improve search rankings and visibility within competitive regional markets.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">SEO Control</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Emphasizes local-focused SEO strategies designed to help businesses improve search rankings and visibility within competitive regional markets.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">05.</span>
+                    <span class="text-black font-bold text-xl">05.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">PromotEdge</h4>
-                        <p class="text-black">Offers a mix of on-page SEO, content-driven strategies, and link-building efforts to support online growth for businesses at different stages.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">PromotEdge</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Offers a mix of on-page SEO, content-driven strategies, and link-building efforts to support online growth for businesses at different stages.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">06.</span>
+                    <span class="text-black font-bold text-xl">06.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">Webguru Infosystems</h4>
-                        <p class="text-black">Uses a data-driven SEO approach to help businesses across various industries improve organic rankings and strengthen online visibility.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">Webguru Infosystems</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Uses a data-driven SEO approach to help businesses across various industries improve organic rankings and strengthen online visibility.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">07.</span>
+                    <span class="text-black font-bold text-xl">07.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">TechShu</h4>
-                        <p class="text-black">Delivers customized SEO and content strategies aimed at attracting targeted traffic and improving conversion performance for growing businesses.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">TechShu</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Delivers customized SEO and content strategies aimed at attracting targeted traffic and improving conversion performance for growing businesses.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">08.</span>
+                    <span class="text-black font-bold text-xl">08.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">GoWebbo</h4>
-                        <p class="text-black">Combines SEO with social media-focused strategies to help businesses strengthen their digital presence across multiple online channels.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">GoWebbo</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Combines SEO with social media-focused strategies to help businesses strengthen their digital presence across multiple online channels.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">09.</span>
+                    <span class="text-black font-bold text-xl">09.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">WebArt Technology</h4>
-                        <p class="text-black">Focuses on local and technical SEO practices to help businesses improve website performance and search visibility.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">WebArt Technology</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Focuses on local and technical SEO practices to help businesses improve website performance and search visibility.</p>
                     </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                    <span class="text-[#2A1810] font-bold text-xl">10.</span>
+                    <span class="text-black font-bold text-xl">10.</span>
                     <div>
-                        <h4 class="text-xl font-bold text-[#2A1810] mb-2">Digital Piloto</h4>
-                        <p class="text-black">Works across local and national SEO initiatives to help businesses increase visibility in competitive search environments through structured digital strategies.</p>
+                        <h4 class="text-xl font-bold text-black mb-2">Digital Piloto</h4>
+                        <p class="mb-6 text-lg leading-relaxed text-black">Works across local and national SEO initiatives to help businesses increase visibility in competitive search environments through structured digital strategies.</p>
                     </div>
                 </div>
             </div>
@@ -255,36 +255,36 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why EEGNITE is the Best SEO Agency in Kolkata</h2>
             <p class="mb-6 text-lg leading-relaxed text-black">When it comes to SEO services in Kolkata, there are many agencies to choose from, but none match EEGNITE's proven ability to drive real, measurable results. Their customized SEO strategies are designed to meet the goal of your business, ensuring improvements in search engine rankings and organic traffic. Here’s why EEGNITE stands out from the rest:</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Proven Track Record</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Proven Track Record</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">Since its inception, EEGNITE has quickly built a strong reputation by consistently delivering results for its clients. The agency has a proven ability to drive organic traffic, improve search engine rankings, and boost conversion rates through customized SEO strategies. With a focus on client success, EEGNITE has established itself as a trusted digital marketing partner for businesses in Kolkata and beyond.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Keyword Research and Strategy Making</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Keyword Research and Strategy Making</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE dives deep into your industry to uncover high-value keywords that attract qualified traffic. Their tailored keyword selection aligns with your business objectives, target audience, and competitive landscape, ensuring you capture the right traffic and drive conversions.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">On-Page SEO</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">On-Page SEO</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE handles on-page SEO by optimizing site structure, page content, meta tags, image alt texts, heading tags, internal linking, and keyword placement. These optimizations help search engines understand a page’s content relevance while improving user experience and engagement.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Off-Page SEO</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Off-Page SEO</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE’s off-page SEO efforts focus on ethical link-building strategies, brand mentions, and site authority development. This helps strengthen domain credibility and supports competitive keyword rankings over time.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Technical SEO</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Technical SEO</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">Technical SEO includes entire site audits, page speed optimization, mobile responsiveness checks, crawl error resolution, and indexing status improvements. EEGNITE handles all critical technical errors that most agencies overlook. These ensure search engines can access and evaluate your website efficiently.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Local SEO</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Local SEO</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">Local SEO services help businesses improve visibility in Google Maps for local-intent searches. EEGNITE’s local SEO strategies optimize your Google Business Profile by local keyword targeting, enhance your online presence through local citation, and earn more reviews. </p>
 
             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE also focuses on next generation SEO models like: </p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">AEO/GEO/Semantic Search Model</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">AEO/GEO/Semantic Search Model</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE leverages advanced AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), and Semantic Search models to boost your brand’s visibility across AI-driven platforms like ChatGPT, Gemini, Perplexity, and others. By aligning your content with voice-based and AI-generated search results, EEGNITE ensures your business stays ahead of evolving search trends, mapping keyword intent and user behavior to drive targeted traffic and higher engagement.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Customer-Centric Approach</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Customer-Centric Approach</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">The key reason EEGNITE is considered one of the best <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">SEO companies in Kolkata</a> is its customer-first approach. The agency takes the time to understand each client’s goals, target audience, and unique challenges. By creating tailored SEO solutions, they ensure businesses get results that align with their specific objectives.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Expert Team of SEO Professionals</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Expert Team of SEO Professionals</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE’s team consists of experienced and certified SEO professionals who stay updated with the latest SEO trends, tools, and algorithms. Their deep understanding of the ever-changing digital landscape allows them to adapt strategies and implement best practices that deliver long-term success for clients.</p>
 
-            <h3 class="text-xl font-bold text-[#2A1810] mt-8 mb-2">Measurable Results and Transparent Reporting</h3>
+            <h3 class="text-xl font-bold text-black mt-8 mb-2">Measurable Results and Transparent Reporting</h3>
             <p class="mb-6 text-lg leading-relaxed text-black">At EEGNITE, results matter. The SEO agency provides detailed analytics and regular performance reports to clients, so they can track the progress of their SEO campaigns. This transparency helps businesses make informed decisions and ensures that the strategies implemented are yielding measurable outcomes.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How to Choose the Best SEO Agency for Your Business</h2>
@@ -322,33 +322,33 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
 
             <div class="space-y-6">
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">1. Why is SEO important for businesses in Kolkata in 2026?</h3>
-                    <p class="text-black">SEO is crucial for businesses in Kolkata in 2026 because online competition has increased significantly, and customers rely heavily on search engines to discover local products and services. With more businesses investing in digital marketing, SEO helps brands improve visibility, attract high-intent traffic, and build long-term credibility. A strong SEO strategy ensures businesses appear in local searches, Google Maps results, and organic listings, making it easier for potential customers to find them at the right moment.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">1. Why is SEO important for businesses in Kolkata in 2026?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">SEO is crucial for businesses in Kolkata in 2026 because online competition has increased significantly, and customers rely heavily on search engines to discover local products and services. With more businesses investing in digital marketing, SEO helps brands improve visibility, attract high-intent traffic, and build long-term credibility. A strong SEO strategy ensures businesses appear in local searches, Google Maps results, and organic listings, making it easier for potential customers to find them at the right moment.</p>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">2. What SEO services do you offer at EEGNITE?</h3>
-                    <p class="text-black">At EEGNITE, we provide comprehensive SEO solutions to enhance your online visibility and drive business growth. Our services include on-page optimization (keyword research, content optimization, internal linking, and metadata enhancements), off-page SEO (ethical link building and brand authority builtup), and technical SEO (website audits, page speed optimization, mobile responsiveness, and crawl issues resolution). For location-based businesses, we also offer local SEO services, including Google Business Profile optimization, local keyword targeting, and local citation.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">2. What SEO services do you offer at EEGNITE?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">At EEGNITE, we provide comprehensive SEO solutions to enhance your online visibility and drive business growth. Our services include on-page optimization (keyword research, content optimization, internal linking, and metadata enhancements), off-page SEO (ethical link building and brand authority builtup), and technical SEO (website audits, page speed optimization, mobile responsiveness, and crawl issues resolution). For location-based businesses, we also offer local SEO services, including Google Business Profile optimization, local keyword targeting, and local citation.</p>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">3. How much does SEO cost in Kolkata?</h3>
-                    <p class="text-black">SEO pricing in Kolkata varies based on your business goals, industry competition, and website needs. At EEGNITE, we offer customized SEO packages designed to fit your specific requirements, ensuring cost-effective solutions that drive results. Contact EEGNITE for a free consultation.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">3. How much does SEO cost in Kolkata?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">SEO pricing in Kolkata varies based on your business goals, industry competition, and website needs. At EEGNITE, we offer customized SEO packages designed to fit your specific requirements, ensuring cost-effective solutions that drive results. Contact EEGNITE for a free consultation.</p>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">4. How long does SEO take to show results?</h3>
-                    <p class="text-black">SEO is a long-term strategy, and results typically start becoming visible within 3 to 6 months, depending on factors such as competition, business niche, website health status, and the SEO efforts implemented. While initial improvements like better indexing and keyword movement may appear earlier, sustainable traffic growth and stable rankings usually require consistent optimization over time.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">4. How long does SEO take to show results?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">SEO is a long-term strategy, and results typically start becoming visible within 3 to 6 months, depending on factors such as competition, business niche, website health status, and the SEO efforts implemented. While initial improvements like better indexing and keyword movement may appear earlier, sustainable traffic growth and stable rankings usually require consistent optimization over time.</p>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">5. Does SEO work for all industries?</h3>
-                    <p class="text-black">SEO works for most industries, but the strategy and timelines may vary depending on keyword competition, audience behavior, and search demand within that industry.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">5. Does SEO work for all industries?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">SEO works for most industries, but the strategy and timelines may vary depending on keyword competition, audience behavior, and search demand within that industry.</p>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">6. Will SEO help my business get local leads?</h3>
-                    <p class="text-black">Yes, by a proper local SEO strategy, businesses can attract nearby customers through Google Maps results, and local intent queries.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">6. Will SEO help my business get local leads?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">Yes, by a proper local SEO strategy, businesses can attract nearby customers through Google Maps results, and local intent queries.</p>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold text-[#2A1810] mb-2">7. How can I get started with an SEO agency in Kolkata?</h3>
-                    <p class="text-black">Starting with an SEO agency in Kolkata begins with understanding your business goals and evaluating your current online performance. Most agencies offer an initial consultation where they assess website health, keyword rankings, and potential growth areas. It's important to ask about their experience, past success stories, and how they tailor strategies to meet your specific needs. A reliable SEO agency like EEGNITE will provide a clear roadmap, including actionable steps, timelines, and methods for tracking performance.</p>
-                     <p class="text-black mt-4">To get started with expert SEO solutions that align with your business goals, contact EEGNITE for a personalized consultation.</p>
+                    <h3 class="text-xl font-bold text-black mb-2">7. How can I get started with an SEO agency in Kolkata?</h3>
+                    <p class="mb-6 text-lg leading-relaxed text-black">Starting with an SEO agency in Kolkata begins with understanding your business goals and evaluating your current online performance. Most agencies offer an initial consultation where they assess website health, keyword rankings, and potential growth areas. It's important to ask about their experience, past success stories, and how they tailor strategies to meet your specific needs. A reliable SEO agency like EEGNITE will provide a clear roadmap, including actionable steps, timelines, and methods for tracking performance.</p>
+                     <p class="mb-6 text-lg leading-relaxed text-black">To get started with expert SEO solutions that align with your business goals, contact EEGNITE for a personalized consultation.</p>
                 </div>
             </div>
         `

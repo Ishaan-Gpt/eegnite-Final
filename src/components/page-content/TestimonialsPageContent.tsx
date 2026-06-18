@@ -116,7 +116,7 @@ const testimonials = [
     {
         name: "Hafedh Bucheery",
         designation: "Founder",
-        company: "Deepmark Branding Agency",
+        company: "Deepmark",
         location: "Bahrain",
         tags: ["SEO"],
         text: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
@@ -127,14 +127,14 @@ const testimonials = [
         designation: "Founder",
         company: "Eshaarya",
         location: "USA",
-        tags: ["Web Design"],
+        tags: ["Web Design", "Web Development", "SEO"],
         text: "Working with Anish on one of my projects has genuinely been one of the better vendor decisions I’ve made for our project. They handled SEO and content creation for us, covering everything from keyword-optimized product listings to broader content strategy. The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
         src: "/assets/Himanshu.jpg.jpeg"
     },
     {
         name: "Andre P.",
         designation: "Director of Digital Operations & Systems",
-        company: "PetStore.Direct",
+        company: "Petstore.direct",
         location: "USA",
         tags: ["SEO"],
         text: "Anish is a highly reliable project manager with a strong analytical mindset. He consistently brings structure to complex projects, ensuring timelines, data, and stakeholders stay aligned. His ability to translate data into actionable insights makes a real impact on decision-making. Beyond his technical skills, Anish is proactive, detail-oriented, and easy to collaborate with someone you can trust to drive projects forward efficiently",
@@ -143,9 +143,9 @@ const testimonials = [
     {
         name: "Dario Vettese",
         designation: "Managing Director",
-        company: "bluefrog pharma GmbH / PetYu",
+        company: "PetYu.de",
         location: "Germany",
-        tags: ["Web Design"],
+        tags: ["Web Development", "Web Design", "SEO"],
         text: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
         src: "/assets/Dario.jpg.jpeg"
     },
@@ -154,14 +154,14 @@ const testimonials = [
         designation: "Founder & CEO",
         company: "Varolab",
         location: "Lithuania",
-        tags: ["SEO"],
+        tags: ["SEO", "Web Design", "Digital Marketing"],
         text: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
         src: "/rokas.jpg"
     },
     {
         name: "Shankar Rathi",
         designation: "CEO",
-        company: "IMAAGE",
+        company: "SRC Farms",
         location: "India",
         tags: ["SEO"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
@@ -172,16 +172,16 @@ const testimonials = [
         designation: "Marketing Product Manager",
         company: "Varolab",
         location: "Lithuania",
-        tags: ["Digital Marketing"],
+        tags: ["SEO", "Web Design", "Digital Marketing"],
         text: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
         src: "/rebeka.jpg"
     },
     {
         name: "Rajeev Ranjan",
         designation: "Founder",
-        company: "Wildwood Exports",
+        company: "Wildwoodexport.com",
         location: "India",
-        tags: ["Digital Marketing"],
+        tags: ["Web Development"],
         text: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
         src: "/rajeev.png"
     },
@@ -190,7 +190,7 @@ const testimonials = [
         designation: "Director",
         company: "Supreme Infratech",
         location: "India",
-        tags: ["Web Design"],
+        tags: ["Web Design", "Web Development"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
         src: ""
     },
@@ -199,7 +199,7 @@ const testimonials = [
         designation: "Director",
         company: "Supreme Infratech",
         location: "India",
-        tags: ["Web Design"],
+        tags: ["Web Design", "Web Development"],
         text: "Hey Eegnite Team and Anish. Just wanted to say huge thanks for the amazing website design! It's sleek, user-friendly, and exactly what we needed. Your team's professionalism and attention to detail really shine through. Highly recommend!",
         src: "/assets/Nudrat (1).jpeg"
     }

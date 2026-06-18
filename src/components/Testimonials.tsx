@@ -12,14 +12,14 @@ const testimonials = [
     {
         quote: "Anish is a highly reliable project manager with a strong analytical mindset. He consistently brings structure to complex projects, ensuring timelines, data, and stakeholders stay aligned. His ability to translate data into actionable insights makes a real impact on decision-making. Beyond his technical skills, Anish is proactive, detail-oriented, and easy to collaborate with someone you can trust to drive projects forward efficiently",
         name: "Andre P.",
-        designation: "Director of Digital Operations & Systems, PetStore.Direct",
+        designation: "Director of Digital Operations & Systems, Petstore.direct",
         location: "USA",
         src: "/andre.jpg"
     },
     {
         quote: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
         name: "Hafedh Bucheery",
-        designation: "Founder, Deepmark Branding Agency",
+        designation: "Founder, Deepmark",
         location: "Bahrain",
         src: "/assets/Hafedh.jpg.jpeg"
     },
@@ -33,7 +33,7 @@ const testimonials = [
     {
         quote: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
         name: "Dario Vettese",
-        designation: "Managing Director, bluefrog pharma / PetYu",
+        designation: "Managing Director, PetYu.de",
         location: "Germany",
         src: "/assets/Dario.jpg.jpeg"
     },
@@ -54,7 +54,7 @@ const testimonials = [
     {
         quote: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
         name: "Rajeev Ranjan",
-        designation: "Founder, Wildwood Exports",
+        designation: "Founder, Wildwoodexport.com",
         location: "India",
         src: "/rajeev.png"
     }

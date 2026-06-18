@@ -11,7 +11,7 @@ const caseStudies = [
         location: "US",
         sector: "Furniture",
         metrics: [
-            { icon: DollarSign, label: "Total Revenue", value: "$2.5M" },
+            { icon: DollarSign, label: "Total Revenue", value: "2.5M" },
             { icon: Target, label: "ROAS", value: "20x" },
             { icon: ShoppingCart, label: "Total Purchases", value: "1,500" }
         ],
@@ -25,7 +25,7 @@ const caseStudies = [
         location: "US",
         sector: "Furniture",
         metrics: [
-            { icon: DollarSign, label: "Total Revenue", value: "$2.0M" },
+            { icon: DollarSign, label: "Total Revenue", value: "2.0M" },
             { icon: Eye, label: "Open Rate", value: "50%" }
         ],
         image: "/result-email.jpg",
@@ -168,10 +168,12 @@ export default function Results({ title, subtitle }: ResultsProps = {}) {
                                             transition={{ duration: 0.5, delay: 0.4 + i * 0.1 + j * 0.1 }}
                                             className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-[#FF6105]/5 to-white border border-[#FF6105]/10"
                                         >
-                                            <metric.icon size={16} className="text-[#FF6105] mb-1.5 md:mb-2 md:w-5 md:h-5" />
-                                            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FF6105]">
-                                                {metric.value}
-                                            </p>
+                                            <div className="flex items-center gap-1.5 md:gap-2 mb-1.5 md:mb-2">
+                                                <metric.icon size={16} className="text-[#FF6105] md:w-5 md:h-5 shrink-0" />
+                                                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FF6105] leading-none">
+                                                    {metric.value}
+                                                </p>
+                                            </div>
                                             <p className="text-[10px] md:text-xs text-black/50 uppercase tracking-wider mt-0.5 md:mt-1">
                                                 {metric.label}
                                             </p>

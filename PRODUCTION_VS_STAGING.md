@@ -73,7 +73,7 @@ Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
 ### Step 3: Build with Production URL
 ```bash
 # Set environment variable
-NEXT_PUBLIC_SITE_URL=https://eegnite.com npm run build
+NEXT_PUBLIC_SITE_URL=https://www.eegnite.com npm run build
 
 # This ensures the layout generates proper meta tags
 ```

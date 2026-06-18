@@ -167,7 +167,7 @@ When you're ready to deploy to production:
    ```
 3. Ensure production robots.txt allows indexing
 4. Remove or replace the `.htaccess` to remove the X-Robots-Tag header
-5. Set `NEXT_PUBLIC_SITE_URL=https://eegnite.com`
+5. Set `NEXT_PUBLIC_SITE_URL=https://www.eegnite.com`
 6. Deploy to your production domain
 
 ---

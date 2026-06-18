@@ -186,15 +186,6 @@ const testimonials = [
         src: "/rajeev.png"
     },
     {
-        name: "Sankalp Kedia",
-        designation: "Director",
-        company: "Supreme Infratech",
-        location: "India",
-        tags: ["Web Design", "Web Development"],
-        text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: ""
-    },
-    {
         name: "Nudrat Khan",
         designation: "Director",
         company: "Supreme Infratech",

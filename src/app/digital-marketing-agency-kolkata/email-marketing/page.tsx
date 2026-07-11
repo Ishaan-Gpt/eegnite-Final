@@ -51,7 +51,7 @@ export default function KolkataEmailPage() {
                 serviceCategory="Email Marketing Services"
                 breadcrumbs={[
                     { position: 1, name: "Home", url: "https://www.eegnite.com/" },
-                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/kolkata/" },
+                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/" },
                     { position: 3, name: "Email Marketing", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/email-marketing/" }
                 ]}
                 faqs={EMAIL_FAQS.map(f => ({ question: f.q, answer: f.a }))}

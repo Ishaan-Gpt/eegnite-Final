@@ -51,7 +51,7 @@ export default function KolkataPPCPage() {
                 serviceCategory="PPC Advertising & Paid Acquisition Services"
                 breadcrumbs={[
                     { position: 1, name: "Home", url: "https://www.eegnite.com/" },
-                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/kolkata/" },
+                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/" },
                     { position: 3, name: "PPC Management", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/ppc-management/" }
                 ]}
                 faqs={PPC_FAQS.map(f => ({ question: f.q, answer: f.a }))}

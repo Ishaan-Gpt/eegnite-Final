@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     title: "Revenue Driven Digital Marketing Agency in Kolkata | EEGNITE",
     description: "Looking for the best digital marketing agency in Kolkata? EEGNITE delivers SEO, PPC, social media, and performance marketing built for real business growth. Book your free strategy call.",
     alternates: {
-        canonical: "https://www.eegnite.com/kolkata/",
+        canonical: "https://www.eegnite.com/digital-marketing-agency-kolkata/",
     },
     openGraph: {
         title: "Revenue Driven Digital Marketing Agency in Kolkata | EEGNITE",
         description: "Looking for the best digital marketing agency in Kolkata? EEGNITE delivers SEO, PPC, social media, and performance marketing built for real business growth. Book your free strategy call.",
-        url: "https://www.eegnite.com/kolkata/",
+        url: "https://www.eegnite.com/digital-marketing-agency-kolkata/",
         type: "website",
         images: [
             {
@@ -61,13 +61,13 @@ export default function KolkataPage() {
     return (
         <>
             <UnifiedSchemaJsonLd
-                pageUrl="https://www.eegnite.com/kolkata/"
+                pageUrl="https://www.eegnite.com/digital-marketing-agency-kolkata/"
                 pageTitle="Revenue Driven Digital Marketing Agency in Kolkata | EEGNITE"
                 pageDescription="Looking for the best digital marketing agency in Kolkata? EEGNITE delivers SEO, PPC, social media, and performance marketing built for real business growth. Book your free strategy call."
                 pageType="location"
                 breadcrumbs={[
                     { position: 1, name: "Home", url: "https://www.eegnite.com/" },
-                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/kolkata/" }
+                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/" }
                 ]}
                 faqs={kolkataFaqs}
             />

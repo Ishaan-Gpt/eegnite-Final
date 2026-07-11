@@ -141,8 +141,8 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
     }, [pathname]);
 
     const basePath = propBasePath !== undefined ? propBasePath : (
-        pathname && pathname.startsWith('/kolkata')
-            ? '/kolkata'
+        pathname && pathname.startsWith('/digital-marketing-agency-kolkata')
+            ? '/digital-marketing-agency-kolkata'
             : pathname && pathname.startsWith('/bahrain')
             ? '/bahrain'
             : pathname && pathname.startsWith('/qatar')

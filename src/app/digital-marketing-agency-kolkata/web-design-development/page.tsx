@@ -51,7 +51,7 @@ export default function KolkataWebdevPage() {
                 serviceCategory="Web Design & Development Services"
                 breadcrumbs={[
                     { position: 1, name: "Home", url: "https://www.eegnite.com/" },
-                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/kolkata/" },
+                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/" },
                     { position: 3, name: "Web Design & Development", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/web-design-development/" }
                 ]}
                 faqs={WEBDEV_FAQS.map(f => ({ question: f.q, answer: f.a }))}

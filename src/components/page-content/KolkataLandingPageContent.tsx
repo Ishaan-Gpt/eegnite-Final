@@ -187,7 +187,7 @@ export default function KolkataLandingPageContent() {
         <main className="min-h-screen bg-white">
             <HomeClient />
             
-            <Navbar basePath="/kolkata" />
+            <Navbar basePath="/digital-marketing-agency-kolkata" />
             
             <div className="relative overflow-hidden noise">
                 <FloatingIconsHero
@@ -230,7 +230,7 @@ export default function KolkataLandingPageContent() {
                 subtitle="Every service EEGNITE delivers is performance-driven and connected to your revenue goal. From organic search and performance marketing to paid ads and web development - one team, one integrated strategy, built for Kolkata."
                 customDescriptions={customServicesDescriptions}
                 customLinks={{
-                    "01": "/kolkata/seo-services",
+                    "01": "/digital-marketing-agency-kolkata/seo-services",
                     "02": "/digital-marketing-agency-kolkata/social-media-marketing",
                     "03": "/digital-marketing-agency-kolkata/ppc-management",
                     "04": "/digital-marketing-agency-kolkata/web-design-development",

@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     title: "Best SEO Solutions For Kolkata Businesses | EEGNITE",
     description: "EEGNITE delivers SEO services in Kolkata built for real rankings and real traffic. Local SEO, technical fixes, content, and link building. Get your free SEO audit today.",
     alternates: {
-        canonical: "https://www.eegnite.com/kolkata/seo-services/",
+        canonical: "https://www.eegnite.com/digital-marketing-agency-kolkata/seo-services/",
     },
     openGraph: {
         title: "Best SEO Solutions For Kolkata Businesses | EEGNITE",
         description: "EEGNITE delivers SEO services in Kolkata built for real rankings and real traffic. Local SEO, technical fixes, content, and link building. Get your free SEO audit today.",
-        url: "https://www.eegnite.com/kolkata/seo-services/",
+        url: "https://www.eegnite.com/digital-marketing-agency-kolkata/seo-services/",
         type: "website",
         images: [
             {
@@ -57,7 +57,7 @@ export default function KolkataSeoPage() {
     return (
         <>
             <UnifiedSchemaJsonLd
-                pageUrl="https://www.eegnite.com/kolkata/seo-services/"
+                pageUrl="https://www.eegnite.com/digital-marketing-agency-kolkata/seo-services/"
                 pageTitle="Best SEO Solutions For Kolkata Businesses | EEGNITE"
                 pageDescription="EEGNITE delivers SEO services in Kolkata built for real rankings and real traffic. Local SEO, technical fixes, content, and link building. Get your free SEO audit today."
                 pageType="service"
@@ -66,8 +66,8 @@ export default function KolkataSeoPage() {
                 serviceCategory="SEO Services"
                 breadcrumbs={[
                     { position: 1, name: "Home", url: "https://www.eegnite.com/" },
-                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/kolkata/" },
-                    { position: 3, name: "SEO Services", url: "https://www.eegnite.com/kolkata/seo-services/" }
+                    { position: 2, name: "Kolkata", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/" },
+                    { position: 3, name: "SEO Services", url: "https://www.eegnite.com/digital-marketing-agency-kolkata/seo-services/" }
                 ]}
                 faqs={kolkataSeoFaqs}
             />

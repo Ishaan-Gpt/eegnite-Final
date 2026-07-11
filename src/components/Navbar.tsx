@@ -201,7 +201,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
                     }`}
             >
                 <Link href={basePath || "/"} className="flex items-center gap-2">
-                    <img src="/eegnite-logo.png" alt="EEGNITE" className="h-7 lg:h-8 w-auto" loading="lazy" />
+                    <img src="/images/logos/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-7 lg:h-8 w-auto" loading="lazy" />
                     <span className={`text-sm lg:text-base font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? 'text-black/60' : 'text-black/80'
                         }`}>
                         EEGNITE<sup className="text-[8px] lg:text-[10px] ml-0.5">™</sup>

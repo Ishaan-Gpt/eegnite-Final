@@ -10,21 +10,21 @@ interface ClientLogoSliderProps {
 
 export function ClientLogoSlider({ className = "", innerOnly = false, heading }: ClientLogoSliderProps) {
     const clientLogos = [
-        { name: "Al Jiwan Jewelry", src: "/logos/al-jiwan-jewelry-logo.png" },
-        { name: "Aquagear Australia", src: "/logos/aquagear-australia-logo.png" },
-        { name: "bluefrog pharma", src: "/logos/bluefrog-pharma-logo.png" },
-        { name: "Cajun Legacy", src: "/logos/cajun-legacy-logo.webp" },
-        { name: "Cary Implant & General Dentistry", src: "/logos/cary-implant-and-general-dentistry-logo.png" },
-        { name: "Deepmark Branding Agency", src: "/logos/deepmark-logo.png" },
-        { name: "Eshaarya", src: "/logos/eshaarya-logo.webp" },
-        { name: "House of Aluna", src: "/logos/house-of-aluna-logo.png" },
-        { name: "Interio Lounge", src: "/logos/interio-lounge-logo.png" },
-        { name: "PetStore.Direct", src: "/logos/petstore-direct_logo.webp" },
-        { name: "Pine Branding", src: "/logos/pine-branding-logo.png" },
-        { name: "SRC Farms", src: "/logos/src-farms-logo.webp" },
-        { name: "Varolab", src: "/logos/varolab-logo.webp" },
-        { name: "Wild Wood Exports", src: "/logos/wild-wood-exports-logo.png" },
-        { name: "Xendit", src: "/logos/xendit-logo.webp" }
+        { name: "Al Jiwan Jewelry", src: "/images/logos/al-jiwan-jewelry-logo.png" },
+        { name: "Aquagear Australia", src: "/images/logos/aquagear-australia-logo.png" },
+        { name: "bluefrog pharma", src: "/images/logos/bluefrog-pharma-logo.png" },
+        { name: "Cajun Legacy", src: "/images/logos/cajun-legacy-logo.webp" },
+        { name: "Cary Implant & General Dentistry", src: "/images/logos/cary-implant-and-general-dentistry-logo.png" },
+        { name: "Deepmark Branding Agency", src: "/images/logos/deepmark-logo.png" },
+        { name: "Eshaarya", src: "/images/logos/eshaarya-logo.webp" },
+        { name: "House of Aluna", src: "/images/logos/house-of-aluna-logo.png" },
+        { name: "Interio Lounge", src: "/images/logos/interio-lounge-logo.png" },
+        { name: "PetStore.Direct", src: "/images/logos/petstore-direct_logo.webp" },
+        { name: "Pine Branding", src: "/images/logos/pine-branding-logo.png" },
+        { name: "SRC Farms", src: "/images/logos/src-farms-logo.webp" },
+        { name: "Varolab", src: "/images/logos/varolab-logo.webp" },
+        { name: "Wild Wood Exports", src: "/images/logos/wild-wood-exports-logo.png" },
+        { name: "Xendit", src: "/images/logos/xendit-logo.webp" }
     ];
 
     const content = (

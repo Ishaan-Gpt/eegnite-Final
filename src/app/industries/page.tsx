@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Industry Marketing Services"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Scale Your Business with Expert Industry Marketing | EEGNITE",
         description: "Dominate your sector with EEGNITE's customized B2B, eCommerce, Retail, Medical, Manufacturing, and Professional Services digital marketing systems built to scale pipeline and margin.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Social Media Marketing"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Results-Driven Social Media Marketing Agency | EEGNITE",
         description: "Drive real growth with EEGNITE’s social media marketing services. From content strategy and paid social ads to community management and analytics, we turn social media into a revenue-driving channel for your business.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

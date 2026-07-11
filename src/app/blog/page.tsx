@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE Insights Blog"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Digital Marketing Insights & Trends 2026 | EEGNITE",
         description: "Stay ahead with the latest digital marketing insights, SEO strategies, and growth hacks from EEGNITE's expert team.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

@@ -14,35 +14,35 @@ const testimonials = [
         name: "Andre P.",
         designation: "Director of Digital Operations & Systems, Petstore.direct",
         location: "USA",
-        src: "/andre.webp"
+        src: "/images/team/andre.webp"
     },
     {
         quote: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
         name: "Dario Vettese",
         designation: "Managing Director, PetYu.de",
         location: "Germany",
-        src: "/assets/Dario.jpg.jpeg"
+        src: "/images/team/Dario.jpg.jpeg"
     },
     {
         quote: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
         name: "Rokas Bartasius",
         designation: "Founder & CEO, Varolab",
         location: "Lithuania",
-        src: "/rokas.jpg"
+        src: "/images/team/rokas.jpg"
     },
     {
         quote: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
         name: "Rebeka Jasilionytė",
         designation: "Marketing Product Manager, Varolab",
         location: "Lithuania",
-        src: "/rebeka.jpg"
+        src: "/images/team/rebeka.jpg"
     },
     {
         quote: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
         name: "Rajeev Ranjan",
         designation: "Founder, Wildwoodexport.com",
         location: "India",
-        src: "/rajeev.webp"
+        src: "/images/team/rajeev.webp"
     }
 ];
 

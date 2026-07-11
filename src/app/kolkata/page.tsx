@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Digital Marketing Agency in Kolkata"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Revenue Driven Digital Marketing Agency in Kolkata | EEGNITE",
         description: "Looking for the best digital marketing agency in Kolkata? EEGNITE delivers SEO, PPC, social media, and performance marketing built for real business growth. Book your free strategy call.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

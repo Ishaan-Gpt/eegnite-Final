@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Email Marketing"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Revenue-Driven Email Marketing Services | EEGNITE",
         description: "Nurture leads, recover cart revenue, and build automated customer relationships. EEGNITE's email marketing services include deliverability setups, flow automation, and campaign management designed to maximize ROI.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

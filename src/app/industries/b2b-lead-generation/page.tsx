@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - B2B & Lead Generation"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Pipeline Growth B2B & Lead Generation Marketing Services | EEGNITE",
         description: "Stop chasing cold leads. EEGNITE builds B2B marketing systems that attract decision-makers, generate qualified opportunities, and fuel predictable revenue growth.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

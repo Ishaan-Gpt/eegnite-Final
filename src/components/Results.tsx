@@ -15,7 +15,7 @@ const caseStudies = [
             { icon: Target, label: "ROAS", value: "20x" },
             { icon: ShoppingCart, label: "Total Purchases", value: "1,500" }
         ],
-        image: "/result-meta.jpg",
+        image: "/images/graphics/result-meta.jpg",
         color: "#FF6105"
     },
     {
@@ -28,7 +28,7 @@ const caseStudies = [
             { icon: DollarSign, label: "Total Revenue", value: "2.0M" },
             { icon: Eye, label: "Open Rate", value: "50%" }
         ],
-        image: "/result-email.webp",
+        image: "/images/graphics/result-email.webp",
         color: "#FF8040"
     },
     {
@@ -42,7 +42,7 @@ const caseStudies = [
             { icon: TrendingUp, label: "Position", value: "Rank 1" }
         ],
         description: "Ranked the website for more than 36 keywords on Rank 1",
-        image: "/result-seo.webp",
+        image: "/images/graphics/result-seo.webp",
         color: "#FFB080"
     }
 ];

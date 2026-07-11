@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     icons: {
         icon: [
             { url: '/favicon.ico', sizes: 'any' },
-            { url: '/eegnite-logo.png', type: 'image/png' },
+            { url: '/images/logos/images/logos/eegnite-logo.png', type: 'image/png' },
         ],
-        apple: '/eegnite-logo.png',
+        apple: '/images/logos/images/logos/eegnite-logo.png',
     },
     openGraph: {
         title: "EEGNITE | Digital Marketing Agency in India",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: '/eegnite-logo.png',
+                url: '/images/logos/images/logos/eegnite-logo.png',
                 width: 1200,
                 height: 630,
                 alt: 'EEGNITE - Digital Marketing Agency',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: "EEGNITE | Digital Marketing Agency in India",
         description: "Strategy. Design. Results. All In One Place.",
-        images: ['/eegnite-logo.png'],
+        images: ['/images/logos/images/logos/eegnite-logo.png'],
     },
     alternates: {
         canonical: siteUrl,

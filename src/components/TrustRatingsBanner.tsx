@@ -8,7 +8,7 @@ export default function TrustRatingsBanner() {
             name: "LinkedIn",
             logo: (
                 <img 
-                    src="/icons/linkedin.png" 
+                    src="/images/icons/linkedin.png" 
                     alt="LinkedIn" 
                     className="w-7 h-7 object-contain" 
                 />
@@ -21,7 +21,7 @@ export default function TrustRatingsBanner() {
             name: "Trustpilot",
             logo: (
                 <img 
-                    src="/icons/trustpilot.png" 
+                    src="/images/icons/trustpilot.png" 
                     alt="Trustpilot" 
                     className="w-7 h-7 object-contain" 
                 />
@@ -34,7 +34,7 @@ export default function TrustRatingsBanner() {
             name: "GBP",
             logo: (
                 <img 
-                    src="/icons/gmb.webp" 
+                    src="/images/icons/gmb.webp" 
                     alt="Google Business Profile" 
                     className="w-7 h-7 object-contain" 
                 />

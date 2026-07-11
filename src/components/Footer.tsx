@@ -85,7 +85,7 @@ export default function Footer() {
                         {/* Brand */}
                         <div className="lg:col-span-2 space-y-6">
                             <div className="flex items-center gap-3">
-                                <img src="/eegnite-logo.png" alt="EEGNITE" className="h-10 w-auto" loading="lazy" />
+                                <img src="/images/logos/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-10 w-auto" loading="lazy" />
                                 <span className="text-xl font-bold text-[#FF6105] uppercase tracking-wider items-start flex">
                                     EEGNITE<sup className="text-[10px] ml-0.5 leading-none mt-1">™</sup>
                                 </span>

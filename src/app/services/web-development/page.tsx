@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Web Design and Development"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Conversion-Focused Web Design and Development Agency | EEGNITE",
         description: "Create high-performing websites with EEGNITE. From UI/UX design and eCommerce development to WordPress development and CRO-driven experiences, we build websites engineered to convert visitors into customers.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/images/logos/eegnite-logo.png"]
     }
 };
 

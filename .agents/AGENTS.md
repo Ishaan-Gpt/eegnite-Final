@@ -30,4 +30,8 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 ## Deployment Constraints
 - **FTP Upload Mode**: The user uploads files directly via FTP using FileZilla. They do NOT have direct hosting control panel access to unzip/extract archives on the server. Do NOT suggest zip uploads or server-side extraction unless explicitly asked.
 
+## Temporary Files & Scratch Space
+- **Directory**: Store all temporary files, scratch scripts, testing logs, or temporary code helpers in the `temp_scratch/` directory at the project root. Never write temporary helper files directly to the root folder or other source folders.
+
+
 

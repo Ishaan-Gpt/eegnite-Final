@@ -7,12 +7,12 @@ import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import { ServiceHero } from "@/components/shared/ServiceHero";
-import { ServiceComparison } from "@/components/shared/ServiceComparison";
-import { FullServiceGrid } from "@/components/shared/FullServiceGrid";
+import { IndustryProblemSolution } from "@/components/shared/IndustryProblemSolution";
 import { ServiceProcess } from "@/components/shared/ServiceProcess";
 import { ServiceTimeline } from "@/components/shared/ServiceTimeline";
 import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 import { ToolsSection } from "@/components/shared/ToolsSection";
+import { ClientLogoSlider } from "@/components/shared/ClientLogoSlider";
 
 // Custom lightweight inline SVGs to replace lucide-react imports (following AGENTS.md rules)
 const CpuIcon = (props: any) => (
@@ -71,6 +71,19 @@ const ChevronRightIcon = (props: any) => (
     </svg>
 );
 
+const CustomXIcon = (props: any) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={props.size || "24"} height={props.size || "24"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+);
+
+const CustomCheckIcon = (props: any) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={props.size || "24"} height={props.size || "24"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <polyline points="20 6 9 17 4 12" />
+    </svg>
+);
+
 // --- STATIC SECTIONS (borrowed from SEO-services layout) ---
 
 function IndustriesSection() {
@@ -114,7 +127,7 @@ function IndustriesSection() {
 
 function ExpectationSection() {
     const expectations = [
-        { title: "Increased Organic & AI Visibility", desc: "Appear where customers are actively searching - whether they are using traditional search engines or asking AI assistants like ChatGPT and Gemini." },
+        { title: "Increased Organic & AI Visibility", desc: "Appear where customers are actively searching-whether they are using traditional search engines or asking AI assistants like ChatGPT and Gemini." },
         { title: "More Qualified Leads", desc: "Attract prospects with genuine buying intent by optimising for complex, conversational long-tail queries used in AI-driven search." },
         { title: "Lower Customer Acquisition Costs", desc: "Reduce dependence on rising ad budgets by securing permanent, organic real estate in both standard search indexes and LLM knowledge bases." },
         { title: "Stronger Brand Authority", desc: "Build trust and credibility, ensuring your brand is recognised as a cited, trusted source by both human users and AI systems." },
@@ -195,63 +208,79 @@ const faqs = [
 ];
 
 export default function KolkataSeoPageContent() {
-    // 3-item tuple mapped from the Google Doc problem statement (strictly typed for ServiceComparisonProps)
-    const kolkataProblems: [{ title: string; desc: string }, { title: string; desc: string }, { title: string; desc: string }] = [
+    // 4-item list mapped exactly from the Google Doc problem statement
+    const kolkataProblems = [
         {
-            title: "Technical Barriers & Missing Local Citations",
-            desc: "Slow performance, crawl errors, and missing local citations or Google Maps entries keep your brand hidden from traditional Google search and location-aware AI Overviews."
+            icon: CustomXIcon as any,
+            title: "Technical Issues Search Engines and AI Cannot Get Past",
+            desc: "Slow servers, broken internal links, and poor mobile performance mean Google cannot properly crawl your site. Without clean schema markup, LLMs also fail to interpret and trust your data."
         },
         {
-            title: "Content Disconnected From User Intent",
-            desc: "Writing search-thin content focused on your business details rather than answering the exact keywords or conversational queries Kolkata buyers type into Google or ask ChatGPT."
+            icon: CustomXIcon as any,
+            title: "Content That Misses Search Intent and LLM Context",
+            desc: "Pages are written about your business, not what customers actually type into Google or ask ChatGPT. If your content lacks depth and entity-clear structures, AI systems will bypass you entirely."
         },
         {
-            title: "No Authority Trust & Citation Signals",
-            desc: "Lacking authoritative editorial backlinks and digital citations. Without these trust factors, traditional algorithms and AI recommendation models completely bypass your domain."
+            icon: CustomXIcon as any,
+            title: "Zero Local SEO and AI Visibility Foundation",
+            desc: "No optimised Google Business Profile, no local citations, and no location pages. Without these, you remain invisible to \"near me\" mobile searches, Google Maps, and location-aware AI Overviews."
+        },
+        {
+            icon: CustomXIcon as any,
+            title: "No Authority or AI Trust Signals",
+            desc: "Search engines and LLMs only recommend brands they trust. Without quality backlinks, digital citations, and consistent topical authority, your site lacks the credibility needed to be cited as a top source."
         }
     ];
 
-    // 3-item tuple mapped from the Google Doc solutions (strictly typed for ServiceComparisonProps)
-    const kolkataSolutions: [{ title: string; desc: string }, { title: string; desc: string }, { title: string; desc: string }] = [
+    // 4-item list mapped exactly from the Google Doc solutions
+    const kolkataSolutions = [
         {
-            title: "Technical Alignment & Maps Dominance",
-            desc: "Rebuilding page speeds, crawl indexes, schema codes, and optimizing Google Business profiles and Kolkata directory citations to secure high rankings on local map packs and AI indexes."
+            icon: CustomCheckIcon as any,
+            title: "Full Technical SEO and AI-Readiness Audit",
+            desc: "We resolve speed, crawlability, mobile usability, and schema markup. This builds a rock-solid foundation so both traditional search crawlers and AI models can easily read, index, and trust your website."
         },
         {
-            title: "Intent-Focused & Entity-Rich Content Strategy",
-            desc: "Conducting search-intent audits to map out customer questions and engineering rich, topic-cluster landing pages that rank on Google search and answer Conversational AI prompts."
+            icon: CustomCheckIcon as any,
+            title: "Search-Intent and LLM Content Strategy",
+            desc: "We research exactly how your Kolkata customers search; whether through keywords or conversational AI prompts - and build deep, entity-optimised content that answers those specific queries."
         },
         {
-            title: "Authority Backlinks & Digital Citation Growth",
-            desc: "Acquiring premium backlinks via editorial outreach to build high domain authority, establishing your site as a trusted, citation-worthy source for Google, ChatGPT, and Gemini."
+            icon: CustomCheckIcon as any,
+            title: "Local SEO and Map Pack Optimisation",
+            desc: "We optimise your Google Business Profile, build Kolkata-specific directory citations, and design location pages to secure your spot in local map packs and location-based AI search results."
+        },
+        {
+            icon: CustomCheckIcon as any,
+            title: "Authority Building and AI Citation Growth",
+            desc: "We execute outreach-based link building from relevant, trustworthy sources. This drives up your traditional domain authority while establishing your brand as a highly credible, cited source across AI platforms."
         }
     ];
 
-    // Services detailed for Kolkata using FullServiceGridProps
+    // Services detailed for Kolkata using custom components
     const services = [
         {
             title: "KEYWORD RESEARCH AND COMPETITOR ANALYSIS",
-            icon: SearchIcon as any,
+            icon: SearchIcon,
             description: "We identify the keywords and AI-driven search opportunities your customers use, helping you outrank competitors and stay visible across Google and AI platforms that influence buying decisions."
         },
         {
-            title: "LOCAL SEO AND GOOGLE MAPS PACK",
-            icon: MapIcon as any,
+            title: "LOCAL SEO, GOOGLE BUSINESS PROFILE AND AI VISIBILITY",
+            icon: MapIcon,
             description: "We optimise your Google Business Profile, Kolkata-specific directories, and location pages. This drives higher visibility in local search, Google Maps, AI Overviews, and AI-powered search engines."
         },
         {
-            title: "TECHNICAL SEO AUDIT AND SOLUTIONS",
-            icon: CpuIcon as any,
+            title: "TECHNICAL SEO AUDIT AND FIXES",
+            icon: CpuIcon,
             description: "We fix site speed, mobile usability, schema, and crawlability. This solid technical foundation ensures traditional search engines and AI models easily understand, index, and trust your website."
         },
         {
-            title: "CONTENT AND LLM STRATEGY",
-            icon: ZapIcon as any,
+            title: "CONTENT, ON-PAGE OPTIMISATION AND LLM STRATEGY",
+            icon: ZapIcon,
             description: "We build demand-driven pages optimised for traditional rankings and AI answers. By strengthening entities and topical authority, we boost your visibility across Google, ChatGPT, and Gemini."
         },
         {
-            title: "LINK BUILDING AND CITATION GROWTH",
-            icon: LinkIcon as any,
+            title: "LINK BUILDING AND AUTHORITY GROWTH",
+            icon: LinkIcon,
             description: "We acquire high-quality, relevant backlinks through targeted outreach. This strengthens your domain authority, drives higher search rankings, and establishes your brand as a trusted source for AI systems."
         }
     ];
@@ -271,7 +300,7 @@ export default function KolkataSeoPageContent() {
         { t: "STAGE 3: AUTHORITY BUILDING & PERFORMANCE SCALE", d: "Weeks 9+: Outreach link acquisition campaigns, map pack ranking scale, position monitoring, and conversion tracking audits to tie visibility to enquiries." },
     ];
 
-    // Choose us reasons mapped to key Kolkata achievements from doc
+    // Choose us reasons mapped to key achievements from doc
     const chooseReasons = [
         { id: "01", title: "8 YEARS OF EXCELLENCE", desc: "For more than eight years, we've helped businesses stay visible across Google and today's AI-powered search platforms." },
         { id: "02", title: "95% CLIENT RETENTION", desc: "Clients stay because the rankings we build keep compounding long after the first contract ends, not because they're locked in." },
@@ -295,17 +324,56 @@ export default function KolkataSeoPageContent() {
                     }
                 />
 
-                {/* 2. Comparison */}
-                <ServiceComparison
-                    title={<>REAL CAUSE BEHIND YOUR KOLKATA <span className="text-[#FF6105]">SEO PROBLEM</span></>}
-                    description="Most SEO problems are not visible on the surface. They are structural, keeping you hidden from both search engines and AI engines."
-                    firstSolutionTitle="EEGNITE SOLUTIONS"
-                    firstSolutionItems={kolkataSolutions}
-                    secondSolutionTitle="TRADITIONAL OBSTACLES"
-                    secondSolutionItems={kolkataProblems}
+                {/* 2. Client Logo Slide */}
+                <ClientLogoSlider label="Brands That Choose Growth. Brands That Choose EEGNITE." />
+
+                {/* 3. Signs Your Business Needs Service */}
+                <section className="py-20 md:py-32 bg-[#F5F3EE] border-y border-black/5">
+                    <div className="max-w-[1400px] mx-auto px-6">
+                        <div className="max-w-4xl mb-12 md:mb-16">
+                            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4">
+                                SIGNS YOUR KOLKATA BUSINESS <span className="text-[#FF6105]">NEEDS SEO RIGHT NOW</span>
+                            </h2>
+                            <p className="text-black/60 text-base md:text-xl font-medium">
+                                If any of these sound familiar, SEO is not optional. It is overdue.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            {[
+                                "Your website gets traffic but zero enquiries or calls.",
+                                "Leads stop completely the moment your ad budget ends.",
+                                "Competitors dominate Google Maps, ChatGPT, and Gemini recommendations.",
+                                "Outdated websites get ignored by Google and AI models.",
+                                "You lack a permanent, compounding source of organic traffic.",
+                                "New Kolkata locations remain completely invisible to local buyers."
+                            ].map((sign, idx) => (
+                                <div 
+                                    key={idx}
+                                    className="bg-white p-8 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/30 transition-all duration-300 flex items-start gap-4 shadow-sm hover:shadow-md"
+                                >
+                                    <span className="text-[#FF6105] font-bold text-lg bg-[#FF6105]/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                                        {idx + 1}
+                                    </span>
+                                    <p className="text-black/80 text-sm md:text-base font-semibold leading-relaxed pt-0.5">
+                                        {sign}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* 4. Pain Points & EEGNITE Solutions (Fidelity and Symmetry restored) */}
+                <IndustryProblemSolution
+                    problemsTitle="REAL CAUSE BEHIND YOUR KOLKATA BUSINESS SEO PROBLEM"
+                    problemsSubtitle="Most SEO problems are not visible on the surface. They are structural, keeping you hidden from both search engines and AI engines."
+                    solutionsTitle="HOW EEGNITE FIXES IT"
+                    solutionsSubtitle="Every fix is tied to a ranking, traffic, and AI-visibility outcome, not a checklist item."
+                    problems={kolkataProblems}
+                    solutions={kolkataSolutions}
                 />
 
-                {/* 3. Local Opportunity/Signs Grid */}
+                {/* 5. Local Opportunity/Signs Grid */}
                 <section className="py-16 md:py-24 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -343,26 +411,68 @@ export default function KolkataSeoPageContent() {
                     </div>
                 </section>
 
-                {/* 4. Service Grid */}
-                <FullServiceGrid
-                    badgeText="Each part of our SEO service is built to solve a specific gap in your current search visibility."
-                    title={<>EEGNITE SEO SERVICES FOR <span className="text-[#FF6105]">KOLKATA BUSINESSES</span></>}
-                    description="We align keyword search, speed, content, local map packs, and outreach backlinks to drive high-impact organic conversions."
-                    services={services}
-                    ctaText="explore our full SEO Services"
-                    ctaLink="/services/seo/"
-                />
+                {/* 6. Services Grid Section (Symmetrical 3+2 Centered Card Layout & Heading Wrap Correction) */}
+                <section className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">
+                    <div className="mx-auto w-full max-w-[1400px] relative z-10">
+                        <div className="max-w-4xl mb-12 md:mb-16 md:mx-auto md:text-center">
+                            <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 block text-left md:text-center leading-normal">
+                                Each part of our SEO service is built to solve a specific gap in your current search visibility.
+                            </p>
+                            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 text-left md:text-center leading-[1.2]">
+                                EEGNITE SEO SERVICES FOR <br className="hidden md:inline" />
+                                <span className="text-[#FF6105]">KOLKATA BUSINESSES</span>
+                            </h2>
+                        </div>
 
-                {/* 5. Industries Section */}
+                        {/* First 3 cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center max-w-6xl mx-auto">
+                            {services.slice(0, 3).map((service, idx) => (
+                                <div key={idx} className="bg-white border border-black/5 p-8 rounded-[2rem] hover:border-[#FF6105] hover:shadow-2xl transition-all duration-300 group relative flex flex-col h-full hover:scale-[1.02]">
+                                    <div className="w-16 h-16 bg-[#FFF5F0] rounded-2xl flex items-center justify-center text-[#FF6105] mb-6 group-hover:scale-110 transition-transform">
+                                        <service.icon size={32} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold uppercase mb-4 text-black group-hover:text-[#FF6105] transition-colors">{service.title}</h3>
+                                    <p className="text-black/60 text-sm leading-relaxed">{service.description}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Second 2 cards centered */}
+                        <div className="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto mt-8">
+                            {services.slice(3, 5).map((service, idx) => (
+                                <div key={idx} className="w-full md:w-[calc(50%-16px)] bg-white border border-black/5 p-8 rounded-[2rem] hover:border-[#FF6105] hover:shadow-2xl transition-all duration-300 group relative flex flex-col h-full hover:scale-[1.02]">
+                                    <div className="w-16 h-16 bg-[#FFF5F0] rounded-2xl flex items-center justify-center text-[#FF6105] mb-6 group-hover:scale-110 transition-transform">
+                                        <service.icon size={32} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold uppercase mb-4 text-black group-hover:text-[#FF6105] transition-colors">{service.title}</h3>
+                                    <p className="text-black/60 text-sm leading-relaxed">{service.description}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Internal Link block */}
+                        <div className="bg-[#F5F3EE] p-6 md:p-8 rounded-2xl border border-[#EAE7E0] flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-between max-w-4xl mx-auto mt-16 md:mt-24">
+                            <p className="text-sm md:text-base text-[#2A1810] font-semibold leading-relaxed text-center md:text-left">
+                                [ⓘ&nbsp;&nbsp;Want to see exactly how our SEO process works step by step?&nbsp;
+                                <Link href="/services/seo/" className="text-[#FF6105] underline hover:text-[#C44800]">
+                                    explore our full SEO Services
+                                </Link>
+                                &nbsp;page for a complete breakdown of our process, tools, and methodology.]
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 7. Industries Section */}
                 <IndustriesSection />
 
-                {/* 6. Service Process */}
+                {/* 8. Service Process */}
                 <ServiceProcess
                     title={<>OUR GROWTH BASED <span className="text-[#FF6105]">SEO PROCESS</span></>}
                     steps={processSteps}
                 />
 
-                {/* 7. Service Timeline */}
+                {/* 9. Service Timeline */}
                 <ServiceTimeline
                     title={<>SEO TIMELINE AND <span className="text-[#FF6105]">MILESTONE PROTOCOL</span></>}
                     steps={timelineSteps}
@@ -371,22 +481,29 @@ export default function KolkataSeoPageContent() {
                     ctaButtonText="Get Your Free Analysis"
                 />
 
-                {/* 8. Tools Section */}
+                {/* 10. Tools Section */}
                 <ToolsSection />
 
-                {/* 9. Why Choose Us */}
+                {/* 11. Why Choose Us */}
                 <WhyChooseUs
                     title={<>WHY KOLKATA BUSINESSES PARTNER WITH <span className="text-[#FF6105]">EEGNITE FOR SEO</span></>}
                     reasons={chooseReasons}
                 />
 
-                {/* 10. Expectations Section */}
+                {/* Why Choose Us Closing Quote Block (Word-for-word document compliance) */}
+                <div className="max-w-4xl mx-auto px-6 pb-20 md:pb-32 text-center -mt-8 md:-mt-16">
+                    <p className="text-lg md:text-2xl italic font-medium text-black/70 leading-relaxed">
+                        "Search is no longer just about Google. Customers now use both search engines and AI-powered platforms to find answers and compare businesses. Our goal is to keep your business visible across both, so you're found when it matters most."
+                    </p>
+                </div>
+
+                {/* 12. Expectations Section */}
                 <ExpectationSection />
 
-                {/* 11. Testimonials */}
+                {/* 13. Testimonials */}
                 <Testimonials />
 
-                {/* 12. FAQ Section */}
+                {/* 14. FAQ Section */}
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-left md:text-center mb-8 md:mb-16 text-black">
@@ -410,10 +527,10 @@ export default function KolkataSeoPageContent() {
                     </div>
                 </section>
 
-                {/* 13. Growth CTA */}
+                {/* 15. Growth CTA */}
                 <GrowthCTA />
 
-                {/* 14. Contact Form Section */}
+                {/* 16. Contact Form Section */}
                 <section id="contact" className="py-16 md:py-24 bg-white border-t border-black/5">
                     <Contact />
                 </section>

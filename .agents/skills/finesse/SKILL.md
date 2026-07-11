@@ -30,3 +30,16 @@ This skill is triggered when designing, creating, or modifying layout pages and 
 - **Responsive Layout Adapters**: Ensure every custom component adapts gracefully to mobile viewports. Use Tailwind's responsive prefixes (e.g. `grid-cols-1 md:grid-cols-3` or `px-4 md:px-8`).
 - **Mobile-Specific Variants**: Where desktop layouts are too complex for a standard flex/grid wrap, implement mobile-specific structural branches (e.g. rendering a mobile-optimized slider/carousel instead of a complex desktop horizontal card view).
 - **Desktop Commands Cleanup**: Avoid using hardcoded horizontal desktop dimensions (e.g. `w-[800px]`) on elements without responsive overrides (e.g. `w-full max-w-[800px]`), which break mobile scrolling layout.
+
+## 5. Structural Symmetry & Grid Balance
+- **Symmetrical Grid Layouts**: Never layout grids with unbalanced rows (e.g., 5 cards in a 4-column grid, leaving a single card in the second row).
+  - If a grid has an odd number of items (like 5), present them as a combination (e.g., a row of 3 columns and a second centered row of 2 cards) to maintain perfect symmetry.
+  - Alternatively, choose a layout pattern (e.g. linear process lists, vertical accordions, or custom centered flex wraps) that naturally preserves visual balance.
+
+## 6. Layout Containment & Heading Wrapping
+- **Avoid Premature Heading Wraps**: Headings must occupy the available width space correctly and should not wrap into 3 lines if there is space for 2 lines. 
+- **Check Container Width Limits**: Do not apply narrow constraints like `max-w-3xl` on heading containers unless the text is small. Let heading containers expand to `max-w-4xl` or `max-w-5xl` to keep formatting clean.
+
+## 7. Content Fidelity (No Omissions)
+- **100% Content Retention**: Use 100% of the text provided in the user's copy document. Do not summarize, shorten, or combine sentences to fit component slots. Choose components that dynamically expand to accommodate the full copy length.
+

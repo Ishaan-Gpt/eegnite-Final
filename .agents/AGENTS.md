@@ -37,6 +37,14 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 - **Local Build Verification**: Always run a local build check (`npm run build` after deleting the `.next/` cache directory) to verify compilation success after code modifications, especially when the development server (`npm run dev`) is active.
 - **Git Push Restraint**: Only commit changes locally. Never run `git push` or push code to remote branches/repositories unless the user explicitly instructs you to do so.
 
+## Design Symmetry & Finesse Rules
+- **Grid Layout Symmetry**: Always check grid structures for visual balance and symmetry. Never render grids containing orphan elements (e.g. 5 items in a 4-column layout leaving a single item on the bottom row). Centering or grouping elements into balanced flex boxes or grid splits (e.g., 3 + 2 layout) must be implemented instead.
+- **Heading Wrapping Constraints**: Ensure headings are never choked by narrow container max-widths (like `max-w-3xl` for large text elements). Ensure headings wrap cleanly and naturally (2 lines on desktop instead of forcing 3 lines).
+
+## Content Fidelity (100% Copy Retention)
+- **100% Word Retention**: Use 100% of the text content provided in the source Google Docs. No summaries, omissions, or text merging to fit components is permitted. Choose or customize components that expand dynamically to accept the full text copy exactly as written.
+
+
 
 
 

@@ -3,6 +3,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+const MotionDiv = motion.div as any;
+
 interface ReasonItem {
     id: string;
     title: string;
@@ -67,13 +69,13 @@ export function WhyChooseUs({
                 <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden">
                     <div className="absolute top-32 left-0 w-full z-20 text-center">
                         <div className="max-w-[1400px] mx-auto px-6">
-                            <h2 className="text-6xl font-bold uppercase tracking-tighter leading-none whitespace-nowrap text-center">
+                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-tight text-center px-4 max-w-5xl mx-auto text-balance">
                                 {title}
                             </h2>
                         </div>
                     </div>
                     <div className="flex items-center h-full w-full pt-16">
-                        <motion.div ref={containerRef} style={{ x }} className="flex gap-12 pl-[10vw] items-center">
+                        <MotionDiv ref={containerRef} style={{ x }} className="flex gap-12 pl-[10vw] items-center">
                             {reasons.map((reason, i) => (
                                 <div key={i} className="min-w-[600px] flex flex-col justify-center p-12 border-l border-black/10 h-[55vh] bg-white hover:bg-gray-50 transition-colors">
                                     <span className="text-8xl font-medium text-black/5 mb-8">{reason.id}</span>
@@ -81,7 +83,7 @@ export function WhyChooseUs({
                                     <p className="text-xl text-black/60 leading-relaxed max-w-xl">{reason.desc}</p>
                                 </div>
                             ))}
-                        </motion.div>
+                        </MotionDiv>
                     </div>
                 </div>
             </section>

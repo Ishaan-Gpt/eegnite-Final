@@ -176,7 +176,7 @@ function GrowthCTA() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     <div>
                         <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[1] mb-6">
-                            READY TO SCALE <br />YOUR SEARCH VISIBILITY <br />IN KOLKATA?
+                            READY TO SCALE <br className="hidden md:inline" />YOUR SEARCH VISIBILITY <br className="hidden md:inline" />IN KOLKATA?
                         </h2>
                         <div className="h-2 w-24 bg-white rounded-full mt-8" />
                     </div>
@@ -315,7 +315,7 @@ export default function KolkataSeoPageContent() {
                 {/* 1. Hero */}
                 <ServiceHero
                     badgeText="Be Visible To Search Engines, LLMs and Customers"
-                    title={<>AI-POWERED SEO SERVICES <br />IN KOLKATA</>}
+                    title={<>AI-POWERED SEO SERVICES <br className="hidden md:inline" />IN KOLKATA</>}
                     subtitle="BUILT TO GET YOU FOUND, CHOSEN, AND BOOKED"
                     description={
                         <>
@@ -325,7 +325,7 @@ export default function KolkataSeoPageContent() {
                 />
 
                 {/* 2. Client Logo Slide */}
-                <ClientLogoSlider label="Brands That Choose Growth. Brands That Choose EEGNITE." />
+                <ClientLogoSlider heading="Brands That Choose Growth. Brands That Choose EEGNITE." />
 
                 {/* 3. Signs Your Business Needs Service */}
                 <section className="py-20 md:py-32 bg-[#F5F3EE] border-y border-black/5">
@@ -379,7 +379,7 @@ export default function KolkataSeoPageContent() {
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                             <div>
                                 <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight">
-                                    THE SEO OPPORTUNITY IN KOLKATA <br /><span className="text-[#FF6105]">RIGHT NOW</span>
+                                    THE SEO OPPORTUNITY IN KOLKATA <br className="hidden md:inline" /><span className="text-[#FF6105]">RIGHT NOW</span>
                                 </h2>
                                 <p className="text-black/50 text-base md:text-xl leading-relaxed mb-4">
                                     Kolkata's digital search volume is growing faster than the number of businesses optimising for it. That gap is your opportunity.

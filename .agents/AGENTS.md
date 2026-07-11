@@ -34,6 +34,7 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 - **Directory**: Store all temporary files, scratch scripts, testing logs, or temporary code helpers in the `temp_scratch/` directory at the project root. Never write temporary helper files directly to the root folder or other source folders.
 
 ## Build & Push Rules
+- **Development Server Verification**: When verifying code changes, do not run `npm run build`. Instead, check the output using the local Next.js development server. If the server (`npm run dev`) is already running, simply save your code changes and let the hot-reload mechanism build them. Only launch `npm run dev` if the server is not already active.
 - **Git Push Restraint**: Only commit changes locally. Never run `git push` or push code to remote branches/repositories unless the user explicitly instructs you to do so.
 
 ## Design Symmetry & Finesse Rules

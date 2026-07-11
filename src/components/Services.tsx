@@ -191,7 +191,7 @@ const MobileServiceItem = ({ service }: { service: typeof services[0] }) => {
                                 </div>
                             ))}
 
-                            {service.link.startsWith("/services/") && (
+                            {service.link && (
                                 <Link
                                     href={service.link}
                                     className="flex items-center justify-center w-full gap-2 py-3 bg-[#FF6105] text-white rounded-lg font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
@@ -236,7 +236,7 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div className="flex items-center gap-4 opacity-70">
                             <span className="font-bold tracking-[0.2em] uppercase text-sm">0{service.id} — Service</span>
                         </div>
-                        {service.link.startsWith("/services/") && (
+                        {service.link && (
                             <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
                                 View Page <ArrowRight size={14} />
                             </Link>
@@ -288,7 +288,7 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                     ))}
                 </div>
 
-                {service.link.startsWith("/services/") && (
+                {service.link && (
                     <div className="mt-8 md:hidden">
                         <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
                             View Service <ArrowRight size={20} />

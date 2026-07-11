@@ -42,3 +42,7 @@ next-env.d.ts
 .vscode/
 *.swp
 *.swo
+
+# Temporary scratch folder
+temp_scratch/
+

@@ -229,6 +229,10 @@ export default function KolkataLandingPageContent() {
                 }
                 subtitle="Every service EEGNITE delivers is performance-driven and connected to your revenue goal. From organic search and performance marketing to paid ads and web development - one team, one integrated strategy, built for Kolkata."
                 customDescriptions={customServicesDescriptions}
+                customLinks={{
+                    "01": "/kolkata/seo-services",
+                    "03": "/digital-marketing-agency-kolkata/ppc-management"
+                }}
             />
             
             <ToolsSection />

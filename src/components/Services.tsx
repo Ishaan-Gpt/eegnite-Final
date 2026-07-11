@@ -309,12 +309,14 @@ interface ServicesProps {
     title?: React.ReactNode;
     subtitle?: string;
     customDescriptions?: Record<string, string>;
+    customLinks?: Record<string, string>;
 }
 
-export default function Services({ title, subtitle, customDescriptions }: ServicesProps = {}) {
+export default function Services({ title, subtitle, customDescriptions, customLinks }: ServicesProps = {}) {
     const modifiedServices = services.map(s => ({
         ...s,
-        description: customDescriptions?.[s.id] || s.description
+        description: customDescriptions?.[s.id] || s.description,
+        link: customLinks?.[s.id] || s.link
     }));
 
     return (

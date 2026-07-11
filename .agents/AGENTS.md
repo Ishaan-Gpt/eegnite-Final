@@ -34,7 +34,6 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 - **Directory**: Store all temporary files, scratch scripts, testing logs, or temporary code helpers in the `temp_scratch/` directory at the project root. Never write temporary helper files directly to the root folder or other source folders.
 
 ## Build & Push Rules
-- **Local Build Verification**: Always run a local build check (`npm run build` after deleting the `.next/` cache directory) to verify compilation success after code modifications, especially when the development server (`npm run dev`) is active.
 - **Git Push Restraint**: Only commit changes locally. Never run `git push` or push code to remote branches/repositories unless the user explicitly instructs you to do so.
 
 ## Design Symmetry & Finesse Rules

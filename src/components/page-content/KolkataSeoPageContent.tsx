@@ -498,16 +498,11 @@ export default function KolkataSeoPageContent() {
 
                 {/* 11. Why Choose Us */}
                 <WhyChooseUs
-                    title={<>WHY KOLKATA BUSINESSES PARTNER WITH <span className="text-[#FF6105]">EEGNITE FOR SEO</span></>}
+                    title={<>WHY KOLKATA BUSINESSES CHOOSE <span className="text-[#FF6105]">EEGNITE</span></>}
+                    subtitle="We'd rather show you the track record than ask you to take the pitch on faith."
                     reasons={chooseReasons}
+                    closingQuote="Search is no longer just about Google. Customers now use both search engines and AI-powered platforms to find answers and compare businesses. Our goal is to keep your business visible across both, so you're found when it matters most."
                 />
-
-                {/* Why Choose Us Closing Quote Block (Word-for-word document compliance) */}
-                <div className="max-w-4xl mx-auto px-6 pb-20 md:pb-32 text-center -mt-8 md:-mt-16">
-                    <p className="text-lg md:text-2xl italic font-medium text-black/70 leading-relaxed">
-                        "Search is no longer just about Google. Customers now use both search engines and AI-powered platforms to find answers and compare businesses. Our goal is to keep your business visible across both, so you're found when it matters most."
-                    </p>
-                </div>
 
                 {/* 12. Expectations Section */}
                 <ExpectationSection />

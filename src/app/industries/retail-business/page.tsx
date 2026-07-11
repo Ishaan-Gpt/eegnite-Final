@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/images/logos/images/logos/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Retail Digital Marketing"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Revenue-Driven Retail Digital Marketing Agency | EEGNITE",
         description: "Increase foot traffic, online sales, and customer retention with EEGNITE’s retail digital marketing strategies. SEO, Google Ads, social commerce, local SEO, and conversion-focused analytics built for modern retail growth.",
-        images: ["/images/logos/images/logos/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

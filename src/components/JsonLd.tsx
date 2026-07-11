@@ -24,7 +24,7 @@ export const STATIC_ORGANISATION = {
     "name": "Anish Kumar",
     "jobTitle": "Founder & CEO",
     "url": "https://www.linkedin.com/in/anish-kr/",
-    "image": "https://www.eegnite.com/anish-founder.webp"
+    "image": "https://www.eegnite.com/images/team/anish-founder.webp"
   },
   "address": {
     "@type": "PostalAddress",

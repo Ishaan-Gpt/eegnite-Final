@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/images/logos/images/logos/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Healthcare Practice Marketing"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Growth-Focused Healthcare Marketing Agency | EEGNITE",
         description: "Attract more patients, increase appointment bookings, and grow your healthcare practice with EEGNITE. SEO, paid ads, reputation management, and conversion-driven healthcare marketing strategies.",
-        images: ["/images/logos/images/logos/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

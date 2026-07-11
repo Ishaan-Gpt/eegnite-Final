@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/images/logos/images/logos/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Digital Marketing Agency for Qatar Businesses"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Growth-Focused Digital Marketing Agency for Qatar Businesses | EEGNITE",
         description: "EEGNITE helps Qatar businesses grow through SEO, Google Ads, social media marketing, and performance-driven digital strategies focused on leads, visibility, and measurable ROI.",
-        images: ["/images/logos/images/logos/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

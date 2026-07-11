@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/images/logos/images/logos/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Digital Marketing Agency for Bahrain Businesses"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "ROI-Focused Digital Marketing Agency for Bahrain Businesses | EEGNITE",
         description: "EEGNITE helps Bahrain businesses grow with ROI-focused SEO, Google Ads, social media marketing, and conversion-driven digital strategies built for long-term business growth.",
-        images: ["/images/logos/images/logos/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

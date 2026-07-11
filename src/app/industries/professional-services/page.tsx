@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/images/logos/images/logos/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Professional Services Marketing"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Authority-Driven Digital Marketing for Professional Services | EEGNITE",
         description: "Build trust, attract high-value clients, and grow your professional service firm with EEGNITE. SEO, PPC, LinkedIn marketing, thought leadership, and conversion strategies for law firms, consultants, advisors, and accounting firms.",
-        images: ["/images/logos/images/logos/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

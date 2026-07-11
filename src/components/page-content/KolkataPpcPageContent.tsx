@@ -138,8 +138,8 @@ function ExpectationSection() {
         <section className="bg-white text-black py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 <div className="mb-12 md:mb-24 text-left md:text-center">
-                    <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12">
-                        WHAT YOU CAN EXPECT <br className="hidden md:inline" />FROM EEGNITE'S <span className="text-[#FF6105]">PERFORMANCE MARKETING SERVICES</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-[1.1] mb-8 md:mb-12">
+                        WHAT YOU CAN EXPECT FROM EEGNITE'S <br className="hidden md:inline" /><span className="text-[#FF6105]">PERFORMANCE MARKETING SERVICES</span>
                     </h2>
                 </div>
                 <div className="space-y-16 md:space-y-32">
@@ -316,7 +316,8 @@ export default function KolkataPpcPageContent() {
                 {/* 1. Hero */}
                 <ServiceHero
                     badgeText="Google Ads Delivers an Average ROI of 200% — $2 Back For Every $1 Spent"
-                    title={<>PPC MANAGEMENT SERVICES IN KOLKATA <br className="hidden md:inline" />THAT TURNS AD SPEND INTO PAYING CUSTOMERS</>}
+                    title={<>PPC MANAGEMENT SERVICES IN KOLKATA <br />THAT TURNS AD SPEND <br className="hidden md:inline" />INTO PAYING CUSTOMERS</>}
+                    titleClassName="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl max-w-5xl"
                     subtitle={<>Capture High-Intent Buyers <br />Before Your Competitors Do</>}
                     description={
                         <>

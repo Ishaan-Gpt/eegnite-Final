@@ -318,8 +318,8 @@ export default function KolkataSmmPageContent() {
                 {/* 1. Hero */}
                 <ServiceHero
                     badgeText="ROI-Focused SMM"
-                    title={<>SOCIAL MEDIA MARKETING SERVICES IN KOLKATA <br className="hidden md:inline" />BUILT TO GROW YOUR BRAND <br className="hidden md:inline" />AND GENERATE REAL ENQUIRIES</>}
-                    titleClassName="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl max-w-5xl"
+                    title={<>SOCIAL MEDIA MARKETING <br className="block sm:hidden" />SERVICES IN KOLKATA <br className="hidden md:inline" />BUILT TO GROW YOUR BRAND <br className="hidden md:inline" />AND GENERATE REAL ENQUIRIES</>}
+                    titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl max-w-5xl"
                     subtitle="Build a Social Presence That Turns Scrollers Into Customers"
                     subtitleClassName="text-sm md:text-xl lg:text-2xl font-bold tracking-tight text-[#FF6105] max-w-3xl"
                     description={

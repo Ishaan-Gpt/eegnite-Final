@@ -40,6 +40,8 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 ## Design Symmetry & Finesse Rules
 - **Grid Layout Symmetry**: Always check grid structures for visual balance and symmetry. Never render grids containing orphan elements (e.g. 5 items in a 4-column layout leaving a single item on the bottom row). Centering or grouping elements into balanced flex boxes or grid splits (e.g., 3 + 2 layout) must be implemented instead.
 - **Heading Wrapping Constraints**: Ensure headings are never choked by narrow container max-widths (like `max-w-3xl` for large text elements). Ensure headings wrap cleanly and naturally (2 lines on desktop instead of forcing 3 lines).
+- **No Grey Backgrounds**: Avoid using grey or muted-grey backgrounds (e.g., `#F5F3EE`, `#FAFAFA`, `#F9F9F9`) for large visual section containers. Use white (`#FFFFFF` / `#FFFEF8`) or glassy semi-transparent white on clean layouts instead.
+- **Glassmorphism Styling**: When requested, implement glassy card styles using semitransparent white (`bg-white/80` or `bg-white/60`), `backdrop-blur-md`, subtle thin borders (`border-black/5`), and light background blur circles.
 
 ## Content Fidelity (100% Copy Retention)
 - **100% Word Retention**: Use 100% of the text content provided in the source Google Docs. No summaries, omissions, or text merging to fit components is permitted. Choose or customize components that expand dynamically to accept the full text copy exactly as written.

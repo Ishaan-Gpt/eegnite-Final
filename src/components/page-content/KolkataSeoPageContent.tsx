@@ -316,7 +316,7 @@ export default function KolkataSeoPageContent() {
                 <ServiceHero
                     badgeText="Be Visible To Search Engines, LLMs and Customers"
                     title={<>AI-POWERED SEO SERVICES <br className="hidden md:inline" />IN KOLKATA</>}
-                    subtitle="BUILT TO GET YOU FOUND, CHOSEN, AND BOOKED"
+                    subtitle={<>BUILT TO GET YOU FOUND, <br />CHOSEN, AND BOOKED</>}
                     description={
                         <>
                             EEGNITE delivers SEO services in Kolkata built around one outcome: <span className="text-[#FF6105] font-semibold">more qualified traffic that turns into enquiries.</span> We align local SEO, technical fixes, search-intent content, and link building into a single system, ensuring your business ranks where your customers are searching; whether on traditional Google search or through emerging AI and LLM assistants.
@@ -325,10 +325,10 @@ export default function KolkataSeoPageContent() {
                 />
 
                 {/* 2. Client Logo Slide */}
-                <ClientLogoSlider heading="Brands That Choose Growth. Brands That Choose EEGNITE." />
+                <ClientLogoSlider heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} />
 
-                {/* 3. Signs Your Business Needs Service */}
-                <section className="py-20 md:py-32 bg-[#F5F3EE] border-y border-black/5">
+                {/* 3. Signs Your Business Needs Service (Re-styled, White Background, Watermark Waterfalls) */}
+                <section className="py-20 md:py-32 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <div className="max-w-4xl mb-12 md:mb-16">
                             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4">
@@ -349,21 +349,31 @@ export default function KolkataSeoPageContent() {
                             ].map((sign, idx) => (
                                 <div 
                                     key={idx}
-                                    className="bg-white p-8 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/30 transition-all duration-300 flex items-start gap-4 shadow-sm hover:shadow-md"
+                                    className="bg-white p-8 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/20 hover:shadow-[0_20px_50px_rgba(232,106,0,0.05)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden h-full hover:-translate-y-1"
                                 >
-                                    <span className="text-[#FF6105] font-bold text-lg bg-[#FF6105]/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
-                                        {idx + 1}
+                                    {/* Large watermark indicator */}
+                                    <span className="absolute top-4 right-6 text-7xl font-bold text-[#FF6105]/5 select-none transition-all duration-500 group-hover:scale-110 group-hover:text-[#FF6105]/10">
+                                        0{idx + 1}
                                     </span>
-                                    <p className="text-black/80 text-sm md:text-base font-semibold leading-relaxed pt-0.5">
-                                        {sign}
-                                    </p>
+                                    
+                                    {/* Accent content container */}
+                                    <div className="relative z-10 flex gap-4 items-start pt-4">
+                                        <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6105]/5 group-hover:bg-[#FF6105] flex items-center justify-center transition-all duration-300">
+                                            <span className="text-[#FF6105] group-hover:text-white font-bold text-sm">
+                                                ✓
+                                            </span>
+                                        </div>
+                                        <p className="text-black/80 text-base font-semibold leading-relaxed pt-0.5 group-hover:text-black transition-colors duration-300">
+                                            {sign}
+                                        </p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* 4. Pain Points & EEGNITE Solutions (Fidelity and Symmetry restored) */}
+                {/* 4. Pain Points & EEGNITE Solutions */}
                 <IndustryProblemSolution
                     problemsTitle="REAL CAUSE BEHIND YOUR KOLKATA BUSINESS SEO PROBLEM"
                     problemsSubtitle="Most SEO problems are not visible on the surface. They are structural, keeping you hidden from both search engines and AI engines."
@@ -373,12 +383,12 @@ export default function KolkataSeoPageContent() {
                     solutions={kolkataSolutions}
                 />
 
-                {/* 5. Local Opportunity/Signs Grid */}
+                {/* 5. Local Opportunity/Signs Grid (Restyled, Glassmorphism, Enlarged Cards, Header 2 Lines) */}
                 <section className="py-16 md:py-24 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                             <div>
-                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight">
+                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight max-w-xl">
                                     THE SEO OPPORTUNITY IN KOLKATA <br className="hidden md:inline" /><span className="text-[#FF6105]">RIGHT NOW</span>
                                 </h2>
                                 <p className="text-black/50 text-base md:text-xl leading-relaxed mb-4">
@@ -392,18 +402,20 @@ export default function KolkataSeoPageContent() {
                                 </p>
                             </div>
                             <div className="grid sm:grid-cols-2 gap-6 w-full">
-                                <div className="bg-[#FAFAFA] p-8 rounded-[1.5rem] border border-black/5 flex flex-col justify-between h-48 hover:scale-[1.03] transition-transform">
-                                    <span className="text-4xl md:text-5xl font-extrabold text-[#FF6105] tracking-tight">3.5x</span>
+                                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-black/5 flex flex-col justify-between h-56 md:h-64 hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
+                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                    <span className="text-5xl md:text-6xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">3.5x</span>
                                     <div>
-                                        <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-1">More Leads Generated</h4>
-                                        <p className="text-black/50 text-xs leading-normal">by businesses with strong digital visibility versus those without.</p>
+                                        <h4 className="text-sm font-bold uppercase tracking-wider text-black mb-1.5">More Leads Generated</h4>
+                                        <p className="text-black/50 text-xs md:text-sm leading-relaxed">by businesses with strong digital visibility versus those without.</p>
                                     </div>
                                 </div>
-                                <div className="bg-[#FAFAFA] p-8 rounded-[1.5rem] border border-black/5 flex flex-col justify-between h-48 hover:scale-[1.03] transition-transform">
-                                    <span className="text-4xl md:text-5xl font-extrabold text-[#FF6105] tracking-tight">63%</span>
+                                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-black/5 flex flex-col justify-between h-56 md:h-64 hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
+                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                    <span className="text-5xl md:text-6xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">63%</span>
                                     <div>
-                                        <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-1">Online Research First</h4>
-                                        <p className="text-black/50 text-xs leading-normal">of consumers research a business online before visiting or contacting it.</p>
+                                        <h4 className="text-sm font-bold uppercase tracking-wider text-black mb-1.5">Online Research First</h4>
+                                        <p className="text-black/50 text-xs md:text-sm leading-relaxed">of consumers research a business online before visiting or contacting it.</p>
                                     </div>
                                 </div>
                             </div>
@@ -411,7 +423,7 @@ export default function KolkataSeoPageContent() {
                     </div>
                 </section>
 
-                {/* 6. Services Grid Section (Symmetrical 3+2 Centered Card Layout & Heading Wrap Correction) */}
+                {/* 6. Services Grid Section */}
                 <section className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">
                     <div className="mx-auto w-full max-w-[1400px] relative z-10">
                         <div className="max-w-4xl mb-12 md:mb-16 md:mx-auto md:text-center">

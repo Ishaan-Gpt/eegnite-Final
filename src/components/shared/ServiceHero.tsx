@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 interface ServiceHeroProps {
     badgeText?: string;
     title: React.ReactNode;
-    subtitle: string;
+    subtitle: React.ReactNode;
     description: React.ReactNode;
     ctaText?: string;
     ctaLink?: string;

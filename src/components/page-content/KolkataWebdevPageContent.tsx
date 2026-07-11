@@ -320,8 +320,8 @@ export default function KolkataWebdevPageContent() {
                 {/* 1. Hero */}
                 <ServiceHero
                     badgeText="75% of consumers judge credibility based on website design"
-                    title={<>WEB DESIGN AND DEVELOPMENT <br className="block sm:hidden" />SERVICES IN KOLKATA <br className="hidden md:inline" />BUILT TO CONVERT VISITORS <br className="hidden md:inline" />INTO CUSTOMERS</>}
-                    titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl max-w-5xl"
+                    title={<>WEB DESIGN AND DEVELOPMENT <br className="hidden md:inline" />SERVICES IN KOLKATA <br className="hidden md:inline" />BUILT TO CONVERT VISITORS <br className="hidden md:inline" />INTO CUSTOMERS</>}
+                    titleClassName="text-xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl max-w-5xl"
                     subtitle="A Website That Looks Good Is Not Enough. It Needs to Convert."
                     subtitleClassName="text-sm md:text-xl lg:text-2xl font-bold tracking-tight text-[#FF6105] max-w-3xl"
                     description={

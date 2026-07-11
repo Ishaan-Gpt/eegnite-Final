@@ -1882,7 +1882,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         category: "PPC Advertising",
         date: "May 1, 2026",
         author: "EEGNITE Team",
-        image: "/ppc-blog.jpg",
+        image: "/ppc-blog.webp",
         content: `
             <p class="mb-6 text-lg leading-relaxed text-black font-normal">Most businesses don't lose money on ads because they didn't spend enough. They lose because the execution is bad.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">According to Google Ads benchmarks, the average Google Ads conversion rate across industries is around 3–6%. That means most clicks don't convert. That's normal. What's not normal is when campaigns stay there without improvement.</p>

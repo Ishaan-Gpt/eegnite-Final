@@ -138,7 +138,7 @@ const testimonials = [
         location: "USA",
         tags: ["SEO"],
         text: "Anish is a highly reliable project manager with a strong analytical mindset. He consistently brings structure to complex projects, ensuring timelines, data, and stakeholders stay aligned. His ability to translate data into actionable insights makes a real impact on decision-making. Beyond his technical skills, Anish is proactive, detail-oriented, and easy to collaborate with someone you can trust to drive projects forward efficiently",
-        src: "/andre.jpg"
+        src: "/andre.webp"
     },
     {
         name: "Dario Vettese",
@@ -165,7 +165,7 @@ const testimonials = [
         location: "India",
         tags: ["SEO"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: "/assets/shankar-rathi.png"
+        src: "/assets/shankar-rathi.webp"
     },
     {
         name: "Rebeka Jasilionytė",
@@ -183,7 +183,7 @@ const testimonials = [
         location: "India",
         tags: ["Web Development"],
         text: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
-        src: "/rajeev.png"
+        src: "/rajeev.webp"
     },
     {
         name: "Nudrat Khan",

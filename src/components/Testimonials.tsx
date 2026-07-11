@@ -14,7 +14,7 @@ const testimonials = [
         name: "Andre P.",
         designation: "Director of Digital Operations & Systems, Petstore.direct",
         location: "USA",
-        src: "/andre.jpg"
+        src: "/andre.webp"
     },
     {
         quote: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
@@ -42,7 +42,7 @@ const testimonials = [
         name: "Rajeev Ranjan",
         designation: "Founder, Wildwoodexport.com",
         location: "India",
-        src: "/rajeev.png"
+        src: "/rajeev.webp"
     }
 ];
 

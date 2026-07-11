@@ -74,7 +74,7 @@ const allPostsData = [
         category: "PPC Advertising",
         readTime: "8 min read",
         date: "May 1, 2026",
-        image: "/ppc-blog.jpg",
+        image: "/ppc-blog.webp",
         slug: "ppc-agency-india-maximize-roi",
     },
     {

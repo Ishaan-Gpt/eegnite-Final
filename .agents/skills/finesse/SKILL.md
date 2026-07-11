@@ -25,6 +25,7 @@ This skill is triggered when designing, creating, or modifying layout pages and 
 - **Consistent/Balanced Wrapping**: If a sentence is too long and must wrap:
   - **Left-aligned wrapping**: Wrap naturally but avoid orphan words (e.g. a single short word wrapped to a new line). Keep lines relatively balanced.
   - **Center-aligned wrapping**: Wrap strictly to maintain a balanced block of text. For instance, if you have 15 words, balance them evenly (e.g. 7 words on the first line and 8 on the second line) instead of wrapping 13 words on the first line and leaving 2 words isolated on the second line. Use React-safe non-breaking spaces (`\u00a0` or `&nbsp;`) or `<br className="hidden md:inline" />` to control line breaks.
+- **Forced One-Line Subtexts**: Short uppercase descriptor headings or subheadings must be locked to exactly 1 line on desktop using `md:whitespace-nowrap` if needed.
 
 ## 4. Mobile Responsiveness & Mobile-Specific Layouts
 - **Responsive Layout Adapters**: Ensure every custom component adapts gracefully to mobile viewports. Use Tailwind's responsive prefixes (e.g. `grid-cols-1 md:grid-cols-3` or `px-4 md:px-8`).
@@ -39,7 +40,10 @@ This skill is triggered when designing, creating, or modifying layout pages and 
 ## 6. Layout Containment & Heading Wrapping
 - **Avoid Premature Heading Wraps**: Headings must occupy the available width space correctly and should not wrap into 3 lines if there is space for 2 lines. 
 - **Check Container Width Limits**: Do not apply narrow constraints like `max-w-3xl` on heading containers unless the text is small. Let heading containers expand to `max-w-4xl` or `max-w-5xl` to keep formatting clean.
+- **Hero Title Line Limits**: Hero titles must occupy a maximum of 3 lines on desktop and 3-4 lines on mobile. Scale font sizes (e.g. `xl:text-5xl` or `xl:text-6xl`) and use responsive `<br className="hidden md:inline" />` tags instead of absolute breaks.
+- **Non-Overlapping Sticky Layouts**: Sibling components inside sticky sections must flow using relative flex vertical structures (`flex flex-col justify-between h-screen py-16`) to dynamically distribute space and prevent headers from overlapping with scroll elements.
 
 ## 7. Content Fidelity (No Omissions)
 - **100% Content Retention**: Use 100% of the text provided in the user's copy document. Do not summarize, shorten, or combine sentences to fit component slots. Choose components that dynamically expand to accommodate the full copy length.
+- **Verbatim List Labels**: Always check that list category labels (e.g., `B2B & Lead Generation`, `Medical & Healthcare`) match the original document capitalization and symbol usage exactly.
 

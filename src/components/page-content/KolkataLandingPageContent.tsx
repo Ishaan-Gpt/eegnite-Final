@@ -231,7 +231,10 @@ export default function KolkataLandingPageContent() {
                 customDescriptions={customServicesDescriptions}
                 customLinks={{
                     "01": "/kolkata/seo-services",
-                    "03": "/digital-marketing-agency-kolkata/ppc-management"
+                    "02": "/digital-marketing-agency-kolkata/social-media-marketing",
+                    "03": "/digital-marketing-agency-kolkata/ppc-management",
+                    "04": "/digital-marketing-agency-kolkata/web-design-development",
+                    "05": "/digital-marketing-agency-kolkata/email-marketing"
                 }}
             />
             

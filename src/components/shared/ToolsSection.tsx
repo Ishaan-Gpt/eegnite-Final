@@ -5,7 +5,11 @@ interface ToolItem {
     src: string;
 }
 
-export function ToolsSection() {
+interface ToolsSectionProps {
+    title?: React.ReactNode;
+}
+
+export function ToolsSection({ title }: ToolsSectionProps = {}) {
     const tools: ToolItem[] = [
         { name: "Google Analytics", src: "/images/icons/google-analytics.png" },
         { name: "Google Search Console", src: "/images/icons/google.png" },
@@ -21,11 +25,17 @@ export function ToolsSection() {
         { name: "WooCommerce", src: "/images/icons/woocommerce.png" },
     ];
 
+    const heading = title || (
+        <>
+            Tools We <span className="text-[#FF6105]">Use</span>
+        </>
+    );
+
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
                 <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
-                    Tools We <span className="text-[#FF6105]">Use</span>
+                    {heading}
                 </h2>
             </div>
 

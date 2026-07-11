@@ -125,33 +125,7 @@ function IndustriesSection() {
     );
 }
 
-// --- TECHNOLOGIES WE WORK WITH ---
 
-function TechnologiesSection() {
-    const techList = ["WordPress", "WooCommerce", "Shopify", "React", "Next.js", "Laravel", "PHP", "Magento"];
-    
-    return (
-        <section className="py-16 md:py-24 bg-[#F5F3EE] border-y border-[#EAE7E0]">
-            <div className="max-w-[1400px] mx-auto px-6">
-                <div className="text-center mb-12 md:mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black">
-                        TECHNOLOGIES <span className="text-[#FF6105]">WE WORK WITH</span>
-                    </h2>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
-                    {techList.map((tech, idx) => (
-                        <div 
-                            key={idx} 
-                            className="bg-white border border-black/5 py-8 px-6 rounded-2xl flex items-center justify-center font-bold text-lg md:text-xl text-black hover:border-[#FF6105] hover:text-[#FF6105] hover:shadow-[0_20px_50px_rgba(232,106,0,0.04)] transition-all duration-300 select-none hover:-translate-y-1"
-                        >
-                            {tech}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-}
 
 // --- EXPECTATION SECTION ---
 
@@ -464,8 +438,7 @@ export default function KolkataWebdevPageContent() {
                                 Each part of our web design and development service is built to solve a specific gap in how your current website is performing for your business.
                             </p>
                             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 text-left md:text-center leading-[1.2]">
-                                EEGNITE WEB DESIGN AND DEVELOPMENT SERVICES FOR <br className="hidden md:inline" />
-                                <span className="text-[#FF6105]">KOLKATA BUSINESSES</span>
+                                EEGNITE WEB DESIGN AND DEVELOPMENT <br className="hidden md:inline" />SERVICES FOR <span className="text-[#FF6105]">KOLKATA BUSINESSES</span>
                             </h2>
                         </div>
 
@@ -511,8 +484,7 @@ export default function KolkataWebdevPageContent() {
                 {/* 7. Industries Section */}
                 <IndustriesSection />
 
-                {/* 8. Technologies Badges Grid */}
-                <TechnologiesSection />
+
 
                 {/* 9. Service Process */}
                 <ServiceProcess
@@ -530,7 +502,13 @@ export default function KolkataWebdevPageContent() {
                 />
 
                 {/* 11. Tools Section */}
-                <ToolsSection />
+                <ToolsSection 
+                    title={
+                        <>
+                            TECHNOLOGY <span className="text-[#FF6105]">WE USE</span>
+                        </>
+                    } 
+                />
 
                 {/* 12. Why Choose Us */}
                 <WhyChooseUs

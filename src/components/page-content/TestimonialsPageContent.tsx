@@ -159,18 +159,18 @@ const testimonials = [
         src: "/images/team/rokas.jpg"
     },
     {
-        name: "Rushil Jain",
-        designation: "",
-        company: "",
-        location: "",
+        name: "Shankar Rathi",
+        designation: "CEO",
+        company: "SRC Farms",
+        location: "India",
         tags: ["SEO"],
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: ""
+        src: "/images/team/shankar-rathi.webp"
     },
     {
         name: "Rebeka Jasilionytė",
-        designation: "",
-        company: "",
+        designation: "Marketing Product Manager",
+        company: "Varolab",
         location: "Lithuania",
         tags: ["Digital Marketing"],
         text: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
@@ -178,26 +178,17 @@ const testimonials = [
     },
     {
         name: "Rejeev Ranjan",
-        designation: "",
-        company: "",
+        designation: "Founder",
+        company: "Wildwoodexport.com",
         location: "India",
         tags: ["Digital Marketing"],
         text: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should  the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",
         src: "/images/team/rajeev.webp"
     },
     {
-        name: "ROY Event Planner",
-        designation: "",
-        company: "ROY Event Planner",
-        location: "India",
-        tags: ["Web Design"],
-        text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
-        src: ""
-    },
-    {
         name: "Nudrat Khan",
-        designation: "",
-        company: "",
+        designation: "Director",
+        company: "Supreme Infratech",
         location: "India",
         tags: ["Web Design"],
         text: "Hey Eegnite Team and Anish. Just wanted to say huge thanks for the amazing website design! It's sleek, user-friendly, and exactly what we needed. Your team's professionalism and attention to detail really shine through. Highly recommend!",

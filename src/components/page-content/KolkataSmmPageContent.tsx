@@ -317,10 +317,11 @@ export default function KolkataSmmPageContent() {
                 
                 {/* 1. Hero */}
                 <ServiceHero
-                    badgeText="Build a Social Presence That Turns Scrollers Into Customers"
-                    title={<>SOCIAL MEDIA MARKETING SERVICES IN KOLKATA <br className="hidden md:inline" />BUILT TO GROW YOUR BRAND AND GENERATE REAL ENQUIRIES</>}
-                    titleClassName="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl max-w-5xl"
-                    subtitle={<>Capture High-Intent Social Buyers <br />Before Your Competitors Do</>}
+                    badgeText="ROI-Focused SMM"
+                    title={<>SOCIAL MEDIA MARKETING SERVICES IN KOLKATA <br className="hidden md:inline" />BUILT TO GROW YOUR BRAND <br className="hidden md:inline" />AND GENERATE REAL ENQUIRIES</>}
+                    titleClassName="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl max-w-5xl"
+                    subtitle="Build a Social Presence That Turns Scrollers Into Customers"
+                    subtitleClassName="text-sm md:text-xl lg:text-2xl font-bold tracking-tight text-[#FF6105] max-w-3xl"
                     description={
                         <>
                             EEGNITE manages social media marketing for businesses in Kolkata across Instagram, Facebook, and LinkedIn. Every content strategy, paid campaign, and community management effort is built around one outcome: converting your social audience into real enquiries and paying customers for your business.
@@ -430,7 +431,7 @@ export default function KolkataSmmPageContent() {
                 {/* 6. Services Grid Section */}
                 <section className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">
                     <div className="mx-auto w-full max-w-[1400px] relative z-10">
-                        <div className="max-w-4xl mb-12 md:mb-16 md:mx-auto md:text-center">
+                        <div className="max-w-6xl mb-12 md:mb-16 md:mx-auto md:text-center">
                             <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 block text-left md:text-center leading-normal md:whitespace-nowrap">
                                 Each part of our social media service is built to solve a specific gap in your current brand presence and audience engagement.
                             </p>

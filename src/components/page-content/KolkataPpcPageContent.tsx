@@ -317,7 +317,7 @@ export default function KolkataPpcPageContent() {
                 <ServiceHero
                     badgeText="Google Ads Delivers an Average ROI of 200% — $2 Back For Every $1 Spent"
                     title={<>PPC MANAGEMENT SERVICES IN KOLKATA <br className="hidden md:inline" />THAT TURNS AD SPEND INTO PAYING CUSTOMERS</>}
-                    subtitle="Capture High-Intent Buyers Before Your Competitors Do"
+                    subtitle={<>Capture High-Intent Buyers <br />Before Your Competitors Do</>}
                     description={
                         <>
                             EEGNITE manages PPC campaigns for Kolkata businesses across Google Ads, Meta, and beyond. Every campaign is built on intent-based targeting, conversion tracking, and weekly optimisation, so your ad budget produces leads and sales, not just clicks.
@@ -326,10 +326,10 @@ export default function KolkataPpcPageContent() {
                 />
 
                 {/* 2. Client Logo Slide */}
-                <ClientLogoSlider heading="Brands That Choose Growth. Brands That Choose EEGNITE." />
+                <ClientLogoSlider heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} />
 
-                {/* 3. Signs Your Business Needs Service */}
-                <section className="py-20 md:py-32 bg-[#F5F3EE] border-y border-black/5">
+                {/* 3. Signs Your Business Needs Service (Re-styled, White Background, Watermark Waterfalls) */}
+                <section className="py-20 md:py-32 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <div className="max-w-4xl mb-12 md:mb-16">
                             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4">
@@ -350,14 +350,24 @@ export default function KolkataPpcPageContent() {
                             ].map((sign, idx) => (
                                 <div 
                                     key={idx}
-                                    className="bg-white p-8 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/30 transition-all duration-300 flex items-start gap-4 shadow-sm hover:shadow-md"
+                                    className="bg-white p-8 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/20 hover:shadow-[0_20px_50px_rgba(232,106,0,0.05)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden h-full hover:-translate-y-1"
                                 >
-                                    <span className="text-[#FF6105] font-bold text-lg bg-[#FF6105]/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
-                                        {idx + 1}
+                                    {/* Large watermark indicator */}
+                                    <span className="absolute top-4 right-6 text-7xl font-bold text-[#FF6105]/5 select-none transition-all duration-500 group-hover:scale-110 group-hover:text-[#FF6105]/10">
+                                        0{idx + 1}
                                     </span>
-                                    <p className="text-black/80 text-sm md:text-base font-semibold leading-relaxed pt-0.5">
-                                        {sign}
-                                    </p>
+                                    
+                                    {/* Accent content container */}
+                                    <div className="relative z-10 flex gap-4 items-start pt-4">
+                                        <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6105]/5 group-hover:bg-[#FF6105] flex items-center justify-center transition-all duration-300">
+                                            <span className="text-[#FF6105] group-hover:text-white font-bold text-sm">
+                                                ✓
+                                            </span>
+                                        </div>
+                                        <p className="text-black/80 text-base font-semibold leading-relaxed pt-0.5 group-hover:text-black transition-colors duration-300">
+                                            {sign}
+                                        </p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -374,12 +384,12 @@ export default function KolkataPpcPageContent() {
                     solutions={kolkataSolutions}
                 />
 
-                {/* 5. Opportunity Section */}
+                {/* 5. Opportunity Section (Restyled, Glassmorphism, Enlarged Cards, Header 2 Lines) */}
                 <section className="py-16 md:py-24 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                             <div>
-                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight">
+                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight max-w-xl">
                                     THE PPC OPPORTUNITY IN KOLKATA <br className="hidden md:inline" /><span className="text-[#FF6105]">RIGHT NOW</span>
                                 </h2>
                                 <p className="text-black/50 text-base md:text-xl leading-relaxed mb-4">
@@ -393,18 +403,20 @@ export default function KolkataPpcPageContent() {
                                 </p>
                             </div>
                             <div className="grid sm:grid-cols-2 gap-6 w-full">
-                                <div className="bg-[#FAFAFA] p-8 rounded-[1.5rem] border border-black/5 flex flex-col justify-between h-48 hover:scale-[1.03] transition-transform">
-                                    <span className="text-4xl md:text-5xl font-extrabold text-[#FF6105] tracking-tight">50%</span>
+                                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-black/5 flex flex-col justify-between h-56 md:h-64 hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
+                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                    <span className="text-5xl md:text-6xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">50%</span>
                                     <div>
-                                        <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-1">More Conversions</h4>
-                                        <p className="text-black/50 text-xs leading-normal">are generated by PPC traffic than organic traffic.</p>
+                                        <h4 className="text-sm font-bold uppercase tracking-wider text-black mb-1.5">More Conversions</h4>
+                                        <p className="text-black/50 text-xs md:text-sm leading-relaxed">are generated by PPC traffic than organic traffic.</p>
                                     </div>
                                 </div>
-                                <div className="bg-[#FAFAFA] p-8 rounded-[1.5rem] border border-black/5 flex flex-col justify-between h-48 hover:scale-[1.03] transition-transform">
-                                    <span className="text-4xl md:text-5xl font-extrabold text-[#FF6105] tracking-tight">80%</span>
+                                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-black/5 flex flex-col justify-between h-56 md:h-64 hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
+                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                    <span className="text-5xl md:text-6xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">80%</span>
                                     <div>
-                                        <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-1">Boost in Brand Awareness</h4>
-                                        <p className="text-black/50 text-xs leading-normal">comes from top-of-search ads.</p>
+                                        <h4 className="text-sm font-bold uppercase tracking-wider text-black mb-1.5">Boost in Brand Awareness</h4>
+                                        <p className="text-black/50 text-xs md:text-sm leading-relaxed">comes from top-of-search ads.</p>
                                     </div>
                                 </div>
                             </div>
@@ -412,7 +424,7 @@ export default function KolkataPpcPageContent() {
                     </div>
                 </section>
 
-                {/* 6. Services Grid Section (Symmetrical Centered 3+2 Layout) */}
+                {/* 6. Services Grid Section */}
                 <section className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">
                     <div className="mx-auto w-full max-w-[1400px] relative z-10">
                         <div className="max-w-4xl mb-12 md:mb-16 md:mx-auto md:text-center">
@@ -454,7 +466,7 @@ export default function KolkataPpcPageContent() {
                         {/* Internal Link block */}
                         <div className="bg-[#F5F3EE] p-6 md:p-8 rounded-2xl border border-[#EAE7E0] flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-between max-w-4xl mx-auto mt-16 md:mt-24">
                             <p className="text-sm md:text-base text-[#2A1810] font-semibold leading-relaxed text-center md:text-left">
-                                [ⓘ&nbsp;&nbsp;Want to see exactly how our PPC and performance marketing process works?&nbsp;
+                                [ⓘ&nbsp;&nbsp;Want to see exactly how our PPC and performance marketing process works? Click here to&nbsp;
                                 <Link href="/services/ppc/" className="text-[#FF6105] underline hover:text-[#C44800]">
                                     explore our full Performance Marketing services
                                 </Link>
@@ -487,16 +499,11 @@ export default function KolkataPpcPageContent() {
 
                 {/* 11. Why Choose Us */}
                 <WhyChooseUs
-                    title={<>WHY KOLKATA BUSINESSES PARTNER WITH <span className="text-[#FF6105]">EEGNITE FOR PPC</span></>}
+                    title={<>WHY KOLKATA BUSINESSES CHOOSE <span className="text-[#FF6105]">EEGNITE</span></>}
+                    subtitle="We'd rather let campaign performance and client results do the talking."
                     reasons={chooseReasons}
+                    closingQuote="Paid advertising is more competitive than ever. Success isn't just about launching ads - it's about reaching the right audience, controlling costs, and maximizing conversions. Our goal is to ensure your business appears in front of high-intent customers at the exact moment they're ready to take action."
                 />
-
-                {/* Why Choose Us Closing Quote Block */}
-                <div className="max-w-4xl mx-auto px-6 pb-20 md:pb-32 text-center -mt-8 md:-mt-16">
-                    <p className="text-lg md:text-2xl italic font-medium text-black/70 leading-relaxed">
-                        "Paid advertising is more competitive than ever. Success isn't just about launching ads - it's about reaching the right audience, controlling costs, and maximizing conversions. Our goal is to ensure your business appears in front of high-intent customers at the exact moment they're ready to take action."
-                    </p>
-                </div>
 
                 {/* 12. Expectations Section */}
                 <ExpectationSection />

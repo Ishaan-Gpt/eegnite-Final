@@ -8,21 +8,30 @@ out/
     eegnite-logo-text.png
     eegnite-logo.png
     favicon.ico
+    growth_strategy.png
     index.html
     index.txt
+    ppc-blog.jpg
     rajeev.png
     rebeka.jpg
     result-email.jpg
     result-meta.jpg
     result-seo.jpg
+    robots-staging.txt
     robots.txt
     rokas.jpg
     ronabeth.jpg
+    seo_analytics.png
     sitemap.xml
     tomas.jpg
     404/
         index.html
     assets/
+        Dario.jpg.jpeg
+        Hafedh.jpg.jpeg
+        Himanshu.jpg.jpeg
+        Nudrat (1).jpeg
+        shankar-rathi.png
         services/
             ecommerce.png
             email.png
@@ -30,47 +39,108 @@ out/
             seo-hero.png
             seo-process.png
             seo.png
+    bahrain/
+        index.html
+        index.txt
     blog/
         index.html
         index.txt
+        8-reasons-why-your-website-traffic-isnt-generating-leads/
+            index.html
+            index.txt
+        how-to-choose-the-right-seo-agency-in-india-2026/
+            index.html
+            index.txt
+        how-to-get-content-cited-in-ai-search-results-2026/
+            index.html
+            index.txt
         local-seo-strategies-2026-google-maps/
             index.html
             index.txt
-        top-10-seo-agencies-kolkata-2026/
+        ppc-agency-india-maximize-roi/
+            index.html
+            index.txt
+        what-google-ai-overview-data-actually-reveals-about-your-website/
+            index.html
+            index.txt
+        why-your-business-struggles-with-online-visibility/
             index.html
             index.txt
     contact/
         index.html
         index.txt
     icons/
+        ahrefs.png
         canva.png
         excel.png
         figma.png
         gmail.png
+        gmb.webp
         google-ads.png
         google-analytics.png
         google.png
         gtm.png
         hubspot.png
+        images (30).jpg
         klaviyo.png
         linkedin.png
         mailchimp.png
         meta.png
         powerbi.png
         semrush.png
+        trustpilot.png
         windy.png
         woocommerce.png
         wordpress.png
+    industries/
+        index.html
+        index.txt
+        b2b-lead-generation/
+            index.html
+            index.txt
+        e-commerce/
+            index.html
+            index.txt
+        manufacturing-logistics/
+            index.html
+            index.txt
+        medical-healthcare/
+            index.html
+            index.txt
+        professional-services/
+            index.html
+            index.txt
+        retail-business/
+            index.html
+            index.txt
+    kolkata/
+        index.html
+        index.txt
+    logos/
+        al-jiwan-jewelry-logo.png
+        aquagear-australia-logo.png
+        bluefrog-pharma-logo.png
+        cajun-legacy-logo.png
+        cary-implant-and-general-dentistry-logo.png
+        deepmark-logo.png
+        eshaarya-logo.png
+        house-of-aluna-logo.png
+        interio-lounge-logo.png
+        petstore-direct_logo.png
+        pine-branding-logo.png
+        src-farms-logo.png
+        varolab-logo.png
+        wild-wood-exports-logo.png
+        xendit-logo.png
     privacy/
         index.html
         index.txt
+    qatar/
+        index.html
+        index.txt
     services/
-        data-analysis/
-            index.html
-            index.txt
-        ecommerce/
-            index.html
-            index.txt
+        index.html
+        index.txt
         email-marketing/
             index.html
             index.txt
@@ -80,86 +150,106 @@ out/
         seo/
             index.html
             index.txt
+        social-media-marketing/
+            index.html
+            index.txt
+        web-development/
+            index.html
+            index.txt
     terms/
         index.html
         index.txt
+    testimonials/
+        index.html
+        index.txt
     _next/
+        LnI_FbH3vIWunqN_tCbXA/
         static/
             chunks/
-                1095.47edd5dd816c168c.js
-                1181-cd5687c6833f834a.js
-                1234.89b5dee7fc9f11ba.js
-                1517-dbc2918ece66aab3.js
-                2296-d2def5edff7c7e3f.js
-                2434-1d64d5c3ce5d47c0.js
-                2742-1617cf158e37cf5a.js
-                3434-320d897008b10b14.js
-                4019-62501d5ea40fc397.js
-                4365.edce9baf0adc6835.js
-                4595.b34af7559d80496b.js
-                4bd1b696-0a3ff49b6ef29bbf.js
-                5203.f4b97ab553880bca.js
-                5241-14c9b7e286fd4eb7.js
-                527.c3b4daf01ccd29d2.js
-                5477.090ddcb9a2879699.js
-                5887.882e3b903b114442.js
-                5949.5b8663759c6e5002.js
-                6166.c2246649de32705b.js
-                6218.ba8ff6176d4fd6f6.js
-                6532.06763c02cc19ed6f.js
-                6640-c5e41de9e7db953c.js
-                6855-6d9f824d168157aa.js
-                7125.c21073ac9755a059.js
-                7394.69db495d874a3541.js
-                7508b87c-7d058eea1a7212dd.js
-                7970-3692e64b4a15b589.js
-                8802.281186d1ea5d34d0.js
-                9005-1a940090522fc6e9.js
-                9142-5a42832e09aa2f29.js
-                c15bf2b0-137f87c8c8823cfd.js
-                framework-e50f1fe15a83656c.js
-                main-app-8c0f98b34aaa1ed4.js
-                main-d30e82c6de3ea404.js
+                1164-6a66d7b138963db4.js
+                1457-7ba4ade6172850ce.js
+                1517-37b9e41eca8d0468.js
+                2504-f695732226a989da.js
+                2662-96bd89a90a9511be.js
+                4164-c45d3625f325d6b1.js
+                4218-92315e8548db1a1c.js
+                4bd1b696-fe8407aa216948d5.js
+                5203.7c54c202406d4620.js
+                6218.2a359a0f55d6ba39.js
+                7508b87c-9962b65595f529df.js
+                7769-2de894e74eff6e0c.js
+                7924-d73d8eeb64f34dcf.js
+                7970-887c72d416a40a81.js
+                8173-a0b0c0bdc4ed3c8f.js
+                8806-36d16cd3c59a64b3.js
+                9005-189ba428363f46d4.js
+                c15bf2b0-d5e342309ab8843c.js
+                framework-6e2964db028d56ab.js
+                main-app-88bbe47d2fbd7f36.js
+                main-e919adbe275418fc.js
                 polyfills-42372ed130431b0a.js
-                webpack-0a2d71f8b3987e2b.js
+                webpack-37ba62e0da5aec8f.js
                 app/
-                    layout-1bfb773ab27ac608.js
-                    page-756900f795844b67.js
+                    layout-a34a38bd9a15700c.js
+                    not-found-fa04e66188a7ab49.js
+                    page-08908f2a6923fb82.js
                     api/
                         send-email/
-                            route-ee5e92dc1fd0ead4.js
+                            route-f01a4225d1fb8df8.js
+                    bahrain/
+                        page-b9115e446b3a3985.js
                     blog/
-                        page-28eb1aaa9c892b65.js
+                        page-aba867503c2b45bf.js
                         [slug]/
-                            page-1a749c4a2f729229.js
+                            page-d1aeea96a6941094.js
                     contact/
-                        page-a7088de90f1c14d3.js
+                        page-ba06fdef56fee53e.js
+                    industries/
+                        page-f16a22ec7a508965.js
+                        b2b-lead-generation/
+                            page-f7354dd841591c6f.js
+                        e-commerce/
+                            page-e954821680d9a7b5.js
+                        manufacturing-logistics/
+                            page-8a0fbc397882375c.js
+                        medical-healthcare/
+                            page-60f0fe6ccbf555e5.js
+                        professional-services/
+                            page-2afa70294329b332.js
+                        retail-business/
+                            page-adcd12086d9497da.js
+                    kolkata/
+                        page-63340ef22ad36048.js
                     privacy/
-                        page-aba3f7c96db8fa2d.js
+                        page-cd347ecf7a8d82f4.js
+                    qatar/
+                        page-83394aeec4b41ac5.js
                     services/
-                        data-analysis/
-                            page-2f7f86c05593b1ab.js
-                        ecommerce/
-                            page-d3dbedff1d9d5092.js
+                        page-555e630346f5439a.js
                         email-marketing/
-                            page-2c0a63826d269318.js
+                            page-52123f3133c01089.js
                         ppc/
-                            page-3d392364fb87fd3f.js
+                            page-bc6e2cb1e4f47d46.js
                         seo/
-                            page-35dca9fa7c9d73f3.js
+                            page-5fd41ec7fb9c1f67.js
+                        social-media-marketing/
+                            page-50fecaef32ccc8b0.js
+                        web-development/
+                            page-e570d2ee4f66ba60.js
                     terms/
-                        page-9829808e9dd4b390.js
+                        page-157b8fc75b8bc8c2.js
+                    testimonials/
+                        page-e3f8c22d29dfefa6.js
                     _not-found/
-                        page-1d50ee6e40e7e60c.js
+                        page-22dedca392920302.js
                 pages/
-                    _app-0c238c2f06f7f88f.js
-                    _error-5cfb257555e5fc2f.js
+                    _app-30337988e7306617.js
+                    _error-8a1aab7f5646bdea.js
             css/
-                2cc2487a5117d7d7.css
+                a1e9c3613fbb3e3b.css
+            LnI_FbH3vIWunqN_tCbXA/
+                _buildManifest.js
+                _ssgManifest.js
             media/
                 028c0d39d2e8f589-s.p.woff2
                 5b01f339abf2f1a5.p.woff2
-            swCY9t7aTFMr9qNCq-fvv/
-                _buildManifest.js
-                _ssgManifest.js
-        swCY9t7aTFMr9qNCq-fvv/

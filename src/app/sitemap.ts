@@ -101,6 +101,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         {
+            url: `${baseUrl}/blog/ai-in-digital-marketing-what-business-leaders-need-to-know/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/the-hidden-cost-of-bad-seo-for-your-business/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/how-social-media-marketing-changed-in-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/what-google-ai-overview-data-actually-reveals-about-your-website/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
             url: `${baseUrl}/blog/why-your-business-struggles-with-online-visibility/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -108,12 +132,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/blog/local-seo-strategies-2026-google-maps/`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/blog/top-10-seo-agencies-kolkata-2026/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,

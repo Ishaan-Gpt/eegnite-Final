@@ -12,12 +12,12 @@ export default function GlobalReach() {
             ref={sectionRef}
             className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 bg-white relative overflow-x-hidden"
         >
-            <div className="max-w-5xl mx-auto relative z-10">
+            <div className="w-full max-w-5xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 1 }}
-                    className="mb-16"
+                    className="mb-16 w-full"
                 >
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] flex items-center gap-4 text-black/50 mb-6">
                         <span className="w-10 h-[2px] bg-[#FF6105]" />
@@ -33,7 +33,7 @@ export default function GlobalReach() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="space-y-8"
+                    className="space-y-8 w-full"
                 >
                     <p className="text-[clamp(1.2rem,2.8vw,1.8rem)] leading-[1.4] tracking-tight text-black/90">
                         EEGNITE operates across India, the United States, Europe, and the Middle East; bringing a rare combination of <span className="text-[#FF6105] font-semibold">local market intelligence and global digital expertise</span> to every engagement.

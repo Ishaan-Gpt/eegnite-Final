@@ -9,6 +9,771 @@ import { Button } from "@/components/ui/button";
 
 // --- MOCK DATA ---
 const allPosts: Record<string, { title: string; content: string; image: string; category: string; date: string; author: string; metaTitle?: string; metaDescription?: string }> = {
+    "ai-in-digital-marketing-what-business-leaders-need-to-know": {
+        title: "AI in Digital Marketing: What Business Leaders Need to Know Right Now",
+        metaTitle: "AI in Digital Marketing: What Business Leaders Need to Know",
+        metaDescription: "Learn how AI is reshaping digital marketing in 2026 and what business leaders should prioritize to stay competitive and build lasting customer trust.",
+        category: "AI Marketing",
+        date: "Jun 30, 2026",
+        author: "EEGNITE Team",
+        image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1600",
+        content: `
+            <p class="mb-6 text-lg leading-relaxed text-black font-normal">Artificial intelligence is no longer a future trend.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's becoming part of how customers search, how marketing teams work, and how businesses compete online.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Just a few years ago, many companies used AI to write social media captions, generate blog ideas, or speed up repetitive tasks. Today, AI has evolved far beyond being a productivity tool.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">It is reshaping search engines, changing how buying decisions are made, influencing customer expectations, and transforming the way marketing teams operate.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For business leaders, this creates an important question.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">How should your business adapt without losing visibility, efficiency, or customer trust?</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The answer isn't simply buying another AI platform.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's understanding where AI creates genuine business value, where human expertise remains essential, and how to prepare your organization for a rapidly changing digital landscape.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Let's explore the biggest shifts every business leader should understand.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">AI Is Changing How Customers Find Your Business</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">For years, businesses invested in SEO with one goal.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold text-[#FF6105]">Rank on the first page of Google.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">While search engines remain important, customer behavior is evolving.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Today, many people ask questions directly to AI-powered platforms like Google AI Overviews, ChatGPT, Gemini, and Perplexity instead of browsing through multiple websites.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Rather than clicking ten different links, users often receive one summarized answer.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This changes what visibility means.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Your business is no longer competing only for search rankings.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">You're competing to become one of the sources AI systems trust enough to reference.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">If your content is generic, repetitive, or provides little original value, AI systems are unlikely to recommend it.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that consistently publish expert insights, answer customer questions, and demonstrate real experience are better positioned to remain visible as AI-powered search continues to grow.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Modern SEO Is Becoming Generative Search Optimization</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many business leaders still think of SEO as adding keywords to webpages.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That approach is becoming less effective.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">Modern search engines increasingly evaluate whether content genuinely helps users understand a topic.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">At the same time, AI systems need structured, trustworthy information they can easily interpret.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">This means businesses should focus on creating content that includes:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Original expertise</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Practical insights</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Clear website structure</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Helpful answers to customer questions</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Strong technical foundations</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">In addition, elements such as structured data, also known as schema markup, help search engines and AI systems better understand your business, products, and services.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">The objective is no longer just ranking for keywords.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">It's becoming a trusted source of information.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">AI Is Transforming How Marketing Teams Work</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Perhaps the biggest change isn't happening in customer behavior.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's happening inside marketing departments.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Many repetitive marketing tasks that once required hours of manual work can now be completed with AI assistance.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Campaign reporting.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Audience segmentation.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Content variations.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Performance analysis.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Advertising optimization.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">These activities are increasingly supported by intelligent automation.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">Some organizations are even adopting AI agents capable of monitoring campaigns, identifying trends, and recommending improvements with minimal human intervention.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold"><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/how-generative-ai-can-boost-consumer-marketing" class="text-[#FF6105] hover:underline font-bold" target="_blank" rel="noopener noreferrer">businesses successfully integrating AI into marketing operations have reported meaningful improvements in productivity</a> while also reducing customer acquisition costs.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This doesn't eliminate the need for marketing teams.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">It changes where their value comes from.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Team's Role Is Changing</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest misconceptions about AI is that it replaces marketers.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">In reality, it changes the work marketers do.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of spending hours creating first drafts, resizing creative assets, or manually analyzing reports, teams can spend more time on strategy, creativity, and decision-making.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Think of AI as an assistant rather than a replacement.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">It can generate ideas.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Summarize information.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Identify patterns.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Automate repetitive processes.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">But it still requires people to ask the right questions, evaluate quality, ensure accuracy, and protect the brand.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">The most successful businesses are helping their teams become better editors, strategists, and decision-makers instead of simply faster content producers.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">More AI Doesn't Automatically Mean Better Marketing</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">As AI tools become easier to access, businesses are producing more content than ever before.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The internet is becoming increasingly crowded with articles, videos, images, and marketing messages generated with minimal human involvement.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This creates a new challenge.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">Standing out becomes harder.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Customers are becoming better at recognizing generic content.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They can often tell when something feels automated, repetitive, or lacking genuine expertise.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">Publishing larger volumes of AI-generated content doesn't necessarily improve visibility.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">In many cases, it has the opposite effect.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Businesses that combine AI efficiency with original thinking, real-world experience, and customer-focused insights are far more likely to earn trust.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Customer Trust Is Becoming a Competitive Advantage</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">AI has made it easier to create content.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">It has not made it easier to build credibility.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">People still want to know who they're buying from.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They want evidence that a business understands their challenges.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">They look for:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Customer reviews</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Case studies</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Industry expertise</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Thought leadership</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Real people behind the business</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">These trust signals are becoming increasingly important because buyers know AI can generate almost unlimited amounts of content.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">Authenticity is becoming a competitive advantage.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that combine automation with genuine human expertise are often building stronger relationships than those relying entirely on AI-generated communication.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Data Strategy Matters More Than Ever</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">As privacy regulations continue evolving, businesses are becoming less dependent on third-party tracking.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Instead, successful organizations are placing greater emphasis on first-party data.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">This includes information customers intentionally share through:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Website enquiries</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Newsletter subscriptions</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Customer accounts</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Surveys</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Purchase history</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">Unlike third-party data, first-party information is more reliable, more compliant with privacy regulations, and more valuable for creating meaningful customer experiences.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">AI becomes significantly more effective when it's working with accurate, trustworthy data.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For business leaders, investing in data quality is becoming just as important as investing in AI itself.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Don't Chase Every New AI Tool</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">The rapid growth of AI has created an overwhelming number of new platforms.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Every week seems to introduce another tool promising to transform marketing.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses make the mistake of adopting too many solutions without a clear strategy.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">More technology doesn't automatically produce better results.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Instead of asking,</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">"What new AI tool should we buy?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">A better question is,</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">"What business problem are we trying to solve?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Organizations seeing the strongest results typically focus on improving a small number of high-impact processes rather than trying every new platform that enters the market.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold text-center">A focused AI strategy almost always outperforms a scattered one.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">AI Should Strengthen Your Business, Not Replace Your Brand</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest risks businesses face is allowing AI to remove their personality.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Customers don't build relationships with software.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">They build relationships with businesses that communicate clearly, demonstrate expertise, and consistently deliver value.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">AI should help your team work faster.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It shouldn't replace your voice.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">The businesses succeeding today are using AI to improve efficiency while ensuring every important customer interaction still reflects genuine expertise, thoughtful communication, and human judgment.</p>
+            <p class="text-lg leading-relaxed text-[#FF6105] font-bold text-center">Technology may create speed. People create trust.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why Business Leaders Need to Act Now</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">AI isn't replacing digital marketing.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">It's redefining it.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The businesses that adapt early have an opportunity to improve efficiency, strengthen visibility, and create better customer experiences.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Those that ignore these changes risk becoming less visible as AI reshapes search, content discovery, and buyer behavior.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">At the same time, businesses that rely too heavily on automation without maintaining quality and authenticity risk damaging the very trust they're trying to build.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">The goal isn't to become an AI-first company. The goal is to become a smarter business that uses AI responsibly to support long-term growth.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Let’s Wrap It Up</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Artificial intelligence is no longer an experimental technology reserved for large enterprises.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">It's becoming part of everyday business operations and a fundamental part of modern digital marketing.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For business leaders, success isn't determined by how many AI tools you adopt.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's determined by how effectively you combine technology with strategy, trusted expertise, high-quality data, and authentic customer experiences.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">Businesses that use AI to improve decision-making while keeping people at the center of their marketing will be better positioned to compete in the years ahead.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Adopting AI successfully requires more than implementing new tools. <a href="/" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> helps businesses develop digital strategies that combine AI, SEO, content marketing, technical optimization, analytics, and brand-building into a cohesive growth plan. By balancing automation with human expertise, businesses can improve efficiency, strengthen visibility, and build lasting customer trust in an AI-driven digital landscape.</p>
+        `
+    },
+    "the-hidden-cost-of-bad-seo-for-your-business": {
+        title: "The Hidden Cost of Bad SEO - What Outdated Practices Are Costing Your Business",
+        metaTitle: "The Hidden Cost of Bad SEO for Your Business",
+        metaDescription: "Discover how outdated SEO practices can quietly reduce traffic, increase marketing costs, and limit business growth in 2026.",
+        category: "SEO",
+        date: "Jun 25, 2026",
+        author: "EEGNITE Team",
+        image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=1600",
+        content: `
+            <p class="mb-6 text-lg leading-relaxed text-black font-normal">When businesses think about SEO, one question usually comes up first.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">"How much does SEO cost?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's a fair question, but it may not be the most important one.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A better question is:</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">"How much is bad SEO costing your business?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The answer is often much bigger than business owners realize.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Outdated SEO doesn't always cause an immediate drop in traffic or leads. Instead, it slowly chips away at your online visibility, increases your customer acquisition costs, and allows competitors to capture opportunities that could have been yours.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">In 2026, search has changed significantly.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Google's algorithms are more sophisticated, AI-powered search is becoming mainstream, and users expect fast, helpful, and trustworthy experiences.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that continue following outdated SEO practices aren't just missing opportunities. They're losing revenue without realizing it.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Let's look at where those hidden costs come from.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Paying More for Every Customer Than You Need To</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every business wants to generate leads efficiently.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">When organic visibility is weak, many companies compensate by increasing their advertising budget.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Paid advertising certainly has its place, but relying on it because SEO isn't delivering creates a long-term financial problem.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Industry data shows that the average cost per lead from organic search is approximately $14, while the average lead generated through pay-per-click advertising costs around $44.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That means businesses relying heavily on paid ads may pay more than three times as much to acquire the same customer.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Paid campaigns stop producing results the moment your budget runs out.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Organic visibility, on the other hand, continues generating opportunities long after content has been published.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Good SEO doesn't simply reduce marketing costs.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">It helps create a long-term business asset that continues delivering value over time.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Low-Quality Content Is Becoming More Expensive</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">There was a time when publishing large volumes of keyword-focused content could improve search rankings.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses produced hundreds of short articles targeting slight variations of the same keyword.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Today, that approach is becoming increasingly risky.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Search engines have become much better at identifying content that offers little value to users.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Content written purely to satisfy algorithms, whether created manually or generated through basic AI prompts, is far less likely to perform well.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Recent industry reports found that many businesses experienced significant traffic declines following Google's ongoing quality-focused algorithm updates.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The issue isn't AI itself.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The issue is publishing content that lacks expertise, originality, or usefulness.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Modern SEO rewards businesses that answer customer questions clearly, provide practical insights, and demonstrate genuine experience.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Creating fewer high-quality resources often delivers better long-term results than publishing large amounts of repetitive content.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Website May Be Invisible in AI Search</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Search is no longer limited to traditional search engine results.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">People are increasingly finding businesses through AI-powered experiences such as Google AI Overviews and conversational search tools.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">When someone asks AI:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Which accounting software is best?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Who offers reliable cybersecurity services?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">What marketing agency specializes in healthcare?</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">The AI doesn't recommend every business.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It selects businesses it considers credible and relevant.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">If your website isn't structured properly or your content lacks authority, your business may never appear in these recommendations.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">Meanwhile, your competitors gain visibility before customers even visit Google results.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Recent industry research shows that most enterprise marketing teams are already adapting their SEO strategies to include AI-powered search experiences.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that ignore this shift risk becoming less discoverable as customer behavior continues evolving.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Technical Problems Quietly Reduce Revenue</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses think SEO is entirely about content.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">In reality, your website's technical performance plays an equally important role.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Imagine a potential customer clicking your website.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The page loads slowly.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Images take several seconds to appear.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Buttons don't work properly on mobile.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Navigation feels confusing.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Most visitors won't wait.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Research consistently shows that even a one-second increase in mobile page load time can significantly reduce conversion rates.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This means outdated websites aren't just creating poor user experiences.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They're reducing the value of every visitor your marketing generates.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">Technical SEO isn't simply about helping search engines understand your website.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">It's about making sure potential customers can actually use it.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Building Visibility for Competitors Instead of Yourself</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the hidden costs of outdated SEO is opportunity loss.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every time your business fails to appear for an important search, another business takes your place.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">That competitor earns:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The website visit.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The brand awareness.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The enquiry.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The customer relationship.</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">Over time, these missed opportunities compound.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold text-[#FF6105]">A competitor that consistently appears in search results becomes more familiar to buyers.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They receive more mentions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">More reviews.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">More backlinks.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">More recommendations.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Visibility creates momentum.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that fall behind often find it increasingly difficult to catch up.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Measuring Yesterday's Success Metrics</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses still judge SEO success by rankings alone.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">While rankings remain important, search behavior has changed.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Today's customers may discover your business through:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Google AI Overviews</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">YouTube</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">LinkedIn</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Industry publications</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Online reviews</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">AI assistants</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Modern SEO is about visibility across the entire digital ecosystem.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that focus only on keyword rankings may overlook significant opportunities to strengthen their overall online presence.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">The goal is no longer simply ranking first. The goal is becoming the business people repeatedly encounter wherever they research solutions.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Treating SEO Like a One-Time Project</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the most expensive mistakes businesses make is viewing SEO as something that can be completed once.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A website launches. Some keywords are optimized. A few blogs are published. Then everything stops.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">Meanwhile, competitors continue improving.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They publish new content.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Strengthen technical performance.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Earn media mentions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Adapt to changing algorithms.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">Build authority.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">SEO isn't static because search itself never stops evolving.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that continue investing in improvements often build a stronger competitive advantage every year.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Those that stop gradually lose visibility without realizing why.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Missing the Long-Term Return SEO Can Deliver</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Perhaps the biggest hidden cost isn't what you're spending. It's what you're missing.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Unlike paid advertising, <a href="/services/seo/" class="text-[#FF6105] hover:underline font-bold">strong SEO strategy</a> compounds over time.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">A well-written article can generate traffic for years.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A technically optimized website continues supporting conversions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A trusted brand earns more visibility across search engines, AI platforms, and industry publications.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">Long-term studies consistently show that mature SEO strategies generate significantly stronger returns than relying primarily on paid advertising alone.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses investing in modern SEO aren't simply generating traffic.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They're building digital assets that continue producing value long after the initial work is complete.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why Modern SEO Looks Different</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">SEO in 2026 isn't about finding shortcuts.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's about creating a better experience for both search engines and people.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">That means focusing on:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Helpful, expert-led content.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Fast, mobile-friendly websites.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Strong technical foundations.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Clear website structure.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">AI-friendly content formatting.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Brand authority and digital PR.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Consistent user experience.</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that embrace these principles are far more likely to remain visible as search continues evolving.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Let’s Wrap It Up</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">The biggest cost of bad SEO isn't the money you spend on outdated tactics.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">It's the revenue you never generate.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every day your business relies on ineffective content, slow website performance, outdated optimization techniques, or weak technical foundations, competitors have another opportunity to reach customers before you do.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Modern SEO is no longer about chasing algorithms.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">It's about building a website and a digital presence that customers trust, search engines understand, and AI platforms can confidently recommend.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The businesses that recognize this shift today will be in a far stronger position tomorrow.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Modern SEO requires more than keyword optimization. <a href="/" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> helps businesses improve technical SEO, strengthen website performance, develop helpful content, optimize for AI-powered search, and build long-term digital authority. By addressing outdated practices and identifying hidden performance gaps, businesses can improve visibility, reduce customer acquisition costs, and create sustainable organic growth.</p>
+        `
+    },
+    "how-social-media-marketing-changed-in-2026": {
+        title: "How Social Media Marketing Has Changed for B2B Companies in 2026",
+        metaTitle: "How B2B Social Media Marketing Changed in 2026",
+        metaDescription: "Learn about how B2B social media marketing has evolved in 2026 and what businesses need to do to stay visible, build trust, and generate demand.",
+        category: "Social Media",
+        date: "Jun 20, 2026",
+        author: "EEGNITE Team",
+        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=1600",
+        content: `
+            <p class="mb-6 text-lg leading-relaxed text-black font-normal">If your B2B social media strategy looks the same as it did two or three years ago, it may already be falling behind.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For years, many businesses treated social media as a broadcasting platform.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They shared company updates, promoted blogs, linked to landing pages, and celebrated business milestones. Occasionally, they boosted a post with paid advertising and hoped it would generate leads.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">That approach no longer delivers the same results.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">In 2026, social media has become one of the most important channels for building trust, demonstrating expertise, and influencing buying decisions. It's no longer just about reaching people. It's about becoming a familiar and credible voice before a buyer is ready to make a purchase.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Let's explore the biggest changes shaping B2B social media marketing this year and what they mean for your business.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Company Pages No Longer Drive the Same Organic Reach</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses have spent years growing their LinkedIn company pages.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">The assumption was simple.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">More followers would lead to greater visibility.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Today, that assumption doesn't always hold true.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">LinkedIn's algorithm increasingly prioritizes content from people rather than businesses. As a result, company pages often reach only a small percentage of their followers organically.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This means that even if you've spent years building a large audience, many of those followers may never see your updates.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Businesses are responding by changing where they invest their time and budget.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of relying solely on corporate pages, they're encouraging leaders and subject matter experts to become visible voices within their industries.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">People naturally engage with people more than logos.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">That's becoming one of the biggest drivers of organic reach.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Thought Leadership Has Become More Valuable Than Brand Promotion</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Think about the content you stop to read on LinkedIn.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Is it usually a polished company announcement?</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Or is it someone sharing an interesting perspective, solving a problem, or explaining something they've learned?</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Most people trust individuals before they trust organizations.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That's why many B2B companies are investing in executive visibility rather than relying entirely on brand accounts.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Marketing teams are helping founders, consultants, engineers, product specialists, and leadership teams share their expertise consistently.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of posting promotional updates, they're discussing industry trends, answering customer questions, and sharing practical insights.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">This approach builds credibility over time.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">When buyers eventually need a solution, they often remember the people who helped them long before they needed to make a purchase.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Social Media Is Becoming a Place to Learn, Not Just Browse</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Buyers aren't visiting social platforms just to keep up with industry news anymore.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They're actively researching.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">A marketing manager might search LinkedIn for advice on improving lead generation.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">A business owner may look for videos explaining AI search.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">A technology buyer could search YouTube for software comparisons before ever visiting a vendor's website.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Social platforms are increasingly functioning like search engines.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That changes how businesses should create content.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Instead of asking,</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">"What should we post today?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">It becomes more valuable to ask,</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">"What questions are our customers searching for?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Content that answers real questions has a much longer lifespan than content focused only on announcements or promotions.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Zero-Click Content Is Becoming the New Standard</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">For years, businesses measured success by how many people clicked a link.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Today, platforms are rewarding something different.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Social networks want users to stay on their platforms for as long as possible.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Posts that immediately direct people to external websites often receive less visibility than content users can consume without leaving the platform.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This has led to the rise of zero-click content.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Instead of writing,</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">"Download our guide here."</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Businesses are sharing the key insights directly inside the post.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">They're using:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Document carousels</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Short educational videos</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Visual frameworks</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Checklists</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Infographics</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">The goal is to provide immediate value rather than asking for a click first.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Ironically, businesses that give away more useful information often generate greater trust and stronger long-term demand.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Short Videos Are Replacing Traditional Corporate Content</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Professional-looking promotional videos haven't disappeared.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">They're simply no longer the content audiences engage with most.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">In 2026, buyers respond better to authentic, educational videos than polished advertisements.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Rather than producing a single expensive campaign every quarter, businesses are creating ongoing content series.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">For example:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Weekly marketing tips</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Industry myth breakdowns</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Product demonstrations</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Customer problem-solving sessions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Behind-the-scenes discussions</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">These recurring formats create familiarity.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">People begin recognizing both the presenter and the brand.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Research also shows that short-form videos consistently generate significantly higher engagement than many traditional long-form formats, making them one of the most effective ways to educate audiences and remain visible throughout the buying journey.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Buyers Want Expertise, Not Marketing Messages</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Business buyers have become more selective about the content they consume.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They've seen countless sales pitches.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">What they're looking for now is expertise.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This is why many organizations are building content around internal experts.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">An engineer explaining a technical concept.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A consultant discussing industry challenges.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A strategist sharing lessons from real projects.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">These voices often build more credibility than highly polished corporate campaigns.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">People trust knowledge that feels genuine.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Success Is No Longer Measured by Clicks Alone</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses still judge social media performance by traffic.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">How many people clicked?</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">How many visited the website?</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">While those metrics remain useful, they're no longer the complete picture.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Today's buying journeys are much longer.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">A prospect may,</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Watch your videos for months.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Read your LinkedIn posts regularly.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">See your employees commenting across industry discussions.</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Only much later do they visit your website.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Social media's role has shifted from immediate lead generation to long-term demand creation.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">That means businesses are paying closer attention to metrics such as:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Engagement</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Shares</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Saves</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Video completion rates</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Comments</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Returning viewers</span>
+                </li>
+            </ul>
+            <p class="text-lg leading-relaxed text-black font-bold">These interactions often indicate growing trust long before a sales conversation begins.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Social Media and Brand Awareness Now Go Hand in Hand</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest shifts in 2026 is the renewed focus on brand awareness.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Many businesses spent years chasing quick conversions through social media.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Today, the most successful companies recognize that consistent visibility creates future demand.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every educational post...</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every helpful video...</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every insightful comment...</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Every industry discussion...</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold">helps strengthen brand recognition.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">When buyers eventually begin comparing suppliers, they're naturally drawn toward businesses they've seen repeatedly providing value.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That's why social media is no longer viewed as just another marketing channel.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">It's becoming one of the primary ways businesses build familiarity, trust, and credibility before prospects are ready to buy.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why the New Approach Works Better</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Modern B2B buyers don't want to be interrupted.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They want to learn.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They're researching independently, comparing options quietly, and forming opinions long before contacting a sales team.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">The businesses winning on social media understand this shift.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of pushing promotions, they're answering questions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of chasing clicks, they're building trust.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of relying only on company pages, they're empowering real people to share real expertise.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Over time, this creates stronger relationships with potential customers and a more resilient brand presence across every stage of the buying journey.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Let’s Wrap It Up</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Social media and all over <a href="/industries/b2b-lead-generation/" class="text-[#FF6105] hover:underline font-bold">digital marketing for B2B companies</a> has evolved significantly in 2026.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The old playbook of posting company updates, sharing blog links, and measuring success through clicks is giving way to a strategy centered on trust, education, and human expertise.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that continue treating social media as a promotional channel may find it increasingly difficult to maintain visibility.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-bold">Those that invest in thought leadership, zero-click content, employee expertise, educational video, and consistent brand building are better positioned to remain relevant as buyer behavior continues to evolve.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">Ultimately, social media is no longer just about generating attention.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It's about becoming the business your audience already knows and trusts before they're ready to make a decision.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Building an effective B2B <a href="/services/social-media-marketing/" class="text-[#FF6105] hover:underline font-bold">social media strategy</a> today requires more than posting consistently. EEGNITE helps businesses develop content strategies focused on thought leadership, employee advocacy, brand awareness, social media optimization, and performance-driven digital marketing. By creating content that educates, builds trust, and aligns with modern buyer behavior, businesses can strengthen their visibility and generate sustainable long-term demand.</p>
+        `
+    },
+    "what-google-ai-overview-data-actually-reveals-about-your-website": {
+        title: "What Google AI Overview Data Actually Reveals About Your Website",
+        metaTitle: "What Google AI Overview Data Reveals About Your Site",
+        metaDescription: "Learn what Google’s new AI Overview data reveals about your visibility, authority, content gaps, and competitive position online.",
+        category: "AI Search",
+        date: "Jun 15, 2026",
+        author: "EEGNITE Team",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
+        content: `
+            <p class="mb-6 text-lg leading-relaxed text-black font-normal">Most business owners already track a few familiar marketing metrics.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Website traffic.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Leads.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Conversions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Search rankings.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">These numbers help you understand whether your marketing is moving in the right direction.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">But Google's latest Search Console update introduces something entirely new.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For the first time, Google is providing dedicated reporting that shows how often your website appears within AI-powered search experiences, including AI Overviews and AI Mode. Previously, this visibility was blended into standard search reporting, making it difficult to understand how your business was performing within Google's AI-generated answers.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">At first glance, this may sound like another SEO metric.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold text-[#FF6105]">It isn't.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For business owners, this data can reveal something much more important.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It can show whether your business is visible when potential customers are researching solutions, comparing providers, and making purchasing decisions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">More importantly, it can expose gaps that traditional website reports often fail to uncover.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Let's explore what this new data actually tells you.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Your Business May Not Be Showing Up When Buyers Are Researching</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses assume they're visible because they rank for a few important keywords.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The problem is that search behavior is changing rapidly.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Instead of searching for specific company names, people are increasingly asking broader questions.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">For example:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">What's the best CRM for a growing business?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Which accounting software should small businesses use?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">How can I improve website conversion rates?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Which marketing agency specializes in healthcare?</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">Google's AI Overviews attempt to answer these questions directly.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">If your competitors appear within those answers and your business doesn't, that's an important signal.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It suggests your company may be missing visibility during the research stage of the buying journey.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">By the time someone searches specifically for your business name, they may have already narrowed down their options.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">The real opportunity often exists earlier in the process.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Shows Whether Google Views Your Business as a Trusted Source</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Google's AI systems don't pull information from websites randomly.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">They select sources they believe are useful, relevant, and trustworthy for answering a user's question.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">If your website appears frequently within AI-generated responses, it can indicate that Google sees your business as a credible source of information in your industry.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">If competitors consistently appear while your business doesn't, that may reveal an authority gap.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This doesn't necessarily mean their services are better.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It may simply mean they've built stronger signals of expertise online through content, industry recognition, reviews, media mentions, or thought leadership.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Understanding this difference can help explain why some businesses seem to dominate visibility even when competitors offer similar services.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Reveals Content Gaps You Didn't Know Existed</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses create content because they know they should.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Blog articles are published. Service pages are updated. Resources are added.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Yet visibility remains stagnant.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The new AI reporting can help reveal whether your content is actually being used when Google answers customer questions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">This is important because content that ranks isn't always content that helps.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">You may discover that competitors appear in AI responses for topics your customers care about, while your content never gets surfaced.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That often indicates a content gap.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The issue isn't necessarily that you're producing too little content. The issue may be that you're not addressing the questions buyers are actively asking.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Helps You Understand What Customers Care About</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest challenges for business owners is understanding how customers research solutions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Businesses focus on products and services. Customers focus on problems.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A business wants to talk about its offerings. A customer wants answers.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">For example, your company may want to promote:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Medical services</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Accounting services</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Legal consulting</span>
+                </li>
+            </ul>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Meanwhile, customers may be searching for:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Why isn't my website generating leads?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">How do I reduce tax liabilities?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">What legal risks should growing businesses avoid?</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">AI Overview visibility can help reveal whether your content aligns with these real-world questions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This insight can help shape future content and marketing strategies around customer needs rather than internal priorities.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Shows Where Competitors Are Winning Attention</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the most valuable uses of AI Overview data is competitive analysis.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">If certain competitors consistently appear within AI-generated responses, it raises important questions:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Why are they showing up?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">What topics are they covering?</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">What signals of authority have they built?</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses focus entirely on their own marketing performance. However, visibility is relative.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Your customers aren't comparing you against an ideal standard. They're comparing you against competitors.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">AI Overview data can help reveal where those competitors are gaining attention before potential customers ever reach your website.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Highlights the Growing Importance of Brand Authority</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest misconceptions about modern search visibility is that it depends entirely on rankings.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">That was never completely true, and it's becoming even less true in the AI era.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Google's AI systems evaluate information from across the web.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">Strong visibility increasingly depends on signals such as:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Customer reviews</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Industry mentions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Media coverage</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Expert commentary</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Third-party references</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Brand reputation</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">This is one reason digital PR and thought leadership are becoming more important.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The businesses that consistently appear across reputable sources often create stronger trust signals than businesses that only publish content on their own websites.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">For business owners, this means visibility is becoming closely tied to credibility.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Can Reveal Why Growth Has Slowed</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Have you ever felt like your website traffic has plateaued? Or that lead generation has become harder despite ongoing marketing efforts?</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">AI Overview data may help explain why.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Many businesses have strong visibility for branded searches and a handful of high-priority keywords. However, they have little visibility for broader industry questions.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">This creates a ceiling on growth.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">You continue reaching people who already know your brand while missing opportunities to reach new audiences earlier in their decision-making process.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The new reporting can help identify these visibility gaps before they become larger business problems.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">It Shows Whether Your Business Is Ready for the Future of Search</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Perhaps the most important insight isn't about today. It's about tomorrow.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Google introduced dedicated AI performance reports because AI-powered search experiences are becoming an increasingly important part of how people discover information online. The reports show impressions within AI Overviews, AI Mode, and other generative AI experiences, giving website owners a dedicated view of AI visibility for the first time.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-medium">Businesses that understand how they're performing within these environments today will likely have an advantage as search continues to evolve.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold text-center">The goal isn't simply to monitor another metric. The goal is to understand whether your business is becoming discoverable in the places where customer behavior is heading.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">What the New Data Doesn't Tell You</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">While the new reports are valuable, they don't provide the full picture.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Currently, Google only reports impressions.</p>
+            <p class="mb-4 text-lg leading-relaxed text-black font-medium">The reports do not include:</p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Clicks</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Click-through rates</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Query-level data</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
+                    <span class="text-lg text-black">Conversion data</span>
+                </li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">In other words, you can see whether your website appeared within AI-generated experiences, but you can't yet see how much traffic or business value those appearances generated.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-semibold">This means business owners should view the data as a visibility indicator rather than a direct revenue metric.</p>
+            <div class="my-8 p-6 bg-gray-50 rounded-2xl border-l-4 border-[#FF6105]">
+                <p class="text-xl font-bold text-black mb-2">Think of it as,</p>
+                <p class="text-lg italic text-black">“Understanding where your brand is being seen, not yet measuring the full business impact.”</p>
+            </div>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Final Words</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Google's new AI Overview reporting is much more than another SEO feature.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">For business owners, it provides valuable insight into how visible your company is during the modern buying journey.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">It can reveal authority gaps, content gaps, competitive weaknesses, and opportunities to strengthen your digital presence.</p>
+            <p class="mb-6 text-lg leading-relaxed text-[#FF6105] font-bold">Most importantly, it helps answer a critical question:</p>
+            <p class="mb-6 text-lg leading-relaxed text-black font-semibold text-center italic">"Is my business showing up when potential customers are looking for answers?"</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">As AI-powered search continues to grow, understanding that visibility may become just as important as tracking traditional rankings and website traffic.</p>
+
+            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
+            <p class="mb-6 text-lg leading-relaxed text-black">Understanding AI visibility requires more than monitoring search rankings. <a href="https://www.eegnite.com/" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> helps businesses evaluate search performance, identify content and authority gaps, strengthen digital PR efforts, and develop strategies that improve visibility across both traditional search and emerging AI-driven search experiences. By combining SEO, content strategy, brand authority building, and performance analysis, businesses can better position themselves for the future of search.</p>
+        `
+    },
     "why-your-business-struggles-with-online-visibility": {
         title: "Why Businesses Struggle to Generate Consistent Online Visibility Across Channels",
         metaTitle: "Why Your Business Struggles With Online Visibility",
@@ -195,7 +960,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">When teams aren't aligned, messaging becomes fragmented and visibility suffers.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Recent studies show that many businesses use multiple marketing channels, but only a small percentage successfully coordinate messaging and customer data across those channels.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The result is often a disconnected customer experience.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">Businesses that align their teams around a common message typically create stronger visibility because every interaction reinforces the same brand identity.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black"><a href="https://improvado.io/blog/multi-channel-marketing-strategy" class="text-[#FF6105] hover:underline font-bold" target="_blank" rel="noopener noreferrer">Businesses that align their teams around a common message typically create stronger visibility</a> because every interaction reinforces the same brand identity.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">You're Building Reach But Not Building Trust</h2>
             <p class="mb-6 text-lg leading-relaxed text-black">Visibility isn't just about being seen.</p>
@@ -223,7 +988,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">By focusing on consistency, trust, customer experience, and cross-channel alignment, businesses can create a stronger digital presence that remains visible wherever potential customers choose to engage.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How Can EEGNITE Help?</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">Building visibility across multiple channels requires more than isolated marketing activities. EEGNITE helps businesses identify visibility gaps through SEO, content strategy, digital PR, conversion optimization, and performance-focused digital marketing. By creating a more connected and consistent online presence, businesses can improve discoverability, strengthen brand authority, and support long-term growth.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Building visibility across multiple channels requires more than isolated marketing activities. EEGNITE helps businesses identify visibility gaps through SEO, content strategy, digital PR, conversion optimization, and <a href="https://www.eegnite.com/" class="text-[#FF6105] hover:underline font-bold">performance-focused digital marketing</a>. By creating a more connected and consistent online presence, businesses can improve discoverability, strengthen brand authority, and support long-term growth.</p>
         `
     },
     "8-reasons-why-your-website-traffic-isnt-generating-leads": {
@@ -500,201 +1265,6 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Through website audits, conversion rate optimisation, user experience analysis, <a href="/services/seo/" class="text-[#FF6105] hover:underline font-bold">SEO services</a>, and performance-focused digital strategies, businesses can gain a clearer understanding of visitor behaviour and identify practical opportunities to improve lead generation and online performance.</p>
         `
     },
-    "top-10-seo-agencies-kolkata-2026": {
-        title: "Top 10 SEO Agencies in Kolkata You Can Trust in 2026",
-        metaTitle: "Top 10 SEO Agencies in Kolkata For 2026",
-        metaDescription: "Explore the best 10 SEO agencies in Kolkata, offering proven SEO strategies to improve rankings, drive traffic, and grow your business with expert SEO services.",
-        category: "SEO",
-        date: "Jan 17, 2026",
-        author: "EEGNITE Team",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600",
-        content: `
-            <p class="mb-6 text-lg leading-relaxed text-black font-normal">In the ever-evolving world of digital marketing, choosing the right SEO agency is crucial for businesses looking to grow their online presence. With the increasing importance of SEO in driving traffic and enhancing website visibility, partnering with a reliable SEO agency can significantly impact your business’s success.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">However, finding the right SEO agency can be overwhelming, as there are many options to choose from. To help you make an informed decision, we've compiled a list of the top Kolkata-based SEO agencies, each known for its proven expertise and results-driven approach. Whether you're looking for local SEO services or a comprehensive SEO strategy, partnering with the best SEO agency in Kolkata can take your business to new heights in 2026.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">In this blog, we will discuss the top 10 SEO agencies in Kolkata that can help you achieve your online goals and grow your business effectively.</p>
-
-            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why Choosing the Best SEO Agency Matters</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">When it comes to growing your online presence, SEO is not just a marketing tactic; it’s a necessity. For businesses in Kolkata, choosing the best SEO agency can make all the difference in standing out in a highly competitive digital landscape. A well-executed SEO strategy can improve your website’s ranking, drive organic traffic, and ultimately increase conversions.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">The importance of SEO goes beyond just keyword rankings. It involves improving user experience, optimizing page speed, ensuring mobile responsiveness, and creating high-quality content that resonates with your target audience. With the ever-changing Google algorithms, partnering with the right <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">SEO services company in Kolkata</a> is key to staying ahead of the competition.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">By choosing a trusted SEO agency, you gain access to experienced professionals who stay updated with the latest SEO industry trends, ensuring your business is always in line with best practices.</p>
-
-            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Top 10 SEO Agencies in Kolkata You Can Trust in 2026</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">Here are the top 10 SEO agencies in Kolkata that have consistently delivered tangible results for their clients, helping businesses achieve their digital marketing goals:</p>
-
-            <div class="mb-12 p-8 bg-gray-50 rounded-3xl border border-black/5">
-                <h3 class="text-2xl font-bold mb-4 text-[#FF6105] uppercase tracking-tight">1. EEGNITE</h3>
-                <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE stands out as one of Kolkata’s top SEO agencies, recognized for its innovative and results-driven SEO solutions. Specializing in keyword research and strategy making, on-page optimization, technical SEO, content refinement, and link-building activity, EEGNITE crafts customized strategies that deliver long-lasting results for businesses of all sizes. Their SEO experts are dedicated to increasing organic traffic and improving keyword rankings, with a focus on achieving sustainable growth.</p>
-                <p class="mb-6 text-lg leading-relaxed text-black">With a strong track record of success, EEGNITE has become a trusted name in the SEO and digital marketing industry, helping clients achieve significant improvements in online visibility and performance. From optimizing website structures to targeting high-impact keywords, their SEO strategies cover every critical aspect of digital marketing, ensuring comprehensive growth for all businesses.</p>
-                <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE ensures that your SEO campaigns are always driven by the latest trends and best practices. <a href="/#contact" class="text-[#FF6105] hover:underline font-bold">Connect with them</a> today to see why they are regarded as one of the best SEO agencies in Kolkata nowadays.</p>
-            </div>
-
-            <div class="space-y-8 mb-16">
-                 <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">02.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">Kreative Machinez</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Known for delivering structured SEO strategies that help businesses enhance search visibility and build a consistent online presence.</p>
-                    </div>
-                </div>
-                 <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">03.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">Indus Net Technologies</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Offers SEO services focused on improving website performance, user experience, and search visibility across both local and international markets.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">04.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">SEO Control</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Emphasizes local-focused SEO strategies designed to help businesses improve search rankings and visibility within competitive regional markets.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">05.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">PromotEdge</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Offers a mix of on-page SEO, content-driven strategies, and link-building efforts to support online growth for businesses at different stages.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">06.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">Webguru Infosystems</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Uses a data-driven SEO approach to help businesses across various industries improve organic rankings and strengthen online visibility.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">07.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">TechShu</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Delivers customized SEO and content strategies aimed at attracting targeted traffic and improving conversion performance for growing businesses.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">08.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">GoWebbo</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Combines SEO with social media-focused strategies to help businesses strengthen their digital presence across multiple online channels.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">09.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">WebArt Technology</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Focuses on local and technical SEO practices to help businesses improve website performance and search visibility.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <span class="text-black font-bold text-xl">10.</span>
-                    <div>
-                        <h4 class="text-xl font-bold text-black mb-2">Digital Piloto</h4>
-                        <p class="mb-6 text-lg leading-relaxed text-black">Works across local and national SEO initiatives to help businesses increase visibility in competitive search environments through structured digital strategies.</p>
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Why EEGNITE is the Best SEO Agency in Kolkata</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">When it comes to SEO services in Kolkata, there are many agencies to choose from, but none match EEGNITE's proven ability to drive real, measurable results. Their customized SEO strategies are designed to meet the goal of your business, ensuring improvements in search engine rankings and organic traffic. Here’s why EEGNITE stands out from the rest:</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Proven Track Record</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">Since its inception, EEGNITE has quickly built a strong reputation by consistently delivering results for its clients. The agency has a proven ability to drive organic traffic, improve search engine rankings, and boost conversion rates through customized SEO strategies. With a focus on client success, EEGNITE has established itself as a trusted digital marketing partner for businesses in Kolkata and beyond.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Keyword Research and Strategy Making</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE dives deep into your industry to uncover high-value keywords that attract qualified traffic. Their tailored keyword selection aligns with your business objectives, target audience, and competitive landscape, ensuring you capture the right traffic and drive conversions.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">On-Page SEO</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE handles on-page SEO by optimizing site structure, page content, meta tags, image alt texts, heading tags, internal linking, and keyword placement. These optimizations help search engines understand a page’s content relevance while improving user experience and engagement.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Off-Page SEO</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE’s off-page SEO efforts focus on ethical link-building strategies, brand mentions, and site authority development. This helps strengthen domain credibility and supports competitive keyword rankings over time.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Technical SEO</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">Technical SEO includes entire site audits, page speed optimization, mobile responsiveness checks, crawl error resolution, and indexing status improvements. EEGNITE handles all critical technical errors that most agencies overlook. These ensure search engines can access and evaluate your website efficiently.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Local SEO</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">Local SEO services help businesses improve visibility in Google Maps for local-intent searches. EEGNITE’s local SEO strategies optimize your Google Business Profile by local keyword targeting, enhance your online presence through local citation, and earn more reviews. </p>
-
-            <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE also focuses on next generation SEO models like: </p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">AEO/GEO/Semantic Search Model</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE leverages advanced AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), and Semantic Search models to boost your brand’s visibility across AI-driven platforms like ChatGPT, Gemini, Perplexity, and others. By aligning your content with voice-based and AI-generated search results, EEGNITE ensures your business stays ahead of evolving search trends, mapping keyword intent and user behavior to drive targeted traffic and higher engagement.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Customer-Centric Approach</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">The key reason EEGNITE is considered one of the best <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">SEO companies in Kolkata</a> is its customer-first approach. The agency takes the time to understand each client’s goals, target audience, and unique challenges. By creating tailored SEO solutions, they ensure businesses get results that align with their specific objectives.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Expert Team of SEO Professionals</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE’s team consists of experienced and certified SEO professionals who stay updated with the latest SEO trends, tools, and algorithms. Their deep understanding of the ever-changing digital landscape allows them to adapt strategies and implement best practices that deliver long-term success for clients.</p>
-
-            <h3 class="text-xl font-bold text-black mt-8 mb-2">Measurable Results and Transparent Reporting</h3>
-            <p class="mb-6 text-lg leading-relaxed text-black">At EEGNITE, results matter. The SEO agency provides detailed analytics and regular performance reports to clients, so they can track the progress of their SEO campaigns. This transparency helps businesses make informed decisions and ensures that the strategies implemented are yielding measurable outcomes.</p>
-
-            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">How to Choose the Best SEO Agency for Your Business</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">Choosing the right SEO agency for your business is a crucial decision that can shape your digital success. With numerous agencies available in Kolkata, promising outstanding results, it’s important to carefully evaluate the key factors that align with your specific goals and needs. Here are factors to help you navigate the selection process.</p>
-
-            <ul class="space-y-4 mb-8">
-                 <li class="flex items-start gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
-                    <span class="text-lg text-black"><strong>Experience and Expertise:</strong> Choose an agency with proven success in your industry. Look for case studies and client testimonials to gauge their expertise.</span>
-                </li>
-                 <li class="flex items-start gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
-                    <span class="text-lg text-black"><strong>Comprehensive Services:</strong> Ensure the agency offers a full range of SEO services, from on-page and off-page SEO to technical SEO and content strategy.</span>
-                </li>
-                 <li class="flex items-start gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
-                    <span class="text-lg text-black"><strong>Transparency and Reporting:</strong> Opt for agencies that provide clear, regular reports and use analytics tools like Google Search Console, GA4 to track progress.</span>
-                </li>
-                 <li class="flex items-start gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
-                    <span class="text-lg text-black"><strong>Customized Strategy:</strong> A top agency will create tailored strategies that align with your unique business goals, like EEGNITE’s approach to personalized SEO.</span>
-                </li>
-                 <li class="flex items-start gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span>
-                    <span class="text-lg text-black"><strong>Results-Oriented Approach:</strong> The best agency focuses on long-term growth and measurable results, driving traffic and improving search rankings over time.</span>
-                </li>
-            </ul>
-
-            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Conclusion</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">Choosing the best SEO agency is essential for any business looking to improve its online presence and achieve long-term success. Whether you're a local startup or an established brand, partnering with the right SEO agency can lead to significant improvements in your search rankings, traffic, and conversions.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">From the list of the top 10 SEO agencies in Kolkata, EEGNITE stands out as a leading choice for local or nationwide businesses that need results-driven SEO strategies. With a customer-centric approach, proven success, and a team of SEO experts, EEGNITE continues to set the benchmark for SEO services in Kolkata.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">If you're ready to elevate your business’s online presence, visit the EEGNITE website today to get started with a customized SEO plan or call us at <a href="tel:+916289753474" class="text-[#FF6105] hover:underline font-bold">+91 6289 753 474</a> to schedule your consultation.</p>
-
-            <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Frequently asked questions</h2>
-
-            <div class="space-y-6">
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">1. Why is SEO important for businesses in Kolkata in 2026?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">SEO is crucial for businesses in Kolkata in 2026 because online competition has increased significantly, and customers rely heavily on search engines to discover local products and services. With more businesses investing in digital marketing, SEO helps brands improve visibility, attract high-intent traffic, and build long-term credibility. A strong SEO strategy ensures businesses appear in local searches, Google Maps results, and organic listings, making it easier for potential customers to find them at the right moment.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">2. What SEO services do you offer at EEGNITE?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">At EEGNITE, we provide comprehensive SEO solutions to enhance your online visibility and drive business growth. Our services include on-page optimization (keyword research, content optimization, internal linking, and metadata enhancements), off-page SEO (ethical link building and brand authority builtup), and technical SEO (website audits, page speed optimization, mobile responsiveness, and crawl issues resolution). For location-based businesses, we also offer local SEO services, including Google Business Profile optimization, local keyword targeting, and local citation.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">3. How much does SEO cost in Kolkata?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">SEO pricing in Kolkata varies based on your business goals, industry competition, and website needs. At EEGNITE, we offer customized SEO packages designed to fit your specific requirements, ensuring cost-effective solutions that drive results. Contact EEGNITE for a free consultation.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">4. How long does SEO take to show results?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">SEO is a long-term strategy, and results typically start becoming visible within 3 to 6 months, depending on factors such as competition, business niche, website health status, and the SEO efforts implemented. While initial improvements like better indexing and keyword movement may appear earlier, sustainable traffic growth and stable rankings usually require consistent optimization over time.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">5. Does SEO work for all industries?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">SEO works for most industries, but the strategy and timelines may vary depending on keyword competition, audience behavior, and search demand within that industry.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">6. Will SEO help my business get local leads?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">Yes, by a proper local SEO strategy, businesses can attract nearby customers through Google Maps results, and local intent queries.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-bold text-black mb-2">7. How can I get started with an SEO agency in Kolkata?</h3>
-                    <p class="mb-6 text-lg leading-relaxed text-black">Starting with an SEO agency in Kolkata begins with understanding your business goals and evaluating your current online performance. Most agencies offer an initial consultation where they assess website health, keyword rankings, and potential growth areas. It's important to ask about their experience, past success stories, and how they tailor strategies to meet your specific needs. A reliable SEO agency like EEGNITE will provide a clear roadmap, including actionable steps, timelines, and methods for tracking performance.</p>
-                     <p class="mb-6 text-lg leading-relaxed text-black">To get started with expert SEO solutions that align with your business goals, contact EEGNITE for a personalized consultation.</p>
-                </div>
-            </div>
-        `
-    },
     "local-seo-strategies-2026-google-maps": {
         title: "7 Proven Local SEO Strategies to Rank Higher on Google Maps in 2026",
         metaTitle: "7 Proven Local SEO Strategies to Rank on Google Maps in 2026",
@@ -873,7 +1443,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
                 </li>
             </ul>
              <p class="mb-6 text-lg leading-relaxed text-black">Mistake: Going with the cheapest or quickest option. Local SEO takes time and effort. If an agency is offering quick fixes, they’re either cutting corners or setting unrealistic expectations. Choose wisely, or risk wasting money and time.</p>
-             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE is your ultimate <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">best local SEO agency in India</a>. If you’re ready to stop playing games and get real, measurable results, <a href="/#contact" class="text-[#FF6105] hover:underline font-bold">get in touch</a>. Let’s make your business visible where it counts.</p>
+             <p class="mb-6 text-lg leading-relaxed text-black">EEGNITE is your ultimate <a href="/services/seo/" class="text-[#FF6105] hover:underline font-bold">best local SEO agency in India</a>. If you’re ready to stop playing games and get real, measurable results, <a href="/#contact" class="text-[#FF6105] hover:underline font-bold">get in touch</a>. Let’s make your business visible where it counts.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Final Word: Maps SEO Is Not Cheap. Neither Is Losing Business.</h2>
             <p class="mb-6 text-lg leading-relaxed text-black">Here’s the harsh truth: local SEO is an investment, not a quick fix. If you want to rank higher on Google Maps, you need to put in the work, and that includes time, effort, and a solid budget.</p>
@@ -976,7 +1546,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">AI doesn’t rely only on what’s on your website. It looks at how often and how consistently your brand shows up elsewhere, even when there’s no link involved.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Mentions matter. Context matters more.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If your brand is repeatedly referenced in discussions about a specific problem or category, AI starts associating you with that topic. That’s why off-site signals now play a bigger role than most on-page tweaks.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">This is also where the work of the <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">best seo agency</a> shows up quietly. Not in backlink counts, but in controlled exposure across credible sources.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This is also where the work of the <a href="/services/seo/" class="text-[#FF6105] hover:underline font-bold">best seo agency</a> shows up quietly. Not in backlink counts, but in controlled exposure across credible sources.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Random mentions don’t help. Scattered signals confuse the model. What works is repetition in the right context.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Podcasts, expert quotes, niche publications, and industry discussions all feed this ecosystem.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If your brand only exists on its own website, AI has very little to validate against. And without validation, citation rarely happens.</p>
@@ -989,7 +1559,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Helpful content tells you what something is.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Citable content tells you what to do.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">That difference matters.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">The best <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">seo consulting services</a> have already shifted here. They push content to be decisive, not diplomatic. They encourage clear calls, clear boundaries, and clear opinions backed by experience.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The best seo consulting services have already shifted here. They push content to be decisive, not diplomatic. They encourage clear calls, clear boundaries, and clear opinions backed by experience.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If your content never says “don’t do this” or “this fails when,” it blends in with everything else.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">And blended content doesn’t get cited.</p>
 
@@ -1102,7 +1672,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">Very few talk about revenue, profitability, or business outcomes.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Traffic alone does not pay salaries. Rankings alone do not build companies. Revenue does.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">The <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">best seo agency</a> in India will not lead with vanity metrics. They will lead with business impact. They will ask about your margins, customer acquisition cost, and sales cycle before they talk about keywords.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The <a href="/services/seo/" class="text-[#FF6105] hover:underline font-bold">best seo agency</a> in India will not lead with vanity metrics. They will lead with business impact. They will ask about your margins, customer acquisition cost, and sales cycle before they talk about keywords.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If an agency jumps straight into “We will rank you on page one,” without understanding your business model, that is your first red flag.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">First Question: Do They Understand Your Business Model?</h2>
@@ -1200,7 +1770,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">The best seo agency already accounts for AI-driven discovery in its strategy. If an agency ignores this shift entirely, they are operating on outdated assumptions.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">What Professional SEO Services Should Actually Include</h2>
-            <p class="mb-6 text-lg leading-relaxed text-black">The phrase <a href="/services/seo" class="text-[#FF6105] hover:underline font-bold">professional seo services</a> is used loosely in the market. In reality, it should represent a structured, execution-heavy framework.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The phrase professional seo services is used loosely in the market. In reality, it should represent a structured, execution-heavy framework.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">True professional seo services include:</p>
             <ul class="space-y-4 mb-8">
                 <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Technical implementation</span></li>
@@ -1358,7 +1928,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Most PPC campaigns go wrong before they even start.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The issue is simple. Agencies build campaigns around keywords, not intent. They chase search volume because it looks good in reports. But high volume doesn't mean high buying intent.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Someone searching "best running shoes" is still exploring. Someone searching "buy Nike running shoes size 9" is ready to act. If both are treated the same inside your campaign, you're wasting budget.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">A strong <a href="/services/ppc" class="text-[#FF6105] hover:underline font-bold">ppc agency in India</a> doesn't just group keywords. It builds campaigns around where the user is in the buying journey.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A strong <a href="/services/ppc/" class="text-[#FF6105] hover:underline font-bold">ppc agency in India</a> doesn't just group keywords. It builds campaigns around where the user is in the buying journey.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">At a basic level, intent falls into three buckets:</p>
             <ul class="space-y-4 mb-8">
                 <li class="flex items-start gap-3">
@@ -1385,7 +1955,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Your ads show up for the wrong searches. Messaging becomes generic. CPC goes up. Conversions drop.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">A strong ppc agency fixes this at the foundation. Campaigns are built around tight themes and clear intent. Each ad group targets a specific set of related keywords, with ads that match exactly what the user is searching for.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">For example, instead of one campaign for "digital marketing services," a structured account splits it into focused segments like SEO, Google Ads, or industry-specific services. Each has its own messaging.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">This is where <a href="/services/ppc" class="text-[#FF6105] hover:underline font-bold">ppc ad management</a> actually impacts ROI. Structure controls relevance. Relevance controls cost and conversions. Better structure improves Quality Score. That lowers CPC and gives you more room to scale.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">This is where ppc ad management actually impacts ROI. Structure controls relevance. Relevance controls cost and conversions. Better structure improves Quality Score. That lowers CPC and gives you more room to scale.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Ad Copy That Filters Buyers, Not Just Attracts Clicks</h2>
             <p class="mb-6 text-lg leading-relaxed text-black">Most ads are written to get clicks. That's the mistake.</p>
@@ -1409,7 +1979,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight">Continuous Testing Is the Only Way You Scale</h2>
             <p class="mb-6 text-lg leading-relaxed text-black">No PPC campaign is ever "done."</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If nothing is being tested, nothing is improving. And if nothing improves, ROI eventually plateaus. Most businesses make the same mistake. They find something that works and stop testing. They run the same ads and expect better results over time.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black">A strong <a href="/services/ppc" class="text-[#FF6105] hover:underline font-bold">ppc management agency</a> treats every campaign as a system. There's always something being refined. Ad copy, creatives, landing pages, bidding strategies.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A strong ppc management agency treats every campaign as a system. There's always something being refined. Ad copy, creatives, landing pages, bidding strategies.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Not random testing. Controlled testing. One change at a time. Measured properly. Scaled only when there's a clear improvement.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Weak setups either don't test at all or test too many variables at once. Both lead to wasted spending. Good testing creates clarity. You know what's working and what's not. And this is where budget decisions become simple. You don't distribute the budget across all campaigns. You prioritise what's already delivering results. Scaling comes from proven performance, not random budget increases.</p>
 
@@ -1529,6 +2099,25 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
     const isoDate = parseDateToIso(post.date);
 
+    // Get other posts for sidebar
+    const otherPosts = Object.entries(allPosts)
+        .filter(([key]) => key !== slug)
+        .map(([key, value]) => ({ slug: key, ...value }));
+
+    // Sort chronologically (newest first)
+    const sortedOtherPosts = [...otherPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const recentPosts = sortedOtherPosts.slice(0, 3);
+
+    // Get posts from same category, fallback to others
+    const categoryRelated = otherPosts.filter(p => p.category === post.category);
+    const relatedPostsSet = new Set(categoryRelated);
+    otherPosts.forEach(p => {
+        if (relatedPostsSet.size < 3) {
+            relatedPostsSet.add(p);
+        }
+    });
+    const relatedPosts = Array.from(relatedPostsSet).slice(0, 3);
+
     return (
         <main className="min-h-screen bg-white text-black font-sans selection:bg-[#FF6105] selection:text-white">
             <UnifiedSchemaJsonLd
@@ -1567,11 +2156,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         <span className="flex items-center gap-2">
                             {post.date}
                         </span>
-                        <span className="w-1 h-1 bg-[#FF6105]/20 rounded-full" />
+                        <span className="w-1.5 h-1.5 bg-[#FF6105]/20 rounded-full" />
                         <span className="flex items-center gap-2">
                             By {post.author}
                         </span>
-                        <span className="w-1 h-1 bg-[#FF6105]/20 rounded-full" />
+                        <span className="w-1.5 h-1.5 bg-[#FF6105]/20 rounded-full" />
                         <span className="flex items-center gap-2">
                             5 min read
                         </span>
@@ -1592,11 +2181,85 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     </div>
                 </div>
 
-                {/* Content */}
-                <div
-                    className="max-w-3xl mx-auto px-6 text-black"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                />
+                {/* Two Column Layout Grid */}
+                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    {/* Main Content (Left) */}
+                    <div className="lg:col-span-8">
+                        <div
+                            className="max-w-3xl mx-auto lg:mx-0 text-black"
+                            dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
+                    </div>
+
+                    {/* Sidebar (Right) */}
+                    <aside className="lg:col-span-4 space-y-12">
+                        {/* Recent Updates Section */}
+                        <div>
+                            <h3 className="text-2xl font-bold uppercase tracking-tight text-black mb-6 pb-2 border-b-2 border-[#FF6105]">
+                                Recent Updates
+                            </h3>
+                            <div className="flex flex-col gap-4">
+                                {recentPosts.map((item) => (
+                                    <Link
+                                        key={item.slug}
+                                        href={`/blog/${item.slug}/`}
+                                        className="group flex gap-4 p-4 rounded-3xl bg-gradient-to-r from-[#FF6105] to-[#FF8145] text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300 border border-black/5"
+                                    >
+                                        <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 bg-white/20">
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        </div>
+                                        <div className="flex flex-col justify-center min-w-0">
+                                            <h4 className="font-bold text-sm uppercase leading-[1.15] tracking-tight line-clamp-2 group-hover:text-black transition-colors">
+                                                {item.title}
+                                            </h4>
+                                            <p className="text-[10px] text-white/90 font-medium mt-1 line-clamp-2">
+                                                {item.metaDescription || `Read the latest insights`}
+                                            </p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Related Updates Section */}
+                        <div>
+                            <h3 className="text-2xl font-bold uppercase tracking-tight text-black mb-6 pb-2 border-b-2 border-[#FF6105]">
+                                Related Updates
+                            </h3>
+                            <div className="flex flex-col gap-4">
+                                {relatedPosts.map((item) => (
+                                    <Link
+                                        key={item.slug}
+                                        href={`/blog/${item.slug}/`}
+                                        className="group flex gap-4 p-4 rounded-3xl bg-gradient-to-r from-[#FF6105] to-[#FF8145] text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300 border border-black/5"
+                                    >
+                                        <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 bg-white/20">
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        </div>
+                                        <div className="flex flex-col justify-center min-w-0">
+                                            <h4 className="font-bold text-sm uppercase leading-[1.15] tracking-tight line-clamp-2 group-hover:text-black transition-colors">
+                                                {item.title}
+                                            </h4>
+                                            <p className="text-[10px] text-white/90 font-medium mt-1 line-clamp-2">
+                                                {item.metaDescription || `Read the latest insights`}
+                                            </p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </aside>
+                </div>
             </article>
 
             {/* Next Read / Newsletter */}

@@ -15,15 +15,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.eegnite.com';
 const isEnvironmentProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
 const isMainDomain = siteUrl === 'https://www.eegnite.com';
 
-const shouldIndex = false;
+const shouldIndex = true;
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
-        default: "Digital Marketing Agency in India | Value-driven Solution",
+        default: "Result-Driven Digital Marketing Agency | EEGNITE",
         template: "%s"
     },
-    description: "EEGNITE is a senior-led digital marketing agency in India helping brands grow through data-driven SEO, web design, social media, and content strategies. Let's connect now.",
+    description: "Looking for the best digital marketing agency? EEGNITE delivers ROI-focused SEO, PPC, and web development services for businesses across the globe. Book your free consultation today!",
     keywords: ["Digital Marketing Agency", "SEO India", "Web Design", "Social Media Marketing", "Content Strategy", "Growth Engine", "Digital Marketing India", "EEGNITE"],
     authors: [{ name: "EEGNITE" }],
     creator: "EEGNITE",
@@ -160,6 +160,16 @@ document.head.appendChild(o)}initApollo();`
                 <JsLoaded />
                 {children}
                 <Chatbot />
+                {/* Klaviyo Tracking */}
+                <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VZZvAQ/klaviyo.js?company_id=VZZvAQ"></script>
+                <script
+                    type="text/javascript"
+                    dangerouslySetInnerHTML={{
+                        __html: `//Initialize Klaviyo object on page load
+!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`
+                    }}
+                />
+                {/* End Klaviyo Tracking */}
             </body>
         </html>
     );

@@ -30,8 +30,8 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading }:
     const content = (
         <div className="flex flex-col items-start lg:items-center gap-8 lg:gap-10 w-full overflow-hidden text-left lg:text-center">
             {/* Heading */}
-            <div className="w-full">
-                <h3 className="text-2xl sm:text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase text-left lg:text-center">
+            <div className="w-full py-2">
+                <h3 className="text-2xl sm:text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.25] lg:leading-[1.3] uppercase text-left lg:text-center py-2">
                     {heading ? (
                         heading
                     ) : (

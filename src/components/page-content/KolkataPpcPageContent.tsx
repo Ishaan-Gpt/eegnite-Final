@@ -89,10 +89,10 @@ const CustomCheckIcon = (props: any) => (
 function IndustriesSection() {
     const industries = [
         { title: "E-commerce", desc: "Conversion-focused ads that increase sales fast in Kolkata.", href: "/industries/e-commerce" },
-        { title: "B2B and Lead Gen", desc: "Targeted campaigns that fill your corporate sales pipeline.", href: "/industries/b2b-lead-generation" },
-        { title: "Medical and Healthcare", desc: "Trust-first ads that drive patient bookings and clinical visits.", href: "/industries/medical-healthcare" },
-        { title: "Retail Business", desc: "Local geotargeted campaigns that increase store footfall.", href: "/industries/retail-business" },
-        { title: "Manufacturing and Logistics", desc: "B2B industry ads that generate high-intent global enquiries.", href: "/industries/manufacturing-logistics" },
+        { title: "B2B & Lead Generation", desc: "Targeted campaigns that fill your corporate sales pipeline.", href: "/industries/b2b-lead-generation" },
+        { title: "Medical & Healthcare", desc: "Trust-first ads that drive patient bookings and clinical visits.", href: "/industries/medical-healthcare" },
+        { title: "Retail Businesses", desc: "Local geotargeted campaigns that increase store footfall.", href: "/industries/retail-business" },
+        { title: "Manufacturing & Logistics", desc: "B2B industry ads that generate high-intent global enquiries.", href: "/industries/manufacturing-logistics" },
         { title: "Professional Services", desc: "High-converting search and social ads for attracting premium clients.", href: "/industries/professional-services" },
     ];
 
@@ -102,7 +102,7 @@ function IndustriesSection() {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
                     <div className="max-w-xl">
                         <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4 leading-tight">
-                            MARKETS WE LEAD. <br /><span className="text-[#FF6105]">INDUSTRIES WE SCALE IN KOLKATA</span>
+                            INDUSTRIES WE HELP GROW <br className="hidden md:inline" /><span className="text-[#FF6105]">IN KOLKATA</span>
                         </h2>
                         <p className="text-black/50 text-base md:text-xl leading-relaxed">
                             Our PPC campaigns are tailored to your audience, competitive landscape, budget, and business goals, ensuring every advertising dollar is focused on driving qualified leads and measurable growth.

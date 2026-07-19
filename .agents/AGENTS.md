@@ -11,6 +11,7 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 ## SEO & Indexing Rules
 - **Staging / Preview**: Staging environment builds should always have indexing disabled (`noindex, nofollow`).
 - **Production**: Main domain (`https://www.eegnite.com`) should have indexing enabled (`index, follow`).
+- **Automatic Sitemap Updates**: When creating, modifying, or deleting pages, routes, or blog posts, always update `src/app/sitemap.ts` (and rebuild the static export to regenerate `out/sitemap.xml` if a build is run) with the new canonical paths immediately, without requiring explicit instructions from the user.
 
 ## Design & Color Guidelines
 - **Palette**: Strictly adhere to the brand palette of white (`#FFFFFF` / `#FFFEF8`), muted-white (`#F5F3EE`), deep-white (`#EAE7E0`), black (`#000000`), and orange (`#FF6105` / `#E86A00`). Do not introduce generic primary colors.

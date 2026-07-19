@@ -95,6 +95,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/blog/ecommerce-seo-2026-why-most-online-stores-fail-to-rank/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/why-traditional-marketing-metrics-no-longer-predict-business-growth/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
             url: `${baseUrl}/blog/8-reasons-why-your-website-traffic-isnt-generating-leads/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

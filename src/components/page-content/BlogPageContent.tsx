@@ -8,6 +8,26 @@ import { cn } from "@/lib/utils";
 
 const allPostsData = [
     {
+        id: 13,
+        title: "E-Commerce SEO in 2026 - Why Most Online Stores Fail to Rank (and What to Do Instead)",
+        excerpt: "Discover why many online stores struggle to rank in 2026 and learn the SEO strategies that help eCommerce businesses succeed in an AI-driven search landscape.",
+        category: "E-Commerce",
+        readTime: "10 min read",
+        date: "Jul 8, 2026",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1600",
+        slug: "ecommerce-seo-2026-why-most-online-stores-fail-to-rank",
+    },
+    {
+        id: 12,
+        title: "Why Traditional Marketing Metrics No Longer Predict Business Growth",
+        excerpt: "Learn why traditional marketing metrics no longer reflect business growth and discover the modern indicators business leaders should focus on in 2026.",
+        category: "Digital Strategy",
+        readTime: "8 min read",
+        date: "Jul 6, 2026",
+        image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=1600",
+        slug: "why-traditional-marketing-metrics-no-longer-predict-business-growth",
+    },
+    {
         id: 11,
         title: "AI in Digital Marketing: What Business Leaders Need to Know Right Now",
         excerpt: "Learn how AI is reshaping digital marketing in 2026 and what business leaders should prioritize to stay competitive and build lasting customer trust.",
@@ -209,9 +229,11 @@ export default function BlogPage() {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="max-w-7xl mx-auto flex flex-wrap justify-center -m-3 md:-m-4">
                     {latestPosts.map((post) => (
-                        <BentoGridItem key={post.id} post={post} className="shadow-xl min-h-[400px]" large={false} />
+                        <div key={post.id} className="p-3 md:p-4 w-full md:w-1/2 lg:w-1/3">
+                            <BentoGridItem post={post} className="shadow-xl min-h-[400px]" large={false} />
+                        </div>
                     ))}
                 </div>
             </section>

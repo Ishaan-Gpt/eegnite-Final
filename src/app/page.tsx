@@ -23,8 +23,8 @@ export default function Home() {
             {/* Premium Unified Schema Markup */}
             <UnifiedSchemaJsonLd
                 pageUrl="https://www.eegnite.com/"
-                pageTitle="Digital Marketing Agency in India | Value-driven Solution"
-                pageDescription="EEGNITE is a senior-led digital marketing agency in India helping brands grow through data-driven SEO, web design, social media, and content strategies. Let's connect now."
+                pageTitle="Result-Driven Digital Marketing Agency | EEGNITE"
+                pageDescription="Looking for the best digital marketing agency? EEGNITE delivers ROI-focused SEO, PPC, and web development services for businesses across the globe. Book your free consultation today!"
                 pageType="generic"
                 breadcrumbs={[
                     { position: 1, name: "Home", url: "https://www.eegnite.com/" }

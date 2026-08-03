@@ -47,7 +47,7 @@ export default function Founder() {
                         {/* Founder image - standalone */}
                         <div className="relative z-10" style={{ transform: 'scaleX(-1)' }}>
                             <motion.img
-                                src="/anish-founder.png"
+                                src="/images/team/anish-founder.webp"
                                 alt="Anish Kumar - Founder of EEGNITE"
                                 loading="lazy"
                                 className="w-auto h-[500px] lg:h-[600px] object-contain drop-shadow-2xl"

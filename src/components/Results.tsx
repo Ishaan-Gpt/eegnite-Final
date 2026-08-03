@@ -11,11 +11,11 @@ const caseStudies = [
         location: "US",
         sector: "Furniture",
         metrics: [
-            { icon: DollarSign, label: "Total Revenue", value: "$2.5M" },
+            { icon: DollarSign, label: "Total Revenue", value: "2.5M" },
             { icon: Target, label: "ROAS", value: "20x" },
             { icon: ShoppingCart, label: "Total Purchases", value: "1,500" }
         ],
-        image: "./result-meta.jpg",
+        image: "/images/graphics/result-meta.jpg",
         color: "#FF6105"
     },
     {
@@ -25,10 +25,10 @@ const caseStudies = [
         location: "US",
         sector: "Furniture",
         metrics: [
-            { icon: DollarSign, label: "Total Revenue", value: "$2.0M" },
+            { icon: DollarSign, label: "Total Revenue", value: "2.0M" },
             { icon: Eye, label: "Open Rate", value: "50%" }
         ],
-        image: "./result-email.jpg",
+        image: "/images/graphics/result-email.webp",
         color: "#FF8040"
     },
     {
@@ -42,12 +42,17 @@ const caseStudies = [
             { icon: TrendingUp, label: "Position", value: "Rank 1" }
         ],
         description: "Ranked the website for more than 36 keywords on Rank 1",
-        image: "./result-seo.jpg",
+        image: "/images/graphics/result-seo.webp",
         color: "#FFB080"
     }
 ];
 
-export default function Results() {
+interface ResultsProps {
+    title?: React.ReactNode;
+    subtitle?: string;
+}
+
+export default function Results({ title, subtitle }: ResultsProps = {}) {
     const containerRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(containerRef, { once: true, margin: "-15%" });
     const { scrollYProgress } = useScroll({
@@ -79,17 +84,19 @@ export default function Results() {
                     transition={{ duration: 1 }}
                     className="mb-12 md:mb-24 text-left md:text-center"
                 >
-                    <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
-                        Numbers Don't Lie. <br />
-                        <span className="text-[#FF6105]">Ours Tell a Great Story.</span>
-                    </h2>
+                    {title || (
+                        <h2 className="text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.1] uppercase">
+                            Numbers Don't Lie. <br />
+                            <span className="text-[#FF6105]">Ours Tell a Great Story.</span>
+                        </h2>
+                    )}
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ delay: 0.2 }}
                         className="mt-6 max-w-2xl md:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide leading-relaxed"
                     >
-                        We believe in proof over promises. Our case studies break down exactly how EEGNITE helped real businesses achieve measurable growth - the strategy we used, the challenges we tackled, and the results we delivered.
+                        {subtitle || "We believe in proof over promises. Our case studies break down exactly how EEGNITE helped real businesses achieve measurable growth - the strategy we used, the challenges we tackled, and the results we delivered."}
                     </motion.p>
                 </motion.div>
 
@@ -161,10 +168,12 @@ export default function Results() {
                                             transition={{ duration: 0.5, delay: 0.4 + i * 0.1 + j * 0.1 }}
                                             className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-[#FF6105]/5 to-white border border-[#FF6105]/10"
                                         >
-                                            <metric.icon size={16} className="text-[#FF6105] mb-1.5 md:mb-2 md:w-5 md:h-5" />
-                                            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FF6105]">
-                                                {metric.value}
-                                            </p>
+                                            <div className="flex items-center gap-1.5 md:gap-2 mb-1.5 md:mb-2">
+                                                <metric.icon size={16} className="text-[#FF6105] md:w-5 md:h-5 shrink-0" />
+                                                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FF6105] leading-none">
+                                                    {metric.value}
+                                                </p>
+                                            </div>
                                             <p className="text-[10px] md:text-xs text-black/50 uppercase tracking-wider mt-0.5 md:mt-1">
                                                 {metric.label}
                                             </p>

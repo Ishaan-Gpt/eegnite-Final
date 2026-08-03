@@ -83,19 +83,67 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/testimonials/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/blog/`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/blog/local-seo-strategies-2026-google-maps/`,
+            url: `${baseUrl}/blog/ecommerce-seo-2026-why-most-online-stores-fail-to-rank/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,
         },
         {
-            url: `${baseUrl}/blog/top-10-seo-agencies-kolkata-2026/`,
+            url: `${baseUrl}/blog/why-traditional-marketing-metrics-no-longer-predict-business-growth/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/8-reasons-why-your-website-traffic-isnt-generating-leads/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/ai-in-digital-marketing-what-business-leaders-need-to-know/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/the-hidden-cost-of-bad-seo-for-your-business/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/how-social-media-marketing-changed-in-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/what-google-ai-overview-data-actually-reveals-about-your-website/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/why-your-business-struggles-with-online-visibility/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/local-seo-strategies-2026-google-maps/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,
@@ -135,6 +183,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/sitemap/`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.5,
         },
     ]
 

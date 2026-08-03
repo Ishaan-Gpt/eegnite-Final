@@ -258,12 +258,15 @@ function IndustriesGrid() {
     );
 }
 
+import { ClientLogoSlider } from "@/components/shared/ClientLogoSlider";
+
 export default function IndustriesPageContent() {
     return (
-        <main className="bg-white min-h-screen text-black font-sans selection:bg-[#FF6105] selection:text-white">
+        <main className="bg-white min-h-screen text-black font-sans selection:bg-[#FF6105] selection:text-white overflow-x-hidden w-full max-w-full">
             <div className="relative z-10">
                 <Navbar />
                 <IndustriesHero />
+                <ClientLogoSlider />
                 <IndustriesGrid />
             </div>
             <Footer />

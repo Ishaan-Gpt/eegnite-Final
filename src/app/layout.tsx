@@ -20,10 +20,10 @@ const shouldIndex = true;
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
-        default: "Digital Marketing Agency in India | Value-driven Solution",
+        default: "Result-Driven Digital Marketing Agency | EEGNITE",
         template: "%s"
     },
-    description: "EEGNITE is a senior-led digital marketing agency in India helping brands grow through data-driven SEO, web design, social media, and content strategies. Let's connect now.",
+    description: "Looking for the best digital marketing agency? EEGNITE delivers ROI-focused SEO, PPC, and web development services for businesses across the globe. Book your free consultation today!",
     keywords: ["Digital Marketing Agency", "SEO India", "Web Design", "Social Media Marketing", "Content Strategy", "Growth Engine", "Digital Marketing India", "EEGNITE"],
     authors: [{ name: "EEGNITE" }],
     creator: "EEGNITE",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     icons: {
         icon: [
             { url: '/favicon.ico', sizes: 'any' },
-            { url: '/eegnite-logo.png', type: 'image/png' },
+            { url: '/images/logos/eegnite-logo.png', type: 'image/png' },
         ],
-        apple: '/eegnite-logo.png',
+        apple: '/images/logos/eegnite-logo.png',
     },
     openGraph: {
         title: "EEGNITE | Digital Marketing Agency in India",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: '/eegnite-logo.png',
+                url: '/images/logos/eegnite-logo.png',
                 width: 1200,
                 height: 630,
                 alt: 'EEGNITE - Digital Marketing Agency',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: "EEGNITE | Digital Marketing Agency in India",
         description: "Strategy. Design. Results. All In One Place.",
-        images: ['/eegnite-logo.png'],
+        images: ['/images/logos/eegnite-logo.png'],
     },
     alternates: {
         canonical: siteUrl,
@@ -140,7 +140,7 @@ export default function RootLayout({
                     dangerouslySetInnerHTML={{
                         __html: `function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
 o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-o.onload=function(){window.trackingFunctions.onLoad({appId:"677a1e61a3f01001b1ebeca8"})},
+o.onload=function(){window.trackingFunctions.onLoad({appId:"698db5e7576e1b000dfc5443"})},
 document.head.appendChild(o)}initApollo();`
                     }}
                 />
@@ -160,6 +160,16 @@ document.head.appendChild(o)}initApollo();`
                 <JsLoaded />
                 {children}
                 <Chatbot />
+                {/* Klaviyo Tracking */}
+                <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VZZvAQ/klaviyo.js?company_id=VZZvAQ"></script>
+                <script
+                    type="text/javascript"
+                    dangerouslySetInnerHTML={{
+                        __html: `//Initialize Klaviyo object on page load
+!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`
+                    }}
+                />
+                {/* End Klaviyo Tracking */}
             </body>
         </html>
     );

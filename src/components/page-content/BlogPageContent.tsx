@@ -8,13 +8,93 @@ import { cn } from "@/lib/utils";
 
 const allPostsData = [
     {
+        id: 13,
+        title: "E-Commerce SEO in 2026 - Why Most Online Stores Fail to Rank (and What to Do Instead)",
+        excerpt: "Discover why many online stores struggle to rank in 2026 and learn the SEO strategies that help eCommerce businesses succeed in an AI-driven search landscape.",
+        category: "E-Commerce",
+        readTime: "10 min read",
+        date: "Jul 8, 2026",
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1600",
+        slug: "ecommerce-seo-2026-why-most-online-stores-fail-to-rank",
+    },
+    {
+        id: 12,
+        title: "Why Traditional Marketing Metrics No Longer Predict Business Growth",
+        excerpt: "Learn why traditional marketing metrics no longer reflect business growth and discover the modern indicators business leaders should focus on in 2026.",
+        category: "Digital Strategy",
+        readTime: "8 min read",
+        date: "Jul 6, 2026",
+        image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=1600",
+        slug: "why-traditional-marketing-metrics-no-longer-predict-business-growth",
+    },
+    {
+        id: 11,
+        title: "AI in Digital Marketing: What Business Leaders Need to Know Right Now",
+        excerpt: "Learn how AI is reshaping digital marketing in 2026 and what business leaders should prioritize to stay competitive and build lasting customer trust.",
+        category: "AI Marketing",
+        readTime: "8 min read",
+        date: "Jun 30, 2026",
+        image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1600",
+        slug: "ai-in-digital-marketing-what-business-leaders-need-to-know",
+    },
+    {
+        id: 10,
+        title: "The Hidden Cost of Bad SEO - What Outdated Practices Are Costing Your Business",
+        excerpt: "Discover how outdated SEO practices can quietly reduce traffic, increase marketing costs, and limit business growth in 2026.",
+        category: "SEO",
+        readTime: "8 min read",
+        date: "Jun 25, 2026",
+        image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=1600",
+        slug: "the-hidden-cost-of-bad-seo-for-your-business",
+    },
+    {
+        id: 9,
+        title: "How Social Media Marketing Has Changed for B2B Companies in 2026",
+        excerpt: "Learn about how B2B social media marketing has evolved in 2026 and what businesses need to do to stay visible, build trust, and generate demand.",
+        category: "Social Media",
+        readTime: "7 min read",
+        date: "Jun 20, 2026",
+        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=1600",
+        slug: "how-social-media-marketing-changed-in-2026",
+    },
+    {
+        id: 8,
+        title: "What Google AI Overview Data Actually Reveals About Your Website",
+        excerpt: "Learn what Google’s new AI Overview data reveals about your visibility, authority, content gaps, and competitive position online.",
+        category: "AI Search",
+        readTime: "6 min read",
+        date: "Jun 15, 2026",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
+        slug: "what-google-ai-overview-data-actually-reveals-about-your-website",
+    },
+    {
+        id: 7,
+        title: "Why Businesses Struggle to Generate Consistent Online Visibility Across Channels",
+        excerpt: "Discover eight common reasons businesses struggle to maintain online visibility and what you can do to build a stronger digital presence.",
+        category: "Digital Strategy",
+        readTime: "8 min read",
+        date: "Jun 8, 2026",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600",
+        slug: "why-your-business-struggles-with-online-visibility",
+    },
+    {
+        id: 6,
+        title: "8 Hidden Reasons Your Website Gets Traffic But No Enquiries",
+        excerpt: "Getting website visitors but no enquiries? Discover seven hidden conversion issues that may be preventing potential customers from contacting you.",
+        category: "Conversion Optimization",
+        readTime: "7 min read",
+        date: "Jun 9, 2026",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1600",
+        slug: "8-reasons-why-your-website-traffic-isnt-generating-leads",
+    },
+    {
         id: 5,
         title: "How a Results-Driven PPC Agency in India Maximizes Your ROI",
         excerpt: "Most businesses don't lose money on ads because they didn't spend enough. They lose because the execution is bad. Learn how a real PPC agency in India stops budget waste and delivers consistent ROI.",
         category: "PPC Advertising",
         readTime: "8 min read",
         date: "May 1, 2026",
-        image: "/ppc-blog.jpg",
+        image: "/images/blog/ppc-blog.webp",
         slug: "ppc-agency-india-maximize-roi",
     },
     {
@@ -36,16 +116,6 @@ const allPostsData = [
         date: "Feb 13, 2026",
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1600",
         slug: "how-to-get-content-cited-in-ai-search-results-2026",
-    },
-    {
-        id: 1,
-        title: "Top 10 SEO Agencies in Kolkata You Can Trust in 2026",
-        excerpt: "In the ever-evolving world of digital marketing, choosing the right SEO agency is crucial. We've compiled a list of the top Kolkata-based agencies known for proven expertise.",
-        category: "Industry Intelligence",
-        readTime: "10 min read",
-        date: "Jan 17, 2026",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600",
-        slug: "top-10-seo-agencies-kolkata-2026",
     },
     {
         id: 2,
@@ -159,9 +229,11 @@ export default function BlogPage() {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="max-w-7xl mx-auto flex flex-wrap justify-center -m-3 md:-m-4">
                     {latestPosts.map((post) => (
-                        <BentoGridItem key={post.id} post={post} className="shadow-xl min-h-[400px]" large={false} />
+                        <div key={post.id} className="p-3 md:p-4 w-full md:w-1/2 lg:w-1/3">
+                            <BentoGridItem post={post} className="shadow-xl min-h-[400px]" large={false} />
+                        </div>
                     ))}
                 </div>
             </section>

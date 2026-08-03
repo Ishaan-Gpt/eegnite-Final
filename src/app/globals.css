@@ -466,11 +466,6 @@ html:not(.js-loaded) [style*="translateX"] {
   animation: loop-scroll 40s linear infinite;
 }
 
-.animate-loop-scroll:hover,
-.group:hover .animate-loop-scroll {
-  animation-play-state: paused;
-}
-
 @keyframes marquee-logo {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

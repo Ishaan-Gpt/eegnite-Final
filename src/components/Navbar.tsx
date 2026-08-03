@@ -93,7 +93,11 @@ const industriesList = [
     }
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+    basePath?: string;
+}
+
+export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeMenu, setActiveMenu] = useState<'services' | 'industries' | null>(null);
@@ -136,12 +140,30 @@ export default function Navbar() {
         setMobileIndustriesOpen(false);
     }, [pathname]);
 
+    const basePath = propBasePath !== undefined ? propBasePath : (
+        pathname && pathname.startsWith('/digital-marketing-agency-kolkata')
+            ? '/digital-marketing-agency-kolkata'
+            : pathname && pathname.startsWith('/bahrain')
+            ? '/bahrain'
+            : pathname && pathname.startsWith('/qatar')
+            ? '/qatar'
+            : ''
+    );
+
     const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         setMobileMenuOpen(false);
-        if (!href.startsWith('/#')) return;
-        if (pathname === '/') {
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+        
+        const targetPath = href.substring(0, hashIndex);
+        const targetHash = href.substring(hashIndex);
+        
+        const normPath = targetPath.replace(/\/$/, '');
+        const normCurrent = pathname ? pathname.replace(/\/$/, '') : '';
+        
+        if (normPath === normCurrent || (normPath === '' && normCurrent === '')) {
             e.preventDefault();
-            const el = document.getElementById(href.slice(2));
+            const el = document.getElementById(targetHash.slice(1));
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
@@ -150,26 +172,36 @@ export default function Navbar() {
         setActiveMenu(prev => prev === menu ? null : menu);
     };
 
-    const links = [
-        { name: 'About', href: '/#about' },
-        { name: 'Services', href: '/services' },
-        { name: 'Industries', href: '/industries' },
-        { name: 'Results', href: '/#results' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Contact', href: '/#contact' }
-    ];
+    const links = basePath
+        ? [
+            { name: 'Services', href: '/services' },
+            { name: 'Industries', href: '/industries' },
+            { name: 'Case Studies', href: `${basePath}/#results` },
+            { name: 'Testimonials', href: `${basePath}/#testimonials` },
+            { name: 'Blog', href: '/blog' },
+            { name: 'Contact', href: `${basePath}/#contact` }
+          ]
+        : [
+            { name: 'About', href: '/#about' },
+            { name: 'Services', href: '/services' },
+            { name: 'Industries', href: '/industries' },
+            { name: 'Case Studies', href: '/#results' },
+            { name: 'Testimonials', href: '/testimonials' },
+            { name: 'Blog', href: '/blog' },
+            { name: 'Contact', href: '/#contact' }
+          ];
 
     return (
         <>
             <nav
                 ref={navRef}
-                className={`navbar-float fixed top-0 left-1/2 w-[92vw] lg:w-[56vw] z-[100] rounded-full px-4 lg:px-6 py-3 flex justify-between items-center transition-all duration-500 ${scrolled
+                className={`navbar-float fixed top-0 left-1/2 w-[92vw] lg:w-[74vw] xl:w-[66vw] z-[100] rounded-full px-4 lg:px-6 py-3 flex justify-between items-center transition-all duration-500 ${scrolled
                     ? 'bg-white/40 backdrop-blur-md border border-white/20 shadow-lg'
                     : 'bg-white/70 backdrop-blur-sm border border-white/30'
                     }`}
             >
-                <Link href="/" className="flex items-center gap-2">
-                    <img src="/eegnite-logo.png" alt="EEGNITE" className="h-7 lg:h-8 w-auto" loading="lazy" />
+                <Link href={basePath || "/"} className="flex items-center gap-2">
+                    <img src="/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-7 lg:h-8 w-auto" loading="lazy" />
                     <span className={`text-sm lg:text-base font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? 'text-black/60' : 'text-black/80'
                         }`}>
                         EEGNITE<sup className="text-[8px] lg:text-[10px] ml-0.5">™</sup>
@@ -237,7 +269,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Desktop CTA */}
-                <Link href="/#contact" onClick={(e) => handleHashClick(e, '/#contact')} className={`hidden lg:block text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full font-bold transition-all duration-300 ${scrolled
+                <Link href={basePath ? `${basePath}/#contact` : "/#contact"} onClick={(e) => handleHashClick(e, basePath ? `${basePath}/#contact` : "/#contact")} className={`hidden lg:block text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full font-bold transition-all duration-300 ${scrolled
                     ? 'bg-[#FF6105]/80 hover:bg-[#FF6105]'
                     : 'bg-[#FF6105] hover:bg-[#e55800]'
                     }`}>
@@ -254,7 +286,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, x: "-50%" }}
                         exit={{ opacity: 0, y: -10, x: "-50%" }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="hidden lg:block fixed top-[84px] left-1/2 w-[56vw] bg-white rounded-3xl border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-8 text-black z-[101] pointer-events-auto"
+                        className="hidden lg:block fixed top-[84px] left-1/2 w-[74vw] xl:w-[66vw] bg-white rounded-3xl border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-8 text-black z-[101] pointer-events-auto"
                     >
                         <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                             {(activeMenu === 'services' ? servicesList : industriesList).map((item) => {
@@ -396,8 +428,8 @@ export default function Navbar() {
                                     })}
                                 </div>
                                 <Link
-                                    href="/#contact"
-                                    onClick={(e) => handleHashClick(e, '/#contact')}
+                                    href={basePath ? `${basePath}/#contact` : "/#contact"}
+                                    onClick={(e) => handleHashClick(e, basePath ? `${basePath}/#contact` : "/#contact")}
                                     className="mt-8 block w-full text-center bg-[#FF6105] text-white py-3.5 rounded-full font-bold text-sm uppercase tracking-widest shadow-md hover:bg-[#e55800] transition-colors"
                                 >
                                     Get Started

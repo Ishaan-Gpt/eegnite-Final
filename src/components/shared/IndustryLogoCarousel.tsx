@@ -20,7 +20,7 @@ export function IndustryLogoCarousel({ title, logos }: IndustryLogoCarouselProps
                 <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10 pointer-events-none" />
 
-                <div className="flex gap-4 md:gap-6 w-max animate-marquee-logo hover:[animation-play-state:paused]">
+                <div className="flex gap-4 md:gap-6 w-max animate-marquee-logo">
                     {doubled.map((logo, i) => (
                         <div
                             key={i}

@@ -36,6 +36,9 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "temp_*.tsx",
+    "temp_*.ts",
+    "SeoPageContent_live_backup.tsx"
   ]
 }

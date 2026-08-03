@@ -85,7 +85,7 @@ export function ServiceProcess({
                                     <div className="absolute inset-0 bg-[#FF6105] animate-ping opacity-50 rounded-full" />
                                 </div>
                                 <div className={`absolute left-1/2 -translate-x-1/2 w-[2px] h-[1.5rem] md:h-[3.5rem] bg-black/10 ${isTop ? 'bottom-[-1.5rem] md:bottom-[-3.5rem]' : 'top-[-1.5rem] md:top-[-3.5rem]'}`} />
-                                <div className="w-full bg-white border border-black/10 p-8 rounded-[2rem] hover:border-[#FF6105] hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
+                                <div className="w-full bg-white border border-black/10 p-8 rounded-[2rem] hover:border-[#FF6105] hover:shadow-2xl transition-all duration-300 group relative overflow-hidden h-[300px] md:h-[320px] flex flex-col justify-start">
                                     <div className="absolute top-0 right-0 p-4 opacity-5 font-bold text-6xl group-hover:opacity-10 transition-opacity select-none text-black">{step.id}</div>
                                     <div className="w-12 h-12 bg-[#FFF5F0] rounded-xl flex items-center justify-center text-[#FF6105] mb-6 group-hover:scale-110 transition-transform">
                                         <StepIcon size={24} />

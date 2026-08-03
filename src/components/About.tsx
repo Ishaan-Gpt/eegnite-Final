@@ -67,16 +67,16 @@ export default function About() {
         >
             <div
                 ref={pinRef}
-                className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20"
+                className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 w-full"
             >
-                <div className="max-w-5xl mx-auto relative z-10">
+                <div className="w-full max-w-5xl mx-auto relative z-10">
                     {/* Section Label */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="mb-16"
+                        className="mb-16 w-full"
                     >
                         <span className="text-xs font-semibold uppercase tracking-[0.2em] flex items-center gap-4 text-black/50">
                             <span className="w-10 h-[2px] bg-[#FF6105]" />

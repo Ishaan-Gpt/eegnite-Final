@@ -43,17 +43,25 @@ const industriesData = [
     }
 ];
 
-export default function IndustriesGrid() {
+interface IndustriesGridProps {
+    title?: React.ReactNode;
+    customDescriptions?: Record<string, string>;
+}
+
+export default function IndustriesGrid({ title, customDescriptions }: IndustriesGridProps = {}) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
     const [activeIndex, setActiveIndex] = useState(0);
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+    const modifiedIndustriesData = industriesData.map(ind => ({
+        ...ind,
+        description: customDescriptions?.[ind.title] || ind.description
+    }));
+
     const toggleAccordion = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
-
-    const ActiveIcon = industriesData[activeIndex].icon;
 
     return (
         <section
@@ -75,14 +83,16 @@ export default function IndustriesGrid() {
                         Industries We Grow
                         <span className="w-8 h-[2px] bg-[#FF6105]" />
                     </span>
-                    <h2 className="text-[clamp(1.8rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] text-black uppercase mt-4">
-                        We've Grown Businesses <span className="text-[#FF6105]">Like Yours.</span> <br className="hidden lg:block" />
-                        We'll Grow Yours Too
-                    </h2>
+                    {title || (
+                        <h2 className="text-[clamp(1.8rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] text-black uppercase mt-4">
+                            We've Grown Businesses <span className="text-[#FF6105]">Like Yours.</span> <br className="hidden lg:block" />
+                            We'll Grow Yours Too
+                        </h2>
+                    )}
                 </motion.div>
 
                 <div className="block lg:hidden space-y-4">
-                    {industriesData.map((ind, i) => {
+                    {modifiedIndustriesData.map((ind, i) => {
                         const Icon = ind.icon;
                         const isOpen = openIndex === i;
 
@@ -137,7 +147,7 @@ export default function IndustriesGrid() {
 
                 <div className="hidden lg:grid grid-cols-12 gap-16 items-center min-h-[450px]">
                     <div className="col-span-5 flex flex-col gap-2">
-                        {industriesData.map((ind, i) => {
+                        {modifiedIndustriesData.map((ind, i) => {
                             const isActive = activeIndex === i;
                             const button = (
                                 <button
@@ -180,7 +190,7 @@ export default function IndustriesGrid() {
                                     className="flex flex-col justify-center h-full"
                                 >
                                     <p className="text-xl md:text-2xl text-black/70 leading-relaxed font-medium tracking-wide max-w-xl">
-                                        {industriesData[activeIndex].description}
+                                        {modifiedIndustriesData[activeIndex].description}
                                     </p>
                                 </motion.div>
                             </AnimatePresence>

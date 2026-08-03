@@ -21,6 +21,8 @@ export interface FloatingIconsHeroProps {
     ctaText: string;
     ctaHref: string;
     icons: IconProps[];
+    topText?: React.ReactNode;
+    subTitle2?: string;
 }
 
 // A single icon component with its own motion logic
@@ -122,7 +124,7 @@ const Icon = ({
 const FloatingIconsHero = React.forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement> & FloatingIconsHeroProps
->(({ className, title, subtitle, ctaText, ctaHref, icons, ...props }, ref) => {
+>(({ className, title, subtitle, ctaText, ctaHref, icons, topText, subTitle2, ...props }, ref) => {
     // Refs to track the raw mouse position
     const mouseX = React.useRef(0);
     const mouseY = React.useRef(0);
@@ -166,21 +168,37 @@ const FloatingIconsHero = React.forwardRef<
 
             {/* Container for the foreground content */}
             <div className="relative z-10 text-left lg:text-center px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#2A1810] uppercase">
-                    {/* Mobile: 4 lines left-aligned */}
-                    <span className="block md:hidden text-[1.65rem] leading-[1.2]">
-                        your business doesn't <br />
-                        <span className="text-[#FF6105]">just need traffic</span> <br />
-                        your business <br />
-                        <span className="text-[#FF6105]">needs growth</span>
-                    </span>
-                    {/* Desktop: Centered 2 lines */}
-                    <span className="hidden md:block">
-                        Your Business Doesn't Just Need Traffic. <br />
-                        <span className="text-[#FF6105]">Your Business Needs Growth.</span>
-                    </span>
-                </h1>
-                <p className="mt-6 max-w-2xl lg:mx-auto text-[0.8rem] md:text-base text-[#6B5545] leading-relaxed whitespace-pre-line">
+                {topText ? (
+                    <>
+                        <p className="text-[10px] md:text-xs lg:text-xs font-bold uppercase tracking-[0.2em] text-[#FF6105] mb-4">
+                            {topText}
+                        </p>
+                        <h1 className="text-3xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] font-black tracking-tight text-black uppercase leading-[1.1]">
+                            {title}
+                        </h1>
+                        {subTitle2 && (
+                            <h2 className="text-sm md:text-lg lg:text-xl font-bold text-[#FF6105] uppercase tracking-[0.1em] mt-4">
+                                {subTitle2}
+                            </h2>
+                        )}
+                    </>
+                ) : (
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#2A1810] uppercase">
+                        {/* Mobile: 4 lines left-aligned */}
+                        <span className="block md:hidden text-[1.65rem] leading-[1.2]">
+                            your business doesn't <br />
+                            <span className="text-[#FF6105]">just need traffic</span> <br />
+                            your business <br />
+                            <span className="text-[#FF6105]">needs growth</span>
+                        </span>
+                        {/* Desktop: Centered 2 lines */}
+                        <span className="hidden md:block">
+                            Your Business Doesn't Just Need Traffic. <br />
+                            <span className="text-[#FF6105]">Your Business Needs Growth.</span>
+                        </span>
+                    </h1>
+                )}
+                <p className="mt-6 max-w-2xl lg:mx-auto text-[0.8rem] md:text-base text-black leading-relaxed whitespace-pre-line">
                     {subtitle}
                 </p>
                 <div className="mt-10 flex items-center justify-start lg:justify-center gap-4">

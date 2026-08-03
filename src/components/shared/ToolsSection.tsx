@@ -5,27 +5,37 @@ interface ToolItem {
     src: string;
 }
 
-export function ToolsSection() {
+interface ToolsSectionProps {
+    title?: React.ReactNode;
+}
+
+export function ToolsSection({ title }: ToolsSectionProps = {}) {
     const tools: ToolItem[] = [
-        { name: "Google Analytics", src: "/icons/google-analytics.png" },
-        { name: "Google Search Console", src: "/icons/google.png" },
-        { name: "SemRush", src: "/icons/semrush.png" },
-        { name: "Ahrefs", src: "/icons/ahrefs.png" },
-        { name: "Google Ads", src: "/icons/google-ads.png" },
-        { name: "Google Tag Manager", src: "/icons/gtm.png" },
-        { name: "Meta Ads", src: "/icons/meta.png" },
-        { name: "HubSpot", src: "/icons/hubspot.png" },
-        { name: "Klaviyo", src: "/icons/klaviyo.png" },
-        { name: "Mailchimp", src: "/icons/mailchimp.png" },
-        { name: "WordPress", src: "/icons/wordpress.png" },
-        { name: "WooCommerce", src: "/icons/woocommerce.png" },
+        { name: "Google Analytics", src: "/images/icons/google-analytics.png" },
+        { name: "Google Search Console", src: "/images/icons/google.png" },
+        { name: "SemRush", src: "/images/icons/semrush.png" },
+        { name: "Ahrefs", src: "/images/icons/ahrefs.png" },
+        { name: "Google Ads", src: "/images/icons/google-ads.png" },
+        { name: "Google Tag Manager", src: "/images/icons/gtm.png" },
+        { name: "Meta Ads", src: "/images/icons/meta.png" },
+        { name: "HubSpot", src: "/images/icons/hubspot.png" },
+        { name: "Klaviyo", src: "/images/icons/klaviyo.png" },
+        { name: "Mailchimp", src: "/images/icons/mailchimp.png" },
+        { name: "WordPress", src: "/images/icons/wordpress.png" },
+        { name: "WooCommerce", src: "/images/icons/woocommerce.png" },
     ];
+
+    const heading = title || (
+        <>
+            Tools We <span className="text-[#FF6105]">Use</span>
+        </>
+    );
 
     return (
         <section className="py-20 md:py-32 bg-white overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 mb-12 md:mb-16 text-left md:text-center">
                 <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
-                    Tools We <span className="text-[#FF6105]">Use</span>
+                    {heading}
                 </h2>
             </div>
 

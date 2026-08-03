@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - PPC Advertising"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Performance-Focused PPC Advertising Agency | EEGNITE",
         description: "Scale faster with EEGNITE’s PPC advertising services. Google Ads, Meta Ads, conversion-focused landing pages, audience targeting, and campaign optimization built to maximize leads, sales, and ad spend performance.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

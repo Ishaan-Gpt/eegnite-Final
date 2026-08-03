@@ -8,6 +8,8 @@ const countryCodes = [
     { code: "+1", country: "US" },
     { code: "+44", country: "UK" },
     { code: "+971", country: "UAE" },
+    { code: "+974", country: "QA" },
+    { code: "+973", country: "BH" },
     { code: "+61", country: "AU" },
     { code: "+65", country: "SG" },
     { code: "+49", country: "DE" },
@@ -35,13 +37,17 @@ const howFoundUsOptions = [
     { value: "other", label: "Other" },
 ];
 
-export default function Contact() {
+interface ContactProps {
+    defaultCountryCode?: string;
+}
+
+export default function Contact({ defaultCountryCode = "+91" }: ContactProps) {
     const sectionRef = useRef<HTMLElement>(null);
     const isInView = useInView(sectionRef as any, { once: true, margin: "-15%" });
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
-    const [countryCode, setCountryCode] = useState("+91");
+    const [countryCode, setCountryCode] = useState(defaultCountryCode);
     const [formData, setFormData] = useState({
         name: "",
         company: "",

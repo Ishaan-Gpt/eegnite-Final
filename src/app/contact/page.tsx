@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "Contact EEGNITE"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Contact EEGNITE | Start Your Growth Journey",
         description: "Ready to scale? Connect with EEGNITE, Kolkata's premium digital marketing agency. Book a free strategy call today.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

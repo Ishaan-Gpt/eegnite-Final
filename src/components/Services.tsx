@@ -191,7 +191,7 @@ const MobileServiceItem = ({ service }: { service: typeof services[0] }) => {
                                 </div>
                             ))}
 
-                            {service.link.startsWith("/services/") && (
+                            {service.link && (
                                 <Link
                                     href={service.link}
                                     className="flex items-center justify-center w-full gap-2 py-3 bg-[#FF6105] text-white rounded-lg font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
@@ -236,7 +236,7 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                         <div className="flex items-center gap-4 opacity-70">
                             <span className="font-bold tracking-[0.2em] uppercase text-sm">0{service.id} — Service</span>
                         </div>
-                        {service.link.startsWith("/services/") && (
+                        {service.link && (
                             <Link href={service.link} className={`hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:scale-105 ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
                                 View Page <ArrowRight size={14} />
                             </Link>
@@ -288,7 +288,7 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
                     ))}
                 </div>
 
-                {service.link.startsWith("/services/") && (
+                {service.link && (
                     <div className="mt-8 md:hidden">
                         <Link href={service.link} className={`flex items-center justify-center w-full gap-3 px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all ${isOrange ? 'bg-white text-[#FF6105]' : 'bg-[#FF6105] text-white'}`}>
                             View Service <ArrowRight size={20} />
@@ -305,7 +305,20 @@ const ServiceCard = ({ service, index, total }: { service: typeof services[0], i
     );
 };
 
-export default function Services() {
+interface ServicesProps {
+    title?: React.ReactNode;
+    subtitle?: string;
+    customDescriptions?: Record<string, string>;
+    customLinks?: Record<string, string>;
+}
+
+export default function Services({ title, subtitle, customDescriptions, customLinks }: ServicesProps = {}) {
+    const modifiedServices = services.map(s => ({
+        ...s,
+        description: customDescriptions?.[s.id] || s.description,
+        link: customLinks?.[s.id] || s.link
+    }));
+
     return (
         <section className="bg-white py-20 lg:py-40" id="services">
             <div className="max-w-7xl mx-auto px-6 mb-8 lg:mb-16 text-left lg:text-center">
@@ -315,8 +328,12 @@ export default function Services() {
                     viewport={{ once: true }}
                     className="text-4xl lg:text-[4.5rem] font-bold uppercase tracking-tighter leading-none text-black"
                 >
-                    Everything Your Brand <br className="hidden lg:block" /> Needs.{" "}
-                    <span className="text-[#FF6105]">Under One Roof</span>
+                    {title || (
+                        <>
+                            Everything Your Brand <br className="hidden lg:block" /> Needs.{" "}
+                            <span className="text-[#FF6105]">Under One Roof</span>
+                        </>
+                    )}
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -325,18 +342,18 @@ export default function Services() {
                     transition={{ delay: 0.1 }}
                     className="mt-6 max-w-xl lg:mx-auto text-sm md:text-lg text-black/50 font-medium tracking-wide"
                 >
-                    From search to social, ads to analytics - we are the only digital marketing agency you'll ever need.
+                    {subtitle || "From search to social, ads to analytics - we are the only digital marketing agency you'll ever need."}
                 </motion.p>
             </div>
 
             {/* Desktop View: Sticky Cards */}
             <div className="relative hidden lg:block">
-                {services.map((service, index) => (
+                {modifiedServices.map((service, index) => (
                     <ServiceCard
                         key={service.id}
                         service={service}
                         index={index}
-                        total={services.length}
+                        total={modifiedServices.length}
                     />
                 ))}
             </div>
@@ -344,7 +361,7 @@ export default function Services() {
             {/* Mobile View: Accordion List */}
             <div className="block lg:hidden px-4">
                 <div className="rounded-2xl border border-black/10 overflow-hidden">
-                    {services.map((service) => (
+                    {modifiedServices.map((service) => (
                         <MobileServiceItem key={service.id} service={service} />
                     ))}
                 </div>

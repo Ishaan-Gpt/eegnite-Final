@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Manufacturing & Logistics Marketing"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Digital Marketing Agency for Manufacturers & Logistics | EEGNITE",
         description: "Generate qualified industrial leads and strengthen your market authority with EEGNITE. SEO, LinkedIn marketing, PPC, technical content, and B2B lead generation strategies built for manufacturing and logistics companies.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

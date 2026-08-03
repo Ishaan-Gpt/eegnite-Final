@@ -72,7 +72,7 @@ export default function TermsPage() {
                         <span className="text-sm font-semibold uppercase tracking-wider">Back to Home</span>
                     </Link>
                     <div className="flex items-center gap-2">
-                        <img src="/eegnite-logo.png" alt="EEGNITE" className="h-8 w-auto" />
+                        <img src="/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-8 w-auto" />
                         <span className="text-base font-bold uppercase tracking-wider text-black/80">
                             EEGNITE<sup className="text-[10px] ml-0.5">™</sup>
                         </span>

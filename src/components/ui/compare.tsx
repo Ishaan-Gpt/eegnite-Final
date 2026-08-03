@@ -60,6 +60,12 @@ export const Compare = ({
 
     const handleDrag = useCallback((e: MouseEvent | TouchEvent) => {
         if (!isDragging || !sliderRef.current) return;
+        
+        // Prevent default browser touch scrolling while dragging
+        if (e.cancelable) {
+            e.preventDefault();
+        }
+
         const rect = sliderRef.current.getBoundingClientRect();
         let clientX: number;
         if ('touches' in e) {
@@ -75,7 +81,7 @@ export const Compare = ({
     useEffect(() => {
         window.addEventListener("mousemove", handleDrag);
         window.addEventListener("mouseup", handleMouseUp);
-        window.addEventListener("touchmove", handleDrag);
+        window.addEventListener("touchmove", handleDrag, { passive: false });
         window.addEventListener("touchend", handleMouseUp);
         return () => {
             window.removeEventListener("mousemove", handleDrag);
@@ -89,7 +95,7 @@ export const Compare = ({
     return (
         <div
             ref={sliderRef}
-            className={cn("w-full h-[600px] overflow-hidden relative rounded-[3rem] cursor-ew-resize select-none", className)}
+            className={cn("w-full h-[600px] overflow-hidden relative rounded-[3rem] cursor-ew-resize select-none touch-none", className)}
             style={{
                 position: "relative",
             }}
@@ -140,7 +146,7 @@ export const Compare = ({
                     left: `${sliderXPercent}%`,
                 }}
             >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl pointer-events-auto cursor-col-resize hover:scale-110 transition-transform"
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl pointer-events-auto cursor-col-resize hover:scale-110 transition-transform touch-none"
                     onMouseDown={handleMouseDown}
                     onTouchStart={handleMouseDown}
                 >

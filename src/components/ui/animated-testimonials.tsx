@@ -9,6 +9,7 @@ type Testimonial = {
     name: string;
     designation: string;
     src: string;
+    location?: string;
 };
 
 export const AnimatedTestimonials = ({
@@ -163,9 +164,16 @@ export const AnimatedTestimonials = ({
                         <h3 className="text-2xl font-bold text-black uppercase tracking-tight">
                             {testimonials[active].name}
                         </h3>
-                        <p className="text-sm text-[#FF6105] font-medium uppercase tracking-wider">
-                            {testimonials[active].designation}
-                        </p>
+                        <div className="flex flex-wrap items-center gap-2 mt-1">
+                            <p className="text-sm text-[#FF6105] font-medium uppercase tracking-wider">
+                                {testimonials[active].designation}
+                            </p>
+                            {testimonials[active].location && (
+                                <span className="text-black/40 text-[10px] font-bold uppercase tracking-wider bg-black/5 px-2 py-0.5 rounded">
+                                    {testimonials[active].location}
+                                </span>
+                            )}
+                        </div>
                         <motion.p className="mt-8 text-lg text-black/70 leading-relaxed">
                             {testimonials[active].quote.split(" ").map((word, index) => (
                                 <motion.span

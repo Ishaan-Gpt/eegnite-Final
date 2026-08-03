@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/eegnite-logo.png",
+                url: "/images/logos/eegnite-logo.png",
                 width: 1200,
                 height: 630,
                 alt: "EEGNITE - Search Engine Optimization"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Growth-Focused SEO Agency | EEGNITE",
         description: "Grow your organic visibility with EEGNITE’s SEO services. Technical SEO, content optimization, keyword strategy, and authority building designed to increase rankings, traffic, leads, and long-term revenue growth.",
-        images: ["/eegnite-logo.png"]
+        images: ["/images/logos/eegnite-logo.png"]
     }
 };
 

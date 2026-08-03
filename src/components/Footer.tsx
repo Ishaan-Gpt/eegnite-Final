@@ -85,7 +85,7 @@ export default function Footer() {
                         {/* Brand */}
                         <div className="lg:col-span-2 space-y-6">
                             <div className="flex items-center gap-3">
-                                <img src="/eegnite-logo.png" alt="EEGNITE" className="h-10 w-auto" loading="lazy" />
+                                <img src="/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-10 w-auto" loading="lazy" />
                                 <span className="text-xl font-bold text-[#FF6105] uppercase tracking-wider items-start flex">
                                     EEGNITE<sup className="text-[10px] ml-0.5 leading-none mt-1">™</sup>
                                 </span>
@@ -269,6 +269,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 px-4 text-xs text-black/40">
                     <span>© 2026 EEGNITE. All rights reserved.</span>
                     <div className="flex gap-6">
+                        <Link href="/sitemap/" className="hover:text-[#FF6105] transition-colors">HTML Sitemap</Link>
                         <a href="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6105] transition-colors">Privacy Policy</a>
                         <a href="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6105] transition-colors">Terms of Service</a>
                     </div>

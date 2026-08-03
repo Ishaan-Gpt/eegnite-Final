@@ -13,7 +13,7 @@ export const STATIC_ORGANISATION = {
   "url": "https://www.eegnite.com/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://www.eegnite.com/eegnite-logo.png",
+    "url": "https://www.eegnite.com/images/logos/eegnite-logo.png",
     "width": 390,
     "height": 400
   },
@@ -24,7 +24,7 @@ export const STATIC_ORGANISATION = {
     "name": "Anish Kumar",
     "jobTitle": "Founder & CEO",
     "url": "https://www.linkedin.com/in/anish-kr/",
-    "image": "https://www.eegnite.com/anish-founder.png"
+    "image": "https://www.eegnite.com/images/team/anish-founder.webp"
   },
   "address": {
     "@type": "PostalAddress",
@@ -94,7 +94,7 @@ export const STATIC_LOCAL_BUSINESS = {
   "@id": "https://www.eegnite.com/#localbusiness",
   "name": "EEGNITE",
   "url": "https://www.eegnite.com/",
-  "logo": "https://www.eegnite.com/eegnite-logo.png",
+  "logo": "https://www.eegnite.com/images/logos/eegnite-logo.png",
   "description": "EEGNITE is a performance-driven full-service digital marketing agency providing data-driven SEO, PPC advertising, social media marketing, web design & development, and email marketing.",
   "telephone": "+91-6289-753-474",
   "email": "anish@eegnite.com",
@@ -326,7 +326,7 @@ export function UnifiedSchemaJsonLd({
         "name": "EEGNITE",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.eegnite.com/eegnite-logo.png"
+          "url": "https://www.eegnite.com/images/logos/eegnite-logo.png"
         }
       },
       "image": featuredImageUrl ? {
@@ -363,7 +363,7 @@ export function UnifiedSchemaJsonLd({
         "name": "EEGNITE",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.eegnite.com/eegnite-logo.png"
+          "url": "https://www.eegnite.com/images/logos/eegnite-logo.png"
         }
       },
       "image": featuredImageUrl ? {

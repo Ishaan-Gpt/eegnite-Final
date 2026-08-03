@@ -269,6 +269,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 px-4 text-xs text-black/40">
                     <span>© 2026 EEGNITE. All rights reserved.</span>
                     <div className="flex gap-6">
+                        <Link href="/sitemap/" className="hover:text-[#FF6105] transition-colors">HTML Sitemap</Link>
                         <a href="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6105] transition-colors">Privacy Policy</a>
                         <a href="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6105] transition-colors">Terms of Service</a>
                     </div>

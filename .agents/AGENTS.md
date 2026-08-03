@@ -47,9 +47,11 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 - **No Grey Backgrounds**: Avoid using grey or muted-grey backgrounds (e.g., `#F5F3EE`, `#FAFAFA`, `#F9F9F9`) for large visual section containers. Use white (`#FFFFFF` / `#FFFEF8`) or glassy semi-transparent white on clean layouts instead.
 - **Glassmorphism Styling**: When requested, implement glassy card styles using semitransparent white (`bg-white/80` or `bg-white/60`), `backdrop-blur-md`, subtle thin borders (`border-black/5`), and light background blur circles.
 
-## Content Fidelity (100% Copy Retention)
-- **100% Word Retention**: Use 100% of the text content provided in the source Google Docs. No summaries, omissions, or text merging to fit components is permitted. Choose or customize components that expand dynamically to accept the full text copy exactly as written.
+## Content Fidelity (100% Copy Retention & Full Document Replication)
+- **100% Word Retention & Complete Extraction**: Always extract 100% of the text content provided in the source Google Docs/documents from the very first line to the very last line without skipping any introductory sentences, paragraphs, or headings. No summaries, omissions, or text merging to fit components is permitted. Choose or customize components that expand dynamically to accept the full text copy exactly as written.
+- **Exact Document Replication**: Faithfully replicate all formatting from the source document, including exact paragraph ordering, bold/italic inline text emphasis, hyperlinks (unwrapped and connected with proper target attributes), numbered lists (`<ol>`), and bulleted lists (`<ul>`).
 - **Verbatim List Labels**: Always check that list category labels (e.g., `B2B & Lead Generation`, `Medical & Healthcare`) match the original document capitalization and symbol usage exactly.
+
 
 
 

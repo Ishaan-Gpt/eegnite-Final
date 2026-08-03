@@ -16,8 +16,9 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         category: "E-Commerce",
         date: "Jul 8, 2026",
         author: "EEGNITE Team",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1600",
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1600",
         content: `
+<p class="mb-6 text-lg leading-relaxed text-black">If you're running an online store, you've probably asked yourself this question recently:</p>
             <p class="mb-6 text-lg leading-relaxed text-black"><em>"We're adding new products, improving our website, and investing in marketing. So why is our organic traffic slowing down?"</em></p>
             <p class="mb-6 text-lg leading-relaxed text-black">You're not alone.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Many eCommerce businesses are experiencing the same challenge. Their product catalogs are growing, paid advertising costs are increasing, and competition is tougher than ever. Yet despite doing "all the right things," their products are becoming harder to find in search results.</p>
@@ -27,6 +28,14 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">According to recent industry research, organic search still drives more than <strong>53% of overall website traffic</strong>, making it the single largest source of visitors for most businesses. That hasn't changed.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">What has changed is <strong>how people discover products before they click on a website.</strong></p>
             <p class="mb-6 text-lg leading-relaxed text-black">Today, a customer might:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Ask ChatGPT for product recommendations.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Watch comparison videos on YouTube.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Search on TikTok or Instagram.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Read customer reviews.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Compare products in Google AI Overviews.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Visit your website only after they've already shortlisted their options.</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">That means your online store isn't just competing against other retailers anymore.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">You're competing for visibility across an entire digital ecosystem.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Let's look at why so many online stores struggle to rank in 2026 and, more importantly, what successful eCommerce brands are doing differently.</p>
@@ -69,6 +78,15 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Let's say you sell furniture online.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">You have one category for dining chairs.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Customers can filter products by:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Material</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Color</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Price</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Brand</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Style</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Availability</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Customer rating</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">That sounds perfectly reasonable.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The problem is what happens behind the scenes.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Every filter combination can generate another URL.</p>
@@ -86,13 +104,34 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Here's another situation that's incredibly common.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">A supplier sends you product information.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">It includes:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Product title</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Specifications</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Features</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Description</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Technical details</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">You upload everything exactly as provided.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">After all, the information is accurate, professionally written, and saves your team hours of work.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Unfortunately, so do hundreds of other retailers.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Now imagine Google comparing all those pages.</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Every website is saying exactly the same thing.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The specifications are identical.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The descriptions are identical.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Even the order of the information is often identical.</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">From Google's perspective, there's very little reason to rank one retailer above another.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Now compare that with a retailer that goes a step further.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Instead of simply listing specifications, they include:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">A plain-English explanation of who the product is best suited for.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Original buying advice.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Frequently asked questions.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Real customer feedback.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Care and maintenance tips.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Comparisons with similar products.</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">Suddenly, that page becomes much more useful.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Search engines increasingly reward originality because that's what customers actually find valuable.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Simply copying manufacturer content may save time today, but it can quietly reduce your visibility over the long term.</p>
@@ -109,11 +148,20 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Google now pays much closer attention to these experiences through its Core Web Vitals, including a metric called <strong>Interaction to Next Paint (INP)</strong>. Rather than simply measuring how quickly a page loads, INP evaluates how responsive a website feels when someone actually interacts with it.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">This matters because modern eCommerce websites have become increasingly complex.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Many stores rely on:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Third-party review widgets</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Live chat software</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Product recommendation engines</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Marketing and analytics scripts</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Inventory management tools</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Personalization platforms</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Multiple payment integrations</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">Each feature may improve the customer experience in some way, but together they can make a website feel noticeably slower, especially on mobile devices.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">And that's a problem.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Today, smartphones account for <strong>more than 80% of retail website traffic and around 63% of online shopping orders</strong>. If your mobile experience feels sluggish, you're not just frustrating visitors. You're creating unnecessary friction at the exact moment people are trying to make a purchase.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The impact goes beyond SEO.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold">A slow website can reduce engagement, increase bounce rates, lower conversion rates, and make customers question the professionalism of your business.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">A slow website can reduce engagement, increase bounce rates, lower conversion rates, and make customers question the professionalism of your business.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">In other words, technical performance isn't just an SEO issue anymore.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">It's a business issue.</p>
 
@@ -123,7 +171,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Businesses that continue to perform well in organic search are focusing less on gaming algorithms and more on creating a better shopping experience. They're making it easier for customers to compare products, answer common questions, and make confident buying decisions.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">At the same time, they're giving search engines and AI platforms the structured information they need to understand every product in their catalog.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Instead of asking, <em>"How do we rank for more keywords?"</em>, they're asking a much better question:</p>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold"><em>"How do we become the best source of information for the products we sell?"</em></p>
+            <p class="mb-6 text-lg leading-relaxed text-black"><em>"How do we become the best source of information for the products we sell?"</em></p>
             <p class="mb-6 text-lg leading-relaxed text-black">That shift in mindset is making a significant difference.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Think Beyond Product Pages</strong></h2>
@@ -136,6 +184,14 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">It becomes a resource.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">That's exactly why many successful eCommerce brands are transforming category pages into informational hubs. These pages satisfy both commercial intent and informational intent, helping customers make better decisions while giving search engines richer content to understand.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Simple additions can make a meaningful difference, such as:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">A short introduction explaining the category.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Buying tips for first-time shoppers.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Product comparison advice.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Frequently asked questions.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Internal links to related collections and guides.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Clear information about shipping, returns, and warranties.</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">The goal isn't to write hundreds of words for the sake of SEO. It's to answer the questions customers already have before they ask them.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Make Your Store Easy for AI to Understand</strong></h2>
@@ -145,6 +201,16 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">If your website doesn't clearly communicate what you sell, AI may struggle to recommend your products.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">This is where technical SEO becomes much more valuable than many business owners realize.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">For every product, search engines should be able to easily understand:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Product name</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Brand</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Price</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Availability</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Reviews</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Specifications</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Images</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Material or dimensions where relevant</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">This information is typically provided through structured data, often called Schema markup.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Think of it as giving search engines a clearly labeled inventory instead of expecting them to figure everything out on their own.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Many businesses are also beginning to prepare their websites for AI crawlers by improving technical documentation and making product information easier to access. As AI-powered search continues to grow, stores that invest in clean, structured data today are likely to have a stronger foundation for tomorrow.</p>
@@ -153,6 +219,15 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Imagine you're buying a product from two different online stores.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The first website has a product page with a price and a brief description.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The second includes:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Hundreds of verified customer reviews.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Delivery timelines.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Clear return and refund policies.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Secure payment badges.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Detailed product specifications.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Helpful FAQs.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Contact information that's easy to find.</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">Which business would you trust more?</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Most people would choose the second option without much hesitation.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Search engines think in a similar way.</p>
@@ -160,6 +235,12 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">For eCommerce businesses, trust isn't built through marketing claims.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">It's built through transparency.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Customers want to know:</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">When will my order arrive?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">What happens if I need to return it?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Are these reviews genuine?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Can I contact someone if I have a problem?</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">The easier you make it for customers to answer these questions, the more confidence they have in buying from you.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Don't Let Paid Advertising Become Your Only Growth Strategy</strong></h2>
@@ -170,12 +251,21 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Organic SEO works differently.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">It usually takes longer to build momentum, but it creates an asset that continues attracting customers without requiring you to pay for every visitor.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">That doesn't mean you should choose one over the other.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold">The strongest eCommerce strategies combine both.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">The strongest eCommerce strategies combine both.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Paid campaigns can generate immediate demand for product launches, seasonal promotions, or competitive keywords. Meanwhile, SEO builds long-term visibility that reduces dependence on advertising over time.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Rather than viewing SEO as a cost, many successful businesses now see it as an investment in digital infrastructure. Every optimized product page, helpful buying guide, and well-structured category strengthens the foundation of future organic growth.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>The 2026 eCommerce SEO Checklist</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">If you're reviewing your online store this year, these are some of the most important areas to evaluate:</p>
+            <ol class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">1.</span><span class="text-lg text-black">Are your product descriptions original and genuinely helpful?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">2.</span><span class="text-lg text-black">Do category pages educate customers instead of simply displaying products?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">3.</span><span class="text-lg text-black">Is your website fast and responsive, especially on mobile devices?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">4.</span><span class="text-lg text-black">Are search engines efficiently crawling your most valuable pages?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">5.</span><span class="text-lg text-black">Have you implemented structured data across your product catalog?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">6.</span><span class="text-lg text-black">Are your return policies, shipping information, and customer reviews easy to find?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">7.</span><span class="text-lg text-black">Is your website prepared for AI-powered search experiences, not just traditional Google rankings?</span></li>
+            </ol>
             <p class="mb-6 text-lg leading-relaxed text-black">You don't need to solve everything at once.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">But consistently improving these areas will put your business in a much stronger position than relying on outdated SEO tactics that no longer deliver the same results.</p>
 
@@ -199,6 +289,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         author: "EEGNITE Team",
         image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=1600",
         content: `
+<p class="mb-6 text-lg leading-relaxed text-black">For decades, marketing leaders have relied on a familiar set of numbers to judge success.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Website traffic was growing.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Search rankings were improving.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Campaign reach was increasing.</p>
@@ -215,6 +306,12 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Marketing Has Changed Faster Than Measurement</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">One of the biggest challenges businesses face today is that marketing has evolved much faster than the way organizations measure success.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Many leadership teams are still reviewing reports that focus heavily on activity metrics.</p>
+            <ol class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">1.</span><span class="text-lg text-black">How many people visited the website?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">2.</span><span class="text-lg text-black">How many impressions did a campaign receive?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">3.</span><span class="text-lg text-black">How many followers were added this month?</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">4.</span><span class="text-lg text-black">How many keywords reached the first page of Google?</span></li>
+            </ol>
             <p class="mb-6 text-lg leading-relaxed text-black">These numbers certainly provide useful information, but they don't always explain whether marketing is helping the business grow.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Imagine presenting two companies to an investor.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The first company generated one million social media impressions last month.</p>
@@ -228,12 +325,27 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>The Customer Journey No Longer Follows a Predictable Path</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">Traditional marketing models were built around a relatively straightforward buying journey.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">A customer saw an advertisement.</p>
+            <ol class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">1.</span><span class="text-lg text-black">They clicked on it.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">2.</span><span class="text-lg text-black">Visited a website.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">3.</span><span class="text-lg text-black">Filled out a contact form.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">4.</span><span class="text-lg text-black">Spoke with a salesperson.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold text-[#FF6105] text-lg shrink-0 min-w-[24px]">5.</span><span class="text-lg text-black">Made a purchase.</span></li>
+            </ol>
             <p class="mb-6 text-lg leading-relaxed text-black">Every step could be tracked with reasonable accuracy.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Today's buying journey looks nothing like that.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Consider how a business owner might choose a new digital marketing agency in 2026. They may first hear about the agency while listening to a podcast during their morning commute. A few days later, they notice one of the company's executives sharing useful insights on LinkedIn. The following week, they ask ChatGPT to recommend agencies specializing in their industry. They visit review platforms to compare customer experiences. A colleague mentions the same agency during a networking event.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Weeks later, they finally search for the company by name and submit an enquiry through the website.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Which interaction deserves credit for generating that lead?</p>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold">The reality is that every interaction played a role.</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Was it the podcast?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The LinkedIn post?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The AI recommendation?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The customer review?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The referral?</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">The website?</span></li>
+            </ul>
+            <p class="mb-6 text-lg leading-relaxed text-black">The reality is that every interaction played a role.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Modern buying decisions rarely happen because of a single campaign or one successful advertisement.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Instead, trust develops gradually through multiple touchpoints spread across different platforms and devices.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">This is one reason traditional attribution models are becoming increasingly unreliable.</p>
@@ -253,7 +365,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">The company has expanded Search Console to provide greater insight into how businesses are discovered across connected digital channels, recognizing that search behavior is becoming increasingly fragmented rather than confined to one platform.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">For business leaders, this changes an important assumption.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Strong Google rankings are still valuable, but they no longer represent complete market visibility.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold">Your audience may be discovering competitors in places your current reports never measure.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Your audience may be discovering competitors in places your current reports never measure.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Why High Traffic Doesn't Always Mean High Growth</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">One of the most misunderstood metrics in marketing is website traffic.</p>
@@ -279,6 +391,13 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">The global Social Media Analytics market reached approximately <strong>$13 billion in 2025</strong> and is projected to grow to <strong>$16.5 billion in 2026</strong>, with forecasts suggesting extraordinary long-term expansion over the next decade.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Businesses are investing heavily in these technologies for one simple reason.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Customers don't stay within one platform anymore. They discover brands across multiple environments.</p>
+            <ul class="space-y-4 mb-8 list-none pl-0">
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">A prospect may first encounter your business through LinkedIn.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">Later they may watch one of your YouTube videos.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">An AI assistant may summarize information from your website.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">A customer review influences their opinion.</span></li>
+                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[#FF6105] mt-2.5 shrink-0"></span><span class="text-lg text-black">A webinar reinforces your expertise.</span></li>
+            </ul>
             <p class="mb-6 text-lg leading-relaxed text-black">Only after all these interactions do they become a qualified lead.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Traditional reporting systems often evaluate each channel independently.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Modern customer behavior doesn't.</p>
@@ -337,7 +456,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black"><em>"We're generating more leads than ever before. Why is our sales team saying lead quality is declining?"</em></p>
             <p class="mb-6 text-lg leading-relaxed text-black"><em>"If customers are discovering brands through AI tools and social platforms, are we still investing too much of our budget in traditional search campaigns?"</em></p>
             <p class="mb-6 text-lg leading-relaxed text-black">These questions aren't challenging marketing itself. They're challenging the way success is measured.</p>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold">Executives want marketing reports that explain business outcomes, not just marketing activity. They want to understand which investments generate profitable customers, strengthen brand awareness, and support long-term growth.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Executives want marketing reports that explain business outcomes, not just marketing activity. They want to understand which investments generate profitable customers, strengthen brand awareness, and support long-term growth.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">That's a much more valuable conversation than simply reviewing traffic charts every month.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>The Metrics That Matter Most Are Changing</strong></h2>
@@ -358,7 +477,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Businesses that continue measuring success using yesterday's framework risk making tomorrow's decisions with incomplete information. Those that adopt a more connected view of marketing performance will be better positioned to invest confidently, adapt quickly, and build sustainable growth in an increasingly fragmented digital landscape.</p>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>How EEGNITE Can Help</strong></h2>
-            <p class="mb-6 text-lg leading-relaxed text-black text-[#FF6105] font-semibold">Understanding modern marketing performance requires more than monitoring website traffic and keyword rankings. <a href="https://www.eegnite.com/" target="_blank" rel="noopener noreferrer" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> helps businesses connect SEO, content marketing, AI visibility, digital PR, analytics, and social media into a unified strategy that focuses on measurable business outcomes. By identifying the metrics that truly influence growth, businesses can make smarter marketing decisions and build a stronger digital presence for the future.</p>
+            <p class="mb-6 text-lg leading-relaxed text-black">Understanding modern marketing performance requires more than monitoring website traffic and keyword rankings. <a href="https://www.eegnite.com/" target="_blank" rel="noopener noreferrer" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> helps businesses connect SEO, content marketing, AI visibility, digital PR, analytics, and social media into a unified strategy that focuses on measurable business outcomes. By identifying the metrics that truly influence growth, businesses can make smarter marketing decisions and build a stronger digital presence for the future.</p>
         `
     },
 

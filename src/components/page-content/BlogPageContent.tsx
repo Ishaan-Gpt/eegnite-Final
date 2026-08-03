@@ -14,7 +14,7 @@ const allPostsData = [
         category: "E-Commerce",
         readTime: "10 min read",
         date: "Jul 8, 2026",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=1600",
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1600",
         slug: "ecommerce-seo-2026-why-most-online-stores-fail-to-rank",
     },
     {

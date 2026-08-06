@@ -8,6 +8,47 @@ import { cn } from "@/lib/utils";
 
 const allPostsData = [
     {
+        id: 17,
+        title: "The Most Common Mistakes Businesses Make When Outsourcing Marketing",
+        excerpt: "Discover the common mistakes businesses make when outsourcing marketing and learn how to choose the right agency partner for long-term ROI.",
+        category: "Agency Selection",
+        readTime: "8 min read",
+        date: "Jul 12, 2026",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600",
+        slug: "most-common-mistakes-outsourcing-marketing",
+    },
+    {
+        id: 16,
+        title: "Why Paid Advertising Costs Are Rising Across Digital Channels in 2026",
+        excerpt: "Understand why ad costs across Google, Meta, and LinkedIn are increasing and how to protect your profit margins in 2026.",
+        category: "PPC Advertising",
+        readTime: "8 min read",
+        date: "Jul 14, 2026",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
+        slug: "why-paid-advertising-costs-are-rising-2026",
+    },
+    {
+        id: 15,
+        title: "What Google's Local Search Updates Mean for Small Businesses in 2026",
+        excerpt: "Learn how Google's latest 2026 local search updates impact small businesses and what strategies help you rank in Google Maps.",
+        category: "Local Growth",
+        readTime: "8 min read",
+        date: "Jul 18, 2026",
+        image: "https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=1600",
+        slug: "googles-local-search-updates-small-businesses-2026",
+    },
+    {
+        id: 14,
+        title: "Content Marketing vs. Social Media Marketing - Understanding the Real Difference",
+        excerpt: "Explore the core differences between content marketing and social media marketing to build an effective growth engine.",
+        category: "Content Strategy",
+        readTime: "7 min read",
+        date: "Jul 25, 2026",
+        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1600",
+        slug: "content-marketing-vs-social-media-marketing",
+    },
+
+    {
         id: 13,
         title: "E-Commerce SEO in 2026 - Why Most Online Stores Fail to Rank (and What to Do Instead)",
         excerpt: "Discover why many online stores struggle to rank in 2026 and learn the SEO strategies that help eCommerce businesses succeed in an AI-driven search landscape.",

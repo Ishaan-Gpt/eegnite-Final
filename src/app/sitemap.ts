@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
+            url: `${baseUrl}/services/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/services/seo/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -45,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/industries/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/industries/e-commerce/`,
@@ -83,6 +95,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/digital-marketing-agency-kolkata/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/digital-marketing-agency-kolkata/seo-services/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/digital-marketing-agency-kolkata/ppc-management/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/digital-marketing-agency-kolkata/social-media-marketing/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/digital-marketing-agency-kolkata/web-design-development/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/digital-marketing-agency-kolkata/email-marketing/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/bahrain/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/qatar/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/testimonials/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -93,6 +153,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blog/most-common-mistakes-outsourcing-marketing/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/why-paid-advertising-costs-are-rising-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/googles-local-search-updates-small-businesses-2026/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/content-marketing-vs-social-media-marketing/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
         },
         {
             url: `${baseUrl}/blog/ecommerce-seo-2026-why-most-online-stores-fail-to-rank/`,

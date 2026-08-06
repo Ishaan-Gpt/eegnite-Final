@@ -4,11 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Search, ChevronDown, ChevronUp, Layers, FileText, Briefcase, Globe, ArrowUpRight, Sparkles } from "lucide-react";
+import { Search, ChevronDown, ChevronUp, Layers, FileText, Briefcase, Globe, ArrowUpRight, Sparkles, MapPin } from "lucide-react";
 
 // Page Data Structures
 const mainPages = [
     { title: "Home", href: "/", description: "Performance-first digital marketing agency homepage." },
+    { title: "Services Overview", href: "/services/", description: "Explore all ROI-focused digital marketing and growth services." },
+    { title: "Industries Overview", href: "/industries/", description: "Tailored digital strategies across specialized industry verticals." },
     { title: "Testimonials & Reviews", href: "/testimonials/", description: "Client success stories and partner reviews." },
     { title: "Contact Us", href: "/contact/", description: "Get in touch with the EEGNITE team for custom growth strategies." },
     { title: "Privacy Policy", href: "/privacy/", description: "Data privacy practices and confidentiality commitments." },
@@ -33,7 +35,85 @@ const industryPages = [
     { title: "Professional Services", href: "/industries/professional-services/", category: "Industries", description: "Authority building for firms, agencies, and consultants." },
 ];
 
+const kolkataClusterPages = [
+    {
+        title: "Digital Marketing Agency Kolkata (Hub)",
+        href: "/digital-marketing-agency-kolkata/",
+        category: "Kolkata Hub",
+        description: "Full-service digital marketing agency in Kolkata driving organic search, branding, and performance ads."
+    },
+    {
+        title: "SEO Services in Kolkata",
+        href: "/digital-marketing-agency-kolkata/seo-services/",
+        category: "Local SEO",
+        description: "Search engine optimization, Google Maps ranking, and content strategy for Kolkata businesses."
+    },
+    {
+        title: "PPC Management in Kolkata",
+        href: "/digital-marketing-agency-kolkata/ppc-management/",
+        category: "Paid Search",
+        description: "High-ROI Google Ads, Meta Ads, and pay-per-click campaign management in Kolkata."
+    },
+    {
+        title: "Social Media Marketing Kolkata",
+        href: "/digital-marketing-agency-kolkata/social-media-marketing/",
+        category: "Social Media",
+        description: "Brand building, engagement, and paid social campaigns across platforms for Kolkata brands."
+    },
+    {
+        title: "Web Design & Development Kolkata",
+        href: "/digital-marketing-agency-kolkata/web-design-development/",
+        category: "Web Development",
+        description: "Fast, responsive, high-converting website design and custom web development in Kolkata."
+    },
+    {
+        title: "Email Marketing Kolkata",
+        href: "/digital-marketing-agency-kolkata/email-marketing/",
+        category: "Email Marketing",
+        description: "Automated email workflows, newsletters, and conversion-focused lifecycle marketing in Kolkata."
+    },
+];
+
+const globalHubPages = [
+    {
+        title: "Digital Marketing Agency Bahrain",
+        href: "/bahrain/",
+        category: "Global Hub",
+        description: "ROI-focused digital marketing and growth strategies for businesses in Bahrain."
+    },
+    {
+        title: "Digital Marketing Agency Qatar",
+        href: "/qatar/",
+        category: "Global Hub",
+        description: "Data-driven marketing and search visibility solutions for Qatar enterprise growth."
+    },
+];
+
 const blogPosts = [
+    {
+        title: "The Most Common Mistakes Businesses Make When Outsourcing Marketing",
+        href: "/blog/most-common-mistakes-outsourcing-marketing/",
+        category: "Agency Selection",
+        date: "Jul 12, 2026",
+    },
+    {
+        title: "Why Paid Advertising Costs Are Rising Across Digital Channels in 2026",
+        href: "/blog/why-paid-advertising-costs-are-rising-2026/",
+        category: "PPC Advertising",
+        date: "Jul 14, 2026",
+    },
+    {
+        title: "What Google's Local Search Updates Mean for Small Businesses in 2026",
+        href: "/blog/googles-local-search-updates-small-businesses-2026/",
+        category: "Local Growth",
+        date: "Jul 18, 2026",
+    },
+    {
+        title: "Content Marketing vs. Social Media Marketing - Understanding the Real Difference",
+        href: "/blog/content-marketing-vs-social-media-marketing/",
+        category: "Content Strategy",
+        date: "Jul 25, 2026",
+    },
     {
         title: "E-Commerce SEO in 2026 - Why Most Online Stores Fail to Rank (and What to Do Instead)",
         href: "/blog/ecommerce-seo-2026-why-most-online-stores-fail-to-rank/",
@@ -112,6 +192,8 @@ export default function SitemapPageContent() {
     const [searchQuery, setSearchQuery] = useState("");
     const [isServicesOpen, setIsServicesOpen] = useState(true);
     const [isIndustriesOpen, setIsIndustriesOpen] = useState(true);
+    const [isKolkataOpen, setIsKolkataOpen] = useState(true);
+    const [isGlobalOpen, setIsGlobalOpen] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     // Filter Logic
@@ -120,17 +202,19 @@ export default function SitemapPageContent() {
     const filteredMain = mainPages.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
     const filteredServices = servicePages.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
     const filteredIndustries = industryPages.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
-    
+    const filteredKolkata = kolkataClusterPages.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+    const filteredGlobal = globalHubPages.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+
     const blogCategories = ["All", ...Array.from(new Set(blogPosts.map(b => b.category)))];
-    
+
     const filteredBlogs = blogPosts.filter(b => {
         const matchesQuery = b.title.toLowerCase().includes(q) || b.category.toLowerCase().includes(q);
         const matchesCategory = selectedCategory === "All" || b.category === selectedCategory;
         return matchesQuery && matchesCategory;
     });
 
-    const totalLinks = mainPages.length + servicePages.length + industryPages.length + blogPosts.length;
-    const totalFiltered = filteredMain.length + filteredServices.length + filteredIndustries.length + filteredBlogs.length;
+    const totalLinks = mainPages.length + servicePages.length + industryPages.length + kolkataClusterPages.length + globalHubPages.length + blogPosts.length;
+    const totalFiltered = filteredMain.length + filteredServices.length + filteredIndustries.length + filteredKolkata.length + filteredGlobal.length + filteredBlogs.length;
 
     // JSON-LD Schema
     const schemaData = {
@@ -176,9 +260,21 @@ export default function SitemapPageContent() {
                         "name": p.title,
                         "url": `https://www.eegnite.com${p.href}`
                     })),
-                    ...blogPosts.map((b, idx) => ({
+                    ...kolkataClusterPages.map((p, idx) => ({
                         "@type": "ListItem",
                         "position": mainPages.length + servicePages.length + industryPages.length + idx + 1,
+                        "name": p.title,
+                        "url": `https://www.eegnite.com${p.href}`
+                    })),
+                    ...globalHubPages.map((p, idx) => ({
+                        "@type": "ListItem",
+                        "position": mainPages.length + servicePages.length + industryPages.length + kolkataClusterPages.length + idx + 1,
+                        "name": p.title,
+                        "url": `https://www.eegnite.com${p.href}`
+                    })),
+                    ...blogPosts.map((b, idx) => ({
+                        "@type": "ListItem",
+                        "position": mainPages.length + servicePages.length + industryPages.length + kolkataClusterPages.length + globalHubPages.length + idx + 1,
                         "name": b.title,
                         "url": `https://www.eegnite.com${b.href}`
                     }))
@@ -218,7 +314,7 @@ export default function SitemapPageContent() {
                         </h1>
 
                         <p className="text-lg text-black/70 leading-relaxed">
-                            Explore the complete structure of EEGNITE. Access all main pages, service offerings, industry solutions, and growth insights in one organized directory.
+                            Explore the complete structure of EEGNITE. Access all main pages, service offerings, industry solutions, local market clusters, and growth insights in one organized directory.
                         </p>
 
                         <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-black/60 pt-2">
@@ -241,7 +337,7 @@ export default function SitemapPageContent() {
                                 type="text"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Search pages, services, or blog posts by keyword..."
+                                placeholder="Search pages, services, location clusters, or blog posts..."
                                 className="w-full pl-11 pr-4 py-3 text-sm bg-black/[0.02] border border-black/10 rounded-xl focus:outline-none focus:border-[#FF6105] focus:bg-white transition-all"
                             />
                             {searchQuery && (
@@ -261,6 +357,12 @@ export default function SitemapPageContent() {
                             </a>
                             <a href="#industries" className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black/70 hover:text-[#FF6105] bg-black/5 hover:bg-[#FF6105]/10 rounded-lg transition-colors whitespace-nowrap">
                                 Industries ({industryPages.length})
+                            </a>
+                            <a href="#kolkata-cluster" className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black/70 hover:text-[#FF6105] bg-black/5 hover:bg-[#FF6105]/10 rounded-lg transition-colors whitespace-nowrap">
+                                Kolkata Cluster ({kolkataClusterPages.length})
+                            </a>
+                            <a href="#global-hubs" className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black/70 hover:text-[#FF6105] bg-black/5 hover:bg-[#FF6105]/10 rounded-lg transition-colors whitespace-nowrap">
+                                Global Hubs ({globalHubPages.length})
                             </a>
                             <a href="#blogs" className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black/70 hover:text-[#FF6105] bg-black/5 hover:bg-[#FF6105]/10 rounded-lg transition-colors whitespace-nowrap">
                                 Blog ({blogPosts.length})
@@ -420,7 +522,113 @@ export default function SitemapPageContent() {
                         )}
                     </div>
 
-                    {/* SECTION 4: BLOG POSTS */}
+                    {/* SECTION 4: KOLKATA LOCATION CLUSTER ACCORDION */}
+                    <div id="kolkata-cluster" className="space-y-6">
+                        <div
+                            onClick={() => setIsKolkataOpen(!isKolkataOpen)}
+                            className="flex items-center justify-between border-b border-black/10 pb-4 cursor-pointer group"
+                        >
+                            <div className="flex items-center gap-3">
+                                <MapPin className="text-[#FF6105]" size={22} />
+                                <h2 className="text-2xl font-bold uppercase tracking-tight text-black group-hover:text-[#FF6105] transition-colors">
+                                    Kolkata Location Cluster
+                                </h2>
+                                <span className="bg-[#FF6105]/10 text-[#FF6105] text-xs font-bold px-2.5 py-1 rounded-full">
+                                    {filteredKolkata.length}
+                                </span>
+                            </div>
+                            <button className="p-2 rounded-lg bg-black/5 group-hover:bg-[#FF6105]/10 text-black/70 group-hover:text-[#FF6105] transition-colors">
+                                {isKolkataOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                            </button>
+                        </div>
+
+                        {isKolkataOpen && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+                                {filteredKolkata.map((page, idx) => (
+                                    <Link
+                                        key={idx}
+                                        href={page.href}
+                                        className="group p-6 rounded-2xl bg-white border border-black/5 hover:border-[#FF6105]/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                                    >
+                                        <div>
+                                            <div className="flex items-center justify-between mb-3">
+                                                <h3 className="font-bold text-lg text-black group-hover:text-[#FF6105] transition-colors">
+                                                    {page.title}
+                                                </h3>
+                                                <ArrowUpRight size={18} className="text-black/30 group-hover:text-[#FF6105] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                            </div>
+                                            <p className="text-sm text-black/60 leading-relaxed">
+                                                {page.description}
+                                            </p>
+                                        </div>
+                                        <div className="mt-6 flex items-center justify-between text-xs">
+                                            <span className="font-bold text-[#FF6105] uppercase tracking-wider">
+                                                {page.category}
+                                            </span>
+                                            <span className="font-mono text-black/40">
+                                                {page.href}
+                                            </span>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* SECTION 5: GLOBAL HUBS ACCORDION */}
+                    <div id="global-hubs" className="space-y-6">
+                        <div
+                            onClick={() => setIsGlobalOpen(!isGlobalOpen)}
+                            className="flex items-center justify-between border-b border-black/10 pb-4 cursor-pointer group"
+                        >
+                            <div className="flex items-center gap-3">
+                                <Globe className="text-[#FF6105]" size={22} />
+                                <h2 className="text-2xl font-bold uppercase tracking-tight text-black group-hover:text-[#FF6105] transition-colors">
+                                    Global Regional Hubs
+                                </h2>
+                                <span className="bg-[#FF6105]/10 text-[#FF6105] text-xs font-bold px-2.5 py-1 rounded-full">
+                                    {filteredGlobal.length}
+                                </span>
+                            </div>
+                            <button className="p-2 rounded-lg bg-black/5 group-hover:bg-[#FF6105]/10 text-black/70 group-hover:text-[#FF6105] transition-colors">
+                                {isGlobalOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                            </button>
+                        </div>
+
+                        {isGlobalOpen && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                                {filteredGlobal.map((page, idx) => (
+                                    <Link
+                                        key={idx}
+                                        href={page.href}
+                                        className="group p-6 rounded-2xl bg-white border border-black/5 hover:border-[#FF6105]/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                                    >
+                                        <div>
+                                            <div className="flex items-center justify-between mb-3">
+                                                <h3 className="font-bold text-lg text-black group-hover:text-[#FF6105] transition-colors">
+                                                    {page.title}
+                                                </h3>
+                                                <ArrowUpRight size={18} className="text-black/30 group-hover:text-[#FF6105] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                            </div>
+                                            <p className="text-sm text-black/60 leading-relaxed">
+                                                {page.description}
+                                            </p>
+                                        </div>
+                                        <div className="mt-6 flex items-center justify-between text-xs">
+                                            <span className="font-bold text-[#FF6105] uppercase tracking-wider">
+                                                {page.category}
+                                            </span>
+                                            <span className="font-mono text-black/40">
+                                                {page.href}
+                                            </span>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* SECTION 6: BLOG POSTS */}
                     <div id="blogs" className="space-y-6">
                         <div className="flex items-center justify-between border-b border-black/10 pb-4">
                             <div className="flex items-center gap-3">

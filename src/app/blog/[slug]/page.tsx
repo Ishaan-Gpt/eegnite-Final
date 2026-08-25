@@ -16,7 +16,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         category: "AI & Content Strategy",
         date: "Aug 10, 2026",
         author: "EEGNITE Team",
-        image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&q=80&w=1600",
+        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1600",
         content: `            <p class="mb-6 text-lg leading-relaxed text-black">A few months ago, we were looking at an article that had taken us most of the afternoon to finish. We had researched the subject, checked several sources, rewritten the introduction twice, and spent a ridiculous amount of time trying to make the conclusion sound less repetitive.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Then we ran it through an AI detector.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">The result said the article was likely AI-generated.</p>
@@ -54,7 +54,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">It can also make the resulting article feel incredibly predictable.</p>
 
             <div class="my-12 relative w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-black/5">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200" alt="AI Detection and Content Structure Analysis" class="object-cover w-full h-full" />
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200" alt="AI Text Detection Algorithm and Content Analysis" class="object-cover w-full h-full" />
             </div>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>The Information Advantage Is Real</strong></h2>
@@ -236,7 +236,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         category: "B2B Lead Generation",
         date: "Aug 15, 2026",
         author: "EEGNITE Team",
-        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1600",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1600",
         content: `            <p class="mb-6 text-lg leading-relaxed text-black">A prospect reads your blog.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Then they visit your pricing page.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Someone from the same company downloads a guide. A week later, another person watches one of your videos. You send a follow-up email, but there is no response.</p>
@@ -280,7 +280,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">They need reasons to believe that your business understands the problem they're trying to solve.</p>
 
             <div class="my-12 relative w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-black/5">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200" alt="B2B Buyer Journey and Enterprise Conversion Pipeline" class="object-cover w-full h-full" />
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200" alt="B2B Stakeholder Evaluation and Decision Making Pipeline" class="object-cover w-full h-full" />
             </div>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>More People Are Involved in the Decision</strong></h2>

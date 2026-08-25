@@ -14,7 +14,7 @@ const allPostsData = [
         category: "AI & Content Strategy",
         readTime: "9 min read",
         date: "Aug 10, 2026",
-        image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&q=80&w=1600",
+        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1600",
         slug: "we-stopped-trying-to-beat-ai-detectors",
     },
     {
@@ -24,7 +24,7 @@ const allPostsData = [
         category: "B2B Lead Generation",
         readTime: "10 min read",
         date: "Aug 15, 2026",
-        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1600",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1600",
         slug: "why-b2b-buyers-take-longer-to-convert-than-ever-before",
     },
 

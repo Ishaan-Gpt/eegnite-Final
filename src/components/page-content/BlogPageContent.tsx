@@ -8,6 +8,27 @@ import { cn } from "@/lib/utils";
 
 const allPostsData = [
     {
+        id: 19,
+        title: "We Stopped Trying to Beat AI Detectors When We Realized What They Were Actually Detecting",
+        excerpt: "Discover why trying to beat AI detectors is the wrong goal. Learn how human thinking, structure, and depth differentiate quality content from AI output.",
+        category: "AI & Content Strategy",
+        readTime: "9 min read",
+        date: "Aug 10, 2026",
+        image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&q=80&w=1600",
+        slug: "we-stopped-trying-to-beat-ai-detectors",
+    },
+    {
+        id: 18,
+        title: "Why B2B Buyers Take Longer to Convert Than Ever Before",
+        excerpt: "B2B buyers research longer, involve more stakeholders, and use more digital channels before contacting sales. Learn why conversion takes longer today.",
+        category: "B2B Lead Generation",
+        readTime: "10 min read",
+        date: "Aug 15, 2026",
+        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1600",
+        slug: "why-b2b-buyers-take-longer-to-convert-than-ever-before",
+    },
+
+    {
         id: 17,
         title: "The Most Common Mistakes Businesses Make When Outsourcing Marketing",
         excerpt: "Discover the common mistakes businesses make when outsourcing marketing and learn how to choose the right agency partner for long-term ROI.",

@@ -155,6 +155,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/blog/we-stopped-trying-to-beat-ai-detectors/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/why-b2b-buyers-take-longer-to-convert-than-ever-before/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
             url: `${baseUrl}/blog/most-common-mistakes-outsourcing-marketing/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

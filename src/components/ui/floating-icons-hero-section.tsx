@@ -95,11 +95,11 @@ const Icon = ({
         >
             {/* Inner wrapper for the continuous floating animation */}
             <motion.div
-                className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 p-3 rounded-3xl shadow-xl bg-white/90 backdrop-blur-md border border-[#FF6105]/10 hover:shadow-[0_0_30px_rgba(255,97,5,0.25)] hover:scale-110 hover:border-[#FF6105]/30 transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 p-2 sm:p-2.5 rounded-2xl shadow-lg bg-white/90 backdrop-blur-md border border-[#FF6105]/10 hover:shadow-[0_0_25px_rgba(255,97,5,0.25)] hover:scale-110 hover:border-[#FF6105]/30 transition-all duration-300 cursor-pointer"
                 animate={{
-                    y: [0, -8, 0, 8, 0],
-                    x: [0, 6, 0, -6, 0],
-                    rotate: [0, 5, 0, -5, 0],
+                    y: [0, -6, 0, 6, 0],
+                    x: [0, 5, 0, -5, 0],
+                    rotate: [0, 4, 0, -4, 0],
                 }}
                 transition={{
                     duration: 5 + Math.random() * 5,
@@ -112,9 +112,9 @@ const Icon = ({
                 <Image
                     src={iconData.src}
                     alt={iconData.alt}
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                    width={32}
+                    height={32}
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain"
                 />
             </motion.div>
         </motion.div>

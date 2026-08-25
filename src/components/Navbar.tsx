@@ -176,18 +176,13 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
         ? [
             { name: 'Services', href: '/services' },
             { name: 'Industries', href: '/industries' },
-            { name: 'Case Studies', href: `${basePath}/#results` },
             { name: 'Testimonials', href: `${basePath}/#testimonials` },
-            { name: 'Blog', href: '/blog' },
             { name: 'Contact', href: `${basePath}/#contact` }
           ]
         : [
-            { name: 'About', href: '/#about' },
             { name: 'Services', href: '/services' },
             { name: 'Industries', href: '/industries' },
-            { name: 'Case Studies', href: '/#results' },
             { name: 'Testimonials', href: '/testimonials' },
-            { name: 'Blog', href: '/blog' },
             { name: 'Contact', href: '/#contact' }
           ];
 
@@ -195,12 +190,12 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
         <>
             <nav
                 ref={navRef}
-                className={`navbar-float fixed top-0 left-1/2 w-[92vw] lg:w-[74vw] xl:w-[66vw] z-[100] rounded-full px-4 lg:px-6 py-3 flex justify-between items-center transition-all duration-500 ${scrolled
+                className={`navbar-float fixed top-0 left-1/2 w-[94vw] lg:w-[86vw] xl:w-[74vw] 2xl:w-[66vw] max-w-6xl z-[100] rounded-full px-4 lg:px-6 py-2.5 lg:py-3 flex justify-between items-center transition-all duration-500 ${scrolled
                     ? 'bg-white/40 backdrop-blur-md border border-white/20 shadow-lg'
                     : 'bg-white/70 backdrop-blur-sm border border-white/30'
                     }`}
             >
-                <Link href={basePath || "/"} className="flex items-center gap-2">
+                <Link href={basePath || "/"} className="flex items-center gap-2 shrink-0">
                     <img src="/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-7 lg:h-8 w-auto" loading="lazy" />
                     <span className={`text-sm lg:text-base font-bold uppercase tracking-wider transition-colors duration-300 ${scrolled ? 'text-black/60' : 'text-black/80'
                         }`}>
@@ -209,7 +204,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
                 </Link>
 
                 {/* Desktop Links */}
-                <div className="hidden lg:flex items-center gap-1">
+                <div className="hidden lg:flex items-center gap-1 xl:gap-2">
                     {links.map((link) => {
                         const isDropdownLink = link.name === 'Services' || link.name === 'Industries';
                         const menuKey = link.name.toLowerCase() as 'services' | 'industries';
@@ -252,7 +247,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
 
                 <button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="lg:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+                    className="lg:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5 shrink-0"
                 >
                     <motion.span
                         animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 6 : 0 }}
@@ -269,7 +264,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
                 </button>
 
                 {/* Desktop CTA */}
-                <Link href={basePath ? `${basePath}/#contact` : "/#contact"} onClick={(e) => handleHashClick(e, basePath ? `${basePath}/#contact` : "/#contact")} className={`hidden lg:block text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full font-bold transition-all duration-300 ${scrolled
+                <Link href={basePath ? `${basePath}/#contact` : "/#contact"} onClick={(e) => handleHashClick(e, basePath ? `${basePath}/#contact` : "/#contact")} className={`hidden lg:block shrink-0 text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full font-bold transition-all duration-300 ${scrolled
                     ? 'bg-[#FF6105]/80 hover:bg-[#FF6105]'
                     : 'bg-[#FF6105] hover:bg-[#e55800]'
                     }`}>
@@ -286,7 +281,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
                         animate={{ opacity: 1, y: 0, x: "-50%" }}
                         exit={{ opacity: 0, y: -10, x: "-50%" }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="hidden lg:block fixed top-[84px] left-1/2 w-[74vw] xl:w-[66vw] bg-white rounded-3xl border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-8 text-black z-[101] pointer-events-auto"
+                        className="hidden lg:block fixed top-[84px] left-1/2 w-[86vw] xl:w-[74vw] 2xl:w-[66vw] max-w-6xl bg-white rounded-3xl border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-8 text-black z-[101] pointer-events-auto"
                     >
                         <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                             {(activeMenu === 'services' ? servicesList : industriesList).map((item) => {

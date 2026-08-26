@@ -227,6 +227,11 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">And perhaps the irony is that the best way to make AI-assisted writing feel human isn't to learn how to fool a machine.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">It is to stop writing for the machine in the first place.</p>
             <p class="mb-6 text-lg leading-relaxed text-black"><strong>Write for the person on the other side of the screen.</strong></p>
+
+            <div class="my-10 relative w-full rounded-3xl overflow-hidden shadow-xl border border-black/10 bg-white">
+                <img src="/images/blog/quillbot-ai-detector-result.png" alt="QuillBot AI Content Detector Test Result 8% AI Generated" class="w-full h-auto object-contain rounded-3xl" />
+            </div>
+
             <div class="my-8 p-6 bg-[#F5F3EE] rounded-2xl border-l-4 border-[#FF6105] italic text-black font-medium"><strong>“To test this, we gave an LLM a single prompt and asked it to write two blogs on exactly the same topic. It came back with two completely different versions, even though the instructions and subject were the same. The blog you are reading right now is one of those versions, and interestingly, QuillBot’s AI detector has classified it as only 8% AI-generated.”</strong></div>`
     },
     "why-b2b-buyers-take-longer-to-convert-than-ever-before": {

@@ -2,6 +2,14 @@
 # For Apache/Hostinger Hosting
 
 # ===================================
+# DIRECTORY INDEX (belt-and-braces alongside the mod_rewrite rule below)
+# ===================================
+# mod_dir is virtually always enabled, unlike mod_rewrite depending on host
+# config — this alone guarantees /any/nested/folder/ resolves to its
+# index.html even if the RewriteRule block further down is ever skipped.
+DirectoryIndex index.html index.htm
+
+# ===================================
 # SECURITY HEADERS
 # ===================================
 

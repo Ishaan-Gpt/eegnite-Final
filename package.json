@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-samples.mjs && next build",
+    "build:site-only": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:samples": "node scripts/build-samples.mjs"
   },
   "keywords": [],
   "author": "",

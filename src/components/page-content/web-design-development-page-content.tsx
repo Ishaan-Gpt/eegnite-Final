@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import { ToolsSection } from "@/components/shared/ToolsSection";
+import { SamplesShowcase } from "@/components/shared/SamplesShowcase";
 import {
     WebDesignHero,
     WebDesignComparisonSection,
@@ -124,6 +125,7 @@ export default function WebDesignDevelopmentPageContent() {
                 <WebDesignComparisonSection />
                 <IndustriesSection />
                 <FullServiceWebDesign />
+                <SamplesShowcase />
                 <WebDesignProcessFloating />
                 <ProtocolTimeline />
                 <ToolsSection />

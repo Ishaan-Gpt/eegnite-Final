@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Meridian & Hale design tokens — independent of eegnite.com */
+  --mh-navy: #0F2A3D;
+  --mh-navy-700: #173347;
+  --mh-emerald: #1F5B4B;
+  --mh-gold: #C9A34E;
+  --mh-cream: #FAF7F1;
+  --mh-slate-600: #4C5A64;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+
+  --mh-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--mh-cream);
+    color: var(--mh-navy);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--mh-gold);
+    color: var(--mh-navy);
+  }
+}
+
+@layer components {
+  .mh-container {
+    @apply max-w-content mx-auto px-6 md:px-10;
+  }
+}

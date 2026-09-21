@@ -46,3 +46,8 @@ next-env.d.ts
 # Temporary scratch folder
 temp_scratch/
 
+# Sample site static exports copied in by `npm run build:samples`
+# (rebuilt from websites/<slug>, never edited directly)
+public/samples/*
+!public/samples/.gitkeep
+

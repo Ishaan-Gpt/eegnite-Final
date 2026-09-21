@@ -265,16 +265,14 @@ export function PpcProcessFloating() {
         <ServiceProcess
             title={
                 <>
-                    <span className="block md:inline whitespace-normal md:whitespace-nowrap">OUR PERFORMANCE-FOCUSED </span>
-                    <span className="block md:inline text-[#FF6105] whitespace-normal md:whitespace-nowrap">PPC ADVERTISING PROCESS</span>
+                    OUR PERFORMANCE-FOCUSED <span className="text-[#FF6105]">PPC ADVERTISING PROCESS</span>
                 </>
             }
             steps={steps}
-            ctaText="Schedule a Call"
-            ctaLink="tel:+916289753474"
         />
     );
 }
+
 
 // --- PROTOCOL TIMELINE ---
 export function ProtocolTimeline() {

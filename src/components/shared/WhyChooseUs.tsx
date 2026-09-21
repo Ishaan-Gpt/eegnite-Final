@@ -28,10 +28,8 @@ export function WhyChooseUs({
     const containerRef = useRef<HTMLDivElement>(null);
     const [scrollRange, setScrollRange] = useState(0);
 
-    const { scrollYProgress } = useScroll({
-        target: targetRef as any,
-        offset: ["start start", "end end"],
-    });
+    const { scrollYProgress } = useScroll({ target: targetRef as any });
+
 
     useEffect(() => {
         const calculateRange = () => {

@@ -6,9 +6,10 @@ interface ClientLogoSliderProps {
     className?: string;
     innerOnly?: boolean;
     heading?: React.ReactNode;
+    logoSize?: "default" | "medium" | "small" | "half";
 }
 
-export function ClientLogoSlider({ className = "", innerOnly = false, heading }: ClientLogoSliderProps) {
+export function ClientLogoSlider({ className = "", innerOnly = false, heading, logoSize = "medium" }: ClientLogoSliderProps) {
     const clientLogos = [
         { name: "Al Jiwan Jewelry", src: "/images/logos/al-jiwan-jewelry-logo.png" },
         { name: "Aquagear Australia", src: "/images/logos/aquagear-australia-logo.png" },
@@ -43,31 +44,55 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading }:
                     )}
                 </h3>
             </div>
- 
+
             {/* Logo Slider */}
-            <div className="w-full flex items-center relative overflow-hidden group select-none py-6 min-h-[180px] lg:min-h-[260px] min-w-0 max-w-full">
+            <div className={`w-full flex items-center relative overflow-hidden group select-none min-w-0 max-w-full ${
+                logoSize === "default" 
+                    ? "py-6 min-h-[180px] lg:min-h-[260px]" 
+                    : logoSize === "small" || logoSize === "half"
+                    ? "py-3 min-h-[90px] lg:min-h-[130px]"
+                    : "py-4 min-h-[120px] lg:min-h-[160px]"
+            }`}>
                 {/* Gradient Overlays using the custom theme white color #FFFEF8 */}
                 <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
- 
+
                 {/* Infinite scroll marquee wrapper */}
                 <div className="flex w-full overflow-hidden min-w-0 max-w-full">
                     {[0, 1].map((copy) => (
                         <div
                             key={copy}
-                            className="flex animate-loop-scroll gap-1 md:gap-1.5 pr-1 md:pr-1.5 flex-shrink-0"
+                            className={`flex animate-loop-scroll flex-shrink-0 ${
+                                logoSize === "default"
+                                    ? "gap-2 md:gap-4 pr-2 md:pr-4"
+                                    : logoSize === "small" || logoSize === "half"
+                                    ? "gap-2 md:gap-4 pr-2 md:pr-4"
+                                    : "gap-6 md:gap-10 pr-6 md:pr-10"
+                            }`}
                             aria-hidden={copy === 1}
                         >
                             {clientLogos.map((logo, index) => (
                                 <div
                                     key={`${copy}-${index}`}
-                                    className="flex items-center justify-center flex-shrink-0 w-44 h-40 sm:w-[176px] sm:h-[160px] md:w-[220px] md:h-[200px] lg:w-[280px] lg:h-[240px]"
+                                    className={`flex items-center justify-center flex-shrink-0 ${
+                                        logoSize === "default"
+                                            ? "w-44 h-40 sm:w-[176px] sm:h-[160px] md:w-[220px] md:h-[200px] lg:w-[280px] lg:h-[240px] px-2"
+                                            : logoSize === "small" || logoSize === "half"
+                                            ? "w-28 h-20 sm:w-32 sm:h-24 md:w-36 md:h-24 lg:w-40 lg:h-28 px-2"
+                                            : "w-36 h-24 sm:w-40 sm:h-28 md:w-44 md:h-32 lg:w-48 lg:h-32 px-3"
+                                    }`}
                                     title={logo.name}
                                 >
                                     <img
                                         src={logo.src}
                                         alt={logo.name}
-                                        className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                                        className={`${
+                                            logoSize === "default"
+                                                ? "w-full h-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                                                : logoSize === "small" || logoSize === "half"
+                                                ? "max-h-10 sm:max-h-12 md:max-h-14 lg:max-h-16 max-w-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                                                : "max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 max-w-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                                        }`}
                                     />
                                 </div>
                             ))}

@@ -99,23 +99,39 @@ function IndustriesSection() {
     return (
         <section className="py-16 md:py-24 bg-white border-y border-black/5">
             <div className="max-w-[1400px] mx-auto px-6">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
-                    <div className="max-w-xl">
-                        <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4 leading-tight">
-                            INDUSTRIES WE HELP GROW <br className="hidden md:inline" /><span className="text-[#FF6105]">IN KOLKATA</span>
-                        </h2>
-                        <p className="text-black/50 text-base md:text-xl leading-relaxed">
-                            Our web design and development projects are shaped around the buyer journey, trust signals, and conversion requirements specific to each industry we serve.
-                        </p>
+                {/* Center aligned heading & subtext */}
+                <div className="max-w-4xl mx-auto mb-12 md:mb-16 text-center">
+                    <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4 leading-tight">
+                        INDUSTRIES WE HELP GROW <span className="text-[#FF6105]">IN KOLKATA</span>
+                    </h2>
+                    <p className="text-black/50 text-base md:text-xl leading-relaxed">
+                        Our web design and development projects are shaped around the buyer journey, trust signals, and conversion requirements specific to each industry we serve.
+                    </p>
+                </div>
+
+                {/* 2-Part Grid: Image on left, 6 pointers on right */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                    {/* Left side: Image */}
+                    <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
+                        <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
+                            <img
+                                src="/images/services/industries-served-webdev-kolkata.webp"
+                                alt="Industries served for web design development in Kolkata by EEGNITE"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                loading="eager"
+                            />
+                        </div>
                     </div>
-                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 w-full border-l md:border-l-0 md:pl-0 pl-6 border-black/5">
+
+                    {/* Right side: 6 Pointers */}
+                    <div className="lg:col-span-7 grid sm:grid-cols-2 gap-x-6 gap-y-5 w-full">
                         {industries.map((item, idx) => (
-                            <Link key={idx} href={item.href} className="group block">
-                                <h3 className="text-lg md:text-xl font-bold uppercase text-black mb-1 transition-colors group-hover:text-[#FF6105] inline-flex items-center gap-1.5">
+                            <Link key={idx} href={item.href} className="group block bg-[#F9F9F9] p-6 rounded-2xl border border-black/5 hover:border-[#FF6105]/20 hover:bg-white hover:shadow-lg transition-all duration-300">
+                                <h3 className="text-base md:text-lg font-bold uppercase text-black mb-1.5 transition-colors group-hover:text-[#FF6105] inline-flex items-center gap-1.5">
                                     {item.title}
                                     <ArrowRightIcon className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-[#FF6105]" />
                                 </h3>
-                                <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
+                                <p className="text-black/50 text-xs md:text-sm leading-relaxed">{item.desc}</p>
                             </Link>
                         ))}
                     </div>
@@ -337,45 +353,60 @@ export default function KolkataWebdevPageContent() {
                 {/* 3. Signs Your Business Needs Service */}
                 <section className="py-20 md:py-32 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <div className="max-w-4xl mb-12 md:mb-16">
+                        <div className="max-w-4xl mx-auto mb-12 md:mb-16 text-center">
                             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4">
-                                SIGNS YOUR KOLKATA BUSINESS <span className="text-[#FF6105]">NEEDS A NEW OR REDESIGNED WEBSITE</span>
+                                SIGNS YOUR KOLKATA BUSINESS <span className="text-[#FF6105]">NEEDS A NEW WEBSITE DESIGN</span>
                             </h2>
                             <p className="text-black/60 text-base md:text-xl font-medium">
                                 If Any Of These Sound Familiar, Your Current Website Is Costing You Customers.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                            {[
-                                "Your website gets traffic, but few qualified enquiries.",
-                                "Customers struggle to find contact and service details.",
-                                "Mobile pages take too long to load properly.",
-                                "Competitor websites look more modern and trustworthy.",
-                                "Your website hasn't been updated for several years.",
-                                "Simple content updates require a developer every time."
-                            ].map((sign, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="bg-white p-8 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/20 hover:shadow-[0_20px_50px_rgba(232,106,0,0.05)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden h-full hover:-translate-y-1"
-                                >
-                                    {/* Large watermark indicator */}
-                                    <span className="absolute top-4 right-6 text-7xl font-bold text-[#FF6105]/5 select-none transition-all duration-500 group-hover:scale-110 group-hover:text-[#FF6105]/10">
-                                        0{idx + 1}
-                                    </span>
-                                    
-                                    {/* Accent content container */}
-                                    <div className="relative z-10 flex gap-4 items-start pt-4">
-                                        <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6105]/5 group-hover:bg-[#FF6105] flex items-center justify-center transition-all duration-300">
-                                            <span className="text-[#FF6105] group-hover:text-white font-bold text-sm">
-                                                ✓
-                                            </span>
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                            {/* Left side: 6 components */}
+                            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                                {[
+                                    "Your website gets traffic, but few qualified enquiries.",
+                                    "Customers struggle to find contact and service details.",
+                                    "Mobile pages take too long to load properly.",
+                                    "Competitor websites look more modern and trustworthy.",
+                                    "Your website hasn't been updated for several years.",
+                                    "Simple content updates require a developer every time."
+                                ].map((sign, idx) => (
+                                    <div 
+                                        key={idx}
+                                        className="bg-white p-6 rounded-[2rem] border border-black/5 hover:border-[#FF6105]/20 hover:shadow-[0_20px_50px_rgba(232,106,0,0.05)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden h-full hover:-translate-y-1"
+                                    >
+                                        {/* Large watermark indicator */}
+                                        <span className="absolute top-3 right-5 text-6xl font-bold text-[#FF6105]/5 select-none transition-all duration-500 group-hover:scale-110 group-hover:text-[#FF6105]/10">
+                                            0{idx + 1}
+                                        </span>
+                                        
+                                        {/* Accent content container */}
+                                        <div className="relative z-10 flex gap-3.5 items-start pt-2">
+                                            <div className="mt-1 flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6105]/5 group-hover:bg-[#FF6105] flex items-center justify-center transition-all duration-300">
+                                                <span className="text-[#FF6105] group-hover:text-white font-bold text-xs">
+                                                    ✓
+                                                </span>
+                                            </div>
+                                            <p className="text-black/80 text-sm md:text-base font-semibold leading-relaxed group-hover:text-black transition-colors duration-300">
+                                                {sign}
+                                            </p>
                                         </div>
-                                        <p className="text-black/80 text-base font-semibold leading-relaxed pt-0.5 group-hover:text-black transition-colors duration-300">
-                                            {sign}
-                                        </p>
                                     </div>
+                                ))}
+                            </div>
+
+                            {/* Right side: Image */}
+                            <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
+                                <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
+                                    <img
+                                        src="/images/services/kolkata-webdev-pain-points.webp"
+                                        alt="Kolkata business web design development pain points"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        loading="eager"
+                                    />
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -390,12 +421,13 @@ export default function KolkataWebdevPageContent() {
                     solutions={kolkataSolutions}
                 />
 
-                {/* 5. Opportunity Section */}
+                {/* 5. Local Opportunity Section */}
                 <section className="py-16 md:py-24 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-                            <div>
-                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight max-w-xl">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                            {/* Left side: Heading + 3 Paragraphs */}
+                            <div className="lg:col-span-6">
+                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black mb-6 leading-tight">
                                     THE WEB DESIGN OPPORTUNITY IN KOLKATA <br className="hidden md:inline" /><span className="text-[#FF6105]">RIGHT NOW</span>
                                 </h2>
                                 <p className="text-black/50 text-base md:text-xl leading-relaxed mb-4">
@@ -408,21 +440,36 @@ export default function KolkataWebdevPageContent() {
                                     Businesses that invest in a properly built website now are not just improving their online presence. They are building the foundation that makes every other digital marketing investment, including SEO, paid ads, social media, and email, significantly more effective.
                                 </p>
                             </div>
-                            <div className="grid sm:grid-cols-2 gap-6 w-full">
-                                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-black/5 flex flex-col justify-between h-56 md:h-64 hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
-                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                                    <span className="text-5xl md:text-6xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">94%</span>
-                                    <div>
-                                        <h4 className="text-sm font-bold uppercase tracking-wider text-black mb-1.5">First Impressions Online</h4>
-                                        <p className="text-black/50 text-xs md:text-sm leading-relaxed">are design-related. A poor website design causes visitors to distrust the business before they read a single word.</p>
-                                    </div>
+
+                            {/* Right side: Image ON TOP, 2 Stat Boxes BELOW */}
+                            <div className="lg:col-span-6 space-y-6">
+                                {/* Image on top */}
+                                <div className="relative w-full aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
+                                    <img
+                                        src="/images/services/kolkata-webdev-opportunity.webp"
+                                        alt="Kolkata business web design development opportunity"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        loading="eager"
+                                    />
                                 </div>
-                                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[2.5rem] border border-black/5 flex flex-col justify-between h-56 md:h-64 hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
-                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                                    <span className="text-5xl md:text-6xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">75%</span>
-                                    <div>
-                                        <h4 className="text-sm font-bold uppercase tracking-wider text-black mb-1.5">Credibility Judged</h4>
-                                        <p className="text-black/50 text-xs md:text-sm leading-relaxed">of consumers admit to judging a business's credibility based on its website design.</p>
+
+                                {/* 2 Stat boxes below the image on the right */}
+                                <div className="grid sm:grid-cols-2 gap-4 md:gap-6 w-full pt-2">
+                                    <div className="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-black/5 flex flex-col justify-between min-h-[160px] hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
+                                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                        <span className="text-4xl md:text-5xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">94%</span>
+                                        <div className="mt-4">
+                                            <h4 className="text-xs md:text-sm font-bold uppercase tracking-wider text-black mb-1">First Impressions Online</h4>
+                                            <p className="text-black/50 text-xs md:text-sm leading-relaxed">are design-related. A poor website design causes visitors to distrust the business.</p>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-black/5 flex flex-col justify-between min-h-[160px] hover:scale-[1.03] transition-all duration-500 shadow-sm hover:shadow-[0_20px_50px_rgba(232,106,0,0.03)] relative overflow-hidden group">
+                                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF6105]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                        <span className="text-4xl md:text-5xl font-extrabold text-[#FF6105] tracking-tighter leading-none drop-shadow-[0_2px_10px_rgba(255,97,5,0.1)]">75%</span>
+                                        <div className="mt-4">
+                                            <h4 className="text-xs md:text-sm font-bold uppercase tracking-wider text-black mb-1">Credibility Judged</h4>
+                                            <p className="text-black/50 text-xs md:text-sm leading-relaxed">of consumers admit to judging a business's credibility based on website design.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

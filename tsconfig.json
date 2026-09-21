@@ -37,8 +37,11 @@
   ],
   "exclude": [
     "node_modules",
+    "websites",
+    "temp_scratch",
     "temp_*.tsx",
     "temp_*.ts",
     "SeoPageContent_live_backup.tsx"
   ]
 }
+

@@ -173,7 +173,7 @@ const FloatingIconsHero = React.forwardRef<
                         <p className="text-[10px] md:text-xs lg:text-xs font-bold uppercase tracking-[0.2em] text-[#FF6105] mb-4">
                             {topText}
                         </p>
-                        <h1 className="text-3xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] font-black tracking-tight text-black uppercase leading-[1.1]">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] font-black tracking-tight text-black uppercase leading-[1.15]">
                             {title}
                         </h1>
                         {subTitle2 && (

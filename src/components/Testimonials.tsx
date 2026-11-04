@@ -24,18 +24,18 @@ const testimonials = [
         src: "/images/team/Dario.jpg.jpeg"
     },
     {
-        quote: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
-        name: "Rokas Bartasius",
-        designation: "Founder & CEO, Varolab",
-        location: "Lithuania",
-        src: "/images/team/rokas.jpg"
+        quote: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy. Our online presence has improved significantly, and our rankings are now much stronger. Highly recommended for any business looking for real SEO results.",
+        name: "Hafedh Bucheery",
+        designation: "Founder, Deepmark Branding Agency",
+        location: "Bahrain",
+        src: "/images/team/Hafedh.jpg.jpeg"
     },
     {
-        quote: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
-        name: "Rebeka Jasilionytė",
-        designation: "Marketing Product Manager, Varolab",
-        location: "Lithuania",
-        src: "/images/team/rebeka.jpg"
+        quote: "Working with Anish on one of my projects has genuinely been one of the better vendor decisions I’ve made for our project. They handled SEO and content creation for us, covering everything from keyword-optimized product listings to broader content strategy. The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
+        name: "Himanshu Singh",
+        designation: "Founder, Eshaarya",
+        location: "USA",
+        src: "/images/team/Himanshu.jpg.jpeg"
     },
     {
         quote: "I got my website redeveloped with them, the concern was that we ourselves were not sure what should the content be, how should the website be but thanks to their extremely supportive team that they did everything from giving us perspective how should it be to development, seo etc etc and also they were very cost effective.",

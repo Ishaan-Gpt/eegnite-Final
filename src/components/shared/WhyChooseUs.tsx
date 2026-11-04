@@ -99,16 +99,16 @@ export function WhyChooseUs({
                     <div className="flex-1 flex items-center h-full w-full min-h-0">
                         <MotionDiv ref={containerRef} style={{ x }} className="flex gap-12 pl-[10vw] items-center">
                             {reasons.map((reason, i) => (
-                                <div key={i} className="min-w-[600px] flex flex-col justify-center p-12 border-l border-black/10 h-[50vh] bg-white hover:bg-gray-50 transition-colors">
-                                    <span className="text-8xl font-medium text-black/5 mb-6">{reason.id}</span>
-                                    <h3 className="text-4xl font-medium mb-6 uppercase tracking-tight">{reason.title}</h3>
-                                    <p className="text-xl text-black/60 leading-relaxed max-w-xl">{reason.desc}</p>
+                                <div key={i} className="min-w-[400px] md:min-w-[500px] lg:min-w-[600px] flex-shrink-0 flex flex-col justify-center p-8 md:p-12 border-l border-black/10 h-auto min-h-[350px] bg-white hover:bg-gray-50 transition-colors">
+                                    <span className="text-6xl md:text-8xl font-medium text-black/5 mb-6">{reason.id}</span>
+                                    <h3 className="text-2xl md:text-4xl font-medium mb-4 md:mb-6 uppercase tracking-tight">{reason.title}</h3>
+                                    <p className="text-lg md:text-xl text-black/60 leading-relaxed max-w-xl">{reason.desc}</p>
                                 </div>
                             ))}
                             {closingQuote && (
-                                <div className="min-w-[700px] flex flex-col justify-center p-16 border-l border-[#FF6105] h-[50vh] bg-[#FFF5F0] rounded-[2.5rem] relative overflow-hidden group">
-                                    <div className="absolute top-0 right-0 p-8 opacity-[0.03] font-bold text-9xl select-none text-[#FF6105]">”</div>
-                                    <p className="text-2xl md:text-3xl font-medium italic text-black/80 leading-relaxed max-w-2xl relative z-10">
+                                <div className="min-w-[450px] md:min-w-[600px] lg:min-w-[700px] flex-shrink-0 flex flex-col justify-center p-10 md:p-16 border-l border-[#FF6105] h-auto min-h-[350px] bg-[#FFF5F0] rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 p-8 opacity-[0.03] font-bold text-7xl md:text-9xl select-none text-[#FF6105]">”</div>
+                                    <p className="text-xl md:text-3xl font-medium italic text-black/80 leading-relaxed max-w-2xl relative z-10">
                                         "{closingQuote}"
                                     </p>
                                 </div>

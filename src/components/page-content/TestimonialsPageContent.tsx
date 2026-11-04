@@ -149,15 +149,7 @@ const testimonials = [
         text: "Always on time, very efficient, customer oriented and with lots of creativity. Working together has been my pleasure!",
         src: "/images/team/Dario.jpg.jpeg"
     },
-    {
-        name: "Rokas Bartasius",
-        designation: "Founder & CEO",
-        company: "Varolab",
-        location: "Lithuania",
-        tags: ["SEO"],
-        text: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks. His dedication and problem-solving skills were major factors in successful multiple project completions.",
-        src: "/images/team/rokas.jpg"
-    },
+
     {
         name: "Shankar Rathi",
         designation: "CEO",
@@ -167,15 +159,7 @@ const testimonials = [
         text: "Anish and his team go out of their way to ensure the project is on track, they flag issues early, and are eager to solve issues or provide help that doesn't come under their scope of work. SEO expertise is at par with the best, and would definitely recommend their SEO services.",
         src: "/images/team/shankar-rathi.webp"
     },
-    {
-        name: "Rebeka Jasilionytė",
-        designation: "Marketing Product Manager",
-        company: "Varolab",
-        location: "Lithuania",
-        tags: ["Digital Marketing"],
-        text: "The team provides strong support across SEO, Meta Ads, Email Marketing, and Social Media Management. Their structured approach and consistent communication ensure steady progress and measurable results. We’ve seen clear improvements in visibility, engagement, and overall performance.",
-        src: "/images/team/rebeka.jpg"
-    },
+
     {
         name: "Rejeev Ranjan",
         designation: "Founder",

@@ -59,7 +59,7 @@ export function ServiceHero({
                         </p>
                     )}
                     <h1 className={cn(
-                        "text-[7.5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto px-2 text-balance",
+                        "text-2xl xs:text-[1.75rem] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter leading-[1.15] mb-4 md:mb-6 text-black max-w-[1200px] mx-auto px-2 text-balance",
                         titleClassName
                     )}>
                         {title}

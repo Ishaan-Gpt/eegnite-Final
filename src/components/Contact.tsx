@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, Calendar, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
+import { Send, Calendar, ArrowRight, CheckCircle, Loader2, MapPin } from "lucide-react";
 
 const countryCodes = [
     { code: "+91", country: "IN" },
@@ -457,7 +457,11 @@ export default function Contact({ defaultCountryCode = "+91" }: ContactProps) {
                             className="mt-6 p-6 bg-black/5 rounded-2xl"
                         >
                             <p className="text-sm text-black/50 mb-3 uppercase tracking-wider font-semibold">Quick Contact</p>
-                            <div className="space-y-2">
+                            <div className="space-y-3">
+                                <div className="flex items-start gap-2 text-sm font-medium text-black/80">
+                                    <MapPin className="w-4 h-4 text-[#FF6105] shrink-0 mt-0.5" />
+                                    <span>Shibangan Apartment, Rajarhaat, Kolkata 700135</span>
+                                </div>
                                 <a href="mailto:anish@eegnite.com" className="flex items-center gap-2 text-sm font-medium text-black hover:text-[#FF6105] transition-colors">
                                     <svg className="w-4 h-4 text-[#FF6105]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                     anish@eegnite.com

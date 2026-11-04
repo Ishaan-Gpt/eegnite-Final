@@ -10,9 +10,9 @@ const SQRT_5000 = Math.sqrt(5000);
 const testimonials = [
     {
         tempId: 0,
-        testimonial: "Partnering on projects with Anish is a truly positive experience. He is not only knowledgeable, trustworthy, and reliable, but he also has a genuine commitment to exceeding expectations. He consistently goes the extra mile to ensure all project goals are met on time.",
-        by: "Rokas Bartasius, Strategic Partner · Lithuania",
-        imgSrc: "https://i.pravatar.cc/150?img=33"
+        testimonial: "Working with Anish and his team has been a great experience. They are highly professional and knowledgeable in SEO. They understood Deepmark’s positioning and delivered a clear, effective strategy.",
+        by: "Hafedh Bucheery, Founder · Bahrain",
+        imgSrc: "/images/team/Hafedh.jpg.jpeg"
     },
     {
         tempId: 1,
@@ -28,9 +28,9 @@ const testimonials = [
     },
     {
         tempId: 3,
-        testimonial: "His dedication and problem-solving skills were major factors in successful multiple project completions. He consistently goes the extra mile to ensure all project goals are met on time, even when faced with unexpected roadblocks.",
-        by: "Rokas Bartasius, Strategic Partner · Lithuania",
-        imgSrc: "https://i.pravatar.cc/150?img=33"
+        testimonial: "The quality of output is consistently high and clearly written with the end customer in mind. If you're building an online store and need someone who takes content seriously, Eegnite team is worth your time.",
+        by: "Himanshu Singh, Founder · USA",
+        imgSrc: "/images/team/Himanshu.jpg.jpeg"
     },
     {
         tempId: 4,

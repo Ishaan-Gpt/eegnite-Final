@@ -5,33 +5,6 @@ import { FileText, DollarSign, Target, ShoppingCart, Eye, Search, TrendingUp, Ma
 
 const caseStudies = [
     {
-        id: 1,
-        type: "Meta Ads",
-        company: "Spa & Wellness equipments",
-        location: "US",
-        sector: "Furniture",
-        metrics: [
-            { icon: DollarSign, label: "Total Revenue", value: "2.5M" },
-            { icon: Target, label: "ROAS", value: "20x" },
-            { icon: ShoppingCart, label: "Total Purchases", value: "1,500" }
-        ],
-        image: "/images/graphics/result-meta.jpg",
-        color: "#FF6105"
-    },
-    {
-        id: 2,
-        type: "Email Marketing",
-        company: "Spa & Wellness equipments",
-        location: "US",
-        sector: "Furniture",
-        metrics: [
-            { icon: DollarSign, label: "Total Revenue", value: "2.0M" },
-            { icon: Eye, label: "Open Rate", value: "50%" }
-        ],
-        image: "/images/graphics/result-email.webp",
-        color: "#FF8040"
-    },
-    {
         id: 3,
         type: "SEO",
         company: "Snow Removal System",

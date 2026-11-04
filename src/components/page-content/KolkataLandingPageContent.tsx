@@ -202,6 +202,7 @@ export default function KolkataLandingPageContent() {
             </div>
             
             <ClientLogoSlider
+                headingClassName="!text-[clamp(1.8rem,5vw,3.5rem)] !leading-[1.1] !tracking-tight"
                 heading={
                     <>
                         Brands That Choose Growth <br />

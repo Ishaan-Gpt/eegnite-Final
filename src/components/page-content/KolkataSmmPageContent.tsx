@@ -115,8 +115,8 @@ function IndustriesSection() {
                     <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
                         <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                             <img
-                                src="/images/services/industries-served-smm-kolkata.webp"
-                                alt="Industries served for social media marketing in Kolkata by EEGNITE"
+                                src="/images/services/industries-social-media-kolkata.webp"
+                                alt="Industries we provide social media marketing for in Kolkata"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 loading="eager"
                             />
@@ -346,7 +346,10 @@ export default function KolkataSmmPageContent() {
                 />
 
                 {/* 2. Client Logo Slide */}
-                <ClientLogoSlider heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} />
+                <ClientLogoSlider 
+                    headingClassName="!text-[clamp(1.8rem,5vw,3.5rem)] !leading-[1.1] !tracking-tight"
+                    heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} 
+                />
 
                 {/* 3. Signs Your Business Needs Service */}
                 <section className="py-20 md:py-32 bg-white border-y border-black/5">
@@ -398,8 +401,8 @@ export default function KolkataSmmPageContent() {
                             <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
                                 <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                                     <img
-                                        src="/images/services/kolkata-smm-pain-points.webp"
-                                        alt="Kolkata business social media marketing pain points"
+                                        src="/images/services/factors-business-needs-smm-kolkata.webp"
+                                        alt="Indicators that your Kolkata brand needs a dedicated social media strategy"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="eager"
                                     />
@@ -444,8 +447,8 @@ export default function KolkataSmmPageContent() {
                                 {/* Image on top */}
                                 <div className="relative w-full aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                                     <img
-                                        src="/images/services/kolkata-smm-opportunity.webp"
-                                        alt="Kolkata business social media marketing opportunity"
+                                        src="/images/services/social-media-opportunity-kolkata.webp"
+                                        alt="Social media audience engagement and branding opportunity in Kolkata"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="eager"
                                     />

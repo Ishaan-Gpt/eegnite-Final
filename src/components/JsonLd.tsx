@@ -28,7 +28,7 @@ export const STATIC_ORGANISATION = {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rajarhat Chowmatha",
+    "streetAddress": "Shibangan Apartment, Rajarhaat",
     "addressLocality": "Kolkata",
     "addressRegion": "West Bengal",
     "postalCode": "700135",
@@ -101,7 +101,7 @@ export const STATIC_LOCAL_BUSINESS = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rajarhat Chowmatha",
+    "streetAddress": "Shibangan Apartment, Rajarhaat",
     "addressLocality": "Kolkata",
     "addressRegion": "West Bengal",
     "postalCode": "700135",

@@ -6,10 +6,11 @@ interface ClientLogoSliderProps {
     className?: string;
     innerOnly?: boolean;
     heading?: React.ReactNode;
+    headingClassName?: string;
     logoSize?: "default" | "medium" | "small" | "half";
 }
 
-export function ClientLogoSlider({ className = "", innerOnly = false, heading, logoSize = "medium" }: ClientLogoSliderProps) {
+export function ClientLogoSlider({ className = "", innerOnly = false, heading, headingClassName = "", logoSize = "medium" }: ClientLogoSliderProps) {
     const clientLogos = [
         { name: "Al Jiwan Jewelry", src: "/images/logos/al-jiwan-jewelry-logo.png" },
         { name: "Aquagear Australia", src: "/images/logos/aquagear-australia-logo.png" },
@@ -32,7 +33,7 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading, l
         <div className="flex flex-col items-start lg:items-center gap-8 lg:gap-10 w-full overflow-hidden text-left lg:text-center">
             {/* Heading */}
             <div className="w-full py-2">
-                <h3 className="text-2xl sm:text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.25] lg:leading-[1.3] uppercase text-left lg:text-center py-2">
+                <h3 className={`text-2xl sm:text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.25] lg:leading-[1.3] uppercase text-left lg:text-center py-2 ${headingClassName}`}>
                     {heading ? (
                         heading
                     ) : (
@@ -79,7 +80,7 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading, l
                                             ? "w-44 h-40 sm:w-[176px] sm:h-[160px] md:w-[220px] md:h-[200px] lg:w-[280px] lg:h-[240px] px-2"
                                             : logoSize === "small" || logoSize === "half"
                                             ? "w-28 h-20 sm:w-32 sm:h-24 md:w-36 md:h-24 lg:w-40 lg:h-28 px-2"
-                                            : "w-36 h-24 sm:w-40 sm:h-28 md:w-44 md:h-32 lg:w-48 lg:h-32 px-3"
+                                            : "w-44 h-32 sm:w-44 sm:h-32 md:w-48 md:h-36 lg:w-56 lg:h-40 px-3"
                                     }`}
                                     title={logo.name}
                                 >
@@ -90,8 +91,8 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading, l
                                             logoSize === "default"
                                                 ? "w-full h-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
                                                 : logoSize === "small" || logoSize === "half"
-                                                ? "max-h-10 sm:max-h-12 md:max-h-14 lg:max-h-16 max-w-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
-                                                : "max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 max-w-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                                                ? "max-h-12 sm:max-h-12 md:max-h-14 lg:max-h-16 max-w-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
+                                                : "max-h-20 sm:max-h-20 md:max-h-24 lg:max-h-28 max-w-full object-contain opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
                                         }`}
                                     />
                                 </div>

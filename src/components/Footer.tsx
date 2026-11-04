@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Instagram, Linkedin, Youtube, Phone, Mail, Send, ArrowUpRight, Loader2, CheckCircle } from "lucide-react";
+import { Instagram, Linkedin, Youtube, Phone, Mail, Send, ArrowUpRight, Loader2, CheckCircle, MapPin } from "lucide-react";
 import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/hover-text-effect";
 import { submitNewsletter } from "@/lib/firebaseService";
@@ -81,9 +81,9 @@ export default function Footer() {
                     </div>
 
                     {/* Main Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 md:gap-10">
                         {/* Brand */}
-                        <div className="lg:col-span-2 space-y-6">
+                        <div className="lg:col-span-2 space-y-5">
                             <div className="flex items-center gap-3">
                                 <img src="/images/logos/eegnite-logo.png" alt="EEGNITE" className="h-10 w-auto" loading="lazy" />
                                 <span className="text-xl font-bold text-[#FF6105] uppercase tracking-wider items-start flex">
@@ -93,7 +93,8 @@ export default function Footer() {
                             <p className="text-sm text-black/60 leading-relaxed max-w-sm">
                                 At EEGNITE, we don't think like a vendor. We think like a growth partner. Every decision we make is filtered through one question: “Does this move the needle for our client?"
                             </p>
-                            <div className="flex gap-3">
+
+                            <div className="flex gap-3 pt-1">
                                 {socialLinks.map((social, i) => (
                                     <motion.a
                                         key={i}
@@ -113,13 +114,24 @@ export default function Footer() {
                         <div className="space-y-4">
                             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Navigation</span>
                             <ul className="space-y-3">
-                                {["About", "Services", "Industries", "Results", "Contact"].map(item => (
-                                    <li key={item}>
-                                        <Link href={item === "Services" ? "/services" : item === "Industries" ? "/industries" : `/#${item.toLowerCase()}`} className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                            {item}
-                                        </Link>
-                                    </li>
-                                ))}
+                                <li>
+                                    <Link href="/#about" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">About</Link>
+                                </li>
+                                <li>
+                                    <Link href="/services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">Services</Link>
+                                </li>
+                                <li>
+                                    <Link href="/industries" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">Industries</Link>
+                                </li>
+                                <li>
+                                    <Link href="/blog" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">Blog</Link>
+                                </li>
+                                <li>
+                                    <Link href="/testimonials" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">Testimonials</Link>
+                                </li>
+                                <li>
+                                    <Link href="/#contact" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">Contact</Link>
+                                </li>
                             </ul>
                         </div>
 
@@ -155,38 +167,23 @@ export default function Footer() {
                             </ul>
                         </div>
 
-                        {/* Industries */}
+                        {/* Regional Hubs */}
                         <div className="space-y-4">
-                            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Industries</span>
+                            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6105]">Regional Hubs</span>
                             <ul className="space-y-3">
                                 <li>
-                                    <Link href="/industries/e-commerce" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        E-commerce
+                                    <Link href="/digital-marketing-agency-kolkata" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Kolkata Agency
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/industries/b2b-lead-generation" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        B2B & Lead Gen
+                                    <Link href="/qatar" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Qatar
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/industries/medical-healthcare" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        Medical & Healthcare
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/industries/retail-business" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        Retail Business
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/industries/manufacturing-logistics" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        Manufacturing & Logistics
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/industries/professional-services" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
-                                        Professional Services
+                                    <Link href="/bahrain" className="text-sm text-black/70 hover:text-[#FF6105] transition-colors">
+                                        Bahrain
                                     </Link>
                                 </li>
                             </ul>
@@ -220,6 +217,17 @@ export default function Footer() {
                                     <a href="mailto:anish@eegnite.com" className="flex items-center gap-2 text-sm text-black/70 hover:text-[#FF6105] transition-colors">
                                         <Mail size={14} className="text-[#FF6105]" />
                                         anish@eegnite.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.google.com/maps?cid=1532583388817424823"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-start gap-2 text-xs text-black/70 hover:text-[#FF6105] pt-1 leading-relaxed transition-colors"
+                                    >
+                                        <MapPin size={14} className="text-[#FF6105] shrink-0 mt-0.5" />
+                                        <span>Shibangan Apartment, Rajarhaat, Kolkata 700135</span>
                                     </a>
                                 </li>
                             </ul>

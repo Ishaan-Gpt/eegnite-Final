@@ -115,8 +115,8 @@ function IndustriesSection() {
                     <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
                         <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                             <img
-                                src="/images/services/industries-served-seo-kolkata.webp"
-                                alt="Industries served for SEO in Kolkata by EEGNITE"
+                                src="/images/services/industries-seo-services-kolkata.webp"
+                                alt="Industries we provide SEO services for in Kolkata"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 loading="eager"
                             />
@@ -341,7 +341,10 @@ export default function KolkataSeoPageContent() {
                 />
 
                 {/* 2. Client Logo Slide */}
-                <ClientLogoSlider heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} />
+                <ClientLogoSlider 
+                    headingClassName="!text-[clamp(1.8rem,5vw,3.5rem)] !leading-[1.1] !tracking-tight"
+                    heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} 
+                />
 
                 {/* 3. Signs Your Business Needs Service */}
                 <section className="py-20 md:py-32 bg-white border-y border-black/5">
@@ -393,8 +396,8 @@ export default function KolkataSeoPageContent() {
                             <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
                                 <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                                     <img
-                                        src="/images/services/kolkata-seo-pain-points.webp"
-                                        alt="Kolkata business SEO pain points"
+                                        src="/images/services/factors-business-needs-seo-kolkata.webp"
+                                        alt="Factors indicating your business in Kolkata needs SEO"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="eager"
                                     />
@@ -439,8 +442,8 @@ export default function KolkataSeoPageContent() {
                                 {/* Image on top */}
                                 <div className="relative w-full aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                                     <img
-                                        src="/images/services/kolkata-seo-opportunity.webp"
-                                        alt="Kolkata business SEO opportunity"
+                                        src="/images/services/seo-growth-opportunity-kolkata.webp"
+                                        alt="Digital search growth and SEO opportunity for businesses in Kolkata"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="eager"
                                     />

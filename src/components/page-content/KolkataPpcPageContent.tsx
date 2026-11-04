@@ -115,8 +115,8 @@ function IndustriesSection() {
                     <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
                         <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                             <img
-                                src="/images/services/industries-served-ppc-kolkata.webp"
-                                alt="Industries served for PPC in Kolkata by EEGNITE"
+                                src="/images/services/industries-ppc-services-kolkata.webp"
+                                alt="Industries we manage PPC advertising for in Kolkata"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 loading="eager"
                             />
@@ -343,7 +343,10 @@ export default function KolkataPpcPageContent() {
                 />
 
                 {/* 2. Client Logo Slide */}
-                <ClientLogoSlider heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} />
+                <ClientLogoSlider 
+                    headingClassName="!text-[clamp(1.8rem,5vw,3.5rem)] !leading-[1.1] !tracking-tight"
+                    heading={<>Brands That Choose Growth. <br />Brands That Choose EEGNITE.</>} 
+                />
 
                 {/* 3. Signs Your Business Needs Service */}
                 <section className="py-20 md:py-32 bg-white border-y border-black/5">
@@ -395,8 +398,8 @@ export default function KolkataPpcPageContent() {
                             <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
                                 <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                                     <img
-                                        src="/images/services/kolkata-ppc-pain-points.webp"
-                                        alt="Kolkata business PPC pain points"
+                                        src="/images/services/factors-business-needs-ppc-kolkata.webp"
+                                        alt="Factors showing your business in Kolkata needs professional PPC management"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="eager"
                                     />
@@ -441,8 +444,8 @@ export default function KolkataPpcPageContent() {
                                 {/* Image on top */}
                                 <div className="relative w-full aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
                                     <img
-                                        src="/images/services/kolkata-ppc-opportunity.webp"
-                                        alt="Kolkata business PPC opportunity"
+                                        src="/images/services/ppc-ad-opportunity-kolkata.webp"
+                                        alt="Targeted ad audience and PPC opportunity for Kolkata businesses"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="eager"
                                     />

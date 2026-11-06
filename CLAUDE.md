@@ -40,5 +40,8 @@ npm run dev                      # http://localhost:3000
 - `npm run build` - samples + static export into `out/`, only when preparing an upload.
 - `npm run build:site-only` - static export without rebuilding the samples.
 
+Deploys are automatic: push to `staging` for the staging subdomain, `main` for the live site. See
+`docs/DEPLOY.md`.
+
 `next.config.mjs` ignores TypeScript and ESLint errors during build, so a passing build does not mean the code
 type-checks. Run `npx tsc --noEmit` when you touch types.

@@ -29,7 +29,8 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 - Retain existing code comments and SEO configurations unless explicitly requested to update them.
 
 ## Deployment Constraints
-- **FTP Upload Mode**: The user uploads files directly via FTP using FileZilla. They do NOT have direct hosting control panel access to unzip/extract archives on the server. Do NOT suggest zip uploads or server-side extraction unless explicitly asked.
+- **Automated Deploys**: Pushing to `main` deploys www.eegnite.com and pushing to `staging` deploys the staging subdomain (`noindex`), through GitHub Actions over SSH (`.github/workflows/deploy.yml`, setup in `docs/DEPLOY.md`). Because a push is a live deploy, the Git Push Restraint rule below matters doubly.
+- **FTP Upload Mode (fallback)**: Manual uploads go over FTP using FileZilla. The user does NOT have direct hosting control panel access to unzip/extract archives on the server. Do NOT suggest zip uploads or server-side extraction unless explicitly asked.
 
 ## Temporary Files & Scratch Space
 - **Directory**: Store all temporary files, scratch scripts, testing logs, or temporary code helpers in the `temp_scratch/` directory at the project root. Never write temporary helper files directly to the root folder or other source folders.

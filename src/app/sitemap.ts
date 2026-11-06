@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const isProduction = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === 'production' : true;
-    if (!isProduction) return [];
+    if (!isProduction || process.env.SITE_ENV === 'staging') return [];
 
     const baseUrl = 'https://www.eegnite.com'
 

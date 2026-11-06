@@ -1,0 +1,71 @@
+# Builds the static export and uploads it to Hostinger over SSH (rsync).
+#   push to main    -> production (www.eegnite.com)
+#   push to staging -> staging subdomain, built with SITE_ENV=staging (noindex, empty sitemap)
+# Setup (secrets, SSH key, server paths): docs/DEPLOY.md
+name: Deploy
+
+on:
+  push:
+    branches: [main, staging]
+  workflow_dispatch:
+
+# One deploy per branch at a time; a newer push waits for the running one instead of cancelling mid-upload.
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci --legacy-peer-deps
+
+      - name: Build
+        run: npm run build
+        env:
+          SITE_ENV: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
+          NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
+          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
+          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
+          NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}
+          NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+          NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
+          NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID }}
+
+      # Stamp the build so /version.txt on the live site shows which commit is deployed.
+      - name: Stamp version
+        run: |
+          printf 'commit: %s\nbranch: %s\nbuilt: %s\nrun: %s/%s/actions/runs/%s\n' \
+            "$GITHUB_SHA" "$GITHUB_REF_NAME" "$(date -u +%FT%TZ)" \
+            "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > out/version.txt
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.SSH_PORT }}" "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      # No --delete: files already on the server that the build doesn't produce (.htaccess, other
+      # subdomain folders, old pages) are left alone. See docs/DEPLOY.md before turning it on.
+      - name: Upload
+        run: |
+          case "${{ vars.REMOTE_PATH }}" in
+            */public_html*) ;;
+            *) echo "REMOTE_PATH must point inside a public_html folder; got '${{ vars.REMOTE_PATH }}'" >&2; exit 1 ;;
+          esac
+          rsync -rlz --checksum --stats \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+            out/ "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.REMOTE_PATH }}/"

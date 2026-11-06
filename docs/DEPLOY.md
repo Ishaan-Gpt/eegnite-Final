@@ -8,7 +8,7 @@ to Hostinger over SSH, so FileZilla is no longer needed.
 | `main`    | www.eegnite.com            | indexed                                    |
 | `staging` | the staging subdomain      | `noindex`, `robots.txt` disallows all, empty sitemap |
 
-Every deploy writes `/version.txt` on the site with the commit it came from. Each run is listed in the repo's
+Every deploy writes `/version.json` on the site with the commit it came from. Each run is listed in the repo's
 **Actions** tab with its log.
 
 ## Everyday use
@@ -64,7 +64,7 @@ waits for a click on **Approve** in the Actions tab.
 
 ### 4. First deploy
 
-Push to `staging` first and check the subdomain and `/version.txt`. Then push to `main`.
+Push to `staging` first and check the subdomain and `/version.json`. Then push to `main`.
 
 ## Files on the server
 

@@ -44,12 +44,13 @@ jobs:
           NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
           NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID }}
 
-      # Stamp the build so /version.txt on the live site shows which commit is deployed.
+      # Stamp the build so /version.json on the live site shows which commit is deployed
+      # (JSON, not .txt: public/.htaccess forbids every .txt except robots.txt).
       - name: Stamp version
         run: |
-          printf 'commit: %s\nbranch: %s\nbuilt: %s\nrun: %s/%s/actions/runs/%s\n' \
+          printf '{"commit":"%s","branch":"%s","built":"%s","run":"%s/%s/actions/runs/%s"}\n' \
             "$GITHUB_SHA" "$GITHUB_REF_NAME" "$(date -u +%FT%TZ)" \
-            "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > out/version.txt
+            "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > out/version.json
 
       - name: Configure SSH
         run: |
@@ -63,8 +64,8 @@ jobs:
       - name: Upload
         run: |
           case "${{ vars.REMOTE_PATH }}" in
-            */public_html*) ;;
-            *) echo "REMOTE_PATH must point inside a public_html folder; got '${{ vars.REMOTE_PATH }}'" >&2; exit 1 ;;
+            /home/*/public_html|/home/*/public_html/*) ;;
+            *) echo "REMOTE_PATH must be an absolute /home/... path inside a public_html folder; got '${{ vars.REMOTE_PATH }}'" >&2; exit 1 ;;
           esac
           rsync -rlz --checksum --stats \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \

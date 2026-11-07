@@ -82,6 +82,36 @@ const globalHubPages = [
         description: "ROI-focused digital marketing and growth strategies for businesses in Bahrain."
     },
     {
+        title: "SEO Services in Bahrain",
+        href: "/bahrain/seo-services/",
+        category: "Bahrain Hub",
+        description: "Technical SEO, service-page content, and local search for Bahrain businesses that need more qualified inquiries."
+    },
+    {
+        title: "PPC Management in Bahrain",
+        href: "/bahrain/ppc-management/",
+        category: "Bahrain Hub",
+        description: "Paid search and social campaigns for Bahrain businesses, managed around lead quality."
+    },
+    {
+        title: "Social Media Marketing Bahrain",
+        href: "/bahrain/social-media-marketing/",
+        category: "Bahrain Hub",
+        description: "Social content and campaigns that answer buying questions for Bahrain businesses."
+    },
+    {
+        title: "Web Design & Development Bahrain",
+        href: "/bahrain/web-design-development/",
+        category: "Bahrain Hub",
+        description: "Websites for Bahrain businesses built around a clearer path to inquiries."
+    },
+    {
+        title: "Email Marketing Bahrain",
+        href: "/bahrain/email-marketing/",
+        category: "Bahrain Hub",
+        description: "Email campaigns and automated journeys for Bahrain businesses that need better follow-up."
+    },
+    {
         title: "Digital Marketing Agency Qatar",
         href: "/qatar/",
         category: "Global Hub",

@@ -54,6 +54,17 @@ const servicesList = [
     }
 ];
 
+// Regional service pages: on a regional page, the Services dropdown links to that region's versions.
+const regionalServiceHrefs: Record<string, Record<string, string>> = {
+    "/bahrain": {
+        "/services/seo": "/bahrain/seo-services",
+        "/services/social-media-marketing": "/bahrain/social-media-marketing",
+        "/services/ppc": "/bahrain/ppc-management",
+        "/services/web-development": "/bahrain/web-design-development",
+        "/services/email-marketing": "/bahrain/email-marketing",
+    },
+};
+
 const industriesList = [
     {
         title: "E-commerce",
@@ -149,6 +160,11 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
             ? '/qatar'
             : ''
     );
+
+    const regionalHrefs = regionalServiceHrefs[basePath];
+    const navServices = regionalHrefs
+        ? servicesList.map((s) => ({ ...s, href: regionalHrefs[s.href] ?? s.href }))
+        : servicesList;
 
     const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         setMobileMenuOpen(false);
@@ -284,7 +300,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
                         className="hidden lg:block fixed top-[84px] left-1/2 w-[86vw] xl:w-[74vw] 2xl:w-[66vw] max-w-6xl bg-white rounded-3xl border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-8 text-black z-[101] pointer-events-auto"
                     >
                         <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                            {(activeMenu === 'services' ? servicesList : industriesList).map((item) => {
+                            {(activeMenu === 'services' ? navServices : industriesList).map((item) => {
                                 const IconComponent = item.icon;
                                 return (
                                     <Link
@@ -350,7 +366,7 @@ export default function Navbar({ basePath: propBasePath }: NavbarProps = {}) {
                                         if (isServices || isIndustries) {
                                             const isOpen = isServices ? mobileServicesOpen : mobileIndustriesOpen;
                                             const setOpen = isServices ? setMobileServicesOpen : setMobileIndustriesOpen;
-                                            const items = isServices ? servicesList : industriesList;
+                                            const items = isServices ? navServices : industriesList;
                                             const browseHref = isServices ? '/services' : '/industries';
                                             const browseLabel = isServices ? 'Browse All Services' : 'Browse All Fields';
 

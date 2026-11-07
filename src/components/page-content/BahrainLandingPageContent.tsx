@@ -235,6 +235,13 @@ export default function BahrainLandingPageContent() {
                 }
                 subtitle="Every service EEGNITE delivers is performance-driven and connected to your revenue goal. From organic search and performance marketing to paid ads and web development - one team, one integrated strategy, built for Bahrain."
                 customDescriptions={customServicesDescriptions}
+                customLinks={{
+                    "01": "/bahrain/seo-services",
+                    "02": "/bahrain/social-media-marketing",
+                    "03": "/bahrain/ppc-management",
+                    "04": "/bahrain/web-design-development",
+                    "05": "/bahrain/email-marketing"
+                }}
             />
             
             <ToolsSection />

@@ -157,7 +157,7 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
                 <ServiceHero
                     badgeText={hero.eyebrow}
                     title={hero.title}
-                    titleClassName="md:text-4xl lg:text-5xl xl:text-6xl"
+                    titleClassName={hero.titleClassName ?? "md:text-4xl lg:text-5xl xl:text-6xl"}
                     subtitleAs="p"
                     subtitleClassName="md:text-2xl lg:text-3xl normal-case tracking-normal font-semibold max-w-4xl leading-snug"
                     subtitle={hero.statement}
@@ -294,14 +294,14 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
 
                 {/* 11. Buyer questions */}
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-6xl mx-auto">
                         <div className="text-left md:text-center mb-8 md:mb-16">
                             <Eyebrow>{faq.eyebrow}</Eyebrow>
-                            <h2 className="text-3xl md:text-6xl font-bold uppercase tracking-tight text-black">
+                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-black text-balance">
                                 <Heading h={faq} />
                             </h2>
                         </div>
-                        <div className="space-y-3 md:space-y-4">
+                        <div className="max-w-4xl mx-auto space-y-3 md:space-y-4">
                             {faq.items.map((item, idx) => (
                                 <details key={idx} className="group bg-white p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-black/5 hover:shadow-xl transition-all cursor-pointer">
                                     <summary className="flex justify-between items-center list-none text-black">

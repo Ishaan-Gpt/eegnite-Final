@@ -15,7 +15,7 @@ export type BahrainFaq = { q: string; a: ReactNode; text: string };
 
 export type BahrainServiceData = {
     meta: { url: string; title: string; description: string; serviceName: string; serviceDescription: string; serviceCategory: string; crumb: string };
-    hero: { eyebrow: string; title: ReactNode; statement: string; description: string };
+    hero: { eyebrow: string; title: ReactNode; statement: string; description: string; /** Overrides the H1 size for long titles. */ titleClassName?: string };
     pain: Split & { eyebrow: string; image: string; imageAlt: string; items: Item[] };
     bring: Split & { eyebrow: string; intro: string; items: (Item & { img: string; alt: string })[] };
     breakdown: Split & { eyebrow: string; items: (Item & { icon: BahrainIcon })[] };

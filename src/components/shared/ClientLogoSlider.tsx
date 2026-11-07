@@ -8,9 +8,11 @@ interface ClientLogoSliderProps {
     heading?: React.ReactNode;
     headingClassName?: string;
     logoSize?: "default" | "medium" | "small" | "half";
+    eyebrow?: React.ReactNode;
+    headingTag?: "h2" | "h3";
 }
 
-export function ClientLogoSlider({ className = "", innerOnly = false, heading, headingClassName = "", logoSize = "medium" }: ClientLogoSliderProps) {
+export function ClientLogoSlider({ className = "", innerOnly = false, heading, headingClassName = "", logoSize = "medium", eyebrow, headingTag = "h3" }: ClientLogoSliderProps) {
     const clientLogos = [
         { name: "Al Jiwan Jewelry", src: "/images/logos/al-jiwan-jewelry-logo.png" },
         { name: "Aquagear Australia", src: "/images/logos/aquagear-australia-logo.png" },
@@ -29,11 +31,14 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading, h
         { name: "Xendit", src: "/images/logos/xendit-logo.webp" }
     ];
 
+    const HeadingTag = headingTag;
+
     const content = (
         <div className="flex flex-col items-start lg:items-center gap-8 lg:gap-10 w-full overflow-hidden text-left lg:text-center">
             {/* Heading */}
             <div className="w-full py-2">
-                <h3 className={`text-2xl sm:text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.25] lg:leading-[1.3] uppercase text-left lg:text-center py-2 ${headingClassName}`}>
+                {eyebrow && <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 block leading-normal text-left lg:text-center">{eyebrow}</p>}
+                <HeadingTag className={`text-2xl sm:text-3xl md:text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight text-black leading-[1.25] lg:leading-[1.3] uppercase text-left lg:text-center py-2 ${headingClassName}`}>
                     {heading ? (
                         heading
                     ) : (
@@ -43,7 +48,7 @@ export function ClientLogoSlider({ className = "", innerOnly = false, heading, h
                             <span className="text-[#FF6105]">Across the Globe</span>
                         </>
                     )}
-                </h3>
+                </HeadingTag>
             </div>
 
             {/* Logo Slider */}

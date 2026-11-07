@@ -16,6 +16,7 @@ interface WhyChooseUsProps {
     subtitle?: React.ReactNode;
     reasons: ReasonItem[];
     closingQuote?: string;
+    eyebrow?: React.ReactNode;
 }
 
 export function WhyChooseUs({
@@ -23,6 +24,7 @@ export function WhyChooseUs({
     subtitle,
     reasons,
     closingQuote,
+    eyebrow,
 }: WhyChooseUsProps) {
     const targetRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -36,7 +38,10 @@ export function WhyChooseUs({
             if (containerRef.current) {
                 const lastCard = containerRef.current.lastElementChild as HTMLElement;
                 if (lastCard) {
-                    setScrollRange(lastCard.offsetLeft);
+                    // End with the last card fully in view (its right edge 6vw inside the screen),
+                    // not parked at the left edge with an empty screen beside it.
+                    const end = lastCard.offsetLeft + lastCard.offsetWidth - window.innerWidth * 0.94;
+                    setScrollRange(Math.max(0, end));
                 } else {
                     setScrollRange(containerRef.current.scrollWidth - window.innerWidth);
                 }
@@ -54,6 +59,7 @@ export function WhyChooseUs({
             <section className="block md:hidden bg-white text-black py-16 px-6">
                 <div className="max-w-[1400px] mx-auto">
                     <div className="text-left mb-10">
+                        {eyebrow && <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 block leading-normal">{eyebrow}</p>}
                         <h2 className="text-3xl font-bold uppercase tracking-tighter leading-[1.1] mb-4 text-black">
                             {title}
                         </h2>
@@ -84,8 +90,9 @@ export function WhyChooseUs({
 
             <section ref={targetRef} className="hidden md:block relative h-[300vh] bg-white text-black">
                 <div className="sticky top-0 flex flex-col justify-between h-screen overflow-hidden py-16 md:py-20">
-                    <div className="w-full z-20 text-center flex-shrink-0">
+                    <div className={`w-full z-20 text-center flex-shrink-0 ${eyebrow ? "pt-6" : ""}`}>
                         <div className="max-w-[1400px] mx-auto px-6">
+                            {eyebrow && <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#FF6105] mb-3 block leading-normal">{eyebrow}</p>}
                             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-tight text-center px-4 max-w-5xl mx-auto text-balance">
                                 {title}
                             </h2>

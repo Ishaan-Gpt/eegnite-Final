@@ -9,6 +9,8 @@ interface ServiceHeroProps {
     badgeText?: string;
     title: React.ReactNode;
     subtitle: React.ReactNode;
+    /** Render the subtitle as a paragraph (a highlighted statement) instead of an h2. */
+    subtitleAs?: "h2" | "p";
     description: React.ReactNode;
     ctaText?: string;
     ctaLink?: string;
@@ -27,7 +29,9 @@ export function ServiceHero({
     titleClassName,
     subtitleClassName,
     descriptionClassName,
+    subtitleAs = "h2",
 }: ServiceHeroProps) {
+    const SubtitleTag = subtitleAs;
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 px-4 md:px-6 overflow-hidden bg-white">
             <div
@@ -73,12 +77,12 @@ export function ServiceHero({
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-4 md:mb-12 w-full flex flex-col items-center"
                 >
-                    <h2 className={cn(
+                    <SubtitleTag className={cn(
                         "text-sm md:text-4xl lg:text-5xl font-bold text-[#FF6105] uppercase tracking-tight text-center px-2 text-balance",
                         subtitleClassName
                     )}>
                         {subtitle}
-                    </h2>
+                    </SubtitleTag>
                 </motion.div>
 
                 <motion.div

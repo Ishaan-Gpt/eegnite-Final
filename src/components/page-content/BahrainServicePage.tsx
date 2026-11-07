@@ -210,7 +210,11 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
                                 <Heading h={breakdown} />
                             </h2>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {/* 6 items: 3 x 2 grid (developer note). 7 items: a row of 4 and a centred row of 3, equal widths,
+                            so no card is left alone on the last row. */}
+                        <div className={breakdown.items.length === 7
+                            ? "flex flex-wrap justify-center gap-6 max-w-7xl mx-auto [&>*]:w-full md:[&>*]:w-[calc(50%-0.75rem)] lg:[&>*]:w-[calc(25%-1.125rem)]"
+                            : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"}>
                             {breakdown.items.map((item, idx) => {
                                 const Icon = ICONS[item.icon];
                                 return (

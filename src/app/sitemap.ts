@@ -155,6 +155,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/bahrain/web-design-development/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/qatar/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

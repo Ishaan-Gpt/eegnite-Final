@@ -9,8 +9,8 @@ import { faqs, type BahrainServiceData } from "./bahrain-service.types";
 export const BAHRAIN_WEB: BahrainServiceData = {
     meta: {
         url: "https://www.eegnite.com/bahrain/web-design-development/",
-        title: "Web Design Agency for Bahrain Businesses | EEGNITE",
-        description: "Web design and development for Bahrain businesses that need a clearer path to inquiries. EEGNITE builds sites around the decisions your customers make.",
+        title: "Conversion-Based Web Design & Development for Bahrain Businesses | EEGNITE",
+        description: "Make it easier for Bahrain customers to inquire or buy. EEGNITE offers web design and development focused on mobile usability. Discuss your website.",
         serviceName: "Web Design and Development for Bahrain Businesses",
         serviceDescription: "Site structure and content planning, UI design and mobile usability, CMS and website development, e-commerce and payments, English and Arabic scope, SEO migration, and launch support for Bahrain businesses.",
         serviceCategory: "Web Design & Development",
@@ -93,6 +93,19 @@ export const BAHRAIN_WEB: BahrainServiceData = {
             { icon: "page", title: "Review the Design With Real Content", desc: "We develop page layouts using approved or review-ready copy. Mobile behavior, forms, and any language versions are considered during design rather than added at the end." },
             { icon: "check", title: "Build and Test the Journeys", desc: "We test navigation, forms, notifications, checkout where relevant, key redirects, and editing tasks. The agreed acceptance criteria determine what must be resolved before launch." },
             { icon: "rocket", title: "Launch and Hand Over", desc: "We coordinate release, verify live journeys, and provide the agreed access and documentation. The support scope defines what happens next and who is responsible for routine upkeep." },
+        ],
+    },
+    tools: {
+        service: "Web Design & Development",
+        items: [
+            { name: "Figma", src: "/images/icons/figma.png" },
+            { name: "Shopify", src: "/images/icons/shopify.svg" },
+            { name: "WordPress", src: "/images/icons/wordpress.png" },
+            { name: "Next.js", src: "/images/icons/nextjs.svg" },
+            { name: "React.js", src: "/images/icons/react.svg" },
+            { name: "HTML 5", src: "/images/icons/html5.svg" },
+            { name: "PHP", src: "/images/icons/php.svg" },
+            { name: "GitHub", src: "/images/icons/github.svg" },
         ],
     },
     agency: {

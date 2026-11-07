@@ -147,7 +147,7 @@ function FinalCta({ data }: { data: BahrainServiceData["final"] }) {
 }
 
 export default function BahrainServicePage({ data }: { data: BahrainServiceData }) {
-    const { hero, pain, bring, breakdown, industries, why, process, agency, faq, final } = data;
+    const { hero, pain, bring, breakdown, industries, why, process, tools, agency, faq, final } = data;
     return (
         <main className="bg-white min-h-screen text-black font-sans selection:bg-[#FF6105] selection:text-white">
             <div className="relative z-10">
@@ -272,6 +272,27 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
                     ctaText={GROWTH_CTA}
                     ctaLink={GROWTH_CTA_LINK}
                 />
+
+                {/* Tools we use: logo showcase for this service, centred so any count stays balanced */}
+                <section className="py-16 md:py-24 bg-white border-t border-black/5">
+                    <div className="max-w-[1400px] mx-auto px-6">
+                        <div className="max-w-4xl mx-auto mb-10 md:mb-14 text-left md:text-center">
+                            <Eyebrow>Our tool stack</Eyebrow>
+                            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black leading-tight">
+                                Tools We Use for <span className="text-[#FF6105]">{tools.service}</span>
+                            </h2>
+                        </div>
+                        {/* Desktop: every list on one row. Mobile: 3 columns, or 2 when that divides the list evenly. */}
+                        <ul className="flex flex-wrap lg:flex-nowrap justify-center gap-3 md:gap-4 max-w-[1352px] mx-auto">
+                            {tools.items.map((tool) => (
+                                <li key={tool.name} className={`group ${tools.items.length % 2 === 0 && tools.items.length % 3 !== 0 ? "w-[calc(50%-0.375rem)]" : "w-[calc(33.333%-0.5rem)]"} sm:w-40 lg:w-auto lg:flex-1 lg:max-w-44 min-w-0 bg-white border border-black/5 rounded-2xl px-2 py-5 md:p-6 flex flex-col items-center justify-center gap-3 text-center hover:border-[#FF6105]/25 hover:shadow-lg transition-all duration-300`}>
+                                    <img src={tool.src} alt={`${tool.name} logo`} width={56} height={56} className="w-12 h-12 md:w-14 md:h-14 object-contain rounded-xl" loading="lazy" />
+                                    <span className="text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-tight text-black/80 group-hover:text-[#FF6105] transition-colors leading-snug">{tool.name}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
 
                 {/* 09. Dedicated agency: text with an in-copy link, image alongside */}
                 <section className="py-16 md:py-24 bg-white border-y border-black/5">

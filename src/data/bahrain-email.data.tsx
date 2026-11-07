@@ -9,8 +9,8 @@ import { faqs, type BahrainServiceData } from "./bahrain-service.types";
 export const BAHRAIN_EMAIL: BahrainServiceData = {
     meta: {
         url: "https://www.eegnite.com/bahrain/email-marketing/",
-        title: "Email Marketing for Bahrain Businesses | EEGNITE",
-        description: "Email marketing for Bahrain businesses that need better follow-up. EEGNITE builds campaigns and automated journeys around the next useful conversation.",
+        title: "ROI-Focused Email Marketing Agency for Bahrain Businesses | EEGNITE",
+        description: "Nurture leads and encourage repeat purchases with email marketing for Bahrain businesses. EEGNITE plans campaigns and automation. Book a strategy call.",
         serviceName: "Email Marketing for Bahrain Businesses",
         serviceDescription: "List review and segmentation, welcome and inquiry follow-up, e-commerce and retention journeys, campaign copy and design, deliverability, and CRM measurement for Bahrain businesses.",
         serviceCategory: "Email Marketing",
@@ -92,6 +92,14 @@ export const BAHRAIN_EMAIL: BahrainServiceData = {
             { icon: "page", title: "Write and Build For Review", desc: "We prepare the copy, design, and automation rules. Your nominated reviewers approve facts, language, offers, and any specialist claims." },
             { icon: "check", title: "Test The Full Path", desc: "Test contacts go through entry, delay, reply, purchase, and unsubscribe scenarios as relevant. We verify links, personalization fallbacks, suppression, and sales handoff before launch." },
             { icon: "loop", title: "Monitor and Refine", desc: "We review delivery issues, clicks, responses, orders, and audience health. Changes follow the customer's behavior and the available evidence, not an open-rate target alone." },
+        ],
+    },
+    tools: {
+        service: "Email Marketing",
+        items: [
+            { name: "Klaviyo", src: "/images/icons/klaviyo.png" },
+            { name: "MailChimp", src: "/images/icons/mailchimp.png" },
+            { name: "Brevo", src: "/images/icons/brevo.svg" },
         ],
     },
     agency: {

@@ -10,8 +10,8 @@ const linkCls = "text-[#FF6105] underline hover:text-[#C44800]";
 export const BAHRAIN_SEO: BahrainServiceData = {
     meta: {
         url: "https://www.eegnite.com/bahrain/seo-services/",
-        title: "SEO Agency for Bahrain Businesses | EEGNITE",
-        description: "SEO for Bahrain businesses that need more qualified inquiries. EEGNITE improves the pages, technical foundations, and content that support buying decisions.",
+        title: "SEO & AEO Agency for Bahrain Businesses | EEGNITE",
+        description: "Improve search visibility for your Bahrain business with technical SEO, AI search optimization, and useful content. Book an EEGNITE strategy call.",
         serviceName: "SEO Services for Bahrain Businesses",
         serviceDescription: "Technical SEO, service-page content, local search, product and category SEO, digital PR, and AI-assisted answer engine optimization for Bahrain businesses.",
         serviceCategory: "SEO Services",
@@ -92,6 +92,18 @@ export const BAHRAIN_SEO: BahrainServiceData = {
             { icon: "flag", title: "Agree On The First Priorities", desc: "You receive a work plan with page targets, technical dependencies, content inputs, and approval responsibilities. Forecasts are assumptions to test, not promised rankings." },
             { icon: "check", title: "Implement and Verify", desc: "We complete the agreed fixes and content changes, then check links, tracking, page access, and published accuracy. Your subject expert reviews specialist claims." },
             { icon: "loop", title: "Review Inquiries and Adjust", desc: "We discuss completed work, search movement, inquiry quality, and the next priorities. A page attracting unsuitable visitors may need a different message or target query." },
+        ],
+    },
+    tools: {
+        service: "SEO",
+        items: [
+            { name: "SE Ranking", src: "/images/icons/se-ranking.webp" },
+            { name: "Google Search Console", src: "/images/icons/google-search-console.svg" },
+            { name: "Google Analytics (GA4)", src: "/images/icons/google-analytics.png" },
+            { name: "SEMrush", src: "/images/icons/semrush.png" },
+            { name: "Ahrefs", src: "/images/icons/ahrefs.png" },
+            { name: "Moz", src: "/images/icons/moz.webp" },
+            { name: "Screaming Frog", src: "/images/icons/screaming-frog.webp" },
         ],
     },
     agency: {

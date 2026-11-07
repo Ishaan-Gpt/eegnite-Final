@@ -22,6 +22,8 @@ export type BahrainServiceData = {
     industries: { eyebrow: string; items: (Item & { href: string })[] };
     why: { eyebrow: string; subtitle: string; reasons: Item[] };
     process: Split & { eyebrow: string; steps: (Item & { icon: BahrainIcon })[] };
+    /** Logo showcase of the tools used for this service (logos in /images/icons/). */
+    tools: { service: string; items: { name: string; src: string }[] };
     agency: Split & { eyebrow: string; paragraphs: ReactNode[]; image: string; imageAlt: string };
     faq: Split & { eyebrow: string; items: BahrainFaq[] };
     final: { eyebrow: string; title: string; text: string; secondary: { label: string; href: string } };

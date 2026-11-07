@@ -10,8 +10,8 @@ const linkCls = "text-[#FF6105] underline hover:text-[#C44800]";
 export const BAHRAIN_SMM: BahrainServiceData = {
     meta: {
         url: "https://www.eegnite.com/bahrain/social-media-marketing/",
-        title: "Social Media Marketing Agency for Bahrain | EEGNITE",
-        description: "Social media marketing for Bahrain businesses with more to say. EEGNITE plans content and campaigns that answer buying questions and lead to inquiries.",
+        title: "Social Media Marketing Agency for Bahrain Businesses | EEGNITE",
+        description: "Connect with Bahrain customers through useful social content, targeted campaigns, and clear inquiry follow-up. Book a strategy call with EEGNITE.",
         serviceName: "Social Media Marketing for Bahrain Businesses",
         serviceDescription: "Channel and profile strategy, content planning and copy, creative and short video, publishing and community workflows, paid social campaigns, and reporting for Bahrain businesses.",
         serviceCategory: "Social Media Marketing",
@@ -97,6 +97,14 @@ export const BAHRAIN_SMM: BahrainServiceData = {
             { icon: "page", title: "Prepare The First Content Cycle", desc: "We write and design from approved information. Your reviewer checks factual claims, local references, and any required Arabic version before scheduling." },
             { icon: "megaphone", title: "Publish and Route Conversations", desc: "We publish approved items and manage the agreed response scope. Buying questions and issues needing a specialist go to the named contact on your team." },
             { icon: "loop", title: "Review What Customers Did", desc: "We compare the content's purpose with the response it received. Questions, visits, and inquiries help shape the next cycle, including what should be explained more clearly." },
+        ],
+    },
+    tools: {
+        service: "Social Media Marketing",
+        items: [
+            { name: "Meta Business Suite", src: "/images/icons/meta.png" },
+            { name: "Canva", src: "/images/icons/canva.webp" },
+            { name: "Buffer", src: "/images/icons/buffer.svg" },
         ],
     },
     agency: {

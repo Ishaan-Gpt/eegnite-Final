@@ -10,8 +10,8 @@ const linkCls = "text-[#FF6105] underline hover:text-[#C44800]";
 export const BAHRAIN_PPC: BahrainServiceData = {
     meta: {
         url: "https://www.eegnite.com/bahrain/ppc-management/",
-        title: "PPC Agency for Bahrain Businesses | EEGNITE",
-        description: "PPC for Bahrain businesses that need better leads. EEGNITE manages paid campaigns around suitable inquiries, booked consultations, and completed orders.",
+        title: "Revenue-Focused PPC Agency for Bahrain Businesses | EEGNITE",
+        description: "Paying for clicks but getting poor leads? EEGNITE manages Google Ads and PPC for Bahrain businesses. Book a strategy call to review your campaigns.",
         serviceName: "PPC Management for Bahrain Businesses",
         serviceDescription: "Google Search, paid social and B2B campaigns, landing-page improvements, lead quality feedback, tracking and attribution, and retargeting for Bahrain businesses.",
         serviceCategory: "PPC Advertising",
@@ -92,6 +92,17 @@ export const BAHRAIN_PPC: BahrainServiceData = {
             { icon: "page", title: "Prepare Ads and The Inquiry Route", desc: "We build the campaign structure and copy, agree on language review, and check the destination page. Your team approves the offer and any specialist claims." },
             { icon: "check", title: "Verify Tracking and Launch", desc: "We submit test inquiries, confirm where they arrive, and check the events recorded. Campaigns go live after the agreed account, page, and approval checks." },
             { icon: "loop", title: "Review Lead Quality and Refine", desc: "We review search terms, spending, creative, and sales feedback at the agreed cadence. Budget changes follow evidence and your approval limits." },
+        ],
+    },
+    tools: {
+        service: "PPC",
+        items: [
+            { name: "Google Ads Manager", src: "/images/icons/google-ads.png" },
+            { name: "Meta Business Suite", src: "/images/icons/meta.png" },
+            { name: "SpyFu", src: "/images/icons/spyfu.webp" },
+            { name: "Facebook Ads Manager", src: "/images/icons/facebook.svg" },
+            { name: "Ubersuggest", src: "/images/icons/ubersuggest.webp" },
+            { name: "SEMrush", src: "/images/icons/semrush.png" },
         ],
     },
     agency: {

@@ -14,6 +14,7 @@ import {
     SOCIAL_MEDIA_CHOOSE_REASONS,
 } from "@/data/social-media-marketing.data";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 export function SocialMediaHero() {
     return (
         <ServiceHero
@@ -88,6 +89,8 @@ export function FullServiceSocialMedia() {
 export function SocialMediaProcess() {
     return (
         <ServiceProcess
+            ctaText={GROWTH_CTA}
+            ctaLink={GROWTH_CTA_LINK}
             title={<>OUR ROI-DRIVEN <span className="text-[#FF6105]">GROWTH FRAMEWORK</span></>}
             steps={SOCIAL_MEDIA_PROCESS_STEPS}
         />
@@ -101,7 +104,6 @@ export function SocialMediaTimelineSection() {
             steps={SOCIAL_MEDIA_TIMELINE_STEPS}
             ctaTitle="Talk to Us"
             ctaDescription="Get a free social media presence audit and advertising breakdown to find hidden organic and paid opportunities."
-            ctaButtonText="Book Social Audit"
         />
     );
 }

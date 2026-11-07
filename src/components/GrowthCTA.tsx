@@ -2,14 +2,17 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 
 interface GrowthCTAProps {
     badgeText?: string;
     title?: React.ReactNode;
     description?: React.ReactNode;
+    /** Point the button at the on-page form (service and city pages) instead of the calendar booking link. */
+    toForm?: boolean;
 }
 
-export default function GrowthCTA({ badgeText, title, description }: GrowthCTAProps = {}) {
+export default function GrowthCTA({ badgeText, title, description, toForm = false }: GrowthCTAProps = {}) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-15%" });
 
@@ -51,15 +54,14 @@ export default function GrowthCTA({ badgeText, title, description }: GrowthCTAPr
 
                     <div className="mt-12 flex flex-col sm:flex-row items-center justify-start md:justify-center gap-4">
                         <motion.a
-                            href="https://calendar.app.google/m3Vy2iasTrY6eNAA6"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={toForm ? GROWTH_CTA_LINK : "https://calendar.app.google/m3Vy2iasTrY6eNAA6"}
+                            {...(toForm ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FF6105] text-white px-4 xs:px-6 sm:px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm hover:bg-[#e55800] transition-colors shadow-lg shadow-[#FF6105]/20 hover:shadow-[#FF6105]/35 duration-300 whitespace-nowrap"
                         >
-                            <Calendar size={16} />
-                            Book Your Strategy Call
+                            {!toForm && <Calendar size={16} />}
+                            {toForm ? GROWTH_CTA : "Book Your Strategy Call"}
                             <ArrowRight size={16} />
                         </motion.a>
                     </div>

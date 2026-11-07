@@ -13,6 +13,8 @@ import {
 } from "@/components/page-content/SeoInteractive";
 import { ToolsSection } from "@/components/shared/ToolsSection";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
+import Contact from "@/components/Contact";
 // --- STATIC SECTIONS (no client APIs needed) ---
 
 function IndustriesSection() {
@@ -110,11 +112,8 @@ function GrowthCTA() {
                             Your buyers are searching for what you offer right now. The question is whether your brand appears when they do. Let EEGNITE build the SEO strategy that puts you there and keeps you there. Technical precision, content authority, and link building — all managed as one integrated programme that compounds in value over time.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Book a Free SEO Discovery Call <ArrowRight />
-                            </Link>
-                            <Link href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg md:text-xl font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Request a Quote
+                            <Link href={GROWTH_CTA_LINK} className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                                {GROWTH_CTA} <ArrowRight />
                             </Link>
                             <span className="text-sm uppercase tracking-widest font-medium opacity-80">Turn rankings into revenue</span>
                         </div>
@@ -181,6 +180,9 @@ export default function ServiceSeo() {
                 </section>
 
                 <GrowthCTA />
+
+                {/* On-page form: every CTA on this page scrolls here */}
+                <Contact />
             </div>
             <Footer />
         </main>

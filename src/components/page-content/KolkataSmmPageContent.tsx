@@ -14,6 +14,7 @@ import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 import { ToolsSection } from "@/components/shared/ToolsSection";
 import { ClientLogoSlider } from "@/components/shared/ClientLogoSlider";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 // Custom lightweight inline SVGs to replace lucide-react imports (following AGENTS.md rules)
 const CpuIcon = (props: any) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -206,8 +207,8 @@ function GrowthCTA() {
                             Book a free strategy call with EEGNITE and discover what is holding your social media back, where your greatest audience and growth opportunities exist in Kolkata, and what it will take to turn your social channels into a consistent source of enquiries, customers, and brand authority.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link href="#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Book a Free Strategy Call <ArrowRightIcon className="w-5 h-5" />
+                            <Link href={GROWTH_CTA_LINK} className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                                {GROWTH_CTA} <ArrowRightIcon className="w-5 h-5" />
                             </Link>
                         </div>
                     </div>
@@ -535,6 +536,8 @@ export default function KolkataSmmPageContent() {
 
                 {/* 8. Service Process */}
                 <ServiceProcess
+                    ctaText={GROWTH_CTA}
+                    ctaLink={GROWTH_CTA_LINK}
                     title={<>OUR GROWTH BASED <span className="text-[#FF6105]">SMM PROCESS</span></>}
                     steps={processSteps}
                 />
@@ -545,7 +548,6 @@ export default function KolkataSmmPageContent() {
                     steps={timelineSteps}
                     ctaTitle="Talk to Us"
                     ctaDescription="Get a free social media analysis from our experts and see where your next growth wins are hiding"
-                    ctaButtonText="Get Your Free Analysis"
                 />
 
                 {/* 10. Tools Section */}

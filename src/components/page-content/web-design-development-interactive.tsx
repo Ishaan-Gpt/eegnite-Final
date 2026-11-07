@@ -14,6 +14,7 @@ import {
     WEB_DESIGN_CHOOSE_REASONS,
 } from "@/data/web-design-development.data";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 export function WebDesignHero() {
     return (
         <ServiceHero
@@ -88,6 +89,8 @@ export function FullServiceWebDesign() {
 export function WebDesignProcessFloating() {
     return (
         <ServiceProcess
+            ctaText={GROWTH_CTA}
+            ctaLink={GROWTH_CTA_LINK}
             title={<>OUR HIGH-PERFORMANCE WEBSITE <span className="text-[#FF6105]">DESIGN & DEVELOPMENT PROCESS</span></>}
             steps={WEB_DESIGN_PROCESS_STEPS}
         />
@@ -101,7 +104,6 @@ export function ProtocolTimeline() {
             steps={WEB_DESIGN_TIMELINE_STEPS}
             ctaTitle="Talk to Us"
             ctaDescription="Get a free website consultation and speed audit to find your design and development improvement areas."
-            ctaButtonText="Book Free Consultation"
         />
     );
 }

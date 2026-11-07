@@ -22,6 +22,7 @@ import { ServiceProcess } from "@/components/shared/ServiceProcess";
 import { ServiceTimeline } from "@/components/shared/ServiceTimeline";
 import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 export function EmailMarketingHero() {
     return (
         <ServiceHero
@@ -116,6 +117,8 @@ export function EmailMarketingProcessFloating() {
 
     return (
         <ServiceProcess
+            ctaText={GROWTH_CTA}
+            ctaLink={GROWTH_CTA_LINK}
             title={<>OUR ROI-DRIVEN <span className="text-[#FF6105]">EMAIL MARKETING PROCESS</span></>}
             steps={steps}
         />
@@ -137,7 +140,6 @@ export function ProtocolTimeline() {
             steps={steps}
             ctaTitle="Talk to Us"
             ctaDescription="Get a free email program assessment from our experts and identify your next revenue wins"
-            ctaButtonText="Get Your Free Analysis"
         />
     );
 }

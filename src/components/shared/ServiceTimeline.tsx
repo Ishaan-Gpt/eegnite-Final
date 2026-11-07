@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 
 interface TimelineStep {
     t: string;
@@ -15,7 +16,7 @@ interface ServiceTimelineProps {
     steps: TimelineStep[];
     ctaTitle: string;
     ctaDescription: string;
-    ctaButtonText: string;
+    ctaButtonText?: string;
     ctaLink?: string;
 }
 
@@ -24,8 +25,8 @@ export function ServiceTimeline({
     steps,
     ctaTitle,
     ctaDescription,
-    ctaButtonText,
-    ctaLink = "/#contact",
+    ctaButtonText = GROWTH_CTA,
+    ctaLink = GROWTH_CTA_LINK,
 }: ServiceTimelineProps) {
     const targetRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({ target: targetRef as any, offset: ["start start", "end end"] });

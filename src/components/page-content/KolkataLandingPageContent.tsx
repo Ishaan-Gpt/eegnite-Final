@@ -18,6 +18,7 @@ import HomeClient from "@/components/HomeClient";
 import { XCircle, CheckCircle2 } from "lucide-react";
 import * as React from "react";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 const absoluteIcons = [
     { id: 1, src: '/images/icons/meta.png', alt: 'Meta Ads', className: 'top-[8%] right-[5%]' },
     { id: 2, src: '/images/icons/google.png', alt: 'Google', className: 'top-[12%] left-[8%]' },
@@ -195,8 +196,8 @@ export default function KolkataLandingPageContent() {
                     title="REVENUE-DRIVEN 360° DIGITAL MARKETING AGENCY IN KOLKATA"
                     subTitle2="ATTRACT CUSTOMERS. INCREASE ROI."
                     subtitle="EEGNITE is a performance-first digital marketing agency in Kolkata. We do not sell packages or chase vanity metrics. We build integrated SEO, paid advertising, social media, and performance marketing strategies tied directly to your business revenue."
-                    ctaText="Start Your Project"
-                    ctaHref="#contact"
+                    ctaText={GROWTH_CTA}
+                    ctaHref={GROWTH_CTA_LINK}
                     icons={absoluteIcons}
                 />
             </div>
@@ -269,8 +270,6 @@ export default function KolkataLandingPageContent() {
                 steps={timelineSteps}
                 ctaTitle="Book Strategy Call"
                 ctaDescription="Book a free strategy call with EEGNITE and get clarity on what is slowing your growth, where your digital marketing is underperforming, and what it will take to scale your Kolkata business faster."
-                ctaButtonText="Book Free Strategy Call"
-                ctaLink="#contact"
             />
             
             <Testimonials />
@@ -279,7 +278,7 @@ export default function KolkataLandingPageContent() {
                 faqList={kolkataFaqs}
             />
             
-            <GrowthCTA 
+            <GrowthCTA toForm
                 badgeText="STOP GUESSING. START GROWING."
                 title={ctaTitle}
                 description="Book a free strategy call with EEGNITE and get clarity on what is slowing your growth, where your digital marketing is underperforming, and what it will take to scale your Kolkata business faster. No hard selling. No generic advice. Just a focused conversation built around your goals, market, and growth opportunities."

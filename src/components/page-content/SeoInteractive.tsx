@@ -20,6 +20,7 @@ import { ServiceProcess } from "@/components/shared/ServiceProcess";
 import { ServiceTimeline } from "@/components/shared/ServiceTimeline";
 import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 export function SeoHero() {
     return (
         <ServiceHero
@@ -112,6 +113,8 @@ export function SeoProcessFloating() {
 
     return (
         <ServiceProcess
+            ctaText={GROWTH_CTA}
+            ctaLink={GROWTH_CTA_LINK}
             title={<>OUR GROWTH BASED <span className="text-[#FF6105]">SEO PROCESS</span></>}
             steps={steps}
         />
@@ -133,7 +136,6 @@ export function ProtocolTimeline() {
             steps={steps}
             ctaTitle="Talk to Us"
             ctaDescription="Get a free SEO analysis from our experts and see where your next growth wins are hiding"
-            ctaButtonText="Get Your Free Analysis"
         />
     );
 }

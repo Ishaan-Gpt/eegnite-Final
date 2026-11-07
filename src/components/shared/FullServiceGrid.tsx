@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, LucideIcon } from "lucide-react";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 interface GridServiceItem {
     title: string;
     icon: LucideIcon;
@@ -91,8 +92,8 @@ export function FullServiceGrid({
     title,
     description,
     services,
-    ctaText = "Request a Proposal",
-    ctaLink = "/#contact",
+    ctaText = GROWTH_CTA,
+    ctaLink = GROWTH_CTA_LINK,
 }: FullServiceGridProps) {
     return (
         <section className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">

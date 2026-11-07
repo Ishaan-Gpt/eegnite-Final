@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, Calendar, ArrowRight, CheckCircle, Loader2, MapPin } from "lucide-react";
+import { GROWTH_CTA } from "@/lib/cta";
 
 const countryCodes = [
     { code: "+91", country: "IN" },
@@ -165,8 +166,8 @@ export default function Contact({ defaultCountryCode = "+91" }: ContactProps) {
                     className="text-left lg:text-center mb-16"
                 >
                     <h2 className="text-[clamp(2.5rem,8vw,5rem)] font-bold tracking-tight text-black leading-[1] uppercase">
-                        LET'S{" "}
-                        <span className="text-[#FF6105]">CONNECT</span>
+                        GET YOUR{" "}
+                        <span className="text-[#FF6105]">GROWTH PLAN</span>
                     </h2>
                     <p className="mt-6 text-lg text-black/60 max-w-2xl lg:mx-auto">
                         Ready to ignite your brand's digital presence? Get in touch with us today.
@@ -397,7 +398,7 @@ export default function Contact({ defaultCountryCode = "+91" }: ContactProps) {
                                     </>
                                 ) : (
                                     <>
-                                        Send Message
+                                        {GROWTH_CTA}
                                         <ArrowRight className="w-4 h-4" />
                                     </>
                                 )}

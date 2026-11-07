@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Compare } from "@/components/ui/compare";
 import { ServiceProcess } from "@/components/shared/ServiceProcess";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 // --- PREMIUM TEXTURE (interactive hover effect) ---
 function PremiumTexture({ opacity = "0.04" }: { opacity?: string }) {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -116,8 +117,8 @@ export function PpcHero() {
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
-                        Start Your Project
+                    <Link href={GROWTH_CTA_LINK} className="inline-flex justify-center bg-[#FF6105] text-white px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-all shadow-xl hover:shadow-[#FF6105]/20">
+                        {GROWTH_CTA}
                     </Link>
                 </motion.div>
             </div>
@@ -240,8 +241,8 @@ export function FullServicePPC() {
                 </div>
 
                 <div className="text-center mt-16 md:mt-24">
-                    <Link href="/#contact" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
-                        Request a Free Quote
+                    <Link href={GROWTH_CTA_LINK} className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                        {GROWTH_CTA}
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
@@ -263,6 +264,8 @@ export function PpcProcessFloating() {
 
     return (
         <ServiceProcess
+            ctaText={GROWTH_CTA}
+            ctaLink={GROWTH_CTA_LINK}
             title={
                 <>
                     OUR PERFORMANCE-FOCUSED <span className="text-[#FF6105]">PPC ADVERTISING PROCESS</span>
@@ -322,10 +325,10 @@ export function ProtocolTimeline() {
                 <div className="relative z-10">
                     <h3 className="text-2xl md:text-4xl font-bold uppercase text-black mb-4">Schedule A Call Now</h3>
                     <p className="text-black/60 text-base md:text-lg mb-8 max-w-2xl mx-auto">Get a free PPC audit from our experts and see where your next growth wins are hiding.</p>
-                    <a href="tel:+916289753474" className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
-                        Schedule A Call Now
+                    <Link href={GROWTH_CTA_LINK} className="inline-flex justify-center bg-[#FF6105] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-lg group">
+                        {GROWTH_CTA}
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

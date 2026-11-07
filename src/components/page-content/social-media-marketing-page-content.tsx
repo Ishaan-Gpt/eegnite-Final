@@ -19,6 +19,8 @@ import {
     SOCIAL_MEDIA_FAQS,
 } from "@/data/social-media-marketing.data";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
+import Contact from "@/components/Contact";
 function IndustriesSection() {
     return (
         <section className="py-16 md:py-24 bg-white border-y border-black/5">
@@ -97,11 +99,8 @@ function GrowthCTA() {
                             Your audience is already scrolling. The question is whether they stop for your brand. Let EEGNITE make sure they do. From content strategy and community management to paid social campaigns that convert, we handle every part of your social presence.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Start Your Social Project <ArrowRight />
-                            </Link>
-                            <Link href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg md:text-xl font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Request a Quote
+                            <Link href={GROWTH_CTA_LINK} className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                                {GROWTH_CTA} <ArrowRight />
                             </Link>
                             <span className="text-sm uppercase tracking-widest font-medium opacity-80">Stop scroll, start growth</span>
                         </div>
@@ -155,6 +154,9 @@ export default function SocialMediaMarketingPageContent() {
                 </section>
 
                 <GrowthCTA />
+
+                {/* On-page form: every CTA on this page scrolls here */}
+                <Contact />
             </div>
             <Footer />
         </main>

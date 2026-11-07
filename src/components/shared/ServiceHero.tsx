@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 
 interface ServiceHeroProps {
     badgeText?: string;
@@ -21,8 +22,8 @@ export function ServiceHero({
     title,
     subtitle,
     description,
-    ctaText = "Start Your Project",
-    ctaLink = "/#contact",
+    ctaText = GROWTH_CTA,
+    ctaLink = GROWTH_CTA_LINK,
     titleClassName,
     subtitleClassName,
     descriptionClassName,

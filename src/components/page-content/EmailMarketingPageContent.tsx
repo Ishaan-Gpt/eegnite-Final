@@ -13,6 +13,8 @@ import {
 } from "@/components/page-content/EmailMarketingInteractive";
 import { ToolsSection } from "@/components/shared/ToolsSection";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
+import Contact from "@/components/Contact";
 function IndustriesSection() {
     const industries = [
         { title: "E-commerce", desc: "Automated emails that drive repeat purchases.", href: "/industries/e-commerce" },
@@ -108,11 +110,8 @@ function GrowthCTA() {
                             Your subscribers are waiting. The question is whether your emails are working hard enough to convert them. Let EEGNITE build the system your business needs - automation flows, lead nurturing, CRM integration, and campaign strategy all handled so your pipeline grows while you focus on what you do best.
                         </p>
                         <div className="flex flex-wrap gap-6 items-center">
-                            <Link href="/#contact" className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Book a Free Email Strategy Call <ArrowRight />
-                            </Link>
-                            <Link href="/#contact" className="px-10 py-5 bg-transparent border-2 border-white text-white text-lg md:text-xl font-bold rounded-full hover:bg-white hover:text-[#FF6105] transition-colors duration-300 flex items-center gap-3 shadow-xl">
-                                Request a Quote
+                            <Link href={GROWTH_CTA_LINK} className="px-10 py-5 bg-white text-black text-lg md:text-xl font-bold rounded-full hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-3 shadow-xl">
+                                {GROWTH_CTA} <ArrowRight />
                             </Link>
                             <span className="text-sm uppercase tracking-widest font-medium opacity-80">Turn subscribers into sales</span>
                         </div>
@@ -178,6 +177,9 @@ export default function EmailMarketingPageContent() {
                 </section>
 
                 <GrowthCTA />
+
+                {/* On-page form: every CTA on this page scrolls here */}
+                <Contact />
             </div>
             <Footer />
         </main>

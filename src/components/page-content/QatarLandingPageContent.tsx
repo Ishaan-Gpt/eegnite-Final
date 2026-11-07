@@ -18,6 +18,7 @@ import HomeClient from "@/components/HomeClient";
 import { XCircle, CheckCircle2 } from "lucide-react";
 import * as React from "react";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 const absoluteIcons = [
     { id: 1, src: '/images/icons/meta.png', alt: 'Meta Ads', className: 'top-[8%] right-[5%]' },
     { id: 2, src: '/images/icons/google.png', alt: 'Google', className: 'top-[12%] left-[8%]' },
@@ -200,8 +201,8 @@ export default function QatarLandingPageContent() {
                     title="DIGITAL MARKETING AGENCY FOR QATAR BUSINESSES THAT HELPS YOU SCALE"
                     subTitle2="GET MORE LEADS. GROW BIGGER."
                     subtitle="EEGNITE is a performance-first digital marketing agency serving Qatar's most ambitious businesses. From Doha startups to established enterprises navigating Qatar National Vision 2030, we build SEO, paid advertising, social media, and performance marketing strategies tied to measurable business revenue."
-                    ctaText="Start Your Project"
-                    ctaHref="#contact"
+                    ctaText={GROWTH_CTA}
+                    ctaHref={GROWTH_CTA_LINK}
                     icons={absoluteIcons}
                 />
             </div>
@@ -266,8 +267,6 @@ export default function QatarLandingPageContent() {
                 steps={timelineSteps}
                 ctaTitle="Book Strategy Call"
                 ctaDescription="Book a free strategy call with EEGNITE and uncover what is holding your business back, where your digital strategy needs improvement, and how to create sustainable growth in Qatar’s fast-moving market."
-                ctaButtonText="Book Free Strategy Call"
-                ctaLink="#contact"
             />
             
             <Testimonials />
@@ -276,7 +275,7 @@ export default function QatarLandingPageContent() {
                 faqList={qatarFaqs}
             />
             
-            <GrowthCTA 
+            <GrowthCTA toForm
                 badgeText="STOP GUESSING. START GROWING."
                 title={ctaTitle}
                 description="Book a free strategy call with EEGNITE and uncover what is holding your business back, where your digital strategy needs improvement, and how to create sustainable growth in Qatar’s fast-moving market. No sales pressure. No vague promises. Just a direct conversation focused on scaling your business with clarity and confidence."

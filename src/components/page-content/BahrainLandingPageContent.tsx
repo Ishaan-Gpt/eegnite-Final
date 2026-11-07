@@ -18,6 +18,7 @@ import HomeClient from "@/components/HomeClient";
 import { XCircle, CheckCircle2 } from "lucide-react";
 import * as React from "react";
 
+import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 const absoluteIcons = [
     { id: 1, src: '/images/icons/meta.png', alt: 'Meta Ads', className: 'top-[8%] right-[5%]' },
     { id: 2, src: '/images/icons/google.png', alt: 'Google', className: 'top-[12%] left-[8%]' },
@@ -200,8 +201,8 @@ export default function BahrainLandingPageContent() {
                     title="ROI-DRIVEN DIGITAL MARKETING AGENCY FOR BAHRAIN BUSINESSES"
                     subTitle2="BUILD VISIBILITY. BOOST REVENUE."
                     subtitle="EEGNITE serves Bahrain's most ambitious businesses with performance-first digital marketing built for the GCC's fintech hub. SEO, Google Ads, paid social, email marketing, and web development - all integrated into one revenue-tied strategy."
-                    ctaText="Start Your Project"
-                    ctaHref="#contact"
+                    ctaText={GROWTH_CTA}
+                    ctaHref={GROWTH_CTA_LINK}
                     icons={absoluteIcons}
                 />
             </div>
@@ -266,8 +267,6 @@ export default function BahrainLandingPageContent() {
                 steps={timelineSteps}
                 ctaTitle="Book Strategy Call"
                 ctaDescription="Book a free strategy call with EEGNITE and discover what is limiting your business growth, where your marketing efforts are losing momentum, and how to build a stronger digital presence in Bahrain’s competitive market."
-                ctaButtonText="Book Free Strategy Call"
-                ctaLink="#contact"
             />
             
             <Testimonials />
@@ -276,7 +275,7 @@ export default function BahrainLandingPageContent() {
                 faqList={bahrainFaqs}
             />
             
-            <GrowthCTA 
+            <GrowthCTA toForm
                 badgeText="STOP GUESSING. START GROWING."
                 title={ctaTitle}
                 description="Book a free strategy call with EEGNITE and discover what is limiting your business growth, where your marketing efforts are losing momentum, and how to build a stronger digital presence in Bahrain’s competitive market. No pressure. No unnecessary pitch. Just practical growth-focused insights tailored to your business goals."

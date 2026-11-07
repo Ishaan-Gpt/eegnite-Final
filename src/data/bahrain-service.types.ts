@@ -18,7 +18,7 @@ export type BahrainServiceData = {
     hero: { eyebrow: string; title: ReactNode; statement: string; description: string; /** Overrides the H1 size for long titles. */ titleClassName?: string };
     pain: Split & { eyebrow: string; image: string; imageAlt: string; items: Item[] };
     bring: Split & { eyebrow: string; intro: string; items: (Item & { img: string; alt: string })[] };
-    breakdown: Split & { eyebrow: string; items: (Item & { icon: BahrainIcon })[] };
+    breakdown: Split & { eyebrow: string; items: { icon: BahrainIcon; title: string; desc: ReactNode }[] };
     industries: { eyebrow: string; items: (Item & { href: string })[] };
     why: { eyebrow: string; subtitle: string; reasons: Item[] };
     process: Split & { eyebrow: string; steps: (Item & { icon: BahrainIcon })[] };

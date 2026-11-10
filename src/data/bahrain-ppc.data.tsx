@@ -61,6 +61,8 @@ export const BAHRAIN_PPC: BahrainServiceData = {
         ],
     },
     industries: {
+        image: "/images/services/bahrain-ppc-industries.webp",
+        imageAlt: "Industries EEGNITE serves with PPC in Bahrain",
         eyebrow: "Match the campaign to the sale",
         items: [
             { title: "E-Commerce", href: "/industries/e-commerce/", desc: "Match campaigns to available products, delivery coverage, and contribution margin. Review orders and cancellations alongside attributed purchase value." },
@@ -72,6 +74,9 @@ export const BAHRAIN_PPC: BahrainServiceData = {
         ],
     },
     why: {
+        image: "/images/services/bahrain-ppc-why-eegnite.webp",
+        imageAlt: "Why Choose EEGNITE for PPC for your Bahrain Business",
+        orbit: ["target", "coins", "funnel", "chart", "megaphone"],
         eyebrow: "Decisions you can inspect",
         subtitle: "EEGNITE takes a structured approach to lead generation for Bahrain businesses, connecting campaign performance with sales feedback, landing-page behaviour and the quality of inquiries received.",
         reasons: [

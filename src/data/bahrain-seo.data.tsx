@@ -61,6 +61,8 @@ export const BAHRAIN_SEO: BahrainServiceData = {
         ],
     },
     industries: {
+        image: "/images/services/bahrain-seo-industries.webp",
+        imageAlt: "Industries EEGNITE serves with SEO in Bahrain",
         eyebrow: "Different buyers need different answers",
         items: [
             { title: "E-commerce", href: "/industries/e-commerce/", desc: "Make category and product pages answer questions about availability, specifications, delivery coverage, and purchase options. Prioritize pages that can support profitable orders." },
@@ -72,6 +74,9 @@ export const BAHRAIN_SEO: BahrainServiceData = {
         ],
     },
     why: {
+        image: "/images/services/bahrain-seo-why-eegnite.webp",
+        imageAlt: "Why Choose EEGNITE for SEO for your Bahrain Business",
+        orbit: ["search", "chart", "page", "pin", "spark"],
         eyebrow: "A practical working relationship",
         subtitle: "EEGNITE combines practical SEO expertise, transparent communication, and a structured approach to help Bahrain businesses grow online.",
         reasons: [

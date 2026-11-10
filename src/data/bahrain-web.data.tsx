@@ -62,6 +62,8 @@ export const BAHRAIN_WEB: BahrainServiceData = {
         ],
     },
     industries: {
+        image: "/images/services/bahrain-web-industries.webp",
+        imageAlt: "Industries EEGNITE serves with Web Design & Development in Bahrain",
         eyebrow: "A different task for each business",
         items: [
             { title: "E-Commerce", href: "/industries/e-commerce/", desc: "Make product details, delivery information, payment steps, and returns easy to understand. Test the path from a category page to a completed order." },
@@ -73,6 +75,9 @@ export const BAHRAIN_WEB: BahrainServiceData = {
         ],
     },
     why: {
+        image: "/images/services/bahrain-web-why-eegnite.webp",
+        imageAlt: "Why Choose EEGNITE for Web Design & Development for your Bahrain Business",
+        orbit: ["code", "layout", "phone", "gauge", "cart"],
         eyebrow: "Content and development considered together",
         subtitle: "EEGNITE approaches website design as a complete customer journey, bringing together visual presentation, service information and clear conversion paths. Every design decision considers how visitors interact with your business.",
         reasons: [

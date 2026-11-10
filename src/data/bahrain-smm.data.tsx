@@ -66,6 +66,8 @@ export const BAHRAIN_SMM: BahrainServiceData = {
         ],
     },
     industries: {
+        image: "/images/services/bahrain-smm-industries.webp",
+        imageAlt: "Industries EEGNITE serves with Social Media Marketing in Bahrain",
         eyebrow: "Content shaped by the buying decision",
         items: [
             { title: "E-Commerce", href: "/industries/e-commerce/", desc: "Show how products are used, answer common purchase objections, and connect content to accurate product pages. Use paid campaigns only within the agreed scope." },
@@ -77,6 +79,9 @@ export const BAHRAIN_SMM: BahrainServiceData = {
         ],
     },
     why: {
+        image: "/images/services/bahrain-smm-why-eegnite.webp",
+        imageAlt: "Why Choose EEGNITE for Social Media Marketing for your Bahrain Business",
+        orbit: ["camera", "chat", "calendar", "users", "megaphone"],
         eyebrow: "Planning that includes the handoff",
         subtitle: "EEGNITE approaches social media marketing as part of your wider customer journey, connecting content, engagement and follow-up with clear business objectives.",
         reasons: [

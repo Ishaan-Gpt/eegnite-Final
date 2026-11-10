@@ -46,7 +46,17 @@ const testimonials = [
     }
 ];
 
-export default function Testimonials() {
+interface TestimonialsProps {
+    /** Name of the review to show first (e.g. a regional client on that region's pages). */
+    lead?: string;
+    /** Names of reviews to leave out on this page. */
+    hide?: string[];
+}
+
+export default function Testimonials({ lead, hide = [] }: TestimonialsProps = {}) {
+    const shown = testimonials
+        .filter((t) => !hide.includes(t.name))
+        .sort((x, y) => (x.name === lead ? -1 : y.name === lead ? 1 : 0));
     const sectionRef = useRef<any>(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-15%" });
 
@@ -94,7 +104,7 @@ export default function Testimonials() {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.4 }}
                 >
-                    <AnimatedTestimonials testimonials={testimonials} autoplay />
+                    <AnimatedTestimonials testimonials={shown} autoplay />
                 </motion.div>
 
                 {/* See All Testimonials Link */}
@@ -115,7 +125,7 @@ export default function Testimonials() {
 
                 {/* Search Engine Optimization (SEO) Crawler Fallback */}
                 <div className="sr-only" aria-hidden="false">
-                    {testimonials.map((testimonial, idx) => (
+                    {shown.map((testimonial, idx) => (
                         <article key={idx}>
                             <h3>{testimonial.name} - {testimonial.designation}</h3>
                             <blockquote>{testimonial.quote}</blockquote>

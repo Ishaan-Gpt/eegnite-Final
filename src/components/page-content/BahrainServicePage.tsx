@@ -8,7 +8,6 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import { ServiceHero } from "@/components/shared/ServiceHero";
 import { ServiceProcess } from "@/components/shared/ServiceProcess";
-import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 import { ClientLogoSlider } from "@/components/shared/ClientLogoSlider";
 import { GROWTH_CTA, GROWTH_CTA_LINK } from "@/lib/cta";
 import type { BahrainServiceData, BahrainIcon } from "@/data/bahrain-service.types";
@@ -53,6 +52,8 @@ const ICONS: Record<BahrainIcon, (p: any) => React.ReactElement> = {
     rocket: (p) => <Svg {...p}><path d="M14 4c3-1 6-1 6-1s0 3-1 6l-6 6-5-5z" /><path d="M8 10l-4 1 3 3M14 16l-1 4-3-3" /><circle cx="15.5" cy="8.5" r="1.5" /></Svg>,
     refresh: (p) => <Svg {...p}><path d="M20 11a8 8 0 0 0-14.5-4.5L3 9M4 13a8 8 0 0 0 14.5 4.5L21 15" /><path d="M3 4v5h5M21 20v-5h-5" /></Svg>,
 };
+// Icons beside the five "Why EEGNITE" reasons, in order.
+const WHY_ICONS: BahrainIcon[] = ["layout", "check", "chart", "shield", "users"];
 const ArrowRightIcon = (p: any) => <Svg {...p}><path d="M5 12h14M12 5l7 7-7 7" /></Svg>;
 const ChevronIcon = (p: any) => <Svg {...p}><path d="M9 18l6-6-6-6" /></Svg>;
 
@@ -166,6 +167,7 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
 
                 {/* 02. Client logo slider */}
                 <ClientLogoSlider
+                    logoSize="default"
                     eyebrow="Client References"
                     headingTag="h2"
                     headingClassName="!text-[clamp(1.8rem,5vw,3.5rem)] !leading-[1.1] !tracking-tight"
@@ -231,38 +233,87 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
                     </div>
                 </section>
 
-                {/* 06. Industries we serve */}
+                {/* 06. Industries we serve: Kolkata layout (image left for image SEO, six industries right) */}
                 <section className="py-16 md:py-24 bg-white border-y border-black/5">
                     <div className="max-w-[1400px] mx-auto px-6">
-                        <div className="max-w-4xl mx-auto mb-12 md:mb-16 text-left md:text-center">
+                        <div className="max-w-4xl mx-auto mb-12 md:mb-16 text-center">
                             <Eyebrow>{industries.eyebrow}</Eyebrow>
                             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black leading-tight">
                                 Industries We Serve. <span className="text-[#FF6105]">Industries We Scale in Bahrain.</span>
                             </h2>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-                            {industries.items.map((item, idx) => (
-                                <div key={idx} className="group bg-white p-6 md:p-7 rounded-2xl border border-black/5 hover:border-[#FF6105]/20 hover:shadow-lg transition-all duration-300">
-                                    <h3 className="text-base md:text-lg font-bold uppercase text-black mb-2">
-                                        <Link href={item.href} className="inline-flex items-center gap-1.5 hover:text-[#FF6105] transition-colors">
-                                            {item.title}
-                                            <ArrowRightIcon className="w-4 h-4 text-[#FF6105] group-hover:translate-x-1 transition-transform" />
-                                        </Link>
-                                    </h3>
-                                    <p className="text-black/55 text-sm leading-relaxed">{item.desc}</p>
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+                            <div className="lg:col-span-5 w-full">
+                                <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-black/5 shadow-xl group">
+                                    <img src={industries.image} alt={industries.imageAlt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                                 </div>
-                            ))}
+                            </div>
+                            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-x-6 gap-y-5 w-full">
+                                {industries.items.map((item, idx) => (
+                                    <div key={idx} className="group bg-white p-6 rounded-2xl border border-black/5 hover:border-[#FF6105]/20 hover:shadow-lg transition-all duration-300">
+                                        <h3 className="text-base md:text-lg font-bold uppercase text-black mb-1.5">
+                                            <Link href={item.href} className="inline-flex items-center gap-1.5 hover:text-[#FF6105] transition-colors">
+                                                {item.title}
+                                                <ArrowRightIcon className="w-4 h-4 text-[#FF6105] opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                                            </Link>
+                                        </h3>
+                                        <p className="text-black/55 text-xs md:text-sm leading-relaxed">{item.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 07. Why EEGNITE */}
-                <WhyChooseUs
-                    eyebrow={why.eyebrow}
-                    title={<>Why <span className="text-[#FF6105]">EEGNITE</span></>}
-                    subtitle={why.subtitle}
-                    reasons={why.reasons.map((r, i) => ({ id: String(i + 1).padStart(2, "0"), ...r }))}
-                />
+                {/* 07. Why EEGNITE: person with orbiting service icons (left), the five reasons as icon rows (right) */}
+                <section className="py-16 md:py-24 bg-white">
+                    <div className="max-w-[1400px] mx-auto px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                            <div className="lg:col-span-5 w-full max-w-[520px] mx-auto">
+                                <div className="relative aspect-square">
+                                    <div className="absolute inset-[12%] rounded-full bg-gradient-to-b from-[#FFF5F0] to-[#FFE6D6]" />
+                                    <div className="absolute inset-[4%] rounded-full border-2 border-dashed border-[#FF6105]/20" />
+                                    <img src={why.image} alt={why.imageAlt} className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[88%] w-auto max-w-[80%] object-contain object-bottom drop-shadow-[0_20px_30px_rgba(0,0,0,0.12)]" loading="lazy" />
+                                    {why.orbit.map((icon, i) => {
+                                        // Five bubbles on the upper arc of the ring, left to right.
+                                        const angle = ((200 + i * 35) * Math.PI) / 180;
+                                        const Icon = ICONS[icon];
+                                        return (
+                                            <div key={i} aria-hidden="true"
+                                                className="absolute w-[17%] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_10px_30px_rgba(0,0,0,0.10)] border border-black/5 flex items-center justify-center text-[#FF6105]"
+                                                style={{ left: `${50 + 46 * Math.cos(angle)}%`, top: `${50 + 46 * Math.sin(angle)}%` }}>
+                                                <Icon size={26} strokeWidth={1.6} className="w-[45%] h-[45%]" />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                            <div className="lg:col-span-7">
+                                <Eyebrow>{why.eyebrow}</Eyebrow>
+                                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-black leading-tight mb-4">
+                                    Why <span className="text-[#FF6105]">EEGNITE</span>
+                                </h2>
+                                <p className="text-black/60 text-base md:text-lg leading-relaxed mb-8">{why.subtitle}</p>
+                                <ol className="divide-y divide-black/10 border-y border-black/10">
+                                    {why.reasons.map((r, i) => {
+                                        const Icon = ICONS[WHY_ICONS[i % WHY_ICONS.length]];
+                                        return (
+                                            <li key={i} className="flex gap-4 md:gap-5 py-5">
+                                                <span className="shrink-0 w-11 h-11 rounded-xl bg-[#FFF5F0] text-[#FF6105] flex items-center justify-center" aria-hidden="true">
+                                                    <Icon size={22} strokeWidth={1.6} />
+                                                </span>
+                                                <div>
+                                                    <h3 className="text-base md:text-lg font-bold uppercase tracking-tight text-black mb-1">{r.title}</h3>
+                                                    <p className="text-black/60 text-sm md:text-base leading-relaxed">{r.desc}</p>
+                                                </div>
+                                            </li>
+                                        );
+                                    })}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* 08. Our process */}
                 <ServiceProcess
@@ -315,7 +366,7 @@ export default function BahrainServicePage({ data }: { data: BahrainServiceData 
                 </section>
 
                 {/* 10. Testimonials (heading already matches the docs) */}
-                <Testimonials />
+                <Testimonials lead="Hafedh Bucheery" hide={["Rajeev Ranjan"]} />
 
                 {/* 11. Buyer questions */}
                 <section className="py-16 md:py-32 bg-white px-4 md:px-6 border-t border-black/5">

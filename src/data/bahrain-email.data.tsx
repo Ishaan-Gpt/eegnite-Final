@@ -61,6 +61,8 @@ export const BAHRAIN_EMAIL: BahrainServiceData = {
         ],
     },
     industries: {
+        image: "/images/services/bahrain-email-industries.webp",
+        imageAlt: "Industries EEGNITE serves with Email Marketing in Bahrain",
         eyebrow: "Different reasons to stay in touch",
         items: [
             { title: "E-Commerce", href: "/industries/e-commerce/", desc: "Guide subscribers from product interest to purchase and appropriate follow-up. Stop cart reminders when an order is placed, and respect recorded preferences." },
@@ -72,6 +74,9 @@ export const BAHRAIN_EMAIL: BahrainServiceData = {
         ],
     },
     why: {
+        image: "/images/services/bahrain-email-why-eegnite.webp",
+        imageAlt: "Why Choose EEGNITE for Email Marketing for your Bahrain Business",
+        orbit: ["mail", "users", "refresh", "chart", "calendar"],
         eyebrow: "A program your team can understand",
         subtitle: "EEGNITE builds email programmes around clear communication, customer actions and business objectives. Each workflow is planned to connect with the wider customer journey and remain manageable for your team.",
         reasons: [

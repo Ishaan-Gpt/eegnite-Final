@@ -208,6 +208,7 @@ export default function BahrainLandingPageContent() {
             </div>
             
             <ClientLogoSlider
+                logoSize="default"
                 heading={
                     <>
                         Brands That Choose Growth <br />
@@ -276,7 +277,7 @@ export default function BahrainLandingPageContent() {
                 ctaDescription="Book a free strategy call with EEGNITE and discover what is limiting your business growth, where your marketing efforts are losing momentum, and how to build a stronger digital presence in Bahrain’s competitive market."
             />
             
-            <Testimonials />
+            <Testimonials lead="Hafedh Bucheery" hide={["Rajeev Ranjan"]} />
             
             <FAQ 
                 faqList={bahrainFaqs}

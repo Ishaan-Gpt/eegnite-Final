@@ -19,8 +19,9 @@ export type BahrainServiceData = {
     pain: Split & { eyebrow: string; image: string; imageAlt: string; items: Item[] };
     bring: Split & { eyebrow: string; intro: string; items: (Item & { img: string; alt: string })[] };
     breakdown: Split & { eyebrow: string; items: { icon: BahrainIcon; title: string; desc: ReactNode }[] };
-    industries: { eyebrow: string; items: (Item & { href: string })[] };
-    why: { eyebrow: string; subtitle: string; reasons: Item[] };
+    industries: { eyebrow: string; image: string; imageAlt: string; items: (Item & { href: string })[] };
+    /** `image` is a cut-out person; `orbit` are the five service icons circling them. */
+    why: { eyebrow: string; subtitle: string; image: string; imageAlt: string; orbit: BahrainIcon[]; reasons: Item[] };
     process: Split & { eyebrow: string; steps: (Item & { icon: BahrainIcon })[] };
     /** Logo showcase of the tools used for this service (logos in /images/icons/). */
     tools: { service: string; items: { name: string; src: string }[] };

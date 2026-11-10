@@ -63,7 +63,7 @@ export default function Testimonials({ lead, hide = [] }: TestimonialsProps = {}
     return (
         <section
             ref={sectionRef}
-            className="min-h-screen flex flex-col justify-center py-24 bg-white relative"
+            className="min-h-screen flex flex-col justify-center py-24 bg-white relative overflow-x-clip"
             id="testimonials"
         >
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">

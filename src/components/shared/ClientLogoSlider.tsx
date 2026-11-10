@@ -12,7 +12,7 @@ interface ClientLogoSliderProps {
     headingTag?: "h2" | "h3";
 }
 
-export function ClientLogoSlider({ className = "", innerOnly = false, heading, headingClassName = "", logoSize = "medium", eyebrow, headingTag = "h3" }: ClientLogoSliderProps) {
+export function ClientLogoSlider({ className = "", innerOnly = false, heading, headingClassName = "", logoSize = "default", eyebrow, headingTag = "h3" }: ClientLogoSliderProps) {
     const clientLogos = [
         { name: "Al Jiwan Jewelry", src: "/images/logos/al-jiwan-jewelry-logo.png" },
         { name: "Aquagear Australia", src: "/images/logos/aquagear-australia-logo.png" },

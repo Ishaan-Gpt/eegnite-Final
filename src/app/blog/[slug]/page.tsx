@@ -8,8 +8,9 @@ import { ArrowLeft, User, Calendar, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // --- MOCK DATA ---
-const allPosts: Record<string, { title: string; content: string; image: string; category: string; date: string; author: string; metaTitle?: string; metaDescription?: string }> = {
+const allPosts: Record<string, { title: string; content: string; image: string; category: string; date: string; author: string; metaTitle?: string; metaDescription?: string; readTime?: string }> = {
     "seo-vs-geo-vs-aeo-what-to-choose-for-search-visibility": {
+        readTime: "17 min read",
         title: "SEO vs GEO vs AEO: Are They Really Different? What You Should Choose for Better Search Visibility",
         metaTitle: "SEO vs GEO vs AEO: Which Is Best for Search Visibility?",
         metaDescription: "SEO, GEO, and AEO explained in simple terms. Learn what each means, what actually improves search visibility, and what to look for when hiring an agency.",
@@ -31,6 +32,10 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">That distinction matters because it changes how you should spend your marketing budget.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Instead of paying for three disconnected services, you should be looking for one strong search strategy that helps your business become easier to find, understand, trust, and reference across traditional and AI-powered search.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Let's break down what each term actually means, where they overlap, where they differ, and what you should look for before hiring an agency.</p>
+
+            <div class="my-12 relative w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-black/5">
+                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=1200" alt="Search Visibility Analytics Dashboard on a Laptop" class="object-cover w-full h-full" />
+            </div>
 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>First, What Is SEO?</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">SEO, or Search Engine Optimization, is the broadest and most established of the three.</p>
@@ -200,20 +205,20 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <h2 class="text-3xl font-bold mt-16 mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Complete SEO, AEO and GEO Comparison</strong></h2>
             <div class="my-12 overflow-x-auto rounded-2xl border border-black/10">
                 <table class="w-full min-w-[720px] text-left text-base text-black border-collapse">
-                    <thead class="bg-black text-white"><tr><th class="p-4 font-bold uppercase tracking-tight">Area</th><th class="p-4 font-bold uppercase tracking-tight">SEO</th><th class="p-4 font-bold uppercase tracking-tight">AEO</th><th class="p-4 font-bold uppercase tracking-tight">GEO</th></tr></thead>
+                    <thead class="bg-[#FF6105] text-white"><tr><th class="p-4 font-bold text-center">Area</th><th class="p-4 font-bold text-center">SEO</th><th class="p-4 font-bold text-center">AEO</th><th class="p-4 font-bold text-center">GEO</th></tr></thead>
                     <tbody>
-                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-[#FF6105]">Full form</td><td class="p-4 align-top leading-relaxed">Search Engine Optimization</td><td class="p-4 align-top leading-relaxed">Answer Engine Optimization</td><td class="p-4 align-top leading-relaxed">Generative Engine Optimization</td></tr>
-                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-[#FF6105]">Main focus</td><td class="p-4 align-top leading-relaxed">Improving visibility in traditional search results</td><td class="p-4 align-top leading-relaxed">Helping your content provide clear answers to user questions</td><td class="p-4 align-top leading-relaxed">Improving visibility and brand representation in generative AI experiences</td></tr>
-                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-[#FF6105]">Where it appears</td><td class="p-4 align-top leading-relaxed">Google Search, Bing, and other traditional search engines</td><td class="p-4 align-top leading-relaxed">Featured snippets, direct answers, voice search, AI-assisted answer experiences</td><td class="p-4 align-top leading-relaxed">Google AI Overviews, AI Mode, ChatGPT, Gemini, Perplexity, and other generative search experiences</td></tr>
-                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-[#FF6105]">Typical user behavior</td><td class="p-4 align-top leading-relaxed">Searches and chooses from a list of results</td><td class="p-4 align-top leading-relaxed">Asks a question and expects a direct answer</td><td class="p-4 align-top leading-relaxed">Asks a broader or conversational question and expects a synthesized response</td></tr>
-                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-[#FF6105]">What matters most</td><td class="p-4 align-top leading-relaxed">Technical health, relevance, useful content, authority, links, search intent</td><td class="p-4 align-top leading-relaxed">Clear answers, strong information structure, concise explanations, question-focused content</td><td class="p-4 align-top leading-relaxed">Strong expertise, original information, brand authority, trustworthy sources, clear and accessible content</td></tr>
-                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-[#FF6105]">Content style</td><td class="p-4 align-top leading-relaxed">Comprehensive pages targeting genuine search needs</td><td class="p-4 align-top leading-relaxed">Directly answers specific questions in a clear format</td><td class="p-4 align-top leading-relaxed">Original, authoritative content that provides information AI systems can confidently understand and reference</td></tr>
-                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-[#FF6105]">Technical foundation</td><td class="p-4 align-top leading-relaxed">Crawlability, indexing, site structure, mobile experience, page experience</td><td class="p-4 align-top leading-relaxed">Relies on a technically sound, crawlable website</td><td class="p-4 align-top leading-relaxed">Also relies on a technically sound and accessible website</td></tr>
-                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-[#FF6105]">Structured data</td><td class="p-4 align-top leading-relaxed">Useful where applicable</td><td class="p-4 align-top leading-relaxed">Can help clarify entities and page meaning</td><td class="p-4 align-top leading-relaxed">Can help search systems understand products, organizations, services, and other entities</td></tr>
-                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-[#FF6105]">Primary objective</td><td class="p-4 align-top leading-relaxed">Earn qualified organic visibility and traffic</td><td class="p-4 align-top leading-relaxed">Increase the chance of being used as a direct answer</td><td class="p-4 align-top leading-relaxed">Increase the chance of your brand, content, or information being surfaced or referenced in generative responses</td></tr>
-                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-[#FF6105]">Can it replace SEO?</td><td class="p-4 align-top leading-relaxed">It is SEO</td><td class="p-4 align-top leading-relaxed">No</td><td class="p-4 align-top leading-relaxed">No</td></tr>
-                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-[#FF6105]">Relationship to the others</td><td class="p-4 align-top leading-relaxed">Foundation</td><td class="p-4 align-top leading-relaxed">An extension of search visibility focused on answers</td><td class="p-4 align-top leading-relaxed">An extension of search visibility focused on generative experiences</td></tr>
-                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-[#FF6105]">What business owners should prioritize</td><td class="p-4 align-top leading-relaxed">Strong website, useful content, authority, technical SEO, and search intent</td><td class="p-4 align-top leading-relaxed">Clear answers to real customer questions</td><td class="p-4 align-top leading-relaxed">The same strong SEO foundation plus original expertise, brand authority, and visibility across the wider web</td></tr>
+                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-black">Full form</td><td class="p-4 align-top leading-relaxed">Search Engine Optimization</td><td class="p-4 align-top leading-relaxed">Answer Engine Optimization</td><td class="p-4 align-top leading-relaxed">Generative Engine Optimization</td></tr>
+                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-black">Main focus</td><td class="p-4 align-top leading-relaxed">Improving visibility in traditional search results</td><td class="p-4 align-top leading-relaxed">Helping your content provide clear answers to user questions</td><td class="p-4 align-top leading-relaxed">Improving visibility and brand representation in generative AI experiences</td></tr>
+                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-black">Where it appears</td><td class="p-4 align-top leading-relaxed">Google Search, Bing, and other traditional search engines</td><td class="p-4 align-top leading-relaxed">Featured snippets, direct answers, voice search, AI-assisted answer experiences</td><td class="p-4 align-top leading-relaxed">Google AI Overviews, AI Mode, ChatGPT, Gemini, Perplexity, and other generative search experiences</td></tr>
+                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-black">Typical user behavior</td><td class="p-4 align-top leading-relaxed">Searches and chooses from a list of results</td><td class="p-4 align-top leading-relaxed">Asks a question and expects a direct answer</td><td class="p-4 align-top leading-relaxed">Asks a broader or conversational question and expects a synthesized response</td></tr>
+                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-black">What matters most</td><td class="p-4 align-top leading-relaxed">Technical health, relevance, useful content, authority, links, search intent</td><td class="p-4 align-top leading-relaxed">Clear answers, strong information structure, concise explanations, question-focused content</td><td class="p-4 align-top leading-relaxed">Strong expertise, original information, brand authority, trustworthy sources, clear and accessible content</td></tr>
+                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-black">Content style</td><td class="p-4 align-top leading-relaxed">Comprehensive pages targeting genuine search needs</td><td class="p-4 align-top leading-relaxed">Directly answers specific questions in a clear format</td><td class="p-4 align-top leading-relaxed">Original, authoritative content that provides information AI systems can confidently understand and reference</td></tr>
+                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-black">Technical foundation</td><td class="p-4 align-top leading-relaxed">Crawlability, indexing, site structure, mobile experience, page experience</td><td class="p-4 align-top leading-relaxed">Relies on a technically sound, crawlable website</td><td class="p-4 align-top leading-relaxed">Also relies on a technically sound and accessible website</td></tr>
+                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-black">Structured data</td><td class="p-4 align-top leading-relaxed">Useful where applicable</td><td class="p-4 align-top leading-relaxed">Can help clarify entities and page meaning</td><td class="p-4 align-top leading-relaxed">Can help search systems understand products, organizations, services, and other entities</td></tr>
+                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-black">Primary objective</td><td class="p-4 align-top leading-relaxed">Earn qualified organic visibility and traffic</td><td class="p-4 align-top leading-relaxed">Increase the chance of being used as a direct answer</td><td class="p-4 align-top leading-relaxed">Increase the chance of your brand, content, or information being surfaced or referenced in generative responses</td></tr>
+                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-black">Can it replace SEO?</td><td class="p-4 align-top leading-relaxed">It is SEO</td><td class="p-4 align-top leading-relaxed">No</td><td class="p-4 align-top leading-relaxed">No</td></tr>
+                        <tr class="border-t border-black/10"><td class="p-4 align-top font-bold text-black">Relationship to the others</td><td class="p-4 align-top leading-relaxed">Foundation</td><td class="p-4 align-top leading-relaxed">An extension of search visibility focused on answers</td><td class="p-4 align-top leading-relaxed">An extension of search visibility focused on generative experiences</td></tr>
+                        <tr class="border-t border-black/10 bg-[#FFFEF8]"><td class="p-4 align-top font-bold text-black">What business owners should prioritize</td><td class="p-4 align-top leading-relaxed">Strong website, useful content, authority, technical SEO, and search intent</td><td class="p-4 align-top leading-relaxed">Clear answers to real customer questions</td><td class="p-4 align-top leading-relaxed">The same strong SEO foundation plus original expertise, brand authority, and visibility across the wider web</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -370,6 +375,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black"><a href="https://www.eegnite.com/" target="_blank" rel="noopener noreferrer" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> takes a connected approach to search visibility, combining technical SEO, content strategy, AI search optimization, digital PR, authority building, and performance analysis. The goal is simple: help businesses become easier to find, easier to understand, and easier for customers to trust across today's search ecosystem.</p>`
     },
     "we-stopped-trying-to-beat-ai-detectors": {
+        readTime: "9 min read",
         title: "We Stopped Trying to Beat AI Detectors When We Realized What They Were Actually Detecting",
         metaTitle: "We Stopped Trying to Beat AI Detectors | EEGNITE",
         metaDescription: "Discover why trying to beat AI detectors is the wrong goal. Learn how human thinking, structure, and depth differentiate quality content from AI output.",
@@ -595,6 +601,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <div class="my-8 p-6 bg-[#F5F3EE] rounded-2xl border-l-4 border-[#FF6105] italic text-black font-medium"><strong>“To test this, we gave an LLM a single prompt and asked it to write two blogs on exactly the same topic. It came back with two completely different versions, even though the instructions and subject were the same. The blog you are reading right now is one of those versions, and interestingly, QuillBot’s AI detector has classified it as only 8% AI-generated.”</strong></div>`
     },
     "why-b2b-buyers-take-longer-to-convert-than-ever-before": {
+        readTime: "10 min read",
         title: "Why B2B Buyers Take Longer to Convert Than Ever Before",
         metaTitle: "Why B2B Buyers Take Longer to Convert in 2026 | EEGNITE",
         metaDescription: "B2B buyers research longer, involve more stakeholders, and use more digital channels before contacting sales. Learn why conversion takes longer today.",
@@ -844,6 +851,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     },
 
     "most-common-mistakes-outsourcing-marketing": {
+        readTime: "8 min read",
         title: "The Most Common Mistakes Businesses Make When Outsourcing Marketing",
         metaTitle: "EEGNITE - Blog - The Most Common Mistakes Businesses Make Wh",
         metaDescription: "Meta Title: Common Marketing Outsourcing Mistakes Businesses Make",
@@ -1048,6 +1056,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Successful marketing partnerships begin with understanding your business, not just your marketing channels. <a href="https://www.eegnite.com/" target="_blank" rel="noopener noreferrer" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> works closely with businesses to develop strategies that align SEO, content marketing, paid advertising, analytics, web performance, and brand growth around measurable business goals. By focusing on transparency, collaboration, and long-term performance, businesses can make more informed marketing decisions and build sustainable digital growth.</p>`
     },
     "why-paid-advertising-costs-are-rising-2026": {
+        readTime: "8 min read",
         title: "Why Paid Advertising Costs Are Rising Across Digital Channels in 2026",
         metaTitle: "EEGNITE - Blog - Why Paid Advertising Costs Are Rising Acros",
         metaDescription: "Meta Title: Why Paid Advertising Costs Keep Rising in 2026",
@@ -1353,6 +1362,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">As advertising costs continue to rise, businesses need strategies that improve efficiency rather than simply increasing budgets. <a href="https://www.eegnite.com/" target="_blank" rel="noopener noreferrer" class="text-[#FF6105] hover:underline font-bold">EEGNITE</a> helps organizations build balanced digital marketing strategies through SEO, paid media, content marketing, conversion optimization, website performance improvements, and digital PR. By strengthening both paid and organic channels, businesses can improve customer acquisition, reduce long-term marketing costs, and build a more resilient online presence in an increasingly competitive digital landscape.</p>`
     },
     "googles-local-search-updates-small-businesses-2026": {
+        readTime: "8 min read",
         title: "What Google's Local Search Updates Mean for Small Businesses in 2026",
         metaTitle: "EEGNITE - Blog - What Google's Local Search Updates Mean for",
         metaDescription: "Meta Title: How Google's 2026 Local Search Updates Affect Small Businesses",
@@ -1571,6 +1581,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
             <p class="mb-6 text-lg leading-relaxed text-black">Building local visibility today requires more than basic Google Business Profile optimization. EEGNITE helps businesses strengthen their local search presence through <a href="https://www.eegnite.com/services/seo/" target="_blank" rel="noopener noreferrer" class="text-[#FF6105] hover:underline font-bold">Google Business Profile management, local SEO, structured data implementation, localized content strategies, technical SEO improvements, and ongoing performance monitoring</a>. By creating a stronger digital foundation, businesses can improve discoverability, build customer trust, and remain competitive as Google's AI-powered local search continues to evolve.</p>`
     },
     "content-marketing-vs-social-media-marketing": {
+        readTime: "7 min read",
         title: "Content Marketing vs. Social Media Marketing - Understanding the Real Difference",
         metaTitle: "EEGNITE - Blog - Content Marketing vs. Social Media Marketin",
         metaDescription: "Meta Title: Content Marketing or Social Media - Which Matters More?",
@@ -1930,6 +1941,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     },
 
     "ecommerce-seo-2026-why-most-online-stores-fail-to-rank": {
+        readTime: "10 min read",
         title: "E-Commerce SEO in 2026 - Why Most Online Stores Fail to Rank (and What to Do Instead)",
         metaTitle: "Why Most eCommerce Stores Fail to Rank in 2026",
         metaDescription: "Discover why many online stores struggle to rank in 2026 and learn the SEO strategies that help eCommerce businesses succeed in an AI-driven search landscape.",
@@ -2201,6 +2213,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "why-traditional-marketing-metrics-no-longer-predict-business-growth": {
+        readTime: "8 min read",
         title: "Why Traditional Marketing Metrics No Longer Predict Business Growth",
         metaTitle: "Why Old Marketing KPIs No Longer Predict Growth",
         metaDescription: "Learn why traditional marketing metrics no longer reflect business growth and discover the modern indicators business leaders should focus on in 2026.",
@@ -2402,6 +2415,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     },
 
     "ai-in-digital-marketing-what-business-leaders-need-to-know": {
+        readTime: "8 min read",
         title: "AI in Digital Marketing: What Business Leaders Need to Know Right Now",
         metaTitle: "AI in Digital Marketing: What Business Leaders Need to Know",
         metaDescription: "Learn how AI is reshaping digital marketing in 2026 and what business leaders should prioritize to stay competitive and build lasting customer trust.",
@@ -2560,6 +2574,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "the-hidden-cost-of-bad-seo-for-your-business": {
+        readTime: "8 min read",
         title: "The Hidden Cost of Bad SEO - What Outdated Practices Are Costing Your Business",
         metaTitle: "The Hidden Cost of Bad SEO for Your Business",
         metaDescription: "Discover how outdated SEO practices can quietly reduce traffic, increase marketing costs, and limit business growth in 2026.",
@@ -2729,6 +2744,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "how-social-media-marketing-changed-in-2026": {
+        readTime: "7 min read",
         title: "How Social Media Marketing Has Changed for B2B Companies in 2026",
         metaTitle: "How B2B Social Media Marketing Changed in 2026",
         metaDescription: "Learn about how B2B social media marketing has evolved in 2026 and what businesses need to do to stay visible, build trust, and generate demand.",
@@ -2947,6 +2963,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "what-google-ai-overview-data-actually-reveals-about-your-website": {
+        readTime: "6 min read",
         title: "What Google AI Overview Data Actually Reveals About Your Website",
         metaTitle: "What Google AI Overview Data Reveals About Your Site",
         metaDescription: "Learn what Google’s new AI Overview data reveals about your visibility, authority, content gaps, and competitive position online.",
@@ -3167,6 +3184,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "why-your-business-struggles-with-online-visibility": {
+        readTime: "8 min read",
         title: "Why Businesses Struggle to Generate Consistent Online Visibility Across Channels",
         metaTitle: "Why Your Business Struggles With Online Visibility",
         metaDescription: "Discover eight common reasons businesses struggle to maintain online visibility and what you can do to build a stronger digital presence.",
@@ -3384,6 +3402,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "8-reasons-why-your-website-traffic-isnt-generating-leads": {
+        readTime: "7 min read",
         title: "8 Hidden Reasons Your Website Gets Traffic But No Enquiries",
         metaTitle: "8 Reasons Why Your Website Traffic Isn't Generating Leads",
         metaDescription: "Getting website visitors but no enquiries? Discover seven hidden conversion issues that may be preventing potential customers from contacting you.",
@@ -3658,6 +3677,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "local-seo-strategies-2026-google-maps": {
+        readTime: "8 min read",
         title: "7 Proven Local SEO Strategies to Rank Higher on Google Maps in 2026",
         metaTitle: "7 Proven Local SEO Strategies to Rank on Google Maps in 2026",
         metaDescription: "Boost your Google Maps ranking in 2026 with 7 proven local SEO strategies. Work with the best local SEO agency for tailored, results-driven solutions.",
@@ -3859,6 +3879,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "how-to-get-content-cited-in-ai-search-results-2026": {
+        readTime: "5 min read",
         title: "How to Get Your Content Cited in AI Search Results in 2026",
         metaTitle: "How to Get Cited in AI Search Results in 2026 | EEGNITE",
         metaDescription: "Your content ranks, but never gets cited? Here’s what AI actually trusts in 2026 and how to make your pages reference-worthy and consistently visible.",
@@ -4027,6 +4048,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "how-to-choose-the-right-seo-agency-in-india-2026": {
+        readTime: "7 min read",
         title: "How to Choose the Right SEO Agency for Your Business in India",
         metaTitle: "How to Choose the Right SEO Agency in India for Your Business",
         metaDescription: "Looking for the right SEO agency in India? Learn what professional SEO services should include, key red flags to watch for, and how to avoid costly mistakes.",
@@ -4268,6 +4290,7 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
         `
     },
     "ppc-agency-india-maximize-roi": {
+        readTime: "8 min read",
         title: "How a Results-Driven PPC Agency in India Maximizes Your ROI",
         metaTitle: "How a PPC Agency in India Maximizes ROI Effectively",
         metaDescription: "Tired of wasted ad spend? Learn how the best PPC agencies in India improve your ROI with smarter targeting and campaigns that deliver genuine sales.",
@@ -4529,7 +4552,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
             <article className="pt-32 pb-24 md:pt-48 md:pb-32">
                 {/* Header Section */}
-                <div className="max-w-4xl mx-auto px-6 mb-12 text-center">
+                <div className="max-w-6xl mx-auto px-6 mb-12 text-center">
                     <div className="flex items-center justify-center mb-8">
                         <Link href="/blog" className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black/60 hover:text-[#FF6105] transition-colors">
                             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Insights
@@ -4540,7 +4563,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         {post.category}
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-none mb-10 text-black">
+                    {/* Long titles step down a size so the hero stays within 3 lines on desktop */}
+                    <h1 className={`${post.title.length > 70 ? "text-[1.625rem] md:text-5xl lg:text-5xl xl:text-[3.5rem]" : "text-[1.75rem] md:text-6xl lg:text-6xl xl:text-7xl"} font-bold uppercase tracking-tighter leading-none mb-10 text-black text-balance`}>
                         {post.title}
                     </h1>
 
@@ -4554,7 +4578,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         </span>
                         <span className="w-1.5 h-1.5 bg-[#FF6105]/20 rounded-full" />
                         <span className="flex items-center gap-2">
-                            5 min read
+                            {"readTime" in post && post.readTime ? post.readTime : "5 min read"}
                         </span>
                     </div>
                 </div>

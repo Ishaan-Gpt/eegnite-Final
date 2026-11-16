@@ -951,16 +951,13 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     "most-common-mistakes-outsourcing-marketing": {
         readTime: "8 min read",
         title: "The Most Common Mistakes Businesses Make When Outsourcing Marketing",
-        metaTitle: "EEGNITE - Blog - The Most Common Mistakes Businesses Make Wh",
-        metaDescription: "Meta Title: Common Marketing Outsourcing Mistakes Businesses Make",
+        metaTitle: "Common Marketing Outsourcing Mistakes Businesses Make",
+        metaDescription: "Discover the most common mistakes businesses make when outsourcing marketing and learn how to build successful, long-term marketing partnerships.",
         category: "Agency Selection",
         date: "Jul 12, 2026",
         author: "EEGNITE Team",
         image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600",
-        content: `            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Title:</strong> Common Marketing Outsourcing Mistakes Businesses Make</p>
-            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Description:</strong> Discover the most common mistakes businesses make when outsourcing marketing and learn how to build successful, long-term marketing partnerships.</p>
-
-            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>The Most Common Mistakes Businesses Make When Outsourcing Marketing</strong></h2>
+        content: `            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>The Most Common Mistakes Businesses Make When Outsourcing Marketing</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">Outsourcing marketing has become a smart business decision for companies of all sizes.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Instead of building an expensive in-house team, businesses can access specialists in SEO, paid advertising, content marketing, social media, web development, and analytics without hiring multiple full-time employees.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Yet despite these advantages, many outsourcing partnerships fail to deliver the results businesses expect.</p>
@@ -1156,16 +1153,13 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     "why-paid-advertising-costs-are-rising-2026": {
         readTime: "8 min read",
         title: "Why Paid Advertising Costs Are Rising Across Digital Channels in 2026",
-        metaTitle: "EEGNITE - Blog - Why Paid Advertising Costs Are Rising Acros",
-        metaDescription: "Meta Title: Why Paid Advertising Costs Keep Rising in 2026",
+        metaTitle: "Why Paid Advertising Costs Keep Rising in 2026",
+        metaDescription: "Discover why paid advertising costs are increasing across Google, Meta, LinkedIn, and other platforms in 2026, and what businesses can do to improve ROI.",
         category: "PPC Advertising",
         date: "Jul 14, 2026",
         author: "EEGNITE Team",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
-        content: `            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Title:</strong> Why Paid Advertising Costs Keep Rising in 2026</p>
-            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Description:</strong> Discover why paid advertising costs are increasing across Google, Meta, LinkedIn, and other platforms in 2026, and what businesses can do to improve ROI.</p>
-
-            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Why Paid Advertising Costs Are Rising Across Digital Channels in 2026</strong></h2>
+        content: `            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Why Paid Advertising Costs Are Rising Across Digital Channels in 2026</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">For many businesses, paid advertising no longer feels as predictable as it once did.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">A campaign that generated qualified leads at a reasonable cost last year may now require a much larger budget to achieve the same results. Cost-per-click is climbing, customer acquisition costs are becoming harder to control, and marketing teams are under increasing pressure to justify every advertising dollar.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">If you've found yourself asking,</p>
@@ -1462,16 +1456,13 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     "googles-local-search-updates-small-businesses-2026": {
         readTime: "8 min read",
         title: "What Google's Local Search Updates Mean for Small Businesses in 2026",
-        metaTitle: "EEGNITE - Blog - What Google's Local Search Updates Mean for",
-        metaDescription: "Meta Title: How Google's 2026 Local Search Updates Affect Small Businesses",
+        metaTitle: "How Google's 2026 Local Search Updates Affect Small Businesses",
+        metaDescription: "Learn how Google's 2026 local search updates are changing visibility, Google Business Profiles, AI search, and customer discovery for small businesses.",
         category: "Local Growth",
         date: "Jul 18, 2026",
         author: "EEGNITE Team",
         image: "https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=1600",
-        content: `            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Title:</strong> How Google's 2026 Local Search Updates Affect Small Businesses</p>
-            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Description:</strong> Learn how Google's 2026 local search updates are changing visibility, Google Business Profiles, AI search, and customer discovery for small businesses.</p>
-
-            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>What Google's Local Search Updates Mean for Small Businesses in 2026</strong></h2>
+        content: `            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>What Google's Local Search Updates Mean for Small Businesses in 2026</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">If you've searched for a local business recently, you've probably noticed something different.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">Instead of scrolling through a long list of websites, Google often answers your question immediately. You might see an AI-generated summary, highlighted businesses, review snippets, service details, photos, directions, and even booking options before you ever click on a website.</p>
             <p class="mb-6 text-lg leading-relaxed text-black">For small businesses, this is a significant shift.</p>
@@ -1681,16 +1672,13 @@ const allPosts: Record<string, { title: string; content: string; image: string; 
     "content-marketing-vs-social-media-marketing": {
         readTime: "7 min read",
         title: "Content Marketing vs. Social Media Marketing - Understanding the Real Difference",
-        metaTitle: "EEGNITE - Blog - Content Marketing vs. Social Media Marketin",
-        metaDescription: "Meta Title: Content Marketing or Social Media - Which Matters More?",
+        metaTitle: "Content Marketing or Social Media - Which Matters More?",
+        metaDescription: "Learn the real difference between content marketing and social media marketing, why they serve different purposes, and how combining both drives sustainable business growth.",
         category: "Content Strategy",
         date: "Jul 25, 2026",
         author: "EEGNITE Team",
         image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1600",
-        content: `            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Title:</strong> Content Marketing or Social Media - Which Matters More?</p>
-            <p class="mb-6 text-lg leading-relaxed text-black"><strong>Meta Description:</strong> Learn the real difference between content marketing and social media marketing, why they serve different purposes, and how combining both drives sustainable business growth.</p>
-
-            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Content Marketing vs. Social Media Marketing: Understanding the Real Difference</strong></h2>
+        content: `            <h2 class="text-2xl md:text-3xl font-bold mt-12 md:mt-16 mb-6 md:mb-8 text-[#FF6105] uppercase tracking-tight"><strong>Content Marketing vs. Social Media Marketing: Understanding the Real Difference</strong></h2>
             <p class="mb-6 text-lg leading-relaxed text-black">If you've ever sat in a marketing meeting, you've probably heard questions like:</p>
             <p class="mb-6 text-lg leading-relaxed text-black"><em>"Should we invest more in content marketing or social media?"</em></p>
             <p class="mb-6 text-lg leading-relaxed text-black"><em>"Do we really need blogs if we're active on LinkedIn?"</em></p>

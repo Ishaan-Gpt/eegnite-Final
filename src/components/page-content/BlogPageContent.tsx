@@ -8,6 +8,16 @@ import { cn } from "@/lib/utils";
 
 const allPostsData = [
     {
+        id: 20,
+        title: "SEO vs GEO vs AEO: Are They Really Different? What You Should Choose for Better Search Visibility",
+        excerpt: "SEO, GEO, and AEO explained in simple terms. Learn what each means, what actually improves search visibility, and what to look for when hiring an agency.",
+        category: "SEO & AI Search",
+        readTime: "17 min read",
+        date: "Nov 16, 2026",
+        image: "https://images.unsplash.com/photo-1562577309-2592ab84b1bc?auto=format&fit=crop&q=80&w=1600",
+        slug: "seo-vs-geo-vs-aeo-what-to-choose-for-search-visibility",
+    },
+    {
         id: 19,
         title: "We Stopped Trying to Beat AI Detectors When We Realized What They Were Actually Detecting",
         excerpt: "Discover why trying to beat AI detectors is the wrong goal. Learn how human thinking, structure, and depth differentiate quality content from AI output.",

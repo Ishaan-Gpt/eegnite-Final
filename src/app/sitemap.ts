@@ -185,6 +185,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/blog/seo-vs-geo-vs-aeo-what-to-choose-for-search-visibility/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
             url: `${baseUrl}/blog/we-stopped-trying-to-beat-ai-detectors/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

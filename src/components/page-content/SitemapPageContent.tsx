@@ -121,6 +121,12 @@ const globalHubPages = [
 
 const blogPosts = [
     {
+        title: "SEO vs GEO vs AEO: Are They Really Different? What You Should Choose for Better Search Visibility",
+        href: "/blog/seo-vs-geo-vs-aeo-what-to-choose-for-search-visibility/",
+        category: "SEO & AI Search",
+        date: "Nov 16, 2026",
+    },
+    {
         title: "The Most Common Mistakes Businesses Make When Outsourcing Marketing",
         href: "/blog/most-common-mistakes-outsourcing-marketing/",
         category: "Agency Selection",

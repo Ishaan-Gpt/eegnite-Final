@@ -56,6 +56,13 @@ const servicesList = [
 
 // Regional service pages: on a regional page, the Services dropdown links to that region's versions.
 const regionalServiceHrefs: Record<string, Record<string, string>> = {
+    "/digital-marketing-agency-kolkata": {
+        "/services/seo": "/digital-marketing-agency-kolkata/seo-services",
+        "/services/social-media-marketing": "/digital-marketing-agency-kolkata/social-media-marketing",
+        "/services/ppc": "/digital-marketing-agency-kolkata/ppc-management",
+        "/services/web-development": "/digital-marketing-agency-kolkata/web-design-development",
+        "/services/email-marketing": "/digital-marketing-agency-kolkata/email-marketing",
+    },
     "/bahrain": {
         "/services/seo": "/bahrain/seo-services",
         "/services/social-media-marketing": "/bahrain/social-media-marketing",

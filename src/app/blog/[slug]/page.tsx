@@ -4684,7 +4684,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 </div>
 
                 {/* Two Column Layout Grid */}
-                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16">
                     {/* Main Content (Left) */}
                     <div className="lg:col-span-8">
                         <div

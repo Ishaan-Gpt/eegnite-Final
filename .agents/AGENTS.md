@@ -46,6 +46,8 @@ This file contains workspace-specific guidelines, code styles, and rules that th
 - **One-Line Subtext Constraints**: Ensure short subtext headers or uppercase category descriptors occupy exactly 1 line on desktop (use `md:whitespace-nowrap` if necessary).
 - **Non-Overlapping Sticky Layouts**: Never place headers with absolute coordinates inside sticky scrolling sections. Use relative vertical flex structures (`flex flex-col justify-between h-screen py-16`) to dynamically distribute elements and completely prevent overlap on smaller screen heights.
 - **No Grey Backgrounds**: Avoid using grey or muted-grey backgrounds (e.g., `#F5F3EE`, `#FAFAFA`, `#F9F9F9`) for large visual section containers. Use white (`#FFFFFF` / `#FFFEF8`) or glassy semi-transparent white on clean layouts instead.
+- **One Floating Contact Button**: The bottom-right floating button opens WhatsApp directly (`src/components/Chatbot.tsx`). Do not turn it back into a menu of several contact options; too many choices confuse visitors.
+- **Blog Reading Margins**: Blog post text must never sit closer to the window edge than the cover image above it (48px from tablet up), and the margin should grow on larger screens. Check blog layouts at 1024, 1280, 1366 and 1440px wide, not only on large monitors.
 - **Glassmorphism Styling**: When requested, implement glassy card styles using semitransparent white (`bg-white/80` or `bg-white/60`), `backdrop-blur-md`, subtle thin borders (`border-black/5`), and light background blur circles.
 
 ## Content Fidelity (100% Copy Retention & Full Document Replication)
